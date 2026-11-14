@@ -1,0 +1,52 @@
+name: Publicar Estatística das Provas
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  pages:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Obter arquivos
+        uses: actions/checkout@v4
+      - name: Preparar a primeira versão (somente uma vez)
+        shell: bash
+        run: |
+          if [ -f bootstrap.b64 ]; then
+            base64 --decode bootstrap.b64 > /tmp/estatistica-source.tar.xz
+            tar -xJf /tmp/estatistica-source.tar.xz
+            rm bootstrap.b64
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "feat: adicionar código-fonte v0.1.0"
+            git push
+          fi
+      - name: Separar somente os arquivos públicos
+        shell: bash
+        run: |
+          mkdir -p public
+          cp index.html app.mjs config.js core.mjs pdf-import.mjs styles.css public/
+          cp -R data public/
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Empacotar site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+      - name: Publicar
+        id: deployment
+        uses: actions/deploy-pages@v4
