@@ -1,63 +1,39 @@
-name: Publicar Estatística das Provas
+name: Publicar site
 on:
   push:
     branches: [main]
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
 concurrency:
-  group: pages
-  cancel-in-progress: false
+  group: github-pages
+  cancel-in-progress: true
 
 jobs:
   publicar:
+    if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Obter repositório
+      - name: Baixar repositório
         uses: actions/checkout@v4
-      - name: Extrair pacote inicial, se enviado
-        shell: bash
+      - name: Verificar arquivos
         run: |
-          if [ -f estatistica-das-provas-v0.1.0.zip ]; then
-            mkdir -p /tmp/banco-questoes-importacao
-            unzip -q estatistica-das-provas-v0.1.0.zip -d /tmp/banco-questoes-importacao
-            test -f /tmp/banco-questoes-importacao/estatistica-provas-v01/index.html
-            test -f /tmp/banco-questoes-importacao/estatistica-provas-v01/app.mjs
-            cp README.md /tmp/banco-questoes-readme.md
-            cp -a /tmp/banco-questoes-importacao/estatistica-provas-v01/. .
-            cp /tmp/banco-questoes-readme.md README.md
-            rm estatistica-das-provas-v0.1.0.zip
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add -A
-            git commit -m "feat: publicar arquivos do protótipo v0.1.0"
-            git push
-          fi
-      - name: Configurar Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-      - name: Testar aplicação
-        run: npm test
-      - name: Separar arquivos públicos
-        shell: bash
-        run: |
-          mkdir -p public
-          cp index.html app.mjs config.js core.mjs pdf-import.mjs styles.css public/
-          cp -R data public/
+          test -f index.html
+          test -f app.mjs
+          test -f styles.css
       - name: Configurar GitHub Pages
         uses: actions/configure-pages@v5
-      - name: Empacotar site
+      - name: Preparar conteúdo estático
         uses: actions/upload-pages-artifact@v3
         with:
-          path: public
-      - name: Publicar site
+          path: .
+      - name: Publicar
         id: deployment
         uses: actions/deploy-pages@v4
