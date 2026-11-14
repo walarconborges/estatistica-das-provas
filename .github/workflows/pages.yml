@@ -23,22 +23,24 @@ jobs:
     steps:
       - name: Baixar repositório
         uses: actions/checkout@v4
-      - name: Verificar arquivos e sintaxe JavaScript
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Testar regras e sintaxe
         run: |
-          test -f index.html
-          test -f app.mjs
-          test -f core.mjs
-          test -f pdf-import.mjs
-          test -f styles.css
-          node --check app.mjs
-          node --check core.mjs
-          node --check pdf-import.mjs
+          npm run check
+          npm test
       - name: Configurar GitHub Pages
         uses: actions/configure-pages@v5
-      - name: Preparar conteúdo estático
+      - name: Preparar somente arquivos públicos
+        run: |
+          mkdir public
+          cp index.html styles.css app.mjs core.mjs pdf-import.mjs public/
+      - name: Enviar conteúdo
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: public
       - name: Publicar
         id: deployment
         uses: actions/deploy-pages@v4
