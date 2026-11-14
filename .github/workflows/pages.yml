@@ -14,29 +14,39 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  pages:
+  publicar:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Obter arquivos
+      - name: Obter repositório
         uses: actions/checkout@v4
-      - name: Preparar código-fonte da versão inicial
+      - name: Extrair pacote inicial, se enviado
         shell: bash
         run: |
-          if [ -f bootstrap.ready ]; then
-            cat bootstrap/part_* | base64 --decode > /tmp/estatistica-source.tar.xz
-            echo 'd428e5127f564cf105406e83f7400ef4a5bb0b12858aeae55bee47cfa70a0236  /tmp/estatistica-source.tar.xz' | sha256sum --check
-            tar -xJf /tmp/estatistica-source.tar.xz
-            rm -rf bootstrap bootstrap.ready
+          if [ -f estatistica-das-provas-v0.1.0.zip ]; then
+            mkdir -p /tmp/banco-questoes-importacao
+            unzip -q estatistica-das-provas-v0.1.0.zip -d /tmp/banco-questoes-importacao
+            test -f /tmp/banco-questoes-importacao/estatistica-provas-v01/index.html
+            test -f /tmp/banco-questoes-importacao/estatistica-provas-v01/app.mjs
+            cp README.md /tmp/banco-questoes-readme.md
+            cp -a /tmp/banco-questoes-importacao/estatistica-provas-v01/. .
+            cp /tmp/banco-questoes-readme.md README.md
+            rm estatistica-das-provas-v0.1.0.zip
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add -A
-            git commit -m "feat: adicionar código-fonte v0.1.0"
+            git commit -m "feat: publicar arquivos do protótipo v0.1.0"
             git push
           fi
-      - name: Separar os arquivos públicos
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Testar aplicação
+        run: npm test
+      - name: Separar arquivos públicos
         shell: bash
         run: |
           mkdir -p public
@@ -48,6 +58,6 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: public
-      - name: Publicar
+      - name: Publicar site
         id: deployment
         uses: actions/deploy-pages@v4
