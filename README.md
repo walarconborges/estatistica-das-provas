@@ -6,7 +6,7 @@ Aplicação para importar provas, reunir questões, comparar respostas com gabar
 
 ## Situação atual
 
-O projeto foi **implementado como protótipo funcional**, mas **está sendo publicado no GitHub Pages, mas ainda não está conectado a um Worker**. É possível testar imediatamente no modo local. A sincronização entre celular e computador depende de criar um repositório próprio, configurar a ponte Cloudflare Workers e informar a URL dessa ponte no site. O código-fonte não contém nenhuma credencial.
+O projeto foi **implementado como protótipo funcional**, mas **tem a publicação automatizada configurada no GitHub Actions, mas os arquivos da aplicação ainda precisam ser importados para o repositório e a sincronização depende de um Worker**. É possível testar imediatamente no modo local. A sincronização entre celular e computador depende de criar um repositório próprio, configurar a ponte Cloudflare Workers e informar a URL dessa ponte no site. O código-fonte não contém nenhuma credencial.
 
 ### Recursos já implementados
 
@@ -62,10 +62,11 @@ Gabarito oficial: `1A2B`. Depois confirme a importação, acesse o banco e crie 
 
 ## Publicação no GitHub Pages
 
-O repositório público foi criado em `walarconborges/estatistica-das-provas`. A publicação automática usa **GitHub Actions**.
+O repositório público usa **GitHub Actions** como fonte do Pages. Para importar a versão inicial, faça o upload do arquivo `estatistica-das-provas-v0.1.0.zip` **sem extrair**, na raiz do repositório (Add file → Upload files → Commit changes). O workflow `.github/workflows/pages.yml` extrai automaticamente os 21 arquivos do pacote, grava o código-fonte no repositório, executa os testes e publica a interface. O ZIP é apagado do repositório depois da extração.
 
-Os arquivos são enviados diretamente ao repositório conectado. Em **Settings → Pages → Source**, mantenha **GitHub Actions**. Os commits em `main` disparam o fluxo `.github/workflows/pages.yml`. URL prevista: `https://walarconborges.github.io/estatistica-das-provas/`.
-5. Neste estágio, o site funciona em **modo local**, sem sincronização entre dispositivos. Para sincronizar, siga a próxima seção.
+Endereço previsto: https://walarconborges.github.io/estatistica-das-provas/
+
+Essa etapa não ativa a sincronização entre dispositivos: para isso é necessário configurar o Cloudflare Worker descrito abaixo.
 
 ## Sincronização central no GitHub (sem senha dos participantes)
 
