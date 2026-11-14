@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#142d49">
+  <meta name="description" content="Banco de questões, estatísticas por perfil e simulados de concursos.">
+  <title>Estatística das Provas</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <div class="topbar-content">
+      <div class="brand"><span class="brand-icon">Q</span><div><strong>Estatística das Provas</strong><small>Banco de questões e simulados</small></div></div>
+      <div class="top-actions"><span id="storage-status" class="small-muted">Modo local</span><button id="switch-user" class="quiet" type="button">Escolher usuário</button></div>
+    </div>
+  </header>
+  <main class="layout">
+    <nav class="tabs" aria-label="Seções">
+      <button data-view="home" class="active">Início</button>
+      <button data-view="import">Importar prova</button>
+      <button data-view="questions">Questões avulsas</button>
+      <button data-view="sim">Simulados</button>
+      <button data-view="exams">Provas completas</button>
+      <button data-view="stats">Estatísticas</button>
+      <button data-view="flags">Sinalizações</button>
+      <button data-view="settings">Dados</button>
+    </nav>
+    <div id="notices" aria-live="polite"></div>
+    <section id="screen" aria-live="polite"></section>
+  </main>
+  <footer>Versão experimental 0.1 · Sem senha · Armazenamento local nesta etapa</footer>
+</div>
+<div id="profile-overlay" class="overlay"><div class="dialog profile">
+  <h1>Quem está aí?</h1><p>Escolha seu perfil para registrar suas respostas.</p>
+  <div id="profile-options"></div>
+  <form id="profile-form"><label for="profile-name">Criar outro usuário</label><div class="inline"><input id="profile-name" maxlength="50" placeholder="Nome do perfil"><button type="submit">Criar</button></div></form>
+  <p class="hint">Não é necessária senha. A escolha do perfil será solicitada em toda abertura.</p>
+</div></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<script type="module" src="./app.mjs"></script>
+</body>
+</html>
