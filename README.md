@@ -1,6 +1,6 @@
 # Estatística das Provas
 
-**Versão experimental 0.2.0 — 14/11/2026**  
+**Versão experimental 0.2.2 — 15/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
