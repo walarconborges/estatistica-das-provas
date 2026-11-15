@@ -1,5 +1,17 @@
 # Histórico de versões
 
+## 0.2.0 — 14/11/2026
+
+- API Cloudflare Worker criada para gravar dados no GitHub sem expor o token no navegador.
+- Sincronização incremental de perfis, questões, provas, tentativas, simulados e sinalizações; mesclagem entre dispositivos e cache local.
+- Registros já existentes de gabarito e classificação não podem ser alterados por participantes na API.
+- Ajuste da exclusão estatística de questões anuladas e desatualizadas; expiração de rascunhos com 30 dias.
+- Envio de sinalizações estruturadas para Issues e decisão por comentário "aprovar"/"rejeitar" do proprietário.
+- Suporte a armazenamento remoto de PDF original (até 4 MB por arquivo) e acesso a partir de outros aparelhos.
+- Página de configuração e rotina de ativação automática com /api/setup; testes adicionais de sincronização.
+- **A ativação efetiva da API ainda depende de criar o secret GITHUB_TOKEN e publicar o Worker na Cloudflare.** Não houve validação de integração real entre dois navegadores.
+
+
 ## 0.1.1 — 14/11/2026
 
 - Reconstrução direta dos arquivos no repositório GitHub por integração.
