@@ -113,6 +113,7 @@ export function latestAnswer(state,profileId,questionId){
 }
 export function outcome(state,profileId,q){
   if(q.status==='annulled')return'annulled';
+  if(q.status==='outdated')return'outdated';
   const a=latestAnswer(state,profileId,q.id);
   if(!a)return'unanswered';
   if(!validAnswer(q.answer))return'no-key';
@@ -123,7 +124,7 @@ export function recordAttempt(state,profileId,qid,answer,simId=''){
   state.attempts.push({id:newId(),profileId,questionId:qid,answer,simulationId:simId,at:new Date().toISOString()});return true;
 }
 export function stats(state,profileId){
-  const items=state.questions.filter(q=>q.status!=='annulled');
+  const items=state.questions.filter(q=>q.status==='active');
   const done=items.map(q=>({q,r:outcome(state,profileId,q)})).filter(x=>x.r==='correct'||x.r==='wrong');
   const correct=done.filter(x=>x.r==='correct').length,wrong=done.length-correct;
   const group=(kind)=>{
@@ -179,7 +180,7 @@ export function simulationResult(state,sim){
   for(const id of sim.questionIds){
     const q=state.questions.find(q=>q.id===id);
     if(!q)continue;
-    if(q.status==='annulled'){annulled++;continue}
+    if(q.status==='annulled'||q.status==='outdated'){annulled++;continue}
     const answer=sim.answers[id];
     if(!validAnswer(answer)){blank++;continue}
     if(answer===q.answer)correct++;else wrong++;
@@ -189,5 +190,5 @@ export function simulationResult(state,sim){
 }
 export function expire(state){
   const now=Date.now();
-  for(const sim of state.simulations)if(sim.status==='pending'&&new Date(sim.expiresAt).getTime()<now)sim.status='expired';
+  for(const sim of state.simulations)if(sim.status==='pending'&&new Date(sim.expiresAt).getTime()<now){sim.status='expired';sim.answers={};}
 }
