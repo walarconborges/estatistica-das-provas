@@ -1,9 +1,18 @@
 # Estatística das Provas
 
-**Versão experimental 0.3.1 — 15/11/2026**  
+**Versão experimental 0.3.2 — 15/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+### Correção de falhas de imagens — versão 0.3.2
+
+Os erros "questão com alternativas não reconhecidas" em itens com figuras, tabelas ou frações eram indevidamente disparados quando **a renderização da imagem falhava**. Agora os problemas são independentes: só há erro de alternativas se o leitor realmente identificar menos de cinco ou a sequência A–E estiver incorreta.
+
+O PDF.js passou a renderizar as páginas **antes de liberar seus recursos** (`page.cleanup()`). As páginas com figuras são renderizadas uma vez por página e recortadas; se houver falha, o navegador tenta uma escala de imagem menor. Erros remanescentes mostram número da questão, página e motivo, sem gravar uma importação incompleta.
+
+A questão 34 da prova VUNESP menciona uma *tabela MAC* (estrutura de rede), mas não contém tabela gráfica: ela não deve acionar recorte de imagem. Os recortes das questões 11 (frações), 17 (desenho), 19 (tabela) e 26 (planilha) foram conferidos no PDF original por coordenadas e preservam as partes relevantes. Os testes automatizados não substituem a conferência da renderização no navegador do usuário.
+
 
 ### Textos de apoio compartilhados
 
