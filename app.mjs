@@ -110,7 +110,7 @@ function filterForm(kind='questions'){
   ${selectField('year','Ano',u.years,currentFilter.year)}
   ${selectField('orgao','Órgão',u.orgaos,currentFilter.orgao)}
   ${selectField('outcome','Meu histórico',[['unanswered','Não respondidas'],['wrong','Erradas'],['correct','Acertadas']].map(x=>x[0]),currentFilter.outcome,'Todas')}
-  <div class="field"><label>Situação da questão</label><select name="status"><option value="">Ativas (padrão)</option><option value="all" ${currentFilter.status==='all'?'selected':''}>Todas, incluindo anuladas</option><option value="annulled" ${currentFilter.status==='annulled'?'selected':''}>Somente anuladas</option><option value="outdated" ${currentFilter.status==='outdated'?'selected':''}>Somente desatualizadas</option></select></div>
+  <div class="field"><label>Situação da questão</label><select name="status"><option value="">Ativas (padrão)</option><option value="all" ${currentFilter.status==='all'?'selected':''}>Todas, incluindo anuladas</option><option value="annulled" ${currentFilter.status==='annulled'?'selected':''}>Somente anuladas</option><option value="outdated" ${currentFilter.status==='outdated'?'selected':''}>Somente desatualizadas</option><option value="needs-review" ${currentFilter.status==='needs-review'?'selected':''}>Necessitam revisão da extração</option></select></div>
   ${mode?`<div class="field"><label>Quantidade de questões</label><input type="number" name="count" min="1" max="1000" value="20" required></div>`:`<div class="field"><label>Mostrar quantas questões?</label><input type="number" name="count" min="1" max="1000" value="${limitAvulsas}" required></div>`}
   ${!mode?`<div class="field span-all"><label>Buscar código permanente</label><input class="code-search" name="code" placeholder="Q2026LPGIBGPSEMED1" value="${h(currentFilter.code||'')}"></div>`:''}
   </div><div class="actions"><button type="submit">${mode?'Criar simulado':'Buscar questões'}</button></div>
@@ -134,7 +134,7 @@ function cardQuestion(q,index,scope='single',selected=''){
   const label=scope==='sim'?index+1:q.originalNumber||index+1;
   const examTitle=exam(q.examId)?.title||'';
   return `<article class="question" data-question-card="${h(q.id)}">
-  <div class="question-head"><div><div class="question-code">${h(q.code)}</div><div class="question-context">Questão ${label} · ${h(examTitle)} · ${h(q.discipline)} / ${h(q.topic)}</div></div><div class="chips">${q.status==='annulled'?'<span class="badge wait">Anulada</span>':''}${q.status==='outdated'?'<span class="badge wait">Desatualizada</span>':''}${q.confidence==='baixa'?'<span class="badge wait">Classificação incerta</span>':''}</div></div>
+  <div class="question-head"><div><div class="question-code">${h(q.code)}</div><div class="question-context">Questão ${label} · ${h(examTitle)} · ${h(q.discipline)} / ${h(q.topic)}</div></div><div class="chips">${q.status==='annulled'?'<span class="badge wait">Anulada</span>':''}${q.status==='needs-review'?'<span class="badge wait">Revisão da extração</span>':''}${q.status==='outdated'?'<span class="badge wait">Desatualizada</span>':''}${q.confidence==='baixa'?'<span class="badge wait">Classificação incerta</span>':''}</div></div>
   <div class="question-body">${h(q.stem||'[Enunciado não extraído]')}</div>
   ${q.pageImage?`<img loading="lazy" class="question-img" src="${h(q.pageImage)}" alt="Recorte ou página do PDF original">`:''}
   ${alternatives(q,scope,selected)}
@@ -224,11 +224,34 @@ async function importData(form){
     const raw=examRead.text,keyRaw=keyRead.text,pages=examRead.pages;
     const meta=inferExamMetadata(raw,pdf.name,keyRaw,keyPdf.name);
     const parsed=parseExamText(raw);
-    for(const p of pages.filter(p=>p.image)){
-      parsed.push({originalNumber:1000+p.number,stem:'[Página '+p.number+' sem extração integral — conferir a imagem da página original.]',options:[],pageImage:p.image,discipline:'Não classificada',disciplineCode:'NC',topic:'Geral',topicCode:'G',confidence:'baixa'});
+    const pageMap=new Map(pages.map(p=>[p.number,p]));
+    for(const q of parsed){
+      const visual=/\b(tabela|gr[aá]fico|figura|quadro|imagem|ilustra[cç][aã]o|diagrama|mapa)\b/i.test(q.stem);
+      const page=pageMap.get(q.sourcePage);
+      if((visual||q.extractionReview)&&page?.image){
+        q.pageImage=page.image;
+        if(visual)q.extractionReview=true; // preservar a fonte e exigir conferência de tabelas/figuras
+      }
     }
-    if(!parsed.length){toast('Nenhuma questão identificada. Confira o PDF ou cole o texto da prova.');return}
+    const coveredPages=new Set(parsed.map(q=>q.sourcePage));
+    for(const p of pages.filter(p=>p.image&&!coveredPages.has(p.number)&&p.text.trim().length<65)){
+      parsed.push({originalNumber:1000+p.number,sourcePage:p.number,stem:'[Página '+p.number+' digitalizada — consulte a imagem original.]',options:[],pageImage:p.image,discipline:'Não classificada',disciplineCode:'NC',topic:'Geral',topicCode:'G',confidence:'baixa',extractionReview:true});
+    }
+    if(!parsed.length){toast('Nenhuma questão foi identificada. A importação não foi salva.');return}
+    const regular=parsed.filter(q=>q.originalNumber<1000),numbers=regular.map(q=>q.originalNumber);
+    const sorted=[...new Set(numbers)].sort((a,b)=>a-b);
+    const missing=[];
+    if(sorted.length>=2)for(let i=sorted[0];i<sorted.at(-1);i++)if(!sorted.includes(i))missing.push(i);
+    if(missing.length||sorted.length!==numbers.length){
+      latestImportMessage='A leitura encontrou uma sequência incompleta ou repetida de questões'+(missing.length?' (faltam: '+missing.slice(0,18).join(', ')+')':'')+'. Por segurança, nada foi cadastrado. Registre o problema para corrigirmos a extração.';
+      toast('A prova contém questões não separadas corretamente. Importação cancelada.');
+      refresh();return;
+    }
     const key=parseKey(keyRaw);
+    if(!Object.keys(key).length){
+      latestImportMessage='O gabarito não foi reconhecido no PDF. A importação foi cancelada para evitar cadastrar respostas incorretas.';
+      toast('Gabarito não reconhecido. Nenhuma questão foi cadastrada.');refresh();return;
+    }
     const e=addExam(state,meta,parsed,key);
     e.metadataReview=meta.missing;
      if(pdf instanceof File&&pdf.size&&sync.isConfigured()){
