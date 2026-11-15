@@ -1,9 +1,30 @@
 # Estatística das Provas
 
-**Versão experimental 0.5.0 — 15/11/2026**  
+**Versão experimental 0.6.0 — 15/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.0 — Adaptação automática de legislação municipal
+
+**Decisão de produto:** o usuário não precisa mais pedir aprovação prévia para toda adaptação. O site pode criar automaticamente uma versão nova de uma questão de outra cidade quando a matéria coincide com um dispositivo previamente conferido na legislação oficial de Candeias do Jamari. Uma adaptação nunca sobrescreve a questão, o gabarito ou o código original.
+
+**Como funciona:**
+- O Cloudflare Worker verifica novas questões de legislação durante a sincronização. Para questões já importadas, o site consulta o endpoint `POST /api/auto-adapt` ao iniciar e ao usar o modo Candeias.
+- O módulo `legal-adapt.mjs` contém dez modelos de adaptação **baseados em fatos normativos específicos e verificáveis**. A nova questão tem ID, código, gabarito, alternativas, fundamento legal, artigo e URL de fonte próprios.
+- A correção de uma questão adaptada apresenta **automaticamente** a justificativa e o artigo, tanto nas questões avulsas quanto **após a finalização** de um simulado. Não é necessário consumir créditos de IA para essa explicação; ela deriva diretamente do dispositivo jurídico catalogado.
+- Cada usuário pode clicar em **Sinalizar erro na adaptação**, informando o problema. O relato segue para as Issues do GitHub e não apaga a questão original.
+- Se a correspondência for ambígua ou não existir, **nenhuma adaptação é inventada**: a questão original é considerada inaplicável ao modo Candeias e permanece acessível no modo **Prova original, sem adaptação**.
+- Questões oficiais de Candeias não precisam ser adaptadas; aparecem no modo local normalmente.
+- A nova adaptação conta como questão distinta para estatísticas e traz vínculo explícito com a original. Provas completas preservam somente as questões originais.
+- Este mecanismo **não é uma tradução jurídica universal**: o catálogo inicial cobre disposições dos artigos 2º, 4º, 5º, 6º, 7º, 16, 17 e 26 da Resolução nº 173/CMCJ/2025, e artigos 63 e 65 da Lei Orgânica municipal. Outros temas dependerão de ampliar e conferir o catálogo; até lá, não serão adaptados.
+- A legislação pode sofrer mudanças. As fontes precisam ser revistas periodicamente, particularmente antes de concursos com edital e data de corte diferentes.
+
+**Fontes primárias do catálogo:**
+- Resolução nº 173/CMCJ/2025 (Câmara Municipal): https://athus4.candeiasdojamari.ro.leg.br/transparencia/documento/ver/25935D61EE0A1BFB7E6F55E9168A5A42D2BE25A6/
+- Lei Orgânica do Município de Candeias do Jamari: https://www.candeiasdojamari.ro.leg.br/leis/lei-organica-municipal/lei-organica-do-municipio-de-candeias-do-jamari/at_download/file
+
+O site continua com GitHub Pages + Worker, sem banco novo e sem limpar registros existentes. O binding de IA permanece para explicações gerais, mediante solicitação; a adaptação normativa controlada não precisa de IA por questão. É necessário confirmar a publicação da nova versão do Worker na Cloudflare para que as adaptações automáticas funcionem em produção.
 
 ## Versão 0.5.0 — Explicações de IA e referência Candeias
 
