@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {spatialLines,spatialQuestions,chosenAnswerSection,questionIntegrity} from '../pdf-layout.mjs';
+import {spatialLines,spatialQuestions,chosenAnswerSection,questionIntegrity,humanizePdfText} from '../pdf-layout.mjs';
 import {parseKey,inferExamMetadata} from '../core.mjs';
 function item(str,x,y,width=40){return {str,transform:[1,0,0,1,x,842-y],width};}
 test('leitura espacial separa duas colunas e preserva a numeração original',()=>{
@@ -66,4 +66,46 @@ test('tabela MAC conceitual não exige captura de imagem, mas tabela gráfica ex
  assert.equal(parsed.questions[0].imageOnly,false);
  assert.equal(parsed.questions[1].imageOnly,true);
  assert.deepEqual(parsed.questions[0].options.map(a=>a.letter),['A','B','C','D','E']);
+});
+
+
+test('PDF de duas colunas não mantém hifens de fim de linha nem estreita texto na tela',()=>{
+ assert.equal(humanizePdfText('IPSec é usado para esta-\nbelecer comunicação em redes'), 'IPSec é usado para estabelecer comunicação em redes');
+ assert.equal(humanizePdfText('A Procuradoria da Câmara Municipal, ten-\ndo em vista a Resolução'), 'A Procuradoria da Câmara Municipal, tendo em vista a Resolução');
+ assert.equal(humanizePdfText('Uma rede tem 5 pontos\ncom conectividade segura'), 'Uma rede tem 5 pontos com conectividade segura');
+});
+test('símbolos de fonte privada só viram setas onde o contexto identifica menus',()=>{
+ const u='\uF0E0';
+ assert.equal(humanizePdfText('Guia '+u+' Item de menu'),'Guia → Item de menu');
+ assert.equal(humanizePdfText('Inserir '+u+' Objeto OLE'),'Inserir → Objeto OLE');
+ assert.equal(humanizePdfText('Figura '+u+' Retângulo'),'Figura '+u+' Retângulo');
+});
+test('fração vertical 3 sobre 8 é reconstituída como 3/8 sem alterar a tabela numérica',()=>{
+ const text=(str,x,y,width=5)=>({str,transform:[1,0,0,1,x,842-y],width});
+ const items=[
+ text('A razão de homens é ',51,244,112),
+ text('3',164.6,240.3,5.4),
+ text('8',164.5,254.3,5.4),
+ text('. Com a intenção de aumentar',171.7,244.2,120),
+ ];
+ const rows=spatialLines(items,595,842);
+ assert.match(rows.map(r=>r.text).join(' '),/3\/8/);
+ assert.equal(rows.map(r=>r.text).join(' ').match(/3\/8/g).length,1);
+ const table=[text('ANO',55,100,32),text('2022',120,100,22),text('2023',120,114,22)];
+ assert.ok(!spatialLines(table,595,842).some(r=>r.text.includes('2022/2023')));
+});
+test('figura interna mantém texto antes e depois e alternativas separadas',()=>{
+ const source=[
+ {text:'17. O desenho representa um terreno.',y:25,col:0},
+ {text:'AB = 2x e CD = x.',y:43,col:0},
+ {text:'(Imagem usada com autorização)',y:258,col:0},
+ {text:'O perímetro deste terreno é',y:278,col:0},
+ ...['A','B','C','D','E'].map((l,i)=>({text:'('+l+') Intervalo '+i,y:320+i*20,col:0}))
+ ];
+ const q=spatialQuestions([{number:8,width:595,height:842,lines:source}]).questions[0];
+ assert.equal(q.imageOnly,true);
+ assert.ok(q.visualSegments);
+ assert.match(q.visualSegments.beforeText,/desenho/);
+ assert.match(q.visualSegments.afterText,/perímetro/);
+ assert.deepEqual(q.options.map(o=>o.letter),['A','B','C','D','E']);
 });
