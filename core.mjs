@@ -192,3 +192,56 @@ export function expire(state){
   const now=Date.now();
   for(const sim of state.simulations)if(sim.status==='pending'&&new Date(sim.expiresAt).getTime()<now){sim.status='expired';sim.answers={};}
 }
+
+/**
+ * Extrai informações de identificação da capa, cabeçalho e nomes dos PDFs.
+ * Nunca supõe banca/órgão/ano sem encontrar indícios textuais.
+ * Dados ausentes usam NI/0000 e são marcados para conferência.
+ */
+export function inferExamMetadata(examText='',examFilename='',keyText='',keyFilename=''){
+ const filename=String(examFilename||''),head=String(examText||'').slice(0,7000);
+ const keyHead=String(keyText||'').slice(0,1300);
+ const raw=[filename,head,String(keyFilename||''),keyHead].join('\n');
+ const source=textNorm(raw);
+ const preferredYear=textNorm(filename+' '+head.slice(0,1500));
+ const years=[...preferredYear.matchAll(/\b(?:19|20)\d{2}\b/g)].map(x=>x[0]);
+ const year=years.find(x=>Number(x)>=1980&&Number(x)<=new Date().getFullYear()+2)||'0000';
+ const bancas=[
+  ['CEBRASPE',/\bCEBRASPE\b|\bCESPE\b/],
+  ['IBGP',/\bIBGP\b|INSTITUTO BRASILEIRO DE GESTAO E PESQUISA/],
+  ['VUNESP',/\bVUNESP\b|FUNDACAO VUNESP/],
+  ['FGV',/\bFGV\b|FUNDACAO GETULIO VARGAS/],
+  ['FCC',/\bFCC\b|FUNDACAO CARLOS CHAGAS/],
+  ['IBFC',/\bIBFC\b|INSTITUTO BRASILEIRO DE FORMACAO E CAPACITACAO/],
+  ['IDCAP',/\bIDCAP\b/],
+  ['FUNDEP',/\bFUNDEP\b/],
+  ['CONSULPLAN',/\bCONSULPLAN\b/],
+  ['AOCP',/\bAOCP\b/],
+  ['IBADE',/\bIBADE\b/],
+  ['IDECAN',/\bIDECAN\b/],
+  ['QUADRIX',/\bQUADRIX\b/],
+  ['UNOCHAPECO',/\bUNOCHAPECO\b/],
+  ['FURB',/\bFURB\b/],
+  ['FAUEL',/\bFAUEL\b/]
+ ];
+ const orgaos=[
+  ['SEMUSA',/\bSEMUSA\b|SECRETARIA MUNICIPAL DE SAUDE/],
+  ['SEMED',/\bSEMED\b|SECRETARIA MUNICIPAL DE EDUCACAO/],
+  ['SEDUC',/\bSEDUC\b|SECRETARIA DE ESTADO DA EDUCACAO/],
+  ['IFRO',/\bIFRO\b|INSTITUTO FEDERAL DE RONDONIA/],
+  ['ALE-RO',/\bALE[\s-]?RO\b|ASSEMBLEIA LEGISLATIVA DO ESTADO DE RONDONIA/],
+  ['TJRO',/\bTJ[\s-]?RO\b|TRIBUNAL DE JUSTICA DO ESTADO DE RONDONIA/],
+  ['MPRO',/\bMP[\s-]?RO\b|MINISTERIO PUBLICO DO ESTADO DE RONDONIA/],
+  ['TCE-RO',/\bTCE[\s-]?RO\b|TRIBUNAL DE CONTAS DO ESTADO DE RONDONIA/],
+  ['CMPV',/\bCMPV\b|CAMARA MUNICIPAL DE PORTO VELHO/],
+  ['IPAM',/\bIPAM\b/],
+  ['UERN',/\bUERN\b/],
+  ['IFSP',/\bIFSP\b/]
+ ];
+ const find=items=>items.find(([,p])=>p.test(source))?.[0]||'NI';
+ const banca=find(bancas),orgao=find(orgaos);
+ const missing=[...(year==='0000'?['ano']:[]),...(banca==='NI'?['banca']:[]),...(orgao==='NI'?['órgão']:[])];
+ const basename=filename.replace(/\.pdf$/i,'').replace(/[_-]+/g,' ').replace(/\s+/g,' ').trim().slice(0,90);
+ const title=[year==='0000'?'Ano não identificado':year,banca==='NI'?'Banca não identificada':banca,orgao==='NI'?'Órgão não identificado':orgao,basename||'Prova importada'].join(' — ');
+ return {title,year,banca,orgao,missing};
+}
