@@ -35,7 +35,7 @@ export function createSyncClient({getState,setState,notify,storage,endpoint=''})
   if(normalized!==url){url=normalized;base=null;storage.removeItem(KEY);storage.setItem(URLKEY,url);lastError='';lastSuccess=false;}
   show();if(url)request(0);
  }
- function request(delay=650){if(!url)return;clearTimeout(timer);timer=setTimeout(()=>sync().catch(()=>{}),delay);}
+ function request(delay=4000){if(!url)return;clearTimeout(timer);timer=setTimeout(()=>sync().catch(()=>{}),delay);}
  async function sync(){
   if(!url||busy)return false;
   busy=true;clearTimeout(timer);show();
