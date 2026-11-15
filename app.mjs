@@ -1,6 +1,6 @@
 import {STORAGE_KEY,newId,fresh,normalizeState,parseExamText,parseKey,inferExamMetadata,classify,repeatedSupportText,addExam,recordAttempt,latestAnswer,outcome,stats,filtered,prioritize,createSimulation,finishSimulation,simulationResult,expire,validAnswer} from './core.mjs';
 import {readPdf} from './pdf-import.mjs';
-import {chosenAnswerSection,questionIntegrity} from './pdf-layout.mjs';
+import {chosenAnswerSection,parseGridKey,questionIntegrity} from './pdf-layout.mjs';
 import {createSyncClient} from './sync-client.mjs';
 import {STUDY_CONTEXT,eligibleForList} from './study-context.mjs';
 
@@ -376,11 +376,13 @@ async function importData(form){
     const meta=inferExamMetadata(examRead.text,pdf.name,keyRead.text,keyPdf.name);
     const selected=chosenAnswerSection(keyRead.text,examRead.text);
     if(selected.error)throw Error(selected.error);
-    const key=parseKey(selected.text);
+    const key=selected.format==='grid'?parseGridKey(selected.text):parseKey(selected.text);
     const parsed=examRead.questions.map(q=>{const category=classify(q.stem,q.heading);if(category.disciplineCode==='CE'&&/ANALISTA DE INFORMÁTICA/i.test(meta.title)){category.discipline='Informática';category.disciplineCode='IN';category.confidence='média';}return {...q,...category};});
-    const count=examRead.text.match(/\b(\d{1,3})\s+QUEST[ÕO]ES?\s+OBJETIVAS\b/i);
-    const expected=count?Number(count[1]):Object.keys(key).length;
+    // O total de respostas selecionado no cargo prevalece sobre números
+    // próximos de 'QUESTÕES OBJETIVAS' no texto extraído do PDF.
+    const expected=Object.keys(key).length;
     const problems=questionIntegrity(parsed,key,expected);
+    if(selected.format==='grid'&&expected<20)problems.push('Gabarito tabulado incompleto ou sem a seção correta do cargo');
     const baseTextMarkers=(examRead.text.match(/(?:LEIA|CONSIDERE)\s+(?:O\s+)?TEXTO\s+PARA\s+RESPONDER/gi)||[]).length;
     if(baseTextMarkers>examRead.contexts.length)problems.push('Um ou mais textos-base não foram associados às questões');
     if(selected.section==='única'&&(keyRead.text.match(/PROVA\s+OBJETIVA/gi)||[]).length>1)problems.push('O gabarito parece reunir vários cargos sem identificação confiável');
