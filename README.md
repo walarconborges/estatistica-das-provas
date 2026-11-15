@@ -1,16 +1,23 @@
 # Estatística das Provas
 
-**Versão experimental 0.2.2 — 15/11/2026**  
+**Versão experimental 0.3.0 — 15/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
 
-## Situação atual
+## Versão 0.3.0 — importação espacial e validação
 
-- **Código, site e arquivos de sincronização publicados no GitHub.**
-- **Integração com GitHub programada e testada no nível de regras.** O uso compartilhado só entra em funcionamento depois de publicar e autorizar o Cloudflare Worker.
-- Até o Worker estar conectado, o site continua usando **armazenamento local**. Dados antigos locais são enviados ao primeiro conectar, sem substituir os dados de outros aparelhos.
-- Nunca publique um token GitHub no repositório, na URL do site, no navegador ou em conversas.
+A importação continua pedindo **somente dois PDFs**: a prova e o gabarito. O leitor trabalha por **coordenadas da página**, separando as colunas da prova antes de reconhecer as questões. Para textos compartilhados por várias questões, mantém o vínculo do texto-base. Em questões com elementos visuais ou fórmulas, salva um recorte da questão original como imagem, preservando a possibilidade de responder pelas alternativas.
+
+Quando o gabarito contém vários cargos, o sistema busca primeiro o **número da prova** e o **cargo** no caderno, seleciona a seção correspondente e rejeita documentos ambíguos ou incompatíveis. Antes de gravar, exige sequência consistente de questões, cinco alternativas por questão (provas no formato A–E), e gabarito completo. Se houver algum problema, nenhuma nova prova é cadastrada.
+
+**Validação inicial com PDFs reais:** prova VUNESP 2026, Câmara Municipal de Votorantim, cargo 004 — Analista de Informática (16 páginas), mais gabarito com seis cargos (3 páginas). Extração espacial validada em uma simulação das coordenadas do PDF: **50 questões numeradas de 1 a 50, cinco alternativas por questão, dois textos-base associados aos grupos 1–5 e 6–10, e 50 respostas do gabarito 004**. Os recortes especiais foram preparados para questões como 11 (frações), 17 (figura geométrica), 19 (tabela), 26 (planilha) e 34 (elemento visual).
+
+**Limitação ainda pendente:** a validação visual final, com os PDFs importados pelo navegador no celular, ainda precisa ser realizada. PDFs com diagramações diferentes, digitalizados ou apenas imagens podem exigir outros métodos, inclusive OCR; não há garantia de extração perfeita para todas as bancas. Gabaritos de certo/errado e questões com menos de cinco alternativas exigem regras adicionais antes de serem aceitos.
+
+## Sincronização e armazenamento
+
+O serviço Cloudflare Worker está conectado ao GitHub; a gravação e a leitura dos perfis **Wilber** e **TESTE** foram confirmadas em navegadores diferentes. Provas e respostas devem ser verificadas durante os testes. Nunca incluir tokens em arquivos públicos, prints ou conversas. A importação anterior com 49 questões foi removida, mantendo ambos os perfis e uma lista de IDs eliminados para evitar que navegadores desatualizados a recriem.
 
 ## Importação apenas com PDFs
 
