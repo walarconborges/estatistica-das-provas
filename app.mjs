@@ -182,7 +182,7 @@ function flagsScreen(){
   return `${headline('Sinalizações','Problemas e sugestões de classificação aguardam avaliação.')}
   <section class="card"><p>Para sinalizar uma questão, procure seu código em <strong>Questões avulsas</strong> e use o botão <strong>Sinalizar problema</strong>.</p>
   <p class="hint">Com o GitHub sincronizado, novas sinalizações são encaminhadas para Issues. A alteração só é aplicada depois da aprovação.</p>
-  ${own.length?own.map(f=>`<div class="stat-line"><div><strong>${h(question(f.questionId)?.code||'Questão')}</strong><div class="small-muted">${h(f.type)} — ${h(f.note)} · ${niceDate(f.at)}</div></div><span class="badge wait">Pendente</span></div>`).join(''):empty('Nenhuma sinalização registrada neste perfil.')}</section>`;
+  ${own.length?own.map(f=>`<div class="stat-line"><div><strong>${h(question(f.questionId)?.code||'Questão')}</strong><div class="small-muted">${h(f.type)} — ${h(f.note)} · ${niceDate(f.at)}</div></div><span class="badge wait">${h(f.status==='approved'?'Aprovada':f.status==='rejected'?'Rejeitada':'Pendente')}</span></div>`).join(''):empty('Nenhuma sinalização registrada neste perfil.')}</section>`;
 }
 function settingsScreen(){
   return `${headline('Dados e backup','Ferramentas para preservar os dados durante o período de testes.')}
