@@ -58,6 +58,7 @@ export function applyDelta(existing,delta){
     continue; // questões, gabaritos, classificações e sinalizações existentes são imutáveis para participantes
    }
    if(type==='questions'){
+    if(item.id.startsWith('cj-'))throw Error('Identificador reservado para adaptação automática.');
     if(!state.exams.some(e=>e.id===item.examId)&&!(delta.exams||[]).some(e=>e.id===item.examId))throw Error('Questão sem prova correspondente.');
     if(state.questions.some(q=>q.code===item.code))item.code=makeCode(state,item,item);
     delete item.adaptation; // Apenas o Worker gera adaptações legais verificadas.
