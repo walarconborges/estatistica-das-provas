@@ -2,6 +2,7 @@ import {STORAGE_KEY,newId,fresh,normalizeState,parseExamText,parseKey,inferExamM
 import {readPdf} from './pdf-import.mjs';
 import {chosenAnswerSection,questionIntegrity} from './pdf-layout.mjs';
 import {createSyncClient} from './sync-client.mjs';
+import {STUDY_CONTEXT,eligibleForList} from './study-context.mjs';
 
 const $=s=>document.querySelector(s);
 const $$=s=>Array.from(document.querySelectorAll(s));
@@ -12,7 +13,7 @@ const niceDate=x=>x?new Date(x).toLocaleDateString('pt-BR'):'—';
 let state;
 try{state=normalizeState(JSON.parse(localStorage.getItem(STORAGE_KEY)||'null'))}catch{state=fresh()}
 expire(state);
-let profileId=null,view='home',selectedSimId=null,currentFilter={},currentPool=[],limitAvulsas=10,questionSearch='';
+let profileId=null,view='home',selectedSimId=null,currentFilter={studyArea:'candeias'},currentPool=[],limitAvulsas=10,questionSearch='';
 let latestImportMessage='';
 let statusMessage='';
 const sync=createSyncClient({
@@ -151,12 +152,13 @@ function filterForm(kind='questions'){
   ${selectField('banca','Banca',u.bancas,currentFilter.banca)}
   ${selectField('year','Ano',u.years,currentFilter.year)}
   ${selectField('orgao','Órgão',u.orgaos,currentFilter.orgao)}
+  <div class="field"><label>Legislação municipal</label><select name="studyArea"><option value="candeias" ${currentFilter.studyArea!=='original'?'selected':''}>Candeias do Jamari — somente validada</option><option value="original" ${currentFilter.studyArea==='original'?'selected':''}>Prova original, sem adaptação</option></select></div>
   ${selectField('outcome','Meu histórico',[['unanswered','Não respondidas'],['wrong','Erradas'],['correct','Acertadas']].map(x=>x[0]),currentFilter.outcome,'Todas')}
   <div class="field"><label>Situação da questão</label><select name="status"><option value="">Ativas (padrão)</option><option value="all" ${currentFilter.status==='all'?'selected':''}>Todas, incluindo anuladas</option><option value="annulled" ${currentFilter.status==='annulled'?'selected':''}>Somente anuladas</option><option value="outdated" ${currentFilter.status==='outdated'?'selected':''}>Somente desatualizadas</option><option value="needs-review" ${currentFilter.status==='needs-review'?'selected':''}>Necessitam revisão da extração</option></select></div>
   ${mode?`<div class="field"><label>Quantidade de questões</label><input type="number" name="count" min="1" max="1000" value="20" required></div>`:`<div class="field"><label>Mostrar quantas questões?</label><input type="number" name="count" min="1" max="1000" value="${limitAvulsas}" required></div>`}
   ${!mode?`<div class="field span-all"><label>Buscar código permanente</label><input class="code-search" name="code" placeholder="Q2026LPGIBGPSEMED1" value="${h(currentFilter.code||'')}"></div>`:''}
   </div><div class="actions"><button type="submit">${mode?'Criar simulado':'Buscar questões'}</button></div>
-  <p class="hint">Por padrão, o sorteio prioriza questões inéditas. Você pode escolher deliberadamente questões já respondidas, anuladas ou desatualizadas.</p>
+  <p class="hint">Por padrão, o sorteio prioriza questões inéditas. Questões municipais de outras cidades não entram no modo Candeias até serem juridicamente validadas. Use “Prova original” para consultá-las.</p>
   </form>`;
 }
 function alternatives(q,scope,chosen=''){
@@ -267,7 +269,7 @@ function updateQuestionFeedback(qid){
 }
 function formsFilter(form){
   const f=new FormData(form);
-  return Object.fromEntries(['discipline','topic','banca','year','orgao','outcome','status','code'].map(k=>[k,String(f.get(k)||'')]));
+  return Object.fromEntries(['discipline','topic','banca','year','orgao','outcome','status','code','studyArea'].map(k=>[k,String(f.get(k)||'')]));
 }
 async function importData(form){
   const fd=new FormData(form),pdf=fd.get('examPdf'),keyPdf=fd.get('keyPdf');
@@ -405,12 +407,13 @@ document.addEventListener('submit',async e=>{
   }
   if(form.id==='import-form'){await importData(form);return}
   currentFilter=formsFilter(form);
-  const candidates=filtered(state,profileId,currentFilter);
+  const beforeTerritory=filtered(state,profileId,currentFilter);
+  const candidates=beforeTerritory.filter(q=>eligibleForList(q,exam(q.examId),currentFilter.studyArea||'candeias'));
   const count=Math.max(1,Math.min(1000,Number(new FormData(form).get('count')||10)));
   if(form.id==='filter-form'){
     limitAvulsas=count;currentPool=prioritize(state,profileId,candidates).slice(0,count);refresh();return;
   }
-  if(!candidates.length){toast('Não há questões que correspondam aos filtros.');return}
+  if(!candidates.length){toast(beforeTerritory.length?'Legislação municipal sem adaptação validada para Candeias. Selecione Prova original para consultá-la.':'Não há questões que correspondam aos filtros.');return}
   const seen=new Set(),picked=[];
   for(const q of prioritize(state,profileId,candidates)){
     const group=q.duplicateGroup||q.id;
