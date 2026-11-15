@@ -1,9 +1,17 @@
 # Estatística das Provas
 
-**Versão experimental 0.4.2 — 15/11/2026**  
+**Versão experimental 0.4.3 — 15/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+### Itens e sobrescritos tipográficos — versão 0.4.3
+
+- **Questão 9:** cada passagem que começa com um marcador `•` é exibida em uma linha própria, preservando o enunciado introdutório e a pergunta final. Esse padrão vale também para outras listas estruturadas.
+- **Questão 37:** pares de nomes e hashes de 32 a 64 dígitos são apresentados em linhas individuais.
+- O PDF usa letras sobrescritas menores em ordinais como `1º parágrafo`, `2º parágrafo` e `nº 04`. A ordenação vertical anterior interpretava a letra `o` como uma linha própria, podendo colocá-la no texto ou na alternativa E da questão anterior. O leitor agora associa apenas esses glifos menores ao número ou à abreviatura correspondente usando fonte, distância e coordenadas da página, sem apagar artigos legítimos.
+- Conferência no PDF original: a alternativa **E da questão 4** termina em `à` (o `o` indevido pertence a `1º parágrafo` da questão 5); a alternativa **E da questão 21** termina em `Mesa Diretora.` (o `o` indevido pertence ao `nº 04` da questão 22). Não é correto transformar `à` em `ao`.
+- A impressão também preserva as quebras dos itens. Foram adicionados testes para listas, hashes, ordinal e integridade das alternativas; **47 testes automatizados passaram**.
 
 ### Frações em PDF — correção de posição (v0.4.2)
 
