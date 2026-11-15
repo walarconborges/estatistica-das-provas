@@ -36,7 +36,7 @@ O site continua com GitHub Pages + Worker, sem banco novo e sem limpar registros
 - Quando a franquia gratuita termina, as novas explicações ficam indisponíveis até o próximo período; as explicações já salvas podem continuar sendo consultadas. Não há contratação automática de plano pago.
 - A impressão dos simulados em andamento deixa de incluir o gabarito. A tela de resultados e o gabarito ficam disponíveis apenas após finalizar.
 - O contexto legislativo inicial passa a ser **Candeias do Jamari — RO**, com seleção entre legislação local validada e prova original. Legislação institucional de outras cidades sem equivalência comprovada fica fora dos simulados adaptados, mas permanece no banco original.
-- Adaptações jurídicas **não são publicadas apenas trocando nomes de municípios**: precisam de fonte oficial, dispositivo, novo gabarito e aprovação do proprietário pelo GitHub. Sem essa validação, permanecem pendentes; nenhuma questão é alterada ou classificada definitivamente como inválida.
+- Na versão 0.5.0, as adaptações jurídicas dependiam de aprovação manual. **Regra substituída na versão 0.6.0:** adaptações podem ser publicadas automaticamente quando existir um fato jurídico previamente conferido no catálogo oficial; o usuário pode sinalizar eventual erro.
 - As explicações automáticas de questões dependentes de figura e de normas municipais não verificadas ficam suspensas para evitar respostas inventadas.
 
 ### Cloudflare e publicação
