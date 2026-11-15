@@ -53,7 +53,7 @@ export function applyDelta(existing,delta){
    if(type==='questions'){
     if(!state.exams.some(e=>e.id===item.examId)&&!(delta.exams||[]).some(e=>e.id===item.examId))throw Error('Questão sem prova correspondente.');
     if(state.questions.some(q=>q.code===item.code))item.code=makeCode(state,item,item);
-    item.secondary=[];item.aliases=[];if(!['active','annulled'].includes(item.status))item.status='active';
+    item.secondary=[];item.aliases=[];if(!['active','annulled','needs-review'].includes(item.status))item.status='needs-review';
    }
    if(type==='flags'){
     if(!state.questions.some(q=>q.id===item.questionId)&&!(delta.questions||[]).some(q=>q.id===item.questionId))throw Error('Sinalização sem questão.');
