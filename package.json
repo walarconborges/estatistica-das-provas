@@ -1,11 +1,11 @@
 {
   "name": "estatistica-das-provas",
-  "version": "0.4.3",
+  "version": "0.5.0",
   "private": true,
   "type": "module",
   "scripts": {
     "test": "node --test tests/*.test.mjs",
-    "check": "node --check app.mjs && node --check core.mjs && node --check pdf-import.mjs && node --check pdf-layout.mjs && node --check sync-client.mjs && node --check worker/index.mjs && node --check scripts/resolve-flag.mjs"
+    "check": "node --check app.mjs && node --check study-context.mjs && node --check worker/explanations.mjs && node --check core.mjs && node --check pdf-import.mjs && node --check pdf-layout.mjs && node --check sync-client.mjs && node --check worker/index.mjs && node --check scripts/resolve-flag.mjs"
   },
   "engines": {
     "node": ">=20"
