@@ -1,4 +1,4 @@
-name = "estatistica-das-provas-api"
+name = "estatistica-das-provas"
 main = "worker/index.mjs"
 compatibility_date = "2026-10-01"
 
