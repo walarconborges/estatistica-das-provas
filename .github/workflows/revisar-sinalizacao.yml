@@ -1,23 +1,24 @@
-name: Aprovar sinalizações
+name: Revisar sinalizações
 on:
-  issues:
-    types: [labeled]
+  issue_comment:
+    types: [created]
 permissions:
   contents: write
   issues: write
 jobs:
-  decidir:
+  revisar:
     if: >-
       github.event.sender.login == github.repository_owner &&
-      (github.event.label.name == 'aprovado' || github.event.label.name == 'rejeitado')
+      github.event.issue.state == 'open' &&
+      (github.event.comment.body == 'aprovar' || github.event.comment.body == 'rejeitar')
     runs-on: ubuntu-latest
     steps:
-      - name: Obter código do projeto
+      - name: Obter código
         uses: actions/checkout@v4
-      - name: Executar decisão do proprietário
+      - name: Aplicar decisão
         env:
           GH_TOKEN: ${{ github.token }}
           REPOSITORY: ${{ github.repository }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
-          ISSUE_LABEL: ${{ github.event.label.name }}
-        run: node scripts/resolve-issue.mjs
+          DECISION: ${{ github.event.comment.body }}
+        run: node scripts/resolve-flag.mjs
