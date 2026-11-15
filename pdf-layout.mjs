@@ -141,7 +141,8 @@ export function spatialLines(items,pageWidth,pageHeight,{split=true}={}){
       (fraction.test(it.str)&&/[\p{L}\p{N}]$/u.test(prev.str))||
       (fraction.test(prev.str)&&/^[\p{L}\p{N}]/u.test(it.str))
     );
-    if(prev&&(it.x>prev.x+prev.width+1||spaceNearFraction))line+=' ';
+    const spaceAfterOrdinal=prev&&/º$/u.test(prev.str)&&/^[\p{L}\p{N}]/u.test(it.str);
+    if(prev&&(it.x>prev.x+prev.width+1||spaceNearFraction||spaceAfterOrdinal))line+=' ';
     line+=it.str;prev=it;
    }
    row.text=line.replace(/\s+/g,' ').trim();
