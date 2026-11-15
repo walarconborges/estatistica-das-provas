@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {spatialLines,spatialQuestions,chosenAnswerSection,questionIntegrity,humanizePdfText} from '../pdf-layout.mjs';
+import {spatialLines,spatialQuestions,chosenAnswerSection,questionIntegrity,humanizePdfText,attachSuperscriptOrdinals,formatQuestionStem} from '../pdf-layout.mjs';
 import {parseKey,inferExamMetadata} from '../core.mjs';
 function item(str,x,y,width=40){return {str,transform:[1,0,0,1,x,842-y],width};}
 test('leitura espacial separa duas colunas e preserva a numeração original',()=>{
@@ -216,4 +216,80 @@ test('questão 15 real: frações 3/8 e 7/8 preservam a ordem e o lugar nas fras
  assert.equal(humanizePdfText(lines[0].text),'e o número de mulheres é 3/8. Com a intenção');
  assert.equal(humanizePdfText(lines[1].text),'Para que a razão mencionada, que era 3/8, se tornasse 7/8,');
  assert.equal((lines.map(l=>l.text).join(' ').match(/3\/8/g)||[]).length,2);
+});
+
+
+test('Q9: cada passagem do enunciado aparece numa linha independente',()=>{
+ const original=[
+  'Considere as passagens:',
+  '• A Índia bloqueia avanços em temas sensíveis, como',
+  'tributação digital. (2º parágrafo)',
+  '• Ainda assim, o comércio global não desacelerou na',
+  'mesma proporção. (3º parágrafo)',
+  '• As regras não desapareceram, mas já não dependem',
+  'do fórum que as consolidou. (4º parágrafo)',
+  '• Isso exige flexibilidade para contornar bloqueios, mas',
+  'também algum esforço de coordenação... (5º parágrafo)',
+  'As expressões destacadas estabelecem relações de sentido de:'
+ ];
+ const formatted=formatQuestionStem(original);
+ assert.equal(formatted.split('\n').filter(line=>line.trim().startsWith('•')).length,4);
+ assert.match(formatted,/passagens:\n\n•/);
+ assert.match(formatted,/\(5º parágrafo\)\n\nAs expressões/);
+ assert.ok(!/parágrafo\) •/.test(formatted));
+});
+test('Q37: linhas com nomes e hashes são mantidas separadas',()=>{
+ const source=[
+  'O trecho a seguir foi obtido por um usuário malicioso.',
+  'alice 3102125cae72c19f215480ddf2d0d5c3',
+  'bob e10adc3949ba59abbe56e057f20f883e',
+  'jason 3102125cae72c19f215480ddf2d0d5c3',
+  'mike 688c5070d220ad89af28a7b7eb999352',
+  'Considerando as informações apresentadas, assinale a alternativa correta.'
+ ];
+ const result=formatQuestionStem(source);
+ assert.equal(result.split('\n').filter(x=>/^(?:alice|bob|jason|mike) [0-9a-f]{32}$/i.test(x)).length,4);
+ assert.match(result,/mike 688c5070d220ad89af28a7b7eb999352\n\nConsiderando/);
+});
+test('sobrescritos da VUNESP reconstroem 2º parágrafo sem o isolado',()=>{
+ const H=841.89;
+ const item=(str,x,y,width,height=9.5)=>({str,transform:[1,0,0,height,x,H-y],width,height});
+ const rows=spatialLines([
+  item('tributação digital. (2',329.3,64,82.9),
+  item('o',412.2,60.3,3.7,6.6),
+  item(' parágrafo)',415.9,64,47)
+ ],595.28,H);
+ assert.deepEqual(rows.map(r=>r.text),['tributação digital. (2º parágrafo)']);
+});
+test('Q21 e Q22: o ordinal da questão seguinte não invade a alternativa E anterior',()=>{
+ const H=841.89;
+ const item=(str,x,y,width,height=9.5)=>({str,transform:[1,0,0,height,x,H-y],width,height});
+ const rows=spatialLines([
+  item('(E) Mesa Diretora.',51,245,100),
+  item('22. Considerando o que dispõe a Resolução n',34,283,197.5),
+  item('o',231.5,279.3,3.7,6.6),
+  item(' 04, de 26 de',235.2,283,60)
+ ],595.28,H);
+ assert.equal(rows.length,2);
+ assert.equal(rows[0].text,'(E) Mesa Diretora.');
+ assert.match(rows[1].text,/Resolução nº 04,/);
+ assert.ok(!rows.some(r=>r.text==='o'));
+});
+test('Q4 e Q5: o ordinal da nova questão não se junta à resposta de crase',()=>{
+ const H=841.89;
+ const item=(str,x,y,width,height=9.5)=>({str,transform:[1,0,0,height,x,H-y],width,height});
+ const rows=spatialLines([
+  item('(E) à ... às ... a ... à ... à',51,245,122),
+  item('05. Considere as passagens do 1',34,296.4,142.7),
+  item('o',176.7,292.7,3.7,6.6),
+  item(' parágrafo:',180.4,296.4,42)
+ ],595.28,H);
+ assert.equal(rows[0].text,'(E) à ... às ... a ... à ... à');
+ assert.match(rows[1].text,/passagens do 1º parágrafo/);
+});
+test('sem estrutura ordinal, um artigo o legítimo não é apagado',()=>{
+ const H=841.89;
+ const item=(str,x,y,width,height=9.5)=>({str,transform:[1,0,0,height,x,H-y],width,height});
+ const rows=spatialLines([item('o',60,130,5,9.5),item('professor',72,130,50,9.5)],595.28,H);
+ assert.equal(rows[0].text,'o professor');
 });
