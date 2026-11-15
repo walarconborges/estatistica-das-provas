@@ -252,7 +252,7 @@ export function inferExamMetadata(examText='',examFilename='',keyText='',keyFile
  const keyHead=String(keyText||'').slice(0,1300);
  const raw=[filename,head,String(keyFilename||''),keyHead].join('\n');
  const source=textNorm(raw);
- const preferredYear=textNorm(filename+' '+head.slice(0,1500));
+ const preferredYear=textNorm(filename+' '+head.slice(0,1500)+' '+keyHead);
  const years=[...preferredYear.matchAll(/\b(?:19|20)\d{2}\b/g)].map(x=>x[0]);
  const year=years.find(x=>Number(x)>=1980&&Number(x)<=new Date().getFullYear()+2)||'0000';
  const bancas=[
@@ -274,6 +274,7 @@ export function inferExamMetadata(examText='',examFilename='',keyText='',keyFile
   ['FAUEL',/\bFAUEL\b/]
  ];
  const orgaos=[
+  ['CMVOTORANTIM',/CAMARA MUNICIPAL DE VOTORANTIM/],
   ['SEMUSA',/\bSEMUSA\b|SECRETARIA MUNICIPAL DE SAUDE/],
   ['SEMED',/\bSEMED\b|SECRETARIA MUNICIPAL DE EDUCACAO/],
   ['SEDUC',/\bSEDUC\b|SECRETARIA DE ESTADO DA EDUCACAO/],
@@ -291,6 +292,7 @@ export function inferExamMetadata(examText='',examFilename='',keyText='',keyFile
  const banca=find(bancas),orgao=find(orgaos);
  const missing=[...(year==='0000'?['ano']:[]),...(banca==='NI'?['banca']:[]),...(orgao==='NI'?['órgão']:[])];
  const basename=filename.replace(/\.pdf$/i,'').replace(/[_-]+/g,' ').replace(/\s+/g,' ').trim().slice(0,90);
- const title=[year==='0000'?'Ano não identificado':year,banca==='NI'?'Banca não identificada':banca,orgao==='NI'?'Órgão não identificado':orgao,basename||'Prova importada'].join(' — ');
+ const cargo=/ANALISTA DE INFORMATICA/.test(source)?'Analista de Informática':basename||'Prova importada';
+ const title=[year==='0000'?'Ano não identificado':year,banca==='NI'?'Banca não identificada':banca,orgao==='NI'?'Órgão não identificado':orgao,cargo].join(' — ');
  return {title,year,banca,orgao,missing};
 }
