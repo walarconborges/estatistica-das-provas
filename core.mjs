@@ -286,6 +286,7 @@ export function inferExamMetadata(examText='',examFilename='',keyText='',keyFile
   ['FAUEL',/\bFAUEL\b/]
  ];
  const orgaos=[
+  ['CRQ-V',/CONSELHO REGIONAL DE QUIMICA DA 5(?:A|ª) REGIAO|\bCRQ\s*[-–]?\s*V\b/],
   ['CMVOTORANTIM',/CAMARA MUNICIPAL DE VOTORANTIM/],
   ['SEMUSA',/\bSEMUSA\b|SECRETARIA MUNICIPAL DE SAUDE/],
   ['SEMED',/\bSEMED\b|SECRETARIA MUNICIPAL DE EDUCACAO/],
