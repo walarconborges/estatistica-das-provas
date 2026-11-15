@@ -12,7 +12,7 @@ const entry=(id,matcher,question,correct,distractors,law,article,reason,sourceUr
  id,matcher,question,correct,distractors,law,article,reason,sourceUrl
 });
 export const LEGAL_FACTS=[
- entry('investidura',/\bINVESTIDURA\b|\bPOSSE\b/,
+ entry('investidura',/\bINVESTIDURA\b|\bPOSSE\b.{0,30}\b(?:CARGO PUBLICO|SERVIDOR PUBLICO)\b/,
   'Segundo a Resolução nº 173/CMCJ/2025, como se dá a investidura em cargo público na Câmara Municipal de Candeias do Jamari?',
   'Com a posse.',
   ['Com a mera inscrição no concurso.','Com a homologação da inscrição.','Com a publicação do edital.','Com a aprovação na prova objetiva.'],
