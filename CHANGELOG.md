@@ -1,3 +1,12 @@
+## 0.4.3 — 15/11/2026
+- Preservada uma passagem por linha nas listas de enunciados, incluindo os quatro itens da questão 9.
+- Preservadas linhas independentes para pares de nomes e hashes, como na questão 37.
+- Corrigido o deslocamento de glifos `o` sobrescritos: agora compõem `1º parágrafo`, `2º parágrafo` e `nº 04` pelo tamanho da fonte e coordenadas.
+- Corrigidas as contaminações da alternativa E da questão 4 e da questão 21, sem substituir `à` por `ao`.
+- Impressão passa a respeitar as quebras de linha dos itens.
+- Adicionados seis testes de regressão; **47 testes automatizados aprovados**.
+- Pendente: confirmação da extração real no navegador com os PDFs originais.
+
 ## 0.4.2 — 15/11/2026
 - Corrigida a posição vertical de frações que apareciam deslocadas ou agrupadas no enunciado.
 - A fração reconstruída passa a herdar a linha do texto vizinho, respeitando a sequência das palavras e a pontuação.
