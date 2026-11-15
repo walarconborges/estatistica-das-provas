@@ -39,6 +39,57 @@ export function humanizePdfText(input){
     .replace(/\b(merca)\s+(dos)\b/giu,'$1$2');
  return value.replace(/\s*\n\s*/g,' ').replace(/[ \t]{2,}/g,' ').replace(/\s+([,.;:!?])/g,'$1').trim();
 }
+
+/**
+ * O "o" de "2º parágrafo" e "nº 04" aparece em fonte menor acima
+ * da linha. Não deve ser deslocado para o enunciado/alternativa anterior.
+ */
+export function attachSuperscriptOrdinals(pieces){
+ const consumed=new Set();
+ for(const mark of pieces){
+  if(mark.str!=='o'||!mark.height||mark.height>=8.5)continue;
+  const left=pieces.filter(p=>p!==mark&&p.col===mark.col&&
+   /(?:\d|n)$/i.test(p.str.trim())&&p.height>mark.height*1.17&&
+   Math.abs(p.y-mark.y)<=6.5&&
+   mark.x-(p.x+p.width)>=-1.8&&mark.x-(p.x+p.width)<=4.5)
+   .sort((a,b)=>Math.abs(a.x+a.width-mark.x)-Math.abs(b.x+b.width-mark.x))[0];
+  if(!left)continue;
+  const right=pieces.find(p=>p!==mark&&p!==left&&p.col===mark.col&&
+   Math.abs(p.y-left.y)<=3.8&&
+   p.x-(mark.x+mark.width)>=-2&&p.x-(mark.x+mark.width)<=6.5&&
+   /^\s*(?:par[aá]grafo\b|0\d{1,2}\b)/iu.test(p.str));
+  if(!right)continue;
+  left.str=left.str+'º';
+  left.width=Math.max(left.width,mark.x+mark.width-left.x);
+  consumed.add(mark);
+ }
+ return pieces.filter(p=>!consumed.has(p));
+}
+
+/** Mantém listas numeradas e itens em parágrafos próprios. */
+export function formatQuestionStem(parts){
+ const text=humanizePdfText(Array.isArray(parts)?parts.join('\n'):String(parts||''));
+ if(text.includes('•')){
+  return text.replace(/\s*•\s*/gu,'\n• ')
+   .replace(/^([^\n]+)\n• /u,'$1\n\n• ')
+   .replace(/(\(\d{1,2}º\s+parágrafo\))\s+(?=(?:As expressões|Os termos|As vírgulas|As afirmações|De acordo|Assinale|Considerando)\b)/giu,'$1\n\n')
+   .replace(/(\.\.\.|\.)\s+(?=(?:As expressões|Os termos|As vírgulas|As afirmações)\b)/giu,'$1\n\n')
+   .trim();
+ }
+ const source=Array.isArray(parts)?parts:[String(parts||'')];
+ const hashRows=source.filter(s=>/^\s*[\p{L}][\p{L}\d_-]{1,24}\s+[a-f0-9]{32,64}\s*$/iu.test(s));
+ if(hashRows.length>=2){
+  let value=text;
+  for(const raw of hashRows){
+   const item=raw.trim();
+   value=value.replace(item,'\n'+item);
+  }
+  value=value.replace(/(\b[a-f0-9]{32,64})\s+(?=(?:Considerando|Com base|De acordo|Assinale)\b)/iu,'$1\n\n');
+  return value.trim();
+ }
+ return text;
+}
+
 function restoreVerticalFractions(pieces){
  const consumed=new Set();
  for(const upper of pieces){
@@ -70,9 +121,9 @@ export function spatialLines(items,pageWidth,pageHeight,{split=true}={}){
   const str=String(item.str||'').replace(/[\u0000-\u001f\u007f\u0090\u00ad]/g,'').trim();
   const x=Number(item.transform?.[4]||0),y=pageHeight-Number(item.transform?.[5]||0);
   if(!str||!Number.isFinite(x)||!Number.isFinite(y)||y<13||y>pageHeight-24||/^PCIMARKPCI\b|^WWW\.PCICONCURSOS\.|^CVOT\d+|^CONFIDENCIAL/i.test(str))continue;
-  pieces.push({x,y,col:split?(x<pageWidth/2-1?0:1):0,str,width:Number(item.width||0)});
+  pieces.push({x,y,col:split?(x<pageWidth/2-1?0:1):0,str,width:Number(item.width||0),height:Number(item.height||Math.abs(item.transform?.[3])||0)});
  }
- const normalizedPieces=restoreVerticalFractions(pieces);
+ const normalizedPieces=restoreVerticalFractions(attachSuperscriptOrdinals(pieces));
  const lines=[];
  for(const col of split?[0,1]:[0]){
   const group=normalizedPieces.filter(i=>i.col===col).sort((a,b)=>a.y-b.y||a.x-b.x),rows=[];
@@ -122,7 +173,7 @@ export function spatialQuestions(pages){
     if(!current)return;
     current.endY=Math.max(current.startY+12,Math.min(page.height-25,at));
     const rows=current.stemRows||[];
-    current.stem=humanizePdfText(current.stem.join('\n'));
+    current.stem=formatQuestionStem(current.stem);
     current.options=current.options.map(o=>({...o,text:humanizePdfText(o.text)})).filter(o=>o.text);
     let bestGap=0,bestIndex=-1;
     for(let j=0;j<rows.length-1;j++){
