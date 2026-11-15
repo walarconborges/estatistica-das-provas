@@ -1,7 +1,7 @@
 // Extração espacial: separa colunas e preserva a posição das questões na página.
 const norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toUpperCase();
 const noise=s=>/^(?:PCIMARKPCI\b|WWW\.PCICONCURSOS\.|CVOT\d+|CONFIDENCIAL ATE|\d{1,2}\s*$|R\s*A\s*S\s*C\s*U\s*N\s*H\s*O\s*$)/i.test(norm(s.trim()))||/MDAwM[A-Za-z0-9+/=]{35}/.test(s);
-const questionRx=/^(?:QUEST[AÃ]O\s*)?(\d{1,3})\s*[.):\-]\s*(.*)$/i;
+const questionRx=/^(?:QUEST[AÃ]O\s+0?(\d{1,3})(?:\s*[.):\-]\s*(.*))?|(\d{1,3})\s*[.):\-]\s*(.*))$/i;
 const altRx=/^\s*(?:\(([A-E])\)|([A-E])\s*[.):\-])\s*(.*)$/i;
 const isHeading=s=>/^(?:L[IÍ]NGUA PORTUGUESA|MATEM[AÁ]TICA|RACIOC[IÍ]NIO L[OÓ]GICO|LEGISLA[CÇ][AÃ]O|CONHECIMENTOS ESPEC[IÍ]FICOS|INFORM[AÁ]TICA|DIREITO ADMINISTRATIVO|DIREITO CONSTITUCIONAL|CONHECIMENTOS GERAIS)$/i.test(s.trim());
 
@@ -152,7 +152,7 @@ export function spatialLines(items,pageWidth,pageHeight,{split=true}={}){
  return lines;
 }
 function contextMarker(line){
- const m=line.match(/(?:LEIA|CONSIDERE)\s+(?:O\s+)?TEXTO\s+PARA\s+RESPONDER\s+[ÀA]S?\s+QUEST[OÕ]ES?\s+(?:DE\s*)?0?(\d{1,3})\s*A\s*0?(\d{1,3})\s*:/i);
+ const m=line.match(/(?:LEIA|CONSIDERE)\s+(?:O\s+)?TEXTO\s+PARA\s+RESPONDER\s+[ÀA]S?\s+QUEST[OÕ]ES?\s+(?:DE\s*)?0?(\d{1,3})\s*A\s*0?(\d{1,3})\s*:/i)||line.match(/^TEXTO\s+PARA\s+(?:AS\s+)?QUEST[OÕ]ES?\s+(?:DE\s*)?0?(\d{1,3})\s*A\s*0?(\d{1,3})\s*\.?$/i);
  return m?{from:Number(m[1]),to:Number(m[2])}:null;
 }
 function needsImage(stem){
@@ -170,6 +170,12 @@ export function spatialQuestions(pages){
    const lines=page.lines.filter(l=>l.col===col);
    if(!lines.length)continue;
    let current=null,collecting=null;
+   function storeContext(){
+    if(!collecting)return;
+    const shared={...collecting,text:humanizePdfText(collecting.text.join('\n'))};
+    if(shared.text)contexts.push(shared);
+    collecting=null;
+   }
    function finish(at){
     if(!current)return;
     current.endY=Math.max(current.startY+12,Math.min(page.height-25,at));
@@ -219,17 +225,20 @@ export function spatialQuestions(pages){
     const s=row.text.trim();if(!s||noise(s))continue;
     if(creditLine.test(s)){if(current)current.creditY=row.y;continue;}
     const foundContext=contextMarker(s);
-    if(foundContext){finish(row.y-2);collecting={...foundContext,text:[],page:page.number,col,startY:row.y};continue;}
+    if(foundContext){finish(row.y-2);storeContext();collecting={...foundContext,text:[],page:page.number,col,startY:row.y};continue;}
     if(isHeading(s)){if(!current||!current.options.length)heading=s;continue;}
+    // Cabeçalho e rodapé do caderno Quadrix não fazem parte do texto-base.
+    if(/^(?:ANALISTA DE INFORM[AÁ]TICA|CONSELHO REGIONAL DE QU[IÍ]MICA DA\s+5[ªA]\s+REGI[ÃA]O|QUADRIX\s*\|\s*20\d{2}|PROVA OBJETIVA)$/i.test(s))continue;
     const qm=s.match(questionRx);
-    if(qm&&Number(qm[1])>=1&&Number(qm[1])<=300){
-     if(current&&current.options.length<3&&Number(qm[1])!==current.originalNumber+1){
+    if(qm&&Number(qm[1]||qm[3])>=1&&Number(qm[1]||qm[3])<=300){
+     const qNumber=Number(qm[1]||qm[3]),qText=qm[2]||qm[4]||'';
+     if(current&&current.options.length<3&&qNumber!==current.originalNumber+1){
       current.stem.push(s);continue; // Frações tipográficas como 2.520 não criam questões novas.
      }
      finish(row.y-15);
-     if(collecting){const shared={...collecting,text:humanizePdfText(collecting.text.join('\n'))};if(shared.text)contexts.push(shared);collecting=null;}
-     const n=Number(qm[1]),context=contexts.find(x=>n>=x.from&&n<=x.to)||null;
-     current={originalNumber:n,heading,stem:[qm[2]||''],stemRows:[{y:row.y,text:qm[2]||''}],options:[],optionsStartY:null,sourcePage:page.number,sourceColumn:col,startY:row.y,endY:0,contextText:context?.text||'',contextRange:context?[context.from,context.to]:null,confidence:'média'};
+     storeContext();
+     const n=qNumber,context=contexts.find(x=>n>=x.from&&n<=x.to)||null;
+     current={originalNumber:n,heading,stem:[qText],stemRows:[{y:row.y,text:qText}],options:[],optionsStartY:null,sourcePage:page.number,sourceColumn:col,startY:row.y,endY:0,contextText:context?.text||'',contextRange:context?[context.from,context.to]:null,confidence:'média'};
      continue;
     }
     if(collecting){collecting.text.push(s);continue;}
@@ -240,6 +249,7 @@ export function spatialQuestions(pages){
     else{current.stem.push(s);current.stemRows.push({y:row.y,text:s})}
    }
    finish(page.height-33);
+   storeContext();
   }
  }
  questions.sort((a,b)=>a.originalNumber-b.originalNumber);
