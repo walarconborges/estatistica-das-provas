@@ -1,3 +1,13 @@
+## 0.4.1 — 15/11/2026
+- Textos-base passam pela limpeza de hifenização e fragmentos, como nos enunciados.
+- Tratados ordinais do PDF que deixavam caracteres `o` deslocados nas alternativas.
+- Removidas da exibição as legendas de autorização repetidas de imagens, mantendo o PDF original inalterado.
+- Corrigidos os recortes de desenho, tabela e planilha para evitar textos adjacentes e legendas duplicadas.
+- A questão 11 deixa de exigir imagem apenas porque há a expressão "o equivalente a"; frações numéricas simples permanecem em texto.
+- Metadados completos recolhidos para reduzir distrações na resolução; código permanente preservado.
+- 39 testes automatizados aprovados e recortes conferidos com o PDF original das questões 17, 19 e 26.
+- Pendente: validação da nova importação no navegador e observação de outras bancas.
+
 ## 0.4.0 — 15/11/2026
 - Recompostos enunciados e alternativas removendo quebras artificiais, hifens do fim da coluna e espaçamento redundante.
 - Acrescentada detecção geométrica conservadora de frações escritas verticalmente no PDF: representação textual `3/8`, `11/9` etc.
