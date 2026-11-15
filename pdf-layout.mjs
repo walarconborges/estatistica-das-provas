@@ -5,6 +5,38 @@ const questionRx=/^(?:QUEST[AÃ]O\s*)?(\d{1,3})\s*[.):\-]\s*(.*)$/i;
 const altRx=/^\s*(?:\(([A-E])\)|([A-E])\s*[.):\-])\s*(.*)$/i;
 const isHeading=s=>/^(?:L[IÍ]NGUA PORTUGUESA|MATEM[AÁ]TICA|RACIOC[IÍ]NIO L[OÓ]GICO|LEGISLA[CÇ][AÃ]O|CONHECIMENTOS ESPEC[IÍ]FICOS|INFORM[AÁ]TICA|DIREITO ADMINISTRATIVO|DIREITO CONSTITUCIONAL|CONHECIMENTOS GERAIS)$/i.test(s.trim());
 
+
+/**
+ * Remove apenas quebras artificiais de linhas provenientes das colunas do PDF.
+ * Substitui o glifo privado da seta SOMENTE no contexto de caminhos de menu.
+ * Mantém símbolos desconhecidos para conferência humana, sem inventar significado.
+ */
+export function humanizePdfText(input){
+ let value=String(input||'').replace(/\u00ad/g,'');
+ value=value.replace(/\b(Guia|Inserir|Formatar|Arquivo|Editar|Exibir|Ferramentas|Ferramenta|Ajuda|Exibição)\s+[\uE000-\uF8FF\uFFFD\u25A1]\s+(?=[\p{L}])/giu,'$1 → ');
+ value=value.replace(/([\p{L}])-\s*\n\s*([\p{Ll}])/gu,'$1$2');
+ value=value.replace(/[ \t]*\n[ \t]*/g,' ');
+ return value.replace(/[ \t]{2,}/g,' ').trim();
+}
+function restoreVerticalFractions(pieces){
+ const consumed=new Set();
+ for(const upper of pieces){
+  if(!/^\d{1,3}$/.test(upper.str)||upper.width>22)continue;
+  const below=pieces.find(lower=>lower!==upper&&!consumed.has(lower)&&
+   /^\d{1,3}$/.test(lower.str)&&lower.width<22&&
+   Math.abs(lower.x-upper.x)<2.8&&lower.y-upper.y>10&&lower.y-upper.y<17.5);
+  if(!below)continue;
+  const neighbor=pieces.find(p=>p!==upper&&p!==below&&p.col===upper.col&&
+    p.x<upper.x&&upper.x-(p.x+p.width)<15&&
+    Math.abs(p.y-upper.y-3.5)<3.7&&p.str.length>=2);
+  if(!neighbor)continue; // impede transformar colunas de números de tabelas em frações
+  upper.str=upper.str+'/'+below.str;
+  upper.width=Math.max(upper.width,below.width);
+  consumed.add(below);
+ }
+ return pieces.filter(p=>!consumed.has(p));
+}
+
 export function spatialLines(items,pageWidth,pageHeight,{split=true}={}){
  const pieces=[];
  for(const item of items){
@@ -13,9 +45,10 @@ export function spatialLines(items,pageWidth,pageHeight,{split=true}={}){
   if(!str||!Number.isFinite(x)||!Number.isFinite(y)||y<13||y>pageHeight-24||/^PCIMARKPCI\b|^WWW\.PCICONCURSOS\.|^CVOT\d+|^CONFIDENCIAL/i.test(str))continue;
   pieces.push({x,y,col:split?(x<pageWidth/2-1?0:1):0,str,width:Number(item.width||0)});
  }
+ const normalizedPieces=restoreVerticalFractions(pieces);
  const lines=[];
  for(const col of split?[0,1]:[0]){
-  const group=pieces.filter(i=>i.col===col).sort((a,b)=>a.y-b.y||a.x-b.x),rows=[];
+  const group=normalizedPieces.filter(i=>i.col===col).sort((a,b)=>a.y-b.y||a.x-b.x),rows=[];
   for(const item of group){
    let row=rows.at(-1);
    if(!row||Math.abs(item.y-row.y)>3.2){row={col,y:item.y,x:item.x,items:[]};rows.push(row)}
@@ -40,7 +73,7 @@ function needsImage(stem){
  // "Tabela MAC" é uma estrutura lógica de um switch, não uma tabela desenhada no PDF.
  if(/\bTABELA\s+MAC\b/.test(t)&&!/\b(?:TABELA|QUADRO)\s+(?:A SEGUIR|ABAIXO)\b/.test(t))return false;
  return /\b(TABELA|DESENHO|FIGURA|GR[AÁ]FICO|PLANILHA|DIAGRAMA|ESQUEMA|CONTORNO DE UM TERRENO)\b/i.test(stem)
-  ||/\b\d+\s*\/\s*\d+\b/.test(stem)||/O EQUIVALENTE A/i.test(stem);
+  ||/O EQUIVALENTE A/i.test(stem);
 }
 export function spatialQuestions(pages){
  const questions=[],contexts=[];let heading='';
@@ -53,10 +86,25 @@ export function spatialQuestions(pages){
    function finish(at){
     if(!current)return;
     current.endY=Math.max(current.startY+12,Math.min(page.height-25,at));
-    current.stem=current.stem.join('\n').trim();
-    current.options=current.options.map(o=>({...o,text:o.text.trim()})).filter(o=>o.text);
+    const rows=current.stemRows||[];
+    current.stem=humanizePdfText(current.stem.join('\n'));
+    current.options=current.options.map(o=>({...o,text:humanizePdfText(o.text)})).filter(o=>o.text);
+    let bestGap=0,bestIndex=-1;
+    for(let j=0;j<rows.length-1;j++){
+      const gap=rows[j+1].y-rows[j].y;
+      if(gap>bestGap){bestGap=gap;bestIndex=j}
+    }
+    if(bestGap>=65&&bestIndex>=0&&current.optionsStartY){
+      current.visualSegments={
+        beforeText:humanizePdfText(rows.slice(0,bestIndex+1).map(r=>r.text).join('\n')),
+        afterText:humanizePdfText(rows.slice(bestIndex+1).map(r=>r.text).join('\n')),
+        top:rows[bestIndex].y+12,
+        bottom:rows[bestIndex+1].y-5
+      };
+    }
     current.extractionReview=current.options.length!==5||current.options.some((o,i)=>o.letter!==String.fromCharCode(65+i));
     current.imageOnly=needsImage(current.stem);
+    if(!current.imageOnly)delete current.visualSegments;
     // Imagens do enunciado asseguram tabelas e fórmulas sem alterar as alternativas de resposta.
     if(current.stem&&current.options.length>=2)questions.push(current);
     current=null;
@@ -74,15 +122,15 @@ export function spatialQuestions(pages){
      finish(row.y-15);
      if(collecting){const shared={...collecting,text:collecting.text.join('\n').trim()};if(shared.text)contexts.push(shared);collecting=null;}
      const n=Number(qm[1]),context=contexts.find(x=>n>=x.from&&n<=x.to)||null;
-     current={originalNumber:n,heading,stem:[qm[2]||''],options:[],sourcePage:page.number,sourceColumn:col,startY:row.y,endY:0,contextText:context?.text||'',contextRange:context?[context.from,context.to]:null,confidence:'média'};
+     current={originalNumber:n,heading,stem:[qm[2]||''],stemRows:[{y:row.y,text:qm[2]||''}],options:[],optionsStartY:null,sourcePage:page.number,sourceColumn:col,startY:row.y,endY:0,contextText:context?.text||'',contextRange:context?[context.from,context.to]:null,confidence:'média'};
      continue;
     }
     if(collecting){collecting.text.push(s);continue;}
     if(!current)continue;
     const am=s.match(altRx);
-    if(am){current.options.push({letter:am[1]||am[2],text:am[3]||''});continue;}
+    if(am){if(current.options.length===0)current.optionsStartY=row.y;current.options.push({letter:am[1]||am[2],text:am[3]||''});continue;}
     if(current.options.length)current.options.at(-1).text+='\n'+s;
-    else current.stem.push(s);
+    else{current.stem.push(s);current.stemRows.push({y:row.y,text:s})}
    }
    finish(page.height-33);
   }
