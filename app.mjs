@@ -185,7 +185,7 @@ function flagsScreen(){
 }
 function settingsScreen(){
   return `${headline('Dados e backup','Ferramentas para preservar os dados durante o período de testes.')}
-  <section class="card"><h2>Armazenamento atual</h2><p><span class="badge wait">Local no dispositivo</span></p><p>As alterações são salvas automaticamente neste navegador. Ainda não estão disponíveis em outros aparelhos. Não use o mesmo navegador em modo anônimo para armazenar resultados permanentes.</p>
+  <section class="card"><h2>Sincronização entre aparelhos</h2><p>Status: <strong>${h(({local:"Modo local",sincronizando:"Sincronizando",pendente:"Alterações pendentes",sincronizado:"GitHub sincronizado"})[sync.status()])}</strong></p><p class="hint">${h(statusMessage||"Os dados permanecem também neste navegador.")}</p><div class="field"><label>Endereço do serviço Cloudflare Worker</label><input id="sync-url" value="${h(sync.getUrl())}" placeholder="https://estatistica-das-provas-api.sua-conta.workers.dev"></div><div class="actions"><button type="button" class="primary" data-action="save-sync-url">Conectar ao GitHub</button><button type="button" class="secondary" data-action="sync-now">Sincronizar agora</button></div></section><section class="card"><h2>Armazenamento atual</h2><p><span class="badge wait">Local no dispositivo</span></p><p>As alterações são salvas automaticamente neste navegador. Ainda não estão disponíveis em outros aparelhos. Não use o mesmo navegador em modo anônimo para armazenar resultados permanentes.</p>
   <div class="actions">${btn('export-json','Exportar backup JSON','primary')}${btn('import-json','Restaurar backup')}</div><input id="restore-input" type="file" accept=".json,application/json" hidden>
   <p class="hint">Ao restaurar um backup, você substitui os dados atualmente armazenados neste navegador.</p></section>
   <section class="card"><h2>Repositório do projeto</h2><a href="https://github.com/walarconborges/estatistica-das-provas" target="_blank" rel="noopener">Abrir código-fonte, documentação e atualizações no GitHub</a></section>`;
@@ -255,12 +255,31 @@ function printQuestions(qs,title,options={}){
   w.document.open();w.document.write(doc);w.document.close();w.focus();setTimeout(()=>w.print(),350);
 }
 function showFlag(qid){
-  const q=question(qid);if(!q)return;
-  const type=prompt('Sinalizar '+q.code+'\nTipo: classificação, gabarito, anulada, desatualizada, extração ou outro','classificação');
-  if(type===null)return;
-  const note=prompt('Descreva o problema e, se possível, sugira a classificação ou o gabarito correto.','');
-  if(note===null)return;
-  state.flags.push({id:newId(),profileId,questionId:qid,type:type.trim()||'outro',note:note.trim(),status:'pending',at:new Date().toISOString()});save();toast('Sinalização registrada neste dispositivo; ainda não foi enviada ao GitHub.');
+ const q=question(qid);if(!q)return;
+ const raw=prompt('Sinalizar '+q.code+'\nTipo: classificação, secundária, gabarito, anulada, desatualizada, extração ou outro','classificação');
+ if(raw===null)return;
+ const norm=String(raw).trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+ const type=norm.startsWith('class')?'classification':norm.startsWith('sec')?'secondary':norm.startsWith('gab')?'answer':norm.startsWith('anul')?'annulled':norm.startsWith('desat')?'outdated':norm.startsWith('extr')?'extraction':'other';
+ let proposed={};
+ if(type==='classification'||type==='secondary'){
+  const disc=prompt('Disciplina sugerida:',q.discipline);if(disc===null)return;
+  const topic=prompt('Assunto sugerido:',q.topic);if(topic===null)return;
+  if(!disc.trim()||!topic.trim()){toast('Disciplina e assunto são obrigatórios.');return;}
+  const dc=prompt('Sigla da disciplina (ex.: LP):',q.disciplineCode||'');if(dc===null)return;
+  const tc=prompt('Sigla do assunto (ex.: G):',q.topicCode||'');if(tc===null)return;
+  proposed={discipline:disc.trim(),topic:topic.trim(),disciplineCode:dc.trim(),topicCode:tc.trim()};
+ }
+ if(type==='answer'){
+  const answer=prompt('Qual é a alternativa correta? A, B, C, D ou E',q.answer||'');
+  if(answer===null)return;
+  if(!validAnswer(answer.trim().toUpperCase())){toast('Informe uma alternativa válida.');return;}
+  proposed={answer:answer.trim().toUpperCase()};
+ }
+ if(type==='annulled'||type==='outdated')proposed={status:type};
+ const note=prompt('Justifique a sinalização. A alteração depende de aprovação no GitHub.','');
+ if(note===null||!note.trim())return;
+ state.flags.push({id:newId(),profileId,questionId:qid,type,note:note.trim().slice(0,1500),proposed,status:'pending',at:new Date().toISOString()});
+ save();toast('Sinalização registrada. Confira o status de sincronização no topo.');
 }
 function showLog(qid){
   const q=question(qid),entries=state.attempts.filter(a=>a.questionId===qid&&a.profileId===profileId).slice().reverse();
@@ -361,7 +380,9 @@ document.addEventListener('click',e=>{
       const s=sim(selectedSimId);if(s)printQuestions(s.questionIds.map(question).filter(Boolean),'Simulado — '+profileName(),{original:s.kind==='exam',answers:s.answers});break;
     }
     case 'mark-print':markPrinted(id);break;
-    case 'export-json':downloadFile(JSON.stringify(state,null,2),'estatistica-das-provas-backup-'+new Date().toISOString().slice(0,10)+'.json');break;
+    case 'save-sync-url':{try{sync.configure($('#sync-url').value);toast('Endereço salvo. Verifique o indicador no topo.');}catch(error){toast(error.message);}break;}
+     case 'sync-now':sync.sync().then(ok=>toast(ok?'Dados consultados e sincronizados.':'Não foi possível sincronizar. Confira o endereço e a conexão.'));break;
+     case 'export-json':downloadFile(JSON.stringify(state,null,2),'estatistica-das-provas-backup-'+new Date().toISOString().slice(0,10)+'.json');break;
     case 'import-json':$('#restore-input').click();break;
   }
 });
