@@ -1,9 +1,28 @@
 # Estatística das Provas
 
-**Versão experimental 0.4.3 — 15/11/2026**  
+**Versão experimental 0.5.0 — 15/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.5.0 — Explicações de IA e referência Candeias
+
+**Nenhuma prova ou questão foi apagada.** As importações, códigos, gabaritos, perfis e tentativas existentes permanecem preservados.
+
+- O botão **Explicar questão** aparece depois da correção de uma questão avulsa ou da finalização de um simulado. Importar questões não consome IA.
+- O servidor Cloudflare Workers AI usa um binding privado chamado AI e o modelo de texto Meta Llama 3.1 8B FP8 Fast. Não há chave de IA no navegador.
+- As explicações são armazenadas em arquivos individuais dentro de data/explanations, no GitHub público. Todos os perfis reutilizam o mesmo resultado. Se enunciado/gabarito mudar, a impressão digital do conteúdo invalida o cache.
+- Quando a franquia gratuita termina, as novas explicações ficam indisponíveis até o próximo período; as explicações já salvas podem continuar sendo consultadas. Não há contratação automática de plano pago.
+- A impressão dos simulados em andamento deixa de incluir o gabarito. A tela de resultados e o gabarito ficam disponíveis apenas após finalizar.
+- O contexto legislativo inicial passa a ser **Candeias do Jamari — RO**, com seleção entre legislação local validada e prova original. Legislação institucional de outras cidades sem equivalência comprovada fica fora dos simulados adaptados, mas permanece no banco original.
+- Adaptações jurídicas **não são publicadas apenas trocando nomes de municípios**: precisam de fonte oficial, dispositivo, novo gabarito e aprovação do proprietário pelo GitHub. Sem essa validação, permanecem pendentes; nenhuma questão é alterada ou classificada definitivamente como inválida.
+- As explicações automáticas de questões dependentes de figura e de normas municipais não verificadas ficam suspensas para evitar respostas inventadas.
+
+### Cloudflare e publicação
+
+A configuração do Wrangler habilita o binding AI e aponta para o Worker já conectado ao site, estatistica-das-provas. O código depende de publicação automática via integração GitHub/Cloudflare ou implantação com Wrangler. O segredo GITHUB_TOKEN deve permanecer apenas no Worker; não precisa criar token da OpenAI ou do Gemini.
+
+Os testes de regras e integração acompanham o repositório. As alterações são retrocompatíveis e não requerem migração do arquivo principal de dados. Quando houver novo edital, o município poderá ser modificado sem apagar as provas.
 
 ### Itens e sobrescritos tipográficos — versão 0.4.3
 
