@@ -1,3 +1,10 @@
+## 0.2.1 — 15/11/2026
+- Simplificada a importação: apenas PDF da prova e PDF do gabarito oficial, ambos obrigatórios.
+- Corrigida perda de arquivos selecionados após sincronização em segundo plano.
+- Adicionada confirmação visual dos nomes dos PDFs selecionados.
+- Criada identificação automática de ano, banca, órgão e título, com sinalização de dados não identificados.
+- Acrescentados testes para extração dos metadados.
+
 # Histórico de versões
 
 ## 0.2.0 — 14/11/2026
