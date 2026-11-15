@@ -57,3 +57,25 @@ button.alternative-cross[aria-pressed="true"]:not(.quiet):not(.plain):not(.tab-b
 .question-figure{max-width:min(100%,600px)}
 .question-body:empty{display:none}
 @media print{.question-origin{display:none!important}}
+
+
+/* Explicações consultadas sob demanda. A resolução permanece limpa até o pedido. */
+.explanation-box:not(:empty){
+  border-top:1px solid #dde4ec;
+  margin-top:12px;
+  padding-top:10px;
+}
+.explanation-text{
+  line-height:1.6;
+  white-space:pre-wrap;
+  overflow-wrap:anywhere;
+}
+.result-explanation{
+  border-bottom:1px solid #e1e6ed;
+  padding:12px 0;
+}
+.result-explanation:last-child{border-bottom:0}
+.result-explanation .actions{margin:8px 0}
+@media print{
+  .explanation-box,.result-explanation .actions{display:none!important}
+}
