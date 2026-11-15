@@ -84,7 +84,15 @@ export function spatialLines(items,pageWidth,pageHeight,{split=true}={}){
   for(const row of rows){
    row.items.sort((a,b)=>a.x-b.x);
    let line='',prev=null;
-   for(const it of row.items){if(prev&&it.x>prev.x+prev.width+1)line+=' ';line+=it.str;prev=it;}
+   for(const it of row.items){
+    const fraction=/^\d{1,3}\/\d{1,3}$/;
+    const spaceNearFraction=prev&&(
+      (fraction.test(it.str)&&/[\p{L}\p{N}]$/u.test(prev.str))||
+      (fraction.test(prev.str)&&/^[\p{L}\p{N}]/u.test(it.str))
+    );
+    if(prev&&(it.x>prev.x+prev.width+1||spaceNearFraction))line+=' ';
+    line+=it.str;prev=it;
+   }
    row.text=line.replace(/\s+/g,' ').trim();
    if(row.text&&!noise(row.text))lines.push({text:row.text,y:row.y,x:row.x,col,pageHeight,pageWidth});
   }
