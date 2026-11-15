@@ -1,5 +1,6 @@
 import {STORAGE_KEY,newId,fresh,normalizeState,parseExamText,parseKey,addExam,recordAttempt,latestAnswer,outcome,stats,filtered,prioritize,createSimulation,finishSimulation,simulationResult,expire,validAnswer} from './core.mjs';
 import {readPdf} from './pdf-import.mjs';
+import {createSyncClient} from './sync-client.mjs';
 
 const $=s=>document.querySelector(s);
 const $$=s=>Array.from(document.querySelectorAll(s));
@@ -13,9 +14,26 @@ expire(state);
 let profileId=null,view='home',selectedSimId=null,currentFilter={},currentPool=[],limitAvulsas=10,questionSearch='';
 let latestImportMessage='';
 let statusMessage='';
+const sync=createSyncClient({
+ getState:()=>state,
+ setState:remote=>{
+  state=normalizeState(remote);expire(state);
+  try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state));}catch{}
+  if(profileId&&!state.profiles.some(p=>p.id===profileId)){profileId=null;showProfilePicker();}
+  else if(profileId)refresh();
+  else showProfilePicker();
+ },
+ notify:(status,error)=>{
+  statusMessage=error||'';
+  const label=$('#storage-status');
+  if(label)label.textContent=({local:'Modo local',sincronizando:'Sincronizando...',pendente:'Alterações pendentes',sincronizado:'GitHub sincronizado'})[status]||status;
+ },
+ storage:localStorage,
+ endpoint:window.APP_CONFIG?.apiBase||''
+});
 
 function save(){
-  try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state));return true}
+  try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state));sync.request();return true}
   catch(e){toast('Armazenamento cheio. Exporte um backup antes de continuar.');console.error(e);return false}
 }
 function toast(message){const t=$('#toast');t.textContent=message;t.style.display='block';clearTimeout(toast.timer);toast.timer=setTimeout(()=>t.style.display='none',4800)}
@@ -36,7 +54,7 @@ function navigate(where){view=where;selectedSimId=null;refresh();window.scrollTo
 function refresh(){
   if(!profileId){showProfilePicker();return}
   $$('.tabs button').forEach(b=>b.classList.toggle('active',b.dataset.view===view));
-  $('#storage-status').textContent='Modo local';
+  $('#storage-status').textContent=({local:'Modo local',sincronizando:'Sincronizando...',pendente:'Alterações pendentes',sincronizado:'GitHub sincronizado'})[sync.status()]||'Modo local';
   const pending=state.simulations.filter(s=>s.profileId===profileId&&s.status==='pending');
   $('#notices').innerHTML= pending.length?`<div class="notice">Você tem <strong>${pending.length} simulado(s) não respondido(s)</strong> dentro do prazo de 30 dias. <button class="plain" data-action="show-pending">Consultar</button></div>`:'';
   const map={home:homeScreen,import:importScreen,questions:questionsScreen,sim:simScreen,exams:examScreen,stats:statsScreen,flags:flagsScreen,settings:settingsScreen,session:sessionScreen,result:resultScreen};
@@ -60,7 +78,7 @@ function homeScreen(){
   <section class="card"><h2>Começar</h2><p>Escolha questões por assunto ou monte um simulado com a quantidade que desejar.</p><div class="actions">${btn('go-questions','Questões avulsas','primary')}${btn('go-sim','Criar simulado','secondary')}</div></section>
   <section class="card"><h2>Suas atividades</h2><p>${pending.length} simulado(s) aguardando resposta; ${state.exams.length} prova(s) cadastrada(s).</p><div class="actions">${btn('show-pending','Simulados pendentes')}${btn('go-stats','Minhas estatísticas')}</div></section></div>
   <section class="card"><h2>Sobre os resultados</h2><p>As estatísticas consideram a última resposta válida por questão. Questões em branco não são erros nem acertos e permanecem disponíveis para novos exercícios. Questões anuladas não entram no aproveitamento.</p></section>
-  <div class="notice info">Esta publicação inicial salva dados apenas neste navegador. Perfis e respostas ainda não são compartilhados entre celular e computador. A sincronização pelo GitHub será configurada numa próxima etapa.</div>`;
+  <div class="notice info">O site preserva seus registros neste aparelho e os sincroniza com o GitHub quando o serviço remoto está configurado. Verifique o indicador no topo.</div>`;
 }
 function importScreen(){
   return `${headline('Importar prova','Informe os dados de origem e envie o PDF ou cole o texto das questões.')}
@@ -162,7 +180,7 @@ function flagsScreen(){
   const own=state.flags.filter(x=>x.profileId===profileId).slice().reverse();
   return `${headline('Sinalizações','Problemas e sugestões de classificação aguardam avaliação.')}
   <section class="card"><p>Para sinalizar uma questão, procure seu código em <strong>Questões avulsas</strong> e use o botão <strong>Sinalizar problema</strong>.</p>
-  <p class="hint">Nesta etapa, as sinalizações ficam no navegador. O encaminhamento automático para Issues depende da sincronização remota.</p>
+  <p class="hint">Com o GitHub sincronizado, novas sinalizações são encaminhadas para Issues. A alteração só é aplicada depois da aprovação.</p>
   ${own.length?own.map(f=>`<div class="stat-line"><div><strong>${h(question(f.questionId)?.code||'Questão')}</strong><div class="small-muted">${h(f.type)} — ${h(f.note)} · ${niceDate(f.at)}</div></div><span class="badge wait">Pendente</span></div>`).join(''):empty('Nenhuma sinalização registrada neste perfil.')}</section>`;
 }
 function settingsScreen(){
@@ -351,3 +369,7 @@ $('#switch-user').addEventListener('click',()=>showProfilePicker());
 $('#profile-form').addEventListener('submit',()=>{});
 showProfilePicker();
 save();
+if(sync.isConfigured())sync.sync();
+window.addEventListener('online',()=>sync.sync());
+document.addEventListener('visibilitychange',()=>{if(!document.hidden&&sync.isConfigured())sync.sync();});
+setInterval(()=>{if(sync.isConfigured()&&!document.hidden)sync.sync();},45000);
