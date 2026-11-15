@@ -11,12 +11,33 @@ const isHeading=s=>/^(?:L[IÍ]NGUA PORTUGUESA|MATEM[AÁ]TICA|RACIOC[IÍ]NIO L[O�
  * Substitui o glifo privado da seta SOMENTE no contexto de caminhos de menu.
  * Mantém símbolos desconhecidos para conferência humana, sem inventar significado.
  */
+const imageCredit=/\(?\s*arquivo pessoal\s*;\s*imagem usada com autoriza[cç][aã]o\s*\)?/giu;
+const creditLine=/^\(?\s*arquivo pessoal\s*;\s*imagem usada com autoriza[cç][aã]o\s*\)?$/iu;
+
+/**
+ * Recompõe quebras editoriais sem criar símbolos desconhecidos.
+ * NÃO se deve inventar uma seta sempre que algum glifo falhar.
+ * Frações simples já são tratadas a partir da geometria da página.
+ */
 export function humanizePdfText(input){
  let value=String(input||'').replace(/\u00ad/g,'');
+ value=value.replace(imageCredit,'');
+ // A seta só é inferida em caminhos de menus reconhecíveis.
  value=value.replace(/\b(Guia|Inserir|Formatar|Arquivo|Editar|Exibir|Ferramentas|Ferramenta|Ajuda|Exibição)\s+[\uE000-\uF8FF\uFFFD\u25A1]\s+(?=[\p{L}])/giu,'$1 → ');
- value=value.replace(/([\p{L}])-\s*\n\s*([\p{Ll}])/gu,'$1$2');
- value=value.replace(/[ \t]*\n[ \t]*/g,' ');
- return value.replace(/[ \t]{2,}/g,' ').trim();
+ // Decomposição frequente de palavras justificadas em colunas PDF.
+ value=value.replace(/([\p{L}])-[ \t]*\n[ \t]*([\p{Ll}])/gu,'$1$2');
+ value=value.replace(/([\p{L}])-[ \t]+([\p{Ll}])/gu,'$1$2');
+ // Os ordinais '3º slide' e '1º slide' às vezes são extraídos com
+ // o pequeno 'o' tipográfico ao final da linha ou da alternativa.
+ value=value.replace(/\b(\d{1,2})\s*[º°o]?\s+(slide|parágrafo|questão|lugar|semestre|item)\b/giu,'$1º $2');
+ value=value.replace(/\b(\d{1,2})o(?=\s+(?:slide|parágrafo|questão|lugar|semestre|item)\b)/giu,'$1º');
+ value=value.replace(/([.!?])\s+o\s*$/iu,(whole,punctuation,offset,s)=>
+    /\b\d{1,2}º\s+(?:slide|parágrafo|questão|lugar|semestre|item)\b/iu.test(s)?punctuation:whole);
+ // Junção conservadora de fragmentos conhecidos: não unir quaisquer palavras.
+ value=value.replace(/\b(subsí)\s+(dios)\b/giu,'$1$2')
+    .replace(/\b(insti)\s+(tuições)\b/giu,'$1$2')
+    .replace(/\b(merca)\s+(dos)\b/giu,'$1$2');
+ return value.replace(/\s*\n\s*/g,' ').replace(/[ \t]{2,}/g,' ').trim();
 }
 function restoreVerticalFractions(pieces){
  const consumed=new Set();
@@ -94,12 +115,25 @@ export function spatialQuestions(pages){
       const gap=rows[j+1].y-rows[j].y;
       if(gap>bestGap){bestGap=gap;bestIndex=j}
     }
-    if(bestGap>=65&&bestIndex>=0&&current.optionsStartY){
+    // Se a figura possui legenda de autorização, ela delimita precisamente
+    // o fim da ilustração e nunca é copiada para o enunciado.
+    if(current.creditY&&current.optionsStartY){
+      const intro=rows.findIndex(r=>/\b(?:desenho|tabela|figura|gr[aá]fico|planilha)\b/iu.test(r.text));
+      const cutAt=intro>=0?Math.min(rows.length-1,intro):0;
+      const first=rows[cutAt],after=rows.filter(r=>r.y>current.creditY);
+      if(first&&current.creditY-first.y>25){
+        current.visualSegments={
+          beforeText:humanizePdfText(rows.filter(r=>r.y<=first.y).map(r=>r.text).join('\n')),
+          afterText:humanizePdfText(after.map(r=>r.text).join('\n')),
+          top:first.y+16,bottom:current.creditY-6
+        };
+      }
+    }else if(bestGap>=65&&bestIndex>=0&&current.optionsStartY){
       current.visualSegments={
         beforeText:humanizePdfText(rows.slice(0,bestIndex+1).map(r=>r.text).join('\n')),
         afterText:humanizePdfText(rows.slice(bestIndex+1).map(r=>r.text).join('\n')),
-        top:rows[bestIndex].y+12,
-        bottom:rows[bestIndex+1].y-5
+        top:rows[bestIndex].y+16,
+        bottom:rows[bestIndex+1].y-3
       };
     }
     current.extractionReview=current.options.length!==5||current.options.some((o,i)=>o.letter!==String.fromCharCode(65+i));
@@ -111,6 +145,7 @@ export function spatialQuestions(pages){
    }
    for(const row of lines){
     const s=row.text.trim();if(!s||noise(s))continue;
+    if(creditLine.test(s)){if(current)current.creditY=row.y;continue;}
     const foundContext=contextMarker(s);
     if(foundContext){finish(row.y-2);collecting={...foundContext,text:[],page:page.number,col,startY:row.y};continue;}
     if(isHeading(s)){if(!current||!current.options.length)heading=s;continue;}
@@ -120,7 +155,7 @@ export function spatialQuestions(pages){
       current.stem.push(s);continue; // Frações tipográficas como 2.520 não criam questões novas.
      }
      finish(row.y-15);
-     if(collecting){const shared={...collecting,text:collecting.text.join('\n').trim()};if(shared.text)contexts.push(shared);collecting=null;}
+     if(collecting){const shared={...collecting,text:humanizePdfText(collecting.text.join('\n'))};if(shared.text)contexts.push(shared);collecting=null;}
      const n=Number(qm[1]),context=contexts.find(x=>n>=x.from&&n<=x.to)||null;
      current={originalNumber:n,heading,stem:[qm[2]||''],stemRows:[{y:row.y,text:qm[2]||''}],options:[],optionsStartY:null,sourcePage:page.number,sourceColumn:col,startY:row.y,endY:0,contextText:context?.text||'',contextRange:context?[context.from,context.to]:null,confidence:'média'};
      continue;
