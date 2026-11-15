@@ -13,8 +13,8 @@ export function questionCropBounds(q,pageWidth,pageHeight,scale=1.4){
  const left=q.sourceColumn===0?23:separator+7;
  const right=q.sourceColumn===0?separator-5:pageWidth-23;
  const segment=q.visualSegments&&q.visualSegments.bottom-q.visualSegments.top>45?q.visualSegments:null;
- const top=Math.max(15,Math.min(segment?segment.top-7:q.startY-14,pageHeight-55));
- const bottom=Math.min(pageHeight-24,Math.max(top+30,(segment?segment.bottom+7:q.optionsStartY?Math.min(q.endY,q.optionsStartY-8):q.endY+4)));
+ const top=Math.max(15,Math.min(segment?segment.top:q.startY-14,pageHeight-55));
+ const bottom=Math.min(pageHeight-24,Math.max(top+30,(segment?segment.bottom:q.optionsStartY?Math.min(q.endY,q.optionsStartY-8):q.endY+4)));
  return {
   left,top,right,bottom,scale,
   x:Math.max(0,Math.floor(left*scale)),y:Math.max(0,Math.floor(top*scale)),
