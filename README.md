@@ -1,6 +1,6 @@
 # Estatística das Provas
 
-**Versão experimental 0.3.2 — 15/11/2026**  
+**Versão experimental 0.4.0 — 15/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
@@ -17,6 +17,17 @@ A questão 34 da prova VUNESP menciona uma *tabela MAC* (estrutura de rede), mas
 ### Textos de apoio compartilhados
 
 Cada questão mantém o texto-base necessário para resolvê-la isoladamente. Quando duas ou mais questões consecutivas da mesma seleção (inclusive simulados) compartilham o mesmo texto-base, ele fica **aberto na primeira** e **recolhido nas seguintes**, com o controle *Ver texto de apoio novamente*. Quando houver outra questão no meio, a próxima questão do grupo mostra o texto novamente. Na impressão de questões selecionadas ou simulados, o mesmo texto não é repetido em questões adjacentes. A ocultação é somente visual: nenhum dado é apagado ou alterado.
+
+## Melhorias de leitura e resolução — versão 0.4.0
+
+- Enunciados e alternativas não conservam a largura estreita do PDF: quebras de linha artificiais e hifens de fim de linha são recompostos, com visualização responsiva na largura disponível.
+- Frações simples compostas verticalmente no PDF podem ser reconstruídas de modo conservador como `3/8`, `11/9` etc. Quando a geometria do PDF não permite uma leitura segura, não é feita substituição arbitrária.
+- Glifos privados são interpretados **somente com contexto confiável** (ex.: menus `Inserir → Objeto OLE`); outros símbolos desconhecidos permanecem para revisão.
+- Questões com elementos gráficos podem ter a imagem entre os trechos de texto, quando o leitor detecta a área do desenho. Quando não consegue isolar a figura, o enunciado continua disponível como recorte da prova, mas **todas as alternativas A–E são exibidas em texto clicável**.
+- Cada alternativa possui um botão **×** independente, que elimina visualmente a opção (cinza e riscada) e permite restaurar. O clique na alternativa continua marcando a resposta; eliminar uma alternativa selecionada em simulado a desmarca. Eliminações são anotações locais do navegador, identificadas por perfil e simulado; não entram nas estatísticas nem alteram o gabarito.
+- A função de impressão continua usando as alternativas em texto, sem os botões de eliminação.
+- Testes sintéticos do importador e das regras de negócio passaram. Ainda são necessários testes reais no navegador do usuário após a publicação.
+
 
 ## Versão 0.3.0 — importação espacial e validação
 
