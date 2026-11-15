@@ -1,3 +1,15 @@
+## 0.4.0 — 15/11/2026
+- Recompostos enunciados e alternativas removendo quebras artificiais, hifens do fim da coluna e espaçamento redundante.
+- Acrescentada detecção geométrica conservadora de frações escritas verticalmente no PDF: representação textual `3/8`, `11/9` etc.
+- Corrigidos símbolos privados de fontes apenas quando o contexto é inequívoco (como caminhos de menu: `Inserir → Objeto OLE`). Símbolos desconhecidos não são adivinhados.
+- Suporte a recorte de gráfico/figura inserido entre trechos do enunciado quando o leitor detecta um intervalo visual; caso contrário, mantém o recorte do enunciado.
+- Alternativas aparecem sempre como texto independente, mesmo em questões com enunciado em imagem.
+- Adicionada eliminação reversível por botão × à direita de cada alternativa, com visual cinza e riscado. A escolha da resposta continua sendo feita ao clicar na alternativa; em simulados, eliminar a alternativa marcada desmarca a resposta.
+- Preferências de eliminação são locais ao navegador e vinculadas ao perfil/questão/simulado; não alteram estatísticas nem gabaritos.
+- Estilos responsivos ocupam a largura disponível e ocultam botões × na impressão.
+- 33 testes automatizados do núcleo/leitor aprovados nesta etapa; teste visual no navegador ainda pendente.
+- Removidos 50 registros de questões, 1 prova VUNESP e seu PDF anterior do estado ativo, preservando Wilber e TESTE. Tombstones impedem restauração por clientes antigos.
+
 ## 0.3.2 — 15/11/2026
 - Corrigida a causa de mensagens enganosas "alternativas não reconhecidas": erros de imagem deixaram de alterar a classificação da extração textual.
 - PDF.js passou a gerar os recortes antes de `page.cleanup()`, evitando renderizar páginas cujos recursos já foram liberados.
