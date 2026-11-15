@@ -16,6 +16,7 @@ expire(state);
 let profileId=null,view='home',selectedSimId=null,currentFilter={studyArea:'candeias'},currentPool=[],limitAvulsas=10,questionSearch='';
 let latestImportMessage='';
 let statusMessage='';
+const explanationsInView=new Map();
 const sync=createSyncClient({
  getState:()=>state,
  setState:remote=>{
@@ -108,6 +109,61 @@ function empty(message){return `<div class="empty">${h(message)}</div>`}
 function infoTile(value,label){return `<div class="tile"><span class="value">${h(value)}</span><span class="small-muted">${h(label)}</span></div>`}
 function btn(action,label,klass='secondary',extra=''){return `<button type="button" class="${klass}" data-action="${action}" ${extra}>${h(label)}</button>`}
 function profileName(){return me()?.name||'Usuário'}
+
+function explanationBox(qid){
+ const entry=explanationsInView.get(qid);
+ if(!entry)return '<div class="explanation-box" data-explanation-id="'+h(qid)+'"></div>';
+ const status=entry.status||'';
+ let body='';
+ if(status==='loading')body='<p class="hint">Consultando a explicação...</p>';
+ else if(status==='ready')body='<div class="explanation-text">'+h(entry.text||'')+'</div><p class="hint">Explicação de IA para estudo, não substitui o gabarito ou a legislação oficial.</p>'+btn('flag-explanation','Sinalizar explicação incorreta','secondary','data-id="'+h(qid)+'"');
+ else if(status==='pending')body='<p class="hint">'+h(entry.reason||'Explicação em geração.')+'</p>'+btn('explain-question','Consultar novamente','secondary','data-id="'+h(qid)+'"');
+ else body='<p class="hint">'+h(entry.reason||'Não foi possível explicar a questão.')+'</p>';
+ return '<div class="explanation-box" data-explanation-id="'+h(qid)+'">'+body+'</div>';
+}
+function refreshExplanation(qid){
+ for(const el of document.querySelectorAll('[data-explanation-id]'))
+  if(el.dataset.explanationId===qid)el.outerHTML=explanationBox(qid);
+}
+async function showExplanation(qid){
+ const q=question(qid);
+ if(!q)return;
+ const answered=state.attempts.some(a=>a.profileId===profileId&&a.questionId===qid);
+ if(!answered){toast('Confira ou finalize a questão antes de pedir a explicação.');return}
+ if(!sync.getUrl()){
+  explanationsInView.set(qid,{status:'error',reason:'As explicações precisam da conexão Cloudflare. Verifique Dados → Sincronização.'});
+  refreshExplanation(qid);return;
+ }
+ explanationsInView.set(qid,{status:'loading'});refreshExplanation(qid);
+ try{
+  const origin=sync.getUrl(),query='?questionId='+encodeURIComponent(qid);
+  let r=await fetch(origin+'/api/explanation'+query,{cache:'no-store'});
+  let data=await r.json();
+  if(r.ok&&data.status==='not-generated'){
+    r=await fetch(origin+'/api/explanation',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({questionId:qid})});
+    data=await r.json();
+  }
+  explanationsInView.set(qid,{
+   status:data.status==='ready'?'ready':data.status==='pending'?'pending':'error',
+   text:data.explanation||'',
+   reason:data.reason||data.error||'Não foi possível obter a explicação.'
+  });
+ }catch(error){
+  explanationsInView.set(qid,{status:'error',reason:'Serviço de IA indisponível. Confira a conexão e tente novamente.'});
+  console.warn('Falha ao consultar explicação:',error);
+ }
+ refreshExplanation(qid);
+}
+function flagExplanation(qid){
+ const questionRecord=question(qid);
+ if(!questionRecord)return;
+ const note=prompt('Qual é o problema na explicação de '+questionRecord.code+'? Ela será enviada para análise no GitHub.','');
+ if(note===null||!note.trim())return;
+ state.flags.push({id:newId(),profileId,questionId:qid,type:'explanation',note:note.trim().slice(0,1500),
+  proposed:{},status:'pending',at:new Date().toISOString()});
+ save();toast('Explicação sinalizada para análise.');
+}
+
 function homeScreen(){
   const s=stats(state,profileId),pending=state.simulations.filter(x=>x.profileId===profileId&&x.status==='pending');
   return `<div class="between"><div>${headline('Olá, '+profileName(),'Seu histórico e o banco de questões compartilhado.')}</div></div>
