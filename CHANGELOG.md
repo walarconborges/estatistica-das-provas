@@ -5,6 +5,8 @@
 - Corrigidas as contaminações da alternativa E da questão 4 e da questão 21, sem substituir `à` por `ao`.
 - Impressão passa a respeitar as quebras de linha dos itens.
 - Adicionados seis testes de regressão; **47 testes automatizados aprovados**.
+- 50 questões e 1 prova removidas na v0.4.3; PDF associado excluído; perfis Wilber e TESTE preservados.
+- Proteção de identificadores excluídos mantida contra ressincronização de navegadores antigos.
 - Pendente: confirmação da extração real no navegador com os PDFs originais.
 
 ## 0.4.2 — 15/11/2026
