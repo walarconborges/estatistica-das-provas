@@ -15,6 +15,10 @@ export function mergeLocal(remote,delta){
  for(const name of LISTS){
   const arr=s[name]||[],pos=new Map(arr.map((v,i)=>[v.id,i]));
   for(const item of delta?.[name]||[]){
+   if((s.tombstones?.[name]||[]).includes(item.id))continue;
+   if(name==='questions'&&(s.tombstones?.exams||[]).includes(item.examId))continue;
+   if((name==='attempts'||name==='flags')&&(s.tombstones?.questions||[]).includes(item.questionId))continue;
+   if(name==='simulations'&&item.questionIds?.some(id=>(s.tombstones?.questions||[]).includes(id)))continue;
    if(pos.has(item.id))arr[pos.get(item.id)]=clone(item);
    else{pos.set(item.id,arr.length);arr.push(clone(item));}
   }
