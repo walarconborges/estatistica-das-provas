@@ -1,5 +1,6 @@
-import {STORAGE_KEY,newId,fresh,normalizeState,parseExamText,parseKey,inferExamMetadata,addExam,recordAttempt,latestAnswer,outcome,stats,filtered,prioritize,createSimulation,finishSimulation,simulationResult,expire,validAnswer} from './core.mjs';
+import {STORAGE_KEY,newId,fresh,normalizeState,parseExamText,parseKey,inferExamMetadata,classify,addExam,recordAttempt,latestAnswer,outcome,stats,filtered,prioritize,createSimulation,finishSimulation,simulationResult,expire,validAnswer} from './core.mjs';
 import {readPdf} from './pdf-import.mjs';
+import {chosenAnswerSection,questionIntegrity} from './pdf-layout.mjs';
 import {createSyncClient} from './sync-client.mjs';
 
 const $=s=>document.querySelector(s);
@@ -120,7 +121,7 @@ function filterForm(kind='questions'){
 function alternatives(q,scope,chosen=''){
   const options=q.options||[];
   if(!options.length)return '<p class="notice">Alternativas não extraídas. Consulte a imagem ou sinalize a questão.</p>';
-  return `<div class="alternatives">${options.map(o=>`<label class="alternative"><input type="radio" name="resp-${h(q.id)}" data-scope="${scope}" data-qid="${h(q.id)}" value="${h(o.letter)}" ${chosen===o.letter?'checked':''}><span><strong>${h(o.letter)})</strong> ${h(o.text)}</span></label>`).join('')}</div>`;
+  return `<div class="alternatives">${options.map(o=>`<label class="alternative"><input type="radio" name="resp-${h(q.id)}" data-scope="${scope}" data-qid="${h(q.id)}" value="${h(o.letter)}" ${chosen===o.letter?'checked':''}><span><strong>${h(o.letter)})</strong> ${q.imageOnly?'Marcar '+h(o.letter):h(o.text)}</span></label>`).join('')}</div>`;
 }
 function feedback(q,answer){
   if(!validAnswer(answer))return '<span class="badge wait">Não respondida</span>';
@@ -135,8 +136,8 @@ function cardQuestion(q,index,scope='single',selected=''){
   const examTitle=exam(q.examId)?.title||'';
   return `<article class="question" data-question-card="${h(q.id)}">
   <div class="question-head"><div><div class="question-code">${h(q.code)}</div><div class="question-context">Questão ${label} · ${h(examTitle)} · ${h(q.discipline)} / ${h(q.topic)}</div></div><div class="chips">${q.status==='annulled'?'<span class="badge wait">Anulada</span>':''}${q.status==='needs-review'?'<span class="badge wait">Revisão da extração</span>':''}${q.status==='outdated'?'<span class="badge wait">Desatualizada</span>':''}${q.confidence==='baixa'?'<span class="badge wait">Classificação incerta</span>':''}</div></div>
-  <div class="question-body">${h(q.stem||'[Enunciado não extraído]')}</div>
-  ${q.pageImage?`<img loading="lazy" class="question-img" src="${h(q.pageImage)}" alt="Recorte ou página do PDF original">`:''}
+  ${q.contextText?`<details class="support-text" open><summary>Texto de apoio — questões ${h(q.contextRange?.join(' a ')||'')}</summary><div class="question-body">${h(q.contextText)}</div></details>`:''}
+  ${q.imageOnly&&q.pageImage?`<img loading="lazy" class="question-img" src="${h(q.pageImage)}" alt="Questão original com tabelas, fórmulas ou imagens">`:`<div class="question-body">${h(q.stem||'[Enunciado não extraído]')}</div>${q.pageImage?`<img loading="lazy" class="question-img" src="${h(q.pageImage)}" alt="Recorte da questão original">`:''}`}
   ${alternatives(q,scope,selected)}
   ${scope==='single'?`<div class="actions">${btn('answer-single','Conferir resposta','primary',`data-id="${h(q.id)}"`)}${btn('flag-question','Sinalizar problema','secondary',`data-id="${h(q.id)}"`)}${btn('question-log','Histórico','secondary',`data-id="${h(q.id)}"`)}</div>
     <div class="question-feedback">${last?`Última resposta válida: <strong>${h(last.answer)}</strong> — ${feedback(q,last.answer)}`:''}</div>`:''}
@@ -219,40 +220,25 @@ async function importData(form){
   if(!/\.pdf$/i.test(pdf.name)||!/\.pdf$/i.test(keyPdf.name)){toast('Os dois arquivos devem estar no formato PDF.');return}
   const button=form.querySelector('button[type=submit]');button.disabled=true;button.textContent='Processando...';
   try{
-    const examRead=await readPdf(pdf);
+    const examRead=await readPdf(pdf,{images:true,extractQuestions:true});
     const keyRead=await readPdf(keyPdf,{images:false});
-    const raw=examRead.text,keyRaw=keyRead.text,pages=examRead.pages;
-    const meta=inferExamMetadata(raw,pdf.name,keyRaw,keyPdf.name);
-    const parsed=parseExamText(raw);
-    const pageMap=new Map(pages.map(p=>[p.number,p]));
-    for(const q of parsed){
-      const visual=/\b(tabela|gr[aá]fico|figura|quadro|imagem|ilustra[cç][aã]o|diagrama|mapa)\b/i.test(q.stem);
-      const page=pageMap.get(q.sourcePage);
-      if((visual||q.extractionReview)&&page?.image){
-        q.pageImage=page.image;
-        if(visual)q.extractionReview=true; // preservar a fonte e exigir conferência de tabelas/figuras
-      }
-    }
-    const coveredPages=new Set(parsed.map(q=>q.sourcePage));
-    for(const p of pages.filter(p=>p.image&&!coveredPages.has(p.number)&&p.text.trim().length<65)){
-      parsed.push({originalNumber:1000+p.number,sourcePage:p.number,stem:'[Página '+p.number+' digitalizada — consulte a imagem original.]',options:[],pageImage:p.image,discipline:'Não classificada',disciplineCode:'NC',topic:'Geral',topicCode:'G',confidence:'baixa',extractionReview:true});
-    }
-    if(!parsed.length){toast('Nenhuma questão foi identificada. A importação não foi salva.');return}
-    const regular=parsed.filter(q=>q.originalNumber<1000),numbers=regular.map(q=>q.originalNumber);
-    const sorted=[...new Set(numbers)].sort((a,b)=>a-b);
-    const missing=[];
-    if(sorted.length>=2)for(let i=sorted[0];i<sorted.at(-1);i++)if(!sorted.includes(i))missing.push(i);
-    if(missing.length||sorted.length!==numbers.length){
-      latestImportMessage='A leitura encontrou uma sequência incompleta ou repetida de questões'+(missing.length?' (faltam: '+missing.slice(0,18).join(', ')+')':'')+'. Por segurança, nada foi cadastrado. Registre o problema para corrigirmos a extração.';
-      toast('A prova contém questões não separadas corretamente. Importação cancelada.');
+    const meta=inferExamMetadata(examRead.text,pdf.name,keyRead.text,keyPdf.name);
+    const selected=chosenAnswerSection(keyRead.text,examRead.text);
+    if(selected.error)throw Error(selected.error);
+    const key=parseKey(selected.text);
+    const parsed=examRead.questions.map(q=>({...q,...classify(q.stem,q.heading)}));
+    const count=examRead.text.match(/\b(\d{1,3})\s+QUEST[ÕO]ES?\s+OBJETIVAS\b/i);
+    const expected=count?Number(count[1]):Object.keys(key).length;
+    const problems=questionIntegrity(parsed,key,expected);
+    if(meta.missing.length)problems.push('Dados não identificados: '+meta.missing.join(', '));
+    for(const q of parsed)if(q.imageOnly&&!q.pageImage)problems.push('Imagem da questão '+q.originalNumber+' indisponível');
+    if(problems.length){
+      latestImportMessage='Importação bloqueada para evitar erros: '+problems.slice(0,8).join('; ')+(problems.length>8?' e outros '+(problems.length-8)+' problema(s).':'');
+      toast('Importação não concluída. Confira os problemas identificados.');
       refresh();return;
     }
-    const key=parseKey(keyRaw);
-    if(!Object.keys(key).length){
-      latestImportMessage='O gabarito não foi reconhecido no PDF. A importação foi cancelada para evitar cadastrar respostas incorretas.';
-      toast('Gabarito não reconhecido. Nenhuma questão foi cadastrada.');refresh();return;
-    }
     const e=addExam(state,meta,parsed,key);
+    e.keySection=selected.section;
     e.metadataReview=meta.missing;
      if(pdf instanceof File&&pdf.size&&sync.isConfigured()){
        if(pdf.size>4*1024*1024)toast('PDF acima de 4 MB: o texto será sincronizado, mas o original não.');
@@ -277,7 +263,7 @@ function downloadFile(text,name,type='application/json'){
 }
 function printQuestions(qs,title,options={}){
   const original=!!options.original,answered=options.answers||{};
-  const content=qs.map((q,i)=>`<article class="question"><div><strong>${original?q.originalNumber:i+1}. ${h(q.code)}</strong></div><p style="white-space:pre-wrap">${h(q.stem||'Questão em imagem')}</p>${q.pageImage?`<img style="max-width:100%" src="${h(q.pageImage)}">`:''}${(q.options||[]).map(o=>`<p style="margin:3px 0;white-space:pre-wrap">${h(o.letter)}) ${h(o.text)}</p>`).join('')}</article>`).join('');
+  const content=qs.map((q,i)=>`<article class="question"><div><strong>${original?q.originalNumber:i+1}. ${h(q.code)}</strong></div>${q.contextText?`<p style="white-space:pre-wrap;font-size:9pt">Texto de apoio:\n${h(q.contextText)}</p>`:''}${q.imageOnly&&q.pageImage?`<img style="max-width:100%;max-height:650px;object-fit:contain" src="${h(q.pageImage)}">`:`<p style="white-space:pre-wrap">${h(q.stem||'Questão em imagem')}</p>${q.pageImage?`<img style="max-width:100%" src="${h(q.pageImage)}">`:''}${(q.options||[]).map(o=>`<p style="margin:3px 0;white-space:pre-wrap">${h(o.letter)}) ${h(o.text)}</p>`).join('')}`}</article>`).join('');
   const sheet=qs.map((q,i)=>`<div style="display:inline-block;width:48%;margin:7px 0">${original?q.originalNumber:i+1}. ( A ) ( B ) ( C ) ( D ) ( E )</div>`).join('');
   const key=qs.map((q,i)=>`<div style="display:inline-block;width:33%;margin:4px 0">${original?q.originalNumber:i+1}. ${h(q.answer||'—')} &nbsp; ${h(q.code)}</div>`).join('');
   const doc=`<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>${h(title)}</title><style>@page{size:A4;margin:1.5cm 1.5cm 1.5cm 2.5cm}body{font:11pt Arial,sans-serif;color:#111}.question{break-inside:avoid;page-break-inside:avoid;margin-bottom:15mm}.page{page-break-before:always}h1{font-size:15pt}h2{font-size:13pt}p{line-height:1.4}</style></head><body><h1>${h(title)}</h1>${content}<section class="page"><h2>Folha de respostas</h2>${sheet}</section><section class="page"><h2>Gabarito</h2>${key}</section></body></html>`;
