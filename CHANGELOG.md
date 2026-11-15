@@ -1,3 +1,14 @@
+## 0.5.0 — 15/11/2026
+- Cloudflare Workers AI para explicações opcionais após a correção.
+- Cache compartilhado no GitHub; explicações reutilizadas sem novo processamento.
+- Limite gratuito tratado sem alterar questões, perfis ou estatísticas.
+- Explicações incorretas podem ser sinalizadas para revisão.
+- A impressão de simulados pendentes não contém gabarito.
+- Contexto legislativo de Candeias do Jamari ativado como referência; leis específicas de outros municípios exigem adaptação e validação antes do uso no modo local.
+- Provas e questões originais preservadas; nenhuma migração ou limpeza necessária.
+- Testes automatizados do modelo, cache e classificação jurídica incluídos.
+- A publicação final e a execução de IA no Worker real ainda precisam de confirmação.
+
 ## 0.4.3 — 15/11/2026
 - Preservada uma passagem por linha nas listas de enunciados, incluindo os quatro itens da questão 9.
 - Preservadas linhas independentes para pares de nomes e hashes, como na questão 37.
