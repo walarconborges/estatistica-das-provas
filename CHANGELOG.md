@@ -1,3 +1,14 @@
+## 0.2.2 — 15/11/2026
+- Corrigida a separação de enunciados quando o PDF insere \`RASCUNHO 19.\` após a questão 18.
+- Removidos vários padrões de marcas d'água e trechos técnicos do PCI Concursos.
+- Aprimorada a classificação conservadora por evidências do enunciado (Português, Matemática, Redes, Segurança da Informação, Sistemas Operacionais e Legislação).
+- O leitor passa a guardar o número da página de origem; páginas com tabelas/figuras podem ter imagem de referência.
+- Questões com extração duvidosa recebem status \`needs-review\` e não entram no sorteio padrão.
+- Importações com numeração ausente ou repetida são bloqueadas antes da gravação.
+- A impressão direta do navegador omite filtros e controles.
+- Foram incluídos testes de regressão específicos; 15 testes de núcleo aprovados em execução isolada.
+- A prova anteriormente importada com 49 questões foi preservada, sem alterações de classificação, e registrada para revisão na Issue #1.
+
 ## 0.2.1 — 15/11/2026
 - Simplificada a importação: apenas PDF da prova e PDF do gabarito oficial, ambos obrigatórios.
 - Corrigida perda de arquivos selecionados após sincronização em segundo plano.
