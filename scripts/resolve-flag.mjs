@@ -37,14 +37,17 @@ const issue=await api('issues/'+number);
 const match=String(issue.body||'').match(/<!-- flag-id:([A-Za-z0-9_-]{3,100}) -->/);
 if(!match)throw Error('Esta Issue não representa uma sinalização reconhecida pelo sistema.');
 const id=match[1];
-let completed=false;
+let completed=false,cacheToInvalidate=null;
 for(let tries=0;tries<5;tries++){
  const file=await api('contents/data/state.json');
  const state=JSON.parse(Buffer.from(String(file.content).replace(/\s/g,''),'base64').toString('utf8'));
  const flag=state.flags.find(x=>x.id===id);
  if(!flag)throw Error('Sinalização não encontrada no banco.');
  if(flag.status!=='pending'){completed=true;break;}
- if(decision==='aprovar')applyReview(state,flag);
+ if(decision==='aprovar'){
+  applyReview(state,flag);
+  if(['explanation','answer','annulled','outdated'].includes(flag.type))cacheToInvalidate=flag.questionId;
+ }
  flag.status=decision==='aprovar'?'approved':'rejected';flag.resolvedAt=new Date().toISOString();
  const content=Buffer.from(JSON.stringify(state,null,2)+'\n').toString('base64');
  const res=await fetch('https://api.github.com/repos/'+repo+'/contents/data/state.json',{method:'PUT',headers:head,body:JSON.stringify({message:'review: '+decision+' '+id,content,sha:file.sha})});
@@ -52,5 +55,17 @@ for(let tries=0;tries<5;tries++){
  if(![409,422].includes(res.status))throw Error('Não foi possível atualizar o banco: HTTP '+res.status);
 }
 if(!completed)throw Error('Conflito de gravação persistente.');
+if(decision==='aprovar'&&cacheToInvalidate){
+ // Explicação sinalizada/alterada só poderá ser reutilizada após nova geração.
+ const path='contents/data/explanations/'+encodeURIComponent(cacheToInvalidate)+'.json';
+ const base='https://api.github.com/repos/'+repo+'/';
+ const stored=await fetch(base+path,{headers:head});
+ if(stored.ok){
+  const details=await stored.json();
+  const deleted=await fetch(base+path,{method:'DELETE',headers:head,
+   body:JSON.stringify({message:'ai: invalidar explicação após revisão',sha:details.sha})});
+  if(!deleted.ok&&deleted.status!==404)throw Error('Não foi possível invalidar o cache da explicação ('+deleted.status+').');
+ }else if(stored.status!==404)throw Error('Não foi possível verificar o cache da explicação.');
+}
 await api('issues/'+number+'/comments',{method:'POST',body:JSON.stringify({body:decision==='aprovar'?'Sinalização aprovada e registrada. As estatísticas serão recalculadas na próxima sincronização.':'Sinalização rejeitada. A questão permanece inalterada.'})});
 await api('issues/'+number,{method:'PATCH',body:JSON.stringify({state:'closed'})});
