@@ -1,106 +1,98 @@
 # Estatística das Provas
 
-**Versão 0.1.1 — protótipo público, ainda em testes**
-
-Site para estudar questões de concursos, importar provas, criar simulados, imprimir atividades e acompanhar estatísticas por usuário.
-
+**Versão experimental 0.2.0 — 14/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
-## O que funciona nesta versão
+Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
 
-- Pergunta **“Quem está aí?”** em toda abertura. Os perfis não têm senha e seus resultados são separados.
-- Banco de provas e questões compartilhado **dentro do navegador em uso**.
-- Importação de PDF com texto extraível, texto colado e gabaritos em formato compacto (por exemplo, `1A2B3C`).
-- Identificação inicial de disciplina e assunto conforme a estrutura e o conteúdo detectáveis na prova.
-- Páginas do PDF sem texto utilizável podem ser preservadas como imagem, com revisão necessária.
-- Código da questão: `Q` + ano + disciplina + assunto + banca + órgão + número crescente (exemplo: `Q2026LPGIBGPSEMED1`). Sem Poder e sem cargo.
-- Questões avulsas e simulados com filtros por disciplina, assunto, ano, banca, órgão, situação e desempenho.
-- Quantidade de questões definida pelo usuário; sorteio priorizando inéditas e evitando questões de conteúdo igual no mesmo simulado.
-- Resolução de prova inteira na ordem original, com numeração original; simulados com numeração própria.
-- Confirmação antes de finalizar quando houver questões em branco.
-- Correção após finalizar, com acertos, erros, brancos e porcentagem sobre as questões efetivamente respondidas.
-- Estatística considerando a última resposta **válida** de cada questão. Resposta em branco não é erro, não é acerto e não altera resposta anterior.
-- Questões anuladas fora do resultado estatístico; a consulta pode incluí-las por filtro.
-- Sinalizações de erros de classificação, conteúdo, gabarito, anulação etc. (por enquanto, locais).
-- Simulados pendentes por até 30 dias, com aviso. Resultados concluídos ficam registrados.
-- Impressão em A4, com gabarito e folha de respostas separados.
-- Exportação e restauração de dados em JSON.
+## Situação atual
 
-## Limitações atuais importantes
+- **Código, site e arquivos de sincronização publicados no GitHub.**
+- **Integração com GitHub programada e testada no nível de regras.** O uso compartilhado só entra em funcionamento depois de publicar e autorizar o Cloudflare Worker.
+- Até o Worker estar conectado, o site continua usando **armazenamento local**. Dados antigos locais são enviados ao primeiro conectar, sem substituir os dados de outros aparelhos.
+- Nunca publique um token GitHub no repositório, na URL do site, no navegador ou em conversas.
 
-**Os dados ainda não são sincronizados entre aparelhos.** O site é publicado pelo GitHub Pages, mas as alterações que cada visitante faz ficam guardadas no armazenamento local do navegador. Um repositório público não oferece, por si só, permissão de escrita aos visitantes. Para sincronizar, será preciso configurar um serviço intermediário, com credencial de escrita protegida. Não coloque tokens no código público.
+## Funcionalidades
 
-**As sinalizações ainda não são enviadas automaticamente para Issues.** Essa integração faz parte da próxima etapa. Até lá, os registros ficam no navegador e devem ser preservados por backup.
+- Pergunta **Quem está aí?** ao iniciar, sem senha para os participantes.
+- Perfis com estatísticas independentes e provas/questões compartilhadas.
+- Importação de PDF ou texto e gabaritos compactos (ex.: `1A2B3C`).
+- Classificação automática preliminar; sinalizações revisadas pelo proprietário no GitHub.
+- Código permanente `Q+ANO+DISCIPLINA+ASSUNTO+BANCA+ÓRGÃO+SEQUÊNCIA`, ex.: `Q2026LPGIBGPSEMED1`. Quando uma classificação principal muda por aprovação, o código antigo é mantido como referência.
+- Classificações secundárias aprovadas contam nas estatísticas próprias, sem duplicar a questão geral.
+- Questões avulsas e simulados filtráveis, sorteio que prioriza inéditas, provas completas e cartões de respostas.
+- Resultado do simulado e histórico da última resposta válida; questão em branco não conta como erro nem acerto.
+- Anulação e desatualização aprovadas excluem a questão dos cálculos; gabarito e classificação alterados recalculam os resultados ao consultar novamente.
+- Impressão A4, Arial 11, margem esquerda 2,5 cm, demais 1,5 cm.
+- Simulados pendentes expiram em 30 dias; PDFs originais até 4 MB podem ser gravados no repositório quando a API estiver ativa.
 
-**O importador de PDFs ainda é experimental.** PDFs escaneados, duas colunas, tabelas, imagens e documentos com diagramação difícil podem exigir conferência humana. PDF.js é carregado pela internet durante a importação.
+## Ativar sincronização entre celular e computador
 
-**A impressão da prova recria o conteúdo extraído.** Não substitui nem garante reprodução exata do PDF original.
+Não há autenticação dos perfis, **mas o GitHub exige autorização para modificar arquivos**, inclusive em repositórios públicos. O Worker guarda essa credencial; o visitante nunca a recebe.
 
-**Códigos e classificações:** os códigos são calculados no cadastro; o sistema ainda não oferece o fluxo remoto de aprovação e recálculo de classificações. Isso é uma limitação conhecida, não uma função pronta.
+A programação necessária está no repositório. Faltam apenas autorizações que exigem acesso à sua conta Cloudflare/GitHub.
 
-**Sem segurança de perfil:** qualquer visitante que tenha acesso aos dados de um dispositivo pode selecionar qualquer nome nele. Não armazene dados pessoais sensíveis.
+### 1. Criar token restrito no GitHub
 
-## Como testar
+Acesse https://github.com/settings/personal-access-tokens e crie um **Fine-grained token**.
 
-1. Abra o site e crie um perfil em “Quem está aí?”.
-2. Vá para **Importar prova** e informe ano, banca e órgão.
-3. Cole este exemplo:
+- Repository access: **Only select repositories** → `walarconborges/estatistica-das-provas`
+- Repository permissions: **Contents — Read and write**; **Issues — Read and write**
+- Defina o prazo de validade desejado. Quando vencer, será necessário substituir o segredo no Worker.
 
-   ```text
-   LÍNGUA PORTUGUESA
-   1) Qual palavra está grafada corretamente?
-   A) Exceção
-   B) Excessão
-   C) Esceção
-   D) Ecceção
+Guarde o token apenas para inserir no painel da Cloudflare. **Não envie o valor pelo chat.**
 
-   MATEMÁTICA
-   2) Quanto é 20% de 100?
-   A) 10
-   B) 20
-   C) 30
-   D) 40
-   ```
+### 2. Publicar a API gratuita na Cloudflare
 
-4. Informe o gabarito `1A2B` e importe.
-5. Acesse **Questões avulsas** ou **Simulados**, resolva e confira a estatística.
-6. Experimente deixar uma questão em branco. Ela não deve reduzir o aproveitamento sobre respostas dadas.
+Acesse https://dash.cloudflare.com/ e abra **Workers & Pages → Create application → Connect to Git** (o nome pode variar conforme a interface). Autorize o GitHub e selecione **`walarconborges/estatistica-das-provas`**. O projeto já contém `wrangler.toml`; a implantação deve usar o Worker chamado **`estatistica-das-provas-api`** e o comando **`npx wrangler deploy`**.
 
-## Desenvolvimento
+Após criar o Worker, abra **Settings → Variables and Secrets** e acrescente um **Secret** chamado `GITHUB_TOKEN`, com o token da etapa anterior. As demais variáveis (owner, repository, branch, origins) já estão em `wrangler.toml`.
 
-Código publicado diretamente neste repositório, sem necessidade de o usuário fazer upload manual. Site estático em HTML, CSS e JavaScript ES Modules, com PDF.js carregado sob demanda.
+### 3. Conectar o site automaticamente
 
-- `index.html`: estrutura e navegação.
-- `styles.css`: layout responsivo e impressão.
-- `core.mjs`: regras de questões e resultados.
-- `pdf-import.mjs`: leitura inicial dos PDFs.
-- `app.mjs`: formulários, perfis, simulados e telas.
-- `tests/core.test.mjs`: testes de regras de negócio.
-- `.github/workflows/pages.yml`: testes e publicação pelo GitHub Actions.
+Abra no navegador:
 
-Rodar localmente:
+`https://SEU-WORKER.workers.dev/api/setup`
+
+Use o endereço `workers.dev` real que aparecer na Cloudflare. O Worker escreverá **somente sua URL pública** em `config.js` no GitHub e acionará a publicação do GitHub Pages. Esse endereço não é um segredo.
+
+Quando aparecer `configured` ou `already-configured`, abra novamente o site e veja o indicador no topo: **GitHub sincronizado**. Isso confirma a leitura da versão remota. Para testar a gravação, crie um perfil de demonstração, espere o indicador voltar a sincronizado e abra o site em outro aparelho.
+
+Também é possível inserir manualmente a URL do Worker em **Dados → Sincronização entre aparelhos**. Esta opção fica registrada somente no aparelho em uso.
+
+### Se ocorrer erro
+
+- `GITHUB_TOKEN` não configurado → registre o secret no Worker e publique-o novamente.
+- HTTP 403 ou 404 no GitHub → confira as permissões do token e nome do repositório.
+- `Alterações pendentes` → os dados continuam no navegador e a sincronização será retomada ao voltar a conexão. Evite limpar dados locais até normalizar.
+- `PDF acima de 4 MB` → os textos extraídos poderão ser sincronizados, mas o PDF original não será copiado para o repositório.
+
+## Revisões no GitHub
+
+Ao sinalizar uma questão, a API grava a solicitação no banco e abre uma **Issue**. O proprietário acessa https://github.com/walarconborges/estatistica-das-provas/issues, verifica a evidência e comenta **exatamente** `aprovar` ou `rejeitar`. A automação só aceita comentários feitos pela conta proprietária do repositório e aplica a alteração autorizada.
+
+Se o usuário apenas relatar um problema de extração, sem fornecer uma correção estruturada, o comentário `aprovar` registra a revisão, mas a transcrição deve ser corrigida separadamente.
+
+## Arquitetura e armazenamento
+
+- GitHub Pages: site estático público.
+- Cloudflare Worker: leitura e gravação via API, sem expor o token.
+- `data/state.json`: perfis, provas, questões, tentativas, simulados e sinalizações.
+- `storage/pdfs/`: originais PDF carregados pelo serviço.
+- `sync-client.mjs`: envia somente registros novos ou alterados; combina os dados recebidos de outros aparelhos; preserva o cache local.
+- `worker/index.mjs`: limita operações públicas e impede alterações diretas de gabaritos e classificações de questões já cadastradas.
+- `.github/workflows/revisar-sinalizacao.yml`: rotina administrativa para decisões via Issue.
+- `.github/workflows/pages.yml`: testes e publicação do site.
+
+A sincronização agrupa alterações após alguns segundos, sem gerar um commit por tecla. Para até cinco pessoas, essa arquitetura é adequada para testes, **mas um repositório Git não substitui um banco de dados transacional em escala**. Sem senha, qualquer visitante pode criar perfis, usar nomes existentes ou cadastrar provas; dados e PDFs do repositório são públicos. Há também risco de uso excessivo da API. Não utilize dados sensíveis neste protótipo.
+
+## Testes e limites
 
 ```bash
-python3 -m http.server 8000
-# abrir http://localhost:8000
-```
-
-Para executar os testes, com Node.js 20+:
-
-```bash
-npm test
 npm run check
+npm test
 ```
 
-Documentação adicional: [Diário de desenvolvimento](docs/diario-de-desenvolvimento.md) e [CHANGELOG](CHANGELOG.md).
+Os testes verificam parsing, códigos de questões, resultados, mesclagem de perfis e proteção contra edição direta do gabarito. Ainda faltam testes reais em dois aparelhos com a Cloudflare conectada e validação visual de PDFs difíceis (colunas, tabelas, gráficos e digitalizações). A extração automática é experimental, não garante fidelidade integral nem OCR completo.
 
-## Próximos passos
-
-1. Validar a interface publicada em navegador real e testar PDFs de bancas diferentes.
-2. Implementar sincronização segura com GitHub via serviço intermediário.
-3. Implementar propostas de alteração como Issues e aprovação exclusiva pelo proprietário.
-4. Aprimorar a extração por recortes de imagens, tabelas e alternativas.
-5. Recalcular automaticamente as estatísticas após alterações aprovadas de classificação, gabarito e situação da questão.
-6. Revisar desempenho e armazenamento antes de uso compartilhado contínuo.
-
-O projeto é experimental. A importação exige revisão quando o sistema sinaliza incerteza.
+Consulte [CHANGELOG.md](CHANGELOG.md) e [docs/diario-de-desenvolvimento.md](docs/diario-de-desenvolvimento.md) para decisões, problemas e correções.
