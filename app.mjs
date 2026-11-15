@@ -326,10 +326,10 @@ function printQuestions(qs,title,options={}){
    <div><strong>${original?q.originalNumber:i+1}. ${h(q.code)}</strong></div>
    ${q.contextText&&!repeatedSupportText(qs[i-1],q)?`<p style="white-space:pre-wrap;font-size:9pt">Texto de apoio:\n${h(q.contextText)}</p>`:''}
    ${q.visualSegments&&q.pageImage?
-      `<p>${h(q.visualSegments.beforeText)}</p><img style="max-width:100%;max-height:600px;object-fit:contain" src="${h(q.pageImage)}"><p>${h(q.visualSegments.afterText)}</p>`:
+      `<p style="white-space:pre-wrap">${h(q.visualSegments.beforeText)}</p><img style="max-width:100%;max-height:600px;object-fit:contain" src="${h(q.pageImage)}"><p style="white-space:pre-wrap">${h(q.visualSegments.afterText)}</p>`:
       q.imageOnly&&q.pageImage?
       `<img style="max-width:100%;max-height:600px;object-fit:contain" src="${h(q.pageImage)}">`:
-      `<p>${h(q.stem||'Questão em imagem')}</p>`}
+      `<p style="white-space:pre-wrap">${h(q.stem||'Questão em imagem')}</p>`}
    ${(q.options||[]).map(o=>`<p style="margin:4px 0">${h(o.letter)}) ${h(o.text)}</p>`).join('')}
   </article>`).join('');
   const sheet=qs.map((q,i)=>`<div style="display:inline-block;width:48%;margin:7px 0">${original?q.originalNumber:i+1}. ( A ) ( B ) ( C ) ( D ) ( E )</div>`).join('');
