@@ -110,6 +110,21 @@ function infoTile(value,label){return `<div class="tile"><span class="value">${h
 function btn(action,label,klass='secondary',extra=''){return `<button type="button" class="${klass}" data-action="${action}" ${extra}>${h(label)}</button>`}
 function profileName(){return me()?.name||'Usuário'}
 
+let automaticAdaptationBusy=false,automaticAdaptationChecked=false;
+async function refreshAutomaticAdaptations(){
+ if(!sync.isConfigured()||automaticAdaptationBusy||automaticAdaptationChecked)return;
+ automaticAdaptationBusy=true;
+ try{
+  const response=await fetch(sync.getUrl()+'/api/auto-adapt',{method:'POST',
+   headers:{'Content-Type':'application/json'},body:'{}',cache:'no-store'});
+  const result=await response.json();
+  if(!response.ok)throw Error(result.error||'Atualização de legislação indisponível.');
+  automaticAdaptationChecked=true;
+  if(result.added>0)await sync.sync();
+ }catch(error){console.warn('Adaptação automática pendente:',error)}
+ finally{automaticAdaptationBusy=false}
+}
+
 function explanationBox(qid){
  const entry=explanationsInView.get(qid);
  if(!entry)return '<div class="explanation-box" data-explanation-id="'+h(qid)+'"></div>';
@@ -482,6 +497,7 @@ document.addEventListener('submit',async e=>{
   }
   if(form.id==='import-form'){await importData(form);return}
   currentFilter=formsFilter(form);
+  if(currentFilter.studyArea!=='original'&&!automaticAdaptationChecked)await refreshAutomaticAdaptations();
   const beforeTerritory=filtered(state,profileId,currentFilter);
   const candidates=beforeTerritory.filter(q=>eligibleForList(q,exam(q.examId),currentFilter.studyArea||'candeias'));
   const count=Math.max(1,Math.min(1000,Number(new FormData(form).get('count')||10)));
@@ -552,7 +568,7 @@ document.addEventListener('click',e=>{
     }
     case 'mark-print':markPrinted(id);break;
     case 'save-sync-url':{try{sync.configure($('#sync-url').value);toast('Endereço salvo. Verifique o indicador no topo.');}catch(error){toast(error.message);}break;}
-     case 'sync-now':sync.sync().then(ok=>toast(ok?'Dados consultados e sincronizados.':'Não foi possível sincronizar. Confira o endereço e a conexão.'));break;
+     case 'sync-now':sync.sync().then(async ok=>{if(ok)await refreshAutomaticAdaptations();toast(ok?'Dados consultados e sincronizados.':'Não foi possível sincronizar. Confira o endereço e a conexão.')});break;
      case 'export-json':downloadFile(JSON.stringify(state,null,2),'estatistica-das-provas-backup-'+new Date().toISOString().slice(0,10)+'.json');break;
     case 'import-json':$('#restore-input').click();break;
   }
@@ -561,7 +577,7 @@ $('#switch-user').addEventListener('click',()=>showProfilePicker());
 $('#profile-form').addEventListener('submit',()=>{});
 showProfilePicker();
 save();
-if(sync.isConfigured())sync.sync();
+if(sync.isConfigured())sync.sync().then(ok=>{if(ok)refreshAutomaticAdaptations()});
 window.addEventListener('online',()=>sync.sync());
 document.addEventListener('visibilitychange',()=>{if(!document.hidden&&sync.isConfigured())sync.sync();});
 setInterval(()=>{if(sync.isConfigured()&&!document.hidden)sync.sync();},45000);
