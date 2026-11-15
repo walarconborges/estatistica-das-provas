@@ -22,7 +22,13 @@ test('nem a mera troca de localidade nem uma aprovação informal valem como ada
  assert.equal(studyEligibility(q,exam,'candeias').allowed,false);
 });
 test('adaptação verificada com fonte e gabarito pode ser considerada, preservando a questão original',()=>{
- const q={discipline:'Legislação',disciplineCode:'LE',stem:'Câmara Municipal de Candeias',
+ const q={id:'adapted-1',originalQuestionId:'old-1',discipline:'Legislação',disciplineCode:'LE',stem:'Câmara Municipal de Candeias',
  adaptation:{target:STUDY_CONTEXT.id,approved:true,sourceUrl:'https://legislacao.candeiasdojamari.ro.leg.br/',sourceArticle:'Art. 1º',verifiedAnswer:'A'}};
+ assert.equal(studyEligibility(q,{orgao:'CMCJ'},'candeias').allowed,true);
+});
+
+test('questão oficial de Candeias é elegível sem fingir que foi adaptada',()=>{
+ const q={discipline:'Legislação',disciplineCode:'LE',topic:'Legislação institucional',
+  stem:'Segundo a Câmara Municipal de Candeias do Jamari, qual é o procedimento correto?'};
  assert.equal(studyEligibility(q,{orgao:'CMCJ'},'candeias').allowed,true);
 });
