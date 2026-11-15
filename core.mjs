@@ -121,6 +121,18 @@ export function parseExamText(input){
   return questions.filter(q=>q.originalNumber>0);
 }
 
+/**
+ * Mesmo texto-base na questão imediatamente anterior da seleção.
+ * Não depende da numeração: sorteios podem colocar as questões em qualquer ordem.
+ * Questões avulsas de provas diferentes nunca compartilham o mesmo bloco.
+ */
+export function repeatedSupportText(previous,current){
+ if(!previous||!current||!String(previous.contextText||'').trim()||!String(current.contextText||'').trim())return false;
+ if(previous.examId!==current.examId)return false;
+ const sameText=String(previous.contextText).trim()===String(current.contextText).trim();
+ const rangeA=(previous.contextRange||[]).join('-'),rangeB=(current.contextRange||[]).join('-');
+ return sameText&&rangeA===rangeB;
+}
 export function parseKey(raw){
   const out={};const src=textNorm(raw);
   const re=/(\d{1,3})\s*(?:[.):-]\s*)?([A-E]|CERTO|ERRADO|C|E|ANULADA|ANULADO|X)/g;
