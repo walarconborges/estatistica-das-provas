@@ -12,6 +12,12 @@ Plataforma pública para importar provas de concursos, corrigir respostas, gerar
 - Até o Worker estar conectado, o site continua usando **armazenamento local**. Dados antigos locais são enviados ao primeiro conectar, sem substituir os dados de outros aparelhos.
 - Nunca publique um token GitHub no repositório, na URL do site, no navegador ou em conversas.
 
+## Importação apenas com PDFs
+
+O formulário solicita somente **PDF da prova** e **PDF do gabarito oficial**. O sistema tenta extrair automaticamente ano, banca, órgão e título a partir do conteúdo e do nome dos arquivos. Se algum dado não puder ser identificado, usa um marcador provisório e aponta a necessidade de revisão, sem inventar a informação.
+
+No celular, o formulário deixa de ser redesenhado durante a sincronização com o GitHub, preservando os arquivos escolhidos. O nome selecionado também aparece abaixo de cada campo. A importação e a classificação de PDFs complexos continuam experimentais.
+
 ## Funcionalidades
 
 - Pergunta **Quem está aí?** ao iniciar, sem senha para os participantes.
