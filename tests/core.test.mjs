@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {fresh,addExam,parseExamText,parseKey,inferExamMetadata,sameQuestion,recordAttempt,outcome,stats,createSimulation,finishSimulation,simulationResult,filtered,prioritize} from '../core.mjs';
+import {fresh,addExam,parseExamText,parseKey,inferExamMetadata,repeatedSupportText,sameQuestion,recordAttempt,outcome,stats,createSimulation,finishSimulation,simulationResult,filtered,prioritize} from '../core.mjs';
 const meta={title:'Prova IBGP 2026',year:'2026',banca:'IBGP',orgao:'SEMED'};
 const sample=()=>({stem:'Qual é o plural de cidadão?',originalNumber:1,options:[{letter:'A',text:'Cidadãos'},{letter:'B',text:'Cidadões'}],discipline:'Língua Portuguesa',disciplineCode:'LP',topic:'Gramática',topicCode:'G'});
 function data(){const s=fresh();const e=addExam(s,meta,[sample(),{...sample(),originalNumber:2,stem:'Outra questão'}],{1:'A',2:'B'});return {s,e,q:s.questions[0]}}
@@ -101,4 +101,24 @@ test('marcadores de página preservam referência sem invadir os enunciados',()=
  const parsed=parseExamText('[[PAGE:2]]\n1. Considere a tabela a seguir:\nA) 5\nB) 6\n[[PAGE:3]]\n2. O que é DHCP?\nA) DNS\nB) DHCP');
  assert.equal(parsed.length,2);assert.equal(parsed[0].sourcePage,2);assert.equal(parsed[1].sourcePage,3);
  assert.ok(!parsed[0].stem.includes('[[PAGE'));
+});
+
+
+test('texto de apoio repetido aparece aberto na primeira questão e pode ser recolhido nas seguintes',()=>{
+ const first={examId:'prova-1',originalNumber:1,contextText:'Leia o texto para responder às questões 1 a 5.',contextRange:[1,5]};
+ const next={...first,originalNumber:2};
+ const another={...first,examId:'prova-2',originalNumber:3};
+ const changed={...first,contextText:'Outro texto de apoio',originalNumber:4};
+ assert.equal(repeatedSupportText(null,first),false,'Primeira da seleção mostra texto');
+ assert.equal(repeatedSupportText(first,next),true,'Contíguas da mesma prova e texto podem recolher');
+ assert.equal(repeatedSupportText(first,another),false,'Provas diferentes não compartilham texto');
+ assert.equal(repeatedSupportText(first,changed),false,'Passagens diferentes ficam visíveis');
+ assert.equal(repeatedSupportText({examId:'prova-1'},first),false,'Sem texto anterior, manter visível');
+});
+test('texto de apoio volta a abrir quando outra questão quebra a sequência',()=>{
+ const q1={examId:'prova-1',contextText:'Texto comum',contextRange:[1,5]};
+ const independent={examId:'prova-1',contextText:'',contextRange:null};
+ const q3={...q1,originalNumber:3};
+ assert.equal(repeatedSupportText(q1,independent),false);
+ assert.equal(repeatedSupportText(independent,q3),false);
 });
