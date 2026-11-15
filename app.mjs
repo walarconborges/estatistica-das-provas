@@ -384,7 +384,7 @@ function downloadFile(text,name,type='application/json'){
   const a=document.createElement('a');const url=URL.createObjectURL(new Blob([text],{type}));a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1500);
 }
 function printQuestions(qs,title,options={}){
-  const original=!!options.original,answered=options.answers||{};
+  const original=!!options.original,answered=options.answers||{},includeKey=options.includeKey!==false;
   const content=qs.map((q,i)=>`<article class="question">
    <div><strong>${original?q.originalNumber:i+1}. ${h(q.code)}</strong></div>
    ${q.contextText&&!repeatedSupportText(qs[i-1],q)?`<p style="white-space:pre-wrap;font-size:9pt">Texto de apoio:\n${h(q.contextText)}</p>`:''}
@@ -397,7 +397,7 @@ function printQuestions(qs,title,options={}){
   </article>`).join('');
   const sheet=qs.map((q,i)=>`<div style="display:inline-block;width:48%;margin:7px 0">${original?q.originalNumber:i+1}. ( A ) ( B ) ( C ) ( D ) ( E )</div>`).join('');
   const key=qs.map((q,i)=>`<div style="display:inline-block;width:33%;margin:4px 0">${original?q.originalNumber:i+1}. ${h(q.answer||'—')} &nbsp; ${h(q.code)}</div>`).join('');
-  const doc=`<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>${h(title)}</title><style>@page{size:A4;margin:1.5cm 1.5cm 1.5cm 2.5cm}body{font:11pt Arial,sans-serif;color:#111}.question{break-inside:avoid;page-break-inside:avoid;margin-bottom:15mm}.page{page-break-before:always}h1{font-size:15pt}h2{font-size:13pt}p{line-height:1.4}</style></head><body><h1>${h(title)}</h1>${content}<section class="page"><h2>Folha de respostas</h2>${sheet}</section><section class="page"><h2>Gabarito</h2>${key}</section></body></html>`;
+  const doc=`<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>${h(title)}</title><style>@page{size:A4;margin:1.5cm 1.5cm 1.5cm 2.5cm}body{font:11pt Arial,sans-serif;color:#111}.question{break-inside:avoid;page-break-inside:avoid;margin-bottom:15mm}.page{page-break-before:always}h1{font-size:15pt}h2{font-size:13pt}p{line-height:1.4}</style></head><body><h1>${h(title)}</h1>${content}<section class="page"><h2>Folha de respostas</h2>${sheet}</section>${includeKey?`<section class="page"><h2>Gabarito</h2>${key}</section>`:''}</body></html>`;
   const w=window.open('','_blank');if(!w){toast('Permita janelas pop-up para imprimir.');return}
   w.document.open();w.document.write(doc);w.document.close();w.focus();setTimeout(()=>w.print(),350);
 }
@@ -534,7 +534,7 @@ document.addEventListener('click',e=>{
     }
     case 'print-current':printQuestions(currentPool,'Questões');break;
     case 'print-sim':{
-      const s=sim(selectedSimId);if(s)printQuestions(s.questionIds.map(question).filter(Boolean),'Simulado — '+profileName(),{original:s.kind==='exam',answers:s.answers});break;
+      const s=sim(selectedSimId);if(s)printQuestions(s.questionIds.map(question).filter(Boolean),'Simulado — '+profileName(),{original:s.kind==='exam',answers:s.answers,includeKey:s.status==='finished'});break;
     }
     case 'mark-print':markPrinted(id);break;
     case 'save-sync-url':{try{sync.configure($('#sync-url').value);toast('Endereço salvo. Verifique o indicador no topo.');}catch(error){toast(error.message);}break;}
