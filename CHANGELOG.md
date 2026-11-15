@@ -6,6 +6,8 @@
 - A questão 11 deixa de exigir imagem apenas porque há a expressão "o equivalente a"; frações numéricas simples permanecem em texto.
 - Metadados completos recolhidos para reduzir distrações na resolução; código permanente preservado.
 - 39 testes automatizados aprovados e recortes conferidos com o PDF original das questões 17, 19 e 26.
+- Limpeza final do banco compartilhado: 1 prova e 50 questões removidas; PDF anterior excluído; preservados os perfis Wilber e TESTE.
+- Identificadores excluídos mantidos como proteção contra restauração por sincronização de navegadores antigos.
 - Pendente: validação da nova importação no navegador e observação de outras bancas.
 
 ## 0.4.0 — 15/11/2026
