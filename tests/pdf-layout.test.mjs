@@ -180,3 +180,40 @@ test('imagem da questão 26 contempla só a planilha, mantendo fórmula em texto
  assert.equal(q.visualSegments.bottom,194);
  assert.match(q.visualSegments.afterText,/MÁXIMO\(A1:C3\)/);
 });
+
+
+test('questão 11 real: frações 11/9 ficam nas duas posições originais do enunciado',()=>{
+ const height=841.89;
+ const piece=(str,x,y,width)=>({str,transform:[1,0,0,1,x,height-y],width});
+ const items=[
+  piece('o rendimento obtido, de',51,88.5,103.6),
+  piece('11',156.5,85.1,10.8),piece('9',158.8,99.2,5.4),
+  piece('de X. Esses',168.9,88.5,57.1),
+  piece('11',227.9,85.0,10.8),piece('9',230.2,99.0,5.4),
+  piece('de X foram',240.4,88.5,52.8)
+ ];
+ const lines=spatialLines(items,595.28,height);
+ assert.equal(lines.length,1);
+ assert.equal(humanizePdfText(lines[0].text),
+  'o rendimento obtido, de 11/9 de X. Esses 11/9 de X foram');
+ assert.equal((lines[0].text.match(/11\/9/g)||[]).length,2);
+});
+test('questão 15 real: frações 3/8 e 7/8 preservam a ordem e o lugar nas frases',()=>{
+ const height=841.89;
+ const piece=(str,x,y,width)=>({str,transform:[1,0,0,1,x,height-y],width});
+ const items=[
+  piece('e o número de mulheres é',51,244.2,112.5),
+  piece('3',164.6,240.3,5.4),piece('8',164.5,254.3,5.4),
+  piece('. Com a intenção',171.7,244.2,118.8),
+  piece('Para que a razão mencionada, que era',51,326.3,164.8),
+  piece('3',217.4,322.6,5.4),piece('8',217.3,336.7,5.4),
+  piece(', se tornasse',223.9,326.3,56.7),
+  piece('7',281.4,322.6,5.4),piece('8',281.5,336.6,5.4),
+  piece(',',287.9,326.3,5.4)
+ ];
+ const lines=spatialLines(items,595.28,height);
+ assert.equal(lines.length,2);
+ assert.equal(humanizePdfText(lines[0].text),'e o número de mulheres é 3/8. Com a intenção');
+ assert.equal(humanizePdfText(lines[1].text),'Para que a razão mencionada, que era 3/8, se tornasse 7/8,');
+ assert.equal((lines.map(l=>l.text).join(' ').match(/3\/8/g)||[]).length,2);
+});
