@@ -1,3 +1,13 @@
+## 0.3.2 — 15/11/2026
+- Corrigida a causa de mensagens enganosas "alternativas não reconhecidas": erros de imagem deixaram de alterar a classificação da extração textual.
+- PDF.js passou a gerar os recortes antes de `page.cleanup()`, evitando renderizar páginas cujos recursos já foram liberados.
+- Renderização agrupada por página e segunda tentativa em escala menor para falhas de memória ou navegador.
+- Mensagens de erro de imagem passam a informar questão, página e motivo técnico sem gravar importações incompletas.
+- Questão 34 da VUNESP não solicita imagem: "tabela MAC" é conceito de redes, não uma tabela impressa.
+- Recortes das questões 11, 17, 19 e 26 conferidos visualmente a partir dos PDFs enviados.
+- 29 testes automatizados aprovados, incluindo sucesso, falha e recuperação da geração de imagens; versão de navegador ainda precisa ser testada com os dois PDFs originais.
+- Banco de dados de testes continua com dois perfis e zero questões.
+
 ## 0.3.1 — 15/11/2026
 - Renomeada a seção "Questões avulsas" para **"Questões"** em todo o menu, tela inicial, filtro e impressão.
 - Textos de apoio continuam vinculados a cada questão e são exibidos abertos quando a questão aparece isoladamente ou inicia uma nova sequência.
