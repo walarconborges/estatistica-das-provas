@@ -4,6 +4,7 @@
 - Reproduzidos e corrigidos os erros das questões 11 (duas ocorrências de 11/9 e 3/2) e 15 (3/8 e 7/8).
 - Regressões construídas com coordenadas reais dos PDFs originais, verificando posição e quantidade de frações.
 - 41 testes automatizados passaram; demais layouts de equações requerem validação adicional.
+- Banco compartilhado reiniciado: 50 questões da importação anterior removidas na v0.4.2, junto com o registro da prova e o PDF, preservando os dois perfis.
 - Pendente: novo teste de importação no navegador com a prova original.
 
 ## 0.4.1 — 15/11/2026
