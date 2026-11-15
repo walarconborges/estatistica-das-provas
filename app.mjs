@@ -33,6 +33,47 @@ const sync=createSyncClient({
  endpoint:window.APP_CONFIG?.apiBase||''
 });
 
+// Anotações de estudo individuais, sem mudar o gabarito oficial.
+const ELIMINATION_STORE='estatistica-provas-eliminadas-v1';
+let eliminatedChoices={};
+try{const found=JSON.parse(localStorage.getItem(ELIMINATION_STORE)||'{}');if(found&&typeof found==='object'&&!Array.isArray(found))eliminatedChoices=found;}catch{}
+function eliminationKey(qid,scope){
+ return [profileId||'',scope==='sim'?(selectedSimId||'sim'):'questoes',qid].join(':');
+}
+function eliminatedLetters(qid,scope){
+ const letters=eliminatedChoices[eliminationKey(qid,scope)]||[];
+ return Array.isArray(letters)?letters.filter(a=>/^[A-E]$/.test(a)):[];
+}
+function toggleElimination(qid,letter,scope){
+ if(!/^[A-E]$/.test(letter)||!question(qid))return;
+ const key=eliminationKey(qid,scope),set=new Set(eliminatedLetters(qid,scope));
+ if(set.has(letter))set.delete(letter);else set.add(letter);
+ if(set.size)eliminatedChoices[key]=[...set];else delete eliminatedChoices[key];
+ try{localStorage.setItem(ELIMINATION_STORE,JSON.stringify(eliminatedChoices))}catch{toast('Não foi possível salvar esta eliminação neste navegador.');}
+ const card=document.querySelector('[data-question-card="'+qid+'"]');
+ if(!card)return;
+ const row=[...card.querySelectorAll('.alternative-row')].find(x=>x.dataset.letter===letter);
+ if(!row)return;
+ const crossed=set.has(letter);
+ row.classList.toggle('is-eliminated',crossed);
+ const radio=row.querySelector('input[type=radio]');
+ if(radio){radio.disabled=crossed;if(crossed)radio.checked=false;}
+ const control=row.querySelector('button[data-action=toggle-eliminate]');
+ if(control){
+  control.setAttribute('aria-pressed',String(crossed));
+  control.setAttribute('aria-label',(crossed?'Restaurar':'Eliminar')+' alternativa '+letter);
+  control.title=crossed?'Restaurar alternativa':'Eliminar alternativa';
+ }
+ if(scope==='sim'&&crossed){
+  const simulation=sim(selectedSimId);
+  if(simulation?.status==='pending'&&simulation.answers[qid]===letter){
+   delete simulation.answers[qid];save();
+   const indicator=$('#screen .card-header .muted');
+   if(indicator)indicator.textContent=simulation.questionIds.length+' questões · '+Object.values(simulation.answers).filter(validAnswer).length+' com alternativa marcada';
+  }
+ }
+}
+
 function save(){
   try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state));sync.request();return true}
   catch(e){toast('Armazenamento cheio. Exporte um backup antes de continuar.');console.error(e);return false}
@@ -119,9 +160,19 @@ function filterForm(kind='questions'){
   </form>`;
 }
 function alternatives(q,scope,chosen=''){
-  const options=q.options||[];
-  if(!options.length)return '<p class="notice">Alternativas não extraídas. Consulte a imagem ou sinalize a questão.</p>';
-  return `<div class="alternatives">${options.map(o=>`<label class="alternative"><input type="radio" name="resp-${h(q.id)}" data-scope="${scope}" data-qid="${h(q.id)}" value="${h(o.letter)}" ${chosen===o.letter?'checked':''}><span><strong>${h(o.letter)})</strong> ${q.imageOnly?'Marcar '+h(o.letter):h(o.text)}</span></label>`).join('')}</div>`;
+ const options=q.options||[];
+ if(!options.length)return '<p class="notice">Alternativas não extraídas. Consulte a imagem ou sinalize a questão.</p>';
+ const eliminated=new Set(eliminatedLetters(q.id,scope));
+ return `<div class="alternatives">${options.map(o=>{
+  const crossed=eliminated.has(o.letter);
+  return `<div class="alternative-row${crossed?' is-eliminated':''}" data-letter="${h(o.letter)}">
+   <label class="alternative">
+    <input type="radio" name="resp-${h(q.id)}" data-scope="${scope}" data-qid="${h(q.id)}" value="${h(o.letter)}" ${chosen===o.letter&&!crossed?'checked':''} ${crossed?'disabled':''}>
+    <span class="alternative-copy"><strong>${h(o.letter)})</strong> ${h(o.text)}</span>
+   </label>
+   <button type="button" class="alternative-cross" data-action="toggle-eliminate" data-id="${h(q.id)}" data-letter="${h(o.letter)}" data-scope="${scope}" aria-pressed="${crossed}" aria-label="${crossed?'Restaurar':'Eliminar'} alternativa ${h(o.letter)}" title="${crossed?'Restaurar alternativa':'Eliminar alternativa'}">×</button>
+  </div>`;
+ }).join('')}</div>`;
 }
 function feedback(q,answer){
   if(!validAnswer(answer))return '<span class="badge wait">Não respondida</span>';
@@ -387,6 +438,7 @@ document.addEventListener('click',e=>{
     case 'go-sim':navigate('sim');break;
     case 'go-stats':navigate('stats');break;
     case 'show-pending':navigate('sim');break;
+    case 'toggle-eliminate':toggleElimination(id,button.dataset.letter,button.dataset.scope);break;
     case 'answer-single':answerSingle(id);break;
     case 'flag-question':issueInvalid(id);break;
     case 'question-log':showLog(id);break;
