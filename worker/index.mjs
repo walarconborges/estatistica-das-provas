@@ -59,6 +59,7 @@ export function applyDelta(existing,delta){
    if(type==='questions'){
     if(!state.exams.some(e=>e.id===item.examId)&&!(delta.exams||[]).some(e=>e.id===item.examId))throw Error('Questão sem prova correspondente.');
     if(state.questions.some(q=>q.code===item.code))item.code=makeCode(state,item,item);
+    delete item.adaptation; // Aprovações municipais não são aceitas em importações públicas.
     item.secondary=[];item.aliases=[];if(!['active','annulled','needs-review'].includes(item.status))item.status='needs-review';
    }
    if(type==='flags'){
