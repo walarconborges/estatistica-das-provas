@@ -109,3 +109,74 @@ test('figura interna mantém texto antes e depois e alternativas separadas',()=>
  assert.match(q.visualSegments.afterText,/perímetro/);
  assert.deepEqual(q.options.map(o=>o.letter),['A','B','C','D','E']);
 });
+
+test('enunciado com texto de apoio remove hifenização e corrige espaços',()=>{
+ const lines=[
+  [20,'Leia o texto para responder às questões de 1 a 2:'],
+  [34,'Comér-'],
+  [47,'cio mundial e seus subsí dios continuam crescendo.'],
+  [89,'1. De acordo com o texto, qual afirmação é correta?'],
+  ...'ABCDE'.split('').map((l,i)=>[120+i*20,'('+l+') Alternativa'])
+ ].map(([y,text])=>({col:0,y,text}));
+ const parsed=spatialQuestions([{number:5,width:595,height:842,lines}]);
+ assert.equal(parsed.contexts.length,1);
+ assert.match(parsed.contexts[0].text,/Comércio mundial e seus subsídios/);
+ assert.ok(!parsed.contexts[0].text.includes('Comér-'));
+});
+test('ordinais fragmentados por fonte do PDF não deixam um o solto nas alternativas',()=>{
+ assert.equal(humanizePdfText('será criado após o 3 slide. o'),'será criado após o 3º slide.');
+ assert.equal(humanizePdfText('clicou no 3o slide'),'clicou no 3º slide');
+ assert.equal(humanizePdfText('o texto continua com o artigo o'),'o texto continua com o artigo o');
+});
+test('a questão 11 com fração simples permanece texto, sem imagem obrigatória',()=>{
+ const q=spatialQuestions([{number:6,width:595,height:842,lines:[
+  {col:0,y:60,text:'11. A aplicação aumentou 11/9 e depois o equivalente a 3/2 do valor inicial.'},
+  ...'ABCDE'.split('').map((letter,i)=>({col:0,y:95+i*18,text:'('+letter+') R$ 500,00'}))
+ ]}]).questions[0];
+ assert.equal(q.imageOnly,false);
+ assert.equal(q.options.length,5);
+});
+test('legendas de autorização não aparecem no texto nem no recorte do desenho 17',()=>{
+ const rows=[
+ [25,'17. O desenho a seguir, desenhado fora de escala, representa um terreno'],
+ [36,'senta o contorno de um terreno cuja área é de 0,92 km².'],
+ [49,'Referências métricas: AB=2x, AF=x+1, CD=x'],
+ [61,'DE=x+2.'],
+ [258,'(Arquivo pessoal; imagem usada com autorização)'],
+ [278,'O perímetro desse terreno está inserido no intervalo de'],
+ ...'ABCDE'.split('').map((x,i)=>[312+i*18,'('+x+') 7.100 a 7.399'])
+ ].map(([y,text])=>({col:0,y,text}));
+ const q=spatialQuestions([{number:8,width:595,height:842,lines:rows}]).questions[0];
+ assert.equal(q.visualSegments.top,77);
+ assert.equal(q.visualSegments.bottom,252);
+ assert.equal(q.visualSegments.afterText,'O perímetro desse terreno está inserido no intervalo de');
+ assert.ok(!/arquivo pessoal/i.test(q.stem));
+});
+test('imagem da questão 19 contempla apenas a tabela, sem legenda e parágrafos',()=>{
+ const rows=[[25,'19. Considere a tabela a seguir:'],[49,'LOJA DE AUTOMÓVEIS'],
+  ...[71,92,107,122,136,151,166,181,196,211,226,239].map(y=>[y,'VENDEDORES E UNIDADES VENDIDAS']),
+  [247,'(Arquivo pessoal; imagem usada com autorização)'],
+  [265,'Essa tabela apresenta a vendedora Neide com x unidades vendidas.'],
+  [359,'Sendo assim, a diferença é igual a'],
+  ...'ABCDE'.split('').map((x,i)=>[405+i*20,'('+x+') Número'])
+ ].map(([y,text])=>({col:0,y,text}));
+ const q=spatialQuestions([{number:9,width:595,height:842,lines:rows}]).questions[0];
+ assert.equal(q.visualSegments.top,41);
+ assert.equal(q.visualSegments.bottom,241);
+ assert.equal(q.visualSegments.beforeText,'Considere a tabela a seguir:');
+ assert.match(q.visualSegments.afterText,/Neide/);
+ assert.ok(!/arquivo pessoal/i.test(q.stem));
+});
+test('imagem da questão 26 contempla só a planilha, mantendo fórmula em texto',()=>{
+ const rows=[[60,'26. No Excel foi elaborada a seguinte planilha:'],
+  [72,'considerando a versão 2016, uma planilha:'],
+  [197,'Posteriormente, a seguinte fórmula foi inserida na célula A5'],
+  [227,'=MÁXIMO(A1:C3)-MÍNIMO(B2:D4)'],
+  [246,'O resultado é'],
+  ...'ABCDE'.split('').map((x,i)=>[265+i*18,'('+x+') Número'])
+ ].map(([y,text])=>({col:0,y,text}));
+ const q=spatialQuestions([{number:11,width:595,height:842,lines:rows}]).questions[0];
+ assert.equal(q.visualSegments.top,88);
+ assert.equal(q.visualSegments.bottom,194);
+ assert.match(q.visualSegments.afterText,/MÁXIMO\(A1:C3\)/);
+});
