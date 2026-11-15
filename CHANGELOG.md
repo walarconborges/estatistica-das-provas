@@ -1,3 +1,11 @@
+## 0.3.1 — 15/11/2026
+- Renomeada a seção "Questões avulsas" para **"Questões"** em todo o menu, tela inicial, filtro e impressão.
+- Textos de apoio continuam vinculados a cada questão e são exibidos abertos quando a questão aparece isoladamente ou inicia uma nova sequência.
+- Quando questões consecutivas da mesma prova compartilham o mesmo texto-base, ele fica recolhido nas subsequentes, com opção para abrir novamente.
+- Em simulados e na impressão, textos de apoio de questões consecutivas são exibidos uma única vez.
+- Incluídos testes de regressão para textos em provas diferentes, seleções aleatórias e interrupção de sequências; total de 24 testes aprovados em execução isolada.
+- Nenhuma alteração no banco de questões ou nos perfis.
+
 ## 0.3.0 — 15/11/2026
 - Criado um extrator espacial por coordenadas e colunas para PDFs de concursos.
 - Recuperados enunciados, alternativas, textos de apoio compartilhados e regiões visuais sem unir duas questões distintas.
