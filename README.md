@@ -1,9 +1,18 @@
 # Estatística das Provas
 
-**Versão experimental 0.4.0 — 15/11/2026**  
+**Versão experimental 0.4.1 — 15/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+### Ajustes na extração e na tela de resolução — v0.4.1
+
+- Os textos de apoio passam pela mesma limpeza dos enunciados: remoção conservadora de hifens artificiais e restauração de palavras fragmentadas.
+- Corrigidas sobras tipográficas de ordinais, como o `o` solto em alternativas referentes ao `3º slide`, sem remover artigos legítimos.
+- Removida a legenda repetida "Arquivo pessoal; imagem usada com autorização" da representação textual e dos recortes, preservando-a no PDF original.
+- As imagens de desenhos (questão 17), tabelas (questão 19) e planilhas (questão 26) são delimitadas entre o texto anterior e o posterior. As frações simples (questão 11) permanecem em texto.
+- Os metadados completos da prova ficam recolhidos em **Ver origem da questão**, mantendo o código permanente visível.
+- A extração foi verificada com recortes do PDF original e por **39 testes automatizados**; outros modelos de provas e o uso em navegadores ainda precisam de validação.
 
 ### Correção de falhas de imagens — versão 0.3.2
 
