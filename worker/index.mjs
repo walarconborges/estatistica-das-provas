@@ -1,6 +1,7 @@
 /** API pública de sincronização; o token GitHub existe SOMENTE nos secrets do Worker. */
 import {fresh,normalizeState,makeCode} from '../core.mjs';
 import {canExplain,contentFingerprint,explanationPath,promptFor,modelResponseText,isDailyLimitError,DEFAULT_AI_MODEL} from './explanations.mjs';
+import {appendAutomaticAdaptations} from '../legal-adapt.mjs';
 const HOST='https://api.github.com';
 const LISTS=['profiles','exams','questions','attempts','simulations','flags'];
 const HEAD={'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28','User-Agent':'estatistica-provas-sync'};
@@ -59,7 +60,10 @@ export function applyDelta(existing,delta){
    if(type==='questions'){
     if(!state.exams.some(e=>e.id===item.examId)&&!(delta.exams||[]).some(e=>e.id===item.examId))throw Error('Questão sem prova correspondente.');
     if(state.questions.some(q=>q.code===item.code))item.code=makeCode(state,item,item);
-    delete item.adaptation; // Aprovações municipais não são aceitas em importações públicas.
+    delete item.adaptation; // Apenas o Worker gera adaptações legais verificadas.
+    delete item.originalQuestionId;
+    delete item.legalBasis;
+    delete item.legalExplanation;
     item.secondary=[];item.aliases=[];if(!['active','annulled','needs-review'].includes(item.status))item.status='needs-review';
    }
    if(type==='flags'){
@@ -76,12 +80,27 @@ export function applyDelta(existing,delta){
 }
 async function commitDelta(env,delta){
  for(let retries=0;retries<5;retries++){
-  const {sha,state}=await loadState(env),result=applyDelta(state,delta),next=JSON.stringify(result.state,null,2)+'\n';
+  const {sha,state}=await loadState(env),result=applyDelta(state,delta);
+  result.adaptedCount=appendAutomaticAdaptations(result.state).length;
+  const next=JSON.stringify(result.state,null,2)+'\n';
   if(next.length>5_000_000)throw Error('O banco compartilhado ultrapassou o limite do protótipo.');
   if(await writeFile(env,'data/state.json',next,sha,'data: sincronização de estudos'))return result;
  }
  throw Error('Conflito ao gravar dados. Tente novamente.');
 }
+async function commitAutoAdaptations(env){
+ for(let retries=0;retries<5;retries++){
+  const {sha,state}=await loadState(env);
+  const created=appendAutomaticAdaptations(state);
+  if(!created.length)return {added:0,total:state.questions.filter(q=>q.originalQuestionId).length};
+  const data=JSON.stringify(state,null,2)+'\n';
+  if(data.length>5_000_000)throw Error('O banco ultrapassou o limite do protótipo.');
+  if(await writeFile(env,'data/state.json',data,sha,'legal: gerar adaptações automáticas Candeias'))
+   return {added:created.length,total:state.questions.filter(q=>q.originalQuestionId).length};
+ }
+ throw Error('Conflito ao armazenar adaptações; tente novamente.');
+}
+
 async function createIssue(env,flag,state){
  const q=state.questions.find(x=>x.id===flag.questionId);if(!q)return false;
  const name=state.profiles.find(x=>x.id===flag.profileId)?.name||'Usuário';
@@ -206,14 +225,15 @@ export default {async fetch(req,env){
   if(req.method==='GET'&&url.pathname==='/api/health')return reply({status:'ok',repo:setup(env).repo,purgeGuard:1},200,origin);
   if(req.method==='GET'&&url.pathname==='/api/state')return reply((await loadState(env)).state,200,origin);
   if(url.pathname==='/api/explanation')return handleExplanation(req,env,origin);
+  if(req.method==='POST'&&url.pathname==='/api/auto-adapt')return reply(await commitAutoAdaptations(env),200,origin);
   if(req.method==='POST'&&url.pathname==='/api/upload')return reply(await uploadPDF(req,env),200,origin);
   if(req.method==='GET'&&url.pathname==='/api/file')return getPDF(req,env);
   if(req.method==='POST'&&url.pathname==='/api/merge'){
-   const input=await parseBody(req),{state,newFlags}=await commitDelta(env,input.delta),warnings=[];
+   const input=await parseBody(req),{state,newFlags,adaptedCount}=await commitDelta(env,input.delta),warnings=[];
    for(const f of newFlags.slice(0,20)){
     try{if(!await createIssue(env,f,state))warnings.push('Não foi possível criar a Issue da sinalização '+f.id);}catch{warnings.push('Não foi possível criar a Issue da sinalização '+f.id);}
    }
-   return reply({state,warnings},200,origin);
+   return reply({state,warnings,adaptedCount},200,origin);
   }
   if(req.method==='GET'&&url.pathname==='/api/setup'){
    const workerUrl=url.origin;
