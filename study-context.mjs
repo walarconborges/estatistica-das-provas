@@ -31,8 +31,16 @@ export function isLocalLegislation(q,e){
  */
 export function studyEligibility(q,e,mode='candeias'){
  if(mode==='original'||!isLocalLegislation(q,e))return {allowed:true,status:'original'};
+ // Questão original oficial do próprio município não é uma adaptação.
+ const municipality=/CANDEIAS DO JAMARI|\bCMCJ\b/;
+ const questionJurisdiction=norm([q.stem,q.contextText,q.heading].join(' '));
+ const examJurisdiction=norm([e?.orgao,e?.title,q.orgao].join(' '));
+ const clearlyOther=/VOTORANTIM|PORTO VELHO|ARIQUEMES|JI-PARANA/.test(questionJurisdiction);
+ if(!clearlyOther&&(municipality.test(questionJurisdiction)||municipality.test(examJurisdiction)))
+  return {allowed:true,status:'local-original'};
+
  // Adaptação aprovada é um novo registro, que conserva referência à original.
- if(q.adaptation?.target===STUDY_CONTEXT.id&&q.adaptation.approved===true&&
+ if(q.originalQuestionId&&q.originalQuestionId!==q.id&&q.adaptation?.target===STUDY_CONTEXT.id&&q.adaptation.approved===true&&
     q.adaptation.sourceUrl&&q.adaptation.sourceArticle&&q.adaptation.verifiedAnswer)
    return {allowed:true,status:'approved'};
  return {allowed:false,status:'awaiting-legal-review',reason:'A legislação específica desta questão ainda não foi comparada e validada com as normas de Candeias do Jamari.'};
