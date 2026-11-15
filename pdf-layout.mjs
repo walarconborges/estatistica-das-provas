@@ -85,7 +85,7 @@ export function formatQuestionStem(parts){
    value=value.replace(item,'\n'+item);
   }
   value=value.replace(/(\b[a-f0-9]{32,64})\s+(?=(?:Considerando|Com base|De acordo|Assinale)\b)/iu,'$1\n\n');
-  return value.trim();
+  return value.replace(/[ \t]+\n/g,'\n').trim();
  }
  return text;
 }
