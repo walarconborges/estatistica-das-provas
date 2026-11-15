@@ -36,8 +36,11 @@ function contextMarker(line){
  return m?{from:Number(m[1]),to:Number(m[2])}:null;
 }
 function needsImage(stem){
+ const t=norm(stem);
+ // "Tabela MAC" é uma estrutura lógica de um switch, não uma tabela desenhada no PDF.
+ if(/\bTABELA\s+MAC\b/.test(t)&&!/\b(?:TABELA|QUADRO)\s+(?:A SEGUIR|ABAIXO)\b/.test(t))return false;
  return /\b(TABELA|DESENHO|FIGURA|GR[AÁ]FICO|PLANILHA|DIAGRAMA|ESQUEMA|CONTORNO DE UM TERRENO)\b/i.test(stem)
- ||/\b\d+\s*\/\s*\d+\b/.test(stem)||/O EQUIVALENTE A/i.test(stem);
+  ||/\b\d+\s*\/\s*\d+\b/.test(stem)||/O EQUIVALENTE A/i.test(stem);
 }
 export function spatialQuestions(pages){
  const questions=[],contexts=[];let heading='';
