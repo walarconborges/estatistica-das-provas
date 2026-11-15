@@ -1,3 +1,10 @@
+## 0.2.3 — 15/11/2026
+- Removida a importação incorreta VUNESP (1 prova, 49 questões) do banco compartilhado e excluído o PDF anterior da versão atual do repositório.
+- Mantidos os perfis Wilber e TESTE. Não havia respostas, simulados ou sinalizações associados à prova.
+- Adicionado controle de IDs excluídos para impedir que sincronizações antigas recriem provas e questões descartadas.
+- Examinados os documentos originais: caderno 004 Analista de Informática (50 questões, 16 páginas), gabarito do cargo 004 em documento com vários cargos (3 páginas).
+- Registradas pendências de importação de provas em duas colunas, textos-base compartilhados, gráficos, tabelas e seleção de gabarito específico por cargo na Issue #1.
+
 ## 0.2.2 — 15/11/2026
 - Corrigida a separação de enunciados quando o PDF insere \`RASCUNHO 19.\` após a questão 18.
 - Removidos vários padrões de marcas d'água e trechos técnicos do PCI Concursos.
