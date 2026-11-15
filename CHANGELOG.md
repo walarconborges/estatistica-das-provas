@@ -1,3 +1,14 @@
+## 0.6.0 — 15/11/2026
+- Substituída a aprovação prévia por **adaptação automática** quando existe equivalência jurídica específica no catálogo oficial de Candeias.
+- Implementados dez modelos de questões com dispositivo legal, URL oficial, gabarito independente e explicação factual.
+- As adaptações são novas questões com vínculo e código próprios; o banco e o gabarito originais permanecem intactos.
+- O Worker gera adaptações ao sincronizar provas e pode recuperar adaptações das importações anteriores via `/api/auto-adapt`.
+- Ao conferir uma questão adaptada ou finalizar o simulado, o fundamento legal aparece automaticamente, sem usar Workers AI.
+- Usuários podem sinalizar erros de adaptação; questões sem correspondência permanecem excluídas somente do modo municipal.
+- Corrigida uma falsa equivalência: termos de posse de prefeito e vereadores não são tratados como investidura em cargo de servidor.
+- Cobertura inicial limitada aos artigos previamente conferidos da Resolução 173/CMCJ/2025 e da Lei Orgânica de Candeias.
+- Sem limpeza de banco ou redefinição de estatísticas. Publicação efetiva do Worker Cloudflare ainda requer confirmação.
+
 ## 0.5.0 — 15/11/2026
 - Cloudflare Workers AI para explicações opcionais após a correção.
 - Cache compartilhado no GitHub; explicações reutilizadas sem novo processamento.
