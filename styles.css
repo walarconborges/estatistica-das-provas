@@ -46,3 +46,14 @@ button.alternative-cross[aria-pressed="true"]:not(.quiet):not(.plain):not(.tab-b
  .alternative-row .alternative{background:none!important}
  .alternative-row .alternative-copy{text-decoration:none!important;color:inherit!important;opacity:1!important}
 }
+
+/* Interface de resolução: código permanente visível, detalhes de origem recolhidos. */
+.question-origin{margin-top:2px;font-size:.75rem;color:#637b8e}
+.question-origin summary{cursor:pointer;display:inline-block;list-style:none;color:#637b8e}
+.question-origin summary::-webkit-details-marker{display:none}
+.question-origin summary:hover{text-decoration:underline}
+.question-origin > div{margin:2px 0 0;font-size:.8rem;line-height:1.35}
+.question-context{font-size:.82rem}
+.question-figure{max-width:min(100%,600px)}
+.question-body:empty{display:none}
+@media print{.question-origin{display:none!important}}
