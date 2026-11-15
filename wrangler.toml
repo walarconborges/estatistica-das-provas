@@ -8,3 +8,7 @@ GITHUB_REPO = "estatistica-das-provas"
 GITHUB_BRANCH = "main"
 ALLOWED_ORIGINS = "https://walarconborges.github.io"
 # GITHUB_TOKEN deve ser cadastrado como SECRET na Cloudflare, nunca no repositório.
+
+# A franquia gratuita do Workers AI é utilizada somente a pedido.
+[ai]
+binding = "AI"
