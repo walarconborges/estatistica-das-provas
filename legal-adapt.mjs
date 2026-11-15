@@ -93,7 +93,7 @@ export function makeAutoAdaptation(original,fact){
  const answer=letters[correctIndex];
  const id='cj-'+original.id;
  const code='Q'+shortCode(original.year||'2026')+'LE'+shortCode(original.topicCode||'G')+
-   shortCode(original.banca||'BANCA')+'CMCJ'+(seed%10000000).toString().padStart(7,'0');
+   shortCode(original.banca||'BANCA')+'CMCJ'+seed.toString().padStart(10,'0');
  return {
   id,code,examId:original.examId,
   originalQuestionId:original.id,originalNumber:original.originalNumber,
