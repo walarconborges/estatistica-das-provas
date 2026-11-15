@@ -235,7 +235,7 @@ async function importData(form){
     if(selected.section==='única'&&(keyRead.text.match(/PROVA\s+OBJETIVA/gi)||[]).length>1)problems.push('O gabarito parece reunir vários cargos sem identificação confiável');
 
     if(meta.missing.length)problems.push('Dados não identificados: '+meta.missing.join(', '));
-    for(const q of parsed)if(q.imageOnly&&!q.pageImage)problems.push('Imagem da questão '+q.originalNumber+' indisponível');
+    for(const q of parsed)if(q.imageOnly&&!q.pageImage)problems.push('Não foi possível gerar a imagem da questão '+q.originalNumber+' (página '+q.sourcePage+'): '+String(q.imageError||'falha desconhecida').slice(0,120));
     if(problems.length){
       latestImportMessage='Importação bloqueada para evitar erros: '+problems.slice(0,8).join('; ')+(problems.length>8?' e outros '+(problems.length-8)+' problema(s).':'');
       toast('Importação não concluída. Confira os problemas identificados.');
