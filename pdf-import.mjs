@@ -22,14 +22,16 @@ export async function readPdf(file,{images=true}={}){
       lastY=y;
     }
     let image=null;
-    if(images&&text.trim().length<65){
-      const viewport=page.getViewport({scale:1.2});
+    // Mantém uma imagem de referência para páginas com elementos visuais.
+    const hasVisual=/\b(tabela|figura|gr[aá]fico|quadro|ilustra[cç][aã]o|diagrama|mapa)\b/i.test(text);
+    if(images&&(text.trim().length<65||hasVisual)){
+      const viewport=page.getViewport({scale:1.05});
       const canvas=document.createElement('canvas');canvas.width=viewport.width;canvas.height=viewport.height;
       await page.render({canvasContext:canvas.getContext('2d'),viewport}).promise;
-      image=canvas.toDataURL('image/jpeg',.7);
+      image=canvas.toDataURL('image/jpeg',.56);
     }
     pages.push({number:i,text,image});
     page.cleanup();
   }
-  return {text:pages.map(p=>p.text).join('\n'),pages};
+  return {text:pages.map(p=>'[[PAGE:'+p.number+']]\n'+p.text).join('\n'),pages};
 }
