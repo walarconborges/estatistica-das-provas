@@ -230,6 +230,10 @@ async function importData(form){
     const count=examRead.text.match(/\b(\d{1,3})\s+QUEST[ÕO]ES?\s+OBJETIVAS\b/i);
     const expected=count?Number(count[1]):Object.keys(key).length;
     const problems=questionIntegrity(parsed,key,expected);
+    const baseTextMarkers=(examRead.text.match(/(?:LEIA|CONSIDERE)\s+(?:O\s+)?TEXTO\s+PARA\s+RESPONDER/gi)||[]).length;
+    if(baseTextMarkers>examRead.contexts.length)problems.push('Um ou mais textos-base não foram associados às questões');
+    if(selected.section==='única'&&(keyRead.text.match(/PROVA\s+OBJETIVA/gi)||[]).length>1)problems.push('O gabarito parece reunir vários cargos sem identificação confiável');
+
     if(meta.missing.length)problems.push('Dados não identificados: '+meta.missing.join(', '));
     for(const q of parsed)if(q.imageOnly&&!q.pageImage)problems.push('Imagem da questão '+q.originalNumber+' indisponível');
     if(problems.length){
