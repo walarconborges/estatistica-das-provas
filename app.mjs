@@ -252,8 +252,8 @@ function cardQuestion(q,index,scope='single',selected='',previous=null){
     `<img loading="lazy" class="question-img" src="${h(q.pageImage)}" alt="Enunciado em imagem; alternativas abaixo em texto selecionável">`:
     `<div class="question-body">${h(q.stem||'[Enunciado não extraído]')}</div>${q.pageImage?`<img loading="lazy" class="question-img" src="${h(q.pageImage)}" alt="Recorte do PDF original">`:''}`}
   ${alternatives(q,scope,selected)}
-  ${scope==='single'?`<div class="actions">${btn('answer-single','Conferir resposta','primary',`data-id="${h(q.id)}"`)}${btn('flag-question','Sinalizar problema','secondary',`data-id="${h(q.id)}"`)}${btn('question-log','Histórico','secondary',`data-id="${h(q.id)}"`)}</div>
-    <div class="question-feedback">${last?`Última resposta válida: <strong>${h(last.answer)}</strong> — ${feedback(q,last.answer)}`:''}</div>`:''}
+  ${scope==='single'?`<div class="actions">${btn('answer-single','Conferir resposta','primary',`data-id="${h(q.id)}"`)}${last?btn('explain-question','Explicar questão','secondary',`data-id="${h(q.id)}"`):''}${btn('flag-question','Sinalizar problema','secondary',`data-id="${h(q.id)}"`)}${btn('question-log','Histórico','secondary',`data-id="${h(q.id)}"`)}</div>
+    <div class="question-feedback">${last?`Última resposta válida: <strong>${h(last.answer)}</strong> — ${feedback(q,last.answer)}`:''}</div>${explanationBox(q.id)}`:''}
   </article>`;
 }
 function questionsScreen(){
@@ -316,12 +316,17 @@ function resultScreen(){
   <div class="grid four">${infoTile(r.correct,'Acertos')}${infoTile(r.wrong,'Erros')}${infoTile(r.blank,'Em branco')}${infoTile(pct(r.rate),'Aproveitamento das respondidas')}</div>
   <div class="actions" style="margin-bottom:16px">${btn('print-sim','Imprimir questões e gabarito')}${btn('go-sim','Voltar aos simulados')}</div>
   <section class="card"><h2>Correção questão por questão</h2>
-  ${s.questionIds.map((id,i)=>{const q=question(id);if(!q)return '';const ans=s.answers[id]||'';return `<div class="stat-line"><div><div class="question-code">${i+1}. ${h(q.code)}</div><div class="small-muted">Marcada: <strong>${h(ans||'—')}</strong> · Gabarito: <strong>${h(q.answer||'Não definido')}</strong></div></div><div>${feedback(q,ans)}</div></div>`}).join('')}</section>`;
+  ${s.questionIds.map((id,i)=>{const q=question(id);if(!q)return '';const ans=s.answers[id]||'';return `<div class="result-explanation"><div class="stat-line"><div><div class="question-code">${i+1}. ${h(q.code)}</div><div class="small-muted">Marcada: <strong>${h(ans||'—')}</strong> · Gabarito: <strong>${h(q.answer||'Não definido')}</strong></div></div><div>${feedback(q,ans)}</div></div><div class="actions">${btn('explain-question','Explicar questão','secondary',`data-id="${h(q.id)}"`)}${btn('flag-question','Sinalizar problema','secondary',`data-id="${h(q.id)}"`)}</div>${explanationBox(q.id)}</div>`}).join('')}</section>`;
 }
 function updateQuestionFeedback(qid){
   const el=document.querySelector(`[data-question-card="${qid}"] .question-feedback`);
   const q=question(qid),last=latestAnswer(state,profileId,qid);
-  if(el&&q&&last)el.innerHTML=`Última resposta válida: <strong>${h(last.answer)}</strong> — ${feedback(q,last.answer)}`;
+  if(el&&q&&last){
+   el.innerHTML=`Última resposta válida: <strong>${h(last.answer)}</strong> — ${feedback(q,last.answer)}`;
+   const actions=el.closest('[data-question-card]')?.querySelector('.actions');
+   if(actions&&!actions.querySelector('[data-action="explain-question"]'))
+    actions.insertAdjacentHTML('beforeend',btn('explain-question','Explicar questão','secondary',`data-id="${h(q.id)}"`));
+  }
 }
 function formsFilter(form){
   const f=new FormData(form);
@@ -512,6 +517,8 @@ document.addEventListener('click',e=>{
     case 'show-pending':navigate('sim');break;
     case 'toggle-eliminate':toggleElimination(id,button.dataset.letter,button.dataset.scope);break;
     case 'answer-single':answerSingle(id);break;
+    case 'explain-question':showExplanation(id);break;
+    case 'flag-explanation':flagExplanation(id);break;
     case 'flag-question':issueInvalid(id);break;
     case 'question-log':showLog(id);break;
     case 'open-sim':case 'see-result':beginSim(id);break;
