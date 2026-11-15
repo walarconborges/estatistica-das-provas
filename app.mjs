@@ -1,4 +1,4 @@
-import {STORAGE_KEY,newId,fresh,normalizeState,parseExamText,parseKey,inferExamMetadata,classify,addExam,recordAttempt,latestAnswer,outcome,stats,filtered,prioritize,createSimulation,finishSimulation,simulationResult,expire,validAnswer} from './core.mjs';
+import {STORAGE_KEY,newId,fresh,normalizeState,parseExamText,parseKey,inferExamMetadata,classify,repeatedSupportText,addExam,recordAttempt,latestAnswer,outcome,stats,filtered,prioritize,createSimulation,finishSimulation,simulationResult,expire,validAnswer} from './core.mjs';
 import {readPdf} from './pdf-import.mjs';
 import {chosenAnswerSection,questionIntegrity} from './pdf-layout.mjs';
 import {createSyncClient} from './sync-client.mjs';
@@ -76,7 +76,7 @@ function homeScreen(){
   ${infoTile(pct(s.rate),'Aproveitamento respondido')}
   </div>
   <div class="grid two" style="margin-top:14px">
-  <section class="card"><h2>Começar</h2><p>Escolha questões por assunto ou monte um simulado com a quantidade que desejar.</p><div class="actions">${btn('go-questions','Questões avulsas','primary')}${btn('go-sim','Criar simulado','secondary')}</div></section>
+  <section class="card"><h2>Começar</h2><p>Escolha questões por assunto ou monte um simulado com a quantidade que desejar.</p><div class="actions">${btn('go-questions','Questões','primary')}${btn('go-sim','Criar simulado','secondary')}</div></section>
   <section class="card"><h2>Suas atividades</h2><p>${pending.length} simulado(s) aguardando resposta; ${state.exams.length} prova(s) cadastrada(s).</p><div class="actions">${btn('show-pending','Simulados pendentes')}${btn('go-stats','Minhas estatísticas')}</div></section></div>
   <section class="card"><h2>Sobre os resultados</h2><p>As estatísticas consideram a última resposta válida por questão. Questões em branco não são erros nem acertos e permanecem disponíveis para novos exercícios. Questões anuladas não entram no aproveitamento.</p></section>
   <div class="notice info">O site preserva seus registros neste aparelho e os sincroniza com o GitHub quando o serviço remoto está configurado. Verifique o indicador no topo.</div>`;
@@ -130,13 +130,13 @@ function feedback(q,answer){
   if(!validAnswer(q.answer))return '<span class="badge wait">Sem gabarito confirmado</span>';
   return answer===q.answer?'<span class="badge good">Acerto</span>':'<span class="badge bad">Erro</span>';
 }
-function cardQuestion(q,index,scope='single',selected=''){
+function cardQuestion(q,index,scope='single',selected='',previous=null){
   const last=latestAnswer(state,profileId,q.id);
   const label=scope==='sim'?index+1:q.originalNumber||index+1;
   const examTitle=exam(q.examId)?.title||'';
   return `<article class="question" data-question-card="${h(q.id)}">
   <div class="question-head"><div><div class="question-code">${h(q.code)}</div><div class="question-context">Questão ${label} · ${h(examTitle)} · ${h(q.discipline)} / ${h(q.topic)}</div></div><div class="chips">${q.status==='annulled'?'<span class="badge wait">Anulada</span>':''}${q.status==='needs-review'?'<span class="badge wait">Revisão da extração</span>':''}${q.status==='outdated'?'<span class="badge wait">Desatualizada</span>':''}${q.confidence==='baixa'?'<span class="badge wait">Classificação incerta</span>':''}</div></div>
-  ${q.contextText?`<details class="support-text" open><summary>Texto de apoio — questões ${h(q.contextRange?.join(' a ')||'')}</summary><div class="question-body">${h(q.contextText)}</div></details>`:''}
+  ${q.contextText?`<details class="support-text" ${repeatedSupportText(previous,q)?'':'open'}><summary>${repeatedSupportText(previous,q)?'Ver texto de apoio novamente (já exibido na questão anterior)':'Texto de apoio — questões '+h(q.contextRange?.join(' a ')||'')}</summary><div class="question-body">${h(q.contextText)}</div></details>`:''}
   ${q.imageOnly&&q.pageImage?`<img loading="lazy" class="question-img" src="${h(q.pageImage)}" alt="Questão original com tabelas, fórmulas ou imagens">`:`<div class="question-body">${h(q.stem||'[Enunciado não extraído]')}</div>${q.pageImage?`<img loading="lazy" class="question-img" src="${h(q.pageImage)}" alt="Recorte da questão original">`:''}`}
   ${alternatives(q,scope,selected)}
   ${scope==='single'?`<div class="actions">${btn('answer-single','Conferir resposta','primary',`data-id="${h(q.id)}"`)}${btn('flag-question','Sinalizar problema','secondary',`data-id="${h(q.id)}"`)}${btn('question-log','Histórico','secondary',`data-id="${h(q.id)}"`)}</div>
@@ -145,10 +145,10 @@ function cardQuestion(q,index,scope='single',selected=''){
 }
 function questionsScreen(){
   const count=currentPool.length?currentPool.length:0;
-  return `${headline('Questões avulsas','Resolva quantas questões desejar, sem precisar montar um simulado.')}
+  return `${headline('Questões','Resolva quantas questões desejar, sem precisar montar um simulado.')}
   ${filterForm('questions')}
   <div class="between"><h2>${n(count)} questão(ões) selecionada(s)</h2>${count?btn('print-current','Imprimir seleção'):''}</div>
-  ${count?currentPool.map((q,i)=>cardQuestion(q,i)).join(''):empty(state.questions.length?'Use os filtros acima para consultar as questões.':'O banco de questões ainda está vazio. Importe a primeira prova.')}`;
+  ${count?currentPool.map((q,i)=>cardQuestion(q,i,'single','',currentPool[i-1]||null)).join(''):empty(state.questions.length?'Use os filtros acima para consultar as questões.':'O banco de questões ainda está vazio. Importe a primeira prova.')}`;
 }
 function simScreen(){
   const pending=state.simulations.filter(s=>s.profileId===profileId&&s.status==='pending');
@@ -176,7 +176,7 @@ function statsScreen(){
 function flagsScreen(){
   const own=state.flags.filter(x=>x.profileId===profileId).slice().reverse();
   return `${headline('Sinalizações','Problemas e sugestões de classificação aguardam avaliação.')}
-  <section class="card"><p>Para sinalizar uma questão, procure seu código em <strong>Questões avulsas</strong> e use o botão <strong>Sinalizar problema</strong>.</p>
+  <section class="card"><p>Para sinalizar uma questão, procure seu código em <strong>Questões</strong> e use o botão <strong>Sinalizar problema</strong>.</p>
   <p class="hint">Com o GitHub sincronizado, novas sinalizações são encaminhadas para Issues. A alteração só é aplicada depois da aprovação.</p>
   ${own.length?own.map(f=>`<div class="stat-line"><div><strong>${h(question(f.questionId)?.code||'Questão')}</strong><div class="small-muted">${h(f.type)} — ${h(f.note)} · ${niceDate(f.at)}</div></div><span class="badge wait">${h(f.status==='approved'?'Aprovada':f.status==='rejected'?'Rejeitada':'Pendente')}</span></div>`).join(''):empty('Nenhuma sinalização registrada neste perfil.')}</section>`;
 }
@@ -192,7 +192,7 @@ function sessionScreen(){
   const answered=s.questionIds.filter(id=>validAnswer(s.answers[id])).length;
   return `<div class="between"><div>${headline(s.kind==='exam'?'Prova completa':'Simulado em andamento',`${s.questionIds.length} questões · ${answered} com alternativa marcada`)}</div><div class="actions">${btn('print-sim','Imprimir simulado')}${btn('finish-sim','Finalizar','primary')}</div></div>
   <div class="progress-bar"><div style="width:${s.questionIds.length?answered*100/s.questionIds.length:0}%"></div></div>
-  <div style="margin-top:17px">${s.questionIds.map((id,i)=>{const q=question(id);return q?cardQuestion(q,i,'sim',s.answers[id]||''):''}).join('')}</div>
+  <div style="margin-top:17px">${s.questionIds.map((id,i)=>{const q=question(id);return q?cardQuestion(q,i,'sim',s.answers[id]||'',question(s.questionIds[i-1])||null):''}).join('')}</div>
   <div class="actions">${btn('finish-sim','Finalizar simulado','primary')}${btn('go-sim','Voltar aos simulados')}</div>
   <div class="notice info">Você pode concluir sem responder todas as questões. Antes de finalizar, o sistema mostrará uma confirmação. Respostas em branco não alteram suas estatísticas.</div>`;
 }
@@ -267,7 +267,7 @@ function downloadFile(text,name,type='application/json'){
 }
 function printQuestions(qs,title,options={}){
   const original=!!options.original,answered=options.answers||{};
-  const content=qs.map((q,i)=>`<article class="question"><div><strong>${original?q.originalNumber:i+1}. ${h(q.code)}</strong></div>${q.contextText?`<p style="white-space:pre-wrap;font-size:9pt">Texto de apoio:\n${h(q.contextText)}</p>`:''}${q.imageOnly&&q.pageImage?`<img style="max-width:100%;max-height:650px;object-fit:contain" src="${h(q.pageImage)}">`:`<p style="white-space:pre-wrap">${h(q.stem||'Questão em imagem')}</p>${q.pageImage?`<img style="max-width:100%" src="${h(q.pageImage)}">`:''}${(q.options||[]).map(o=>`<p style="margin:3px 0;white-space:pre-wrap">${h(o.letter)}) ${h(o.text)}</p>`).join('')}`}</article>`).join('');
+  const content=qs.map((q,i)=>`<article class="question"><div><strong>${original?q.originalNumber:i+1}. ${h(q.code)}</strong></div>${q.contextText&&!repeatedSupportText(qs[i-1],q)?`<p style="white-space:pre-wrap;font-size:9pt">Texto de apoio:\n${h(q.contextText)}</p>`:''}${q.imageOnly&&q.pageImage?`<img style="max-width:100%;max-height:650px;object-fit:contain" src="${h(q.pageImage)}">`:`<p style="white-space:pre-wrap">${h(q.stem||'Questão em imagem')}</p>${q.pageImage?`<img style="max-width:100%" src="${h(q.pageImage)}">`:''}${(q.options||[]).map(o=>`<p style="margin:3px 0;white-space:pre-wrap">${h(o.letter)}) ${h(o.text)}</p>`).join('')}`}</article>`).join('');
   const sheet=qs.map((q,i)=>`<div style="display:inline-block;width:48%;margin:7px 0">${original?q.originalNumber:i+1}. ( A ) ( B ) ( C ) ( D ) ( E )</div>`).join('');
   const key=qs.map((q,i)=>`<div style="display:inline-block;width:33%;margin:4px 0">${original?q.originalNumber:i+1}. ${h(q.answer||'—')} &nbsp; ${h(q.code)}</div>`).join('');
   const doc=`<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>${h(title)}</title><style>@page{size:A4;margin:1.5cm 1.5cm 1.5cm 2.5cm}body{font:11pt Arial,sans-serif;color:#111}.question{break-inside:avoid;page-break-inside:avoid;margin-bottom:15mm}.page{page-break-before:always}h1{font-size:15pt}h2{font-size:13pt}p{line-height:1.4}</style></head><body><h1>${h(title)}</h1>${content}<section class="page"><h2>Folha de respostas</h2>${sheet}</section><section class="page"><h2>Gabarito</h2>${key}</section></body></html>`;
@@ -401,7 +401,7 @@ document.addEventListener('click',e=>{
      case 'print-exam':{
       const ex=exam(id);if(ex)printQuestions(ex.questionIds.map(question).filter(Boolean),ex.title,{original:true});break;
     }
-    case 'print-current':printQuestions(currentPool,'Questões avulsas');break;
+    case 'print-current':printQuestions(currentPool,'Questões');break;
     case 'print-sim':{
       const s=sim(selectedSimId);if(s)printQuestions(s.questionIds.map(question).filter(Boolean),'Simulado — '+profileName(),{original:s.kind==='exam',answers:s.answers});break;
     }
