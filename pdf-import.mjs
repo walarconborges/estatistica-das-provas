@@ -14,7 +14,7 @@ async function croppedQuestion(document,q){
  canvas.width=Math.ceil(viewport.width);canvas.height=Math.ceil(viewport.height);
  await page.render({canvasContext:canvas.getContext('2d'),viewport}).promise;
  const left=q.sourceColumn===0?27:298,right=q.sourceColumn===0?page.view[2]/2:page.view[2]-26;
- const top=Math.max(16,q.startY-5),bottom=Math.min(page.view[3]-22,q.endY+3);
+ const top=Math.max(16,q.startY-15),bottom=Math.min(page.view[3]-22,q.endY+3);
  const x=Math.floor(left*scale),y=Math.floor(top*scale);
  const width=Math.max(100,Math.floor((right-left)*scale)),height=Math.max(35,Math.ceil((bottom-top)*scale));
  const out=document.createElement('canvas');out.width=width;out.height=height;
