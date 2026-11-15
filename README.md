@@ -1,9 +1,17 @@
 # Estatística das Provas
 
-**Versão experimental 0.4.1 — 15/11/2026**  
+**Versão experimental 0.4.2 — 15/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+### Frações em PDF — correção de posição (v0.4.2)
+
+Os PDFs VUNESP apresentam frações com numerador e denominador em alturas diferentes da linha do parágrafo. A versão anterior reconhecia o valor (`11/9`, `3/2`, `3/8`, `7/8`), mas **mantinha a fração na altura do numerador**, deslocando-a para outra linha ou juntando duas frações na mesma parte do texto. O resultado eram frases fora de ordem nas questões 11 e 15.
+
+Agora a fração reconstruída é posicionada na linha do texto vizinho, de acordo com a geometria original do PDF, e recebe espaçamento apropriado em relação às palavras e à pontuação. Assim não se duplicam valores nem se perde a posição da fração. Dois novos testes reproduzem as coordenadas dessas questões observadas no PDF original, que são verificados antes de cada publicação de código. **41 testes automatizados passaram** após as alterações.
+
+Essa detecção continua conservadora e não garante reconhecimento de todos os formatos de equações, matrizes ou frações de outras bancas; nesses casos, deve-se preservar a fonte visual para conferência.
 
 ### Ajustes na extração e na tela de resolução — v0.4.1
 
