@@ -131,7 +131,7 @@ function explanationBox(qid){
  const status=entry.status||'';
  let body='';
  if(status==='loading')body='<p class="hint">Consultando a explicação...</p>';
- else if(status==='ready')body='<div class="explanation-text">'+h(entry.text||'')+'</div><p class="hint">Explicação de IA para estudo, não substitui o gabarito ou a legislação oficial.</p>'+btn('flag-explanation','Sinalizar explicação incorreta','secondary','data-id="'+h(qid)+'"');
+ else if(status==='ready')body='<div class="explanation-text">'+h(entry.text||'')+'</div><p class="hint">'+(question(qid)?.originalQuestionId?'Fundamento normativo da questão adaptada.':'Explicação de IA para estudo, não substitui fontes oficiais.')+'</p>'+btn('flag-explanation','Sinalizar explicação incorreta','secondary','data-id="'+h(qid)+'"');
  else if(status==='pending')body='<p class="hint">'+h(entry.reason||'Explicação em geração.')+'</p>'+btn('explain-question','Consultar novamente','secondary','data-id="'+h(qid)+'"');
  else body='<p class="hint">'+h(entry.reason||'Não foi possível explicar a questão.')+'</p>';
  return '<div class="explanation-box" data-explanation-id="'+h(qid)+'">'+body+'</div>';
@@ -279,7 +279,7 @@ function cardQuestion(q,index,scope='single',selected='',previous=null){
     `<img loading="lazy" class="question-img" src="${h(q.pageImage)}" alt="Enunciado em imagem; alternativas abaixo em texto selecionável">`:
     `<div class="question-body">${h(q.stem||'[Enunciado não extraído]')}</div>${q.pageImage?`<img loading="lazy" class="question-img" src="${h(q.pageImage)}" alt="Recorte do PDF original">`:''}`}
   ${alternatives(q,scope,selected)}
-  ${scope==='single'?`<div class="actions">${btn('answer-single','Conferir resposta','primary',`data-id="${h(q.id)}"`)}${last?btn('explain-question','Explicar questão','secondary',`data-id="${h(q.id)}"`):''}${btn('flag-question','Sinalizar problema','secondary',`data-id="${h(q.id)}"`)}${btn('question-log','Histórico','secondary',`data-id="${h(q.id)}"`)}</div>
+  ${scope==='single'?`<div class="actions">${btn('answer-single','Conferir resposta','primary',`data-id="${h(q.id)}"`)}${last&&!q.originalQuestionId?btn('explain-question','Explicar questão','secondary',`data-id="${h(q.id)}"`):''}${btn('flag-question','Sinalizar problema','secondary',`data-id="${h(q.id)}"`)}${btn('question-log','Histórico','secondary',`data-id="${h(q.id)}"`)}</div>
     <div class="question-feedback">${last?`Última resposta válida: <strong>${h(last.answer)}</strong> — ${feedback(q,last.answer)}`:''}</div><div class="legal-result">${last?legalBasisHtml(q):''}</div>${explanationBox(q.id)}`:''}
   </article>`;
 }
@@ -343,7 +343,7 @@ function resultScreen(){
   <div class="grid four">${infoTile(r.correct,'Acertos')}${infoTile(r.wrong,'Erros')}${infoTile(r.blank,'Em branco')}${infoTile(pct(r.rate),'Aproveitamento das respondidas')}</div>
   <div class="actions" style="margin-bottom:16px">${btn('print-sim','Imprimir questões e gabarito')}${btn('go-sim','Voltar aos simulados')}</div>
   <section class="card"><h2>Correção questão por questão</h2>
-  ${s.questionIds.map((id,i)=>{const q=question(id);if(!q)return '';const ans=s.answers[id]||'';return `<div class="result-explanation"><div class="stat-line"><div><div class="question-code">${i+1}. ${h(q.code)}</div><div class="small-muted">Marcada: <strong>${h(ans||'—')}</strong> · Gabarito: <strong>${h(q.answer||'Não definido')}</strong></div></div><div>${feedback(q,ans)}</div></div>${legalBasisHtml(q)}<div class="actions">${btn('explain-question','Explicar questão','secondary',`data-id="${h(q.id)}"`)}${btn('flag-question','Sinalizar problema','secondary',`data-id="${h(q.id)}"`)}</div>${explanationBox(q.id)}</div>`}).join('')}</section>`;
+  ${s.questionIds.map((id,i)=>{const q=question(id);if(!q)return '';const ans=s.answers[id]||'';return `<div class="result-explanation"><div class="stat-line"><div><div class="question-code">${i+1}. ${h(q.code)}</div><div class="small-muted">Marcada: <strong>${h(ans||'—')}</strong> · Gabarito: <strong>${h(q.answer||'Não definido')}</strong></div></div><div>${feedback(q,ans)}</div></div>${legalBasisHtml(q)}<div class="actions">${!q.originalQuestionId?btn('explain-question','Explicar questão','secondary',`data-id="${h(q.id)}"`):''}${btn('flag-question','Sinalizar problema','secondary',`data-id="${h(q.id)}"`)}</div>${explanationBox(q.id)}</div>`}).join('')}</section>`;
 }
 function updateQuestionFeedback(qid){
   const el=document.querySelector(`[data-question-card="${qid}"] .question-feedback`);
@@ -353,7 +353,7 @@ function updateQuestionFeedback(qid){
    const basis=el.closest('[data-question-card]')?.querySelector('.legal-result');
    if(basis)basis.innerHTML=legalBasisHtml(q);
    const actions=el.closest('[data-question-card]')?.querySelector('.actions');
-   if(actions&&!actions.querySelector('[data-action="explain-question"]'))
+   if(actions&&!q.originalQuestionId&&!actions.querySelector('[data-action="explain-question"]'))
     actions.insertAdjacentHTML('beforeend',btn('explain-question','Explicar questão','secondary',`data-id="${h(q.id)}"`));
   }
 }
