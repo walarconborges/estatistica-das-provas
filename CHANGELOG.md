@@ -1,3 +1,11 @@
+## 0.4.2 — 15/11/2026
+- Corrigida a posição vertical de frações que apareciam deslocadas ou agrupadas no enunciado.
+- A fração reconstruída passa a herdar a linha do texto vizinho, respeitando a sequência das palavras e a pontuação.
+- Reproduzidos e corrigidos os erros das questões 11 (duas ocorrências de 11/9 e 3/2) e 15 (3/8 e 7/8).
+- Regressões construídas com coordenadas reais dos PDFs originais, verificando posição e quantidade de frações.
+- 41 testes automatizados passaram; demais layouts de equações requerem validação adicional.
+- Pendente: novo teste de importação no navegador com a prova original.
+
 ## 0.4.1 — 15/11/2026
 - Textos-base passam pela limpeza de hifenização e fragmentos, como nos enunciados.
 - Tratados ordinais do PDF que deixavam caracteres `o` deslocados nas alternativas.
