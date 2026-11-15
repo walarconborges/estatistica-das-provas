@@ -118,8 +118,14 @@ export function spatialQuestions(pages){
     // Se a figura possui legenda de autorização, ela delimita precisamente
     // o fim da ilustração e nunca é copiada para o enunciado.
     if(current.creditY&&current.optionsStartY){
+      const earlier=rows.filter(r=>r.y<current.creditY);
       const intro=rows.findIndex(r=>/\b(?:desenho|tabela|figura|gr[aá]fico|planilha)\b/iu.test(r.text));
-      const cutAt=intro>=0?Math.min(rows.length-1,intro):0;
+      // Texto antes de um desenho costuma ocupar várias linhas. Se existe
+      // um vão grande até a legenda, a ilustração começa depois da última linha.
+      // Já nas tabelas, a legenda vem logo depois da última linha de dados.
+      const lastBefore=earlier.at(-1);
+      const cutAt=lastBefore&&current.creditY-lastBefore.y>=60?
+        rows.indexOf(lastBefore):(intro>=0?intro:0);
       const first=rows[cutAt],after=rows.filter(r=>r.y>current.creditY);
       if(first&&current.creditY-first.y>25){
         current.visualSegments={
