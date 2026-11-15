@@ -257,6 +257,27 @@ export function spatialQuestions(pages){
 }
 export function chosenAnswerSection(text,examText=''){
  const source=String(text||'').replace(/\r/g,'');
+ // Quadrix: um PDF de gabarito pode trazer vários cargos em seções
+ // "2.7 ANALISTA DE INFORMÁTICA (CÓDIGO 401)", seguidas por duas
+ // linhas de números e letras. A seleção é feita por cargo, não por
+ // aparente primeiro gabarito do documento.
+ const quadrixHeaders=[...source.matchAll(/(?:^|\n)\s*(2\.\d{1,2})\s+([^\n]{4,130})/g)]
+   .filter(m=>/\b(?:ANALISTA|T[EÉ]CNICO|ADVOGADO|CONTADOR|JORNALISTA|ZELADORIA|MANUTEN[CÇ][AÃ]O|LIMPEZA|AGENTE|AUXILIAR)\b/i.test(m[2]));
+ if(quadrixHeaders.length){
+  const exam=norm(examText),job=exam.includes('ANALISTA DE INFORMATICA')?'ANALISTA DE INFORMATICA':
+   exam.includes('TECNICO DE INFORMATICA')?'TECNICO DE INFORMATICA':
+   exam.includes('AUXILIAR ADMINISTRATIVO')?'AUXILIAR ADMINISTRATIVO':
+   null;
+  const sections=quadrixHeaders.map((m,i)=>({
+   title:norm(m[2]),heading:m[2],
+   text:source.slice(m.index,quadrixHeaders[i+1]?.index||source.length)
+  }));
+  const matches=job?sections.filter(s=>s.title.includes(job)):[];
+  if(matches.length!==1)return {text:'',section:null,format:'grid',error:'O gabarito contém vários cargos; não foi possível associar com segurança o cargo do caderno.'};
+  const code=matches[0].heading.match(/C[OÓ]DIGO\s*(\d{2,4})/i);
+  return {text:matches[0].text,section:code?code[1]:job,format:'grid',error:null};
+ }
+
  const marks=[...source.matchAll(/(?:^|\n)\s*0{0,2}(\d{1,3})\s*[.]\s*PROVA\s+OBJETIVA\b/gim)];
  if(!marks.length)return {text:source,section:'única',error:null};
  const exam=norm(examText),code=exam.match(/\b0{0,2}(\d{1,3})\s*[.]\s*PROVA\s+OBJETIVA/),cargo=exam.includes('ANALISTA DE INFORMATICA')?'ANALISTA DE INFORMATICA':null;
@@ -268,6 +289,29 @@ export function chosenAnswerSection(text,examText=''){
  if(cargo&&!norm(found.text.slice(0,145)).includes(cargo))return {text:'',section:null,error:'O código da prova não corresponde ao cargo identificado no gabarito.'};
  return {text:found.text,section:String(found.code).padStart(3,'0'),error:null};
 }
+export function parseGridKey(section){
+ const rows=String(section||'').replace(/\r/g,'').split('\n').map(s=>s.trim()).filter(Boolean);
+ const answers={};let pairs=0;
+ for(let i=0;i<rows.length-1;i++){
+  const nums=rows[i].split(/\s+/);
+  if(nums.length<10||!nums.every(t=>/^\d{1,3}$/.test(t)))continue;
+  const letters=rows[i+1].split(/\s+/);
+  if(letters.length!==nums.length||!letters.every(t=>/^[A-E]$/i.test(t)))continue;
+  for(let j=0;j<nums.length;j++){
+   const n=Number(nums[j]);
+   if(n<1||n>300||answers[n])return {};
+   answers[n]=letters[j].toUpperCase();
+  }
+  pairs++;i++;
+ }
+ // Um documento de gabarito tabulado deve conter blocos alinhados,
+ // não números soltos de tabelas de cargos ou pontuações.
+ if(!pairs||Object.keys(answers).length<10)return {};
+ const numbers=Object.keys(answers).map(Number).sort((a,b)=>a-b);
+ if(numbers[0]!==1||numbers.some((n,i)=>n!==i+1))return {};
+ return answers;
+}
+
 export function questionIntegrity(questions,answers,expected=0){
  const numbers=questions.map(q=>q.originalNumber),unique=[...new Set(numbers)].sort((a,b)=>a-b),issues=[];
  if(!unique.length)issues.push('Nenhuma questão identificada');
