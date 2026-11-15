@@ -53,3 +53,17 @@ test('validação bloqueia provas com questões faltantes ou com gabarito de out
  assert.ok(issues.some(x=>x.includes('Questão ausente: 2')));
  assert.ok(issues.some(x=>x.includes('Foram identificadas 2')));
 });
+
+test('tabela MAC conceitual não exige captura de imagem, mas tabela gráfica exige',()=>{
+ const texts=[
+  '34. Um analista instalou um switch Ethernet. A tabela MAC desse switch se destina a:',
+  'A) Consultar dados', 'B) Filtrar dados', 'C) Encaminhar dados', 'D) Copiar dados', 'E) Apagar dados',
+  '35. Considere a tabela a seguir:', 'A) 1', 'B) 2', 'C) 3', 'D) 4', 'E) 5'
+ ];
+ const lines=texts.map((text,i)=>({col:0,y:i*16+35,text}));
+ const parsed=spatialQuestions([{number:12,width:595,height:842,lines}]);
+ assert.equal(parsed.questions.length,2);
+ assert.equal(parsed.questions[0].imageOnly,false);
+ assert.equal(parsed.questions[1].imageOnly,true);
+ assert.deepEqual(parsed.questions[0].options.map(a=>a.letter),['A','B','C','D','E']);
+});
