@@ -49,7 +49,7 @@ export function studyEligibility(q,e,mode='candeias'){
  if(!clearlyOther&&(municipality.test(questionJurisdiction)||municipality.test(examJurisdiction)))
   return {allowed:true,status:'local-original'};
 
- return {allowed:false,status:'awaiting-legal-review',reason:'A legislação específica desta questão ainda não foi comparada e validada com as normas de Candeias do Jamari.'};
+ return {allowed:false,status:'invalid-for-candeias',reason:'Sem correspondência legal verificada em Candeias do Jamari. A questão permanece disponível em sua versão original.'};
 }
 export function eligibleForList(q,e,mode){
  return studyEligibility(q,e,mode).allowed;
