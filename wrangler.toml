@@ -1,0 +1,10 @@
+name = "estatistica-das-provas-api"
+main = "worker/index.mjs"
+compatibility_date = "2026-10-01"
+
+[vars]
+GITHUB_OWNER = "walarconborges"
+GITHUB_REPO = "estatistica-das-provas"
+GITHUB_BRANCH = "main"
+ALLOWED_ORIGINS = "https://walarconborges.github.io"
+# GITHUB_TOKEN deve ser cadastrado como SECRET na Cloudflare, nunca no repositório.
