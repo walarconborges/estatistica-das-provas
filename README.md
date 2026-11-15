@@ -18,6 +18,15 @@ O formulário solicita somente **PDF da prova** e **PDF do gabarito oficial**. O
 
 No celular, o formulário deixa de ser redesenhado durante a sincronização com o GitHub, preservando os arquivos escolhidos. O nome selecionado também aparece abaixo de cada campo. A importação e a classificação de PDFs complexos continuam experimentais.
 
+## Auditoria de importação (15/11/2026)
+
+Foi observado um PDF impresso pelo navegador com questões VUNESP incorretamente separadas e classificadas. As melhorias da **versão 0.2.2** corrigem casos de marcas d'água, separação de questões, identificação de assuntos e preservação de páginas visuais. Quando uma importação tem números ausentes/repetidos, o sistema cancela o cadastro para evitar provas incompletas. O reconhecimento automático não garante 100% de fidelidade: PDFs com tabelas, duas colunas ou digitalizações ainda precisam de conferência.
+
+**A prova VUNESP de 49 questões que já estava no GitHub não foi reclassificada nem removida.** Alterações de classificações já cadastradas dependem de aprovação do proprietário. Consulte [Issue #1](https://github.com/walarconborges/estatistica-das-provas/issues/1) antes de reimportar a mesma prova.
+
+Para imprimir questões pelo navegador, os filtros são ocultados. É preferível usar o botão **Imprimir seleção**, que produz enunciados, cartão de respostas e gabarito.
+
+
 ## Funcionalidades
 
 - Pergunta **Quem está aí?** ao iniciar, sem senha para os participantes.
