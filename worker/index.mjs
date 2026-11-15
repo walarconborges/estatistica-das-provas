@@ -97,6 +97,27 @@ async function parseBody(req,max=6_000_000){
  const text=await req.text();if(text.length>max)throw Error('Pedido muito grande.');
  try{return JSON.parse(text);}catch{throw Error('JSON inválido.');}
 }
+async function uploadPDF(req,env){
+ const input=await parseBody(req,6_100_000),id=String(input.examId||''),encoded=String(input.base64||'');
+ if(!/^[A-Za-z0-9-]{10,100}$/.test(id)||encoded.length>5_700_000)throw Error('Identificador inválido ou PDF acima de 4 MB.');
+ let raw;try{raw=atob(encoded);}catch{throw Error('PDF inválido.');}
+ if(raw.length>4*1024*1024||raw.slice(0,5)!=='%PDF-')throw Error('PDF inválido ou acima de 4 MB.');
+ const path='storage/pdfs/'+id+'.pdf';
+ const upload=await github(env,'contents/'+path,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:'pdf: armazenar prova '+id,content:encoded,branch:setup(env).branch})});
+ if(!upload.ok)throw Error('Não foi possível enviar o PDF ao GitHub ('+upload.status+').');
+ return {path};
+}
+async function getPDF(req,env){
+ const id=new URL(req.url).searchParams.get('examId')||'';
+ if(!/^[A-Za-z0-9-]{10,100}$/.test(id))return new Response('PDF inválido.',{status:400});
+ const r=await github(env,'contents/storage/pdfs/'+id+'.pdf');
+ if(!r.ok)return new Response('PDF não encontrado.',{status:r.status});
+ let content=r.body.content;
+ if(!content){const blob=await github(env,'git/blobs/'+r.body.sha);if(!blob.ok)return new Response('PDF indisponível.',{status:502});content=blob.body.content;}
+ const bytes=Uint8Array.from(atob(content.replace(/\s/g,'')),x=>x.charCodeAt(0));
+ return new Response(bytes,{headers:{'Content-Type':'application/pdf','Content-Disposition':'inline','Access-Control-Allow-Origin':'*','Cache-Control':'public, max-age=120','X-Content-Type-Options':'nosniff'}});
+}
+
 export default {async fetch(req,env){
  let origin='*';
  try{
@@ -104,6 +125,8 @@ export default {async fetch(req,env){
   if(req.method==='OPTIONS')return reply({},200,origin);
   if(req.method==='GET'&&url.pathname==='/api/health')return reply({status:'ok',repo:setup(env).repo},200,origin);
   if(req.method==='GET'&&url.pathname==='/api/state')return reply((await loadState(env)).state,200,origin);
+  if(req.method==='POST'&&url.pathname==='/api/upload')return reply(await uploadPDF(req,env),200,origin);
+  if(req.method==='GET'&&url.pathname==='/api/file')return getPDF(req,env);
   if(req.method==='POST'&&url.pathname==='/api/merge'){
    const input=await parseBody(req),{state,newFlags}=await commitDelta(env,input.delta),warnings=[];
    for(const f of newFlags.slice(0,20)){
