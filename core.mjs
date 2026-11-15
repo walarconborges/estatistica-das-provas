@@ -1,11 +1,12 @@
 // Núcleo de dados e regras. Não depende da interface.
 export const STORAGE_KEY='estatistica-das-provas-v1';
 export const newId=()=>globalThis.crypto?.randomUUID?.() || ('id-'+Date.now()+'-'+Math.random().toString(36).slice(2));
-export const fresh=()=>({version:1,profiles:[],exams:[],questions:[],attempts:[],simulations:[],flags:[]});
+export const fresh=()=>({version:1,profiles:[],exams:[],questions:[],attempts:[],simulations:[],flags:[],tombstones:{exams:[],questions:[],attempts:[],simulations:[],flags:[]}});
 export function normalizeState(data){
   const base=fresh();
   if(!data || typeof data!=='object')return base;
   for(const k of Object.keys(base))if(Array.isArray(base[k])&&Array.isArray(data[k]))base[k]=data[k];
+  if(data.tombstones&&typeof data.tombstones==='object')for(const k of Object.keys(base.tombstones))if(Array.isArray(data.tombstones[k]))base.tombstones[k]=[...new Set(data.tombstones[k].filter(x=>typeof x==='string'))];
   return base;
 }
 export const textNorm=s=>String(s??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,' ').trim().toUpperCase();
