@@ -37,7 +37,7 @@ export function humanizePdfText(input){
  value=value.replace(/\b(subsí)\s+(dios)\b/giu,'$1$2')
     .replace(/\b(insti)\s+(tuições)\b/giu,'$1$2')
     .replace(/\b(merca)\s+(dos)\b/giu,'$1$2');
- return value.replace(/\s*\n\s*/g,' ').replace(/[ \t]{2,}/g,' ').trim();
+ return value.replace(/\s*\n\s*/g,' ').replace(/[ \t]{2,}/g,' ').replace(/\s+([,.;:!?])/g,'$1').trim();
 }
 function restoreVerticalFractions(pieces){
  const consumed=new Set();
@@ -51,7 +51,13 @@ function restoreVerticalFractions(pieces){
     p.x<upper.x&&upper.x-(p.x+p.width)<15&&
     Math.abs(p.y-upper.y-3.5)<3.7&&p.str.length>=2);
   if(!neighbor)continue; // impede transformar colunas de números de tabelas em frações
+  // No PDF, numerador/denominador ficam ACIMA e ABAIXO da linha.
+  // A fração completa deve ocupar a linha do texto vizinho, não a do numerador.
+  // Sem isso, várias frações da mesma linha são deslocadas para a linha anterior
+  // (casos reais das questões 11 e 15 da VUNESP).
   upper.str=upper.str+'/'+below.str;
+  upper.y=neighbor.y;
+  upper.x=Math.min(upper.x,below.x);
   upper.width=Math.max(upper.width,below.width);
   consumed.add(below);
  }
