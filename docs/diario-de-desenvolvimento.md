@@ -1,5 +1,18 @@
 # Diário de desenvolvimento
 
+## 14/11/2026 — Sincronização entre dispositivos
+
+**Problema:** o GitHub Pages publica arquivos, mas não concede autorização de gravação aos visitantes, mesmo no repositório público. A interface versão 0.1.1 armazenava dados apenas no navegador.
+
+**Decisão e solução:** preservar a interface existente e adicionar um Cloudflare Worker para realizar leitura/escrita autorizada no GitHub. O token fica no secret do Worker e não no HTML/JavaScript público. O cliente envia alterações por ID, mescla registros já existentes e mantém uma cópia local. O código do Worker e o arquivo wrangler.toml estão no mesmo repositório.
+
+**Problema de integridade:** alterar a classificação ou o gabarito diretamente pelo site poderia afetar as estatísticas de todos. A API ignora atualizações públicas a questões já cadastradas. Uma nova sinalização gera Issue; a automação aplica decisões exclusivamente por comentário da conta proprietária.
+
+**Limitações e risco aberto:** ainda falta autorizar a Cloudflare e configurar o token pessoal de acesso; essa etapa exige ação do proprietário. Sem autenticação dos participantes, qualquer visitante poderá criar registros públicos. O GitHub pode sofrer excesso de commits se o volume crescer. O uso com PDFs de mais de 4 MB ou digitalizações grandes exige nova estratégia de armazenamento.
+
+**Verificação:** módulos conferidos quanto à sintaxe; casos de mesclagem, idempotência e bloqueio de edição de gabarito avaliados em execução isolada; testes automatizados adicionados ao GitHub Actions. Não afirmar que o compartilhamento entre aparelhos foi testado até a implantação do Worker.
+
+
 ## 14/11/2026 — Migração para o repositório
 
 **Objetivo:** evitar uploads manuais do usuário e colocar o código diretamente em `walarconborges/estatistica-das-provas`.
