@@ -226,7 +226,7 @@ async function importData(form){
     const selected=chosenAnswerSection(keyRead.text,examRead.text);
     if(selected.error)throw Error(selected.error);
     const key=parseKey(selected.text);
-    const parsed=examRead.questions.map(q=>({...q,...classify(q.stem,q.heading)}));
+    const parsed=examRead.questions.map(q=>{const category=classify(q.stem,q.heading);if(category.disciplineCode==='CE'&&/ANALISTA DE INFORMÁTICA/i.test(meta.title)){category.discipline='Informática';category.disciplineCode='IN';category.confidence='média';}return {...q,...category};});
     const count=examRead.text.match(/\b(\d{1,3})\s+QUEST[ÕO]ES?\s+OBJETIVAS\b/i);
     const expected=count?Number(count[1]):Object.keys(key).length;
     const problems=questionIntegrity(parsed,key,expected);
