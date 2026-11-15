@@ -216,6 +216,9 @@ function selectField(name,label,items,current='',placeholder='Todas'){
 function filterForm(kind='questions'){
   const u=availableFilters();
   const mode=kind==='sim';
+  const withVariant=new Set(state.questions.filter(q=>q.originalQuestionId).map(q=>q.originalQuestionId));
+  const unsupported=state.questions.filter(q=>!q.originalQuestionId&&!withVariant.has(q.id)&&
+   !eligibleForList(q,exam(q.examId),'candeias')).length;
   return `<form id="${mode?'generate-form':'filter-form'}" class="card">
   <div class="form-grid">
   ${selectField('discipline','Disciplina',u.disciplines,currentFilter.discipline)}
@@ -230,6 +233,7 @@ function filterForm(kind='questions'){
   ${!mode?`<div class="field span-all"><label>Buscar código permanente</label><input class="code-search" name="code" placeholder="Q2026LPGIBGPSEMED1" value="${h(currentFilter.code||'')}"></div>`:''}
   </div><div class="actions"><button type="submit">${mode?'Criar simulado':'Buscar questões'}</button></div>
   <p class="hint">Questões de legislação são adaptadas automaticamente quando existe correspondência com as normas oficiais de Candeias. Sem correspondência, ficam inválidas para o modo municipal. A prova original é preservada.</p>
+  ${unsupported&&currentFilter.studyArea!=='original'?`<p class="hint">${unsupported} questão(ões) de legislação sem correspondência verificável — inválidas apenas para o modo Candeias. No modo original, continuam acessíveis.</p>`:''}
   </form>`;
 }
 function alternatives(q,scope,chosen=''){
