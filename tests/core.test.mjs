@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {fresh,addExam,parseExamText,parseKey,sameQuestion,recordAttempt,outcome,stats,createSimulation,finishSimulation,simulationResult,filtered,prioritize} from '../core.mjs';
+import {fresh,addExam,parseExamText,parseKey,inferExamMetadata,sameQuestion,recordAttempt,outcome,stats,createSimulation,finishSimulation,simulationResult,filtered,prioritize} from '../core.mjs';
 const meta={title:'Prova IBGP 2026',year:'2026',banca:'IBGP',orgao:'SEMED'};
 const sample=()=>({stem:'Qual é o plural de cidadão?',originalNumber:1,options:[{letter:'A',text:'Cidadãos'},{letter:'B',text:'Cidadões'}],discipline:'Língua Portuguesa',disciplineCode:'LP',topic:'Gramática',topicCode:'G'});
 function data(){const s=fresh();const e=addExam(s,meta,[sample(),{...sample(),originalNumber:2,stem:'Outra questão'}],{1:'A',2:'B'});return {s,e,q:s.questions[0]}}
@@ -45,4 +45,15 @@ test('simulado guarda em branco sem criar erro',()=>{
 test('filtro e sorteio não alteram o banco',()=>{
  const {s}=data();const candidates=filtered(s,'perfil',{discipline:'Língua Portuguesa'}),ordered=prioritize(s,'perfil',candidates);
  assert.equal(ordered.length,2);assert.equal(s.questions.length,2);
+});
+
+
+test('metadados da prova são encontrados nos PDFs sem digitação',()=>{
+ const m=inferExamMetadata('CONCURSO PÚBLICO - IBGP - SECRETARIA MUNICIPAL DE EDUCAÇÃO','2026 prova.pdf','GABARITO OFICIAL','gabarito.pdf');
+ assert.equal(m.year,'2026');assert.equal(m.banca,'IBGP');assert.equal(m.orgao,'SEMED');assert.deepEqual(m.missing,[]);
+});
+test('metadados não identificados são sinalizados, não inventados',()=>{
+ const m=inferExamMetadata('Enunciado sem cabeçalho','prova.pdf','','gabarito.pdf');
+ assert.equal(m.year,'0000');assert.equal(m.banca,'NI');assert.equal(m.orgao,'NI');
+ assert.deepEqual(m.missing,['ano','banca','órgão']);
 });
