@@ -68,7 +68,7 @@ export function spatialQuestions(pages){
      if(current&&current.options.length<3&&Number(qm[1])!==current.originalNumber+1){
       current.stem.push(s);continue; // Frações tipográficas como 2.520 não criam questões novas.
      }
-     finish(row.y-5);
+     finish(row.y-15);
      if(collecting){const shared={...collecting,text:collecting.text.join('\n').trim()};if(shared.text)contexts.push(shared);collecting=null;}
      const n=Number(qm[1]),context=contexts.find(x=>n>=x.from&&n<=x.to)||null;
      current={originalNumber:n,heading,stem:[qm[2]||''],options:[],sourcePage:page.number,sourceColumn:col,startY:row.y,endY:0,contextText:context?.text||'',contextRange:context?[context.from,context.to]:null,confidence:'média'};
