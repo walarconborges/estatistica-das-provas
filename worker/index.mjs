@@ -1,5 +1,6 @@
 /** API pública de sincronização; o token GitHub existe SOMENTE nos secrets do Worker. */
 import {fresh,normalizeState,makeCode} from '../core.mjs';
+import {canExplain,contentFingerprint,explanationPath,promptFor,modelResponseText,isDailyLimitError,DEFAULT_AI_MODEL} from './explanations.mjs';
 const HOST='https://api.github.com';
 const LISTS=['profiles','exams','questions','attempts','simulations','flags'];
 const HEAD={'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28','User-Agent':'estatistica-provas-sync'};
@@ -112,6 +113,79 @@ async function uploadPDF(req,env){
  if(!upload.ok)throw Error('Não foi possível enviar o PDF ao GitHub ('+upload.status+').');
  return {path};
 }
+
+/**
+ * Modelo executado SOMENTE no servidor. A API aceita ID da questão existente,
+ * nunca prompt livre. Cache público reutilizável entre os perfis.
+ */
+function nextUtcDay(){
+ const now=new Date(),tomorrow=Date.UTC(now.getUTCFullYear(),now.getUTCMonth(),now.getUTCDate()+1);
+ return new Date(tomorrow).toISOString();
+}
+async function explanationCache(env,path){
+ const r=await github(env,'contents/'+path+'?ref='+encodeURIComponent(setup(env).branch));
+ if(r.status===404)return {sha:null,record:null};
+ if(!r.ok)throw Error('Não foi possível consultar o cache de explicações ('+r.status+').');
+ let raw=r.body.content;
+ if(!raw){const blob=await github(env,'git/blobs/'+r.body.sha);if(!blob.ok)throw Error('Falha na leitura da explicação.');raw=blob.body.content;}
+ try{return {sha:r.body.sha,record:JSON.parse(decodeText(raw))}}
+ catch{return {sha:r.body.sha,record:null}};
+}
+function explanationReply(record,origin,cached=true){
+ return reply({status:record.status||'ready',cached,explanation:record.text||'',model:record.model||'',generatedAt:record.generatedAt||''},200,origin);
+}
+async function handleExplanation(req,env,origin){
+ if(req.method!=='GET'&&req.method!=='POST')return reply({error:'Método não permitido.'},405,origin);
+ const input=req.method==='GET'?{questionId:new URL(req.url).searchParams.get('questionId')}:
+   await parseBody(req,1024);
+ const id=String(input.questionId||'');
+ if(!/^[a-zA-Z0-9_-]{3,100}$/.test(id))return reply({error:'Código de questão inválido.'},400,origin);
+ const {state}=await loadState(env);
+ const q=state.questions.find(item=>item.id===id);
+ if(!q)return reply({error:'Questão não encontrada no banco compartilhado.'},404,origin);
+ const eligibility=canExplain(q);
+ if(!eligibility.ok)return reply({status:'unavailable',reason:eligibility.reason},200,origin);
+ const hash=await contentFingerprint(q,x=>crypto.subtle.digest('SHA-256',x));
+ const path=explanationPath(q);
+ const existing=await explanationCache(env,path);
+ const record=existing.record?.fingerprint===hash?existing.record:null;
+ if(record?.status==='ready'&&record.text)return explanationReply(record,origin,true);
+ if(record?.status==='pending'&&Date.parse(record.retryAt||'')>Date.now())
+   return reply({status:'pending',reason:'A explicação está sendo gerada. Consulte novamente em alguns instantes.'},202,origin);
+ if(record?.status==='error'&&Date.parse(record.retryAt||'')>Date.now())
+   return reply({status:'limited',reason:record.reason||'Não foi possível gerar a explicação.',retryAt:record.retryAt},429,origin);
+ if(req.method==='GET')return reply({status:'not-generated'},200,origin);
+ if(!env.AI||typeof env.AI.run!=='function')
+   return reply({status:'not-configured',reason:'Binding Cloudflare Workers AI não está ativado nesta implantação.'},503,origin);
+ const pending={status:'pending',fingerprint:hash,retryAt:new Date(Date.now()+120000).toISOString()};
+ const reserved=await writeFile(env,path,JSON.stringify(pending,null,2)+'\n',existing.sha,'ai: reservar explicação '+q.code);
+ if(!reserved)return reply({status:'pending',reason:'Outra solicitação já começou a gerar esta explicação.'},202,origin);
+ const lock=await explanationCache(env,path);
+ try{
+  const response=await env.AI.run(DEFAULT_AI_MODEL,{
+    messages:promptFor(q),max_tokens:430,temperature:0.15
+  });
+  const text=modelResponseText(response);
+  if(text.length<45)throw Error('A IA retornou uma explicação incompleta.');
+  const complete={status:'ready',fingerprint:hash,model:DEFAULT_AI_MODEL,
+    generatedAt:new Date().toISOString(),text,revision:1};
+  if(!await writeFile(env,path,JSON.stringify(complete,null,2)+'\n',lock.sha,'ai: explicação para '+q.code)){
+   const renewed=await explanationCache(env,path);
+   if(renewed.record?.status==='ready'&&renewed.record.fingerprint===hash)return explanationReply(renewed.record,origin,true);
+   throw Error('Não foi possível armazenar esta explicação. Tente novamente.');
+  }
+  return explanationReply(complete,origin,false);
+ }catch(err){
+  const limited=isDailyLimitError(err);
+  const reason=limited?'A franquia gratuita do Cloudflare Workers AI foi atingida. As explicações já salvas continuam disponíveis.':
+    'Não foi possível gerar uma explicação agora. Tente novamente mais tarde.';
+  const errorRecord={status:'error',fingerprint:hash,reason,
+    retryAt:limited?nextUtcDay():new Date(Date.now()+120000).toISOString()};
+  try{await writeFile(env,path,JSON.stringify(errorRecord,null,2)+'\n',lock.sha,'ai: registrar indisponibilidade temporária');}catch{}
+  return reply({status:'limited',reason,retryAt:errorRecord.retryAt},limited?429:503,origin);
+ }
+}
+
 async function getPDF(req,env){
  const id=new URL(req.url).searchParams.get('examId')||'';
  if(!/^[A-Za-z0-9-]{10,100}$/.test(id))return new Response('PDF inválido.',{status:400});
@@ -130,6 +204,7 @@ export default {async fetch(req,env){
   if(req.method==='OPTIONS')return reply({},200,origin);
   if(req.method==='GET'&&url.pathname==='/api/health')return reply({status:'ok',repo:setup(env).repo,purgeGuard:1},200,origin);
   if(req.method==='GET'&&url.pathname==='/api/state')return reply((await loadState(env)).state,200,origin);
+  if(url.pathname==='/api/explanation')return handleExplanation(req,env,origin);
   if(req.method==='POST'&&url.pathname==='/api/upload')return reply(await uploadPDF(req,env),200,origin);
   if(req.method==='GET'&&url.pathname==='/api/file')return getPDF(req,env);
   if(req.method==='POST'&&url.pathname==='/api/merge'){
