@@ -1,4 +1,4 @@
-import {STORAGE_KEY,newId,fresh,normalizeState,parseExamText,parseKey,addExam,recordAttempt,latestAnswer,outcome,stats,filtered,prioritize,createSimulation,finishSimulation,simulationResult,expire,validAnswer} from './core.mjs';
+import {STORAGE_KEY,newId,fresh,normalizeState,parseExamText,parseKey,inferExamMetadata,addExam,recordAttempt,latestAnswer,outcome,stats,filtered,prioritize,createSimulation,finishSimulation,simulationResult,expire,validAnswer} from './core.mjs';
 import {readPdf} from './pdf-import.mjs';
 import {createSyncClient} from './sync-client.mjs';
 
@@ -20,8 +20,8 @@ const sync=createSyncClient({
   state=normalizeState(remote);expire(state);
   try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state));}catch{}
   if(profileId&&!state.profiles.some(p=>p.id===profileId)){profileId=null;showProfilePicker();}
-  else if(profileId)refresh();
-  else showProfilePicker();
+  else if(profileId&&view!=='import')refresh();
+  else if(!profileId)showProfilePicker();
  },
  notify:(status,error)=>{
   statusMessage=error||'';
@@ -81,20 +81,15 @@ function homeScreen(){
   <div class="notice info">O site preserva seus registros neste aparelho e os sincroniza com o GitHub quando o serviço remoto está configurado. Verifique o indicador no topo.</div>`;
 }
 function importScreen(){
-  return `${headline('Importar prova','Informe os dados de origem e envie o PDF ou cole o texto das questões.')}
+  return `${headline('Importar prova','Selecione os dois PDFs. O site tentará identificar automaticamente os dados da prova.')}
   <form id="import-form" class="card">
-  <div class="form-grid">
-   <div class="field span-all"><label>Título da prova</label><input name="title" required placeholder="Ex.: 2026 IBGP — Analista de TI"></div>
-   <div class="field"><label>Ano</label><input name="year" required pattern="[0-9]{4}" value="2026" inputmode="numeric"></div>
-   <div class="field"><label>Banca (sigla)</label><input name="banca" required placeholder="IBGP"></div>
-   <div class="field"><label>Órgão (sigla)</label><input name="orgao" required placeholder="SEMED"></div>
-   <div class="field span-all"><label>PDF da prova</label><input name="examPdf" type="file" accept=".pdf,application/pdf"></div>
-   <div class="field span-all"><label>Ou texto da prova</label><textarea name="text" rows="7" placeholder="LÍNGUA PORTUGUESA\n1) Enunciado...\nA) Alternativa...\nB) Alternativa..."></textarea></div>
-   <div class="field span-all"><label>PDF do gabarito oficial (opcional)</label><input name="keyPdf" type="file" accept=".pdf,application/pdf"></div>
-   <div class="field span-all"><label>Gabarito oficial, em texto (recomendado para conferência)</label><textarea name="key" rows="2" placeholder="1A2C3B4D"></textarea></div>
-  </div>
-  <p class="hint">A classificação inicial é automática e pode precisar de revisão. Quando um PDF não contiver texto legível, a página poderá ser preservada como imagem para conferência.</p>
-  <div class="actions"><button type="submit" id="import-submit">Importar questões</button></div></form>
+    <div class="form-grid">
+      <div class="field span-all"><label for="exam-pdf">PDF da prova</label><input id="exam-pdf" name="examPdf" type="file" accept=".pdf,application/pdf" required><p class="hint" id="exam-pdf-info">Selecione o arquivo PDF da prova.</p></div>
+      <div class="field span-all"><label for="key-pdf">PDF do gabarito oficial</label><input id="key-pdf" name="keyPdf" type="file" accept=".pdf,application/pdf" required><p class="hint" id="key-pdf-info">Selecione o arquivo PDF do gabarito.</p></div>
+    </div>
+    <p class="hint">O ano, a banca, o órgão, o título e as classificações serão identificados automaticamente quando possível. Dados não identificados serão sinalizados para conferência.</p>
+    <div class="actions"><button type="submit" id="import-submit" class="primary">Importar questões</button></div>
+  </form>
   ${latestImportMessage?`<div class="notice info">${h(latestImportMessage)}</div>`:''}`;
 }
 function availableFilters(){
@@ -219,24 +214,23 @@ function formsFilter(form){
   return Object.fromEntries(['discipline','topic','banca','year','orgao','outcome','status','code'].map(k=>[k,String(f.get(k)||'')]));
 }
 async function importData(form){
-  const fd=new FormData(form),title=String(fd.get('title')||'').trim(),year=String(fd.get('year')||'').trim(),banca=String(fd.get('banca')||'').trim(),orgao=String(fd.get('orgao')||'').trim();
-  if(!/^\d{4}$/.test(year)||!banca||!orgao||!title){toast('Confira título, ano, banca e órgão.');return}
+  const fd=new FormData(form),pdf=fd.get('examPdf'),keyPdf=fd.get('keyPdf');
+  if(!(pdf instanceof File)||!pdf.size||!(keyPdf instanceof File)||!keyPdf.size){toast('Selecione o PDF da prova e o PDF do gabarito.');return}
+  if(!/\.pdf$/i.test(pdf.name)||!/\.pdf$/i.test(keyPdf.name)){toast('Os dois arquivos devem estar no formato PDF.');return}
   const button=form.querySelector('button[type=submit]');button.disabled=true;button.textContent='Processando...';
   try{
-    let raw=String(fd.get('text')||'').trim(),keyRaw=String(fd.get('key')||'').trim(),pages=[];
-    const pdf=fd.get('examPdf');
-    if(pdf instanceof File&&pdf.size){
-      const out=await readPdf(pdf);raw=[raw,out.text].filter(Boolean).join('\n');pages=out.pages;
-    }
-    const keyPdf=fd.get('keyPdf');
-    if(keyPdf instanceof File&&keyPdf.size){const out=await readPdf(keyPdf,{images:false});keyRaw+='\n'+out.text}
+    const examRead=await readPdf(pdf);
+    const keyRead=await readPdf(keyPdf,{images:false});
+    const raw=examRead.text,keyRaw=keyRead.text,pages=examRead.pages;
+    const meta=inferExamMetadata(raw,pdf.name,keyRaw,keyPdf.name);
     const parsed=parseExamText(raw);
     for(const p of pages.filter(p=>p.image)){
       parsed.push({originalNumber:1000+p.number,stem:'[Página '+p.number+' sem extração integral — conferir a imagem da página original.]',options:[],pageImage:p.image,discipline:'Não classificada',disciplineCode:'NC',topic:'Geral',topicCode:'G',confidence:'baixa'});
     }
     if(!parsed.length){toast('Nenhuma questão identificada. Confira o PDF ou cole o texto da prova.');return}
     const key=parseKey(keyRaw);
-    const e=addExam(state,{title,year,banca,orgao},parsed,key);
+    const e=addExam(state,meta,parsed,key);
+    e.metadataReview=meta.missing;
      if(pdf instanceof File&&pdf.size&&sync.isConfigured()){
        if(pdf.size>4*1024*1024)toast('PDF acima de 4 MB: o texto será sincronizado, mas o original não.');
        else{
@@ -250,7 +244,7 @@ async function importData(form){
        }
      }
      if(!save()){state.exams=state.exams.filter(x=>x.id!==e.id);state.questions=state.questions.filter(x=>x.examId!==e.id);return}
-    latestImportMessage=`${parsed.length} questão(ões) importada(s) em “${title}”. ${Object.keys(key).length} resposta(s) identificada(s) no gabarito. Confira classificações e alternativas.`;
+    latestImportMessage=`${parsed.length} questão(ões) importada(s) em “${meta.title}”. ${Object.keys(key).length} resposta(s) identificada(s) no gabarito. ${meta.missing.length?'Dados não identificados ('+meta.missing.join(', ')+') aguardam conferência. ':''}Confira a extração e as alternativas.`;
     toast('Prova importada.');navigate('exams');
   }catch(err){console.error(err);toast('Não foi possível importar: '+err.message)}
   finally{button.disabled=false;button.textContent='Importar questões'}
@@ -351,6 +345,11 @@ document.addEventListener('submit',async e=>{
 });
 document.addEventListener('change',e=>{
   const input=e.target;
+  if(input.matches('#import-form input[type="file"]')){
+    const label=document.getElementById(input.name==='examPdf'?'exam-pdf-info':'key-pdf-info');
+    if(label)label.textContent=input.files?.[0]?'Selecionado: '+input.files[0].name:'Nenhum PDF selecionado';
+    return;
+  }
   if(input.matches('input[type=radio][data-scope=sim]')){
     const s=sim(selectedSimId);if(!s||s.status!=='pending')return;
     s.answers[input.dataset.qid]=input.value;save();
