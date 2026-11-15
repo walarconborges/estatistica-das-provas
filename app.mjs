@@ -130,6 +130,7 @@ function alternatives(q,scope,chosen=''){
 function feedback(q,answer){
   if(!validAnswer(answer))return '<span class="badge wait">Não respondida</span>';
   if(q.status==='annulled')return '<span class="badge wait">Questão anulada</span>';
+   if(q.status==='outdated')return '<span class="badge wait">Questão desatualizada</span>';
   if(!validAnswer(q.answer))return '<span class="badge wait">Sem gabarito confirmado</span>';
   return answer===q.answer?'<span class="badge good">Acerto</span>':'<span class="badge bad">Erro</span>';
 }
@@ -166,7 +167,7 @@ function simScreen(){
 }
 function examScreen(){
   return `${headline('Provas completas','Resolva a prova original, na ordem e com a numeração original, ou imprima.')}
-  <section class="card">${state.exams.length?state.exams.map(e=>`<div class="stat-line"><div><strong>${h(e.title)}</strong><div class="small-muted">${h(e.year)} · ${h(e.banca)} · ${h(e.orgao)} · ${e.questionIds.length} questões</div></div><div class="row">${btn('start-exam','Resolver','primary',`data-id="${h(e.id)}"`)}${btn('print-exam','Imprimir','secondary',`data-id="${h(e.id)}"`)}</div></div>`).join(''):empty('Nenhuma prova cadastrada.')}</section>`;
+  <section class="card">${state.exams.length?state.exams.map(e=>`<div class="stat-line"><div><strong>${h(e.title)}</strong><div class="small-muted">${h(e.year)} · ${h(e.banca)} · ${h(e.orgao)} · ${e.questionIds.length} questões</div></div><div class="row">${btn('start-exam','Resolver','primary',`data-id="${h(e.id)}"`)}${btn('print-exam','Imprimir','secondary',`data-id="${h(e.id)}"`)}${e.pdfPath?btn('open-original-pdf','Abrir PDF original','secondary',`data-id="${h(e.id)}"`):''}</div></div>`).join(''):empty('Nenhuma prova cadastrada.')}</section>`;
 }
 function statsScreen(){
   const s=stats(state,profileId);
@@ -236,7 +237,19 @@ async function importData(form){
     if(!parsed.length){toast('Nenhuma questão identificada. Confira o PDF ou cole o texto da prova.');return}
     const key=parseKey(keyRaw);
     const e=addExam(state,{title,year,banca,orgao},parsed,key);
-    if(!save()){state.exams=state.exams.filter(x=>x.id!==e.id);state.questions=state.questions.filter(x=>x.examId!==e.id);return}
+     if(pdf instanceof File&&pdf.size&&sync.isConfigured()){
+       if(pdf.size>4*1024*1024)toast('PDF acima de 4 MB: o texto será sincronizado, mas o original não.');
+       else{
+        try{
+         const encoded=await new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(String(reader.result).split(',')[1]);reader.onerror=()=>reject(reader.error);reader.readAsDataURL(pdf);});
+         const response=await fetch(sync.getUrl()+'/api/upload',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({examId:e.id,base64:encoded})});
+         const data=await response.json();
+         if(!response.ok)throw Error(data.error||'HTTP '+response.status);
+         e.pdfPath=data.path;
+        }catch(error){toast('O PDF original não foi sincronizado: '+error.message);}
+       }
+     }
+     if(!save()){state.exams=state.exams.filter(x=>x.id!==e.id);state.questions=state.questions.filter(x=>x.examId!==e.id);return}
     latestImportMessage=`${parsed.length} questão(ões) importada(s) em “${title}”. ${Object.keys(key).length} resposta(s) identificada(s) no gabarito. Confira classificações e alternativas.`;
     toast('Prova importada.');navigate('exams');
   }catch(err){console.error(err);toast('Não foi possível importar: '+err.message)}
@@ -372,7 +385,8 @@ document.addEventListener('click',e=>{
       const qs=ex.questionIds.map(question).filter(Boolean);
       const s=createSimulation(state,profileId,qs,{kind:'exam',examId:ex.id});save();beginSim(s.id);break;
     }
-    case 'print-exam':{
+    case 'open-original-pdf':{const ex=exam(id);if(ex?.pdfPath&&sync.getUrl())window.open(sync.getUrl()+'/api/file?examId='+encodeURIComponent(ex.id),'_blank','noopener');else toast('PDF original indisponível neste dispositivo.');break;}
+     case 'print-exam':{
       const ex=exam(id);if(ex)printQuestions(ex.questionIds.map(question).filter(Boolean),ex.title,{original:true});break;
     }
     case 'print-current':printQuestions(currentPool,'Questões avulsas');break;
