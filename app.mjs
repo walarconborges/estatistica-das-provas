@@ -188,7 +188,11 @@ function cardQuestion(q,index,scope='single',selected='',previous=null){
   return `<article class="question" data-question-card="${h(q.id)}">
   <div class="question-head"><div><div class="question-code">${h(q.code)}</div><div class="question-context">Questão ${label} · ${h(examTitle)} · ${h(q.discipline)} / ${h(q.topic)}</div></div><div class="chips">${q.status==='annulled'?'<span class="badge wait">Anulada</span>':''}${q.status==='needs-review'?'<span class="badge wait">Revisão da extração</span>':''}${q.status==='outdated'?'<span class="badge wait">Desatualizada</span>':''}${q.confidence==='baixa'?'<span class="badge wait">Classificação incerta</span>':''}</div></div>
   ${q.contextText?`<details class="support-text" ${repeatedSupportText(previous,q)?'':'open'}><summary>${repeatedSupportText(previous,q)?'Ver texto de apoio novamente (já exibido na questão anterior)':'Texto de apoio — questões '+h(q.contextRange?.join(' a ')||'')}</summary><div class="question-body">${h(q.contextText)}</div></details>`:''}
-  ${q.imageOnly&&q.pageImage?`<img loading="lazy" class="question-img" src="${h(q.pageImage)}" alt="Questão original com tabelas, fórmulas ou imagens">`:`<div class="question-body">${h(q.stem||'[Enunciado não extraído]')}</div>${q.pageImage?`<img loading="lazy" class="question-img" src="${h(q.pageImage)}" alt="Recorte da questão original">`:''}`}
+  ${q.visualSegments&&q.pageImage?
+    `<div class="question-body">${h(q.visualSegments.beforeText)}</div><img loading="lazy" class="question-img question-figure" src="${h(q.pageImage)}" alt="Figura ou tabela do enunciado"><div class="question-body">${h(q.visualSegments.afterText)}</div>`:
+    q.imageOnly&&q.pageImage?
+    `<img loading="lazy" class="question-img" src="${h(q.pageImage)}" alt="Enunciado em imagem; alternativas abaixo em texto selecionável">`:
+    `<div class="question-body">${h(q.stem||'[Enunciado não extraído]')}</div>${q.pageImage?`<img loading="lazy" class="question-img" src="${h(q.pageImage)}" alt="Recorte do PDF original">`:''}`}
   ${alternatives(q,scope,selected)}
   ${scope==='single'?`<div class="actions">${btn('answer-single','Conferir resposta','primary',`data-id="${h(q.id)}"`)}${btn('flag-question','Sinalizar problema','secondary',`data-id="${h(q.id)}"`)}${btn('question-log','Histórico','secondary',`data-id="${h(q.id)}"`)}</div>
     <div class="question-feedback">${last?`Última resposta válida: <strong>${h(last.answer)}</strong> — ${feedback(q,last.answer)}`:''}</div>`:''}
@@ -318,7 +322,16 @@ function downloadFile(text,name,type='application/json'){
 }
 function printQuestions(qs,title,options={}){
   const original=!!options.original,answered=options.answers||{};
-  const content=qs.map((q,i)=>`<article class="question"><div><strong>${original?q.originalNumber:i+1}. ${h(q.code)}</strong></div>${q.contextText&&!repeatedSupportText(qs[i-1],q)?`<p style="white-space:pre-wrap;font-size:9pt">Texto de apoio:\n${h(q.contextText)}</p>`:''}${q.imageOnly&&q.pageImage?`<img style="max-width:100%;max-height:650px;object-fit:contain" src="${h(q.pageImage)}">`:`<p style="white-space:pre-wrap">${h(q.stem||'Questão em imagem')}</p>${q.pageImage?`<img style="max-width:100%" src="${h(q.pageImage)}">`:''}${(q.options||[]).map(o=>`<p style="margin:3px 0;white-space:pre-wrap">${h(o.letter)}) ${h(o.text)}</p>`).join('')}`}</article>`).join('');
+  const content=qs.map((q,i)=>`<article class="question">
+   <div><strong>${original?q.originalNumber:i+1}. ${h(q.code)}</strong></div>
+   ${q.contextText&&!repeatedSupportText(qs[i-1],q)?`<p style="white-space:pre-wrap;font-size:9pt">Texto de apoio:\n${h(q.contextText)}</p>`:''}
+   ${q.visualSegments&&q.pageImage?
+      `<p>${h(q.visualSegments.beforeText)}</p><img style="max-width:100%;max-height:600px;object-fit:contain" src="${h(q.pageImage)}"><p>${h(q.visualSegments.afterText)}</p>`:
+      q.imageOnly&&q.pageImage?
+      `<img style="max-width:100%;max-height:600px;object-fit:contain" src="${h(q.pageImage)}">`:
+      `<p>${h(q.stem||'Questão em imagem')}</p>`}
+   ${(q.options||[]).map(o=>`<p style="margin:4px 0">${h(o.letter)}) ${h(o.text)}</p>`).join('')}
+  </article>`).join('');
   const sheet=qs.map((q,i)=>`<div style="display:inline-block;width:48%;margin:7px 0">${original?q.originalNumber:i+1}. ( A ) ( B ) ( C ) ( D ) ( E )</div>`).join('');
   const key=qs.map((q,i)=>`<div style="display:inline-block;width:33%;margin:4px 0">${original?q.originalNumber:i+1}. ${h(q.answer||'—')} &nbsp; ${h(q.code)}</div>`).join('');
   const doc=`<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>${h(title)}</title><style>@page{size:A4;margin:1.5cm 1.5cm 1.5cm 2.5cm}body{font:11pt Arial,sans-serif;color:#111}.question{break-inside:avoid;page-break-inside:avoid;margin-bottom:15mm}.page{page-break-before:always}h1{font-size:15pt}h2{font-size:13pt}p{line-height:1.4}</style></head><body><h1>${h(title)}</h1>${content}<section class="page"><h2>Folha de respostas</h2>${sheet}</section><section class="page"><h2>Gabarito</h2>${key}</section></body></html>`;
