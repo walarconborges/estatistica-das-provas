@@ -70,7 +70,7 @@ export function classify(stem,heading='',options=[]){
 /** Leitura tolerante a quebras de linha, marcas d'água e numeração de banca. */
 export function parseExamText(input){
   const lines=String(input||'').replace(/\r/g,'').split('\n');
-  const questions=[];let current=null,heading='';
+  const questions=[];let current=null,heading='',sourcePage=null;
   const qre=/^(?:(?:QUEST[AÃ]O|QUESTAO|Q)\s*)?(\d{1,3})\s*[).:\-]\s*(.*)$/i;
   const are=/^\s*(?:\(([A-E])\)|([A-E])\s*[).:\-])\s*(.*)$/i;
   const cleanNoise=line=>line
@@ -102,10 +102,12 @@ export function parseExamText(input){
     }
     line=cleanNoise(line);
     if(!line||isNoise(line))continue;
+    const pageMarker=line.match(/^\[\[PAGE:(\d+)\]\]$/i);
+    if(pageMarker){sourcePage=Number(pageMarker[1]);continue;}
     if(isHeading(line)){heading=line;continue}
     const qm=line.match(qre);
     if(qm){
-      finish();current={originalNumber:Number(qm[1]),stem:[qm[2]||''],options:[],heading};
+      finish();current={originalNumber:Number(qm[1]),stem:[qm[2]||''],options:[],heading,sourcePage};
       continue;
     }
     if(!current)continue;
@@ -142,7 +144,7 @@ export function addExam(state,meta,parsed,key={}){
   const exam={id:newId(),title:meta.title||'Prova sem título',year:String(meta.year||''),banca:String(meta.banca||''),bancaCode:codePart(meta.bancaCode||meta.banca,'BANCA'),orgao:String(meta.orgao||''),orgaoCode:codePart(meta.orgaoCode||meta.orgao,'ORGAO'),createdAt:new Date().toISOString(),questionIds:[]};
   for(const item of parsed){
     const equivalent=state.questions.find(x=>sameQuestion(x,item));
-    const q={...item,id:newId(),examId:exam.id,code:'',year:exam.year,banca:exam.banca,orgao:exam.orgao,answer:key[item.originalNumber]||'',status:key[item.originalNumber]==='X'?'annulled':'active',secondary:[],aliases:[],duplicateGroup:equivalent?.duplicateGroup||equivalent?.id||null};
+    const q={...item,id:newId(),examId:exam.id,code:'',year:exam.year,banca:exam.banca,orgao:exam.orgao,answer:key[item.originalNumber]||'',status:key[item.originalNumber]==='X'?'annulled':item.extractionReview?'needs-review':'active',secondary:[],aliases:[],duplicateGroup:equivalent?.duplicateGroup||equivalent?.id||null};
     if(equivalent&&!equivalent.duplicateGroup)equivalent.duplicateGroup=equivalent.id;
     q.code=makeCode(state,exam,q);
     state.questions.push(q);exam.questionIds.push(q.id);
