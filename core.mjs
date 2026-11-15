@@ -23,55 +23,101 @@ export const categories=[
   {match:/GEOGRAFIA/i,name:'Geografia',code:'GE'},
   {match:/CI[EÊ]NCIAS/i,name:'Ciências',code:'CI'}
 ];
-export function classify(stem,heading=''){
-  const match=categories.find(c=>c.match.test(heading));
-  const name=match?.name||'Não classificada',discCode=match?.code||'NC';
-  let topic='Geral',topicCode='G';
-  const t=textNorm(stem);
-  if(discCode==='LP'){
-    if(/CONCORDANCIA|REGENCIA|CRASE|PONTUACAO|ORTOGRAFIA|ACENTUACAO|GRAMATICA|SINTAXE|VERBO|SUBSTANTIVO/.test(t)){topic='Gramática';topicCode='G'}
-    else if(/INTERPRETACAO|COMPREENS[AÃ]O|IDEIA CENTRAL|TEXTO/.test(t)){topic='Interpretação de texto';topicCode='IT'}
-  }else if(discCode==='MA'){
-    if(/PORCENTAGEM|PERCENTUAL|%/.test(t)){topic='Porcentagem';topicCode='P'}
-    else if(/FRACAO|DENOMINADOR/.test(t)){topic='Frações';topicCode='F'}
-    else if(/EQUACAO/.test(t)){topic='Equações';topicCode='E'}
-  }else if(discCode==='IN'){
-    if(/EXCEL|PLANILHA|CALC/.test(t)){topic='Planilhas eletrônicas';topicCode='PE'}
-    else if(/WORD|EDITOR DE TEXTO/.test(t)){topic='Editores de texto';topicCode='ET'}
-    else if(/INTERNET|NAVEGADOR|E.MAIL/.test(t)){topic='Internet';topicCode='WEB'}
+/**
+ * Classificação conservadora: evidências claras no enunciado têm prioridade
+ * sobre títulos de seção. Casos incertos continuam com classificação provisória.
+ */
+export function classify(stem,heading='',options=[]){
+  const t=textNorm(stem),answerText=textNorm(options.map(o=>o.text).join(' '));
+  let discipline='Não classificada',disciplineCode='NC',topic='Geral',topicCode='G',confidence='baixa';
+  function choose(d,dc,subject,sc){
+    discipline=d;disciplineCode=dc;topic=subject;topicCode=sc;confidence='alta';
   }
-  return {discipline:name,disciplineCode:discCode,topic,topicCode,confidence:match?'média':'baixa'};
+  if(/\b(RANSOMWARE|CRIPTOGRAFIA|RSA[- ]?2048|AES[- ]?256|HASH CRIPTOGRAFICO|CIFRA RSA|CHAVE PRIVADA DO RSA)\b/.test(t)){
+    choose('Informática','IN','Segurança da informação','SI');
+  }else if(/\b(DHCP|DNS|LDAP|TCP\/IP|ENDERECOS? IP|TOPOLOGIA|REDE DE COMPUTADORES|PROTOCOLO RESPONSAVEL|REDES DE COMPUTADORES)\b/.test(t)){
+    choose('Informática','IN','Redes de computadores','RC');
+  }else if(/\b(SISTEMA OPERACIONAL|WINDOWS 11|WINDOWS 10|LINUX|CENTOS|SYSTEMCTL|FIREWALLD|PERMISSOES DE UMA PASTA)\b/.test(t)){
+    choose('Informática','IN','Sistemas operacionais','SO');
+  }else if(/\b(VIRGULAS|PONTUACAO|CONCORDANCIA|REGENCIA|CRASE|ORTOGRAFIA|ACENTUACAO|ANALISE SINTATICA|ORA[CÇ]OES SUBORDINADAS)\b/.test(t)
+      ||/EMPREGADAS NAS (?:TRES|TR[EÊ]S) PASSAGENS/.test(t)){
+    choose('Língua Portuguesa','LP','Gramática','G');
+  }else if(/\b(O EDITORIAL|O TEXTO|O AUTOR DO TEXTO|INTERPRETACAO DO TEXTO|IDEIA CENTRAL|PAISES[- ]MEMBROS DA ORGANIZACAO MUNDIAL)\b/.test(t)){
+    choose('Língua Portuguesa','LP','Interpretação de texto','IT');
+  }else if(/\b(RESOLUCAO\s*(?:N[Oº°.]*)?\s*\d+|CAMARA MUNICIPAL|DIRETORIA LEGISLATIVA|TERMOS DE POSSE DO PREFEITO|VEREADORES)\b/.test(t)){
+    choose('Legislação','LE','Legislação institucional','LI');
+  }else if(/\b(MEDIA ARITMETICA|PORCENTAGEM|PERCENTUAL|FRACOES|DENOMINADOR|EQUACAO|LOJA VENDE|VENDE ESTES|SEIS PRODUTOS|MATEMATICA FINANCEIRA)\b/.test(t)){
+    choose('Matemática','MA','Geral','G');
+    if(/\bMEDIA ARITMETICA\b/.test(t)) {topic='Média aritmética';topicCode='ME'}
+    else if(/\b(PORCENTAGEM|PERCENTUAL)\b|%/.test(t)){topic='Porcentagem';topicCode='P'}
+    else if(/\b(FRACOES|DENOMINADOR)\b/.test(t)){topic='Frações';topicCode='F'}
+    else if(/\bEQUACAO\b/.test(t)){topic='Equações';topicCode='E'}
+    else if(/\b(LOJA VENDE|VENDE ESTES|SEIS PRODUTOS)\b/.test(t)){topic='Problemas aritméticos';topicCode='PA'}
+  }else if(/\b(EXCEL|PLANILHA ELETRONICA)\b/.test(t)){
+    choose('Informática','IN','Planilhas eletrônicas','PE');
+  }else {
+    const match=categories.find(category=>category.match.test(heading));
+    if(match){
+      discipline=match.name;disciplineCode=match.code;confidence='média';
+      if(disciplineCode==='LP'&&/\b(PARAGRAFO|PASSAGENS|TEXTO)\b/.test(t)){topic='Interpretação de texto';topicCode='IT'}
+      if(disciplineCode==='MA'&&/%/.test(t)){topic='Porcentagem';topicCode='P'}
+    }
+  }
+  // Detectores acima são indicativos, não uma garantia de classificação correta.
+  return {discipline,disciplineCode,topic,topicCode,confidence};
 }
+
+/** Leitura tolerante a quebras de linha, marcas d'água e numeração de banca. */
 export function parseExamText(input){
   const lines=String(input||'').replace(/\r/g,'').split('\n');
   const questions=[];let current=null,heading='';
   const qre=/^(?:(?:QUEST[AÃ]O|QUESTAO|Q)\s*)?(\d{1,3})\s*[).:\-]\s*(.*)$/i;
   const are=/^\s*(?:\(([A-E])\)|([A-E])\s*[).:\-])\s*(.*)$/i;
+  const cleanNoise=line=>line
+    .replace(/\s*(?:www\.pciconcursos\.com\.br|pcimarkpci)(?:.*)?$/i,'')
+    .replace(/\s*\b(?:CONFIDENCIAL ATE O MOMENTO DA APLICACAO|CONFIDENCIAL ATÉ O MOMENTO DA APLICAÇÃO)\b.*$/i,'')
+    .replace(/\s*\bMDAwM[A-Za-z0-9+/=]{35,}.*$/,'').trim();
+  const isNoise=line=>/^(?:R\s*A\s*S\s*C\s*U\s*N\s*H\s*O|RASCUNHO|WWW\.|PCIMARKPCI|MDAwM[A-Za-z0-9+/=]{30,}|CONFIDENCIAL AT[EÉ]|P[AÁ]GINA\s+\d+\s*(?:DE|\/)\s*\d+)$/i.test(line)
+    ||/^\d{1,3}\s+CVOT\d+\s*\/.+(?:CONFIDENCIAL|APLICA[CÇ][AÃ]O)/i.test(line);
+  const isHeading=line=>categories.some(cat=>cat.match.test(line))&&
+    /^(?:CONHECIMENTOS\s+(?:B[AÁ]SICOS|ESPEC[IÍ]FICOS)\s*[-–:]?\s*)?(?:L[IÍ]NGUA PORTUGUESA|PORTUGU[EÊ]S|MATEM[AÁ]TICA|RACIOC[IÍ]NIO L[OÓ]GICO|INFORM[AÁ]TICA|TECNOLOGIA DA INFORMA[CÇ][AÃ]O|DIREITO ADMINISTRATIVO|DIREITO CONSTITUCIONAL|LEGISLA[CÇ][AÃ]O|CONHECIMENTOS ESPEC[IÍ]FICOS|HIST[OÓ]RIA|GEOGRAFIA|CI[EÊ]NCIAS)\s*$/i.test(line);
   function finish(){
     if(!current)return;
     current.stem=current.stem.join('\n').trim();
-    current.options=current.options.filter(a=>a.text.trim());
-    if(current.stem || current.pageImage) questions.push({...current,...classify(current.stem,current.heading)});
+    current.options=current.options.filter(a=>a.text.trim()).map(a=>({...a,text:a.text.trim()}));
+    if(current.stem||current.pageImage){
+      const result={...current,...classify(current.stem,current.heading,current.options)};
+      result.extractionReview=result.options.length<2||result.options.length>5||
+        result.options.some(a=>/PCIMARKPCI|PCICONCURSOS|MDAwM[A-Za-z0-9+/=]{30,}/i.test(a.text));
+      questions.push(result);
+    }
   }
-  for(const line of lines){
-    const trimmed=line.trim();
-    if(!trimmed)continue;
-    if(categories.some(c=>c.match.test(trimmed))&&trimmed.length<85&&!/^\d/.test(trimmed)&&!current?.options?.length){heading=trimmed;continue}
-    if(categories.some(c=>c.match.test(trimmed))&&trimmed.length<80&&!/^\d/.test(trimmed)&&current?.options?.length){finish();current=null;heading=trimmed;continue}
-    const qm=trimmed.match(qre);
+  for(let originalLine of lines){
+    let line=originalLine.trim();
+    if(!line)continue;
+    // Uma marca 'RASCUNHO 19. Considere...' não pode ser anexada à alternativa E anterior.
+    if(current&&current.options.length>=3){
+      const embedded=line.match(/^(?:R\s*A\s*S\s*C\s*U\s*N\s*H\s*O|RASCUNHO)\s+(\d{1,3})\s*[.):-]\s*(.*)$/i);
+      if(embedded&&Number(embedded[1])===current.originalNumber+1)line=embedded[1]+'. '+embedded[2];
+    }
+    line=cleanNoise(line);
+    if(!line||isNoise(line))continue;
+    if(isHeading(line)){heading=line;continue}
+    const qm=line.match(qre);
     if(qm){
       finish();current={originalNumber:Number(qm[1]),stem:[qm[2]||''],options:[],heading};
       continue;
     }
     if(!current)continue;
-    const am=trimmed.match(are);
+    const am=line.match(are);
     if(am){current.options.push({letter:am[1]||am[2],text:am[3]||''});continue}
-    if(current.options.length)current.options.at(-1).text+='\n'+trimmed;
-    else current.stem.push(trimmed);
+    if(current.options.length)current.options.at(-1).text+='\n'+line;
+    else current.stem.push(line);
   }
   finish();
   return questions.filter(q=>q.originalNumber>0);
 }
+
 export function parseKey(raw){
   const out={};const src=textNorm(raw);
   const re=/(\d{1,3})\s*(?:[.):-]\s*)?([A-E]|CERTO|ERRADO|C|E|ANULADA|ANULADO|X)/g;
