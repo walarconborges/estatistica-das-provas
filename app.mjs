@@ -214,7 +214,7 @@ function filterForm(kind='questions'){
   ${mode?`<div class="field"><label>Quantidade de questões</label><input type="number" name="count" min="1" max="1000" value="20" required></div>`:`<div class="field"><label>Mostrar quantas questões?</label><input type="number" name="count" min="1" max="1000" value="${limitAvulsas}" required></div>`}
   ${!mode?`<div class="field span-all"><label>Buscar código permanente</label><input class="code-search" name="code" placeholder="Q2026LPGIBGPSEMED1" value="${h(currentFilter.code||'')}"></div>`:''}
   </div><div class="actions"><button type="submit">${mode?'Criar simulado':'Buscar questões'}</button></div>
-  <p class="hint">Por padrão, o sorteio prioriza questões inéditas. Questões municipais de outras cidades não entram no modo Candeias até serem juridicamente validadas. Use “Prova original” para consultá-las.</p>
+  <p class="hint">Questões de legislação são adaptadas automaticamente quando existe correspondência com as normas oficiais de Candeias. Sem correspondência, ficam inválidas para o modo municipal. A prova original é preservada.</p>
   </form>`;
 }
 function alternatives(q,scope,chosen=''){
@@ -232,6 +232,18 @@ function alternatives(q,scope,chosen=''){
   </div>`;
  }).join('')}</div>`;
 }
+function legalBasisHtml(q){
+ const a=q?.adaptation;
+ if(!q?.originalQuestionId||!a?.legalReason||!a?.sourceUrl||!a?.sourceArticle)return '';
+ return '<div class="legal-basis">'+
+  '<strong>Fundamento legal — '+h(a.law||'Legislação de Candeias do Jamari')+', '+h(a.sourceArticle)+'</strong>'+
+  '<p>'+h(a.legalReason)+'</p>'+
+  '<a href="'+h(a.sourceUrl)+'" target="_blank" rel="noopener noreferrer">Consultar norma oficial</a>'+
+  '<p class="hint">Questão adaptada automaticamente. Encontrou um erro? Sinalize para revisão.</p>'+
+  btn('flag-question','Sinalizar erro na adaptação','secondary','data-id="'+h(q.id)+'"')+
+  '</div>';
+}
+
 function feedback(q,answer){
   if(!validAnswer(answer))return '<span class="badge wait">Não respondida</span>';
   if(q.status==='annulled')return '<span class="badge wait">Questão anulada</span>';
@@ -244,7 +256,7 @@ function cardQuestion(q,index,scope='single',selected='',previous=null){
   const label=scope==='sim'?index+1:q.originalNumber||index+1;
   const examTitle=exam(q.examId)?.title||'';
   return `<article class="question" data-question-card="${h(q.id)}">
-  <div class="question-head"><div><div class="question-code">${h(q.code)}</div><div class="question-context">Questão ${label} · ${h(q.discipline)} / ${h(q.topic)}</div><details class="question-origin"><summary>Ver origem da questão</summary><div>${h(examTitle)}</div></details></div><div class="chips">${q.status==='annulled'?'<span class="badge wait">Anulada</span>':''}${q.status==='needs-review'?'<span class="badge wait">Revisão da extração</span>':''}${q.status==='outdated'?'<span class="badge wait">Desatualizada</span>':''}${q.confidence==='baixa'?'<span class="badge wait">Classificação incerta</span>':''}</div></div>
+  <div class="question-head"><div><div class="question-code">${h(q.code)}</div><div class="question-context">Questão ${label} · ${h(q.discipline)} / ${h(q.topic)}</div><details class="question-origin"><summary>Ver origem da questão</summary><div>${h(examTitle)}</div></details></div><div class="chips">${q.status==='annulled'?'<span class="badge wait">Anulada</span>':''}${q.status==='needs-review'?'<span class="badge wait">Revisão da extração</span>':''}${q.status==='outdated'?'<span class="badge wait">Desatualizada</span>':''}${q.originalQuestionId?'<span class="badge good">Adaptada para Candeias</span>':''}${q.confidence==='baixa'?'<span class="badge wait">Classificação incerta</span>':''}</div></div>
   ${q.contextText?`<details class="support-text" ${repeatedSupportText(previous,q)?'':'open'}><summary>${repeatedSupportText(previous,q)?'Ver texto de apoio novamente (já exibido na questão anterior)':'Texto de apoio — questões '+h(q.contextRange?.join(' a ')||'')}</summary><div class="question-body">${h(q.contextText)}</div></details>`:''}
   ${q.visualSegments&&q.pageImage?
     `<div class="question-body">${h(q.visualSegments.beforeText)}</div><img loading="lazy" class="question-img question-figure" src="${h(q.pageImage)}" alt="Figura ou tabela do enunciado"><div class="question-body">${h(q.visualSegments.afterText)}</div>`:
@@ -253,7 +265,7 @@ function cardQuestion(q,index,scope='single',selected='',previous=null){
     `<div class="question-body">${h(q.stem||'[Enunciado não extraído]')}</div>${q.pageImage?`<img loading="lazy" class="question-img" src="${h(q.pageImage)}" alt="Recorte do PDF original">`:''}`}
   ${alternatives(q,scope,selected)}
   ${scope==='single'?`<div class="actions">${btn('answer-single','Conferir resposta','primary',`data-id="${h(q.id)}"`)}${last?btn('explain-question','Explicar questão','secondary',`data-id="${h(q.id)}"`):''}${btn('flag-question','Sinalizar problema','secondary',`data-id="${h(q.id)}"`)}${btn('question-log','Histórico','secondary',`data-id="${h(q.id)}"`)}</div>
-    <div class="question-feedback">${last?`Última resposta válida: <strong>${h(last.answer)}</strong> — ${feedback(q,last.answer)}`:''}</div>${explanationBox(q.id)}`:''}
+    <div class="question-feedback">${last?`Última resposta válida: <strong>${h(last.answer)}</strong> — ${feedback(q,last.answer)}`:''}</div><div class="legal-result">${last?legalBasisHtml(q):''}</div>${explanationBox(q.id)}`:''}
   </article>`;
 }
 function questionsScreen(){
@@ -316,13 +328,15 @@ function resultScreen(){
   <div class="grid four">${infoTile(r.correct,'Acertos')}${infoTile(r.wrong,'Erros')}${infoTile(r.blank,'Em branco')}${infoTile(pct(r.rate),'Aproveitamento das respondidas')}</div>
   <div class="actions" style="margin-bottom:16px">${btn('print-sim','Imprimir questões e gabarito')}${btn('go-sim','Voltar aos simulados')}</div>
   <section class="card"><h2>Correção questão por questão</h2>
-  ${s.questionIds.map((id,i)=>{const q=question(id);if(!q)return '';const ans=s.answers[id]||'';return `<div class="result-explanation"><div class="stat-line"><div><div class="question-code">${i+1}. ${h(q.code)}</div><div class="small-muted">Marcada: <strong>${h(ans||'—')}</strong> · Gabarito: <strong>${h(q.answer||'Não definido')}</strong></div></div><div>${feedback(q,ans)}</div></div><div class="actions">${btn('explain-question','Explicar questão','secondary',`data-id="${h(q.id)}"`)}${btn('flag-question','Sinalizar problema','secondary',`data-id="${h(q.id)}"`)}</div>${explanationBox(q.id)}</div>`}).join('')}</section>`;
+  ${s.questionIds.map((id,i)=>{const q=question(id);if(!q)return '';const ans=s.answers[id]||'';return `<div class="result-explanation"><div class="stat-line"><div><div class="question-code">${i+1}. ${h(q.code)}</div><div class="small-muted">Marcada: <strong>${h(ans||'—')}</strong> · Gabarito: <strong>${h(q.answer||'Não definido')}</strong></div></div><div>${feedback(q,ans)}</div></div>${legalBasisHtml(q)}<div class="actions">${btn('explain-question','Explicar questão','secondary',`data-id="${h(q.id)}"`)}${btn('flag-question','Sinalizar problema','secondary',`data-id="${h(q.id)}"`)}</div>${explanationBox(q.id)}</div>`}).join('')}</section>`;
 }
 function updateQuestionFeedback(qid){
   const el=document.querySelector(`[data-question-card="${qid}"] .question-feedback`);
   const q=question(qid),last=latestAnswer(state,profileId,qid);
   if(el&&q&&last){
    el.innerHTML=`Última resposta válida: <strong>${h(last.answer)}</strong> — ${feedback(q,last.answer)}`;
+   const basis=el.closest('[data-question-card]')?.querySelector('.legal-result');
+   if(basis)basis.innerHTML=legalBasisHtml(q);
    const actions=el.closest('[data-question-card]')?.querySelector('.actions');
    if(actions&&!actions.querySelector('[data-action="explain-question"]'))
     actions.insertAdjacentHTML('beforeend',btn('explain-question','Explicar questão','secondary',`data-id="${h(q.id)}"`));
@@ -403,10 +417,10 @@ function printQuestions(qs,title,options={}){
 }
 function showFlag(qid){
  const q=question(qid);if(!q)return;
- const raw=prompt('Sinalizar '+q.code+'\nTipo: classificação, secundária, gabarito, anulada, desatualizada, extração ou outro','classificação');
+ const raw=prompt('Sinalizar '+q.code+'\nTipo: classificação, secundária, gabarito, anulada, desatualizada, extração, adaptação ou outro',q.originalQuestionId?'adaptação':'classificação');
  if(raw===null)return;
  const norm=String(raw).trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
- const type=norm.startsWith('class')?'classification':norm.startsWith('sec')?'secondary':norm.startsWith('gab')?'answer':norm.startsWith('anul')?'annulled':norm.startsWith('desat')?'outdated':norm.startsWith('extr')?'extraction':'other';
+ const type=norm.startsWith('class')?'classification':norm.startsWith('sec')?'secondary':norm.startsWith('gab')?'answer':norm.startsWith('anul')?'annulled':norm.startsWith('desat')?'outdated':norm.startsWith('extr')?'extraction':norm.startsWith('adapt')?'adaptation':'other';
  let proposed={};
  if(type==='classification'||type==='secondary'){
   const disc=prompt('Disciplina sugerida:',q.discipline);if(disc===null)return;
