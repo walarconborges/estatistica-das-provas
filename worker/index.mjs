@@ -39,6 +39,11 @@ export function applyDelta(existing,delta){
   const found=new Map(state[type].map((row,index)=>[row.id,index]));
   for(const itemRaw of items){
    const item=readRow(itemRaw);
+   if((state.tombstones?.[type]||[]).includes(item.id))continue;
+   if(type==='questions'&&(state.tombstones?.exams||[]).includes(item.examId))continue;
+   if(type==='attempts'&&(state.tombstones?.questions||[]).includes(item.questionId))continue;
+   if(type==='flags'&&(state.tombstones?.questions||[]).includes(item.questionId))continue;
+   if(type==='simulations'&&item.questionIds?.some(id=>(state.tombstones?.questions||[]).includes(id)))continue;
    if(++quantity>350)throw Error('Lote grande demais.');
    if(found.has(item.id)){
     if(type==='simulations'){
@@ -123,7 +128,7 @@ export default {async fetch(req,env){
  try{
   origin=originFor(req,env);const url=new URL(req.url);
   if(req.method==='OPTIONS')return reply({},200,origin);
-  if(req.method==='GET'&&url.pathname==='/api/health')return reply({status:'ok',repo:setup(env).repo},200,origin);
+  if(req.method==='GET'&&url.pathname==='/api/health')return reply({status:'ok',repo:setup(env).repo,purgeGuard:1},200,origin);
   if(req.method==='GET'&&url.pathname==='/api/state')return reply((await loadState(env)).state,200,origin);
   if(req.method==='POST'&&url.pathname==='/api/upload')return reply(await uploadPDF(req,env),200,origin);
   if(req.method==='GET'&&url.pathname==='/api/file')return getPDF(req,env);
