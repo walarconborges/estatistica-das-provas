@@ -513,7 +513,7 @@ export function chosenAnswerSection(text,examText='',examInfo={}){
  // "01) D 11) C 21) A 31) B". Não usar o primeiro gabarito por engano.
  // Os títulos são reconhecidos somente quando imediatamente seguidos
  // pelo par "01) letra", evitando capturar cabeçalhos de páginas.
- const objectiveHeads=[...source.matchAll(/(?:^|\n)[ \t]*([A-ZÀ-Ü][A-ZÀ-Ü |()\-º]{5,115})[ \t]*\n[ \t]*0?1\)[ \t]*[A-E]\b/gm)];
+ const objectiveHeads=[...source.matchAll(/(?:^|\n)[ \t]*([A-ZÀ-Ü][A-ZÀ-Ü |()\-º]{2,115})[ \t]*\n[ \t]*0?1\)[ \t]*[A-E]\b/gm)];
  if(objectiveHeads.length>=2){
   const sections=objectiveHeads.map((m,i)=>({
    job:norm(m[1]).replace(/\s+/g,' ').trim(),
