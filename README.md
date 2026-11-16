@@ -1,9 +1,17 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.21 — 16/11/2026**  
+**Versão experimental 0.6.22 — 16/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.22 — tolerância controlada a caracteres incorretos no cargo do gabarito
+
+- Identificado o motivo do bloqueio persistente na prova de **Auxiliar de Serviços Gerais — FCPC/Aracati**: o PDF do gabarito fornece o título **“AUXILIAR DE SERVIAOS GERAIS”** (glifo corrompido), enquanto a capa e o nome do arquivo usam **“SERVIÇOS”**. A comparação antiga exigia identidade literal.
+- Introduzida comparação conservadora por palavras no nome do cargo: permite **uma única diferença de caractere** em todo o título, com os outros termos distintivos idênticos e em sequência. Não depende de correções manuais nem aceita simplesmente o único cargo encontrado.
+- A regra vale para gabaritos de uma página e de várias páginas/cargos. Cargos diferentes como **Auxiliar Administrativo**, **Copeiro** e **Auxiliar de Serviços Escolares** continuam bloqueados quando não correspondem à prova.
+- Novos testes simulam o nome com o glifo corrompido e confirmam a extração das 50 respostas em ambos os formatos, além da recusa de cargos distintos.
+- Nenhuma questão, resposta, sinalização ou estatística anterior foi alterada. A confirmação da importação completa no navegador ainda é necessária.
 
 ## Versão 0.6.21 — Cargo Todos e conferência explícita por edital
 
