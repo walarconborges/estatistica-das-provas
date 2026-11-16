@@ -387,7 +387,7 @@ function syllabusBadge(q){
  const cls=match.status==='dentro'?'good':match.status==='fora'?'bad':'wait';
  const label=match.status==='dentro'?match.discipline+' / '+match.topic:match.statusLabel;
  return '<div class="syllabus-classification"><span class="badge '+cls+'">'+h(match.statusLabel)+'</span>'+
-  '<span>Cargo '+h(id)+' · '+h(label)+(match.status==='pendente'?' · Confira o conteúdo e sinalize se necessário.':'')+'</span></div>';
+  '<span>Cargo '+h(id)+' · '+h(label)+(q.editalReview?.[id]?' · Revisão aprovada':match.status==='pendente'?' · Confira o conteúdo e sinalize se necessário.':'')+'</span></div>';
 }
 function syllabusStatistics(){
  if(currentFilter.editalCargo===STUDY_ALL)return '';
