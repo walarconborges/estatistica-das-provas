@@ -1,3 +1,14 @@
+## 0.6.10 — 16/11/2026
+
+- Corrigido o falso duplicado “002. Prova Objetiva” da capa VUNESP/UNESP; o leitor não confunde código de caderno com questão.
+- Metadados: instituição UNESP, banca VUNESP por assinatura VNSP de rodapé, cargo Analista de Informática II e área de atuação; curso 2026 identificado pelo gabarito oficial.
+- Gabarito multicargo: seleção estrita da seção 002. Códigos ausentes ou conflitantes não acionam seleção por nome genérico de cargo.
+- Inclusão de identificação manual opcional de ano, banca, órgão e código quando os arquivos não fornecem dados reconhecíveis.
+- Identificação da tirinha como elemento gráfico isolado; mantém enunciado e alternativas como texto.
+- Classificação conforme blocos originais de Português (1–10), Matemática e Raciocínio Lógico (11–15), Legislação (16–20) e Informática (21–40).
+- Testes de regressão passaram; a importação completa no navegador permanece sujeita à verificação.
+- Não alterados o banco de questões, respostas, simulados, provas ou os catálogos de editais já salvos.
+
 ## 0.6.9 — 15/11/2026
 
 - Catálogos personalizados do Edital 01/2026 da Câmara de Candeias do Jamari: cargo 505 (Analista de Tecnologia e Informática, nível superior) e 202 (Auxiliar de Serviços Gerais, ensino fundamental).
