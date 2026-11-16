@@ -1,3 +1,11 @@
+## 0.6.24 — 16/11/2026
+
+- Objetiva, PM-Sossego, Matemática Q21: remove endereço `www.objetivas.com.br` inserido indevidamente depois da alternativa D.
+- Novo tratamento de rodapé na extração espacial (linha isolada ou anexada ao final da alternativa).
+- Reparo automático em questões já existentes ao abrir/sincronizar o banco, sem reimportação nem alteração de respostas ou históricos.
+- URL só é removida quando coincide exatamente com a assinatura do rodapé da Objetiva ao final do campo; demais links de conteúdo são preservados.
+- Testes validam extração, preservação do gabarito e dos históricos e ausência de alterações nos registros originais.
+
 ## 0.6.23 — 16/11/2026
 
 - Gabaritos com vários cargos e tabelas numéricas: novo leitor estrutural reutilizável seleciona automaticamente por código + nome da função, sem regras dependentes da banca.
