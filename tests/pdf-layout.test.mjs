@@ -1353,7 +1353,7 @@ test('gabarito tabular genérico: FEPESE F1 de 35 questões não mistura M1/M2/S
  const sel=chosenAnswerSection(source,cover,{examFilename:'auxiliar_de_servicos_gerais (2).pdf',examTitle:'2026 — FEPESE — CIS — Auxiliar de Serviços Gerais'});
  assert.equal(sel.error,null);
  assert.equal(sel.format,'grid');
- assert.match(sel.section,/F1 — AUXILIAR DE SERVICOS GERAIS/);
+ assert.equal(sel.section,'F1');
  const key=parseGridKey(sel.text);
  assert.equal(Object.keys(key).length,35);
  official.forEach((letter,i)=>assert.equal(key[i+1],letter,'questão '+(i+1)));
