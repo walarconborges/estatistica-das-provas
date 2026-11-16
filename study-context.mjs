@@ -1,7 +1,8 @@
 /**
  * Perfil jurisdicional do estudo. Nunca altera uma questão original.
- * Versões adaptadas só podem ser publicadas após revisão dos dispositivos
- * oficiais e do gabarito. Legislação de outro município fica em espera.
+ * O Anexo IV do cargo 505 determina quais normas são cobrança direta;
+ * menções ao preâmbulo do edital não equivalem a conteúdos programáticos.
+ * Versões automáticas exigem fundamento específico no catálogo jurídico.
  */
 export const STUDY_CONTEXT=Object.freeze({
  id:'candeias-do-jamari-ro',
@@ -9,6 +10,17 @@ export const STUDY_CONTEXT=Object.freeze({
  municipality:'Candeias do Jamari',
  state:'RO',
  edital:'Câmara Municipal de Candeias do Jamari — Edital 01/2026, consolidado até a Retificação nº 01',
+ targetCargoCode:'505',
+ targetCargo:'Analista de Tecnologia e Informática',
+ programAnnex:'Anexo IV — Conteúdos Programáticos',
+ programPages:'páginas 4–5 e 7',
+ assessedMunicipalLegislation:[
+  'Lei Orgânica do Município',
+  'Resolução nº 001/CMCJ-93',
+  'Resolução nº 173/CMCJ/2025'
+ ],
+ assessedSpecificLaws:['Lei Federal nº 13.709/2018 (LGPD)'],
+ legalFrameworkNote:'Os demais atos municipais abaixo são citados no preâmbulo do edital; isso não os inclui automaticamente na disciplina Legislação Municipal do Anexo IV.',
  legalCutoff:'Item 1.5: normas que entrarem em vigor após a publicação do edital não serão avaliadas',
  legalFramework:[
   'Lei Orgânica Municipal de 11 de outubro de 1993 e alterações',
