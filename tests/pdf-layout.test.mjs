@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {spatialLines,spatialQuestions,chosenAnswerSection,identifyBookletCode,parseGridKey,questionIntegrity,declaredQuestionCount,declaredAlternativeCount,inferredAlternativeCount,normalizeQuestionHeading,humanizePdfText,attachSuperscriptOrdinals,formatQuestionStem} from '../pdf-layout.mjs';
+import {spatialLines,spatialQuestions,chosenAnswerSection,identifyBookletCode,parseGridKey,questionIntegrity,isInstructionSheet,declaredQuestionCount,declaredAlternativeCount,inferredAlternativeCount,normalizeQuestionHeading,humanizePdfText,attachSuperscriptOrdinals,formatQuestionStem} from '../pdf-layout.mjs';
 import {parseKey,inferExamMetadata,classifyByExamDivision} from '../core.mjs';
 function item(str,x,y,width=40){return {str,transform:[1,0,0,1,x,842-y],width};}
 test('leitura espacial separa duas colunas e preserva a numeração original',()=>{
@@ -1018,4 +1018,120 @@ test('Objetiva: texto-base de Português antes da primeira questão não desapar
  }
  assert.equal(parsed.questions.find(q=>q.originalNumber===5).contextText,'');
  assert.equal(parsed.contexts.length,1);
+});
+
+
+test('FCPC Aracati 2026: gabarito preliminar tabulado usa SOMENTE página 2 do cargo Auxiliar',()=>{
+ const nums=(start,size)=>Array.from({length:size},(_,i)=>String(start+i).padStart(2,'0')).join(' ');
+ const matrix={
+  1:'A A D D B C D C A B'.split(' '),
+  11:'B A D B D C A D C A'.split(' '),
+  21:'C B C D D C A B A A B C B B C'.split(' '),
+  36:'A D C D D A B D B A C D A A D'.split(' ')
+ };
+ const grid=(one,two,three,four)=>
+  'PROVA 1 - LÍNGUA PORTUGUESA\n'+nums(1,10)+'\n'+one.join(' ')+'\n'+
+  'PROVA 2 - LEGISLAÇÃO\n'+nums(11,10)+'\n'+two.join(' ')+'\n'+
+  'PROVA 3 - CONHECIMENTOS ESPECÍFICOS\n'+nums(21,15)+'\n'+three.join(' ')+
+  '\n'+nums(36,15)+'\n'+four.join(' ');
+ const header='CÂMARA MUNICIPAL DE ARACATI\nFUNDAÇÃO CEARENSE DE PESQUISA E CULTURA - FCPC\nEDITAL Nº 001\n\nGABARITO PRELIMINAR\n\n';
+ const page=(id,role,g)=>'[[PAGE:'+id+']]\n'+header+role+'\n\n'+g;
+ const key=[
+  page(1,'Agente Administrativo',grid(matrix[1],matrix[11],Array(15).fill('A'),Array(15).fill('B'))),
+  page(2,'Auxiliar de Serviços Gerais',grid(...[1,11,21,36].map(n=>matrix[n]))),
+  page(3,'Copeiro',grid(matrix[1],matrix[11],Array(15).fill('D'),Array(15).fill('C'))),
+  page(4,'Assessor Técnico',grid(Array(10).fill('A'),Array(10).fill('C'),Array(15).fill('B'),Array(15).fill('D')))
+ ].join('\n');
+ const cover='[[PAGE:1]]\nCÂMARA MUNICIPAL DE ARACATI\nAuxiliar de Serviços Gerais\nInstruções\n50 (cinquenta) questões';
+ const selected=chosenAnswerSection(key,cover,{examFilename:'auxiliar_de_servicos_gerais (1).pdf',examTitle:'2026 — FCPC — CM-ARACATI — Auxiliar de Serviços Gerais'});
+ assert.equal(selected.error,null);
+ assert.equal(selected.format,'grid');
+ assert.equal(selected.section,'AUXILIAR DE SERVICOS GERAIS');
+ const answers=parseGridKey(selected.text);
+ assert.equal(Object.keys(answers).length,50);
+ for(const [start,choices] of Object.entries(matrix))
+  for(let i=0;i<choices.length;i++)assert.equal(answers[Number(start)+i],choices[i],'Questão '+(Number(start)+i));
+ assert.deepEqual([answers[1],answers[10],answers[11],answers[20],answers[21],answers[35],answers[36],answers[50]],
+  ['A','B','B','A','C','C','A','D']);
+ const missing=chosenAnswerSection(key,'[[PAGE:1]]\nCaderno sem cargo',{examFilename:'caderno.pdf'});
+ assert.match(missing.error,/vários cargos/i);
+ const other=chosenAnswerSection(key,'[[PAGE:1]]\nCopeiro',{examFilename:'copeiro.pdf'});
+ assert.equal(other.section,'COPEIRO');
+ assert.notDeepEqual(parseGridKey(other.text),answers,'Gabarito de cargo diferente nunca pode substituir o escolhido');
+});
+
+test('FCPC: instruções 01–08 da capa não duplicam as questões, mesmo com 50 alternativas A–D',()=>{
+ const cover={number:1,width:595.32,height:841.92,text:'Instruções\nPrezados Candidato\nAntes de iniciar a resolução das 50 (cinquenta) questões',
+ lines:[
+  {col:0,x:160,y:70,text:'CÂMARA MUNICIPAL DE ARACATI'},
+  {col:0,x:140,y:100,text:'Auxiliar de Serviços Gerais'},
+  {col:0,x:220,y:135,text:'Instruções'},
+  {col:0,x:110,y:155,text:'Prezado(a) Candidato(a)'},
+  {col:0,x:79,y:190,text:'01. Deixe sobre a carteira APENAS caneta e documento de identidade.'},
+  {col:0,x:79,y:250,text:'02. Anote o seu número de inscrição.'},
+  {col:0,x:79,y:310,text:'03. Antes de iniciar a resolução das 50 (cinquenta) questões, verifique se o Caderno está completo.'},
+  {col:0,x:79,y:370,text:'04. Ao receber a Folha Resposta, confira os dados do cabeçalho.'},
+  {col:0,x:79,y:430,text:'05. A prova tem duração de 3 horas.'},
+  {col:0,x:79,y:490,text:'06. É terminantemente proibida a cópia do gabarito.'},
+  {col:0,x:79,y:550,text:'07. A Folha Resposta será disponibilizada na área individual.'},
+  {col:0,x:79,y:610,text:'08. Ao terminar a prova, entregue o Caderno de Questões.'}
+ ]};
+ assert.equal(isInstructionSheet(cover),true);
+ const pages=[cover];
+ for(let n=1;n<=50;n++){
+  const p=Math.floor((n-1)/6)+2;
+  let page=pages.find(pg=>pg.number===p);
+  if(!page){page={number:p,width:595.32,height:841.92,lines:[]};pages.push(page);}
+  const y=55+((n-1)%6)*114;
+  page.lines.push({col:0,x:74,y,text:String(n).padStart(2,'0')+'. Enunciado da questão '+n+'.'});
+  for(const [i,letter] of [...'ABCD'].entries())
+   page.lines.push({col:0,x:91,y:y+24+i*18,text:letter+') Alternativa '+letter});
+ }
+ assert.equal(inferredAlternativeCount(pages),4);
+ assert.equal(declaredQuestionCount(pages),50);
+ const parsed=spatialQuestions(pages).questions;
+ assert.equal(parsed.length,50);
+ assert.deepEqual(parsed.map(q=>q.originalNumber),Array.from({length:50},(_,i)=>i+1));
+ assert.ok(parsed.every(q=>q.options.length===4&&!q.extractionReview));
+ const answer=Object.fromEntries(parsed.map(q=>[q.originalNumber,'A']));
+ assert.deepEqual(questionIntegrity(parsed,answer,50,4),[]);
+});
+
+test('FCPC: TEXTO isolado e intervalo impresso vinculam o texto às questões 1–10',()=>{
+ const cover={number:1,width:595.32,height:841.92,lines:[
+  {col:0,x:160,y:110,text:'Instruções'},
+  {col:0,x:160,y:150,text:'Prezado(a) Candidato(a)'},
+  {col:0,x:160,y:180,text:'Antes de iniciar a resolução de 50 questões, verifique o Caderno de Questões.'}]};
+ const p2={number:2,width:595.32,height:841.92,lines:[
+  {col:0,x:285,y:45,text:'Prova 1 - Língua Portuguesa'},
+  {col:0,x:310,y:60,text:'Questões de 01 a 10'},
+  {col:0,x:76,y:102,text:'TEXTO'},
+  {col:0,x:80,y:128,text:'01 Pesquisadores americanos afirmam ter usado inteligência artificial para projetar vírus.'},
+  {col:0,x:80,y:149,text:'02 Estes vírus são completamente funcionais e capazes de se replicar em laboratório.'},
+  {col:0,x:80,y:170,text:'03 As ferramentas de IA estão avançando rapidamente e já foram usadas.'},
+  {col:0,x:80,y:191,text:'04 Os modelos foram refinados para produzir um tipo de bacteriófago.'},
+  {col:0,x:80,y:212,text:'05 Hie argumenta que as medidas de proteção existentes contribuem para o bem.'},
+  {col:0,x:80,y:235,text:'Adaptado de GALLAGHER. BBC News. 2026.'},
+  {col:0,x:76,y:288,text:'01. No trecho Pesquisadores americanos, o autor recorre a terceiros?'},
+  ...'ABCD'.split('').map((l,i)=>({col:0,x:90,y:317+i*18,text:l+') Escolha '+l})),
+  {col:0,x:76,y:420,text:'02. O termo isso retoma textualmente qual situação?'},
+  ...'ABCD'.split('').map((l,i)=>({col:0,x:90,y:449+i*18,text:l+') Escolha '+l}))
+ ]};
+ const p3={number:3,width:595.32,height:841.92,lines:[
+  {col:0,x:76,y:60,text:'05. O texto tem como propósito comunicativo central:'},
+  ...'ABCD'.split('').map((l,i)=>({col:0,x:90,y:90+i*18,text:l+') Escolha '+l})),
+  {col:0,x:76,y:240,text:'06. Assinale a alternativa cuja letra destacada possui som equivalente.'},
+  ...'ABCD'.split('').map((l,i)=>({col:0,x:90,y:270+i*18,text:l+') Escolha '+l}))
+ ]};
+ const result=spatialQuestions([cover,p2,p3]);
+ assert.equal(result.contexts.length,1);
+ const shared=result.contexts[0];
+ assert.equal(shared.from,1);assert.equal(shared.to,10);
+ assert.match(shared.text,/Pesquisadores americanos/);
+ for(const number of [1,2,5,6]){
+  const q=result.questions.find(x=>x.originalNumber===number);
+  assert.ok(q);
+  assert.deepEqual(q.contextRange,[1,10]);
+  assert.match(q.contextText,/medidas de proteção existentes/);
+ }
 });
