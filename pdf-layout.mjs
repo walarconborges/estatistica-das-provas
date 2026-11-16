@@ -528,10 +528,23 @@ export function chosenAnswerSection(text,examText='',examInfo={}){
   // "Auxiliar de Serviços Gerais" pode se fragmentar em várias linhas
   // por fonte/colunas, mas está sempre entre o título e "Prova 1".
   const role=roleLines.join(' ').replace(/\s+/g,' ').trim();
-  return role&&/PROVA\s*2\s*[-–]/i.test(page)&&/PROVA\s*3\s*[-–]/i.test(page)
-   ?{role:norm(role).trim(),text:page}:null;
+  const pageNumber=Number(page.match(/^\[\[PAGE:\s*(\d+)\]\]/)?.[1]||0);
+  return role&&pageNumber>0&&/PROVA\s*2\s*[-–]/i.test(page)&&/PROVA\s*3\s*[-–]/i.test(page)
+   ?{pageNumber,role:norm(role).trim(),text:page}:null;
  }).filter(Boolean);
  if(pageGrids.length>=2){
+  // Opção explícita disponível só após identificar as páginas e cargos
+  // diretamente no gabarito. Número não presente é sempre rejeitado.
+  const selectedPage=String(examInfo?.answerPage||'').trim();
+  if(selectedPage){
+   if(!/^\d{1,3}$/.test(selectedPage))
+    return {text:'',section:null,format:'grid',error:'Número da página do gabarito inválido.'};
+   const entry=pageGrids.find(item=>item.pageNumber===Number(selectedPage));
+   if(!entry)return {text:'',section:null,format:'grid',
+    error:'A página selecionada não contém um gabarito de cargo reconhecido.'};
+   return {text:entry.text,section:entry.role,format:'grid',
+    manualSelection:true,pageNumber:entry.pageNumber,error:null};
+  }
   const compact=value=>norm(value).replace(/[^A-Z0-9]/g,'');
   const normWords=value=>norm(value).replace(/[^A-Z0-9]+/g,' ').trim().split(/\s+/).filter(Boolean);
   const common=new Set(['DE','DA','DO','DAS','DOS','EM','PARA','E']);
@@ -564,13 +577,15 @@ export function chosenAnswerSection(text,examText='',examInfo={}){
    if(!hint)continue;
    const found=pageGrids.filter(section=>matchesRole(section.role,hint));
    if(found.length>1)return {text:'',section:null,format:'grid',
-    error:'O gabarito tabulado corresponde a mais de um cargo. Confira o nome exato do caderno.'};
+    availableSections:pageGrids.map(item=>({pageNumber:item.pageNumber,role:item.role})),
+    error:'O gabarito tabulado corresponde a mais de um cargo. Selecione o cargo correto na lista de conferência.'};
    if(found.length===1){selected=found[0];break;}
   }
   if(!selected){
    const found=pageGrids.map(x=>x.role).join('; ').slice(0,270);
    return {text:'',section:null,format:'grid',
-    error:'O gabarito possui páginas para vários cargos, sem correspondência única com o caderno. Cargos lidos: '+found};
+    availableSections:pageGrids.map(item=>({pageNumber:item.pageNumber,role:item.role})),
+    error:'O gabarito possui páginas para vários cargos, sem correspondência única com o caderno. Selecione o cargo na lista de conferência. Cargos lidos: '+found};
   }
   return {text:selected.text,section:selected.role,format:'grid',error:null};
  }
