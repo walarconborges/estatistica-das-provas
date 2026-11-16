@@ -1,3 +1,11 @@
+## 0.6.17 — 16/11/2026
+
+- Corrigido cache de módulos ES do GitHub Pages. A versão do HTML podia avançar sem que `pdf-layout.mjs` fosse recarregado, mantendo o erro de uma versão antiga.
+- URLs versionadas por SHA de commit em `index.html`, `app.mjs` e seus módulos locais, `config.js` e `styles.css`, geradas automaticamente no build de publicação.
+- Rodapé exibe a revisão real do leitor JavaScript executado.
+- Testes de regressão cobrem a cadeia de imports versionada e impedem misturar interface nova com parser antigo.
+- Nenhuma alteração no banco central, provas, perfis ou históricos.
+
 ## 0.6.16 — 16/11/2026
 
 - FCPC Aracati: corrigido o erro “O gabarito possui páginas para vários cargos, mas não foi possível identificar a página do cargo solicitado”.
