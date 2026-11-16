@@ -442,9 +442,9 @@ function cardQuestion(q,index,scope='single',selected='',previous=null){
     `<img loading="lazy" class="question-img" src="${h(q.pageImage)}" alt="Enunciado em imagem; alternativas abaixo em texto selecionável">`:
     `<div class="question-body">${h(q.stem||'[Enunciado não extraído]')}</div>${q.pageImage?`<img loading="lazy" class="question-img" src="${h(q.pageImage)}" alt="Recorte do PDF original">`:''}`}
   ${alternatives(q,scope,selected)}
-  ${scope==='single'?`<div class="actions">${btn('answer-single','Conferir resposta','primary',`data-id="${h(q.id)}"`)}${last&&!q.originalQuestionId?btn('explain-question','Explicar questão','secondary',`data-id="${h(q.id)}"`):''}${btn('flag-question','Sinalizar problema','secondary',`data-id="${h(q.id)}"`)}${btn('question-log','Histórico','secondary',`data-id="${h(q.id)}"`)}</div>
+  ${scope==='single'?`<div class="actions">${btn('answer-single','Conferir resposta','primary',`data-id="${h(q.id)}"`)}${last&&!q.originalQuestionId?btn('explain-question','Explicar questão','secondary',`data-id="${h(q.id)}"`):''}${currentFilter.editalCargo===STUDY_ALL?'':btn('review-edital','Conferir edital','secondary',`data-id="${h(q.id)}"`)}${btn('flag-question','Sinalizar problema','secondary',`data-id="${h(q.id)}"`)}${btn('question-log','Histórico','secondary',`data-id="${h(q.id)}"`)}</div>
     <div class="question-feedback">${last?`Última resposta válida: <strong>${h(last.answer)}</strong> — ${feedback(q,last.answer)}`:''}</div><div class="legal-result">${last?legalBasisHtml(q):''}</div>${explanationBox(q.id)}`:''}
-  ${scope==='sim'?'<div class="actions">'+btn('flag-question','Sinalizar problema','secondary','data-id="'+h(q.id)+'"')+'</div>':''}
+  ${scope==='sim'?'<div class="actions">'+(currentFilter.editalCargo===STUDY_ALL?'':btn('review-edital','Conferir edital','secondary','data-id="'+h(q.id)+'"'))+btn('flag-question','Sinalizar problema','secondary','data-id="'+h(q.id)+'"')+'</div>':''}
   </article>`;
 }
 function questionsScreen(){
@@ -481,9 +481,9 @@ function statsScreen(){
 function flagsScreen(){
   const own=state.flags.filter(x=>x.profileId===profileId).slice().reverse();
   return `${headline('Sinalizações','Problemas e sugestões de classificação aguardam avaliação.')}
-  <section class="card"><p>Para sinalizar uma questão, procure seu código em <strong>Questões</strong> e use o botão <strong>Sinalizar problema</strong>.</p>
+  <section class="card"><p>Para informar se o assunto está dentro ou fora de um edital, selecione o cargo em <strong>Questões</strong> e use <strong>Conferir edital</strong> na própria questão. Para erros de gabarito ou extração, use <strong>Sinalizar problema</strong>.</p>
   <p class="hint">Com o GitHub sincronizado, novas sinalizações são encaminhadas para Issues. A alteração só é aplicada depois da aprovação.</p>
-  ${own.length?own.map(f=>`<div class="stat-line"><div><strong>${h(question(f.questionId)?.code||'Questão')}</strong><div class="small-muted">${h(f.type)} — ${h(f.note)} · ${niceDate(f.at)}</div></div><span class="badge wait">${h(f.status==='approved'?'Aprovada':f.status==='rejected'?'Rejeitada':'Pendente')}</span></div>`).join(''):empty('Nenhuma sinalização registrada neste perfil.')}</section>`;
+  ${own.length?own.map(f=>`<div class="stat-line"><div><strong>${h(question(f.questionId)?.code||'Questão')}</strong><div class="small-muted">${h(f.type==='edital-review'?'Conferência do cargo '+(f.proposed?.editalCargo||'')+' — '+(f.proposed?.status==='dentro'?'dentro do edital':'fora do edital'):f.type)} — ${h(f.note)} · ${niceDate(f.at)}</div></div><span class="badge wait">${h(f.status==='approved'?'Aprovada':f.status==='rejected'?'Rejeitada':'Pendente')}</span></div>`).join(''):empty('Nenhuma sinalização registrada neste perfil.')}</section>`;
 }
 function settingsScreen(){
   return `${headline('Dados e backup','Ferramentas para preservar os dados durante o período de testes.')}
@@ -673,6 +673,31 @@ function printQuestions(qs,title,options={}){
   const w=window.open('','_blank');if(!w){toast('Permita janelas pop-up para imprimir.');return}
   w.document.open();w.document.write(doc);w.document.close();w.focus();setTimeout(()=>w.print(),350);
 }
+function reviewEdict(qid){
+ const q=question(qid);
+ const cargo=currentFilter.editalCargo;
+ if(!q||!['202','505'].includes(cargo)){
+  toast('Selecione o cargo 202 ou 505 para conferir a questão conforme o edital.');return;
+ }
+ const current=classifyForCargo(q,exam(q.examId),cargo);
+ const input=prompt('A questão '+q.code+' está prevista no edital do cargo '+cargo+'?\nDigite DENTRO ou FORA.\nClassificação automática atual: '+current.statusLabel,
+  current.status==='fora'?'FORA':'DENTRO');
+ if(input===null)return;
+ const proposed=String(input).trim().toUpperCase();
+ if(!['DENTRO','FORA'].includes(proposed)){
+  toast('Informe apenas DENTRO ou FORA.');return;
+ }
+ const reason=prompt('Indique o assunto do edital ou justifique por que está fora. A revisão ficará pendente de aprovação.','');
+ if(reason===null||!reason.trim()){
+  toast('É necessária uma justificativa para conferir a pertinência ao edital.');return;
+ }
+ const status=proposed==='DENTRO'?'dentro':'fora';
+ state.flags.push({id:newId(),profileId,questionId:qid,type:'edital-review',
+  proposed:{editalCargo:cargo,status},note:reason.trim().slice(0,1500),
+  status:'pending',at:new Date().toISOString()});
+ save();toast('Conferência registrada em Sinalizações. A classificação só muda após aprovação.');
+}
+
 function showFlag(qid){
  const q=question(qid);if(!q)return;
  const raw=prompt('Sinalizar '+q.code+'\nTipo: classificação, secundária, gabarito, anulada, desatualizada, extração, adaptação ou outro',q.originalQuestionId?'adaptação':'classificação');
@@ -805,6 +830,7 @@ document.addEventListener('click',e=>{
     case 'answer-single':answerSingle(id);break;
     case 'explain-question':showExplanation(id);break;
     case 'flag-explanation':flagExplanation(id);break;
+    case 'review-edital':reviewEdict(id);break;
     case 'flag-question':issueInvalid(id);break;
     case 'question-log':showLog(id);break;
     case 'open-sim':case 'see-result':beginSim(id);break;
