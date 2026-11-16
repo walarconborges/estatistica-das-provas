@@ -376,6 +376,61 @@
       "keySection": "ANALISTA EM INFORMATICA - Tabela 3",
       "keyStatus": "publicado",
       "metadataReview": []
+    },
+    {
+      "id": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "title": "2026 — OBJETIVA — PM-SOSSEGO — Auxiliar de Serviços Gerais",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "bancaCode": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "orgaoCode": "PMSOSSEGO",
+      "createdAt": "2026-11-16T17:06:01.064Z",
+      "questionIds": [
+        "2b1993e4-9454-4210-9582-852074755494",
+        "2facc20c-44e8-4529-8990-d16e1f3609dd",
+        "aad84ec7-7c5d-413a-b3bd-ce7c999ba6e9",
+        "1cee3e13-cc2d-47cf-8caf-bd34181fc5ad",
+        "17eaec0c-b23f-4444-8678-72c85335bda9",
+        "f447e33e-cc1c-497a-add9-ea96b6086754",
+        "95986ec8-6555-4fc0-94a5-577cad8c5645",
+        "de8f1846-684e-42a1-a524-31320c1fffdb",
+        "98bca2d3-e4f4-4eab-8c88-cd008e682174",
+        "9c40dac3-81c2-4150-8fc4-f43516b50ad0",
+        "ad65e070-c797-4f46-becc-2e3be6a5c3e7",
+        "bcba7ae1-27d7-4aed-a305-310c96f3cc85",
+        "d4145ed6-2eb4-41f3-ace6-79c3e703ab3d",
+        "fa7a661b-7c94-4a02-9021-777233cbebc5",
+        "da0f55ce-f9b1-4f31-aa81-1b33fec250e7",
+        "1acb7a33-285c-4f99-a46f-6944f7f4dd6e",
+        "08fda7e4-f85e-4faa-a4c0-f21b8082b660",
+        "c556f4b7-7a26-4ed8-be45-e652d83a295a",
+        "89bd8261-146e-4adf-b2c4-a8913f43c7b3",
+        "e199e1df-4542-4184-9068-0e0aaca0ab76",
+        "fcca36d0-bc4c-4464-a414-25c7fe9f8a3b",
+        "e381e528-cce5-400f-9da3-7e46abacf2f5",
+        "f3c623f0-9a97-4e9c-8999-9dd35f22c612",
+        "beb078be-20aa-46ac-9d24-93375b4f5021",
+        "541c975d-18cf-4778-8872-1403ee4297aa",
+        "63442658-8433-4f79-a28c-c8c2dc42a4ff",
+        "1c3a23a9-c734-4356-a6fd-c47c5327de41",
+        "92863dd3-fe54-4033-bad4-8a758f0be1bf",
+        "a13e0f7f-8863-4edd-857e-b6aedabb7a6b",
+        "61c07f23-011b-4b58-b819-b7ce472cd71d",
+        "21a110e9-a421-4f05-85e7-b3b8bf6dd501",
+        "d9acbc8f-bc46-40d8-a973-eaaeed0d0594",
+        "90e3f6eb-eeb8-4095-bca4-76d11a019e61",
+        "b1d11bd2-3fa7-4cd1-a435-ccb31fb49747",
+        "716effd2-f50c-47b9-b560-3f274f4d26ef",
+        "1770d623-a655-4a4c-889f-3744d936b5ac",
+        "dff13b2b-a0e2-4c32-ba30-2cb49b4e81be",
+        "0d7a91cf-4b84-43b3-bc70-925c0744e14b",
+        "79047923-e7c3-45d5-be08-550d9031822e",
+        "8a8d78f4-e92d-4cf7-9e28-177f7bcdd4c1"
+      ],
+      "keySection": "AUXILIAR DE SERVICOS GERAIS",
+      "keyStatus": "preliminar",
+      "metadataReview": []
     }
   ],
   "questions": [
@@ -24159,6 +24214,3093 @@
       "banca": "LEGALLE",
       "orgao": "CISCOPAR",
       "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 1,
+      "heading": "",
+      "stem": "A palavra “hipertensão” contém o prefixo “hiper”, que é adicionado nessa palavra para significar:",
+      "stemRows": [
+        {
+          "y": 462.66999999999996,
+          "text": "A palavra “hipertensão” contém o prefixo “hiper”, que é"
+        },
+        {
+          "y": 474.90999999999997,
+          "text": "adicionado nessa palavra para significar:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Afastamento ou privação."
+        },
+        {
+          "letter": "B",
+          "text": "Negação de algo."
+        },
+        {
+          "letter": "C",
+          "text": "Posição abaixo do normal."
+        },
+        {
+          "letter": "D",
+          "text": "Posição acima do normal."
+        }
+      ],
+      "optionsStartY": 499.27,
+      "sourcePage": 2,
+      "sourceColumn": 0,
+      "startY": 462.66999999999996,
+      "endY": 556.9,
+      "contextText": "Pressão arterial com valor de 12/8 passa a ser considerada pré-hipertensão A leitura de 12/8, antes vista como sinônimo de pressão arterial perfeita, agora é classificada como préhipertensão, de acordo com as novas diretrizes elaboradas pela Sociedade Brasileira de Cardiologia, Nefrologia e Hipertensão. As novas diretrizes indicam que quem está na faixa de pré-hipertensão deve adotar mudanças no estilo de vida, como reduzir o consumo de sal, controlar o peso, praticar atividades físicas e gerenciar o estresse. O uso de medicamentos, no entanto, só é considerado em casos específicos — como em pessoas com pressão acima de 13/8 associada a diabetes ou doenças renais. A hipertensão raramente aparece sozinha. Em grande parte dos casos ela vem acompanhada de obesidade, colesterol alto e glicemia elevada, o que multiplica os riscos. Por isso, a diretriz reforça a importância de observar o paciente como um todo, e não apenas o número no medidor. A hipertensão não controlada é a principal causa de mortes no mundo, direta ou indiretamente. Por isso, o recado é simples: medir a pressão ao menos uma vez por ano e procurar acompanhamento médico regular. É uma doença silenciosa, mas que pode ser prevenida com atitudes simples. O importante é não esperar os sintomas aparecerem.",
+      "contextRange": [
+        1,
+        4
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "2b1993e4-9454-4210-9582-852074755494",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026LPGOBJETIVAPMSOSSEGO1",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 2,
+      "heading": "",
+      "stem": "De acordo com as informações do texto, avaliar se as afirmativas são certas (C) ou erradas (E) e assinalar a sequência correspondente. ( ) A nova faixa de hipertensão está abaixo da antiga de 12/8. ( ) Não controlar a hipertensão é a principal causa de mortes no mundo. ( ) É recomendado medir a pressão ao menos uma vez por ano e ter acompanhamento médico regular.",
+      "stemRows": [
+        {
+          "y": 571.9,
+          "text": "De acordo com as informações do texto, avaliar se as"
+        },
+        {
+          "y": 584.02,
+          "text": "afirmativas são certas (C) ou erradas (E) e assinalar a"
+        },
+        {
+          "y": 596.26,
+          "text": "sequência correspondente."
+        },
+        {
+          "y": 620.62,
+          "text": "( ) A nova faixa de hipertensão está abaixo da antiga de"
+        },
+        {
+          "y": 632.8599999999999,
+          "text": "12/8."
+        },
+        {
+          "y": 645.0999999999999,
+          "text": "( ) Não controlar a hipertensão é a principal causa de mortes"
+        },
+        {
+          "y": 657.3399999999999,
+          "text": "no mundo."
+        },
+        {
+          "y": 669.4599999999999,
+          "text": "( ) É recomendado medir a pressão ao menos uma vez por"
+        },
+        {
+          "y": 681.6999999999999,
+          "text": "ano e ter acompanhamento médico regular."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "C - C - E."
+        },
+        {
+          "letter": "B",
+          "text": "E - E - C."
+        },
+        {
+          "letter": "C",
+          "text": "C - E - E."
+        },
+        {
+          "letter": "D",
+          "text": "E - C - C."
+        }
+      ],
+      "optionsStartY": 706.1999999999999,
+      "sourcePage": 2,
+      "sourceColumn": 0,
+      "startY": 571.9,
+      "endY": 809.04,
+      "contextText": "Pressão arterial com valor de 12/8 passa a ser considerada pré-hipertensão A leitura de 12/8, antes vista como sinônimo de pressão arterial perfeita, agora é classificada como préhipertensão, de acordo com as novas diretrizes elaboradas pela Sociedade Brasileira de Cardiologia, Nefrologia e Hipertensão. As novas diretrizes indicam que quem está na faixa de pré-hipertensão deve adotar mudanças no estilo de vida, como reduzir o consumo de sal, controlar o peso, praticar atividades físicas e gerenciar o estresse. O uso de medicamentos, no entanto, só é considerado em casos específicos — como em pessoas com pressão acima de 13/8 associada a diabetes ou doenças renais. A hipertensão raramente aparece sozinha. Em grande parte dos casos ela vem acompanhada de obesidade, colesterol alto e glicemia elevada, o que multiplica os riscos. Por isso, a diretriz reforça a importância de observar o paciente como um todo, e não apenas o número no medidor. A hipertensão não controlada é a principal causa de mortes no mundo, direta ou indiretamente. Por isso, o recado é simples: medir a pressão ao menos uma vez por ano e procurar acompanhamento médico regular. É uma doença silenciosa, mas que pode ser prevenida com atitudes simples. O importante é não esperar os sintomas aparecerem.",
+      "contextRange": [
+        1,
+        4
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "2facc20c-44e8-4529-8990-d16e1f3609dd",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026LPGOBJETIVAPMSOSSEGO2",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 3,
+      "heading": "",
+      "stem": "De acordo com o texto, assinalar a alternativa CORRETA.",
+      "stemRows": [
+        {
+          "y": 57.48000000000002,
+          "text": "De acordo com o texto, assinalar a alternativa CORRETA."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Gerenciar o estresse é uma das mudanças de estilo de vida que pioram a pressão arterial."
+        },
+        {
+          "letter": "B",
+          "text": "O uso de medicamentos é indicado para pessoas com pressão abaixo de 13/8."
+        },
+        {
+          "letter": "C",
+          "text": "É raro a hipertensão aparecer sozinha."
+        },
+        {
+          "letter": "D",
+          "text": "A diretriz reforça observar apenas o número do medidor."
+        }
+      ],
+      "optionsStartY": 81.86000000000001,
+      "sourcePage": 2,
+      "sourceColumn": 1,
+      "startY": 57.48000000000002,
+      "endY": 163.81999999999994,
+      "contextText": "Pressão arterial com valor de 12/8 passa a ser considerada pré-hipertensão A leitura de 12/8, antes vista como sinônimo de pressão arterial perfeita, agora é classificada como préhipertensão, de acordo com as novas diretrizes elaboradas pela Sociedade Brasileira de Cardiologia, Nefrologia e Hipertensão. As novas diretrizes indicam que quem está na faixa de pré-hipertensão deve adotar mudanças no estilo de vida, como reduzir o consumo de sal, controlar o peso, praticar atividades físicas e gerenciar o estresse. O uso de medicamentos, no entanto, só é considerado em casos específicos — como em pessoas com pressão acima de 13/8 associada a diabetes ou doenças renais. A hipertensão raramente aparece sozinha. Em grande parte dos casos ela vem acompanhada de obesidade, colesterol alto e glicemia elevada, o que multiplica os riscos. Por isso, a diretriz reforça a importância de observar o paciente como um todo, e não apenas o número no medidor. A hipertensão não controlada é a principal causa de mortes no mundo, direta ou indiretamente. Por isso, o recado é simples: medir a pressão ao menos uma vez por ano e procurar acompanhamento médico regular. É uma doença silenciosa, mas que pode ser prevenida com atitudes simples. O importante é não esperar os sintomas aparecerem.",
+      "contextRange": [
+        1,
+        4
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Interpretação de texto",
+      "topicCode": "IT",
+      "id": "aad84ec7-7c5d-413a-b3bd-ce7c999ba6e9",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026LPITOBJETIVAPMSOSSEGO1",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 4,
+      "heading": "",
+      "stem": "Qual das alternativas apresenta antônimos para os termos sublinhados abaixo, respectivamente? É uma doença silenciosa, mas que pode ser prevenida com atitudes simples. (4º parágrafo)",
+      "stemRows": [
+        {
+          "y": 178.81999999999994,
+          "text": "Qual das alternativas apresenta antônimos para os termos"
+        },
+        {
+          "y": 191.05999999999995,
+          "text": "sublinhados abaixo, respectivamente?"
+        },
+        {
+          "y": 215.41999999999996,
+          "text": "É uma doença silenciosa, mas que pode ser prevenida com"
+        },
+        {
+          "y": 227.68999999999994,
+          "text": "atitudes simples. (4º parágrafo)"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Barulhenta | complexas."
+        },
+        {
+          "letter": "B",
+          "text": "Quieta | descomplicadas."
+        },
+        {
+          "letter": "C",
+          "text": "Estrondosa | fáceis."
+        },
+        {
+          "letter": "D",
+          "text": "Sossegada | confusas."
+        }
+      ],
+      "optionsStartY": 252.16999999999996,
+      "sourcePage": 2,
+      "sourceColumn": 1,
+      "startY": 178.81999999999994,
+      "endY": 309.65,
+      "contextText": "Pressão arterial com valor de 12/8 passa a ser considerada pré-hipertensão A leitura de 12/8, antes vista como sinônimo de pressão arterial perfeita, agora é classificada como préhipertensão, de acordo com as novas diretrizes elaboradas pela Sociedade Brasileira de Cardiologia, Nefrologia e Hipertensão. As novas diretrizes indicam que quem está na faixa de pré-hipertensão deve adotar mudanças no estilo de vida, como reduzir o consumo de sal, controlar o peso, praticar atividades físicas e gerenciar o estresse. O uso de medicamentos, no entanto, só é considerado em casos específicos — como em pessoas com pressão acima de 13/8 associada a diabetes ou doenças renais. A hipertensão raramente aparece sozinha. Em grande parte dos casos ela vem acompanhada de obesidade, colesterol alto e glicemia elevada, o que multiplica os riscos. Por isso, a diretriz reforça a importância de observar o paciente como um todo, e não apenas o número no medidor. A hipertensão não controlada é a principal causa de mortes no mundo, direta ou indiretamente. Por isso, o recado é simples: medir a pressão ao menos uma vez por ano e procurar acompanhamento médico regular. É uma doença silenciosa, mas que pode ser prevenida com atitudes simples. O importante é não esperar os sintomas aparecerem.",
+      "contextRange": [
+        1,
+        4
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "1cee3e13-cc2d-47cf-8caf-bd34181fc5ad",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026LPGOBJETIVAPMSOSSEGO3",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 5,
+      "heading": "",
+      "stem": "Em “Caso haja dúvidas durante o processo, consulte o manual de procedimentos.”, qual é a classificação da palavra em destaque?",
+      "stemRows": [
+        {
+          "y": 324.65,
+          "text": "Em “Caso haja dúvidas durante o processo, consulte o"
+        },
+        {
+          "y": 336.89,
+          "text": "manual de procedimentos.”, qual é a classificação da palavra"
+        },
+        {
+          "y": 349.01,
+          "text": "em destaque?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Adjetivo."
+        },
+        {
+          "letter": "B",
+          "text": "Verbo."
+        },
+        {
+          "letter": "C",
+          "text": "Substantivo."
+        },
+        {
+          "letter": "D",
+          "text": "Pronome."
+        }
+      ],
+      "optionsStartY": 373.48999999999995,
+      "sourcePage": 2,
+      "sourceColumn": 1,
+      "startY": 324.65,
+      "endY": 430.98999999999995,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "17eaec0c-b23f-4444-8678-72c85335bda9",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026LPGOBJETIVAPMSOSSEGO4",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 6,
+      "heading": "",
+      "stem": "O enunciado abaixo apresenta apenas um erro. Assinalar a alternativa que aponta esse erro CORRETAMENTE. A assembleia se reuniu hoje para votar diversos assuntos, como o novo código a nova chefia e o local do evento.",
+      "stemRows": [
+        {
+          "y": 445.98999999999995,
+          "text": "O enunciado abaixo apresenta apenas um erro. Assinalar"
+        },
+        {
+          "y": 458.22999999999996,
+          "text": "a alternativa que aponta esse erro CORRETAMENTE."
+        },
+        {
+          "y": 482.71,
+          "text": "A assembleia se reuniu hoje para votar diversos assuntos,"
+        },
+        {
+          "y": 494.83,
+          "text": "como o novo código a nova chefia e o local do evento."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "A palavra “assembleia” deveria ser acentuada."
+        },
+        {
+          "letter": "B",
+          "text": "O verbo “reuniu” deveria estar no plural (“reuniram”)."
+        },
+        {
+          "letter": "C",
+          "text": "Falta uma vírgula após “novo código”."
+        },
+        {
+          "letter": "D",
+          "text": "Deve haver uma vírgula depois de “diversos”."
+        }
+      ],
+      "optionsStartY": 519.31,
+      "sourcePage": 2,
+      "sourceColumn": 1,
+      "startY": 445.98999999999995,
+      "endY": 576.8199999999999,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "f447e33e-cc1c-497a-add9-ea96b6086754",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026LPGOBJETIVAPMSOSSEGO5",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 7,
+      "heading": "",
+      "stem": "Assinalar a alternativa em que o predicado foi sublinhado.",
+      "stemRows": [
+        {
+          "y": 591.8199999999999,
+          "text": "Assinalar a alternativa em que o predicado foi sublinhado."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "A professora explicou o tema."
+        },
+        {
+          "letter": "B",
+          "text": "Nós caminhamos pela calçada."
+        },
+        {
+          "letter": "C",
+          "text": "Brincaram bastante o gato e o cachorro."
+        },
+        {
+          "letter": "D",
+          "text": "Minha mãe cozinhou. www.objetivas.com.br"
+        }
+      ],
+      "optionsStartY": 616.3,
+      "sourcePage": 2,
+      "sourceColumn": 1,
+      "startY": 591.8199999999999,
+      "endY": 809.04,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "95986ec8-6555-4fc0-94a5-577cad8c5645",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026LPGOBJETIVAPMSOSSEGO6",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 8,
+      "heading": "",
+      "stem": "Considerando-se a flexão do verbo \"beber\", avaliar se as afirmativas são certas (C) ou erradas (E) e assinalar a sequência correspondente. ( ) Ele bebi suco no almoço. ( ) Eu bebia xarope antes de dormir. ( ) Ela beberá água com gás.",
+      "stemRows": [
+        {
+          "y": 57.48000000000002,
+          "text": "Considerando-se a flexão do verbo \"beber\", avaliar se as"
+        },
+        {
+          "y": 69.71999999999991,
+          "text": "afirmativas são certas (C) ou erradas (E) e assinalar a"
+        },
+        {
+          "y": 81.86000000000001,
+          "text": "sequência correspondente."
+        },
+        {
+          "y": 106.33999999999992,
+          "text": "( ) Ele bebi suco no almoço."
+        },
+        {
+          "y": 118.45999999999992,
+          "text": "( ) Eu bebia xarope antes de dormir."
+        },
+        {
+          "y": 130.69999999999993,
+          "text": "( ) Ela beberá água com gás."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "C - C - E."
+        },
+        {
+          "letter": "B",
+          "text": "E - E - C."
+        },
+        {
+          "letter": "C",
+          "text": "C - E - E."
+        },
+        {
+          "letter": "D",
+          "text": "E - C - C."
+        }
+      ],
+      "optionsStartY": 155.17999999999995,
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "startY": 57.48000000000002,
+      "endY": 212.68999999999994,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "de8f1846-684e-42a1-a524-31320c1fffdb",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026LPGOBJETIVAPMSOSSEGO7",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 9,
+      "heading": "",
+      "stem": "Na frase “A posta__em de uma boba__em o levou a um lití__io.”, quantas das três lacunas devem ser preenchidas com a letra “j” para correção ortográfica?",
+      "stemRows": [
+        {
+          "y": 227.68999999999994,
+          "text": "Na frase “A posta__em de uma boba__em o levou a um"
+        },
+        {
+          "y": 239.92999999999995,
+          "text": "lití__io.”, quantas das três lacunas devem ser preenchidas"
+        },
+        {
+          "y": 252.16999999999996,
+          "text": "com a letra “j” para correção ortográfica?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Nenhuma."
+        },
+        {
+          "letter": "B",
+          "text": "Somente uma."
+        },
+        {
+          "letter": "C",
+          "text": "Somente duas."
+        },
+        {
+          "letter": "D",
+          "text": "Todas."
+        }
+      ],
+      "optionsStartY": 276.53,
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "startY": 227.68999999999994,
+      "endY": 334.01,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "98bca2d3-e4f4-4eab-8c88-cd008e682174",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026LPGOBJETIVAPMSOSSEGO8",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 10,
+      "heading": "",
+      "stem": "Considerando-se a frase “Os funcionários atentos e organizados receberam a notificação.”, avaliar se as afirmativas são certas (C) ou erradas (E) e assinalar a sequência correspondente. ( ) A palavra “Os” é um pronome. ( ) A palavra “funcionários” é um substantivo masculino no plural. ( ) As palavras “atentos” e “organizados” caracterizam o substantivo “funcionários”.",
+      "stemRows": [
+        {
+          "y": 349.01,
+          "text": "Considerando-se a frase “Os funcionários atentos e"
+        },
+        {
+          "y": 361.24999999999994,
+          "text": "organizados receberam a notificação.”, avaliar se as"
+        },
+        {
+          "y": 373.48999999999995,
+          "text": "afirmativas são certas (C) ou erradas (E) e assinalar a"
+        },
+        {
+          "y": 385.74999999999994,
+          "text": "sequência correspondente."
+        },
+        {
+          "y": 410.10999999999996,
+          "text": "( ) A palavra “Os” é um pronome."
+        },
+        {
+          "y": 422.34999999999997,
+          "text": "( ) A palavra “funcionários” é um substantivo masculino no"
+        },
+        {
+          "y": 434.59,
+          "text": "plural."
+        },
+        {
+          "y": 446.71,
+          "text": "( ) As palavras “atentos” e “organizados” caracterizam o"
+        },
+        {
+          "y": 458.95,
+          "text": "substantivo “funcionários”."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "C - C - E."
+        },
+        {
+          "letter": "B",
+          "text": "E - E - C."
+        },
+        {
+          "letter": "C",
+          "text": "C - E - E."
+        },
+        {
+          "letter": "D",
+          "text": "E - C - C."
+        }
+      ],
+      "optionsStartY": 483.30999999999995,
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "startY": 349.01,
+      "endY": 540.9399999999999,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "9c40dac3-81c2-4150-8fc4-f43516b50ad0",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026LPGOBJETIVAPMSOSSEGO9",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 11,
+      "heading": "",
+      "stem": "A forma plural CORRETA e semanticamente adequada da frase “O cidadão demonstrou tensão” é:",
+      "stemRows": [
+        {
+          "y": 555.9399999999999,
+          "text": "A forma plural CORRETA e semanticamente adequada da"
+        },
+        {
+          "y": 568.18,
+          "text": "frase “O cidadão demonstrou tensão” é:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Os cidadões demonstraram tensões."
+        },
+        {
+          "letter": "B",
+          "text": "Os cidadãos demonstraram tensãos."
+        },
+        {
+          "letter": "C",
+          "text": "Os cidadãos demonstraram tensões."
+        },
+        {
+          "letter": "D",
+          "text": "Os cidadões demonstraram tensãos."
+        }
+      ],
+      "optionsStartY": 592.54,
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "startY": 555.9399999999999,
+      "endY": 809.04,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "ad65e070-c797-4f46-becc-2e3be6a5c3e7",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026LPGOBJETIVAPMSOSSEGO10",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 12,
+      "heading": "",
+      "stem": "Considerar as seguintes frases. João foi reprovado. João não estudou para o concurso. Nas alternativas abaixo, as frases foram reescritas em um único período. Assinalar a alternativa na qual a segunda frase expresse a causa do que foi dito na primeira.",
+      "stemRows": [
+        {
+          "y": 57.48000000000002,
+          "text": "Considerar as seguintes frases."
+        },
+        {
+          "y": 81.86000000000001,
+          "text": "João foi reprovado."
+        },
+        {
+          "y": 94.09999999999991,
+          "text": "João não estudou para o concurso."
+        },
+        {
+          "y": 118.45999999999992,
+          "text": "Nas alternativas abaixo, as frases foram reescritas em um"
+        },
+        {
+          "y": 130.69999999999993,
+          "text": "único período. Assinalar a alternativa na qual a segunda"
+        },
+        {
+          "y": 142.93999999999994,
+          "text": "frase expresse a causa do que foi dito na primeira."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "João foi reprovado, por isso não estudou para o concurso."
+        },
+        {
+          "letter": "B",
+          "text": "João foi reprovado porque não estudou para o concurso."
+        },
+        {
+          "letter": "C",
+          "text": "João foi reprovado, embora não tenha estudado para o concurso."
+        },
+        {
+          "letter": "D",
+          "text": "João foi reprovado e não estudou para o concurso."
+        }
+      ],
+      "optionsStartY": 167.29999999999995,
+      "sourcePage": 3,
+      "sourceColumn": 1,
+      "startY": 57.48000000000002,
+      "endY": 237.16999999999996,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "bcba7ae1-27d7-4aed-a305-310c96f3cc85",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026LPGOBJETIVAPMSOSSEGO11",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 13,
+      "heading": "",
+      "stem": "Assinalar a alternativa que apresenta sentido figurado.",
+      "stemRows": [
+        {
+          "y": 252.16999999999996,
+          "text": "Assinalar a alternativa que apresenta sentido figurado."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Minha mente é um labirinto."
+        },
+        {
+          "letter": "B",
+          "text": "Cantei minha música favorita."
+        },
+        {
+          "letter": "C",
+          "text": "O repertório não agradou ao público."
+        },
+        {
+          "letter": "D",
+          "text": "O gato subiu na cama."
+        }
+      ],
+      "optionsStartY": 276.53,
+      "sourcePage": 3,
+      "sourceColumn": 1,
+      "startY": 252.16999999999996,
+      "endY": 334.01,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "d4145ed6-2eb4-41f3-ace6-79c3e703ab3d",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026LPGOBJETIVAPMSOSSEGO12",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 14,
+      "heading": "",
+      "stem": "Assinalar a alternativa que apresenta apenas palavras proparoxítonas.",
+      "stemRows": [
+        {
+          "y": 349.01,
+          "text": "Assinalar a alternativa que apresenta apenas palavras"
+        },
+        {
+          "y": 361.24999999999994,
+          "text": "proparoxítonas."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Até | didático | tênis."
+        },
+        {
+          "letter": "B",
+          "text": "Árvore | bússola | crítico."
+        },
+        {
+          "letter": "C",
+          "text": "Dócil | céu | peru."
+        },
+        {
+          "letter": "D",
+          "text": "Recém | paralelepípedo | jiló."
+        }
+      ],
+      "optionsStartY": 385.74999999999994,
+      "sourcePage": 3,
+      "sourceColumn": 1,
+      "startY": 349.01,
+      "endY": 443.22999999999996,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "fa7a661b-7c94-4a02-9021-777233cbebc5",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026LPGOBJETIVAPMSOSSEGO13",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 15,
+      "heading": "",
+      "stem": "Assinalar a alternativa em que o verbo sublinhado esteja no modo imperativo.",
+      "stemRows": [
+        {
+          "y": 458.22999999999996,
+          "text": "Assinalar a alternativa em que o verbo sublinhado esteja"
+        },
+        {
+          "y": 470.46999999999997,
+          "text": "no modo imperativo."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Não gosto de macarrão à bolonhesa."
+        },
+        {
+          "letter": "B",
+          "text": "Ela falou sobre a apresentação."
+        },
+        {
+          "letter": "C",
+          "text": "Pare de inventar história."
+        },
+        {
+          "letter": "D",
+          "text": "Ele cantará no show. MATEMÁTICA | 10 QUESTÕES"
+        }
+      ],
+      "optionsStartY": 494.83,
+      "sourcePage": 3,
+      "sourceColumn": 1,
+      "startY": 458.22999999999996,
+      "endY": 568.3,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "da0f55ce-f9b1-4f31-aa81-1b33fec250e7",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026LPGOBJETIVAPMSOSSEGO14",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 16,
+      "heading": "",
+      "stem": "Um criador de galinhas retira todos os dias 52 ovos de sua produção para vender na feira, que acontece duas vezes ao mês. Os ovos são comercializados em dúzias, ao preço de R$ 18,00 por dúzia. Se ele vender exatamente R$ 468,00, significa que a produção de quantos dias foi vendida?",
+      "stemRows": [
+        {
+          "y": 583.3,
+          "text": "Um criador de galinhas retira todos os dias 52 ovos de"
+        },
+        {
+          "y": 595.54,
+          "text": "sua produção para vender na feira, que acontece duas vezes"
+        },
+        {
+          "y": 607.78,
+          "text": "ao mês. Os ovos são comercializados em dúzias, ao preço de"
+        },
+        {
+          "y": 620.02,
+          "text": "R$ 18,00 por dúzia. Se ele vender exatamente R$ 468,00,"
+        },
+        {
+          "y": 632.14,
+          "text": "significa que a produção de quantos dias foi vendida?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Seis."
+        },
+        {
+          "letter": "B",
+          "text": "Sete."
+        },
+        {
+          "letter": "C",
+          "text": "Cinco."
+        },
+        {
+          "letter": "D",
+          "text": "Quatro."
+        }
+      ],
+      "optionsStartY": 656.62,
+      "sourcePage": 3,
+      "sourceColumn": 1,
+      "startY": 583.3,
+      "endY": 809.04,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Matemática",
+      "disciplineCode": "MA",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "1acb7a33-285c-4f99-a46f-6944f7f4dd6e",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026MAGOBJETIVAPMSOSSEGO1",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 17,
+      "heading": "",
+      "stem": "O gráfico a seguir mostra a quantidade, em toneladas, de resíduos recicláveis coletados por uma cooperativa ao longo de seis meses. Com base nos dados apresentados no gráfico, avaliar se as afirmativas são certas (C) ou erradas (E) e assinalar a sequência correspondente. ( ) A cada mês, houve incremento constante de 5 toneladas. ( ) A menor quantidade coletada ocorreu no mês de janeiro. ( ) A coleta realizada em junho é o dobro da realizada em janeiro.",
+      "stemRows": [
+        {
+          "y": 57.48000000000002,
+          "text": "O gráfico a seguir mostra a quantidade, em toneladas, de"
+        },
+        {
+          "y": 69.71999999999991,
+          "text": "resíduos recicláveis coletados por uma cooperativa ao longo"
+        },
+        {
+          "y": 81.86000000000001,
+          "text": "de seis meses."
+        },
+        {
+          "y": 311.0899999999999,
+          "text": "Com base nos dados apresentados no gráfico, avaliar se as"
+        },
+        {
+          "y": 323.2099999999999,
+          "text": "afirmativas são certas (C) ou erradas (E) e assinalar a"
+        },
+        {
+          "y": 335.45,
+          "text": "sequência correspondente."
+        },
+        {
+          "y": 359.92999999999995,
+          "text": "( ) A cada mês, houve incremento constante de 5 toneladas."
+        },
+        {
+          "y": 372.04999999999995,
+          "text": "( ) A menor quantidade coletada ocorreu no mês de janeiro."
+        },
+        {
+          "y": 384.30999999999995,
+          "text": "( ) A coleta realizada em junho é o dobro da realizada em"
+        },
+        {
+          "y": 396.54999999999995,
+          "text": "janeiro."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "C - C - E."
+        },
+        {
+          "letter": "B",
+          "text": "E - E - C."
+        },
+        {
+          "letter": "C",
+          "text": "C - E - E."
+        },
+        {
+          "letter": "D",
+          "text": "E - C - C"
+        }
+      ],
+      "optionsStartY": 420.90999999999997,
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "startY": 57.48000000000002,
+      "endY": 522.9399999999999,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "visualSegments": {
+        "beforeText": "O gráfico a seguir mostra a quantidade, em toneladas, de resíduos recicláveis coletados por uma cooperativa ao longo de seis meses.",
+        "afterText": "Com base nos dados apresentados no gráfico, avaliar se as afirmativas são certas (C) ou erradas (E) e assinalar a sequência correspondente. ( ) A cada mês, houve incremento constante de 5 toneladas. ( ) A menor quantidade coletada ocorreu no mês de janeiro. ( ) A coleta realizada em junho é o dobro da realizada em janeiro.",
+        "top": 97.86000000000001,
+        "bottom": 308.0899999999999
+      },
+      "extractionReview": false,
+      "imageOnly": true,
+      "expectedAlternatives": 4,
+      "pageImage": "data:image/jpeg;base64,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piI7oeEfUbS3nkVD52/1a97ZVOrrdTVboxG6aJshYHYhuIxwx1Yr64XTcoi6YUbJ042C3Ecmj3QgnoiICIiAiIgiXS1UN2pjT11NHMzA5ue0EsJGGIx4jrUKiyZoKKeF8DpmxQlr2wYt0ekDNGH4AY45urjw7eGKuEQVN72nYefP/DTK2VTe9p2Hnz/w06tkBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERBlGWfZNXfWbuhUyucs+yau+s3dCpldtaKeH5+7uVcyIiLo5i1TIbsWovGb7lla1TIbsWovGb7lizduOW7B3J4/i8UDJ7YNv5tHuhT1Aye2Db+bR7oUtWT0REBERAREQEVFlhLFFbvfjqapzXOp8Kh8Wc4D/AE+7OOGDTxqJY3vblDKTXyVjp2vc+J0kmNJ7nrXMzywdzU0H6Rigsr3tOw8+f+GnVsqS+Gp9mbGA2LRcNdmnOOdjwabjGH0q3xn72PpH0IPRF54z97H0j6Exn72PpH0IPRF54z97H0j6Exn72PpH0IPRF54z97H0j6Exn72PpH0IPRF54z97H0j6Exn72PpH0IPRF54z97H0j6Exn72PpH0IPRF54z97H0j6Exn72PpH0IPRF54z97H0j6Exn72PpH0IPRF54z97H0j6Exn72PpH0IPRF54z97H0j6Exn72PpH0IPRF54z97H0j6Exn72PpH0IPRF54z97H0j6Exn72PpH0IPRF54z97H0j6Exn72PpH0IPRF54z97H0j6F411TLR0U9U6NjhDG6QtDjrwGOHF8yRHb/AITPZ/qUi4n/AIis+TXeV/7J/wARWfJrvK/9l36a77M/U2v+nbIuJ/4is+TXeV/7J/xFZ8mu8r/2TprvsdTa/wCnbIuOo8vW1VXDTC3lplkawEy8WJw7i63GfvY+kfQudduqjVDpRcpuaZZZln2TV31m7oVMrnLPsmrfrN3QqZWrWinhDu7lXMiIi6OYtUyG7FqLxm+5ZWtRyIMvtYo80Mw6/jJ79yxZu3HLdg7k8fxfqBk9sG382j3QpeM/ex9I+hRMndgW7m0e6FLVk9ERAREQEREBERBU3vadh58/8NOrZVN72nYefP8Aw06tkBERAREQEREBERAREQEREBERAREQEREBERAREQEREBQb/sK481l3Spyg3/YVx5rLuleq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",
+      "discipline": "Matemática",
+      "disciplineCode": "MA",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "08fda7e4-f85e-4faa-a4c0-f21b8082b660",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026MAGOBJETIVAPMSOSSEGO2",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 18,
+      "heading": "",
+      "stem": "Para assistir a um filme no cinema, cada ingresso de adulto custa R$ 30,00, e cada ingresso de criança custa R$ 15,00. Considerando-se isso, avaliar se as afirmativas são certas (C) ou erradas (E) e assinalar a sequência correspondente. ( ) Para comprar dois ingressos de adulto e dois ingressos de criança, gasta-se R$ 90,00. ( ) Com R$ 100,00, é possível comprar três ingressos de adulto e um de criança. ( ) Com R$ 140,00, é possível comprar no máximo seis ingressos de criança.",
+      "stemRows": [
+        {
+          "y": 537.9399999999999,
+          "text": "Para assistir a um filme no cinema, cada ingresso de"
+        },
+        {
+          "y": 550.06,
+          "text": "adulto custa R$ 30,00, e cada ingresso de criança custa R$"
+        },
+        {
+          "y": 562.3,
+          "text": "15,00. Considerando-se isso, avaliar se as afirmativas são"
+        },
+        {
+          "y": 574.54,
+          "text": "certas (C) ou erradas (E) e assinalar a sequência"
+        },
+        {
+          "y": 586.78,
+          "text": "correspondente."
+        },
+        {
+          "y": 611.14,
+          "text": "( ) Para comprar dois ingressos de adulto e dois ingressos de"
+        },
+        {
+          "y": 623.38,
+          "text": "criança, gasta-se R$ 90,00."
+        },
+        {
+          "y": 635.62,
+          "text": "( ) Com R$ 100,00, é possível comprar três ingressos de"
+        },
+        {
+          "y": 647.74,
+          "text": "adulto e um de criança."
+        },
+        {
+          "y": 659.98,
+          "text": "( ) Com R$ 140,00, é possível comprar no máximo seis"
+        },
+        {
+          "y": 672.22,
+          "text": "ingressos de criança."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "C - C - E."
+        },
+        {
+          "letter": "B",
+          "text": "E - E - C."
+        },
+        {
+          "letter": "C",
+          "text": "C - E - E."
+        },
+        {
+          "letter": "D",
+          "text": "E - C - C."
+        }
+      ],
+      "optionsStartY": 696.5999999999999,
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "startY": 537.9399999999999,
+      "endY": 809.04,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Matemática",
+      "disciplineCode": "MA",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "c556f4b7-7a26-4ed8-be45-e652d83a295a",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026MAGOBJETIVAPMSOSSEGO3",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 19,
+      "heading": "",
+      "stem": "Considerando-se o resultado das expressões, avaliar se as afirmativas são certas (C) ou erradas (E) e assinalar a sequência correspondente. ( ) O resultado de 5 – 8 × 0 é igual ao resultado de 2 – 28 ÷ 4. ( ) O resultado de 15 − 5 × 2 é maior que o resultado de 15 ÷ 5 + 2. ( ) O resultado de 8 × 1 − 10 é um número negativo.",
+      "stemRows": [
+        {
+          "y": 57.48000000000002,
+          "text": "Considerando-se o resultado das expressões, avaliar se"
+        },
+        {
+          "y": 69.71999999999991,
+          "text": "as afirmativas são certas (C) ou erradas (E) e assinalar a"
+        },
+        {
+          "y": 81.86000000000001,
+          "text": "sequência correspondente."
+        },
+        {
+          "y": 106.33999999999992,
+          "text": "( ) O resultado de 5 – 8 × 0 é igual ao resultado de 2 – 28 ÷ 4."
+        },
+        {
+          "y": 118.45999999999992,
+          "text": "( ) O resultado de 15 − 5 × 2 é maior que o resultado de"
+        },
+        {
+          "y": 130.69999999999993,
+          "text": "15 ÷ 5 + 2."
+        },
+        {
+          "y": 142.93999999999994,
+          "text": "( ) O resultado de 8 × 1 − 10 é um número negativo."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "C - C - E."
+        },
+        {
+          "letter": "B",
+          "text": "E - E - C."
+        },
+        {
+          "letter": "C",
+          "text": "C - E - E."
+        },
+        {
+          "letter": "D",
+          "text": "E - C - C."
+        }
+      ],
+      "optionsStartY": 167.29999999999995,
+      "sourcePage": 4,
+      "sourceColumn": 1,
+      "startY": 57.48000000000002,
+      "endY": 269.3299999999999,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Matemática",
+      "disciplineCode": "MA",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "89bd8261-146e-4adf-b2c4-a8913f43c7b3",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026MAGOBJETIVAPMSOSSEGO4",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 20,
+      "heading": "",
+      "stem": "Em uma urna, há três bolas azuis e cinco bolas vermelhas, todas iguais em tamanho e peso, diferindo apenas pela cor. Uma pessoa retira duas bolas ao acaso, sem reposição, isto é, a primeira bola retirada não é devolvida à urna antes da retirada da segunda. Sobre as probabilidades quanto às cores das bolas retiradas, analisar os itens. I. A retirada de duas bolas azuis é impossível de acontecer. II. A retirada de duas bolas vermelhas é o evento menos provável. III. É mais provável ocorrer pelo menos uma bola azul do que ocorrer duas bolas azuis. Está CORRETO o que se afirma:",
+      "stemRows": [
+        {
+          "y": 284.3299999999999,
+          "text": "Em uma urna, há três bolas azuis e cinco bolas"
+        },
+        {
+          "y": 296.56999999999994,
+          "text": "vermelhas, todas iguais em tamanho e peso, diferindo"
+        },
+        {
+          "y": 308.68999999999994,
+          "text": "apenas pela cor. Uma pessoa retira duas bolas ao acaso, sem"
+        },
+        {
+          "y": 320.92999999999995,
+          "text": "reposição, isto é, a primeira bola retirada não é devolvida à"
+        },
+        {
+          "y": 333.16999999999996,
+          "text": "urna antes da retirada da segunda. Sobre as probabilidades"
+        },
+        {
+          "y": 345.40999999999997,
+          "text": "quanto às cores das bolas retiradas, analisar os itens."
+        },
+        {
+          "y": 369.77,
+          "text": "I. A retirada de duas bolas azuis é impossível de acontecer."
+        },
+        {
+          "y": 382.03,
+          "text": "II. A retirada de duas bolas vermelhas é o evento menos"
+        },
+        {
+          "y": 394.27,
+          "text": "provável."
+        },
+        {
+          "y": 406.39,
+          "text": "III. É mais provável ocorrer pelo menos uma bola azul do que"
+        },
+        {
+          "y": 418.62999999999994,
+          "text": "ocorrer duas bolas azuis."
+        },
+        {
+          "y": 442.98999999999995,
+          "text": "Está CORRETO o que se afirma:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Apenas no item I."
+        },
+        {
+          "letter": "B",
+          "text": "Apenas no item II."
+        },
+        {
+          "letter": "C",
+          "text": "Apenas no item III."
+        },
+        {
+          "letter": "D",
+          "text": "Apenas nos itens II e III."
+        }
+      ],
+      "optionsStartY": 467.46999999999997,
+      "sourcePage": 4,
+      "sourceColumn": 1,
+      "startY": 284.3299999999999,
+      "endY": 569.3799999999999,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Matemática",
+      "disciplineCode": "MA",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "e199e1df-4542-4184-9068-0e0aaca0ab76",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026MAGOBJETIVAPMSOSSEGO5",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 21,
+      "heading": "",
+      "stem": "Avaliar se as afirmativas são certas (C) ou erradas (E) e assinalar a sequência correspondente. ( ) Meio quilograma corresponde a 500 gramas. ( ) Um litro e meio corresponde a 1.500 mililitros. ( ) Uma hora corresponde a 100 segundos.",
+      "stemRows": [
+        {
+          "y": 584.3799999999999,
+          "text": "Avaliar se as afirmativas são certas (C) ou erradas (E) e"
+        },
+        {
+          "y": 596.62,
+          "text": "assinalar a sequência correspondente."
+        },
+        {
+          "y": 621.0999999999999,
+          "text": "( ) Meio quilograma corresponde a 500 gramas."
+        },
+        {
+          "y": 633.22,
+          "text": "( ) Um litro e meio corresponde a 1.500 mililitros."
+        },
+        {
+          "y": 645.4599999999999,
+          "text": "( ) Uma hora corresponde a 100 segundos."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "C - C - E."
+        },
+        {
+          "letter": "B",
+          "text": "E - E - C."
+        },
+        {
+          "letter": "C",
+          "text": "C - E - E."
+        },
+        {
+          "letter": "D",
+          "text": "E - C - C. www.objetivas.com.br"
+        }
+      ],
+      "optionsStartY": 669.9399999999999,
+      "sourcePage": 4,
+      "sourceColumn": 1,
+      "startY": 584.3799999999999,
+      "endY": 809.04,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Matemática",
+      "disciplineCode": "MA",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "fcca36d0-bc4c-4464-a414-25c7fe9f8a3b",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026MAGOBJETIVAPMSOSSEGO6",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 22,
+      "heading": "",
+      "stem": "Uma moto faz, em média, 26,5km com um litro de combustível. Se o tanque tem 14 litros de combustível, ao todo, quantos quilômetros a moto poderá percorrer, aproximadamente?",
+      "stemRows": [
+        {
+          "y": 57.48000000000002,
+          "text": "Uma moto faz, em média, 26,5km com um litro de"
+        },
+        {
+          "y": 69.71999999999991,
+          "text": "combustível. Se o tanque tem 14 litros de combustível, ao"
+        },
+        {
+          "y": 81.86000000000001,
+          "text": "todo, quantos quilômetros a moto poderá percorrer,"
+        },
+        {
+          "y": 94.09999999999991,
+          "text": "aproximadamente?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "236"
+        },
+        {
+          "letter": "B",
+          "text": "286"
+        },
+        {
+          "letter": "C",
+          "text": "371"
+        },
+        {
+          "letter": "D",
+          "text": "428"
+        }
+      ],
+      "optionsStartY": 118.45999999999992,
+      "sourcePage": 5,
+      "sourceColumn": 0,
+      "startY": 57.48000000000002,
+      "endY": 242.68999999999994,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Matemática",
+      "disciplineCode": "MA",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "e381e528-cce5-400f-9da3-7e46abacf2f5",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026MAGOBJETIVAPMSOSSEGO7",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 23,
+      "heading": "",
+      "stem": "Uma prova que iniciou pela manhã, no horário indicado no relógio abaixo, tem duração máxima de 03 horas e 45 minutos. Sobre isso, analisar os itens. I. Se a prova terminar exatamente no tempo máximo previsto, o horário final será 11:21. II. Após 1 hora e 15 minutos do início da prova, o relógio marcará 08:51. III. Quando estiver faltando apenas 1 hora para o término da prova, o relógio marcará 10:81. Está CORRETO o que se afirma:",
+      "stemRows": [
+        {
+          "y": 257.68999999999994,
+          "text": "Uma prova que iniciou pela manhã, no horário indicado"
+        },
+        {
+          "y": 269.92999999999995,
+          "text": "no relógio abaixo, tem duração máxima de 03 horas e 45"
+        },
+        {
+          "y": 282.16999999999996,
+          "text": "minutos."
+        },
+        {
+          "y": 353.33,
+          "text": "Sobre isso, analisar os itens."
+        },
+        {
+          "y": 377.68999999999994,
+          "text": "I. Se a prova terminar exatamente no tempo máximo"
+        },
+        {
+          "y": 389.95,
+          "text": "previsto, o horário final será 11:21."
+        },
+        {
+          "y": 402.06999999999994,
+          "text": "II. Após 1 hora e 15 minutos do início da prova, o relógio"
+        },
+        {
+          "y": 414.30999999999995,
+          "text": "marcará 08:51."
+        },
+        {
+          "y": 426.54999999999995,
+          "text": "III. Quando estiver faltando apenas 1 hora para o término da"
+        },
+        {
+          "y": 438.78999999999996,
+          "text": "prova, o relógio marcará 10:81."
+        },
+        {
+          "y": 463.15,
+          "text": "Está CORRETO o que se afirma:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Apenas nos itens I e II."
+        },
+        {
+          "letter": "B",
+          "text": "Apenas nos itens I e III."
+        },
+        {
+          "letter": "C",
+          "text": "Apenas nos itens II e III."
+        },
+        {
+          "letter": "D",
+          "text": "Em todos os itens."
+        }
+      ],
+      "optionsStartY": 487.62999999999994,
+      "sourcePage": 5,
+      "sourceColumn": 0,
+      "startY": 257.68999999999994,
+      "endY": 809.04,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Matemática",
+      "disciplineCode": "MA",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "f3c623f0-9a97-4e9c-8999-9dd35f22c612",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026MAGOBJETIVAPMSOSSEGO8",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 24,
+      "heading": "",
+      "stem": "Na entrada de um estacionamento pago, encontra-se a seguinte placa dos valores cobrados: ESTACIONE AQUI! 1ª hora..................... R$ 15,00 2ª hora..................... R$ 12,00 3ª hora em diante.... R$ 5,00 por hora Um motorista estaciona seu veículo às 22h15 e o retira às 7h15 do dia seguinte, permanecendo no estacionamento durante todo esse período, sem interrupções. O valor total a ser pago para o estacionamento é:",
+      "stemRows": [
+        {
+          "y": 57.48000000000002,
+          "text": "Na entrada de um estacionamento pago, encontra-se a"
+        },
+        {
+          "y": 69.71999999999991,
+          "text": "seguinte placa dos valores cobrados:"
+        },
+        {
+          "y": 94.09999999999991,
+          "text": "ESTACIONE AQUI!"
+        },
+        {
+          "y": 106.33999999999992,
+          "text": "1ª hora ..................... R$ 15,00"
+        },
+        {
+          "y": 118.45999999999992,
+          "text": "2ª hora ..................... R$ 12,00"
+        },
+        {
+          "y": 130.69999999999993,
+          "text": "3ª hora em diante .... R$ 5,00 por hora"
+        },
+        {
+          "y": 155.17999999999995,
+          "text": "Um motorista estaciona seu veículo às 22h15 e o retira às"
+        },
+        {
+          "y": 167.29999999999995,
+          "text": "7h15 do dia seguinte, permanecendo no estacionamento"
+        },
+        {
+          "y": 179.53999999999996,
+          "text": "durante todo esse período, sem interrupções. O valor total a"
+        },
+        {
+          "y": 191.77999999999997,
+          "text": "ser pago para o estacionamento é:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "R$ 57,00"
+        },
+        {
+          "letter": "B",
+          "text": "R$ 62,00"
+        },
+        {
+          "letter": "C",
+          "text": "R$ 65,00"
+        },
+        {
+          "letter": "D",
+          "text": "R$ 72,00"
+        }
+      ],
+      "optionsStartY": 216.14,
+      "sourcePage": 5,
+      "sourceColumn": 1,
+      "startY": 57.48000000000002,
+      "endY": 340.36999999999995,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Matemática",
+      "disciplineCode": "MA",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "beb078be-20aa-46ac-9d24-93375b4f5021",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026MAGOBJETIVAPMSOSSEGO9",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 25,
+      "heading": "",
+      "stem": "Considerando-se a correlação entre meses e períodos do ano, avaliar se as afirmativas são certas (C) ou erradas (E) e assinalar a sequência correspondente. ( ) Março é um mês do primeiro trimestre do ano. ( ) Julho é um mês do segundo trimestre do ano. ( ) Setembro é um mês do último trimestre do ano. ( ) Agosto é um mês do segundo semestre do ano.",
+      "stemRows": [
+        {
+          "y": 355.36999999999995,
+          "text": "Considerando-se a correlação entre meses e períodos do"
+        },
+        {
+          "y": 367.60999999999996,
+          "text": "ano, avaliar se as afirmativas são certas (C) ou erradas (E) e"
+        },
+        {
+          "y": 379.74999999999994,
+          "text": "assinalar a sequência correspondente."
+        },
+        {
+          "y": 404.22999999999996,
+          "text": "( ) Março é um mês do primeiro trimestre do ano."
+        },
+        {
+          "y": 416.46999999999997,
+          "text": "( ) Julho é um mês do segundo trimestre do ano."
+        },
+        {
+          "y": 428.59,
+          "text": "( ) Setembro é um mês do último trimestre do ano."
+        },
+        {
+          "y": 440.83,
+          "text": "( ) Agosto é um mês do segundo semestre do ano."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "C - C - E - E."
+        },
+        {
+          "letter": "B",
+          "text": "E - E - C - C."
+        },
+        {
+          "letter": "C",
+          "text": "C - E - E - C."
+        },
+        {
+          "letter": "D",
+          "text": "E - C - C - E."
+        }
+      ],
+      "optionsStartY": 465.18999999999994,
+      "sourcePage": 5,
+      "sourceColumn": 1,
+      "startY": 355.36999999999995,
+      "endY": 809.04,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Matemática",
+      "disciplineCode": "MA",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "541c975d-18cf-4778-8872-1403ee4297aa",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026MAGOBJETIVAPMSOSSEGO10",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 26,
+      "heading": "",
+      "stem": "Quanto às competências atribuídas ao Município pela Lei Orgânica Municipal, avaliar se as afirmativas são certas (C) ou erradas (E) e assinalar a sequência correspondente. ( ) Exigir ou aumentar tributo sempre que o interesse público assim o exigir, independentemente de lei que o estabeleça. ( ) Organizar e manter os serviços de fiscalização necessários ao exercício do seu poder de polícia administrativa. ( ) Realizar, diretamente ou mediante autorização ou concessão, o serviço de iluminação pública.",
+      "stemRows": [
+        {
+          "y": 84.86000000000001,
+          "text": "Quanto às competências atribuídas ao Município pela Lei"
+        },
+        {
+          "y": 97.09999999999991,
+          "text": "Orgânica Municipal, avaliar se as afirmativas são certas (C)"
+        },
+        {
+          "y": 109.33999999999992,
+          "text": "ou erradas (E) e assinalar a sequência correspondente."
+        },
+        {
+          "y": 133.69999999999993,
+          "text": "( ) Exigir ou aumentar tributo sempre que o interesse"
+        },
+        {
+          "y": 145.93999999999994,
+          "text": "público assim o exigir, independentemente de lei que o"
+        },
+        {
+          "y": 158.17999999999995,
+          "text": "estabeleça."
+        },
+        {
+          "y": 170.29999999999995,
+          "text": "( ) Organizar e manter os serviços de fiscalização necessários"
+        },
+        {
+          "y": 182.53999999999996,
+          "text": "ao exercício do seu poder de polícia administrativa."
+        },
+        {
+          "y": 194.77999999999997,
+          "text": "( ) Realizar, diretamente ou mediante autorização ou"
+        },
+        {
+          "y": 207.01999999999998,
+          "text": "concessão, o serviço de iluminação pública."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "C - C - E."
+        },
+        {
+          "letter": "B",
+          "text": "E - E - C."
+        },
+        {
+          "letter": "C",
+          "text": "C - E - E."
+        },
+        {
+          "letter": "D",
+          "text": "E - C - C."
+        }
+      ],
+      "optionsStartY": 231.40999999999997,
+      "sourcePage": 6,
+      "sourceColumn": 0,
+      "startY": 84.86000000000001,
+      "endY": 288.89,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "63442658-8433-4f79-a28c-c8c2dc42a4ff",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026CEGOBJETIVAPMSOSSEGO1",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 27,
+      "heading": "",
+      "stem": "No que tange ao regime disciplinar, quanto aos deveres e às proibições previstos ao servidor público na Lei Complementar Municipal nº 005/2021, relacionar as colunas e assinalar a sequência correspondente. (1) Dever. (2) Proibição. ( ) Promover manifestação de apreço ou desapreço no recinto da repartição. ( ) Tratar as pessoas com urbanidade. ( ) Proceder de forma desidiosa.",
+      "stemRows": [
+        {
+          "y": 303.89,
+          "text": "No que tange ao regime disciplinar, quanto aos deveres"
+        },
+        {
+          "y": 316.13,
+          "text": "e às proibições previstos ao servidor público na Lei"
+        },
+        {
+          "y": 328.37,
+          "text": "Complementar Municipal nº 005/2021, relacionar as colunas"
+        },
+        {
+          "y": 340.60999999999996,
+          "text": "e assinalar a sequência correspondente."
+        },
+        {
+          "y": 364.96999999999997,
+          "text": "(1) Dever."
+        },
+        {
+          "y": 377.21,
+          "text": "(2) Proibição."
+        },
+        {
+          "y": 401.59,
+          "text": "( ) Promover manifestação de apreço ou desapreço no"
+        },
+        {
+          "y": 413.83,
+          "text": "recinto da repartição."
+        },
+        {
+          "y": 426.06999999999994,
+          "text": "( ) Tratar as pessoas com urbanidade."
+        },
+        {
+          "y": 438.18999999999994,
+          "text": "( ) Proceder de forma desidiosa."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "1 - 1 - 2."
+        },
+        {
+          "letter": "B",
+          "text": "1 - 2 - 1."
+        },
+        {
+          "letter": "C",
+          "text": "2 - 1 - 2."
+        },
+        {
+          "letter": "D",
+          "text": "2 - 2 - 1."
+        }
+      ],
+      "optionsStartY": 462.66999999999996,
+      "sourcePage": 6,
+      "sourceColumn": 0,
+      "startY": 303.89,
+      "endY": 520.18,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "1c3a23a9-c734-4356-a6fd-c47c5327de41",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026CEGOBJETIVAPMSOSSEGO2",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 28,
+      "heading": "",
+      "stem": "Nos termos da Lei Complementar Municipal nº 005/2021, o instrumento destinado a apurar responsabilidade de servidor por infração praticada no exercício de suas atribuições, ou que tenha relação com as atribuições do cargo em que se encontre investido, é denominado:",
+      "stemRows": [
+        {
+          "y": 535.18,
+          "text": "Nos termos da Lei Complementar Municipal"
+        },
+        {
+          "y": 547.42,
+          "text": "nº 005/2021, o instrumento destinado a apurar"
+        },
+        {
+          "y": 559.66,
+          "text": "responsabilidade de servidor por infração praticada no"
+        },
+        {
+          "y": 571.9,
+          "text": "exercício de suas atribuições, ou que tenha relação com as"
+        },
+        {
+          "y": 584.02,
+          "text": "atribuições do cargo em que se encontre investido, é"
+        },
+        {
+          "y": 596.26,
+          "text": "denominado:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Contestação funcional."
+        },
+        {
+          "letter": "B",
+          "text": "Processo disciplinar."
+        },
+        {
+          "letter": "C",
+          "text": "Recurso administrativo."
+        },
+        {
+          "letter": "D",
+          "text": "Litígio interno."
+        }
+      ],
+      "optionsStartY": 620.62,
+      "sourcePage": 6,
+      "sourceColumn": 0,
+      "startY": 535.18,
+      "endY": 809.04,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "92863dd3-fe54-4033-bad4-8a758f0be1bf",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026CEGOBJETIVAPMSOSSEGO3",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 29,
+      "heading": "",
+      "stem": "Durante o levantamento de uma caixa de 50kg, os trabalhadores 1 e 2 adotam posturas diferentes, conforme ilustrado abaixo. Considerando-se as boas práticas de segurança no trabalho, assinalar a alternativa CORRETA.",
+      "stemRows": [
+        {
+          "y": 57.48000000000002,
+          "text": "Durante o levantamento de uma caixa de 50kg, os"
+        },
+        {
+          "y": 69.71999999999991,
+          "text": "trabalhadores 1 e 2 adotam posturas diferentes, conforme"
+        },
+        {
+          "y": 81.86000000000001,
+          "text": "ilustrado abaixo."
+        },
+        {
+          "y": 201.98000000000002,
+          "text": "Considerando-se as boas práticas de segurança no trabalho,"
+        },
+        {
+          "y": 214.2199999999999,
+          "text": "assinalar a alternativa CORRETA."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "A postura (1) é a mais segura, pois permite maior alcance dos braços."
+        },
+        {
+          "letter": "B",
+          "text": "A postura (1) é a mais segura, pois mantém as pernas esticadas e reduz esforço nos joelhos."
+        },
+        {
+          "letter": "C",
+          "text": "A postura (2) é a mais segura, pois mantém a coluna reta e utiliza a força das pernas para levantar."
+        },
+        {
+          "letter": "D",
+          "text": "As duas posturas são seguras, pois utilizam contrapontos para compensar as partes que serão mais forçadas."
+        }
+      ],
+      "optionsStartY": 238.61,
+      "sourcePage": 6,
+      "sourceColumn": 1,
+      "startY": 57.48000000000002,
+      "endY": 345.04999999999995,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "a13e0f7f-8863-4edd-857e-b6aedabb7a6b",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026CEGOBJETIVAPMSOSSEGO4",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 30,
+      "heading": "",
+      "stem": "Sobre ética no serviço público, é CORRETO afirmar que:",
+      "stemRows": [
+        {
+          "y": 360.04999999999995,
+          "text": "Sobre ética no serviço público, é CORRETO afirmar que:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "O servidor público deve agir com honestidade, imparcialidade e respeito ao interesse coletivo."
+        },
+        {
+          "letter": "B",
+          "text": "A ética no serviço público está relacionada apenas ao cumprimento de horários."
+        },
+        {
+          "letter": "C",
+          "text": "O servidor público pode usar o cargo para obter vantagens pessoais, desde que não prejudique o setor."
+        },
+        {
+          "letter": "D",
+          "text": "A ética se aplica apenas aos cargos de chefia."
+        }
+      ],
+      "optionsStartY": 384.42999999999995,
+      "sourcePage": 6,
+      "sourceColumn": 1,
+      "startY": 360.04999999999995,
+      "endY": 478.62999999999994,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "61c07f23-011b-4b58-b819-b7ce472cd71d",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026CEGOBJETIVAPMSOSSEGO5",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 31,
+      "heading": "",
+      "stem": "Em caso de identificação de risco no ambiente de trabalho (como um fio elétrico exposto), o servidor deve:",
+      "stemRows": [
+        {
+          "y": 493.62999999999994,
+          "text": "Em caso de identificação de risco no ambiente de"
+        },
+        {
+          "y": 505.74999999999994,
+          "text": "trabalho (como um fio elétrico exposto), o servidor deve:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Ignorar o problema, pois não é sua responsabilidade."
+        },
+        {
+          "letter": "B",
+          "text": "Comunicar imediatamente ao setor responsável ou à chefia."
+        },
+        {
+          "letter": "C",
+          "text": "Tentar consertar sozinho, mesmo sem conhecimento técnico."
+        },
+        {
+          "letter": "D",
+          "text": "Aguardar que outro colega tome providências."
+        }
+      ],
+      "optionsStartY": 530.23,
+      "sourcePage": 6,
+      "sourceColumn": 1,
+      "startY": 493.62999999999994,
+      "endY": 612.22,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "21a110e9-a421-4f05-85e7-b3b8bf6dd501",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026CEGOBJETIVAPMSOSSEGO6",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 32,
+      "heading": "",
+      "stem": "O comportamento profissional adequado no ambiente de trabalho inclui: I. Priorizar interesses pessoais em detrimento da equipe. II. Agir com ética, responsabilidade e equilíbrio emocional. III. Respeitar as normas inclusive quando não há supervisão. Está CORRETO o que se afirma:",
+      "stemRows": [
+        {
+          "y": 627.22,
+          "text": "O comportamento profissional adequado no ambiente"
+        },
+        {
+          "y": 639.3399999999999,
+          "text": "de trabalho inclui:"
+        },
+        {
+          "y": 663.8199999999999,
+          "text": "I. Priorizar interesses pessoais em detrimento da equipe."
+        },
+        {
+          "y": 676.06,
+          "text": "II. Agir com ética, responsabilidade e equilíbrio emocional."
+        },
+        {
+          "y": 688.1999999999999,
+          "text": "III. Respeitar as normas inclusive quando não há supervisão."
+        },
+        {
+          "y": 712.68,
+          "text": "Está CORRETO o que se afirma:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Apenas no item III."
+        },
+        {
+          "letter": "B",
+          "text": "Apenas nos itens I e II."
+        },
+        {
+          "letter": "C",
+          "text": "Apenas nos itens I e III."
+        },
+        {
+          "letter": "D",
+          "text": "Apenas nos itens II e III. www.objetivas.com.br"
+        }
+      ],
+      "optionsStartY": 737.04,
+      "sourcePage": 6,
+      "sourceColumn": 1,
+      "startY": 627.22,
+      "endY": 809.04,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "d9acbc8f-bc46-40d8-a973-eaaeed0d0594",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026CEGOBJETIVAPMSOSSEGO7",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 33,
+      "heading": "",
+      "stem": "A respeito das práticas adequadas para evitar a contaminação cruzada durante a manipulação de alimentos, avaliar se as afirmativas são certas (C) ou erradas (E) e assinalar a sequência correspondente. ( ) A higienização correta das mãos, das bancadas e dos utensílios deve ser realizada sempre que houver troca de atividade. ( ) Alimentos crus e alimentos prontos para consumo podem ser manipulados na mesma tábua, no mesmo local e ao mesmo tempo, desde que estejam refrigerados. ( ) Os alimentos devem ser armazenados em recipientes adequados, devidamente tampados e identificados, para reduzir risco de contaminação.",
+      "stemRows": [
+        {
+          "y": 57.48000000000002,
+          "text": "A respeito das práticas adequadas para evitar a"
+        },
+        {
+          "y": 69.71999999999991,
+          "text": "contaminação cruzada durante a manipulação de alimentos,"
+        },
+        {
+          "y": 81.86000000000001,
+          "text": "avaliar se as afirmativas são certas (C) ou erradas (E) e"
+        },
+        {
+          "y": 94.09999999999991,
+          "text": "assinalar a sequência correspondente."
+        },
+        {
+          "y": 118.45999999999992,
+          "text": "( ) A higienização correta das mãos, das bancadas e dos"
+        },
+        {
+          "y": 130.69999999999993,
+          "text": "utensílios deve ser realizada sempre que houver troca de"
+        },
+        {
+          "y": 142.93999999999994,
+          "text": "atividade."
+        },
+        {
+          "y": 155.17999999999995,
+          "text": "( ) Alimentos crus e alimentos prontos para consumo podem"
+        },
+        {
+          "y": 167.29999999999995,
+          "text": "ser manipulados na mesma tábua, no mesmo local e ao"
+        },
+        {
+          "y": 179.53999999999996,
+          "text": "mesmo tempo, desde que estejam refrigerados."
+        },
+        {
+          "y": 191.77999999999997,
+          "text": "( ) Os alimentos devem ser armazenados em recipientes"
+        },
+        {
+          "y": 204.01999999999998,
+          "text": "adequados, devidamente tampados e identificados, para"
+        },
+        {
+          "y": 216.14,
+          "text": "reduzir risco de contaminação."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "C - E - C."
+        },
+        {
+          "letter": "B",
+          "text": "E - C - E."
+        },
+        {
+          "letter": "C",
+          "text": "C - C - E."
+        },
+        {
+          "letter": "D",
+          "text": "E - E - C."
+        }
+      ],
+      "optionsStartY": 240.64999999999998,
+      "sourcePage": 7,
+      "sourceColumn": 0,
+      "startY": 57.48000000000002,
+      "endY": 298.13,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "90e3f6eb-eeb8-4095-bca4-76d11a019e61",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026CEGOBJETIVAPMSOSSEGO8",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 34,
+      "heading": "",
+      "stem": "Assinalar a alternativa que apresenta apenas alimentos que podem estar inseridos em uma dieta vegetariana.",
+      "stemRows": [
+        {
+          "y": 313.13,
+          "text": "Assinalar a alternativa que apresenta apenas alimentos"
+        },
+        {
+          "y": 325.37,
+          "text": "que podem estar inseridos em uma dieta vegetariana."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Ovos, peixes, embutidos, legumes e sementes."
+        },
+        {
+          "letter": "B",
+          "text": "Legumes, oleaginosas, cereais, verduras e frutas."
+        },
+        {
+          "letter": "C",
+          "text": "Oleaginosas, sementes, aves, laticínios e tubérculos."
+        },
+        {
+          "letter": "D",
+          "text": "Frutos do mar, ovos, linguiças, leguminosas e frutas."
+        }
+      ],
+      "optionsStartY": 349.72999999999996,
+      "sourcePage": 7,
+      "sourceColumn": 0,
+      "startY": 313.13,
+      "endY": 407.34999999999997,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "b1d11bd2-3fa7-4cd1-a435-ccb31fb49747",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026CEGOBJETIVAPMSOSSEGO9",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 35,
+      "heading": "",
+      "stem": "No contexto dos produtos e materiais de limpeza e desinfecção, o correto manuseio de produtos químicos é fundamental para garantir a segurança do trabalhador, a preservação do ambiente e a eficácia do processo de higienização. Sobre esse assunto, analisar os itens. I. Todo produto químico utilizado na limpeza apresenta algum grau de risco, sendo indispensáveis o treinamento dos usuários e o uso de equipamentos de proteção individual (EPI). II. A diluição de produtos concentrados deve seguir rigorosamente as orientações do fabricante, utilizando dosador apropriado. III. A identificação dos produtos de limpeza pode ser feita apenas pela cor da solução, desde que estejam armazenados em recipientes fechados e fora do alcance de crianças. Está CORRETO o que se afirma:",
+      "stemRows": [
+        {
+          "y": 422.34999999999997,
+          "text": "No contexto dos produtos e materiais de limpeza e"
+        },
+        {
+          "y": 434.59,
+          "text": "desinfecção, o correto manuseio de produtos químicos é"
+        },
+        {
+          "y": 446.71,
+          "text": "fundamental para garantir a segurança do trabalhador, a"
+        },
+        {
+          "y": 458.95,
+          "text": "preservação do ambiente e a eficácia do processo de"
+        },
+        {
+          "y": 471.18999999999994,
+          "text": "higienização. Sobre esse assunto, analisar os itens."
+        },
+        {
+          "y": 495.54999999999995,
+          "text": "I. Todo produto químico utilizado na limpeza apresenta"
+        },
+        {
+          "y": 507.78999999999996,
+          "text": "algum grau de risco, sendo indispensáveis o treinamento"
+        },
+        {
+          "y": 520.03,
+          "text": "dos usuários e o uso de equipamentos de proteção"
+        },
+        {
+          "y": 532.18,
+          "text": "individual (EPI)."
+        },
+        {
+          "y": 544.42,
+          "text": "II. A diluição de produtos concentrados deve seguir"
+        },
+        {
+          "y": 556.66,
+          "text": "rigorosamente as orientações do fabricante, utilizando"
+        },
+        {
+          "y": 568.9,
+          "text": "dosador apropriado."
+        },
+        {
+          "y": 581.02,
+          "text": "III. A identificação dos produtos de limpeza pode ser feita"
+        },
+        {
+          "y": 593.26,
+          "text": "apenas pela cor da solução, desde que estejam"
+        },
+        {
+          "y": 605.5,
+          "text": "armazenados em recipientes fechados e fora do alcance"
+        },
+        {
+          "y": 617.62,
+          "text": "de crianças."
+        },
+        {
+          "y": 642.0999999999999,
+          "text": "Está CORRETO o que se afirma:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Apenas no item I."
+        },
+        {
+          "letter": "B",
+          "text": "Apenas no item II."
+        },
+        {
+          "letter": "C",
+          "text": "Apenas nos itens I e III."
+        },
+        {
+          "letter": "D",
+          "text": "Apenas nos itens I e II."
+        }
+      ],
+      "optionsStartY": 666.4599999999999,
+      "sourcePage": 7,
+      "sourceColumn": 0,
+      "startY": 422.34999999999997,
+      "endY": 809.04,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "716effd2-f50c-47b9-b560-3f274f4d26ef",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026CEGOBJETIVAPMSOSSEGO10",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 36,
+      "heading": "",
+      "stem": "Considerando os métodos e equipamentos de limpeza referentes ao procedimento de lavagem de pisos e superfícies, que envolve utilização adequada de materiais, organização do ambiente e sequência correta de etapas, é CORRETO afirmar que:",
+      "stemRows": [
+        {
+          "y": 57.48000000000002,
+          "text": "Considerando os métodos e equipamentos de limpeza"
+        },
+        {
+          "y": 69.71999999999991,
+          "text": "referentes ao procedimento de lavagem de pisos e"
+        },
+        {
+          "y": 81.86000000000001,
+          "text": "superfícies, que envolve utilização adequada de materiais,"
+        },
+        {
+          "y": 94.09999999999991,
+          "text": "organização do ambiente e sequência correta de etapas, é"
+        },
+        {
+          "y": 106.33999999999992,
+          "text": "CORRETO afirmar que:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "A lavagem deve ser iniciada sem a necessidade de retirada de mobiliário ou tapetes, uma vez que a movimentação posterior facilita a secagem uniforme do piso."
+        },
+        {
+          "letter": "B",
+          "text": "O procedimento de esfregação deve ocorrer de forma aleatória, sem direção definida, a fim de evitar marcas visíveis após a secagem da superfície."
+        },
+        {
+          "letter": "C",
+          "text": "A remoção da água e da solução detergente deve ser feita preferencialmente com rodo, seguida de secagem inicial com mop, evitando que o líquido escoe para áreas adjacentes."
+        },
+        {
+          "letter": "D",
+          "text": "As máquinas elétricas são suficientes para alcançar todos os pontos do ambiente, inclusive cantos e bordas, dispensando o uso de vassouras manuais."
+        }
+      ],
+      "optionsStartY": 130.69999999999993,
+      "sourcePage": 7,
+      "sourceColumn": 1,
+      "startY": 57.48000000000002,
+      "endY": 298.13,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "1770d623-a655-4a4c-889f-3744d936b5ac",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026CEGOBJETIVAPMSOSSEGO11",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 37,
+      "heading": "",
+      "stem": "A respeito da limpeza seca, avaliar se as afirmativas são certas (C) ou erradas (E) e assinalar a sequência correspondente. ( ) A limpeza seca caracteriza-se pela remoção de sujidades soltas, como pó e poeira, sem o emprego de água, podendo ser realizada por meio de vassouras ou aspiradores de pó. ( ) O uso de vassouras na limpeza seca é indicado, preferencialmente, para áreas externas e descobertas, como pátios e estacionamentos, em razão da maior dispersão de partículas. ( ) Em áreas internas e cobertas, a limpeza seca deve ser realizada, obrigatoriamente, com vassoura comum, sendo vedada a utilização de aspirador de pó.",
+      "stemRows": [
+        {
+          "y": 313.13,
+          "text": "A respeito da limpeza seca, avaliar se as afirmativas são"
+        },
+        {
+          "y": 325.37,
+          "text": "certas (C) ou erradas (E) e assinalar a sequência"
+        },
+        {
+          "y": 337.60999999999996,
+          "text": "correspondente."
+        },
+        {
+          "y": 361.96999999999997,
+          "text": "( ) A limpeza seca caracteriza-se pela remoção de sujidades"
+        },
+        {
+          "y": 374.21,
+          "text": "soltas, como pó e poeira, sem o emprego de água,"
+        },
+        {
+          "y": 386.46999999999997,
+          "text": "podendo ser realizada por meio de vassouras ou"
+        },
+        {
+          "y": 398.59,
+          "text": "aspiradores de pó."
+        },
+        {
+          "y": 410.83,
+          "text": "( ) O uso de vassouras na limpeza seca é indicado,"
+        },
+        {
+          "y": 423.06999999999994,
+          "text": "preferencialmente, para áreas externas e descobertas,"
+        },
+        {
+          "y": 435.18999999999994,
+          "text": "como pátios e estacionamentos, em razão da maior"
+        },
+        {
+          "y": 447.42999999999995,
+          "text": "dispersão de partículas."
+        },
+        {
+          "y": 459.66999999999996,
+          "text": "( ) Em áreas internas e cobertas, a limpeza seca deve ser"
+        },
+        {
+          "y": 471.90999999999997,
+          "text": "realizada, obrigatoriamente, com vassoura comum, sendo"
+        },
+        {
+          "y": 484.03,
+          "text": "vedada a utilização de aspirador de pó."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "C - C - E."
+        },
+        {
+          "letter": "B",
+          "text": "E - E - C."
+        },
+        {
+          "letter": "C",
+          "text": "C - E - E."
+        },
+        {
+          "letter": "D",
+          "text": "E - C - C."
+        }
+      ],
+      "optionsStartY": 508.51,
+      "sourcePage": 7,
+      "sourceColumn": 1,
+      "startY": 313.13,
+      "endY": 566.02,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "dff13b2b-a0e2-4c32-ba30-2cb49b4e81be",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026CEGOBJETIVAPMSOSSEGO12",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 38,
+      "heading": "",
+      "stem": "No contexto dos métodos e equipamentos de limpeza referentes à higienização de pias e lavatórios, a qual exige uso adequado de materiais, equipamentos de proteção individual e sequência técnica apropriada, é CORRETO afirmar que:",
+      "stemRows": [
+        {
+          "y": 581.02,
+          "text": "No contexto dos métodos e equipamentos de limpeza"
+        },
+        {
+          "y": 593.26,
+          "text": "referentes à higienização de pias e lavatórios, a qual exige"
+        },
+        {
+          "y": 605.5,
+          "text": "uso adequado de materiais, equipamentos de proteção"
+        },
+        {
+          "y": 617.62,
+          "text": "individual e sequência técnica apropriada, é CORRETO"
+        },
+        {
+          "y": 629.8599999999999,
+          "text": "afirmar que:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "A limpeza de pias deve ser realizada sem o uso de equipamentos de proteção individual, desde que sejam utilizados produtos devidamente diluídos."
+        },
+        {
+          "letter": "B",
+          "text": "O procedimento inicia-se pela aplicação direta da solução desinfetante, dispensando o uso prévio de detergente para remoção de sujidades aparentes."
+        },
+        {
+          "letter": "C",
+          "text": "O enxágue deve ser evitado para não comprometer a ação do produto químico aplicado durante a limpeza."
+        },
+        {
+          "letter": "D",
+          "text": "A esfregação da pia deve abranger toda a sua superfície, incluindo torneiras e colunas, utilizando movimentos orientados da extremidade para o centro da cuba."
+        }
+      ],
+      "optionsStartY": 654.3399999999999,
+      "sourcePage": 7,
+      "sourceColumn": 1,
+      "startY": 581.02,
+      "endY": 809.04,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "0d7a91cf-4b84-43b3-bc70-925c0744e14b",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026CEGOBJETIVAPMSOSSEGO13",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 39,
+      "heading": "",
+      "stem": "A respeito da limpeza concorrente, prática rotineira adotada em ambientes institucionais e coletivos, avaliar se as afirmativas são certas (C) ou erradas (E) e assinalar a sequência correspondente. ( ) A limpeza concorrente consiste na execução diária de atividades de higienização em áreas críticas, com a finalidade de manter o asseio, a organização e as condições adequadas de uso dos ambientes. ( ) O abastecimento e a reposição de materiais de consumo diário, como sabonete líquido e papel higiênico, fazem parte da limpeza concorrente. ( ) A limpeza concorrente é realizada apenas de forma eventual, sendo restrita a situações emergenciais ou a situações em que haja acúmulo excessivo de sujidades visíveis.",
+      "stemRows": [
+        {
+          "y": 57.48000000000002,
+          "text": "A respeito da limpeza concorrente, prática rotineira"
+        },
+        {
+          "y": 69.71999999999991,
+          "text": "adotada em ambientes institucionais e coletivos, avaliar se"
+        },
+        {
+          "y": 81.86000000000001,
+          "text": "as afirmativas são certas (C) ou erradas (E) e assinalar a"
+        },
+        {
+          "y": 94.09999999999991,
+          "text": "sequência correspondente."
+        },
+        {
+          "y": 118.45999999999992,
+          "text": "( ) A limpeza concorrente consiste na execução diária de"
+        },
+        {
+          "y": 130.69999999999993,
+          "text": "atividades de higienização em áreas críticas, com a"
+        },
+        {
+          "y": 142.93999999999994,
+          "text": "finalidade de manter o asseio, a organização e as"
+        },
+        {
+          "y": 155.17999999999995,
+          "text": "condições adequadas de uso dos ambientes."
+        },
+        {
+          "y": 167.29999999999995,
+          "text": "( ) O abastecimento e a reposição de materiais de consumo"
+        },
+        {
+          "y": 179.53999999999996,
+          "text": "diário, como sabonete líquido e papel higiênico, fazem"
+        },
+        {
+          "y": 191.77999999999997,
+          "text": "parte da limpeza concorrente."
+        },
+        {
+          "y": 204.01999999999998,
+          "text": "( ) A limpeza concorrente é realizada apenas de forma"
+        },
+        {
+          "y": 216.14,
+          "text": "eventual, sendo restrita a situações emergenciais ou a"
+        },
+        {
+          "y": 228.40999999999997,
+          "text": "situações em que haja acúmulo excessivo de sujidades"
+        },
+        {
+          "y": 240.64999999999998,
+          "text": "visíveis."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "E - E - C."
+        },
+        {
+          "letter": "B",
+          "text": "C - C - E."
+        },
+        {
+          "letter": "C",
+          "text": "C - E - E."
+        },
+        {
+          "letter": "D",
+          "text": "E - C - C."
+        }
+      ],
+      "optionsStartY": 265.01,
+      "sourcePage": 8,
+      "sourceColumn": 0,
+      "startY": 57.48000000000002,
+      "endY": 322.60999999999996,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "79047923-e7c3-45d5-be08-550d9031822e",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026CEGOBJETIVAPMSOSSEGO14",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 40,
+      "heading": "",
+      "stem": "No que se refere ao descarte de resíduos, avaliar se as afirmativas são certas (C) ou erradas (E) e assinalar a sequência correspondente. ( ) Para o descarte correto, o ideal é utilizar recipientes apropriados para cada tipo de resíduo. ( ) Não há problema em misturar resíduos recicláveis com resíduos orgânicos. ( ) O chamado “lixo eletrônico” deve ser descartado no lixo comum, pois não tem possibilidade de reciclagem.",
+      "stemRows": [
+        {
+          "y": 337.60999999999996,
+          "text": "No que se refere ao descarte de resíduos, avaliar se as"
+        },
+        {
+          "y": 349.72999999999996,
+          "text": "afirmativas são certas (C) ou erradas (E) e assinalar a"
+        },
+        {
+          "y": 361.96999999999997,
+          "text": "sequência correspondente."
+        },
+        {
+          "y": 386.46999999999997,
+          "text": "( ) Para o descarte correto, o ideal é utilizar recipientes"
+        },
+        {
+          "y": 398.59,
+          "text": "apropriados para cada tipo de resíduo."
+        },
+        {
+          "y": 410.83,
+          "text": "( ) Não há problema em misturar resíduos recicláveis com"
+        },
+        {
+          "y": 423.06999999999994,
+          "text": "resíduos orgânicos."
+        },
+        {
+          "y": 435.18999999999994,
+          "text": "( ) O chamado “lixo eletrônico” deve ser descartado no lixo"
+        },
+        {
+          "y": 447.42999999999995,
+          "text": "comum, pois não tem possibilidade de reciclagem."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "C - C - E."
+        },
+        {
+          "letter": "B",
+          "text": "E - E - C."
+        },
+        {
+          "letter": "C",
+          "text": "C - E - E."
+        },
+        {
+          "letter": "D",
+          "text": "E - C - C."
+        }
+      ],
+      "optionsStartY": 471.90999999999997,
+      "sourcePage": 8,
+      "sourceColumn": 0,
+      "startY": 337.60999999999996,
+      "endY": 809.04,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "8a8d78f4-e92d-4cf7-9e28-177f7bcdd4c1",
+      "examId": "23221215-97e4-442b-860a-db7b1ae490e9",
+      "code": "Q2026CEGOBJETIVAPMSOSSEGO15",
+      "year": "2026",
+      "banca": "OBJETIVA",
+      "orgao": "PM-SOSSEGO",
+      "answer": "C",
       "status": "active",
       "secondary": [],
       "aliases": [],
