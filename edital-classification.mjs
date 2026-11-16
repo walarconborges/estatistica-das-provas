@@ -154,6 +154,7 @@ function sectionFor(q,exam,cargo){
   return null;
  }
  if(code==='RL'||code==='MA'||/RACIOCINIO LOGICO|MATEMATICA/.test(discipline))return 'raciocinio';
+ if(/\bLGPD\b|13\.?709|LEI GERAL DE PROTECAO DE DADOS/.test(stem))return 'especificos';
  if(code==='LE'||/LEGISLACAO|DIREITO ADMINISTRATIVO|DIREITO CONSTITUCIONAL/.test(discipline))return 'legislacao';
  if(code==='CG'||/CONHECIMENTOS GERAIS|ATUALIDADES|HISTORIA|GEOGRAFIA/.test(discipline))return 'gerais';
  if(code==='IN'||/INFORMATICA|TECNOLOGIA DA INFORMACAO/.test(discipline))return 'especificos';
@@ -197,10 +198,19 @@ export function classifyForCargo(q,exam,cargoId='505'){
    return pending(section.title,'Adaptação ainda não comprovada.');
   }
   if(foreignLocalLaw(lawText))return denied('Regra municipal de outro ente não equivale automaticamente à de Candeias.');
+  const origin=norm([exam?.orgao,exam?.title].join(' '));
+  if(municipalLaw(lawText)&&/BRUSQUE|VOTORANTIM|PORTO VELHO|ARIQUEMES|JI PARANA/.test(origin)&&!candeiasLaw(lawText))
+   return denied('Norma municipal do concurso de origem, sem correspondência verificada em Candeias.');
   if(municipalLaw(lawText)&&!candeiasLaw(lawText)&&
     !/LEI ORGANICA DO MUNICIPIO/.test(lawText))return pending(section.title,
      'Sem identificação inequívoca da norma municipal exigida pelo edital.');
  }
+ if(cargo==='202'&&sectionId==='matematica'&&
+  /L[ÓO]GICA PROPOSICIONAL|PROPOSI[CÇ][ÃA]O|TABELA VERDADE|AN[AÁ]LISE COMBINAT[ÓO]RIA|PROBABILIDADE|DERIVADA|INTEGRAL/.test(stem))
+  return denied('Tema de raciocínio avançado não expresso no programa de Matemática do cargo 202.');
+ if(cargo==='505'&&sectionId==='raciocinio'&&
+  /GEOMETRIA ANAL[IÍ]TICA|TRIGONOMETRIA|C[AÁ]LCULO DIFERENCIAL/.test(stem))
+  return denied('Assunto matemático não contemplado no programa do cargo 505.');
  const matcher=(cargo==='202'?rx202:rx505)[sectionId]||[];
  // Para Português e Matemática, uma mesma ideia pode ter redações diversas:
  // explicitamos equivalências sem exigir que a frase do edital seja idêntica.
@@ -215,12 +225,6 @@ export function classifyForCargo(q,exam,cargoId='505'){
    reason:'Correspondência conceitual ou terminológica com o Anexo IV.'};
  }
  if(sectionId==='legislacao')return denied('Lei não incluída nas normas municipais exigidas.');
- if(cargo==='202'&&sectionId==='matematica'&&
-  /L[ÓO]GICA PROPOSICIONAL|PROPOSI[CÇ][ÃA]O|TABELA VERDADE|AN[AÁ]LISE COMBINAT[ÓO]RIA|PROBABILIDADE|DERIVADA|INTEGRAL/.test(stem))
-  return denied('Tema de raciocínio avançado não expresso no programa de Matemática do cargo 202.');
- if(cargo==='505'&&sectionId==='raciocinio'&&
-  /GEOMETRIA ANAL[IÍ]TICA|TRIGONOMETRIA|C[AÁ]LCULO DIFERENCIAL/.test(stem))
-  return denied('Assunto matemático não contemplado no programa do cargo 505.');
  return pending(section.title,'Disciplina prevista, mas o subassunto exige conferência por equivalência.');
 }
 export function subjectSummary(questions,getExam,cargoId){
