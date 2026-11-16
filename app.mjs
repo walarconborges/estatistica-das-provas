@@ -307,7 +307,7 @@ function filterForm(kind='questions'){
   selectField('year','Ano',u.years,currentFilter.year)+
   selectField('orgao','Órgão',u.orgaos,currentFilter.orgao)+
   (id==='505'?'<div class="field"><label>Legislação municipal</label><select name="studyArea">'+
-    '<option value="candeias" '+(currentFilter.studyArea!=='original'?'selected':'')+' >Candeias adaptadas</option>'+
+    '<option value="candeias" '+(currentFilter.studyArea!=='original'?'selected':'')+'>Candeias adaptadas</option>'+
     '<option value="original" '+(currentFilter.studyArea==='original'?'selected':'')+'>Versão original das provas</option>'+
    '</select></div>':'')+
   historyOutcomeFilter()+
