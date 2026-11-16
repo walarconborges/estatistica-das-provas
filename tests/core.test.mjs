@@ -214,3 +214,22 @@ test('preenchimento manual resolve apenas metadados ausentes sem trocar informa�
  assert.throws(()=>completeExamMetadata(missing,{year:'9999'},2026),/Ano informado inválido/);
  assert.throws(()=>completeExamMetadata(missing,{orgao:'x'},2026),/nome válido/);
 });
+
+
+test('CISCOPAR: identifica Legalle, órgão, cargo e disciplinas com textos reais da prova',()=>{
+ const cover='CADERNO DE PROVA\nConsórcio Intermunicipal de Saúde\nCosta Oeste do Paraná - CISCOPAR\n'+
+  'Concurso Público 01/2026\nANALISTA EM IN FORMATICA\neleggll*\n50 questões\n4 alternativas';
+ const key='CONSÓRCIO INTERMUNICIPAL DE SAÚDE COSTA OESTE DO PARANÁ - CISCOPAR\n'+
+  'CONCURSO PÚBLICO 01/2026\nAnalista em Informática - Tabela 3';
+ const m=inferExamMetadata(cover,'analista_em_informatica.pdf',key,'gabarito_definitivo.pdf');
+ assert.equal(m.banca,'LEGALLE');
+ assert.equal(m.orgao,'CISCOPAR');
+ assert.equal(m.year,'2026');
+ assert.equal(m.title,'2026 — LEGALLE — CISCOPAR — Analista em Informática');
+ assert.deepEqual(m.missing,[]);
+ const ranges=[[1,'LP'],[10,'LP'],[11,'MA'],[13,'MA'],[14,'IN'],[16,'IN'],[17,'LE'],[20,'LE'],[21,'IN'],[50,'IN']];
+ for(const [n,code] of ranges){
+  const guessed={discipline:'Língua Portuguesa',disciplineCode:'LP',topic:'Geral',topicCode:'G'};
+  assert.equal(classifyByExamDivision({originalNumber:n},m,guessed).disciplineCode,code,'questão '+n);
+ }
+});
