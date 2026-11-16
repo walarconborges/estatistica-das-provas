@@ -27531,6 +27531,14 @@
       "answer": "A",
       "simulationId": "",
       "at": "2026-11-16T02:02:53.332Z"
+    },
+    {
+      "id": "e04abcf6-2f16-4ae0-8dd8-e3a1c24b1c61",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "c1a187a9-a139-42bc-bc22-605337d838d5",
+      "answer": "C",
+      "simulationId": "",
+      "at": "2026-11-16T18:33:23.840Z"
     }
   ],
   "simulations": [
