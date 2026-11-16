@@ -1135,3 +1135,33 @@ test('FCPC: TEXTO isolado e intervalo impresso vinculam o texto às questões 1�
   assert.match(q.contextText,/medidas de proteção existentes/);
  }
 });
+
+test('FCPC: cargo do gabarito quebra em duas linhas e arquivo contém (1)',()=>{
+ const numbers=(first,last)=>Array.from({length:last-first+1},(_,i)=>String(first+i).padStart(2,'0')).join(' ');
+ const grid=letter=>[
+  'PROVA 1 - LÍNGUA PORTUGUESA',numbers(1,10),Array(10).fill('A').join(' '),
+  'PROVA 2 - LEGISLAÇÃO',numbers(11,20),Array(10).fill('B').join(' '),
+  'PROVA 3 - CONHECIMENTOS ESPECÍFICOS',numbers(21,35),Array(15).fill(letter).join(' '),
+  numbers(36,50),Array(15).fill(letter).join(' ')
+ ].join('\n');
+ const texts=[
+  '[[PAGE:1]]\nGABARITO PRELIMINAR\nAgente Administrativo\n'+grid('C'),
+  '[[PAGE:2]]\nGABARITO PRELIMINAR\nAuxiliar de Serviços\nGerais\n'+grid('D'),
+  '[[PAGE:3]]\nGABARITO PRELIMINAR\nCopeiro\n'+grid('A'),
+  '[[PAGE:4]]\nGABARITO PRELIMINAR\nAssessor Técnico\n'+grid('B')
+ ].join('\n');
+ const exam='[[PAGE:1]]\nCÂMARA MUNICIPAL DE ARACATI\nAuxiliar de Serviços Gerais\n50 (cinquenta) questões';
+ const chosen=chosenAnswerSection(texts,exam,{
+  examFilename:'auxiliar_de_servicos_gerais (1).pdf',
+  examTitle:'2026 — FCPC — CM-ARACATI — Auxiliar de Serviços Gerais'
+ });
+ assert.equal(chosen.error,null);
+ assert.equal(chosen.section,'AUXILIAR DE SERVICOS GERAIS');
+ const key=parseGridKey(chosen.text);
+ assert.equal(Object.keys(key).length,50);
+ assert.equal(key[21],'D');
+ assert.equal(key[50],'D');
+ const notMatched=chosenAnswerSection(texts,'[[PAGE:1]]\nCargo não encontrado',{examFilename:'prova.pdf'});
+ assert.match(notMatched.error,/Cargos lidos:/);
+ assert.ok(notMatched.error.includes('AUXILIAR DE SERVICOS GERAIS'));
+});
