@@ -533,7 +533,7 @@ async function importData(form){
         });
     }
     if(selected.error){
-      if(selected.availableSections?.length){
+      if(selected.availableSections?.length>1){
         const holder=form.querySelector('#answer-page-review');
         if(holder){
           const previous=String(fd.get('manualAnswerPage')||'');
