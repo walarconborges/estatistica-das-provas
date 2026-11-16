@@ -233,3 +233,24 @@ test('CISCOPAR: identifica Legalle, órgão, cargo e disciplinas com textos reai
   assert.equal(classifyByExamDivision({originalNumber:n},m,guessed).disciplineCode,code,'questão '+n);
  }
 });
+
+
+test('Objetiva 2026 Sossêgo: reconhece banca, prefeitura, cargo 202 e número de questões',()=>{
+ const cover='MUNICÍPIO DE SOSSÊGO/PB\nConcurso Público nº 01/2026\n'+
+  'https://concursos.objetivas.com.br\nCADERNO DE PROVA\n'+
+  'Auxiliar de Serviços Gerais\nDireitos autorais reservados à Objetiva Concursos Ltda.\n'+
+  'este caderno de prova, que contém 40 questões';
+ const answer='MUNICÍPIO DE SOSSÊGO/PB\nCONCURSO PÚBLICO Nº 01/2026\nGABARITO PRELIMINAR\n'+
+  'AUXILIAR DE SERVIÇOS GERAIS\n01) D 11) C 21) A 31) B';
+ const meta=inferExamMetadata(cover,'auxiliar_de_servicos_gerais.pdf',answer,'gabarito(2).pdf');
+ assert.equal(meta.banca,'OBJETIVA');
+ assert.equal(meta.orgao,'PM-SOSSEGO');
+ assert.equal(meta.year,'2026');
+ assert.equal(meta.title,'2026 — OBJETIVA — PM-SOSSEGO — Auxiliar de Serviços Gerais');
+ assert.deepEqual(meta.missing,[]);
+ for(const [number,discipline] of [[1,'LP'],[15,'LP'],[16,'MA'],[25,'MA'],[26,'CE'],[40,'CE']]){
+  const inferred={discipline:'Geral',disciplineCode:'CG',topic:'Geral',topicCode:'G'};
+  const updated=classifyByExamDivision({originalNumber:number},meta,inferred);
+  assert.equal(updated.disciplineCode,discipline,'Questão '+number);
+ }
+});
