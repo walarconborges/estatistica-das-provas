@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {spatialLines,spatialQuestions,chosenAnswerSection,codedAnswerTables,verifiedExamJob,jobTitleMatches,identifyBookletCode,parseGridKey,questionIntegrity,isInstructionSheet,declaredQuestionCount,declaredAlternativeCount,inferredAlternativeCount,normalizeQuestionHeading,humanizePdfText,attachSuperscriptOrdinals,formatQuestionStem} from '../pdf-layout.mjs';
+import {spatialLines,spatialQuestions,chosenAnswerSection,codedAnswerTables,pairedAnswerSections,verifiedExamJob,jobTitleMatches,identifyBookletCode,parseGridKey,questionIntegrity,isInstructionSheet,declaredQuestionCount,declaredAlternativeCount,inferredAlternativeCount,normalizeQuestionHeading,humanizePdfText,attachSuperscriptOrdinals,formatQuestionStem} from '../pdf-layout.mjs';
 import {parseKey,inferExamMetadata,classifyByExamDivision} from '../core.mjs';
 function item(str,x,y,width=40){return {str,transform:[1,0,0,1,x,842-y],width};}
 test('leitura espacial separa duas colunas e preserva a numeração original',()=>{
@@ -1448,4 +1448,103 @@ test('Objetiva Q21: remove rodapé acoplado à alternativa D em extração espac
  assert.equal(humanizePdfText('E - C - C.\nwww.objetivas.com.br'),'E - C - C.');
  const lines=spatialLines([item('www.objetivas.com.br',40,600,150)],595,842);
  assert.deepEqual(lines,[],'rodapé independente não deve virar texto da questão');
+});
+
+
+test('Legalle 2026 Cândido Godói: não confunde Lei 15.474 com a questão 15 nem a capa de rascunho',()=>{
+ const cover={number:1,width:595,height:842,lines:[
+  {col:0,x:65,y:80,text:'AUXILIAR DE SERVIÇOS GERAIS'},
+  {col:0,x:65,y:200,text:'Município de Cândido Godói/RS'},
+  {col:0,x:65,y:235,text:'Concurso Público 01/2026'},
+  {col:0,x:65,y:260,text:'PROVA TEÓRICO-OBJETIVA'},
+  {col:0,x:65,y:300,text:'40 questões'},
+  {col:0,x:65,y:390,text:'4 alternativas'},
+  {col:0,x:65,y:690,text:'RASCUNHO PARA GABARITO'},
+  {col:0,x:108,y:728,text:'01 06 11 16 21 26 31 36'},
+  {col:0,x:108,y:743,text:'02 07 12 17 22 27 32 37'}
+ ]};
+ assert.equal(isInstructionSheet(cover),true);
+ const p2={number:2,width:595,height:842,lines:[
+  {col:0,x:40,y:70,text:'Para responder às questões 01 a 15, leia o texto abaixo.'},
+  {col:0,x:40,y:97,text:'Mulheres podem comprar e usar spray de pimenta para defesa pessoal'},
+  {col:0,x:40,y:135,text:'15.474, sancionada pela Presidência da República e publicada no Diário Oficial.'},
+  {col:1,x:315,y:200,text:'Questão 01. Conforme o primeiro parágrafo, qual é o objetivo?'},
+  ...'ABCD'.split('').map((letter,i)=>({col:1,x:320,y:241+i*23,text:'('+letter+') Alternativa '+letter}))
+ ]};
+ const p3={number:3,width:595,height:842,lines:[
+  {col:0,x:40,y:80,text:'Questão 15. Assinale a alternativa de concordância correta.'},
+  ...'ABCD'.split('').map((letter,i)=>({col:0,x:43,y:111+i*22,text:'('+letter+') Opção '+letter}))
+ ]};
+ const parsed=spatialQuestions([cover,p2,p3]).questions;
+ assert.deepEqual(parsed.map(q=>q.originalNumber),[1,15]);
+ assert.equal(parsed.filter(q=>q.originalNumber===15).length,1);
+ assert.equal(parsed[0].expectedAlternatives,4);
+ assert.equal(parsed[1].options.length,4);
+ const actualNums=Array.from({length:40},(_,i)=>i+1);
+ const full=[cover];
+ for(let page=2;page<=9;page++){
+  const lines=[];
+  for(let n=5*(page-2)+1;n<=5*(page-1);n++){
+   const y=58+(n%5)*130;
+   lines.push({col:0,x:40,y,text:'Questão '+n+'. Enunciado da questão '+n+'.'});
+   for(const [i,letter] of 'ABCD'.split('').entries())
+    lines.push({col:0,x:52,y:y+22+i*17,text:'('+letter+') Alternativa '+letter});
+  }
+  full.push({number:page,width:595,height:842,lines});
+ }
+ // A capa não altera a quantidade esperada, nem produz perguntas.
+ assert.equal(declaredQuestionCount(full),40);
+ assert.equal(inferredAlternativeCount(full),4);
+ const forty=spatialQuestions(full).questions;
+ assert.equal(forty.length,40);
+ assert.deepEqual(forty.map(q=>q.originalNumber).sort((a,b)=>a-b),actualNums);
+});
+
+test('Legalle: extrai 40 respostas do cargo Auxiliar em gabarito com 6 cargos na mesma página',()=>{
+ const official=[
+ 'C','B','A','C','B','C','C','B','D','C',
+ 'D','C','A','D','B','B','C','A','D','B',
+ 'C','D','A','A','C','A','C','B','C','C',
+ 'A','A','B','C','B','D','D','D','B','C'];
+ const alternate=Array.from({length:40},(_,i)=>'ABCD'[i%4]);
+ const rows=letters=>Array.from({length:4},(_,r)=>
+  Array.from({length:10},(_,i)=>{
+   const n=r*10+i+1;
+   return String(n).padStart(2,'0')+') '+letters[n-1];
+  }).join('     ')).join('\n');
+ const names=[
+  'Agente de Combate a Endemias',
+  'Agente de Controle Interno',
+  'Agente de Saúde',
+  'Assistente Social',
+  'Auxiliar de Serviços Gerais',
+  'Eletricista'
+ ];
+ const gabarito='[[PAGE:1]]\nPREFEITURA MUNICIPAL DE CÂNDIDO GODÓI\n'+
+  'CONCURSO PÚBLICO 01/2026\nwww.institutolegalle.org.br\n'+
+  'GABARITOS PRELIMINARES DA PROVA TEÓRICO-OBJETIVA\n'+
+  names.map((name,i)=>name+'\n'+rows(i===4?official:alternate)).join('\n');
+ const groups=pairedAnswerSections(gabarito);
+ assert.equal(groups.length,6);
+ assert.deepEqual(groups.map(x=>x.title),names.map(x=>x.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toUpperCase()));
+ assert.deepEqual(groups.map(x=>x.count),Array(6).fill(40));
+ const exam='[[PAGE:1]]\nAUXILIAR DE SERVIÇOS GERAIS\n'+
+  'Município de Cândido Godói/RS\nConcurso Público 01/2026\n40 questões';
+ const result=chosenAnswerSection(gabarito,exam,{
+  examFilename:'auxiliar_de_servicos_gerais (3).pdf',
+  examTitle:'2026 — LEGALLE — PM-CANDIDO-GODOI — Auxiliar de Serviços Gerais'
+ });
+ assert.equal(result.error,null);
+ assert.equal(result.format,'pairs');
+ assert.equal(result.section,'AUXILIAR DE SERVICOS GERAIS');
+ const answers=parseKey(result.text);
+ assert.equal(Object.keys(answers).length,40);
+ official.forEach((letter,i)=>assert.equal(answers[i+1],letter,'questão '+(i+1)));
+ assert.equal(answers[1],'C');
+ assert.equal(answers[40],'C');
+ const wrong=chosenAnswerSection(gabarito,'[[PAGE:1]]\nCargo não listado',{examFilename:'cargo_desconhecido.pdf'});
+ assert.ok(wrong.error);
+ const another=chosenAnswerSection(gabarito,'[[PAGE:1]]\nAGENTE DE SAÚDE',{examFilename:'agente_de_saude.pdf'});
+ assert.equal(another.error,null);
+ assert.equal(parseKey(another.text)[1],'A');
 });
