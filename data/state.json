@@ -30669,6 +30669,14 @@
       "answer": "B",
       "simulationId": "",
       "at": "2026-11-16T19:03:57.529Z"
+    },
+    {
+      "id": "ed77c472-9d1f-45a8-98a8-3148d999b7e0",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "c556f4b7-7a26-4ed8-be45-e652d83a295a",
+      "answer": "C",
+      "simulationId": "",
+      "at": "2026-11-16T19:07:29.389Z"
     }
   ],
   "simulations": [
