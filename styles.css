@@ -89,3 +89,18 @@ button.alternative-cross[aria-pressed="true"]:not(.quiet):not(.plain):not(.tab-b
 .legal-basis .hint{font-size:.85rem}
 .legal-basis button{margin-top:7px}
 @media print{.legal-basis button{display:none!important}.legal-basis{background:transparent;border-left:2px solid #444}}
+
+
+/* Consulta opcional ao Anexo IV do cargo 505. Recolhido por padrão. */
+.program-panel{
+  border:1px solid #d8e1e8;
+  border-radius:9px;
+  padding:13px 16px;
+  margin:12px 0 18px;
+  background:#fff;
+}
+.program-panel summary{cursor:pointer;font-weight:600;color:#245873}
+.program-section{margin:14px 0}
+.program-section h3{font-size:1rem;margin:6px 0}
+.program-section ul{padding-left:22px;margin:7px 0;line-height:1.5}
+.program-section li{margin:4px 0}
