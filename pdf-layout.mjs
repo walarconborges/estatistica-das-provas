@@ -142,7 +142,8 @@ export function spatialLines(items,pageWidth,pageHeight,{split=true}={}){
       (fraction.test(prev.str)&&/^[\p{L}\p{N}]/u.test(it.str))
     );
     const spaceAfterOrdinal=prev&&/º$/u.test(prev.str)&&/^[\p{L}\p{N}]/u.test(it.str);
-    if(prev&&(it.x>prev.x+prev.width+1||spaceNearFraction||spaceAfterOrdinal))line+=' ';
+    const spaceAfterAlternative=prev&&/^\(?[A-E]\)?[.):\-]?$/i.test(prev.str)&&/^[\p{L}\p{N}]/u.test(it.str);
+    if(prev&&(it.x>prev.x+prev.width+1||spaceNearFraction||spaceAfterOrdinal||spaceAfterAlternative))line+=' ';
     line+=it.str;prev=it;
    }
    row.text=line.replace(/\s+/g,' ').trim();
