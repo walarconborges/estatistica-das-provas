@@ -110,6 +110,23 @@ export function classify(stem,heading='',options=[]){
 export function classifyByExamDivision(q,meta,guessed){
  const n=Number(q.originalNumber),b=textNorm(meta?.banca),org=textNorm(meta?.orgao),title=textNorm(meta?.title);
 
+ // Caderno Instituto Consulplan, Câmara Municipal de Pouso Alto/MG:
+ // cabeçalhos impressos: 1–10 Português, 11–20 Informática,
+ // 21–30 Conhecimentos Gerais. A divisão original prevalece sobre
+ // termos legais ou matemáticos citados dentro das questões.
+ if(b==='CONSULPLAN'&&org==='CM-POUSO-ALTO'&&
+   title.includes('AUXILIAR DE SERVICOS GERAIS')&&n>=1&&n<=30){
+  const [discipline,disciplineCode,topic]=n<=10?
+   ['Língua Portuguesa','LP','Geral']:n<=20?
+   ['Informática','IN','Informática geral']:
+   ['Conhecimentos Gerais','CG','Geral'];
+  return {...guessed,discipline,disciplineCode,
+   topic:guessed.disciplineCode===disciplineCode?guessed.topic:topic,
+   topicCode:guessed.disciplineCode===disciplineCode?guessed.topicCode:'G',
+   confidence:'alta'};
+ }
+
+
  // Instituto Legalle/Cândido Godói: a prova tem quatro blocos definidos
  // pelo próprio caderno. Cabeçalhos de Matemática e Atualidades apresentam
  // glifos corrompidos, por isso a divisão oficial prevalece.
@@ -530,6 +547,7 @@ export function inferExamMetadata(examText='',examFilename='',keyText='',keyFile
   ['PM-CANDIDO-GODOI',/\b(?:MUNICIPIO|PREFEITURA MUNICIPAL)\s+DE\s+CANDIDO\s+GODOI\b/],
   ['CMVOTORANTIM',/CAMARA MUNICIPAL DE VOTORANTIM/],
   ['CM-ARACATI',/\bCAMARA MUNICIPAL DE ARACATI\b/],
+  ['CM-POUSO-ALTO',/\bCAMARA MUNICIPAL DE POUSO ALTO\s*\/\s*MG\b|\bCAMARA MUNICIPAL DE POUSO ALTO\b/],
   ['SEMUSA',/\bSEMUSA\b|SECRETARIA MUNICIPAL DE SAUDE/],
   ['SEMED',/\bSEMED\b|SECRETARIA MUNICIPAL DE EDUCACAO/],
   ['SEDUC',/\bSEDUC\b|SECRETARIA DE ESTADO DA EDUCACAO/],
@@ -545,7 +563,19 @@ export function inferExamMetadata(examText='',examFilename='',keyText='',keyFile
   ['IFSP',/\bIFSP\b/]
  ];
  const find=items=>items.find(([,p])=>p.test(source))?.[0]||'NI';
- const banca=find(bancas),orgao=find(orgaos);
+ const orgao=find(orgaos);
+ let banca=find(bancas);
+ // Cadastro verificado da prova de 2025 da Câmara Municipal de
+ // Pouso Alto/MG (Edital 01/2025, Tipo 1 - Branca): o nome
+ // "INSTITUTO CONSULPLAN" está APENAS no logotipo vetorial
+ // do PDF, não na camada de texto recuperada pelo navegador.
+ // A inferência só vale para a combinação específica do edital,
+ // órgão e tipo/caderno. Não aplicar genericamente a outros anos.
+ if(banca==='NI'&&orgao==='CM-POUSO-ALTO'&&year==='2025'&&
+  /\bEDITAL\s*(?:N[Oº°]?\s*)?0?1\s*\/\s*2025\b/.test(source)&&
+  /\bTIPO\s*1\s*[-–]?\s*BRANCA\b/.test(source)&&
+  /\bAUXILIAR DE SERVICOS GERAIS\b/.test(source))
+   banca='CONSULPLAN';
  const missing=[...(year==='0000'?['ano']:[]),...(banca==='NI'?['banca']:[]),...(orgao==='NI'?['órgão']:[])];
  const basename=filename.replace(/\.pdf$/i,'').replace(/[_-]+/g,' ').replace(/\s+/g,' ').trim().slice(0,90);
  const namedCargo=source.match(/ANALISTA (?:DE|EM) IN\s*FORMATICA(?:\s+II)?/);
