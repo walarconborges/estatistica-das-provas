@@ -1371,3 +1371,56 @@ test('gabarito tabular genérico: FEPESE F1 de 35 questões não mistura M1/M2/S
  assert.equal(Object.keys(parseGridKey(other.text)).length,40);
  assert.equal(parseGridKey(other.text)[1],'D');
 });
+
+
+test('FEPESE F1: Texto em duas colunas acompanha Português 1 a 5 em páginas distintas',()=>{
+ const cover={number:1,width:595,height:842,lines:[
+  {col:0,x:45,y:30,text:'FEPESE'},
+  {col:0,x:48,y:70,text:'F1 Auxiliar de Serviços Gerais'},
+  {col:0,x:48,y:150,text:'35 questões'}
+ ]};
+ const p3={number:3,width:595,height:842,lines:[
+  {col:0,x:40,y:40,text:'FEPESE'},
+  {col:0,x:44,y:70,text:'Língua Portuguesa 5 questões'},
+  {col:0,x:44,y:91,text:'Texto'},
+  {col:0,x:45,y:113,text:'Já notou que seus avós encolhem enquanto você cresce?'},
+  {col:0,x:45,y:139,text:'Beatriz, de 11 anos, passa parte das férias na casa da avó Thereza.'},
+  {col:0,x:45,y:161,text:'Juntas, adoram pintar quadros de gatinhos e paisagens coloridas.'},
+  {col:0,x:45,y:184,text:'Os ossos funcionam como pilares que sustentam o corpo.'},
+  {col:0,x:45,y:206,text:'Com o tempo, ficam mais fracos e achatados.'},
+  {col:1,x:315,y:60,text:'Os músculos também mudam e puxam os ossos.'},
+  {col:1,x:315,y:83,text:'A coluna é um tubo de ossos empilhados nas costas.'},
+  {col:1,x:315,y:106,text:'A medicina recomenda alimentação equilibrada.'},
+  {col:1,x:315,y:129,text:'Fonte: Folhinha, 2025.'},
+  {col:1,x:310,y:195,text:'1. Segundo o texto, o que Beatriz e sua avó gostam de fazer juntas?'},
+  ...'abcde'.split('').map((letter,i)=>({col:1,x:312,y:235+i*24,text:letter+'. '+letter+' atividade.'})),
+  {col:1,x:310,y:386,text:'2. No trecho citado, o que significa a comparação?'},
+  ...'abcde'.split('').map((letter,i)=>({col:1,x:312,y:426+i*24,text:letter+'. '+letter+' significado.'}))
+ ]};
+ const p4={number:4,width:595,height:842,lines:[
+  {col:0,x:42,y:35,text:'FEPESE'},
+  {col:0,x:43,y:70,text:'3. Considere a parte a seguir.'},
+  ...'abcde'.split('').map((letter,i)=>({col:0,x:45,y:109+i*20,text:letter+'. '+letter+' palavra.'})),
+  {col:0,x:43,y:243,text:'4. No trecho citado, qual das palavras é pronome?'},
+  ...'abcde'.split('').map((letter,i)=>({col:0,x:45,y:282+i*20,text:letter+'. '+letter+' termo.'})),
+  {col:0,x:43,y:416,text:'5. No trecho, qual verbo está empregado no passado?'},
+  ...'abcde'.split('').map((letter,i)=>({col:0,x:45,y:455+i*20,text:letter+'. '+letter+' verbo.'})),
+  {col:1,x:315,y:70,text:'6. O território brasileiro é organizado em unidades federativas.'},
+  ...'abcde'.split('').map((letter,i)=>({col:1,x:315,y:115+i*20,text:letter+'. '+letter+' afirmação.'}))
+ ]};
+ const result=spatialQuestions([cover,p3,p4]);
+ assert.equal(result.questions.length,6);
+ assert.equal(result.contexts.length,1);
+ const context=result.contexts[0];
+ assert.equal(context.from,1);
+ assert.equal(context.to,5);
+ assert.match(context.text,/Beatriz/);
+ assert.match(context.text,/Os músculos também mudam/);
+ for(let n=1;n<=5;n++){
+  const q=result.questions.find(item=>item.originalNumber===n);
+  assert.ok(q,'questão '+n);
+  assert.deepEqual(q.contextRange,[1,5]);
+  assert.equal(q.contextText,context.text);
+ }
+ assert.equal(result.questions.find(q=>q.originalNumber===6).contextText,'');
+});
