@@ -220,6 +220,7 @@ function importScreen(){
         <div class="field"><label for="manual-orgao">Órgão da prova</label><input id="manual-orgao" name="manualOrgao" maxlength="70" placeholder="Ex.: UNESP"></div>
         <div class="field"><label for="manual-code">Código do caderno (se houver vários gabaritos)</label><input id="manual-code" name="manualCode" maxlength="3" inputmode="numeric" placeholder="Ex.: 002"></div>
       </div>
+      <div id="answer-page-review" aria-live="polite"></div>
     </details>
     <div class="actions"><button type="submit" id="import-submit" class="primary">Importar questões</button></div>
   </form>
@@ -514,8 +515,30 @@ async function importData(form){
       banca:String(fd.get('manualBanca')||''),
       orgao:String(fd.get('manualOrgao')||'')
     });
-    const selected=chosenAnswerSection(keyRead.text,examRead.text,{examFilename:pdf.name,examTitle:meta.title,bookletCode:String(fd.get('manualCode')||'')});
-    if(selected.error)throw Error(selected.error);
+    const selected=chosenAnswerSection(keyRead.text,examRead.text,{
+      examFilename:pdf.name,examTitle:meta.title,
+      bookletCode:String(fd.get('manualCode')||''),
+      answerPage:String(fd.get('manualAnswerPage')||'')
+    });
+    if(selected.error){
+      if(selected.availableSections?.length){
+        const holder=form.querySelector('#answer-page-review');
+        if(holder){
+          const previous=String(fd.get('manualAnswerPage')||'');
+          holder.innerHTML='<div class="field span-all" style="margin-top:12px">'+
+            '<label for="manual-answer-page">Cargo no PDF do gabarito</label>'+
+            '<select id="manual-answer-page" name="manualAnswerPage" required>'+
+              '<option value="">Selecione o cargo correto</option>'+
+              selected.availableSections.map(item=>'<option value="'+h(item.pageNumber)+'" '+
+                (previous===String(item.pageNumber)?'selected':'')+'>'+
+                h('Página '+item.pageNumber+' — '+item.role)+'</option>').join('')+
+            '</select><p class="hint">Use a identificação impressa no gabarito. Somente a página escolhida será considerada, e todas as respostas continuarão sendo verificadas.</p></div>';
+          const panel=holder.closest('details');
+          if(panel)panel.open=true;
+        }
+      }
+      throw Error(selected.error);
+    }
     const key=selected.format==='grid'?parseGridKey(selected.text):parseKey(selected.text);
     const parsed=examRead.questions.map(q=>{const category=classify(q.stem,q.heading);if(category.disciplineCode==='CE'&&/ANALISTA DE INFORMÁTICA/i.test(meta.title)){category.discipline='Informática';category.disciplineCode='IN';category.confidence='média';}return {...q,...classifyByExamDivision(q,meta,category)};});
     // O total oficial é obtido exclusivamente da capa, quando informado.
