@@ -77,6 +77,12 @@ export function classify(stem,heading='',options=[]){
  */
 export function classifyByExamDivision(q,meta,guessed){
  const n=Number(q.originalNumber),b=textNorm(meta?.banca),org=textNorm(meta?.orgao),title=textNorm(meta?.title);
+ if(b==='OBJETIVA'&&org==='PM-SOSSEGO'&&title.includes('AUXILIAR DE SERVICOS GERAIS')&&n>=1&&n<=40){
+  const [discipline,disciplineCode]=n<=15?['Língua Portuguesa','LP']:n<=25?['Matemática','MA']:['Conhecimentos específicos','CE'];
+  return {...guessed,discipline,disciplineCode,
+   topic:guessed.disciplineCode===disciplineCode?guessed.topic:'Geral',
+   topicCode:guessed.disciplineCode===disciplineCode?guessed.topicCode:'G',confidence:'alta'};
+ }
  if(b==='LEGALLE'&&org==='CISCOPAR'&&title.includes('ANALISTA EM INFORMATICA')&&n>=1&&n<=50){
   const [discipline,disciplineCode,defaultTopic]=n<=10?['Língua Portuguesa','LP','Geral']:
    n<=13?['Matemática','MA','Geral']:
@@ -440,6 +446,7 @@ export function inferExamMetadata(examText='',examFilename='',keyText='',keyFile
   ['QUADRIX',/\bQUADRIX\b/],
   ['FEPESE',/\bFEPESE\b/],
   ['LEGALLE',/\bLEGALLE\b|ELEGGLL|LEGALLE\s+CONCURSOS/],
+  ['OBJETIVA',/\bOBJETIVA\s+(?:CONCURSOS|INSTITUTO)\b|\bOBJETIVAS?\.COM\.BR\b|\bCONCURSOS\.OBJETIVAS\.COM\.BR\b/],
   ['UNOCHAPECO',/\bUNOCHAPECO\b/],
   ['FURB',/\bFURB\b/],
   ['FAUEL',/\bFAUEL\b/]
@@ -448,6 +455,7 @@ export function inferExamMetadata(examText='',examFilename='',keyText='',keyFile
   ['CRQ-V',/CONSELHO REGIONAL DE QUIMICA DA 5(?:A|ª) REGIAO|\bCRQ\s*[-–]?\s*V\b/],
   ['PM-BRUSQUE',/\bMUNICIPIO DE BRUSQUE\b|\bPREFEITURA MUNICIPAL DE BRUSQUE\b/],
   ['CISCOPAR',/\bCISCOPAR\b|CONSORCIO INTERMUNICIPAL DE SAUDE COSTA OESTE DO PARANA/],
+  ['PM-SOSSEGO',/\bMUNICIPIO DE SOSSEGO\b|\bPREFEITURA MUNICIPAL DE SOSSEGO\b/],
   ['CMVOTORANTIM',/CAMARA MUNICIPAL DE VOTORANTIM/],
   ['SEMUSA',/\bSEMUSA\b|SECRETARIA MUNICIPAL DE SAUDE/],
   ['SEMED',/\bSEMED\b|SECRETARIA MUNICIPAL DE EDUCACAO/],
@@ -478,7 +486,7 @@ export function inferExamMetadata(examText='',examFilename='',keyText='',keyFile
  if(area&&fileArea.startsWith(area)&&fileArea.length>area.length)area=fileArea.slice(0,85);
  const cargo=namedCargo?(namedCargo[0].endsWith(' II')?'Analista de Informática II':/ANALISTA EM/.test(namedCargo[0])?'Analista em Informática':'Analista de Informática')+
    (area?' — '+area.toLocaleLowerCase('pt-BR'):''):
-   basename||'Prova importada';
+   /AUXILIAR DE SERVICOS GERAIS/.test(textNorm(filename+'\n'+head))?'Auxiliar de Serviços Gerais':basename||'Prova importada';
  const title=[year==='0000'?'Ano não identificado':year,banca==='NI'?'Banca não identificada':banca,orgao==='NI'?'Órgão não identificado':orgao,cargo].join(' — ');
  return {title,year,banca,orgao,missing};
 }
