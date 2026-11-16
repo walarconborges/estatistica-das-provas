@@ -1,4 +1,4 @@
-import {STORAGE_KEY,newId,fresh,normalizeState,parseExamText,parseKey,inferExamMetadata,classify,classifyByExamDivision,repeatedSupportText,addExam,upgradeRecoveredExam,findPreviouslyImportedExam,recordAttempt,latestAnswer,outcome,stats,filtered,normalizeOutcomeSelection,prioritize,createSimulation,finishSimulation,simulationResult,expire,validAnswer} from './core.mjs';
+import {STORAGE_KEY,newId,fresh,normalizeState,parseExamText,parseKey,inferExamMetadata,completeExamMetadata,classify,classifyByExamDivision,repeatedSupportText,addExam,upgradeRecoveredExam,findPreviouslyImportedExam,recordAttempt,latestAnswer,outcome,stats,filtered,normalizeOutcomeSelection,prioritize,createSimulation,finishSimulation,simulationResult,expire,validAnswer} from './core.mjs';
 import {readPdf} from './pdf-import.mjs';
 import {chosenAnswerSection,parseGridKey,questionIntegrity,declaredQuestionCount} from './pdf-layout.mjs';
 import {createSyncClient} from './sync-client.mjs';
@@ -204,6 +204,16 @@ function importScreen(){
       <div class="field span-all"><label for="key-pdf">PDF do gabarito oficial</label><input id="key-pdf" name="keyPdf" type="file" accept=".pdf,application/pdf" required><p class="hint" id="key-pdf-info">Selecione o arquivo PDF do gabarito.</p></div>
     </div>
     <p class="hint">O ano, a banca, o órgão, o título e as classificações serão identificados automaticamente quando possível. Dados não identificados serão sinalizados para conferência.</p>
+    <details class="program-panel">
+      <summary>Identificação manual — somente se o PDF não permitir reconhecer os dados</summary>
+      <p class="hint">Preencha apenas os campos que não são reconhecidos automaticamente. Consulte a capa ou o gabarito oficial. A verificação das 40 questões e de todas as respostas continua obrigatória.</p>
+      <div class="form-grid" style="margin-top:12px">
+        <div class="field"><label for="manual-year">Ano do concurso</label><input id="manual-year" name="manualYear" inputmode="numeric" maxlength="4" placeholder="Ex.: 2026"></div>
+        <div class="field"><label for="manual-banca">Banca organizadora</label><input id="manual-banca" name="manualBanca" maxlength="70" placeholder="Ex.: VUNESP"></div>
+        <div class="field"><label for="manual-orgao">Órgão da prova</label><input id="manual-orgao" name="manualOrgao" maxlength="70" placeholder="Ex.: UNESP"></div>
+        <div class="field"><label for="manual-code">Código do caderno (se houver vários gabaritos)</label><input id="manual-code" name="manualCode" maxlength="3" inputmode="numeric" placeholder="Ex.: 002"></div>
+      </div>
+    </details>
     <div class="actions"><button type="submit" id="import-submit" class="primary">Importar questões</button></div>
   </form>
   ${latestImportMessage?`<div class="notice info">${h(latestImportMessage)}</div>`:''}`;
@@ -488,8 +498,13 @@ async function importData(form){
   try{
     const examRead=await readPdf(pdf,{images:true,extractQuestions:true});
     const keyRead=await readPdf(keyPdf,{images:false});
-    const meta=inferExamMetadata(examRead.text,pdf.name,keyRead.text,keyPdf.name);
-    const selected=chosenAnswerSection(keyRead.text,examRead.text,{examFilename:pdf.name,examTitle:meta.title});
+    const inferred=inferExamMetadata(examRead.text,pdf.name,keyRead.text,keyPdf.name);
+    const meta=completeExamMetadata(inferred,{
+      year:String(fd.get('manualYear')||''),
+      banca:String(fd.get('manualBanca')||''),
+      orgao:String(fd.get('manualOrgao')||'')
+    });
+    const selected=chosenAnswerSection(keyRead.text,examRead.text,{examFilename:pdf.name,examTitle:meta.title,bookletCode:String(fd.get('manualCode')||'')});
     if(selected.error)throw Error(selected.error);
     const key=selected.format==='grid'?parseGridKey(selected.text):parseKey(selected.text);
     const parsed=examRead.questions.map(q=>{const category=classify(q.stem,q.heading);if(category.disciplineCode==='CE'&&/ANALISTA DE INFORMÁTICA/i.test(meta.title)){category.discipline='Informática';category.disciplineCode='IN';category.confidence='média';}return {...q,...classifyByExamDivision(q,meta,category)};});
