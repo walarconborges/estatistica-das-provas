@@ -255,6 +255,15 @@ function inferClassificationForCargo(q,exam,cargoId='505'){
  if(sectionId==='legislacao')return denied('Lei não incluída nas normas municipais exigidas.');
  return pending(section.title,'Disciplina prevista, mas o subassunto exige conferência por equivalência.');
 }
+/** Persistir apenas após aprovação administrativa da sinalização. */
+export function approveEdictReview(question,proposed){
+ const cargo=String(proposed?.editalCargo||''),status=String(proposed?.status||'');
+ if(!['202','505'].includes(cargo)||!['dentro','fora'].includes(status))
+  throw Error('Parecer do edital inválido (cargo e situação são obrigatórios).');
+ question.editalReview={...(question.editalReview||{}),[cargo]:{status}};
+ return question;
+}
+
 /**
  * Correções explícitas só são aplicadas após aprovação da sinalização.
  * Cada cargo mantém sua própria revisão; o original permanece inalterado.
