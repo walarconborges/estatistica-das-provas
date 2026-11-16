@@ -693,3 +693,62 @@ test('FEPESE: 560 e 1.036 são alternativas distintas, sem fração automática'
  assert.deepEqual(lines.map(l=>l.text.split(/\s+/).at(-1)),['66','120','160','560','1.036']);
  assert.ok(!lines.some(r=>/\d+\/\d+/.test(r.text)));
 });
+
+test('VUNESP 002: capa numerada não cria questão 2 duplicada',()=>{
+ const page1={number:1,width:595.28,height:841.89,lines:[
+  {col:0,x:204,y:195,text:'002. Prova Objetiva'},
+  {col:0,x:188,y:230,text:'Analista de Informática II'},
+  {col:0,x:102,y:260,text:'Área de atuação: desenvolvimento de sistemas institucionais'},
+  {col:0,x:34,y:310,text:'Você recebeu este caderno contendo 40 questões objetivas.'}
+ ]};
+ const pages=[page1];
+ for(let n=1;n<=40;n++){
+  const page=Math.floor((n-1)/4)+2,col=n%2,x=col?310:34,y=55+Math.floor(((n-1)%4)/2)*310;
+  let found=pages.find(p=>p.number===page);
+  if(!found){found={number:page,width:595.28,height:841.89,lines:[]};pages.push(found)}
+  found.lines.push({col,x,y,text:String(n).padStart(2,'0')+'. Questão de exemplo '+n+'.'});
+  for(let i=0;i<5;i++)found.lines.push({col,x:x+17,y:y+28+i*19,text:'('+String.fromCharCode(65+i)+') Opção '+i});
+ }
+ const parsed=spatialQuestions(pages);
+ assert.equal(parsed.questions.length,40);
+ assert.deepEqual(parsed.questions.map(q=>q.originalNumber),Array.from({length:40},(_,i)=>i+1));
+ assert.equal(questionIntegrity(parsed.questions,Object.fromEntries(Array.from({length:40},(_,i)=>[i+1,'A'])),40).length,0);
+});
+test('VUNESP 002: selecionar gabarito correto dentre vários cargos e áreas',()=>{
+ const answerA='C B B D A C E C A E C C D E A C E B E B A B C D B A A E D E B E D E A C B C D C'.split(' ');
+ const answerB=answerA.map((x,i)=>i>19?'E':x);
+ const rows=arr=>arr.map((x,i)=>(i+1)+' - '+x).join('\n');
+ const source=[
+ 'UNIVERSIDADE ESTADUAL PAULISTA "JÚLIO DE MESQUITA FILHO" – UNESP',
+ 'EDITAL 046/2026',
+ '001. PROVA OBJETIVA','ASSISTENTE OPERACIONAL III',rows(Array(40).fill('A')),
+ '002. PROVA OBJETIVA','ANALISTA DE INFORMÁTICA II',
+ 'ÁREA DE ATUAÇÃO: DESENVOLVIMENTO DE SISTEMAS INSTITUCIONAIS',rows(answerA),
+ '003. PROVA OBJETIVA','ANALISTA DE INFORMÁTICA II',
+ 'ÁREA DE ATUAÇÃO: REDES E INFRAESTRUTURA',rows(answerB)
+ ].join('\n');
+ const selected=chosenAnswerSection(source,
+  '002. Prova Objetiva\nAnalista de Informática II\nÁrea de atuação: desenvolvimento de sistemas institucionais');
+ assert.equal(selected.error,null);
+ assert.equal(selected.section,'002');
+ const key=parseKey(selected.text);
+ assert.equal(Object.keys(key).length,40);
+ assert.equal(key[1],'C');assert.equal(key[21],'A');assert.equal(key[22],'B');assert.equal(key[40],'C');
+ const mismatched=chosenAnswerSection(source,'004. Prova Objetiva\nAnalista de Informática II');
+ assert.ok(mismatched.error);
+});
+test('VUNESP: tirinha com grande espaço vira imagem apenas da figura, não da questão inteira',()=>{
+ const page={number:2,width:595.28,height:841.89,lines:[
+  {col:0,x:34,y:95,text:'01. Leia a tira.'},
+  {col:0,x:100,y:405,text:'(Laerte. Disponível em: endereço da tira)'},
+  {col:0,x:51,y:437,text:'Considerando a relação entre os elementos verbais e não verbais, é correto afirmar que a tira'},
+  ...'ABCDE'.split('').map((l,i)=>({col:0,x:51,y:473+49*i,text:'('+l+') Alternativa '+l}))
+ ]};
+ const q=spatialQuestions([page]).questions[0];
+ assert.equal(q.imageOnly,true);
+ assert.equal(q.extractionReview,false);
+ assert.deepEqual(q.options.map(x=>x.letter),'ABCDE'.split(''));
+ assert.ok(q.visualSegments);
+ assert.ok(q.visualSegments.top<150);
+ assert.ok(q.visualSegments.bottom<430);
+});
