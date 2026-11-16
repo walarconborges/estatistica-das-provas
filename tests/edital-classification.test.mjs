@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {fresh,addExam,recordAttempt} from '../core.mjs';
-import {CATALOGS,CARGO_202,allTopics,classifyForCargo,subjectSummary} from '../edital-classification.mjs';
+import {CATALOGS,CARGO_202,allTopics,classifyForCargo,subjectSummary,EDITAL_SCOPE_OPTIONS,normalizeEditalScope,inEditalScope} from '../edital-classification.mjs';
 
 const meta={title:'2026 — FEPESE — PM-BRUSQUE — Analista de Informática',year:'2026',banca:'FEPESE',orgao:'PM-BRUSQUE'};
 const question=(number,code,discipline,stem)=>({
@@ -81,4 +81,35 @@ test('classificar questões antigas ou novas não altera cadastro, gabarito nem 
  assert.equal(other.questionIds.length,1);
  assert.equal(state.attempts.length,1);
  assert.equal(state.questions[0].answer,'A');
+});
+
+test('filtro por edital oferece somente Dentro do edital e Todas',()=>{
+ assert.deepEqual(EDITAL_SCOPE_OPTIONS,[
+  {value:'dentro',label:'Dentro do edital'},
+  {value:'all',label:'Todas'}
+ ]);
+ assert.equal(normalizeEditalScope(undefined),'dentro');
+ assert.equal(normalizeEditalScope('relevantes'),'dentro');
+ assert.equal(normalizeEditalScope('pendente'),'dentro');
+ assert.equal(normalizeEditalScope('fora'),'dentro');
+ assert.equal(normalizeEditalScope('all'),'all');
+});
+
+test('Dentro do edital aceita todas as pendências; fora somente em Todas',()=>{
+ const uncertain=question(9,'LP','Língua Portuguesa','Assinale a alternativa que representa a opção correta.');
+ const confirmed=question(10,'LP','Língua Portuguesa','Assinale o sinônimo da palavra proposta.');
+ const outside=question(11,'IN','Informática','O que é firmware?');
+ for(const cargo of ['202','505']){
+  const pending=classifyForCargo(uncertain,meta,cargo);
+  const valid=classifyForCargo(confirmed,meta,cargo);
+  assert.equal(pending.status,'pendente');
+  assert.equal(valid.status,'dentro');
+  assert.equal(inEditalScope(pending,'dentro'),true);
+  assert.equal(inEditalScope(valid,'dentro'),true);
+  assert.equal(inEditalScope(pending,'all'),true);
+ }
+ const invalid=classifyForCargo(outside,meta,'202');
+ assert.equal(invalid.status,'fora');
+ assert.equal(inEditalScope(invalid,'dentro'),false);
+ assert.equal(inEditalScope(invalid,'all'),true);
 });
