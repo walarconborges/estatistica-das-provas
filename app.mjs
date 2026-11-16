@@ -430,7 +430,16 @@ async function importData(form){
     const upgrade=upgradeRecoveredExam(state,meta,parsed,key);
     if(upgrade){
       if(!save()){upgrade.rollback();return;}
-      latestImportMessage=upgrade.upgraded+' questão(ões) atualizada(s) com texto e alternativas separados, sem duplicar a prova. Identificadores, gabaritos, respostas, eliminações e simulados anteriores foram preservados. '+parsed.filter(q=>q.imageOnly).length+' questão(ões) mantêm apenas o recorte visual necessário.';
+      if(sync.isConfigured()){
+        const confirmed=await sync.sync();
+        const saved=upgrade.exam.questionIds.map(id=>state.questions.find(q=>q.id===id));
+        if(!confirmed||saved.some(q=>!q||q.extractionFallback)){
+          latestImportMessage='A nova extração foi preparada, mas o servidor ainda não confirmou sua atualização. A prova anterior permanece preservada. Não importe outra cópia: confirme a publicação do Worker e tente novamente.';
+          toast('Atualização da extração ainda não confirmada na sincronização.');
+          refresh();return;
+        }
+      }
+      latestImportMessage=upgrade.upgraded+' questão(ões) atualizada(s) com texto e alternativas separados, sem duplicar a prova. Identificadores, gabaritos, respostas e simulados anteriores foram preservados. '+parsed.filter(q=>q.imageOnly).length+' questão(ões) contêm recortes apenas dos elementos gráficos.';
       toast('Extração atualizada na prova existente. Histórico preservado.');
       navigate('exams');return;
     }
@@ -440,6 +449,14 @@ async function importData(form){
       latestImportMessage='A prova “'+meta.title+'” já está cadastrada com as mesmas '+parsed.length+' questões e respostas. Nenhuma duplicação foi realizada.';
       toast('Essa prova já foi importada.');
       navigate('exams');return;
+    }
+    // Não criar outra prova de mesmo cargo/gabarito quando a migração exige
+    // conferência: isso dobraria estatísticas e códigos de questão.
+    const sameExam=state.exams.filter(e=>e.title===meta.title&&e.questionIds.length===parsed.length);
+    if(sameExam.length){
+      latestImportMessage='Esta prova já existe. Não foi possível confirmar uma atualização segura da extração textual. Nenhuma questão duplicada ou substituída.';
+      toast('Prova existente: atualização bloqueada para evitar duplicação.');
+      refresh();return;
     }
     const e=addExam(state,meta,parsed,key);
     e.keySection=selected.section;
