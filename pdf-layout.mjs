@@ -1166,7 +1166,13 @@ export function declaredQuestionCount(pages=[]){
  const cover=String(first?.text||(first?.lines||[]).map(line=>line.text).join('\n')||'');
  const counts=[...cover.matchAll(/\b(\d{1,3})(?:\s*\([^)]{1,35}\))?\s+QUEST[OÕ]ES\b/giu)]
   .map(match=>Number(match[1])).filter(n=>n>=1&&n<=300);
- return counts.length===1?counts[0]:0;
+ // Editais também declaram o total por extenso ("trinta questões").
+ // Só utilizar quando há uma única quantidade inequívoca na capa.
+ const written={VINTE:20,TRINTA:30,QUARENTA:40,CINQUENTA:50,SESSENTA:60};
+ const normalized=norm(cover);
+ for(const match of normalized.matchAll(/\b(VINTE|TRINTA|QUARENTA|CINQUENTA|SESSENTA)\s+QUESTOES\b/g))
+  counts.push(written[match[1]]);
+ return new Set(counts).size===1?counts[0]:0;
 }
 
 export function questionIntegrity(questions,answers,expected=0,optionsExpected=5){
