@@ -1,3 +1,11 @@
+## 0.6.19 — 16/11/2026
+
+- Corrigido formato de gabarito tabulado quando o PDF contém apenas a página do cargo selecionado; antes o leitor de tabelas só era habilitado para dois ou mais cargos.
+- A prova FCPC Aracati Auxiliar de Serviços Gerais passa a reconhecer automaticamente as 50 respostas da tabela de 1 página (01–10, 11–20, 21–35, 36–50), sem campos manuais.
+- A comparação do cargo permanece obrigatória, inclusive nos arquivos com apenas uma página, para evitar gabaritos de cargos trocados.
+- Teste com transcrição fiel do PDF isolado cobre 50 alternativas e bloqueia regressão para seis respostas.
+- Não alterados registros do banco, provas ou históricos.
+
 ## 0.6.18 — 16/11/2026
 
 - Corrigido fluxo de recuperação da importação FCPC/Aracati quando o sistema identifica todos os cargos do PDF mas falha na correspondência automática.
