@@ -1,4 +1,4 @@
-import {STORAGE_KEY,newId,fresh,normalizeState,parseExamText,parseKey,inferExamMetadata,classify,classifyByExamDivision,repeatedSupportText,addExam,recordAttempt,latestAnswer,outcome,stats,filtered,normalizeOutcomeSelection,prioritize,createSimulation,finishSimulation,simulationResult,expire,validAnswer} from './core.mjs';
+import {STORAGE_KEY,newId,fresh,normalizeState,parseExamText,parseKey,inferExamMetadata,classify,classifyByExamDivision,repeatedSupportText,addExam,upgradeRecoveredExam,findPreviouslyImportedExam,recordAttempt,latestAnswer,outcome,stats,filtered,normalizeOutcomeSelection,prioritize,createSimulation,finishSimulation,simulationResult,expire,validAnswer} from './core.mjs';
 import {readPdf} from './pdf-import.mjs';
 import {chosenAnswerSection,parseGridKey,questionIntegrity,declaredQuestionCount} from './pdf-layout.mjs';
 import {createSyncClient} from './sync-client.mjs';
@@ -424,6 +424,22 @@ async function importData(form){
       latestImportMessage='Importação bloqueada para evitar erros: '+problems.slice(0,8).join('; ')+(problems.length>8?' e outros '+(problems.length-8)+' problema(s).':'');
       toast('Importação não concluída. Confira os problemas identificados.');
       refresh();return;
+    }
+    // Reimportação de um caderno antigo salvo como imagens completas:
+    // substituir só a representação, mantendo IDs, gabarito e histórico.
+    const upgrade=upgradeRecoveredExam(state,meta,parsed,key);
+    if(upgrade){
+      if(!save()){upgrade.rollback();return;}
+      latestImportMessage=upgrade.upgraded+' questão(ões) atualizada(s) com texto e alternativas separados, sem duplicar a prova. Identificadores, gabaritos, respostas, eliminações e simulados anteriores foram preservados. '+parsed.filter(q=>q.imageOnly).length+' questão(ões) mantêm apenas o recorte visual necessário.';
+      toast('Extração atualizada na prova existente. Histórico preservado.');
+      navigate('exams');return;
+    }
+    // A mesma prova textual não deve ser duplicada em novas importações.
+    const already=findPreviouslyImportedExam(state,meta,parsed,key);
+    if(already){
+      latestImportMessage='A prova “'+meta.title+'” já está cadastrada com as mesmas '+parsed.length+' questões e respostas. Nenhuma duplicação foi realizada.';
+      toast('Essa prova já foi importada.');
+      navigate('exams');return;
     }
     const e=addExam(state,meta,parsed,key);
     e.keySection=selected.section;
