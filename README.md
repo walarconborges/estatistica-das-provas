@@ -1,9 +1,24 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.1 — 15/11/2026**  
+**Versão experimental 0.6.2 — 15/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.2 — Anexo IV e referência real do cargo 505
+
+O **Anexo IV — Conteúdos Programáticos** do Edital nº 01/2026 de Candeias do Jamari foi recebido e organizado com o cargo **505 — Analista de Tecnologia e Informática** como referência exclusiva para este modo de estudo.
+
+- **Base curricular:** `programa-candeias-505.mjs` registra seis grupos exigidos no nível superior: Português (p. 4), Raciocínio Lógico (p. 4), Noções de Informática (p. 4–5), Legislação Municipal (p. 5), Conhecimentos Gerais (p. 5) e Conhecimentos Específicos do cargo 505 (p. 7). Os subtópicos são uma organização resumida da redação do Anexo IV.
+- **Consulta no site:** em Questões e Simulados, o usuário pode abrir o painel recolhível **Consultar conteúdo programático — Candeias, cargo 505**. O painel não interfere no banco de questões e não altera as importações.
+- **Legislação Municipal efetivamente prevista no Anexo IV:** **Lei Orgânica do Município**, **Resolução nº 001/CMCJ-93** e **Resolução nº 173/CMCJ/2025**. O módulo não confunde essa lista com leis apenas citadas na apresentação geral do edital.
+- **Leis Municipais nº 100/1997, nº 1.267/2021 e nº 1.268/2021:** citadas no preâmbulo do edital principal, mas não nomeadas na lista da disciplina **Legislação Municipal** do Anexo IV do cargo 505. **Não acrescentá-las à disciplina sem previsão adicional.**
+- **Lei Federal nº 13.709/2018 (LGPD):** exigida expressamente no encerramento de Conhecimentos Específicos do cargo 505 (p. 7). É conteúdo de TI neste edital e não uma quarta norma da lista de Legislação Municipal.
+- **Programa específico de TI:** internet e Web, hardware/memória/drivers/CPU, montagem/manutenção, BIOS/UEFI, segurança, Windows 10/11, redes/IP/sub-redes, Office e Access 2016/2019/365, software livre/Linux/LibreOffice, algoritmos/programação estruturada, orientação a objetos e LGPD.
+- **Adaptação jurídica automática:** mantém-se limitada às regras com fundamento legal verificado no catálogo existente. A **Resolução nº 001/CMCJ-93** consta agora como exigida, mas nenhuma adaptação com artigo dessa resolução será criada até seu texto oficial ser conferido e incorporado ao catálogo.
+- **Não há bloqueio automático por assunto:** o painel fornece referência para futuras análises de aderência. Como a classificação de questões ainda é aproximada, não se excluem questões de TI ou Português apenas porque não houve correspondência textual por palavras-chave.
+
+**Dados preservados.** Nenhuma prova, gabarito, resposta ou perfil foi zerado. Este registro curricular não exige reimportar documentos. O código de publicação do GitHub Pages foi ajustado para disponibilizar o novo módulo público.
 
 ## Versão 0.6.1 — Importação Quadrix CRQ-V 2026 e referências de Candeias
 
@@ -17,7 +32,7 @@ Plataforma pública para importar provas de concursos, corrigir respostas, gerar
 
 **Legislação de Candeias do Jamari — Edital nº 01/2026 consolidado até a Retificação nº 01:** o documento enviado menciona a Constituição Federal, a Lei Orgânica Municipal de 11/10/1993, a Lei Municipal nº 100/1997 (regime jurídico), a Lei Municipal nº 1.267/2021 (estrutura da Câmara), a Lei Municipal nº 1.268/2021 (quadro efetivo e remunerações) e a Resolução nº 173/CMCJ/2025. O item 1.5 exclui leis e alterações que entrarem em vigor após a publicação do edital. Esses atos foram registrados em `study-context.mjs` como referências; **não constituem, por si só, validação de artigos ou gabaritos adaptados**.
 
-**Atenção ao Anexo IV:** o PDF enviado contém o corpo do edital em 63 páginas e *cita* o Anexo IV — Conteúdos Programáticos, mas não traz seu conteúdo. Para vincular cada legislação a conteúdos específicos do cargo 505 (Analista de Tecnologia e Informática), será necessário o anexo correspondente. Não presumir que todo ato mencionado na introdução seja cobrado integralmente na prova.
+**Registro histórico da 0.6.1:** naquele momento, o PDF principal de 63 páginas citava o Anexo IV sem incluí-lo. O Anexo IV foi fornecido e incorporado na versão 0.6.2. A lista de legislação efetivamente cobrada está documentada acima; atos mencionados apenas no preâmbulo não foram incluídos automaticamente.
 
 Não houve limpeza, reimportação automática nem alteração de gabaritos de provas anteriormente cadastradas. O usuário pode continuar importando normalmente. A visualização final no navegador precisa ser validada após a atualização do GitHub Pages.
 
