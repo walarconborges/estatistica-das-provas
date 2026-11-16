@@ -1,6 +1,6 @@
 // Extração espacial: separa colunas e preserva a posição das questões na página.
 const norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toUpperCase();
-const noise=s=>/^(?:PCIMARKPCI\b|WWW\.PCICONCURSOS\.|CVOT\d+|CONFIDENCIAL ATE|\d{1,2}\s*$|R\s*A\s*S\s*C\s*U\s*N\s*H\s*O\s*$)/i.test(norm(s.trim()))||/MDAwM[A-Za-z0-9+/=]{35}/.test(s);
+const noise=s=>/^(?:PCIMARKPCI\b|WWW\.PCICONCURSOS\.|CVOT\d+|CONFIDENCIAL ATE|R\s*A\s*S\s*C\s*U\s*N\s*H\s*O\s*$)/i.test(norm(s.trim()))||/MDAwM[A-Za-z0-9+/=]{35}/.test(s);
 const questionRx=/^(?:QUEST[AÃ]O\s+0?(\d{1,3})(?:\s*[.):\-]\s*(.*))?|(\d{1,3})\s*[.):\-]\s*(.*))$/i;
 const altRx=/^\s*(?:\(([A-E])\)|([A-E])\s*[.):\-])\s*(.*)$/i;
 const isHeading=s=>/^(?:L[IÍ]NGUA PORTUGUESA|MATEM[AÁ]TICA|RACIOC[IÍ]NIO L[OÓ]GICO|LEGISLA[CÇ][AÃ]O|CONHECIMENTOS ESPEC[IÍ]FICOS|INFORM[AÁ]TICA|DIREITO ADMINISTRATIVO|DIREITO CONSTITUCIONAL|CONHECIMENTOS GERAIS)$/i.test(s.trim());
@@ -129,7 +129,7 @@ export function spatialLines(items,pageWidth,pageHeight,{split=true}={}){
   const group=normalizedPieces.filter(i=>i.col===col).sort((a,b)=>a.y-b.y||a.x-b.x),rows=[];
   for(const item of group){
    let row=rows.at(-1);
-   if(!row||Math.abs(item.y-row.y)>3.2){row={col,y:item.y,x:item.x,items:[]};rows.push(row)}
+   if(!row||Math.abs(item.y-row.y)>4.8){row={col,y:item.y,x:item.x,items:[]};rows.push(row)}
    row.items.push(item);
   }
   for(const row of rows){
@@ -162,6 +162,62 @@ function needsImage(stem){
  return /\b(TABELA|DESENHO|FIGURA|GR[AÁ]FICO|PLANILHA|DIAGRAMA|ESQUEMA|CONTORNO DE UM TERRENO)\b/i.test(stem)
   ;
 }
+
+/**
+ * Se parte das alternativas for extraída incorretamente, preserva a
+ * questão inteira como imagem fiel do próprio PDF. As cinco letras
+ * permanecem selecionáveis, mas não se inventa texto nem gabarito.
+ * A questão recebe o sinal de revisão da extração.
+ */
+function preserveOriginalInImage(q){
+ q.extractionFallback=true;
+ q.extractionReview=true;
+ q.imageOnly=true;
+ q.visualSegments=null;
+ q.options='ABCDE'.split('').map(letter=>({letter,text:''}));
+ q.confidence='baixa';
+ q.stem=q.stem||'Questão reproduzida diretamente do PDF original.';
+ return q;
+}
+function hasCompleteOptions(options){
+ return Array.isArray(options)&&options.length===5&&
+  options.every((o,i)=>o.letter===String.fromCharCode(65+i)&&String(o.text||'').trim());
+}
+/**
+ * Resgata títulos explícitos "QUESTÃO N" que não sobreviveram ao
+ * agrupamento de linhas e alternativas. O recorte com o enunciado
+ * original evita qualquer reconstituição de conteúdo não confiável.
+ */
+function recoverExplicitQuestionHeadings(pages,questions){
+ const existing=new Set(questions.map(q=>q.originalNumber));
+ const recovered=[];
+ for(const page of pages){
+  for(const col of [0,1]){
+   const lines=(page.lines||[]).filter(r=>r.col===col).sort((a,b)=>a.y-b.y);
+   const headings=lines.map((r,i)=>{
+    const m=r.text.trim().match(/^QUEST[AÃ]O\s+0?(\d{1,3})\s*[.):\-]?\s*$/i);
+    return m?{row:r,index:i,n:Number(m[1])}:null;
+   }).filter(Boolean);
+   for(let j=0;j<headings.length;j++){
+    const h=headings[j];
+    if(h.n<1||h.n>300||existing.has(h.n))continue;
+    const end=headings[j+1]?.row.y-12||page.height-33;
+    const rows=lines.slice(h.index+1,headings[j+1]?.index||lines.length)
+     .filter(r=>r.y<end&&!/^(?:ANOTA[ÇC][ÕO]ES|QUEST[AÃ]O\s+\d+)$/i.test(r.text.trim()));
+    const stem=humanizePdfText(rows.filter(r=>!altRx.test(r.text)).map(r=>r.text).join('\n'));
+    const item=preserveOriginalInImage({
+     originalNumber:h.n,heading:'',stem,stemRows:[],options:[],
+     sourcePage:page.number,sourceColumn:col,
+     startY:h.row.y,endY:Math.max(h.row.y+35,end),
+     optionsStartY:null,contextText:'',contextRange:null
+    });
+    recovered.push(item);existing.add(h.n);
+   }
+  }
+ }
+ return recovered;
+}
+
 export function spatialQuestions(pages){
  const questions=[],contexts=[];let heading='';
  for(const page of pages){
@@ -214,11 +270,14 @@ export function spatialQuestions(pages){
         bottom:rows[bestIndex+1].y-3
       };
     }
-    current.extractionReview=current.options.length!==5||current.options.some((o,i)=>o.letter!==String.fromCharCode(65+i));
+    current.extractionReview=!hasCompleteOptions(current.options);
     current.imageOnly=needsImage(current.stem);
     if(!current.imageOnly)delete current.visualSegments;
-    // Imagens do enunciado asseguram tabelas e fórmulas sem alterar as alternativas de resposta.
-    if(current.stem&&current.options.length>=2)questions.push(current);
+    // Jamais descarta silenciosamente uma QUESTÃO N porque alguma alternativa
+    // foi separada pelo leitor do PDF. Usa o recorte fiel e 5 controles A–E.
+    if(current.extractionReview||!current.stem)
+      preserveOriginalInImage(current);
+    questions.push(current);
     current=null;
    }
    for(const row of lines){
@@ -227,6 +286,7 @@ export function spatialQuestions(pages){
     const foundContext=contextMarker(s);
     if(foundContext){finish(row.y-2);storeContext();collecting={...foundContext,text:[],page:page.number,col,startY:row.y};continue;}
     if(isHeading(s)){if(!current||!current.options.length)heading=s;continue;}
+    if(/^ANOTA[ÇC][ÕO]ES$/i.test(s)){finish(row.y-8);continue;}
     // Cabeçalho e rodapé do caderno Quadrix não fazem parte do texto-base.
     if(/^(?:ANALISTA DE INFORM[AÁ]TICA|CONSELHO REGIONAL DE QU[IÍ]MICA DA\s+5[ªA]\s+REGI[ÃA]O|QUADRIX\s*\|\s*20\d{2}|PROVA OBJETIVA)$/i.test(s))continue;
     const qm=s.match(questionRx);
@@ -252,6 +312,7 @@ export function spatialQuestions(pages){
    storeContext();
   }
  }
+ questions.push(...recoverExplicitQuestionHeadings(pages,questions));
  questions.sort((a,b)=>a.originalNumber-b.originalNumber);
  return {questions,contexts};
 }
