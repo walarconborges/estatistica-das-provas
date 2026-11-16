@@ -5,6 +5,13 @@ import {createSyncClient} from './sync-client.mjs';
 import {STUDY_CONTEXT,eligibleForList} from './study-context.mjs';
 import {CATALOGS,currentCatalog,allTopics,classifyForCargo,subjectSummary,EDITAL_SCOPE_OPTIONS,normalizeEditalScope,inEditalScope} from './edital-classification.mjs';
 
+// A versão do rodapé pode ser nova enquanto o navegador usa módulos
+// JavaScript antigos. Exibir a revisão REAL do módulo executado para diagnóstico.
+const loadedRevision=new URL(import.meta.url).searchParams.get('v');
+if(loadedRevision){
+ const footer=document.querySelector('#app footer');
+ if(footer)footer.append(' · Leitor '+loadedRevision.slice(0,8));
+}
 const $=s=>document.querySelector(s);
 const $$=s=>Array.from(document.querySelectorAll(s));
 const h=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
