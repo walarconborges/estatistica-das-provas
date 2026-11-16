@@ -1,9 +1,19 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.19 — 16/11/2026**  
+**Versão experimental 0.6.20 — 16/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.20 — conferência automática independente do cargo
+
+- Corrigida a falha da versão 0.6.19 que encontrava o único cargo “Auxiliar de Serviços Gerais” no gabarito, mas rejeitava a associação automática com a prova.
+- O importador agora realiza **uma segunda conferência independente** diretamente nas linhas espaciais da capa extraídas do PDF, além da comparação inicial com nome do arquivo e título inferido.
+- Para gabaritos de **um único cargo**, a seleção da página é automática quando essa identidade é comprovada por uma dessas fontes. A pessoa não precisa selecionar a página/cargo manualmente.
+- O formulário só apresenta a escolha manual quando existem **dois ou mais cargos realmente ambíguos** no mesmo gabarito.
+- Conferência de segurança: não aceita um gabarito de Copeiro para uma prova de Auxiliar de Serviços Gerais; mantém integridade das 50 questões e das 50 letras oficiais.
+- Adicionados testes com os nomes de arquivo reais (inclusive sufixo “(1)”), o título da capa com quebra de linha e a rejeição de cargos diferentes.
+- Nenhum registro existente do banco, provas, gabaritos, tentativas ou simulados foi alterado. A importação final deve ser confirmada no navegador.
 
 ## Versão 0.6.19 — detecção automática de gabarito tabulado com 1 ou várias páginas
 
