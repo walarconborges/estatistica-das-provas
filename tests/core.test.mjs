@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {fresh,addExam,parseExamText,parseKey,inferExamMetadata,repeatedSupportText,sameQuestion,recordAttempt,outcome,stats,createSimulation,finishSimulation,simulationResult,filtered,prioritize} from '../core.mjs';
+import {fresh,addExam,upgradeRecoveredExam,findPreviouslyImportedExam,parseExamText,parseKey,inferExamMetadata,repeatedSupportText,sameQuestion,recordAttempt,outcome,stats,createSimulation,finishSimulation,simulationResult,filtered,prioritize} from '../core.mjs';
 const meta={title:'Prova IBGP 2026',year:'2026',banca:'IBGP',orgao:'SEMED'};
 const sample=()=>({stem:'Qual é o plural de cidadão?',originalNumber:1,options:[{letter:'A',text:'Cidadãos'},{letter:'B',text:'Cidadões'}],discipline:'Língua Portuguesa',disciplineCode:'LP',topic:'Gramática',topicCode:'G'});
 function data(){const s=fresh();const e=addExam(s,meta,[sample(),{...sample(),originalNumber:2,stem:'Outra questão'}],{1:'A',2:'B'});return {s,e,q:s.questions[0]}}
@@ -121,4 +121,61 @@ test('texto de apoio volta a abrir quando outra questão quebra a sequência',()
  const q3={...q1,originalNumber:3};
  assert.equal(repeatedSupportText(q1,independent),false);
  assert.equal(repeatedSupportText(independent,q3),false);
+});
+
+
+test('reimportar caderno FEPESE recupera texto sem duplicar ou perder respostas',()=>{
+ const state=fresh();
+ const examInfo={title:'2026 — FEPESE — PM-BRUSQUE — Analista de Informática',
+  year:'2026',banca:'FEPESE',orgao:'PM-BRUSQUE'};
+ const letters='ABCDE'.split('');
+ const oldItems=Array.from({length:40},(_,i)=>({
+  originalNumber:i+1,sourcePage:Math.floor(i/2)+3,
+  stem:'Enunciado original da questão '+(i+1),
+  options:letters.map(letter=>({letter,text:''})),
+  imageOnly:true,pageImage:'data:image/jpeg;base64,abc',
+  extractionReview:true,extractionFallback:true,
+  discipline:'Informática',disciplineCode:'IN',topic:'Geral',topicCode:'G'
+ }));
+ const key=Object.fromEntries(oldItems.map(x=>[x.originalNumber,'C']));
+ const exam=addExam(state,examInfo,oldItems,key);
+ const first=state.questions[0];
+ recordAttempt(state,'perfil',first.id,'C');
+ const sim=createSimulation(state,'perfil',state.questions.slice(0,2));
+ const previousAttempts=state.attempts.length;
+ const upgraded=oldItems.map(q=>({
+  ...q,options:letters.map(letter=>({letter,text:'Alternativa '+letter})),
+  imageOnly:false,extractionReview:false,extractionFallback:undefined,
+  pageImage:undefined
+ }));
+ const result=upgradeRecoveredExam(state,examInfo,upgraded,key);
+ assert.equal(result.exam.id,exam.id);
+ assert.equal(result.upgraded,40);
+ assert.equal(state.exams.length,1);
+ assert.equal(state.questions.length,40);
+ assert.equal(state.questions[0].id,first.id);
+ assert.equal(state.questions[0].code,first.code);
+ assert.equal(state.questions[0].status,'active');
+ assert.equal(state.questions[0].pageImage,undefined);
+ assert.equal(state.questions[0].extractionFallback,undefined);
+ assert.equal(state.attempts.length,previousAttempts);
+ assert.equal(state.simulations[0].id,sim.id);
+ assert.equal(state.simulations[0].questionIds[0],first.id);
+ assert.equal(outcome(state,'perfil',state.questions[0]),'correct');
+ assert.equal(findPreviouslyImportedExam(state,examInfo,upgraded,key)?.id,exam.id);
+ assert.equal(upgradeRecoveredExam(state,examInfo,upgraded,key),null);
+});
+test('reimportação FEPESE não altera prova ambígua ou de outro gabarito',()=>{
+ const state=fresh(),meta={title:'FEPESE S01',year:'2026',banca:'FEPESE',orgao:'PM-BRUSQUE'};
+ const make=(stem,review)=>({originalNumber:1,sourcePage:3,stem,
+   options:'ABCDE'.split('').map(letter=>({letter,text:review?'':'Opção '+letter})),
+   extractionFallback:review,extractionReview:review,
+   status:review?'needs-review':'active',pageImage:review?'data:image/jpeg;base64,abc':undefined,
+   discipline:'Língua Portuguesa',disciplineCode:'LP',topic:'Geral',topicCode:'G'});
+ const exam=addExam(state,meta,[make('Questão sobre uma lei',true)],{1:'B'});
+ const prior=state.questions[0];
+ assert.equal(upgradeRecoveredExam(state,meta,[make('Outro enunciado',false)],{1:'B'}),null);
+ assert.equal(upgradeRecoveredExam(state,meta,[make('Questão sobre uma lei',false)],{1:'C'}),null);
+ assert.equal(state.questions[0],prior);
+ assert.equal(state.exams[0].id,exam.id);
 });
