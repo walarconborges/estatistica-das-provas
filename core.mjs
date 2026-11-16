@@ -77,6 +77,20 @@ export function classify(stem,heading='',options=[]){
  */
 export function classifyByExamDivision(q,meta,guessed){
  const n=Number(q.originalNumber),b=textNorm(meta?.banca),org=textNorm(meta?.orgao),title=textNorm(meta?.title);
+ // VUNESP/UNESP: a prova nº 002 de Analista de Informática II possui
+ // blocos oficiais de Português (1–10), Matemática e Raciocínio Lógico
+ // (11–15), Legislação (16–20), Conhecimentos Específicos (21–40).
+ // A seção do enunciado prevalece sobre palavras isoladas.
+ if(b==='VUNESP'&&org==='UNESP'&&title.includes('ANALISTA DE INFORMATICA II')&&n>=1&&n<=40){
+  const [discipline,disciplineCode,defaultTopic]=n<=10?['Língua Portuguesa','LP','Geral']:
+    n<=15?['Raciocínio Lógico e Matemática','RL','Geral']:
+    n<=20?['Legislação','LE','Geral']:
+    ['Informática','IN','Conhecimentos específicos'];
+  const same=guessed.disciplineCode===disciplineCode;
+  return {...guessed,discipline,disciplineCode,
+    topic:same?guessed.topic:defaultTopic,
+    topicCode:same?guessed.topicCode:'G',confidence:'alta'};
+ }
  // A própria prova FEPESE/Brusque S01 identifica os blocos por
  // disciplina e quantidade. A divisão oficial prevalece sobre palavras
  // do enunciado (a questão 1 reproduz uma lei, mas é de Português).
@@ -375,7 +389,7 @@ export function inferExamMetadata(examText='',examFilename='',keyText='',keyFile
  const bancas=[
   ['CEBRASPE',/\bCEBRASPE\b|\bCESPE\b/],
   ['IBGP',/\bIBGP\b|INSTITUTO BRASILEIRO DE GESTAO E PESQUISA/],
-  ['VUNESP',/\bVUNESP\b|FUNDACAO VUNESP/],
+  ['VUNESP',/\bVUNESP\b|FUNDACAO VUNESP|\bVNSP\d{3,}(?:\b|\/)/],
   ['FGV',/\bFGV\b|FUNDACAO GETULIO VARGAS/],
   ['FCC',/\bFCC\b|FUNDACAO CARLOS CHAGAS/],
   ['IBFC',/\bIBFC\b|INSTITUTO BRASILEIRO DE FORMACAO E CAPACITACAO/],
@@ -405,6 +419,7 @@ export function inferExamMetadata(examText='',examFilename='',keyText='',keyFile
   ['TCE-RO',/\bTCE[\s-]?RO\b|TRIBUNAL DE CONTAS DO ESTADO DE RONDONIA/],
   ['CMPV',/\bCMPV\b|CAMARA MUNICIPAL DE PORTO VELHO/],
   ['IPAM',/\bIPAM\b/],
+  ['UNESP',/\bUNESP\b|UNIVERSIDADE ESTADUAL PAULISTA/],
   ['UERN',/\bUERN\b/],
   ['IFSP',/\bIFSP\b/]
  ];
@@ -412,7 +427,12 @@ export function inferExamMetadata(examText='',examFilename='',keyText='',keyFile
  const banca=find(bancas),orgao=find(orgaos);
  const missing=[...(year==='0000'?['ano']:[]),...(banca==='NI'?['banca']:[]),...(orgao==='NI'?['órgão']:[])];
  const basename=filename.replace(/\.pdf$/i,'').replace(/[_-]+/g,' ').replace(/\s+/g,' ').trim().slice(0,90);
- const cargo=/ANALISTA DE INFORMATICA/.test(source)?'Analista de Informática':basename||'Prova importada';
+ const namedCargo=source.match(/ANALISTA DE INFORMATICA(?:\s+II)?/);
+ const areaLine=String(head||'').split('\n').find(x=>/^[\s\t]*(?:[ÁA]REA DE ATUA[CÇ][AÃ]O\s*:\s*)/i.test(x));
+ const area=areaLine?textNorm(areaLine.split(/:\s*/).slice(1).join(':')).slice(0,85):'';
+ const cargo=namedCargo?(namedCargo[0].endsWith(' II')?'Analista de Informática II':'Analista de Informática')+
+   (area?' — '+area.toLocaleLowerCase('pt-BR'):''):
+   basename||'Prova importada';
  const title=[year==='0000'?'Ano não identificado':year,banca==='NI'?'Banca não identificada':banca,orgao==='NI'?'Órgão não identificado':orgao,cargo].join(' — ');
  return {title,year,banca,orgao,missing};
 }
