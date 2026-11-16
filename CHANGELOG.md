@@ -1,3 +1,12 @@
+## 0.6.25 — 16/11/2026
+
+- Corrigida a numeração repetida ao importar a prova do Instituto Legalle, Cândido Godói/RS (Lei nº 15.474 confundida com questão 15); a capa com quadro de rascunho é ignorada.
+- Reconhecimento automático da banca LEGALLE e do órgão PM-CANDIDO-GODOI.
+- Leitor genérico de gabaritos com vários cargos em tabelas de pares sequenciais, com escolha automática de Auxiliar de Serviços Gerais (40 respostas).
+- Texto-base que atravessa as duas colunas da página de Português preservado para as questões 1–15.
+- Divisão original por disciplina: Português (1–15), RLM/Matemática (16–25), Atualidades (26–30) e Legislação (31–40).
+- Testes automatizados passaram; sem alteração nos registros existentes. Importação no navegador pendente de confirmação.
+
 ## 0.6.24 — 16/11/2026
 
 - Objetiva, PM-Sossego, Matemática Q21: remove endereço `www.objetivas.com.br` inserido indevidamente depois da alternativa D.
