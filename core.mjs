@@ -378,6 +378,34 @@ export function expire(state){
  * Nunca supõe banca/órgão/ano sem encontrar indícios textuais.
  * Dados ausentes usam NI/0000 e são marcados para conferência.
  */
+/**
+ * O preenchimento manual é alternativa segura quando os PDFs não expõem
+ * banca/órgão/ano como texto. Não altera metadados já reconhecidos.
+ * A verificação de questões e gabarito continua obrigatória.
+ */
+export function completeExamMetadata(inferred,manual={},currentYear=new Date().getFullYear()){
+ const meta={...inferred,missing:[...(inferred.missing||[])]};
+ const extra=String(meta.title||'').split(' — ').slice(3).join(' — ');
+ for(const [prop,label] of [['year','ano'],['banca','banca'],['orgao','órgão']]){
+  const raw=String(manual?.[prop]||'').trim();
+  if(!raw)continue;
+  if(!meta.missing.includes(label))continue;
+  if(prop==='year'){
+   if(!/^\\d{4}$/.test(raw)||+raw<1980||+raw>currentYear+2)
+    throw Error('Ano informado inválido. Use quatro dígitos (1980 até '+(currentYear+2)+').');
+  }else if(raw.length<2||raw.length>70||!/^[\\p{L}\\d .()_\\/–-]+$/u.test(raw))
+   throw Error('Informe um nome válido para '+label+' (2 a 70 caracteres).');
+  meta[prop]=prop==='year'?raw:textNorm(raw);
+  meta.missing=meta.missing.filter(x=>x!==label);
+ }
+ meta.title=[
+  meta.year==='0000'?'Ano não identificado':meta.year,
+  meta.banca==='NI'?'Banca não identificada':meta.banca,
+  meta.orgao==='NI'?'Órgão não identificado':meta.orgao,
+  extra||'Prova importada'
+ ].join(' — ');
+ return meta;
+}
 export function inferExamMetadata(examText='',examFilename='',keyText='',keyFilename=''){
  const filename=String(examFilename||''),head=String(examText||'').slice(0,7000);
  const keyHead=String(keyText||'').slice(0,1300);
