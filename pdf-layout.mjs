@@ -399,6 +399,31 @@ export function spatialQuestions(pages){
  questions.sort((a,b)=>a.originalNumber-b.originalNumber);
  return {questions,contexts};
 }
+/**
+ * Identifica o código numérico real do CADERNO, sem usar a numeração
+ * das questões: o título na capa pode ficar dividido em duas colunas
+ * pelo leitor espacial ("002. Prova" na esquerda, "Objetiva" na direita).
+ * A assinatura editorial da banca (ex.: VNSP2511/002-AnInfor) é uma
+ * segunda fonte independente, não um palpite pelo nome do cargo.
+ */
+export function identifyBookletCode(examText='',examInfo={}){
+ const source=String(examText||'');
+ const cover=source.split(/\[\[PAGE:\s*2\]\]/i)[0].slice(0,7000);
+ const coverNumbers=[...cover.matchAll(/(?:^|\n)\s*0{0,2}(\d{1,3})\s*[.)]\s*PROVA\b(?:\s+OBJETIVA\b)?/gim)]
+   .map(m=>Number(m[1]));
+ const footerNumbers=[...source.matchAll(/\bVNSP\d{3,}\/0{0,2}(\d{1,3})(?=[\s-]|$)/gim)]
+   .map(m=>Number(m[1]));
+ const codes=[...new Set([...coverNumbers,...footerNumbers])];
+ const manually=String(examInfo?.bookletCode||'').trim();
+ if(manually&&!/^\d{1,3}$/.test(manually))
+  return {code:null,error:'Código do caderno inválido. Informe somente os dígitos impressos no gabarito.'};
+ if(codes.length>1)
+  return {code:null,error:'A capa e o rodapé indicam códigos de prova diferentes. Confirme o caderno correto.'};
+ if(manually&&codes.length===1&&Number(manually)!==codes[0])
+  return {code:null,error:'O código informado manualmente diverge da identificação impressa no caderno.'};
+ return {code:codes[0]??(manually?Number(manually):null),error:null};
+}
+
 export function chosenAnswerSection(text,examText='',examInfo={}){
  const source=String(text||'').replace(/\r/g,'');
  // Quadrix: um PDF de gabarito pode trazer vários cargos em seções
@@ -488,13 +513,10 @@ export function chosenAnswerSection(text,examText='',examInfo={}){
 
  const marks=[...source.matchAll(/(?:^|\n)\s*0{0,2}(\d{1,3})\s*[.]\s*PROVA\s+OBJETIVA\b/gim)];
  if(!marks.length)return {text:source,section:'única',error:null};
- const exam=norm(examText),code=exam.match(/\b0{0,2}(\d{1,3})\s*[.]\s*PROVA\s+OBJETIVA/),cargo=exam.includes('ANALISTA DE INFORMATICA')?'ANALISTA DE INFORMATICA':null;
- const userCode=String(examInfo?.bookletCode||'').trim();
- if(userCode&&!/^\d{1,3}$/.test(userCode))
-  return {text:'',section:null,error:'Código do caderno inválido. Informe somente os 1 a 3 dígitos que aparecem no gabarito.'};
- if(userCode&&code&&Number(userCode)!==Number(code[1]))
-  return {text:'',section:null,error:'O código informado manualmente diverge da identificação impressa no caderno.'};
- const selectedCode=code?Number(code[1]):userCode?Number(userCode):null;
+ const exam=norm(examText),cargo=exam.includes('ANALISTA DE INFORMATICA')?'ANALISTA DE INFORMATICA':null;
+ const booklet=identifyBookletCode(examText,examInfo);
+ if(booklet.error)return {text:'',section:null,error:booklet.error};
+ const selectedCode=booklet.code;
  const sections=marks.map((m,i)=>({code:Number(m[1]),text:source.slice(m.index,marks[i+1]?.index||source.length)}));
  if(selectedCode!==null&&!sections.some(x=>x.code===selectedCode))
   return {text:'',section:null,error:'O código da prova não consta no gabarito enviado. Confira se os arquivos correspondem ao mesmo cargo.'};
