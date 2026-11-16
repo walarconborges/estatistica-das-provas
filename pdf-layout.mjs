@@ -543,7 +543,7 @@ export function chosenAnswerSection(text,examText='',examInfo={}){
   ];
   const matchesRole=(role,hint)=>{
    const roleCompact=compact(role),hintCompact=compact(hint);
-   if(roleCompact.length>=8&&hintCompact.includes(roleCompact))return true;
+   if(roleCompact.length>=5&&hintCompact.includes(roleCompact))return true;
    // Como alguns PDFs dividem letras/palavras em linhas separadas,
    // exigir todos os termos distintivos, na ordem. Não comparar só
    // "Auxiliar", pois pode haver Auxiliar Administrativo e outros.
