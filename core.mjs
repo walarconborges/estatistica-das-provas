@@ -77,6 +77,16 @@ export function classify(stem,heading='',options=[]){
  */
 export function classifyByExamDivision(q,meta,guessed){
  const n=Number(q.originalNumber),b=textNorm(meta?.banca),org=textNorm(meta?.orgao),title=textNorm(meta?.title);
+ if(b==='LEGALLE'&&org==='CISCOPAR'&&title.includes('ANALISTA EM INFORMATICA')&&n>=1&&n<=50){
+  const [discipline,disciplineCode,defaultTopic]=n<=10?['Língua Portuguesa','LP','Geral']:
+   n<=13?['Matemática','MA','Geral']:
+   n<=16?['Informática','IN','Geral']:
+   n<=20?['Legislação','LE','Geral']:
+   ['Informática','IN','Conhecimentos específicos'];
+  const same=guessed.disciplineCode===disciplineCode;
+  return {...guessed,discipline,disciplineCode,topic:same?guessed.topic:defaultTopic,
+   topicCode:same?guessed.topicCode:'G',confidence:'alta'};
+ }
  // VUNESP/UNESP: a prova nº 002 de Analista de Informática II possui
  // blocos oficiais de Português (1–10), Matemática e Raciocínio Lógico
  // (11–15), Legislação (16–20), Conhecimentos Específicos (21–40).
@@ -429,6 +439,7 @@ export function inferExamMetadata(examText='',examFilename='',keyText='',keyFile
   ['IDECAN',/\bIDECAN\b/],
   ['QUADRIX',/\bQUADRIX\b/],
   ['FEPESE',/\bFEPESE\b/],
+  ['LEGALLE',/\bLEGALLE\b|ELEGGLL|LEGALLE\s+CONCURSOS/],
   ['UNOCHAPECO',/\bUNOCHAPECO\b/],
   ['FURB',/\bFURB\b/],
   ['FAUEL',/\bFAUEL\b/]
@@ -436,6 +447,7 @@ export function inferExamMetadata(examText='',examFilename='',keyText='',keyFile
  const orgaos=[
   ['CRQ-V',/CONSELHO REGIONAL DE QUIMICA DA 5(?:A|ª) REGIAO|\bCRQ\s*[-–]?\s*V\b/],
   ['PM-BRUSQUE',/\bMUNICIPIO DE BRUSQUE\b|\bPREFEITURA MUNICIPAL DE BRUSQUE\b/],
+  ['CISCOPAR',/\bCISCOPAR\b|CONSORCIO INTERMUNICIPAL DE SAUDE COSTA OESTE DO PARANA/],
   ['CMVOTORANTIM',/CAMARA MUNICIPAL DE VOTORANTIM/],
   ['SEMUSA',/\bSEMUSA\b|SECRETARIA MUNICIPAL DE SAUDE/],
   ['SEMED',/\bSEMED\b|SECRETARIA MUNICIPAL DE EDUCACAO/],
@@ -455,7 +467,7 @@ export function inferExamMetadata(examText='',examFilename='',keyText='',keyFile
  const banca=find(bancas),orgao=find(orgaos);
  const missing=[...(year==='0000'?['ano']:[]),...(banca==='NI'?['banca']:[]),...(orgao==='NI'?['órgão']:[])];
  const basename=filename.replace(/\.pdf$/i,'').replace(/[_-]+/g,' ').replace(/\s+/g,' ').trim().slice(0,90);
- const namedCargo=source.match(/ANALISTA DE INFORMATICA(?:\s+II)?/);
+ const namedCargo=source.match(/ANALISTA (?:DE|EM) IN\s*FORMATICA(?:\s+II)?/);
  const areaLine=String(head||'').split('\n').find(x=>/^[\s\t]*(?:[ÁA]REA DE ATUA[CÇ][AÃ]O\s*:\s*)/i.test(x));
  let area=areaLine?textNorm(areaLine.split(/:\s*/).slice(1).join(':')).slice(0,85):'';
  // Títulos centralizados atravessam as duas colunas do leitor PDF.
@@ -464,7 +476,7 @@ export function inferExamMetadata(examText='',examFilename='',keyText='',keyFile
  const fileJob=textNorm(filename.replace(/\.pdf$/i,'').replace(/[_-]+/g,' ').replace(/\s*\(\d+\)\s*$/,''));
  const fileArea=fileJob.match(/\bANALISTA DE INFORMATICA II\s+([A-Z0-9 ]{6,90})$/)?.[1]?.trim()||'';
  if(area&&fileArea.startsWith(area)&&fileArea.length>area.length)area=fileArea.slice(0,85);
- const cargo=namedCargo?(namedCargo[0].endsWith(' II')?'Analista de Informática II':'Analista de Informática')+
+ const cargo=namedCargo?(namedCargo[0].endsWith(' II')?'Analista de Informática II':/ANALISTA EM/.test(namedCargo[0])?'Analista em Informática':'Analista de Informática')+
    (area?' — '+area.toLocaleLowerCase('pt-BR'):''):
    basename||'Prova importada';
  const title=[year==='0000'?'Ano não identificado':year,banca==='NI'?'Banca não identificada':banca,orgao==='NI'?'Órgão não identificado':orgao,cargo].join(' — ');
