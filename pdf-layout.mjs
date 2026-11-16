@@ -523,8 +523,25 @@ export function chosenAnswerSection(text,examText='',examInfo={}){
  let found=selectedCode!==null?sections.find(x=>x.code===selectedCode):null;
  if(!found&&cargo){
   const matches=sections.filter(x=>norm(x.text.slice(0,190)).includes(cargo));
-  if(matches.length>1)return {text:'',section:null,error:'Várias seções do gabarito possuem o mesmo cargo. É necessário o código exato do caderno.'};
-  found=matches[0]||null;
+  if(matches.length>1){
+   // Mesmo nome de cargo, áreas diferentes: só aceitar a área integral
+   // declarada na capa ou no nome do arquivo. Não procurar nas questões,
+   // que podem mencionar incidentalmente outra área de atuação.
+   const cover=String(examText||'').split(/\[\[PAGE:\s*2\]\]/i)[0].slice(0,3500);
+   const evidence=norm([
+    String(examInfo?.examFilename||'').replace(/[_-]+/g,' '),
+    examInfo?.examTitle||'',cover
+   ].join(' ')).replace(/\s+/g,' ');
+   const matchingArea=matches.filter(section=>{
+    const area=norm(section.text.slice(0,340))
+      .match(/AREA DE ATUACAO\s*:\s*([^\n\r]+)/)?.[1]
+      ?.replace(/\s+/g,' ').trim();
+    return Boolean(area&&area.length>=12&&evidence.includes(area));
+   });
+   if(matchingArea.length!==1)
+    return {text:'',section:null,error:'Várias seções do gabarito possuem o mesmo cargo e a área de atuação não pôde ser identificada de forma única. Informe o código do caderno.'};
+   found=matchingArea[0];
+  }else found=matches[0]||null;
  }
  if(!found&&sections.length===1)found=sections[0];
  if(!found)return {text:'',section:null,error:'O documento contém vários gabaritos e não foi possível encontrar o cargo correspondente.'};
