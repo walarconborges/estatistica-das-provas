@@ -1,3 +1,14 @@
+## 0.6.15 — 16/11/2026
+
+- FCPC/Aracati: identificação da banca, Câmara Municipal e cargo Auxiliar de Serviços Gerais.
+- Importador deixa de confundir as oito instruções da capa com questões da prova.
+- Reconhecimento de “50 (cinquenta) questões” como quantidade oficial.
+- Gabarito preliminar com vários cargos em páginas separadas: seleciona apenas a página 2 (Auxiliar de Serviços Gerais) e lê corretamente as 50 respostas tabuladas.
+- Texto-base de IA generativa da página 2 compartilhado por Português 01–10.
+- Disciplinas originais: 01–10 Português, 11–20 Legislação, 21–50 Conhecimentos Específicos.
+- Testes automatizados completos aprovados; validação final no navegador ainda pendente.
+- Banco, histórico, classificações por edital e importações existentes preservados.
+
 ## 0.6.14 — 16/11/2026
 
 - “Candeias — normas verificadas” passa a “Candeias adaptadas” no filtro Legislação municipal, sem mudar seu identificador persistido.
