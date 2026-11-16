@@ -115,6 +115,27 @@ function restoreVerticalFractions(pieces){
  return pieces.filter(p=>!consumed.has(p));
 }
 
+/**
+ * Alguns PDFs Quadrix separam o título em dois itens de texto:
+ * "QUESTÃO" + "16". Sem reunir esses dois itens, a questão desaparece.
+ * Apenas títulos explícitos são reunidos; números do enunciado não são.
+ */
+function restoreSplitQuestionHeadings(pieces){
+ const used=new Set();
+ for(const word of pieces){
+  if(!/^QUEST[AÃ]O$/i.test(word.str)||used.has(word))continue;
+  const right=pieces.filter(p=>p!==word&&!used.has(p)&&p.col===word.col&&
+    /^\d{1,3}$/.test(p.str)&&Math.abs(p.y-word.y)<=7.5&&
+    p.x>=word.x+word.width-4&&p.x-(word.x+word.width)<16)
+   .sort((a,b)=>Math.abs(a.y-word.y)-Math.abs(b.y-word.y)||a.x-b.x)[0];
+  if(!right)continue;
+  word.str+=' '+right.str;
+  word.width=Math.max(word.width,right.x+right.width-word.x);
+  used.add(right);
+ }
+ return pieces.filter(p=>!used.has(p));
+}
+
 export function spatialLines(items,pageWidth,pageHeight,{split=true}={}){
  const pieces=[];
  for(const item of items){
@@ -123,7 +144,7 @@ export function spatialLines(items,pageWidth,pageHeight,{split=true}={}){
   if(!str||!Number.isFinite(x)||!Number.isFinite(y)||y<13||y>pageHeight-24||/^PCIMARKPCI\b|^WWW\.PCICONCURSOS\.|^CVOT\d+|^CONFIDENCIAL/i.test(str))continue;
   pieces.push({x,y,col:split?(x<pageWidth/2-1?0:1):0,str,width:Number(item.width||0),height:Number(item.height||Math.abs(item.transform?.[3])||0)});
  }
- const normalizedPieces=restoreVerticalFractions(attachSuperscriptOrdinals(pieces));
+ const normalizedPieces=restoreVerticalFractions(attachSuperscriptOrdinals(restoreSplitQuestionHeadings(pieces)));
  const lines=[];
  for(const col of split?[0,1]:[0]){
   const group=normalizedPieces.filter(i=>i.col===col).sort((a,b)=>a.y-b.y||a.x-b.x),rows=[];
