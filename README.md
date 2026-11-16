@@ -1,9 +1,22 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.14 — 16/11/2026**  
+**Versão experimental 0.6.15 — 16/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.15 — FCPC Aracati 2026 (Auxiliar de Serviços Gerais)
+
+- Compatibilidade com o caderno da **Câmara Municipal de Aracati/CE**, banca **Fundação Cearense de Pesquisa e Cultura — FCPC**, Edital nº 001, prova de **30/08/2026** para **Auxiliar de Serviços Gerais**.
+- A capa contém **8 instruções numeradas**, não questões. O importador agora reconhece uma folha de instruções e não repete as questões 01–08.
+- A quantidade de questões também é reconhecida quando aparece como “50 (cinquenta) questões”.
+- O gabarito preliminar reúne **quatro cargos em quatro páginas**. A seleção escolhe apenas a página **2 — Auxiliar de Serviços Gerais**; a página 1 pertence ao cargo Agente Administrativo.
+- Respostas extraídas do formato tabulado em duas linhas: números de 01–10, 11–20, 21–35 e 36–50, cada bloco com sua linha de letras A–D.
+- O texto-base identificado como **TEXTO** na página 2 da prova é preservado e vinculado às questões 01–10 de Língua Portuguesa, inclusive às questões das páginas seguintes.
+- Divisão original preservada: 01–10 Língua Portuguesa, 11–20 Legislação, 21–50 Conhecimentos Específicos.
+- Testes de regressão verificam os 50 gabaritos transcritos do arquivo fornecido, excluem as oito instruções numeradas e conservam o texto-base compartilhado.
+- A classificação por edital do cargo 202 de Candeias do Jamari continua independente, sem inclusão automática de leis locais de Aracati.
+- Nenhum registro anterior do banco foi apagado ou alterado. A importação real no navegador precisa ser confirmada.
 
 ## Versão 0.6.14 — filtros simplificados para estudo por edital
 
