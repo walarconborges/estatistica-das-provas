@@ -641,6 +641,49 @@ export function codedAnswerTables(raw){
  return entries;
 }
 
+
+/**
+ * Gabaritos com título do cargo + linhas de pares "01) C 02) B ...".
+ * Diferente da tabela intercalada da Objetiva, os pares de cada linha
+ * seguem a sequência 1–10, 11–20 etc. Detecta um bloco inteiro por
+ * cargo, antes de ler respostas genéricas do documento.
+ */
+export function pairedAnswerSections(raw){
+ const lines=String(raw||'').replace(/\r/g,'').split('\n').map(s=>s.trim());
+ const parseRow=row=>{
+  const pattern=/(?:^|\s)0?(\d{1,3})\s*\)\s*([A-E])(?=\s|$)/gi;
+  const matches=[...row.matchAll(pattern)];
+  if(matches.length<5||matches.length>25)return null;
+  if(row.replace(pattern,' ').trim())return null;
+  const numbers=matches.map(m=>Number(m[1]));
+  if(numbers.some((n,i)=>n!==numbers[0]+i))return null;
+  return matches.map(m=>({number:Number(m[1]),letter:m[2].toUpperCase()}));
+ };
+ const sections=[];
+ for(let i=1;i<lines.length-1;i++){
+  const first=parseRow(lines[i]);
+  if(!first||first[0].number!==1)continue;
+  const title=lines[i-1];
+  if(!/^[\p{L}][\p{L}\s\-()º.]{3,100}$/u.test(title)
+    ||/^(?:GABARITO|P[AÁ]GINA|CONCURSO|EDITAL|PREFEITURA|MUNIC[IÍ]PIO)\b/i.test(title))
+    continue;
+  let last=0,j=i,all=[],body=[];
+  while(j<lines.length){
+   const group=parseRow(lines[j]);
+   if(!group||group[0].number!==last+1)break;
+   all.push(...group);body.push(lines[j]);last=group.at(-1).number;
+   j++;
+  }
+  if(all.length<20||all.length>100)continue;
+  const answers=Object.fromEntries(all.map(item=>[item.number,item.letter]));
+  if(Object.keys(answers).length!==all.length)continue;
+  sections.push({title:norm(title).replace(/\s+/g,' ').trim(),
+    text:body.join('\n'),count:all.length,answers});
+  i=j-1;
+ }
+ return sections;
+}
+
 export function chosenAnswerSection(text,examText='',examInfo={}){
  const source=String(text||'').replace(/\r/g,'');
 
@@ -687,6 +730,35 @@ export function chosenAnswerSection(text,examText='',examInfo={}){
    return {text:'',section:null,format:'grid',
     error:'A tabela do cargo identificado não possui uma resposta para cada questão.'};
   return {text:found.text,section:found.code,format:'grid',error:null};
+ }
+
+
+ // Tabelas por cargo com células "01) C ... 40) B", em linhas
+ // sucessivas. Compatível com Instituto Legalle e outros layouts
+ // equivalentes, sem presumir o número de cargos ou de questões.
+ const pairedSections=pairedAnswerSections(source);
+ if(pairedSections.length){
+  const cover=String(examText||'').split(/\[\[PAGE:\s*2\]\]/i)[0];
+  const sources=[
+   String(examInfo?.examFilename||'').replace(/[_-]+/g,' ')
+    .replace(/\.pdf$/i,'').replace(/\s*\(\d+\)\s*$/,''),
+   String(examInfo?.examTitle||'').split(/\s+[—–]\s+/).at(-1)||'',
+   cover
+  ];
+  let found=null;
+  for(const hint of sources){
+   if(!hint)continue;
+   const matches=pairedSections.filter(section=>jobTitleMatches(section.title,hint));
+   if(matches.length>1)return {text:'',section:null,format:'pairs',
+    error:'O gabarito tem mais de uma seção compatível com o cargo. Não foi possível selecionar com segurança.'};
+   if(matches.length===1){found=matches[0];break;}
+  }
+  if(!found)return {text:'',section:null,format:'pairs',
+   error:'O gabarito tem seções por cargo, mas nenhuma corresponde ao título da prova.'};
+  if(Object.keys(found.answers).length!==found.count)
+   return {text:'',section:null,format:'pairs',
+    error:'O gabarito selecionado tem numeração repetida ou respostas ausentes.'};
+  return {text:found.text,section:found.title,format:'pairs',error:null};
  }
 
  // Gabaritos por cargo em páginas individuais: a FCPC (Aracati/CE)
