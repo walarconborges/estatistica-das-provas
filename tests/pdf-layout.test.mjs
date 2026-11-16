@@ -647,3 +647,49 @@ test('FEPESE: tabela-verdade em texto não exige captura de enunciado inteiro',(
  assert.equal(q.extractionReview,false);
  assert.equal(q.options.length,5);
 });
+
+
+test('FEPESE: 13, 15, 17, 27 e 30 não são interpretados como frações verticais',()=>{
+ const H=779.53;
+ const item=(str,x,y,width,height=9.3)=>({
+  str,width,height,transform:[1,0,0,height,x,H-y]
+ });
+ const rows=[
+  ['a.','SQUARE','13'],
+  ['b.','Check-square','15'],
+  ['c.','SQUARE','17'],
+  ['d.','SQUARE','27'],
+  ['e.','SQUARE','30']
+ ].flatMap(([letter,box,value],i)=>{
+  const y=191.38+i*12;
+  return [
+   item(letter,49.8,y,7.3),
+   item(box,59,y+.6,14.4,7.5),
+   item(value,74.6,y,11.2)
+  ];
+ });
+ const lines=spatialLines(rows,581.1,H);
+ assert.equal(lines.length,5);
+ assert.deepEqual(lines.map(r=>r.text.replace(/\s+/g,' ').trim().split(' ').at(-1)),
+  ['13','15','17','27','30']);
+ assert.ok(!lines.some(r=>/\d+\/\d+/.test(r.text)));
+ const parsed=spatialQuestions([{number:8,width:581.1,height:H,
+  lines:[
+   {col:0,x:49,y:20,text:'Município de Brusque'},
+   {col:0,x:49,y:70,text:'11. Em um levantamento, assinale a quantidade correta:'},
+   ...lines.map(r=>({...r,y:r.y-100}))
+  ]}]).questions[0];
+ assert.deepEqual(parsed.options.map(o=>o.text),['13','15','17','27','30']);
+ assert.equal(parsed.extractionFallback,undefined);
+});
+test('FEPESE: 560 e 1.036 são alternativas distintas, sem fração automática',()=>{
+ const H=779.53;
+ const it=(str,x,y,width)=>({str,width,height:9.3,transform:[1,0,0,9.3,x,H-y]});
+ const rows=[['a.','66'],['b.','120'],['c.','160'],['d.','560'],['e.','1.036']].flatMap(([letter,value],i)=>{
+  const y=390+i*12;return [it(letter,49.8,y,7),it('SQUARE',59,y+.6,14.5),it(value,74.6,y,23)];
+ });
+ const lines=spatialLines(rows,581.1,H);
+ assert.equal(lines.length,5);
+ assert.deepEqual(lines.map(l=>l.text.split(/\s+/).at(-1)),['66','120','160','560','1.036']);
+ assert.ok(!lines.some(r=>/\d+\/\d+/.test(r.text)));
+});
