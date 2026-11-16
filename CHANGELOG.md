@@ -1,3 +1,11 @@
+## 0.6.11 — 16/11/2026
+
+- Corrigida a seleção automática do gabarito 002 da VUNESP/UNESP quando a capa divide o título entre colunas.
+- Inferência do código pelo título "002. Prova" e pela assinatura de impressão VNSP2511/002; discordâncias bloqueiam a importação.
+- Desempate seguro entre cargos homônimos por área de atuação integral (Desenvolvimento de Sistemas Institucionais versus Redes e Infraestrutura), sem aceitar trecho genérico.
+- Testes adicionados para o cenário real informado e para proteção contra gabaritos de outros cargos.
+- Não foi necessário reinicializar ou modificar as provas importadas; validar importação final no navegador.
+
 ## 0.6.10 — 16/11/2026
 
 - Corrigido o falso duplicado “002. Prova Objetiva” da capa VUNESP/UNESP; o leitor não confunde código de caderno com questão.
