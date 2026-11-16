@@ -20,14 +20,18 @@ export function stripExamFooter(value){
  */
 export function repairImportedFooters(state){
  if(!state||!Array.isArray(state.questions))return state;
- for(const q of state.questions){
-  if(!q||!Array.isArray(q.options))continue;
-  for(const option of q.options){
-   if(typeof option?.text!=='string')continue;
+ state.questions=state.questions.map(q=>{
+  if(!q||!Array.isArray(q.options))return q;
+  let changed=false;
+  const options=q.options.map(option=>{
+   if(typeof option?.text!=='string')return option;
    const fixed=stripExamFooter(option.text);
-   if(fixed!==option.text)option.text=fixed;
-  }
- }
+   if(fixed===option.text)return option;
+   changed=true;
+   return {...option,text:fixed};
+  });
+  return changed?{...q,options}:q;
+ });
  return state;
 }
 
