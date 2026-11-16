@@ -1,9 +1,21 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.2 — 15/11/2026**  
+**Versão experimental 0.6.3 — 15/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.3 — Identificação do cargo no gabarito Quadrix
+
+O PDF de **Analista de Informática — CRQ-V — Quadrix 2026** traz o nome do cargo apenas no **rodapé** do caderno. A leitura espacial utilizada para separar questões descartava esse rodapé; consequentemente, a versão 0.6.2 não identificava o cargo ao selecionar uma das seções do gabarito multicargo.
+
+**Corrigido:** `chosenAnswerSection` agora recebe, além do texto lido do PDF, o **nome real do arquivo da prova** (`analista_de_informatica (2).pdf`) e o **título inferido**. Os sublinhados do nome do arquivo são normalizados para espaços. A busca prioriza, nessa ordem, nome do arquivo, título inferido e texto do PDF. A seleção só é aceita se localizar uma seção de cargo única e explícita — nesse caso, **2.7 ANALISTA DE INFORMÁTICA (CÓDIGO 401)**.
+
+A correção **não seleciona automaticamente o primeiro gabarito** e não permite misturar respostas de cargos diferentes. Se a identificação continuar ambígua, a importação permanece bloqueada para conferência.
+
+Reproduzido em teste o erro com o rodapé excluído; após a correção, o gabarito da seção 401 contém 50 respostas, da questão 1 à 50. O fluxo completo em navegador ainda precisa de validação após a publicação do GitHub Pages.
+
+Nenhum registro anterior foi excluído ou reimportado. Provas, respostas, perfis e estatísticas continuam preservados.
 
 ## Versão 0.6.2 — Anexo IV e referência real do cargo 505
 
