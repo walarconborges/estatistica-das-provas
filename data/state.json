@@ -431,6 +431,72 @@
       "keySection": "AUXILIAR DE SERVICOS GERAIS",
       "keyStatus": "preliminar",
       "metadataReview": []
+    },
+    {
+      "id": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "title": "2026 — FCPC — CM-ARACATI — auxiliar de servicos gerais (1)",
+      "year": "2026",
+      "banca": "FCPC",
+      "bancaCode": "FCPC",
+      "orgao": "CM-ARACATI",
+      "orgaoCode": "CMARACATI",
+      "createdAt": "2026-11-16T18:54:49.471Z",
+      "questionIds": [
+        "01527e2c-7fd0-48ab-9166-8b09cf858e94",
+        "0b1a4816-14dc-4b66-bcff-9009c8e9b98c",
+        "98fe4a66-6122-4ff9-9793-fcf7a8d4483a",
+        "fe662b95-6743-4153-ab7b-6528fb071253",
+        "9e316b13-152d-4dc3-af20-878a0678b756",
+        "6b37ed2c-15a4-4aaa-84d0-aa6eeff4b840",
+        "be303e3e-fa7a-43cb-8d3a-88a7e8640efd",
+        "fb366593-ef51-4208-b613-55b74947c0b0",
+        "92e8bf78-d7ff-46ae-925c-f7c85217362c",
+        "e74f0edf-06af-4766-9e92-34b7e1b08755",
+        "c644472a-7f39-4216-b18c-eac43d03bb70",
+        "1cc2a15d-3b10-4bab-b275-2bffad76611a",
+        "0b23f145-eee2-4893-af8f-93a9cab80616",
+        "4fea51ac-f283-4d22-82e0-40428ab86c43",
+        "0be96ec4-63a1-4502-ba86-b5b1bbcb0b8d",
+        "ad173cb8-98d0-4f9d-bf95-63cc4f170f0f",
+        "a35c9387-fae3-4e21-b816-1f5652e17625",
+        "c9bac65b-c73c-4878-82b1-e060bc6c7db4",
+        "538aa304-d57b-474c-b1fe-f1cb19a93979",
+        "89e9797d-2c08-421b-bee9-3f2a855eba5c",
+        "79d18bf0-571f-4610-aed0-83ed97d5636e",
+        "d203a572-0afe-4e56-bd3b-bff69fa3f45d",
+        "88fef184-7459-4cc8-8187-f9345a82f5b5",
+        "18d9467c-3e46-48d8-8fcf-ecfeecfde06f",
+        "cb68277a-21de-43f6-b7c5-e33e8cc6f72a",
+        "f16be15d-a4b3-44de-8414-c72fdad7ff55",
+        "882d2cf4-f30f-4a5a-90b3-9e84d67bea27",
+        "27040e88-7414-4d29-aedb-80d1f6bff6b3",
+        "9e6daa94-06a9-4a1c-bcf1-c962431a0954",
+        "c797c1e6-77d1-4412-be7c-c43f4354e70f",
+        "26192e8b-0183-45a8-95ee-47d48fa6c474",
+        "8260a9b2-fb4a-4585-880e-0f5e0cdcca69",
+        "188221da-84bc-48cc-ae03-6962f7bf306d",
+        "87c47a98-394c-499c-9bca-943371273f56",
+        "1d301d80-debd-4b7c-9e0f-ec353427cc02",
+        "dc07e348-4ccc-41c8-8308-9819341a0bf6",
+        "04dad595-3112-4d5d-a878-e2fed724ee91",
+        "0b01a679-6649-4552-8924-e55ea545268e",
+        "35bc2928-7b85-4704-ad6e-75cebc881b58",
+        "1d0045d7-3106-4732-99ff-fad0c02b4ae7",
+        "2316b1ce-e733-4f7d-a7ba-4363e6a7f43a",
+        "b75b713d-104a-4246-98c4-6532d861feee",
+        "5f7122b3-9e12-4581-93a1-d4857baf3b35",
+        "0ee0e118-eedf-4ac7-b844-62a0ff78090a",
+        "a6a52029-64e0-4d65-8d39-58c589875731",
+        "a8e27e12-f1ff-4c49-a25f-43893bf6b928",
+        "4dd5b555-f68a-4d07-8ed9-ce2701a9077a",
+        "48f283fb-3240-4644-a7ab-52c4f59631e0",
+        "a05ffb15-5287-4ac9-b211-716c4d12754c",
+        "24cfcaa8-b3ad-4273-9316-cead661887bb"
+      ],
+      "keySection": "AUXILIAR DE SERVIAOS GERAIS",
+      "keyStatus": "preliminar",
+      "metadataReview": [],
+      "pdfPath": "storage/pdfs/6efc9137-efad-448f-9918-81115b2f9d56.pdf"
     }
   ],
   "questions": [
@@ -27301,6 +27367,3038 @@
       "banca": "OBJETIVA",
       "orgao": "PM-SOSSEGO",
       "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 1,
+      "heading": "",
+      "stem": "No trecho \"Pesquisadores americanos afirmam ter usado inteligência artificial para projetar vírus totalmente novos, que são completamente funcionais e capazes de se replicar em laboratório\" (linhas 01-02), o autor do texto:",
+      "stemRows": [
+        {
+          "y": 449.92999999999995,
+          "text": "No trecho \"Pesquisadores americanos afirmam ter usado inteligência artificial para projetar vírus"
+        },
+        {
+          "y": 463.72999999999996,
+          "text": "totalmente novos, que são completamente funcionais e capazes de se replicar em laboratório\""
+        },
+        {
+          "y": 477.42999999999995,
+          "text": "(linhas 01-02), o autor do texto:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "recorre a terceiros para validar o dito."
+        },
+        {
+          "letter": "B",
+          "text": "assume o compromisso pelo que é dito."
+        },
+        {
+          "letter": "C",
+          "text": "evidencia seu entusiasmo pela tecnologia."
+        },
+        {
+          "letter": "D",
+          "text": "denuncia sua descrença naquilo que relata."
+        }
+      ],
+      "optionsStartY": 494.34999999999997,
+      "sourcePage": 2,
+      "sourceColumn": 0,
+      "startY": 449.92999999999995,
+      "endY": 546.1899999999999,
+      "contextText": "01 Pesquisadores americanos afirmam ter usado inteligência artificial para projetar vírus 02 totalmente novos, que são completamente funcionais e capazes de se replicar em laboratório. 03 [...] As ferramentas de IA estão avançando rapidamente e já foram usadas para desenvolver 04 novos antibióticos. Mas isso é relativamente simples em comparação com a criação de um novo 05 vírus totalmente do zero. 06 \"Este é um próximo passo na complexidade que a IA generativa pode projetar. Esta é a 07 primeira vez que a IA generativa foi usada para projetar um genoma completo, algo que pode se 08 replicar e ter outras funções dentro das células... isso foi um território novo para nós\", disse 09 Brian Hie, professor da Universidade Stanford, à BBC. 10 A tecnologia funciona de forma semelhante a grandes modelos de linguagem, como o 11 ChatGPT, que preveem sequências de texto. Neste caso, os modelos de IA, conhecidos como 12 Evo1 e Evo2, preveem a linguagem da biologia em vez de palavras. Os modelos de IA foram 13 treinados com códigos genéticos de vírus, bactérias, plantas e pessoas. Em seguida, foram 14 refinados para produzir um tipo de vírus, conhecido como bacteriófago, que infecta apenas 15 espécies específicas de bactérias. 16 [...] O desenvolvimento de novos fagos pode levar a novas formas de tratar infecções que 17 se tornaram resistentes a antibióticos. [...] Mas já surgiram preocupações de que a mesma 18 tecnologia possa ser usada maliciosamente para criar novas doenças. [...] Hie argumenta que as 19 medidas de proteção já existentes contribuem muito para \"garantir que a tecnologia seja usada 20 para o bem\". Adaptado de: GALLAGHER, James. Como novos vírus criados por IA podem mudar a ciência (apesar de causarem preocupação). BBC News. Disponível em: https://www.bbc.com/portuguese/articles/c62xvgjz4xxo. Acesso em 12 ago. 2026.",
+      "contextRange": [
+        1,
+        10
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Interpretação de texto",
+      "topicCode": "IT",
+      "id": "01527e2c-7fd0-48ab-9166-8b09cf858e94",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026LPITFCPCCMARACATI1",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 2,
+      "heading": "",
+      "stem": "O termo \"isso\" (linha 04) retoma textualmente:",
+      "stemRows": [
+        {
+          "y": 561.1899999999999,
+          "text": "O termo \"isso\" (linha 04) retoma textualmente:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "o uso de IA para desenvolver novos antibióticos."
+        },
+        {
+          "letter": "B",
+          "text": "o avanço de ferramentas de inteligência artificial."
+        },
+        {
+          "letter": "C",
+          "text": "a projeção de vírus totalmente novos e funcionais."
+        },
+        {
+          "letter": "D",
+          "text": "a criação de vírus capazes de replicação em laboratório."
+        }
+      ],
+      "optionsStartY": 578.1099999999999,
+      "sourcePage": 2,
+      "sourceColumn": 0,
+      "startY": 561.1899999999999,
+      "endY": 629.9499999999999,
+      "contextText": "01 Pesquisadores americanos afirmam ter usado inteligência artificial para projetar vírus 02 totalmente novos, que são completamente funcionais e capazes de se replicar em laboratório. 03 [...] As ferramentas de IA estão avançando rapidamente e já foram usadas para desenvolver 04 novos antibióticos. Mas isso é relativamente simples em comparação com a criação de um novo 05 vírus totalmente do zero. 06 \"Este é um próximo passo na complexidade que a IA generativa pode projetar. Esta é a 07 primeira vez que a IA generativa foi usada para projetar um genoma completo, algo que pode se 08 replicar e ter outras funções dentro das células... isso foi um território novo para nós\", disse 09 Brian Hie, professor da Universidade Stanford, à BBC. 10 A tecnologia funciona de forma semelhante a grandes modelos de linguagem, como o 11 ChatGPT, que preveem sequências de texto. Neste caso, os modelos de IA, conhecidos como 12 Evo1 e Evo2, preveem a linguagem da biologia em vez de palavras. Os modelos de IA foram 13 treinados com códigos genéticos de vírus, bactérias, plantas e pessoas. Em seguida, foram 14 refinados para produzir um tipo de vírus, conhecido como bacteriófago, que infecta apenas 15 espécies específicas de bactérias. 16 [...] O desenvolvimento de novos fagos pode levar a novas formas de tratar infecções que 17 se tornaram resistentes a antibióticos. [...] Mas já surgiram preocupações de que a mesma 18 tecnologia possa ser usada maliciosamente para criar novas doenças. [...] Hie argumenta que as 19 medidas de proteção já existentes contribuem muito para \"garantir que a tecnologia seja usada 20 para o bem\". Adaptado de: GALLAGHER, James. Como novos vírus criados por IA podem mudar a ciência (apesar de causarem preocupação). BBC News. Disponível em: https://www.bbc.com/portuguese/articles/c62xvgjz4xxo. Acesso em 12 ago. 2026.",
+      "contextRange": [
+        1,
+        10
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "0b1a4816-14dc-4b66-bcff-9009c8e9b98c",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026LPGFCPCCMARACATI1",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 3,
+      "heading": "",
+      "stem": "O termo \"vírus\" (linha 13) mantém com \"bacteriófago\" (linha 14) uma relação semântica de:",
+      "stemRows": [
+        {
+          "y": 644.9499999999999,
+          "text": "O termo \"vírus\" (linha 13) mantém com \"bacteriófago\" (linha 14) uma relação semântica de:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "sinonímia."
+        },
+        {
+          "letter": "B",
+          "text": "antonímia."
+        },
+        {
+          "letter": "C",
+          "text": "hiponímia."
+        },
+        {
+          "letter": "D",
+          "text": "heteronímia."
+        }
+      ],
+      "optionsStartY": 661.9,
+      "sourcePage": 2,
+      "sourceColumn": 0,
+      "startY": 644.9499999999999,
+      "endY": 713.62,
+      "contextText": "01 Pesquisadores americanos afirmam ter usado inteligência artificial para projetar vírus 02 totalmente novos, que são completamente funcionais e capazes de se replicar em laboratório. 03 [...] As ferramentas de IA estão avançando rapidamente e já foram usadas para desenvolver 04 novos antibióticos. Mas isso é relativamente simples em comparação com a criação de um novo 05 vírus totalmente do zero. 06 \"Este é um próximo passo na complexidade que a IA generativa pode projetar. Esta é a 07 primeira vez que a IA generativa foi usada para projetar um genoma completo, algo que pode se 08 replicar e ter outras funções dentro das células... isso foi um território novo para nós\", disse 09 Brian Hie, professor da Universidade Stanford, à BBC. 10 A tecnologia funciona de forma semelhante a grandes modelos de linguagem, como o 11 ChatGPT, que preveem sequências de texto. Neste caso, os modelos de IA, conhecidos como 12 Evo1 e Evo2, preveem a linguagem da biologia em vez de palavras. Os modelos de IA foram 13 treinados com códigos genéticos de vírus, bactérias, plantas e pessoas. Em seguida, foram 14 refinados para produzir um tipo de vírus, conhecido como bacteriófago, que infecta apenas 15 espécies específicas de bactérias. 16 [...] O desenvolvimento de novos fagos pode levar a novas formas de tratar infecções que 17 se tornaram resistentes a antibióticos. [...] Mas já surgiram preocupações de que a mesma 18 tecnologia possa ser usada maliciosamente para criar novas doenças. [...] Hie argumenta que as 19 medidas de proteção já existentes contribuem muito para \"garantir que a tecnologia seja usada 20 para o bem\". Adaptado de: GALLAGHER, James. Como novos vírus criados por IA podem mudar a ciência (apesar de causarem preocupação). BBC News. Disponível em: https://www.bbc.com/portuguese/articles/c62xvgjz4xxo. Acesso em 12 ago. 2026.",
+      "contextRange": [
+        1,
+        10
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "98fe4a66-6122-4ff9-9793-fcf7a8d4483a",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026LPGFCPCCMARACATI2",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 4,
+      "heading": "",
+      "stem": "Sobre a questão da segurança da tecnologia apresentada no texto, é correto afirmar que:",
+      "stemRows": [
+        {
+          "y": 728.62,
+          "text": "Sobre a questão da segurança da tecnologia apresentada no texto, é correto afirmar que:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Hie julga imprescindível a adoção de medidas para evitar o mau uso."
+        },
+        {
+          "letter": "B",
+          "text": "o autor do texto descarta totalmente o risco de mau uso da tecnologia."
+        },
+        {
+          "letter": "C",
+          "text": "o uso malicioso da tecnologia é considerado inevitável pelos cientistas."
+        },
+        {
+          "letter": "D",
+          "text": "medidas de segurança foram tomadas no desenvolvimento dos novos vírus. Concurso Público da Câmara Municipal de Aracati A uxiliar de Serviços Gerais"
+        }
+      ],
+      "optionsStartY": 745.536,
+      "sourcePage": 2,
+      "sourceColumn": 0,
+      "startY": 728.62,
+      "endY": 808.92,
+      "contextText": "01 Pesquisadores americanos afirmam ter usado inteligência artificial para projetar vírus 02 totalmente novos, que são completamente funcionais e capazes de se replicar em laboratório. 03 [...] As ferramentas de IA estão avançando rapidamente e já foram usadas para desenvolver 04 novos antibióticos. Mas isso é relativamente simples em comparação com a criação de um novo 05 vírus totalmente do zero. 06 \"Este é um próximo passo na complexidade que a IA generativa pode projetar. Esta é a 07 primeira vez que a IA generativa foi usada para projetar um genoma completo, algo que pode se 08 replicar e ter outras funções dentro das células... isso foi um território novo para nós\", disse 09 Brian Hie, professor da Universidade Stanford, à BBC. 10 A tecnologia funciona de forma semelhante a grandes modelos de linguagem, como o 11 ChatGPT, que preveem sequências de texto. Neste caso, os modelos de IA, conhecidos como 12 Evo1 e Evo2, preveem a linguagem da biologia em vez de palavras. Os modelos de IA foram 13 treinados com códigos genéticos de vírus, bactérias, plantas e pessoas. Em seguida, foram 14 refinados para produzir um tipo de vírus, conhecido como bacteriófago, que infecta apenas 15 espécies específicas de bactérias. 16 [...] O desenvolvimento de novos fagos pode levar a novas formas de tratar infecções que 17 se tornaram resistentes a antibióticos. [...] Mas já surgiram preocupações de que a mesma 18 tecnologia possa ser usada maliciosamente para criar novas doenças. [...] Hie argumenta que as 19 medidas de proteção já existentes contribuem muito para \"garantir que a tecnologia seja usada 20 para o bem\". Adaptado de: GALLAGHER, James. Como novos vírus criados por IA podem mudar a ciência (apesar de causarem preocupação). BBC News. Disponível em: https://www.bbc.com/portuguese/articles/c62xvgjz4xxo. Acesso em 12 ago. 2026.",
+      "contextRange": [
+        1,
+        10
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "fe662b95-6743-4153-ab7b-6528fb071253",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026LPGFCPCCMARACATI3",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 5,
+      "heading": "",
+      "stem": "O texto tem como propósito comunicativo central:",
+      "stemRows": [
+        {
+          "y": 67.43999999999994,
+          "text": "O texto tem como propósito comunicativo central:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "alertar a população para o risco de pesquisas com IA."
+        },
+        {
+          "letter": "B",
+          "text": "divulgar resultado significativo de pesquisa científica."
+        },
+        {
+          "letter": "C",
+          "text": "enaltecer as pesquisas feitas na Universidade Stanford."
+        },
+        {
+          "letter": "D",
+          "text": "descrever como os modelos de IA generativa funcionam."
+        }
+      ],
+      "optionsStartY": 84.36000000000001,
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "startY": 67.43999999999994,
+      "endY": 138.5,
+      "contextText": "01 Pesquisadores americanos afirmam ter usado inteligência artificial para projetar vírus 02 totalmente novos, que são completamente funcionais e capazes de se replicar em laboratório. 03 [...] As ferramentas de IA estão avançando rapidamente e já foram usadas para desenvolver 04 novos antibióticos. Mas isso é relativamente simples em comparação com a criação de um novo 05 vírus totalmente do zero. 06 \"Este é um próximo passo na complexidade que a IA generativa pode projetar. Esta é a 07 primeira vez que a IA generativa foi usada para projetar um genoma completo, algo que pode se 08 replicar e ter outras funções dentro das células... isso foi um território novo para nós\", disse 09 Brian Hie, professor da Universidade Stanford, à BBC. 10 A tecnologia funciona de forma semelhante a grandes modelos de linguagem, como o 11 ChatGPT, que preveem sequências de texto. Neste caso, os modelos de IA, conhecidos como 12 Evo1 e Evo2, preveem a linguagem da biologia em vez de palavras. Os modelos de IA foram 13 treinados com códigos genéticos de vírus, bactérias, plantas e pessoas. Em seguida, foram 14 refinados para produzir um tipo de vírus, conhecido como bacteriófago, que infecta apenas 15 espécies específicas de bactérias. 16 [...] O desenvolvimento de novos fagos pode levar a novas formas de tratar infecções que 17 se tornaram resistentes a antibióticos. [...] Mas já surgiram preocupações de que a mesma 18 tecnologia possa ser usada maliciosamente para criar novas doenças. [...] Hie argumenta que as 19 medidas de proteção já existentes contribuem muito para \"garantir que a tecnologia seja usada 20 para o bem\". Adaptado de: GALLAGHER, James. Como novos vírus criados por IA podem mudar a ciência (apesar de causarem preocupação). BBC News. Disponível em: https://www.bbc.com/portuguese/articles/c62xvgjz4xxo. Acesso em 12 ago. 2026.",
+      "contextRange": [
+        1,
+        10
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Interpretação de texto",
+      "topicCode": "IT",
+      "id": "9e316b13-152d-4dc3-af20-878a0678b756",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026LPITFCPCCMARACATI2",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 6,
+      "heading": "",
+      "stem": "Assinale a alternativa cuja letra destacada representa o mesmo fonema representado pela letra Z em \"produzir\" (linha 14).",
+      "stemRows": [
+        {
+          "y": 153.5,
+          "text": "Assinale a alternativa cuja letra destacada representa o mesmo fonema representado pela letra Z em"
+        },
+        {
+          "y": 167.29999999999995,
+          "text": "\"produzir\" (linha 14)."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "[S]imples."
+        },
+        {
+          "letter": "B",
+          "text": "pró[X]imo."
+        },
+        {
+          "letter": "C",
+          "text": "e[X]istentes."
+        },
+        {
+          "letter": "D",
+          "text": "espe[C]íficas."
+        }
+      ],
+      "optionsStartY": 184.2199999999999,
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "startY": 153.5,
+      "endY": 238.33999999999992,
+      "contextText": "01 Pesquisadores americanos afirmam ter usado inteligência artificial para projetar vírus 02 totalmente novos, que são completamente funcionais e capazes de se replicar em laboratório. 03 [...] As ferramentas de IA estão avançando rapidamente e já foram usadas para desenvolver 04 novos antibióticos. Mas isso é relativamente simples em comparação com a criação de um novo 05 vírus totalmente do zero. 06 \"Este é um próximo passo na complexidade que a IA generativa pode projetar. Esta é a 07 primeira vez que a IA generativa foi usada para projetar um genoma completo, algo que pode se 08 replicar e ter outras funções dentro das células... isso foi um território novo para nós\", disse 09 Brian Hie, professor da Universidade Stanford, à BBC. 10 A tecnologia funciona de forma semelhante a grandes modelos de linguagem, como o 11 ChatGPT, que preveem sequências de texto. Neste caso, os modelos de IA, conhecidos como 12 Evo1 e Evo2, preveem a linguagem da biologia em vez de palavras. Os modelos de IA foram 13 treinados com códigos genéticos de vírus, bactérias, plantas e pessoas. Em seguida, foram 14 refinados para produzir um tipo de vírus, conhecido como bacteriófago, que infecta apenas 15 espécies específicas de bactérias. 16 [...] O desenvolvimento de novos fagos pode levar a novas formas de tratar infecções que 17 se tornaram resistentes a antibióticos. [...] Mas já surgiram preocupações de que a mesma 18 tecnologia possa ser usada maliciosamente para criar novas doenças. [...] Hie argumenta que as 19 medidas de proteção já existentes contribuem muito para \"garantir que a tecnologia seja usada 20 para o bem\". Adaptado de: GALLAGHER, James. Como novos vírus criados por IA podem mudar a ciência (apesar de causarem preocupação). BBC News. Disponível em: https://www.bbc.com/portuguese/articles/c62xvgjz4xxo. Acesso em 12 ago. 2026.",
+      "contextRange": [
+        1,
+        10
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "6b37ed2c-15a4-4aaa-84d0-aa6eeff4b840",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026LPGFCPCCMARACATI4",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 7,
+      "heading": "",
+      "stem": "Assinale a alternativa cuja forma verbal destacada se encontra na voz passiva.",
+      "stemRows": [
+        {
+          "y": 253.33999999999992,
+          "text": "Assinale a alternativa cuja forma verbal destacada se encontra na voz passiva."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "\"Pesquisadores americanos afirmam ter usado inteligência artificial\" (linha 01)."
+        },
+        {
+          "letter": "B",
+          "text": "\"As ferramentas de IA estão avançando rapidamente (linha 03)."
+        },
+        {
+          "letter": "C",
+          "text": "\"isso foi um território novo para nós\" (linha 08)."
+        },
+        {
+          "letter": "D",
+          "text": "\"Os modelos de IA foram treinados com códigos genéticos... (linhas 12-13)."
+        }
+      ],
+      "optionsStartY": 270.26,
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "startY": 253.33999999999992,
+      "endY": 324.40999999999997,
+      "contextText": "01 Pesquisadores americanos afirmam ter usado inteligência artificial para projetar vírus 02 totalmente novos, que são completamente funcionais e capazes de se replicar em laboratório. 03 [...] As ferramentas de IA estão avançando rapidamente e já foram usadas para desenvolver 04 novos antibióticos. Mas isso é relativamente simples em comparação com a criação de um novo 05 vírus totalmente do zero. 06 \"Este é um próximo passo na complexidade que a IA generativa pode projetar. Esta é a 07 primeira vez que a IA generativa foi usada para projetar um genoma completo, algo que pode se 08 replicar e ter outras funções dentro das células... isso foi um território novo para nós\", disse 09 Brian Hie, professor da Universidade Stanford, à BBC. 10 A tecnologia funciona de forma semelhante a grandes modelos de linguagem, como o 11 ChatGPT, que preveem sequências de texto. Neste caso, os modelos de IA, conhecidos como 12 Evo1 e Evo2, preveem a linguagem da biologia em vez de palavras. Os modelos de IA foram 13 treinados com códigos genéticos de vírus, bactérias, plantas e pessoas. Em seguida, foram 14 refinados para produzir um tipo de vírus, conhecido como bacteriófago, que infecta apenas 15 espécies específicas de bactérias. 16 [...] O desenvolvimento de novos fagos pode levar a novas formas de tratar infecções que 17 se tornaram resistentes a antibióticos. [...] Mas já surgiram preocupações de que a mesma 18 tecnologia possa ser usada maliciosamente para criar novas doenças. [...] Hie argumenta que as 19 medidas de proteção já existentes contribuem muito para \"garantir que a tecnologia seja usada 20 para o bem\". Adaptado de: GALLAGHER, James. Como novos vírus criados por IA podem mudar a ciência (apesar de causarem preocupação). BBC News. Disponível em: https://www.bbc.com/portuguese/articles/c62xvgjz4xxo. Acesso em 12 ago. 2026.",
+      "contextRange": [
+        1,
+        10
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "be303e3e-fa7a-43cb-8d3a-88a7e8640efd",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026LPGFCPCCMARACATI5",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 8,
+      "heading": "",
+      "stem": "Assinale a alternativa em que o verbo PREVER está conjugado corretamente como em \"...preveem a linguagem da biologia em vez de palavras\" (linha 12).",
+      "stemRows": [
+        {
+          "y": 339.40999999999997,
+          "text": "Assinale a alternativa em que o verbo PREVER está conjugado corretamente como em \"...preveem"
+        },
+        {
+          "y": 353.21,
+          "text": "a linguagem da biologia em vez de palavras\" (linha 12)."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Os pesquisadores preveram o uso de novos fagos na medicina."
+        },
+        {
+          "letter": "B",
+          "text": "Se a IA prevesse vírus infectadores de humanos, representaria um perigo."
+        },
+        {
+          "letter": "C",
+          "text": "Com mais testes, os estudiosos preveriam o resultado com mais segurança."
+        },
+        {
+          "letter": "D",
+          "text": "As pessoas ficarão preocupadas, quando elas previerem o mau uso da tecnologia."
+        }
+      ],
+      "optionsStartY": 370.12999999999994,
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "startY": 339.40999999999997,
+      "endY": 424.12999999999994,
+      "contextText": "01 Pesquisadores americanos afirmam ter usado inteligência artificial para projetar vírus 02 totalmente novos, que são completamente funcionais e capazes de se replicar em laboratório. 03 [...] As ferramentas de IA estão avançando rapidamente e já foram usadas para desenvolver 04 novos antibióticos. Mas isso é relativamente simples em comparação com a criação de um novo 05 vírus totalmente do zero. 06 \"Este é um próximo passo na complexidade que a IA generativa pode projetar. Esta é a 07 primeira vez que a IA generativa foi usada para projetar um genoma completo, algo que pode se 08 replicar e ter outras funções dentro das células... isso foi um território novo para nós\", disse 09 Brian Hie, professor da Universidade Stanford, à BBC. 10 A tecnologia funciona de forma semelhante a grandes modelos de linguagem, como o 11 ChatGPT, que preveem sequências de texto. Neste caso, os modelos de IA, conhecidos como 12 Evo1 e Evo2, preveem a linguagem da biologia em vez de palavras. Os modelos de IA foram 13 treinados com códigos genéticos de vírus, bactérias, plantas e pessoas. Em seguida, foram 14 refinados para produzir um tipo de vírus, conhecido como bacteriófago, que infecta apenas 15 espécies específicas de bactérias. 16 [...] O desenvolvimento de novos fagos pode levar a novas formas de tratar infecções que 17 se tornaram resistentes a antibióticos. [...] Mas já surgiram preocupações de que a mesma 18 tecnologia possa ser usada maliciosamente para criar novas doenças. [...] Hie argumenta que as 19 medidas de proteção já existentes contribuem muito para \"garantir que a tecnologia seja usada 20 para o bem\". Adaptado de: GALLAGHER, James. Como novos vírus criados por IA podem mudar a ciência (apesar de causarem preocupação). BBC News. Disponível em: https://www.bbc.com/portuguese/articles/c62xvgjz4xxo. Acesso em 12 ago. 2026.",
+      "contextRange": [
+        1,
+        10
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "fb366593-ef51-4208-b613-55b74947c0b0",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026LPGFCPCCMARACATI6",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 9,
+      "heading": "",
+      "stem": "Assinale a alternativa que indica corretamente a classe da palavra destacada em: \"algo que pode se replicar...\" (linhas 07-08).",
+      "stemRows": [
+        {
+          "y": 439.12999999999994,
+          "text": "Assinale a alternativa que indica corretamente a classe da palavra destacada em: \"algo que pode se"
+        },
+        {
+          "y": 452.92999999999995,
+          "text": "replicar...\" (linhas 07-08)."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Pronome relativo."
+        },
+        {
+          "letter": "B",
+          "text": "Conjunção adverbial."
+        },
+        {
+          "letter": "C",
+          "text": "Conjunção integrante."
+        },
+        {
+          "letter": "D",
+          "text": "Conjunção explicativa."
+        }
+      ],
+      "optionsStartY": 469.84999999999997,
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "startY": 439.12999999999994,
+      "endY": 523.99,
+      "contextText": "01 Pesquisadores americanos afirmam ter usado inteligência artificial para projetar vírus 02 totalmente novos, que são completamente funcionais e capazes de se replicar em laboratório. 03 [...] As ferramentas de IA estão avançando rapidamente e já foram usadas para desenvolver 04 novos antibióticos. Mas isso é relativamente simples em comparação com a criação de um novo 05 vírus totalmente do zero. 06 \"Este é um próximo passo na complexidade que a IA generativa pode projetar. Esta é a 07 primeira vez que a IA generativa foi usada para projetar um genoma completo, algo que pode se 08 replicar e ter outras funções dentro das células... isso foi um território novo para nós\", disse 09 Brian Hie, professor da Universidade Stanford, à BBC. 10 A tecnologia funciona de forma semelhante a grandes modelos de linguagem, como o 11 ChatGPT, que preveem sequências de texto. Neste caso, os modelos de IA, conhecidos como 12 Evo1 e Evo2, preveem a linguagem da biologia em vez de palavras. Os modelos de IA foram 13 treinados com códigos genéticos de vírus, bactérias, plantas e pessoas. Em seguida, foram 14 refinados para produzir um tipo de vírus, conhecido como bacteriófago, que infecta apenas 15 espécies específicas de bactérias. 16 [...] O desenvolvimento de novos fagos pode levar a novas formas de tratar infecções que 17 se tornaram resistentes a antibióticos. [...] Mas já surgiram preocupações de que a mesma 18 tecnologia possa ser usada maliciosamente para criar novas doenças. [...] Hie argumenta que as 19 medidas de proteção já existentes contribuem muito para \"garantir que a tecnologia seja usada 20 para o bem\". Adaptado de: GALLAGHER, James. Como novos vírus criados por IA podem mudar a ciência (apesar de causarem preocupação). BBC News. Disponível em: https://www.bbc.com/portuguese/articles/c62xvgjz4xxo. Acesso em 12 ago. 2026.",
+      "contextRange": [
+        1,
+        10
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "92e8bf78-d7ff-46ae-925c-f7c85217362c",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026LPGFCPCCMARACATI7",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 10,
+      "heading": "",
+      "stem": "Assinale a alternativa que justifica corretamente a vírgula empregada antes do projetar vírus totalmente novos, que são completamente funcionais...\" (linhas 01-02).",
+      "stemRows": [
+        {
+          "y": 538.99,
+          "text": "Assinale a alternativa que justifica corretamente a vírgula empregada antes do"
+        },
+        {
+          "y": 552.79,
+          "text": "projetar vírus totalmente novos, que são completamente funcionais...\" (linhas 01-02)."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Separa termo adverbial anteposto."
+        },
+        {
+          "letter": "B",
+          "text": "Marca uma oração adjetiva explicativa."
+        },
+        {
+          "letter": "C",
+          "text": "Isola termos de mesma função sintática."
+        },
+        {
+          "letter": "D",
+          "text": "Separa orações coordenadas assindéticas. Concurso Público da Câmara Municipal de Aracati A uxiliar de Serviços Gerais"
+        }
+      ],
+      "optionsStartY": 569.71,
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "startY": 538.99,
+      "endY": 808.92,
+      "contextText": "01 Pesquisadores americanos afirmam ter usado inteligência artificial para projetar vírus 02 totalmente novos, que são completamente funcionais e capazes de se replicar em laboratório. 03 [...] As ferramentas de IA estão avançando rapidamente e já foram usadas para desenvolver 04 novos antibióticos. Mas isso é relativamente simples em comparação com a criação de um novo 05 vírus totalmente do zero. 06 \"Este é um próximo passo na complexidade que a IA generativa pode projetar. Esta é a 07 primeira vez que a IA generativa foi usada para projetar um genoma completo, algo que pode se 08 replicar e ter outras funções dentro das células... isso foi um território novo para nós\", disse 09 Brian Hie, professor da Universidade Stanford, à BBC. 10 A tecnologia funciona de forma semelhante a grandes modelos de linguagem, como o 11 ChatGPT, que preveem sequências de texto. Neste caso, os modelos de IA, conhecidos como 12 Evo1 e Evo2, preveem a linguagem da biologia em vez de palavras. Os modelos de IA foram 13 treinados com códigos genéticos de vírus, bactérias, plantas e pessoas. Em seguida, foram 14 refinados para produzir um tipo de vírus, conhecido como bacteriófago, que infecta apenas 15 espécies específicas de bactérias. 16 [...] O desenvolvimento de novos fagos pode levar a novas formas de tratar infecções que 17 se tornaram resistentes a antibióticos. [...] Mas já surgiram preocupações de que a mesma 18 tecnologia possa ser usada maliciosamente para criar novas doenças. [...] Hie argumenta que as 19 medidas de proteção já existentes contribuem muito para \"garantir que a tecnologia seja usada 20 para o bem\". Adaptado de: GALLAGHER, James. Como novos vírus criados por IA podem mudar a ciência (apesar de causarem preocupação). BBC News. Disponível em: https://www.bbc.com/portuguese/articles/c62xvgjz4xxo. Acesso em 12 ago. 2026.",
+      "contextRange": [
+        1,
+        10
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "e74f0edf-06af-4766-9e92-34b7e1b08755",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026LPGFCPCCMARACATI8",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 11,
+      "heading": "",
+      "stem": "No âmbito de um debate legislativo promovido na Câmara Municipal de Aracati, no Estado do Ceará, um cidadão questionou a Mesa Diretora sobre a natureza da autonomia conferida pela Carta Magna aos entes federativos do país e quais componentes integram a estrutura federativa nacional. À luz da literalidade do texto constitucional no que tange à organização político-administrativa da República Federativa do Brasil, é correto afirmar que esta compreende:",
+      "stemRows": [
+        {
+          "y": 126.01999999999998,
+          "text": "No âmbito de um debate legislativo promovido na Câmara Municipal de Aracati, no Estado do"
+        },
+        {
+          "y": 139.81999999999994,
+          "text": "Ceará, um cidadão questionou a Mesa Diretora sobre a natureza da autonomia conferida pela Carta"
+        },
+        {
+          "y": 153.62,
+          "text": "Magna aos entes federativos do país e quais componentes integram a estrutura federativa nacional."
+        },
+        {
+          "y": 167.41999999999996,
+          "text": "À luz da literalidade do texto constitucional no que tange à organização político-administrativa da"
+        },
+        {
+          "y": 181.2199999999999,
+          "text": "República Federativa do Brasil, é correto afirmar que esta compreende:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "a União, os Estados, o Distrito Federal e os Municípios, todos soberanos, nos termos da Constituição."
+        },
+        {
+          "letter": "B",
+          "text": "a União, os Estados, o Distrito Federal e os Municípios, todos autônomos, nos termos da Constituição."
+        },
+        {
+          "letter": "C",
+          "text": "a União, os Estados e o Distrito Federal, todos soberanos, excluídos os Municípios da condição de entes autônomos."
+        },
+        {
+          "letter": "D",
+          "text": "a União, os Estados, o Distrito Federal e os Municípios, sendo a União soberana e os demais entes dotados de autonomia nos termos da Constituição."
+        }
+      ],
+      "optionsStartY": 198.14,
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "startY": 126.01999999999998,
+      "endY": 307.49,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Legislação institucional",
+      "topicCode": "LI",
+      "id": "c644472a-7f39-4216-b18c-eac43d03bb70",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026LELIFCPCCMARACATI1",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 12,
+      "heading": "",
+      "stem": "Determinada lei do Município de Aracati estabeleceu a concessão de incentivos fiscais e prioridade no atendimento em órgãos públicos locais exclusivamente para cidadãos que comprovassem nascimento e residência contínua no Estado do Ceará, restringindo formalmente os mesmos benefícios aos brasileiros oriundos de outros constitucionalidade da referida lei municipal foi questionada em face do texto constitucional vigente. À luz estrita do disposto na Constituição Federal quanto às vedações impostas aos entes federativos, a referida norma do Município de Aracati é:",
+      "stemRows": [
+        {
+          "y": 322.49,
+          "text": "Determinada lei do Município de Aracati estabeleceu a concessão de incentivos fiscais e prioridade"
+        },
+        {
+          "y": 336.28999999999996,
+          "text": "no atendimento em órgãos públicos locais exclusivamente para cidadãos que comprovassem"
+        },
+        {
+          "y": 350.09,
+          "text": "nascimento e residência contínua no Estado do Ceará, restringindo formalmente os mesmos"
+        },
+        {
+          "y": 363.89,
+          "text": "benefícios aos brasileiros oriundos de outros"
+        },
+        {
+          "y": 377.68999999999994,
+          "text": "constitucionalidade da referida lei municipal foi questionada em face do texto constitucional"
+        },
+        {
+          "y": 391.48999999999995,
+          "text": "vigente. À luz estrita do disposto na Constituição Federal quanto às vedações impostas aos entes"
+        },
+        {
+          "y": 405.28999999999996,
+          "text": "federativos, a referida norma do Município de Aracati é:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "inconstitucional, pois é vedado aos Municípios criar distinções entre brasileiros ou preferências entre si."
+        },
+        {
+          "letter": "B",
+          "text": "válida, desde que as distinções justificadas não impeçam a livre circulação de bens e pessoas pelo território estadual."
+        },
+        {
+          "letter": "C",
+          "text": "válida, pois os Municípios possuem autonomia para estabelecer preferências entre brasileiros em razão do interesse local."
+        },
+        {
+          "letter": "D",
+          "text": "inconstitucional, ressalvada a possibilidade de validação do ato se houver expressa autorização pelo poder executivo municipal."
+        }
+      ],
+      "optionsStartY": 422.21,
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "startY": 322.49,
+      "endY": 531.43,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "1cc2a15d-3b10-4bab-b275-2bffad76611a",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026LEGFCPCCMARACATI1",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 13,
+      "heading": "",
+      "stem": "De acordo com a Constituição Federal de 1988, é competência comum de todos os entes federativos:",
+      "stemRows": [
+        {
+          "y": 546.43,
+          "text": "De acordo com a Constituição Federal de 1988, é competência comum de todos os entes federativos:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "legislar sobre custas dos serviços forenses, produção e consumo."
+        },
+        {
+          "letter": "B",
+          "text": "legislar sobre proteção à infância e à juventude, bem como previdência social."
+        },
+        {
+          "letter": "C",
+          "text": "criar, estruturar e regulamentar o funcionamento do processo do juizado de pequenas causas."
+        },
+        {
+          "letter": "D",
+          "text": "promover programas de construção de moradias e a melhoria das condições habitacionais e de saneamento básico."
+        }
+      ],
+      "optionsStartY": 563.3499999999999,
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "startY": 546.43,
+      "endY": 631.27,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "0b23f145-eee2-4893-af8f-93a9cab80616",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026LEGFCPCCMARACATI2",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 14,
+      "heading": "",
+      "stem": "No âmbito de um projeto de readequação da Lei Orgânica do município fictício, que possui atualmente uma população estimada em 65.000 (sessenta e cinco mil) habitantes, debate-se a quantidade de cadeiras a ser fixada para a composição do Poder Legislativo municipal na próxima legislatura, de modo a cumprir com exatidão os limites estabelecidos pela Carta Magna. Considerando estritamente as regras dispostas na Constituição Federal de 1988, o limite máximo para a composição da Câmara Municipal do município fictício será de:",
+      "stemRows": [
+        {
+          "y": 646.27,
+          "text": "No âmbito de um projeto de readequação da Lei Orgânica do município fictício, que possui"
+        },
+        {
+          "y": 660.0699999999999,
+          "text": "atualmente uma população estimada em 65.000 (sessenta e cinco mil) habitantes, debate-se a"
+        },
+        {
+          "y": 673.9,
+          "text": "quantidade de cadeiras a ser fixada para a composição do Poder Legislativo municipal na próxima"
+        },
+        {
+          "y": 687.6999999999999,
+          "text": "legislatura, de modo a cumprir com exatidão os limites estabelecidos pela Carta Magna."
+        },
+        {
+          "y": 701.5,
+          "text": "Considerando estritamente as regras dispostas na Constituição Federal de 1988, o limite máximo"
+        },
+        {
+          "y": 715.3,
+          "text": "para a composição da Câmara Municipal do município fictício será de:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "13 (treze) Vereadores."
+        },
+        {
+          "letter": "B",
+          "text": "15 (quinze) Vereadores."
+        },
+        {
+          "letter": "C",
+          "text": "17 (dezessete) Vereadores."
+        },
+        {
+          "letter": "D",
+          "text": "19 (dezenove) Vereadores. Concurso Público da Câmara Municipal de Aracati A uxiliar de Serviços Gerais"
+        }
+      ],
+      "optionsStartY": 732.2199999999999,
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "startY": 646.27,
+      "endY": 808.92,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Legislação institucional",
+      "topicCode": "LI",
+      "id": "4fea51ac-f283-4d22-82e0-40428ab86c43",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026LELIFCPCCMARACATI2",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 15,
+      "heading": "",
+      "stem": "De acordo com o Regimento Interno da Câmara Municipal de Aracati, a atribuição do Poder Legislativo municipal de fiscalizar e controlar os atos da administração pública municipal mediante controle contábil, financeiro, orçamentário, operacional e patrimonial corresponde à:",
+      "stemRows": [
+        {
+          "y": 67.43999999999994,
+          "text": "De acordo com o Regimento Interno da Câmara Municipal de Aracati, a atribuição do Poder"
+        },
+        {
+          "y": 81.24000000000001,
+          "text": "Legislativo municipal de fiscalizar e controlar os atos da administração pública municipal mediante"
+        },
+        {
+          "y": 95.05999999999995,
+          "text": "controle contábil, financeiro, orçamentário, operacional e patrimonial corresponde à:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Função Legislativa."
+        },
+        {
+          "letter": "B",
+          "text": "Função Administrativa."
+        },
+        {
+          "letter": "C",
+          "text": "Função Judiciária atípica."
+        },
+        {
+          "letter": "D",
+          "text": "Função Fiscalizatória e de Controle Externo."
+        }
+      ],
+      "optionsStartY": 111.9799999999999,
+      "sourcePage": 5,
+      "sourceColumn": 0,
+      "startY": 67.43999999999994,
+      "endY": 166.0999999999999,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Legislação institucional",
+      "topicCode": "LI",
+      "id": "0be96ec4-63a1-4502-ba86-b5b1bbcb0b8d",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026LELIFCPCCMARACATI3",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 16,
+      "heading": "",
+      "stem": "Durante os preparativos para o registro de candidaturas no município, a comissão partidária analisou os requisitos previstos no Regimento Interno da Câmara Municipal de Aracati para a disputa do cargo de parlamentar local. De acordo com a literalidade das normas regimentais, assinale a alternativa que indica uma condição de elegibilidade para o exercício do mandato de Vereador:",
+      "stemRows": [
+        {
+          "y": 181.0999999999999,
+          "text": "Durante os preparativos para o registro de candidaturas no município, a comissão partidária"
+        },
+        {
+          "y": 194.89999999999998,
+          "text": "analisou os requisitos previstos no Regimento Interno da Câmara Municipal de Aracati para a"
+        },
+        {
+          "y": 208.69999999999993,
+          "text": "disputa do cargo de parlamentar local."
+        },
+        {
+          "y": 222.5,
+          "text": "De acordo com a literalidade das normas regimentais, assinale a alternativa que indica uma"
+        },
+        {
+          "y": 236.29999999999995,
+          "text": "condição de elegibilidade para o exercício do mandato de Vereador:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Idade mínima de vinte e um anos até a data da posse."
+        },
+        {
+          "letter": "B",
+          "text": "Ausência de filiação partidária e domicílio no Estado."
+        },
+        {
+          "letter": "C",
+          "text": "Domicílio eleitoral na circunscrição e ser alfabetizado."
+        },
+        {
+          "letter": "D",
+          "text": "Nível superior completo de escolaridade e quitação militar."
+        }
+      ],
+      "optionsStartY": 253.2199999999999,
+      "sourcePage": 5,
+      "sourceColumn": 0,
+      "startY": 181.0999999999999,
+      "endY": 311.92999999999995,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Legislação institucional",
+      "topicCode": "LI",
+      "id": "ad173cb8-98d0-4f9d-bf95-63cc4f170f0f",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026LELIFCPCCMARACATI4",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 17,
+      "heading": "",
+      "stem": "Durante uma viagem oficial do Prefeito do Município de Aracati para captação de recursos, fez-se necessária a transição temporária do cargo. O Vice-Prefeito, notificado formalmente pela Câmara Municipal para assumir a chefia do Poder Executivo durante a ausência do titular, recusou-se sumariamente a tomar posse e a exercer a substituição, alegando razões estritamente pessoais e compromissos empresariais particulares. Considerando as disposições da Lei Orgânica do Município de Aracati relativas à substituição do Prefeito e ao exercício do mandato do Executivo, assinale a consequência jurídica direta aplicável à conduta do Vice-Prefeito:",
+      "stemRows": [
+        {
+          "y": 326.92999999999995,
+          "text": "Durante uma viagem oficial do Prefeito do Município de Aracati para captação de recursos, fez-se"
+        },
+        {
+          "y": 340.72999999999996,
+          "text": "necessária a transição temporária do cargo. O Vice-Prefeito, notificado formalmente pela Câmara"
+        },
+        {
+          "y": 354.53,
+          "text": "Municipal para assumir a chefia do Poder Executivo durante a ausência do titular, recusou-se"
+        },
+        {
+          "y": 368.33,
+          "text": "sumariamente a tomar posse e a exercer a substituição, alegando razões estritamente pessoais e"
+        },
+        {
+          "y": 382.12999999999994,
+          "text": "compromissos empresariais particulares."
+        },
+        {
+          "y": 395.92999999999995,
+          "text": "Considerando as disposições da Lei Orgânica do Município de Aracati relativas à substituição do"
+        },
+        {
+          "y": 409.72999999999996,
+          "text": "Prefeito e ao exercício do mandato do Executivo, assinale a consequência jurídica direta aplicável à"
+        },
+        {
+          "y": 423.53,
+          "text": "conduta do Vice-Prefeito:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Extinção do mandato de Vice-Prefeito."
+        },
+        {
+          "letter": "B",
+          "text": "Aplicação de multa administrativa pelo Poder Legislativo e suspensão temporária dos direitos políticos."
+        },
+        {
+          "letter": "C",
+          "text": "Abertura automática de processo de impeachment para apuração de crime de responsabilidade pela Câmara Municipal."
+        },
+        {
+          "letter": "D",
+          "text": "O Presidente da Câmara Municipal deve assumir interinamente a chefia do Poder Executivo."
+        }
+      ],
+      "optionsStartY": 440.44999999999993,
+      "sourcePage": 5,
+      "sourceColumn": 0,
+      "startY": 326.92999999999995,
+      "endY": 526.75,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Legislação institucional",
+      "topicCode": "LI",
+      "id": "a35c9387-fae3-4e21-b816-1f5652e17625",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026LELIFCPCCMARACATI5",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 18,
+      "heading": "",
+      "stem": "Diante de uma grave crise institucional e administração municipal de Aracati, os constitucionais para reestabelecer a normalidade e a ordem no município por meio da atuação do Poder Executivo Estadual. Considerando o regramento da Lei Orgânica de Aracati referente às atribuições exclusivas do Poder Legislativo, assinale a alternativa que indica o instrumento adequado a ser adotado:",
+      "stemRows": [
+        {
+          "y": 541.75,
+          "text": "Diante de uma grave crise institucional e"
+        },
+        {
+          "y": 555.55,
+          "text": "administração municipal de Aracati, os"
+        },
+        {
+          "y": 569.3499999999999,
+          "text": "constitucionais para reestabelecer a normalidade e a ordem no município por meio da atuação do"
+        },
+        {
+          "y": 583.15,
+          "text": "Poder Executivo Estadual."
+        },
+        {
+          "y": 596.9499999999999,
+          "text": "Considerando o regramento da Lei Orgânica de Aracati referente às atribuições exclusivas do"
+        },
+        {
+          "y": 610.75,
+          "text": "Poder Legislativo, assinale a alternativa que indica o instrumento adequado a ser adotado:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "O Prefeito Municipal deve emitir um decreto executivo solicitando a intervenção do Estado, dependendo apenas do homologação posterior da Câmara."
+        },
+        {
+          "letter": "B",
+          "text": "A solicitação de intervenção estadual deve ser formulada por meio de ação direta ajuizada exclusivamente pela Procuradoria-Geral do Município perante o Tribunal de Justiça."
+        },
+        {
+          "letter": "C",
+          "text": "Qualquer cidadão pode solicitar a intervenção do Estado no município mediante abaixo-assinado direcionado ao Governador, independentemente de manifestação do Legislativo."
+        },
+        {
+          "letter": "D",
+          "text": "Compete privativamente à Câmara Municipal solicitar a intervenção do Estado no Município. Concurso Público da Câmara Municipal de Aracati A uxiliar de Serviços Gerais"
+        }
+      ],
+      "optionsStartY": 627.67,
+      "sourcePage": 5,
+      "sourceColumn": 0,
+      "startY": 541.75,
+      "endY": 808.92,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "c9bac65b-c73c-4878-82b1-e060bc6c7db4",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026LEGFCPCCMARACATI3",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 19,
+      "heading": "",
+      "stem": "Nos termos da Lei Orgânica, assinale a alternativa que indica uma competência legislativa do Município de Aracati:",
+      "stemRows": [
+        {
+          "y": 67.43999999999994,
+          "text": "Nos termos da Lei Orgânica, assinale a alternativa que indica uma competência legislativa do"
+        },
+        {
+          "y": 81.24000000000001,
+          "text": "Município de Aracati:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Dispor sobre a manutenção e a regulamentação do serviço postal."
+        },
+        {
+          "letter": "B",
+          "text": "Legislar sobre propaganda comercial no âmbito dos meios digitais e de radiodifusão."
+        },
+        {
+          "letter": "C",
+          "text": "Fixar as condições e os horários para o funcionamento dos estabelecimentos industriais."
+        },
+        {
+          "letter": "D",
+          "text": "Estabelecer normas gerais sobre a organização e o funcionamento dos corpos de bombeiros militares."
+        }
+      ],
+      "optionsStartY": 98.17999999999995,
+      "sourcePage": 6,
+      "sourceColumn": 0,
+      "startY": 67.43999999999994,
+      "endY": 170.77999999999997,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "538aa304-d57b-474c-b1fe-f1cb19a93979",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026LEGFCPCCMARACATI4",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 20,
+      "heading": "",
+      "stem": "Após ser eleito para a Câmara Municipal de Aracati, determinado vereador decidiu mudar-se com sua família para o Crato, sua cidade natal, mantendo apenas a sua atuação política e a presença nas sessões ordinárias do Legislativo de Aracati. Considerando as disposições da Lei Orgânica do Município de Aracati pertinentes às proibições, deveres e hipóteses de perda do mandato parlamentar, assinale a consequência jurídica aplicável à situação desse vereador:",
+      "stemRows": [
+        {
+          "y": 185.77999999999997,
+          "text": "Após ser eleito para a Câmara Municipal de Aracati, determinado vereador decidiu mudar-se com"
+        },
+        {
+          "y": 199.45999999999992,
+          "text": "sua família para o Crato, sua cidade natal, mantendo apenas a sua atuação política e a presença nas"
+        },
+        {
+          "y": 213.26,
+          "text": "sessões ordinárias do Legislativo de Aracati."
+        },
+        {
+          "y": 227.05999999999995,
+          "text": "Considerando as disposições da Lei Orgânica do Município de Aracati pertinentes às proibições,"
+        },
+        {
+          "y": 240.86,
+          "text": "deveres e hipóteses de perda do mandato parlamentar, assinale a consequência jurídica aplicável à"
+        },
+        {
+          "y": 254.65999999999997,
+          "text": "situação desse vereador:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Perderá o mandato o vereador que fixar residência fora do Município de Aracati."
+        },
+        {
+          "letter": "B",
+          "text": "Terá a remuneração suspensa até que comprove o retorno do seu domicílio ao município, sem perda da função parlamentar."
+        },
+        {
+          "letter": "C",
+          "text": "Receberá apenas advertência formal da Mesa Diretora, mantendo o mandato desde que atinja a frequência mínima nas sessões."
+        },
+        {
+          "letter": "D",
+          "text": "Permanecerá no cargo normalmente, pois a legislação exige apenas que o candidato resida no município no momento do registro da candidatura. Concurso Público da Câmara Municipal de Aracati A uxiliar de Serviços Gerais"
+        }
+      ],
+      "optionsStartY": 271.5799999999999,
+      "sourcePage": 6,
+      "sourceColumn": 0,
+      "startY": 185.77999999999997,
+      "endY": 808.92,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Legislação institucional",
+      "topicCode": "LI",
+      "id": "89e9797d-2c08-421b-bee9-3f2a855eba5c",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026LELIFCPCCMARACATI6",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 21,
+      "heading": "",
+      "stem": "A limpeza e a conservação dos ambientes de trabalho têm como uma de suas principais finalidades:",
+      "stemRows": [
+        {
+          "y": 114.5,
+          "text": "A limpeza e a conservação dos ambientes de trabalho têm como uma de suas principais finalidades:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Melhorar apenas a aparência dos locais utilizados pelo público."
+        },
+        {
+          "letter": "B",
+          "text": "Retirar somente os resíduos que possam ser vistos com facilidade."
+        },
+        {
+          "letter": "C",
+          "text": "Manter os ambientes limpos, organizados e em condições adequadas de uso."
+        },
+        {
+          "letter": "D",
+          "text": "Utilizar produtos de limpeza diariamente, independentemente da necessidade."
+        }
+      ],
+      "optionsStartY": 131.41999999999996,
+      "sourcePage": 7,
+      "sourceColumn": 0,
+      "startY": 114.5,
+      "endY": 185.53999999999996,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "79d18bf0-571f-4610-aed0-83ed97d5636e",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026CEGFCPCCMARACATI1",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 22,
+      "heading": "",
+      "stem": "Antes de utilizar um produto de limpeza, o trabalhador deve:",
+      "stemRows": [
+        {
+          "y": 200.53999999999996,
+          "text": "Antes de utilizar um produto de limpeza, o trabalhador deve:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Misturar o produto com outros materiais para melhorar seu efeito."
+        },
+        {
+          "letter": "B",
+          "text": "Ler e seguir as orientações de uso e segurança indicadas pelo fabricante."
+        },
+        {
+          "letter": "C",
+          "text": "Aumentar a quantidade recomendada quando o ambiente estiver muito sujo."
+        },
+        {
+          "letter": "D",
+          "text": "Transferir o produto para um recipiente menor, mesmo que não possua identificação."
+        }
+      ],
+      "optionsStartY": 217.45999999999992,
+      "sourcePage": 7,
+      "sourceColumn": 0,
+      "startY": 200.53999999999996,
+      "endY": 271.61,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "d203a572-0afe-4e56-bd3b-bff69fa3f45d",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026CEGFCPCCMARACATI2",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 23,
+      "heading": "",
+      "stem": "Em relação ao armazenamento de produtos de limpeza, uma prática adequada é:",
+      "stemRows": [
+        {
+          "y": 286.61,
+          "text": "Em relação ao armazenamento de produtos de limpeza, uma prática adequada é:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Transferi-los para recipientes de bebidas para facilitar o manuseio."
+        },
+        {
+          "letter": "B",
+          "text": "Guardá-los junto aos alimentos para facilitar o controle do estoque."
+        },
+        {
+          "letter": "C",
+          "text": "Mantê-los em local apropriado, organizados e devidamente identificados."
+        },
+        {
+          "letter": "D",
+          "text": "Retirar os rótulos das embalagens depois que o produto for conhecido pela equipe."
+        }
+      ],
+      "optionsStartY": 303.53,
+      "sourcePage": 7,
+      "sourceColumn": 0,
+      "startY": 286.61,
+      "endY": 357.53,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "88fef184-7459-4cc8-8187-f9345a82f5b5",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026CEGFCPCCMARACATI3",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 24,
+      "heading": "",
+      "stem": "Durante a varrição de um ambiente, a principal função da vassoura é:",
+      "stemRows": [
+        {
+          "y": 372.53,
+          "text": "Durante a varrição de um ambiente, a principal função da vassoura é:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Retirar manchas impregnadas no piso."
+        },
+        {
+          "letter": "B",
+          "text": "Desinfetar as superfícies do ambiente."
+        },
+        {
+          "letter": "C",
+          "text": "Secar completamente as áreas molhadas."
+        },
+        {
+          "letter": "D",
+          "text": "Remover poeira, sujeiras e resíduos sólidos compatíveis com esse tipo de limpeza."
+        }
+      ],
+      "optionsStartY": 389.44999999999993,
+      "sourcePage": 7,
+      "sourceColumn": 0,
+      "startY": 372.53,
+      "endY": 443.56999999999994,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "18d9467c-3e46-48d8-8fcf-ecfeecfde06f",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026CEGFCPCCMARACATI4",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 25,
+      "heading": "",
+      "stem": "A coleta seletiva contribui para o gerenciamento adequado dos resíduos porque permite:",
+      "stemRows": [
+        {
+          "y": 458.56999999999994,
+          "text": "A coleta seletiva contribui para o gerenciamento adequado dos resíduos porque permite:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Descartar qualquer material usado como resíduo comum."
+        },
+        {
+          "letter": "B",
+          "text": "Reunir todos os tipos de resíduos para facilitar o transporte."
+        },
+        {
+          "letter": "C",
+          "text": "Eliminar a necessidade de cuidados durante o manuseio dos resíduos."
+        },
+        {
+          "letter": "D",
+          "text": "Separar os resíduos conforme suas características e formas adequadas de destinação."
+        }
+      ],
+      "optionsStartY": 475.50999999999993,
+      "sourcePage": 7,
+      "sourceColumn": 0,
+      "startY": 458.56999999999994,
+      "endY": 529.6299999999999,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "cb68277a-21de-43f6-b7c5-e33e8cc6f72a",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026CEGFCPCCMARACATI5",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 26,
+      "heading": "",
+      "stem": "Considerando resíduos comuns gerados em um ambiente administrativo, qual material, quando limpo e seco, geralmente apresenta possibilidade de reciclagem?",
+      "stemRows": [
+        {
+          "y": 544.6299999999999,
+          "text": "Considerando resíduos comuns gerados em um ambiente administrativo, qual material, quando"
+        },
+        {
+          "y": 558.43,
+          "text": "limpo e seco, geralmente apresenta possibilidade de reciclagem?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Restos de alimentos."
+        },
+        {
+          "letter": "B",
+          "text": "Papel higiênico utilizado."
+        },
+        {
+          "letter": "C",
+          "text": "Folhas de papel usadas, sem contaminação."
+        },
+        {
+          "letter": "D",
+          "text": "Material contaminado por produto químico."
+        }
+      ],
+      "optionsStartY": 575.3499999999999,
+      "sourcePage": 7,
+      "sourceColumn": 0,
+      "startY": 544.6299999999999,
+      "endY": 624.79,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "f16be15d-a4b3-44de-8414-c72fdad7ff55",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026CEGFCPCCMARACATI6",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 27,
+      "heading": "",
+      "stem": "Em determinadas atividades de limpeza, o uso de luvas adequadas tem como finalidade:",
+      "stemRows": [
+        {
+          "y": 639.79,
+          "text": "Em determinadas atividades de limpeza, o uso de luvas adequadas tem como finalidade:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Proteger as mãos contra riscos específicos presentes na atividade."
+        },
+        {
+          "letter": "B",
+          "text": "Substituir todos os demais cuidados necessários durante a limpeza."
+        },
+        {
+          "letter": "C",
+          "text": "Evitar que o trabalhador precise higienizar as mãos após o serviço."
+        },
+        {
+          "letter": "D",
+          "text": "Permitir o manuseio de qualquer produto, independentemente das recomendações do fabricante."
+        }
+      ],
+      "optionsStartY": 656.7099999999999,
+      "sourcePage": 7,
+      "sourceColumn": 0,
+      "startY": 639.79,
+      "endY": 706.18,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "882d2cf4-f30f-4a5a-90b3-9e84d67bea27",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026CEGFCPCCMARACATI7",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 28,
+      "heading": "",
+      "stem": "No relacionamento diário com colegas, servidores e usuários, uma postura profissional adequada é:",
+      "stemRows": [
+        {
+          "y": 721.18,
+          "text": "No relacionamento diário com colegas, servidores e usuários, uma postura profissional adequada é:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Responder de acordo com a maneira como o usuário se comportar."
+        },
+        {
+          "letter": "B",
+          "text": "Agir com respeito, educação e cordialidade no ambiente de trabalho."
+        },
+        {
+          "letter": "C",
+          "text": "Evitar o diálogo sempre que houver opiniões diferentes."
+        },
+        {
+          "letter": "D",
+          "text": "Dar prioridade aos conhecidos durante o atendimento. Concurso Público da Câmara Municipal de Aracati A uxiliar de Serviços Gerais"
+        }
+      ],
+      "optionsStartY": 738.0999999999999,
+      "sourcePage": 7,
+      "sourceColumn": 0,
+      "startY": 721.18,
+      "endY": 808.92,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "27040e88-7414-4d29-aedb-80d1f6bff6b3",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026CEGFCPCCMARACATI8",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 29,
+      "heading": "",
+      "stem": "Os materiais e equipamentos pertencentes à instituição pública devem ser:",
+      "stemRows": [
+        {
+          "y": 67.43999999999994,
+          "text": "Os materiais e equipamentos pertencentes à instituição pública devem ser:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Utilizados com responsabilidade e para as finalidades autorizadas pela instituição."
+        },
+        {
+          "letter": "B",
+          "text": "Emprestados para uso particular quando forem posteriormente devolvidos."
+        },
+        {
+          "letter": "C",
+          "text": "Utilizados livremente pelos servidores fora do horário de expediente."
+        },
+        {
+          "letter": "D",
+          "text": "Descartados sempre que apresentarem algum sinal de desgaste."
+        }
+      ],
+      "optionsStartY": 84.36000000000001,
+      "sourcePage": 8,
+      "sourceColumn": 0,
+      "startY": 67.43999999999994,
+      "endY": 133.93999999999994,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "9e6daa94-06a9-4a1c-bcf1-c962431a0954",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026CEGFCPCCMARACATI9",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 30,
+      "heading": "",
+      "stem": "Antes de iniciar a limpeza de um ambiente desconhecido, uma medida preventiva importante é:",
+      "stemRows": [
+        {
+          "y": 148.93999999999994,
+          "text": "Antes de iniciar a limpeza de um ambiente desconhecido, uma medida preventiva importante é:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Verificar as condições do local e identificar possíveis riscos relacionados à atividade."
+        },
+        {
+          "letter": "B",
+          "text": "Aplicar o produto de limpeza antes de verificar as características da superfície."
+        },
+        {
+          "letter": "C",
+          "text": "Escolher o produto mais forte disponível e começar imediatamente."
+        },
+        {
+          "letter": "D",
+          "text": "Retirar os equipamentos de proteção para facilitar a movimentação."
+        }
+      ],
+      "optionsStartY": 165.86,
+      "sourcePage": 8,
+      "sourceColumn": 0,
+      "startY": 148.93999999999994,
+      "endY": 219.9799999999999,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "c797c1e6-77d1-4412-be7c-c43f4354e70f",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026CEGFCPCCMARACATI10",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 31,
+      "heading": "",
+      "stem": "Durante a limpeza de um corredor, o piso permanece molhado por algum tempo. Nessa situação, a sinalização da área serve principalmente para:",
+      "stemRows": [
+        {
+          "y": 234.9799999999999,
+          "text": "Durante a limpeza de um corredor, o piso permanece molhado por algum tempo. Nessa situação, a"
+        },
+        {
+          "y": 248.77999999999997,
+          "text": "sinalização da área serve principalmente para:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Evitar que seja necessário secar o piso depois da limpeza."
+        },
+        {
+          "letter": "B",
+          "text": "Alertar as pessoas para o risco de escorregamento e queda."
+        },
+        {
+          "letter": "C",
+          "text": "Impedir totalmente a circulação de qualquer pessoa no prédio."
+        },
+        {
+          "letter": "D",
+          "text": "Substituir outras medidas de prevenção eventualmente necessárias."
+        }
+      ],
+      "optionsStartY": 265.69999999999993,
+      "sourcePage": 8,
+      "sourceColumn": 0,
+      "startY": 234.9799999999999,
+      "endY": 315.16999999999996,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "26192e8b-0183-45a8-95ee-47d48fa6c474",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026CEGFCPCCMARACATI11",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 32,
+      "heading": "",
+      "stem": "Dois produtos de limpeza possuem finalidades diferentes. Antes de misturá-los, o trabalhador deve considerar que:",
+      "stemRows": [
+        {
+          "y": 330.16999999999996,
+          "text": "Dois produtos de limpeza possuem finalidades diferentes. Antes de misturá-los, o trabalhador deve"
+        },
+        {
+          "y": 343.96999999999997,
+          "text": "considerar que:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "A mistura é permitida quando utilizada em pequena quantidade."
+        },
+        {
+          "letter": "B",
+          "text": "Uma mistura é segura quando os dois produtos possuem cheiro semelhante."
+        },
+        {
+          "letter": "C",
+          "text": "Produtos não devem ser misturados sem orientação específica que assegure a compatibilidade e a segurança do procedimento."
+        },
+        {
+          "letter": "D",
+          "text": "Produtos diferentes podem ser misturados sempre que forem utilizados para limpeza."
+        }
+      ],
+      "optionsStartY": 360.89,
+      "sourcePage": 8,
+      "sourceColumn": 0,
+      "startY": 330.16999999999996,
+      "endY": 424.12999999999994,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "8260a9b2-fb4a-4585-880e-0f5e0cdcca69",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026CEGFCPCCMARACATI12",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 33,
+      "heading": "",
+      "stem": "O rótulo de determinado produto informa a necessidade de utilização de luvas durante o manuseio. O procedimento adequado é:",
+      "stemRows": [
+        {
+          "y": 439.12999999999994,
+          "text": "O rótulo de determinado produto informa a necessidade de utilização de luvas durante o manuseio."
+        },
+        {
+          "y": 452.92999999999995,
+          "text": "O procedimento adequado é:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "dispensar as luvas quando o serviço tiver duração reduzida."
+        },
+        {
+          "letter": "B",
+          "text": "seguir as orientações do fabricante e utilizar a proteção indicada."
+        },
+        {
+          "letter": "C",
+          "text": "diluir o produto por conta própria para não precisar utilizar proteção."
+        },
+        {
+          "letter": "D",
+          "text": "utilizar as luvas somente quando o produto entrar diretamente em contato com a pele."
+        }
+      ],
+      "optionsStartY": 469.84999999999997,
+      "sourcePage": 8,
+      "sourceColumn": 0,
+      "startY": 439.12999999999994,
+      "endY": 519.43,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "188221da-84bc-48cc-ae03-6962f7bf306d",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026CEGFCPCCMARACATI13",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 34,
+      "heading": "",
+      "stem": "Qual das situações abaixo representa uma prática inadequada no armazenamento de produtos de limpeza?",
+      "stemRows": [
+        {
+          "y": 534.43,
+          "text": "Qual das situações abaixo representa uma prática inadequada no armazenamento de produtos de"
+        },
+        {
+          "y": 548.23,
+          "text": "limpeza?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Manter os produtos identificados."
+        },
+        {
+          "letter": "B",
+          "text": "Armazenar produtos químicos junto a alimentos e bebidas."
+        },
+        {
+          "letter": "C",
+          "text": "Utilizar local destinado ao armazenamento desses materiais."
+        },
+        {
+          "letter": "D",
+          "text": "Manter as embalagens devidamente fechadas quando não estiverem em uso."
+        }
+      ],
+      "optionsStartY": 565.15,
+      "sourcePage": 8,
+      "sourceColumn": 0,
+      "startY": 534.43,
+      "endY": 616.8699999999999,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "87c47a98-394c-499c-9bca-943371273f56",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026CEGFCPCCMARACATI14",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 35,
+      "heading": "",
+      "stem": "Antes de operar uma máquina ou equipamento de limpeza que ainda não conhece, o trabalhador deve:",
+      "stemRows": [
+        {
+          "y": 631.8699999999999,
+          "text": "Antes de operar uma máquina ou equipamento de limpeza que ainda não conhece, o trabalhador deve:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Observar outro colega utilizando o equipamento e começar o serviço em seguida."
+        },
+        {
+          "letter": "B",
+          "text": "Testar o equipamento em velocidade máxima para conhecer seu funcionamento."
+        },
+        {
+          "letter": "C",
+          "text": "Conhecer as orientações de funcionamento e segurança antes de utilizá-lo."
+        },
+        {
+          "letter": "D",
+          "text": "Retirar dispositivos de proteção que dificultem sua utilização."
+        }
+      ],
+      "optionsStartY": 648.79,
+      "sourcePage": 8,
+      "sourceColumn": 0,
+      "startY": 631.8699999999999,
+      "endY": 700.66,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "1d301d80-debd-4b7c-9e0f-ec353427cc02",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026CEGFCPCCMARACATI15",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 36,
+      "heading": "",
+      "stem": "Durante a separação dos resíduos produzidos em uma instituição, o procedimento mais adequado é:",
+      "stemRows": [
+        {
+          "y": 715.66,
+          "text": "Durante a separação dos resíduos produzidos em uma instituição, o procedimento mais adequado é:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Separar e acondicionar os resíduos conforme sua classificação e os procedimentos adotados pela instituição."
+        },
+        {
+          "letter": "B",
+          "text": "Separar apenas os materiais que possuam algum valor comercial."
+        },
+        {
+          "letter": "C",
+          "text": "Misturar resíduos recicláveis e não recicláveis quando houver pouco volume."
+        },
+        {
+          "letter": "D",
+          "text": "Reunir os resíduos em um único recipiente antes de levá-los ao local de descarte. Concurso Público da Câmara Municipal de Aracati A uxiliar de Serviços Gerais"
+        }
+      ],
+      "optionsStartY": 732.5799999999999,
+      "sourcePage": 8,
+      "sourceColumn": 0,
+      "startY": 715.66,
+      "endY": 808.92,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "dc07e348-4ccc-41c8-8308-9819341a0bf6",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026CEGFCPCCMARACATI16",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 37,
+      "heading": "",
+      "stem": "A higienização das mãos pelo trabalhador que executa serviços de limpeza deve ocorrer:",
+      "stemRows": [
+        {
+          "y": 67.43999999999994,
+          "text": "A higienização das mãos pelo trabalhador que executa serviços de limpeza deve ocorrer:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Somente quando houver sujeira visível nas mãos."
+        },
+        {
+          "letter": "B",
+          "text": "Apenas no início e no final da jornada de trabalho."
+        },
+        {
+          "letter": "C",
+          "text": "Somente quando não tiver utilizado luvas durante o serviço."
+        },
+        {
+          "letter": "D",
+          "text": "Nos momentos adequados, especialmente após atividades com possibilidade de contato com sujeira ou contaminantes."
+        }
+      ],
+      "optionsStartY": 84.36000000000001,
+      "sourcePage": 9,
+      "sourceColumn": 0,
+      "startY": 67.43999999999994,
+      "endY": 152.29999999999995,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "04dad595-3112-4d5d-a878-e2fed724ee91",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026CEGFCPCCMARACATI17",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 38,
+      "heading": "",
+      "stem": "Ao perceber que um colega está realizando uma atividade de forma que possa provocar acidente, a atitude mais adequada é:",
+      "stemRows": [
+        {
+          "y": 167.29999999999995,
+          "text": "Ao perceber que um colega está realizando uma atividade de forma que possa provocar acidente, a"
+        },
+        {
+          "y": 181.0999999999999,
+          "text": "atitude mais adequada é:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Registrar a situação somente se ocorrer um acidente."
+        },
+        {
+          "letter": "B",
+          "text": "Esperar o término da atividade para verificar se realmente havia risco."
+        },
+        {
+          "letter": "C",
+          "text": "Alertar sobre o risco e, quando necessário, comunicar a situação ao responsável."
+        },
+        {
+          "letter": "D",
+          "text": "Não interferir, pois cada trabalhador é responsável apenas pela própria segurança."
+        }
+      ],
+      "optionsStartY": 198.01999999999998,
+      "sourcePage": 9,
+      "sourceColumn": 0,
+      "startY": 167.29999999999995,
+      "endY": 252.14,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "0b01a679-6649-4552-8924-e55ea545268e",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026CEGFCPCCMARACATI18",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 39,
+      "heading": "",
+      "stem": "Uma comunicação respeitosa e clara entre os integrantes de uma equipe contribui para:",
+      "stemRows": [
+        {
+          "y": 267.14,
+          "text": "Uma comunicação respeitosa e clara entre os integrantes de uma equipe contribui para:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Eliminar a necessidade de orientações da chefia."
+        },
+        {
+          "letter": "B",
+          "text": "Fazer com que todos tenham exatamente a mesma opinião."
+        },
+        {
+          "letter": "C",
+          "text": "Evitar que as tarefas sejam divididas entre os trabalhadores."
+        },
+        {
+          "letter": "D",
+          "text": "Melhorar a cooperação, a organização do trabalho e a prevenção de conflitos."
+        }
+      ],
+      "optionsStartY": 284.0899999999999,
+      "sourcePage": 9,
+      "sourceColumn": 0,
+      "startY": 267.14,
+      "endY": 338.21,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "35bc2928-7b85-4704-ad6e-75cebc881b58",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026CEGFCPCCMARACATI19",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 40,
+      "heading": "",
+      "stem": "Ao encontrar um equipamento da instituição fora do local habitual e sem saber quem o deixou ali, o trabalhador deve:",
+      "stemRows": [
+        {
+          "y": 353.21,
+          "text": "Ao encontrar um equipamento da instituição fora do local habitual e sem saber quem o deixou ali,"
+        },
+        {
+          "y": 367.00999999999993,
+          "text": "o trabalhador deve:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Levá-lo para casa até descobrir quem é o responsável."
+        },
+        {
+          "letter": "B",
+          "text": "Entregá-lo à primeira pessoa que afirmar ser proprietária."
+        },
+        {
+          "letter": "C",
+          "text": "Deixá-lo no mesmo local, independentemente da possibilidade de perda."
+        },
+        {
+          "letter": "D",
+          "text": "Encaminhar ou comunicar a situação conforme os procedimentos adotados pela instituição."
+        }
+      ],
+      "optionsStartY": 383.92999999999995,
+      "sourcePage": 9,
+      "sourceColumn": 0,
+      "startY": 353.21,
+      "endY": 437.92999999999995,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "1d0045d7-3106-4732-99ff-fad0c02b4ae7",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026CEGFCPCCMARACATI20",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 41,
+      "heading": "",
+      "stem": "Durante a limpeza de um banheiro, o trabalhador precisa utilizar um produto cujo rótulo apresenta orientações específicas de segurança. Nesse caso, deve:",
+      "stemRows": [
+        {
+          "y": 452.92999999999995,
+          "text": "Durante a limpeza de um banheiro, o trabalhador precisa utilizar um produto cujo rótulo apresenta"
+        },
+        {
+          "y": 466.72999999999996,
+          "text": "orientações específicas de segurança. Nesse caso, deve:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "seguir as orientações de uso, utilizar os EPIs indicados e observar as demais medidas de segurança recomendadas."
+        },
+        {
+          "letter": "B",
+          "text": "misturá-lo com outro produto de limpeza para diminuir seu risco."
+        },
+        {
+          "letter": "C",
+          "text": "utilizar o produto normalmente se já tiver experiência com atividades de limpeza."
+        },
+        {
+          "letter": "D",
+          "text": "utilizar uma quantidade menor do produto para dispensar os equipamentos de proteção."
+        }
+      ],
+      "optionsStartY": 483.66999999999996,
+      "sourcePage": 9,
+      "sourceColumn": 0,
+      "startY": 452.92999999999995,
+      "endY": 551.5899999999999,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "2316b1ce-e733-4f7d-a7ba-4363e6a7f43a",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026CEGFCPCCMARACATI21",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 42,
+      "heading": "",
+      "stem": "Durante o transporte interno, um recipiente com produto de limpeza cai e parte do conteúdo é derramado no piso de uma área de circulação. O trabalhador não conhece os riscos específicos do produto. A conduta mais adequada é:",
+      "stemRows": [
+        {
+          "y": 566.5899999999999,
+          "text": "Durante o transporte interno, um recipiente com produto de limpeza cai e parte do conteúdo é"
+        },
+        {
+          "y": 580.39,
+          "text": "derramado no piso de uma área de circulação. O trabalhador não conhece os riscos específicos do"
+        },
+        {
+          "y": 594.1899999999999,
+          "text": "produto. A conduta mais adequada é:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Lavar imediatamente o local com grande quantidade de água, independentemente do produto derramado."
+        },
+        {
+          "letter": "B",
+          "text": "Isolar ou sinalizar a área, verificar as orientações de segurança do produto e seguir o procedimento adequado para o derramamento."
+        },
+        {
+          "letter": "C",
+          "text": "Espalhar o produto pelo piso para acelerar sua secagem."
+        },
+        {
+          "letter": "D",
+          "text": "Recolher imediatamente o produto com qualquer material absorvente disponível."
+        }
+      ],
+      "optionsStartY": 611.1099999999999,
+      "sourcePage": 9,
+      "sourceColumn": 0,
+      "startY": 566.5899999999999,
+      "endY": 692.8599999999999,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "b75b713d-104a-4246-98c4-6532d861feee",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026CEGFCPCCMARACATI22",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 43,
+      "heading": "",
+      "stem": "Durante a coleta de resíduos, o trabalhador identifica no saco de lixo um objeto pontiagudo que pode causar ferimento. A conduta mais segura é:",
+      "stemRows": [
+        {
+          "y": 707.8599999999999,
+          "text": "Durante a coleta de resíduos, o trabalhador identifica no saco de lixo um objeto pontiagudo que"
+        },
+        {
+          "y": 721.66,
+          "text": "pode causar ferimento. A conduta mais segura é:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Pressionar o saco para verificar exatamente onde está o objeto."
+        },
+        {
+          "letter": "B",
+          "text": "Colocar o saco junto aos demais resíduos e continuar normalmente a atividade."
+        },
+        {
+          "letter": "C",
+          "text": "Retirar o objeto rapidamente com as mãos protegidas apenas por luvas comuns."
+        },
+        {
+          "letter": "D",
+          "text": "Evitar o contato direto e adotar o procedimento adequado para o manuseio e descarte desse tipo de material. Concurso Público da Câmara Municipal de Aracati A uxiliar de Serviços Gerais"
+        }
+      ],
+      "optionsStartY": 738.5799999999999,
+      "sourcePage": 9,
+      "sourceColumn": 0,
+      "startY": 707.8599999999999,
+      "endY": 808.92,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "5f7122b3-9e12-4581-93a1-d4857baf3b35",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026CEGFCPCCMARACATI23",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 44,
+      "heading": "",
+      "stem": "Durante uma atividade de limpeza, o trabalhador percebe uma situação que pode provocar queda de pessoas. A prioridade deve ser:",
+      "stemRows": [
+        {
+          "y": 67.43999999999994,
+          "text": "Durante uma atividade de limpeza, o trabalhador percebe uma situação que pode provocar queda"
+        },
+        {
+          "y": 81.24000000000001,
+          "text": "de pessoas. A prioridade deve ser:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Continuar o serviço normalmente enquanto não ocorrer nenhum acidente."
+        },
+        {
+          "letter": "B",
+          "text": "Adotar medidas para eliminar ou controlar o risco e proteger as pessoas expostas."
+        },
+        {
+          "letter": "C",
+          "text": "Concluir primeiro a limpeza para depois verificar o risco."
+        },
+        {
+          "letter": "D",
+          "text": "Apenas avisar verbalmente às pessoas que passarem pelo local."
+        }
+      ],
+      "optionsStartY": 98.17999999999995,
+      "sourcePage": 10,
+      "sourceColumn": 0,
+      "startY": 67.43999999999994,
+      "endY": 152.29999999999995,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "0ee0e118-eedf-4ac7-b844-62a0ff78090a",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026CEGFCPCCMARACATI24",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 45,
+      "heading": "",
+      "stem": "Em relação aos Equipamentos de Proteção Individual (EPIs), é correto afirmar que:",
+      "stemRows": [
+        {
+          "y": 167.29999999999995,
+          "text": "Em relação aos Equipamentos de Proteção Individual (EPIs), é correto afirmar que:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Devem ser adequados aos riscos da atividade e utilizados corretamente."
+        },
+        {
+          "letter": "B",
+          "text": "Qualquer tipo de EPI pode ser utilizado em qualquer atividade de limpeza."
+        },
+        {
+          "letter": "C",
+          "text": "Sua utilização elimina automaticamente todos os riscos existentes no ambiente."
+        },
+        {
+          "letter": "D",
+          "text": "Quando o trabalhador utiliza EPI, outras medidas de segurança tornam-se desnecessárias."
+        }
+      ],
+      "optionsStartY": 184.2199999999999,
+      "sourcePage": 10,
+      "sourceColumn": 0,
+      "startY": 167.29999999999995,
+      "endY": 238.33999999999992,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "a6a52029-64e0-4d65-8d39-58c589875731",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026CEGFCPCCMARACATI25",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 46,
+      "heading": "",
+      "stem": "Durante uma atividade, dois trabalhadores têm opiniões diferentes sobre a forma de executar determinada tarefa. Qual postura demonstra melhor comportamento profissional?",
+      "stemRows": [
+        {
+          "y": 253.33999999999992,
+          "text": "Durante uma atividade, dois trabalhadores têm opiniões diferentes sobre a forma de executar"
+        },
+        {
+          "y": 267.14,
+          "text": "determinada tarefa. Qual postura demonstra melhor comportamento profissional?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Cada um executar a tarefa da maneira que considerar correta."
+        },
+        {
+          "letter": "B",
+          "text": "Interromper definitivamente a atividade sempre que houver discordância."
+        },
+        {
+          "letter": "C",
+          "text": "Dialogar com respeito e, persistindo a dúvida, buscar orientação do responsável."
+        },
+        {
+          "letter": "D",
+          "text": "Discutir o problema diante dos usuários para que eles decidam quem está correto."
+        }
+      ],
+      "optionsStartY": 284.0899999999999,
+      "sourcePage": 10,
+      "sourceColumn": 0,
+      "startY": 253.33999999999992,
+      "endY": 338.21,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "a8e27e12-f1ff-4c49-a25f-43893bf6b928",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026CEGFCPCCMARACATI26",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 47,
+      "heading": "",
+      "stem": "Um trabalhador percebe que materiais pertencentes à instituição estão sendo utilizados para finalidade particular, sem autorização. Considerando adequada é:",
+      "stemRows": [
+        {
+          "y": 353.21,
+          "text": "Um trabalhador percebe que materiais pertencentes à instituição estão sendo utilizados para"
+        },
+        {
+          "y": 367.00999999999993,
+          "text": "finalidade particular, sem autorização. Considerando"
+        },
+        {
+          "y": 380.80999999999995,
+          "text": "adequada é:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Utilizar também os materiais, caso estejam disponíveis."
+        },
+        {
+          "letter": "B",
+          "text": "Divulgar imediatamente o ocorrido entre colegas e usuários."
+        },
+        {
+          "letter": "C",
+          "text": "Não tomar qualquer providência porque o material será devolvido."
+        },
+        {
+          "letter": "D",
+          "text": "Agir de acordo com os procedimentos institucionais, comunicando a situação pelos meios adequados quando cabível."
+        }
+      ],
+      "optionsStartY": 397.72999999999996,
+      "sourcePage": 10,
+      "sourceColumn": 0,
+      "startY": 353.21,
+      "endY": 460.98999999999995,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "4dd5b555-f68a-4d07-8ed9-ce2701a9077a",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026CEGFCPCCMARACATI27",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 48,
+      "heading": "",
+      "stem": "Ao organizar um depósito utilizado para guardar materiais e equipamentos de limpeza, deve-se:",
+      "stemRows": [
+        {
+          "y": 475.98999999999995,
+          "text": "Ao organizar um depósito utilizado para guardar materiais e equipamentos de limpeza, deve-se:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Manter materiais e equipamentos organizados de forma segura, preservando as áreas de circulação e facilitando o acesso adequado."
+        },
+        {
+          "letter": "B",
+          "text": "Colocar os materiais mais utilizados no chão, próximos à porta."
+        },
+        {
+          "letter": "C",
+          "text": "Aproveitar todos os espaços disponíveis, inclusive áreas de circulação."
+        },
+        {
+          "letter": "D",
+          "text": "Armazenar todos os produtos juntos, independentemente de suas características."
+        }
+      ],
+      "optionsStartY": 492.90999999999997,
+      "sourcePage": 10,
+      "sourceColumn": 0,
+      "startY": 475.98999999999995,
+      "endY": 556.15,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "48f283fb-3240-4644-a7ab-52c4f59631e0",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026CEGFCPCCMARACATI28",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 49,
+      "heading": "",
+      "stem": "A limpeza precisa ser realizada em uma entrada com grande circulação de pessoas. Para reduzir o risco de acidentes, o trabalhador deve:",
+      "stemRows": [
+        {
+          "y": 571.15,
+          "text": "A limpeza precisa ser realizada em uma entrada com grande circulação de pessoas. Para reduzir o"
+        },
+        {
+          "y": 584.9499999999999,
+          "text": "risco de acidentes, o trabalhador deve:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Organizar o serviço e sinalizar ou delimitar a área conforme os riscos existentes, evitando exposição desnecessária das pessoas."
+        },
+        {
+          "letter": "B",
+          "text": "Deixar os equipamentos espalhados para tornar o serviço mais visível."
+        },
+        {
+          "letter": "C",
+          "text": "Iniciar a limpeza sem sinalização e avisar somente quem estiver passando."
+        },
+        {
+          "letter": "D",
+          "text": "Impedir permanentemente o acesso ao local, independentemente das características do serviço."
+        }
+      ],
+      "optionsStartY": 601.8699999999999,
+      "sourcePage": 10,
+      "sourceColumn": 0,
+      "startY": 571.15,
+      "endY": 665.26,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "a05ffb15-5287-4ac9-b211-716c4d12754c",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026CEGFCPCCMARACATI29",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 50,
+      "heading": "",
+      "stem": "Um usuário pede ao auxiliar de serviços gerais que execute uma atividade que não faz parte de suas atribuições e que pode oferecer risco se realizada sem preparo adequado. A conduta profissional mais adequada é:",
+      "stemRows": [
+        {
+          "y": 680.26,
+          "text": "Um usuário pede ao auxiliar de serviços gerais que execute uma atividade que não faz parte de suas"
+        },
+        {
+          "y": 694.06,
+          "text": "atribuições e que pode oferecer risco se realizada sem preparo adequado. A conduta profissional"
+        },
+        {
+          "y": 707.8599999999999,
+          "text": "mais adequada é:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Realizar a atividade para evitar reclamações do usuário."
+        },
+        {
+          "letter": "B",
+          "text": "Recusar o pedido sem prestar qualquer orientação ao usuário."
+        },
+        {
+          "letter": "C",
+          "text": "Executar somente a parte mais simples da atividade, mesmo sem autorização."
+        },
+        {
+          "letter": "D",
+          "text": "Explicar a situação de forma respeitosa e encaminhar a solicitação ao setor ou responsável competente. Concurso Público da Câmara Municipal de Aracati A uxiliar de Serviços Gerais"
+        }
+      ],
+      "optionsStartY": 724.78,
+      "sourcePage": 10,
+      "sourceColumn": 0,
+      "startY": 680.26,
+      "endY": 808.92,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "24cfcaa8-b3ad-4273-9316-cead661887bb",
+      "examId": "6efc9137-efad-448f-9918-81115b2f9d56",
+      "code": "Q2026CEGFCPCCMARACATI30",
+      "year": "2026",
+      "banca": "FCPC",
+      "orgao": "CM-ARACATI",
+      "answer": "D",
       "status": "active",
       "secondary": [],
       "aliases": [],
