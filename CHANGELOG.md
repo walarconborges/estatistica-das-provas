@@ -1,3 +1,13 @@
+## 0.6.1 — 15/11/2026
+- Corrigida importação da prova Quadrix/CRQ-V 2026 de Analista de Informática com títulos `QUESTÃO N` sem pontuação.
+- Textos de apoio como “Texto para as questões de 1 a 15” são associados às questões em duas colunas e páginas seguintes.
+- Gabarito tabulado multicargo: seleciona o cargo 401 (seção 2.7), lê 50 respostas em duas faixas numeradas e bloqueia se houver ambiguidade.
+- Total esperado derivado da seção de gabarito efetivamente selecionada, não de números soltos em trechos do PDF.
+- Reconhecimento do CRQ-V como órgão e indicação de que o gabarito fornecido é preliminar.
+- Classificação por blocos de disciplinas conforme divisão oficial da prova Quadrix para nível superior.
+- Acrescentadas referências legislativas do Edital Candeias nº 01/2026, consolidado até a Retificação nº 01, sem extrapolar seu Anexo IV não anexado.
+- Sem alterações nem limpeza do banco existente; nova importação deve ser testada no navegador.
+
 ## 0.6.0 — 15/11/2026
 - Substituída a aprovação prévia por **adaptação automática** quando existe equivalência jurídica específica no catálogo oficial de Candeias.
 - Implementados dez modelos de questões com dispositivo legal, URL oficial, gabarito independente e explicação factual.
