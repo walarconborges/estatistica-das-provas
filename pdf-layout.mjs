@@ -101,6 +101,14 @@ function restoreVerticalFractions(pieces){
    /^\d{1,3}$/.test(lower.str)&&lower.width<22&&
    Math.abs(lower.x-upper.x)<2.8&&lower.y-upper.y>10&&lower.y-upper.y<17.5);
   if(!below)continue;
+  // FEPESE e outras bancas alinham alternativas numéricas a cada 12 pt.
+  // '13' sobre '15' na mesma coluna NÃO é a fração 13/15 quando cada
+  // número tem um marcador (a., b., SQUARE, Check-square) à esquerda.
+  const isAlternativeMarker=str=>/^(?:(?:CHECK[ -]?)?SQUARE|[A-E][.):\-]?|\([A-E]\))$/i.test(String(str||'').trim());
+  const isChoiceValue=value=>pieces.some(part=>part!==value&&part.col===value.col&&
+    Math.abs(part.y-value.y)<5.5&&part.x<value.x&&
+    value.x-(part.x+part.width)<35&&isAlternativeMarker(part.str));
+  if(isChoiceValue(upper)||isChoiceValue(below))continue;
   const neighbor=pieces.find(p=>p!==upper&&p!==below&&p.col===upper.col&&
     p.x<upper.x&&upper.x-(p.x+p.width)<15&&
     Math.abs(p.y-upper.y-3.5)<3.7&&p.str.length>=2);
