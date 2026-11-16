@@ -1,5 +1,8 @@
 {
-  "status": "pending",
+  "status": "ready",
   "fingerprint": "d832f87c2268eec3760b70323675fc1a",
-  "retryAt": "2026-11-16T00:44:04.951Z"
+  "model": "@cf/meta/llama-3.1-8b-instruct-fp8-fast",
+  "generatedAt": "2026-11-16T00:42:08.488Z",
+  "text": "Vamos analisar a questão passo a passo.\n\nA razão inicial entre homens e mulheres é 3/8. Isso significa que, para cada 8 mulheres, há 3 homens.\n\nA participação de mulheres aumentou em 20%. Isso significa que o número de mulheres aumentou em 20% do número original.\n\nPara que a razão se torne 7/8, precisamos saber o número total de pessoas (homens + mulheres) antes e depois do aumento.\n\nSuponha que o número original de mulheres seja 8 (para simplificar). Então, o número original de homens é 3.\n\nDepois do aumento de 20% na participação de mulheres, o número de mulheres se torna 8 + (20% de 8) = 8 + 1,6 = 9,6.\n\nPara que a razão se torne 7/8, o número de homens deve aumentar para que a razão seja 7/8. Suponha que o número total de pessoas seja 16 (para simplificar). Então, o número de homens deve ser 7 (para que a razão seja 7/8).\n\nO número de homens aumentou de 3 para 7, o que é um aumento de 133,33% (calcular 100% + (2/3 * 100%)).\n\nPortanto, a resposta correta é D) 133,333... %.",
+  "revision": 1
 }
