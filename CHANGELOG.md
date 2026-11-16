@@ -1,3 +1,14 @@
+## 0.6.12 — 16/11/2026
+
+- Corrigidas questões 11 (`Questão 1 1.`) e 40 (`Questão 4O.`) da Legalle/CISCOPAR.
+- Suporte de importação e integridade a cadernos de quatro alternativas, como declarado na capa do concurso 01/2026.
+- Gabarito com múltiplas tabelas por cargo: selecionar somente `Analista em Informática - Tabela 3`, com 50 respostas.
+- Identificação da banca Legalle e do órgão CISCOPAR, com nome correto do cargo.
+- Texto-base sobre telemedicina associado a todas as questões 1–10.
+- Testes automatizados específicos adicionados e aprovados.
+- Sem migração de dados, reclassificação retroativa destrutiva ou alteração de respostas.
+- Importação real em dispositivo do usuário ainda depende de conferência.
+
 ## 0.6.11 — 16/11/2026
 
 - Corrigida a seleção automática do gabarito 002 da VUNESP/UNESP quando a capa divide o título entre colunas.
