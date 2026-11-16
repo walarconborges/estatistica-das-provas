@@ -1,3 +1,13 @@
+## 0.6.5 — 15/11/2026
+- Traduzidas as opções de “Meu histórico”: Não respondidas, Erradas e Acertadas.
+- Substituída a lista de escolha única por três caixas de seleção independentes em Questões e Simulados.
+- Qualquer combinação de categorias é válida; nenhuma marcada equivale a Todas.
+- Corrigido o filtro para aplicar união (OU) das situações selecionadas segundo a última resposta válida do perfil ativo.
+- Compatibilidade preservada com o parâmetro legado `outcome`.
+- Ajustada a apresentação para celular; o filtro mantém as seleções após a busca.
+- Sete testes adicionais de multisseleção, tradução, compatibilidade e isolamento entre perfis.
+- Banco, provas, gabaritos, estatísticas e histórico preservados.
+
 ## 0.6.4 — 15/11/2026
 - Corrigida perda de alternativas numéricas isoladas e títulos `QUESTÃO` separados de seus números no PDF Quadrix.
 - Aumentada a tolerância geométrica para reunir rótulos e valores próximos sem fundir alternativas de linhas diferentes.
