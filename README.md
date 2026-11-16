@@ -1,9 +1,19 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.10 — 16/11/2026**  
+**Versão experimental 0.6.11 — 16/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.11 — correção da prova VUNESP/UNESP 002
+
+- Recuperação automática do código da prova no título da capa, inclusive quando o leitor PDF divide o texto em colunas e extrai "002. Prova" separado de "Objetiva".
+- Identificação independente pelo código editorial no rodapé (VNSP2511/002); se a capa e o rodapé divergirem, bloquear a associação para não usar o gabarito errado.
+- Em gabaritos com múltiplas seções do mesmo cargo, seleciona primeiro o código explícito do caderno; se ausente, exige correspondência única e integral da área de atuação impressa na prova ou no nome do arquivo.
+- Prova UNESP 2026, código 002 — Analista de Informática II, Desenvolvimento de Sistemas Institucionais, deve encontrar a seção 002 e as 40 letras do gabarito, sem preencher manualmente.
+- Mantém opção manual de código do caderno somente como recurso alternativo de conferência.
+- Testes de regressão: código de capa dividido, código de rodapé, seleção das 40 respostas, distinção entre áreas homônimas, conflito de identificadores e ausência de informação.
+- Nenhum registro do banco, gabarito ou estatística existente foi alterado; a importação ainda deve ser validada no navegador com os arquivos originais.
 
 ## Versão 0.6.10 — importação VUNESP e metadados manuais
 
