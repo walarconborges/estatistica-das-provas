@@ -1,3 +1,15 @@
+## 0.6.9 — 15/11/2026
+
+- Catálogos personalizados do Edital 01/2026 da Câmara de Candeias do Jamari: cargo 505 (Analista de Tecnologia e Informática, nível superior) e 202 (Auxiliar de Serviços Gerais, ensino fundamental).
+- Cargo 202: Português, Matemática e Conhecimentos Gerais, sem incluir Informática nem Legislação (reservadas a outro cargo de nível fundamental).
+- Cargo 505: os seis blocos programáticos e os assuntos específicos mantidos a partir das páginas 4–5 e 7 do Anexo IV.
+- Reconhecimento de equivalências de termos e conceitos; sem correspondência clara, sinaliza "A conferir"; conteúdos comprovadamente não previstos recebem "Fora do edital".
+- Novos filtros de cargo, disciplina, assunto e pertinência ao edital; simulados e relatórios por assunto; seleção inicial inclui "Dentro + a conferir" para não excluir falsos negativos.
+- Classificação retroativa e dinâmica para questões já importadas e futuras; os IDs, códigos, gabaritos, tentativas, perfis e simulados permanecem inalterados. Nenhuma migração nem reinicialização em data/state.json.
+- A classificação original permanece visível; a classificação do edital é independente e pode evoluir conforme o usuário enviar outros editais.
+- Casos de legislação municipal exigem correspondência jurisdicional verificada; provas originais de outras cidades não herdam automaticamente regras de Candeias.
+- Testes de regressão para equivalência, exclusão, disciplinas e preservação do estado; catálogo acessível no painel recolhível.
+
 ## 0.6.8 — 15/11/2026
 
 - Filtro para Candeias: não incluir questões originais sobre a Lei Complementar Municipal nº 143/2009 de Brusque, incluindo a questão 20 (promoção horizontal de 90 horas).
