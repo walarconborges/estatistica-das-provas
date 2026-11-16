@@ -1,3 +1,11 @@
+## 0.6.3 — 15/11/2026
+- Corrigido erro de seleção do gabarito Quadrix CRQ-V: o cargo está no rodapé da prova e era removido pela leitura espacial.
+- O seletor de gabarito agora considera o nome real do PDF e o título inferido, além do texto extraído.
+- Sublinhados no nome do arquivo são normalizados (`analista_de_informatica (2).pdf`).
+- Mantida exigência de correspondência única com a seção 2.7, cargo 401, sem misturar gabaritos de outros cargos.
+- Criados testes que reproduzem o bloqueio anterior e validam as 50 respostas do cargo 401.
+- Dados existentes preservados; nova importação deve ser validada no navegador.
+
 ## 0.6.2 — 15/11/2026
 - Incorporado o Anexo IV do Edital nº 01/2026 ao perfil de estudo de Candeias, com foco no cargo 505 — Analista de Tecnologia e Informática.
 - Registrados seis grupos programáticos, páginas de referência e os tópicos exigidos de Conhecimentos Específicos de TI.
