@@ -410,6 +410,31 @@ export function spatialQuestions(pages){
  // extenso de Português e vinculá-lo às questões que fazem referência
  // ao texto, inclusive quando elas aparecem na coluna ao lado.
  const first=questions.find(q=>q.originalNumber===1);
+ // TEXTO isolado no caderno seguido da indicação editorial
+ // "Questões de 01 a 10": o texto vale para TODO o bloco, mesmo que
+ // algumas questões não mencionem "texto" explicitamente.
+ if(first&&!first.contextText){
+  const page=pages.find(p=>p.number===first.sourcePage);
+  const lines=(page?.lines||[]);
+  const marker=lines.find(row=>row.col===first.sourceColumn&&
+   /^TEXTO\s*$/i.test(String(row.text||'').trim())&&row.y<first.startY);
+  const rangeText=lines.map(row=>String(row.text||'')).join(' ');
+  const limit=rangeText.match(/QUEST[OÕ]ES\s+DE\s+0?1\s+A\s+0?(\d{1,2})\b/i);
+  const to=Number(limit?.[1]||0);
+  if(marker&&to>=2&&to<=25){
+   const rows=lines.filter(row=>row.col===marker.col&&
+    row.y>marker.y&&row.y<first.startY-9).sort((a,b)=>a.y-b.y);
+   const shared=humanizePdfText(rows.map(row=>row.text).join('\n'));
+   if(shared.length>=150){
+    for(const q of questions){
+     if(q.originalNumber>=1&&q.originalNumber<=to&&!q.contextText){
+      q.contextText=shared;q.contextRange=[1,to];
+     }
+    }
+    contexts.push({from:1,to,text:shared,page:page.number,col:marker.col});
+   }
+  }
+ }
  if(first&&!first.contextText){
   const page=pages.find(p=>p.number===first.sourcePage);
   const above=(page?.lines||[])
