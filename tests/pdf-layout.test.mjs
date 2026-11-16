@@ -403,3 +403,99 @@ test('seleção Quadrix recusa cargo errado ou múltiplo, sem misturar respostas
  });
  assert.match(bad.error,/não corresponde/);
 });
+
+
+test('Quadrix real: alternativas numéricas isoladas não desaparecem nas questões 16 a 20',()=>{
+ const pg={number:4,width:595.28,height:841.89,lines:[]};
+ const line=(col,y,text)=>pg.lines.push({col,y,text,x:col?313.2:41.7});
+ // Dados/posições representativos da página 4 do caderno original.
+ line(0,43.5,'QUESTÃO 15');
+ line(0,72,'Assinale a opção correta sobre as relações de sentido.');
+ 'ABCDE'.split('').forEach((letter,i)=>line(0,180+i*32,'('+letter+') Texto '+letter+'.'));
+ line(0,567.3,'QUESTÃO 16');
+ line(0,595,'Em um condomínio, 12 moradores formam uma comissão.');
+ 'ABCDE'.split('').forEach((letter,i)=>{
+  line(0,730+i*15,'('+letter+')');
+  line(0,733+i*15,String(405+i*45));
+ });
+ line(1,43.5,'QUESTÃO 17');
+ line(1,67,'Um ninja escolhe 3 passagens, 4 corredores e 5 escadas.');
+ 'ABCDE'.split('').forEach((letter,i)=>{
+  line(1,168+i*12.1,'('+letter+')');
+  line(1,170+i*12.1,String(24+i*12));
+ });
+ line(1,242.5,'QUESTÃO 18');
+ line(1,268,'Gael pensou em um inteiro de 3 algarismos.');
+ 'ABCDE'.split('').forEach((letter,i)=>{
+  line(1,357+i*12.1,'('+letter+')');
+  line(1,359+i*12.1,String(10+i));
+ });
+ line(1,429.5,'QUESTÃO 19');
+ line(1,454,'A professora Sarita informou sua idade.');
+ 'ABCDE'.split('').forEach((letter,i)=>line(1,556+i*12.1,'('+letter+') '+(51+i*4)+' anos'));
+ line(1,628.5,'QUESTÃO 20');
+ line(1,650,'Um barco de passeio transporta adultos e crianças.');
+ 'ABCDE'.split('').forEach((letter,i)=>{
+  line(1,743+i*12.1,'('+letter+')');
+  line(1,746+i*12.1,String(4+i));
+ });
+ const result=spatialQuestions([pg]);
+ assert.deepEqual(result.questions.map(q=>q.originalNumber),[15,16,17,18,19,20]);
+ assert.equal(result.questions.find(q=>q.originalNumber===17).options.length,5);
+ assert.equal(result.questions.find(q=>q.originalNumber===20).options.length,5);
+ for(const n of [16,17,18,20])assert.equal(result.questions.find(q=>q.originalNumber===n).options.map(o=>o.letter).join(''),'ABCDE');
+});
+test('Quadrix real: extração incompleta em 25 e 43 é preservada por imagem com A–E selecionáveis',()=>{
+ const make=(number,page)=>({number:page,width:595.28,height:841.89,lines:[
+   {col:1,y:43.5,text:'QUESTÃO '+number},
+   {col:1,y:72,text:'Um enunciado da prova original.'},
+   {col:1,y:125,text:'(A) 1'},
+   {col:1,y:140,text:'(B) 2'},
+   {col:1,y:260,text:'ANOTAÇÕES'}
+ ]});
+ const one=spatialQuestions([make(25,5)]).questions[0];
+ assert.equal(one.originalNumber,25);
+ assert.equal(one.extractionFallback,true);
+ assert.equal(one.extractionReview,true);
+ assert.equal(one.imageOnly,true);
+ assert.deepEqual(one.options.map(o=>o.letter),'ABCDE'.split(''));
+ assert.ok(one.endY<290,'O recorte não inclui a área inteira de anotações.');
+ const more=spatialQuestions([{number:9,width:595.28,height:841.89,lines:[
+  {col:0,y:270,text:'QUESTÃO 43'},
+  {col:0,y:295,text:'Qual das alternativas corresponde ao conceito indicado?'},
+  ...'ABCD'.split('').map((letter,i)=>({col:0,y:470+i*14,text:'('+letter+') Conceito '+letter}))
+ ]}]).questions[0];
+ assert.equal(more.originalNumber,43);
+ assert.equal(more.extractionFallback,true);
+ assert.deepEqual(more.options.map(o=>o.letter),'ABCDE'.split(''));
+});
+test('Questão numerada explicitamente é recuperada mesmo quando proteção antifalsos a engoliu',()=>{
+ const pg={number:4,width:595.28,height:841.89,lines:[
+  {col:0,y:40,text:'QUESTÃO 15'},
+  {col:0,y:75,text:'Texto da primeira questão.'},
+  {col:0,y:130,text:'(A) Opção A'},
+  {col:0,y:150,text:'(B) Opção B'},
+  {col:0,y:240,text:'QUESTÃO 17'},
+  {col:0,y:266,text:'Enunciado da questão 17.'},
+  ...'ABCDE'.split('').map((letter,i)=>({col:0,y:290+i*15,text:'('+letter+') '+String(i+1)}))
+ ]};
+ const result=spatialQuestions([pg]);
+ const recovered=result.questions.find(q=>q.originalNumber===17);
+ assert.ok(recovered);
+ assert.equal(recovered.extractionFallback,true);
+ assert.equal(recovered.sourcePage,4);
+ assert.deepEqual(recovered.options.map(o=>o.letter),'ABCDE'.split(''));
+});
+test('alternativas com rótulo e numeral em itens separados na mesma linha permanecem legíveis',()=>{
+ const H=841.89;
+ const it=(str,x,y,w)=>({str,width:w,transform:[1,0,0,1,x,H-y],height:10});
+ const rows=spatialLines([
+  it('QUESTÃO 17',313.7,52,50),
+  it('(A)',313.2,174,20),it('24',334,177.7,12),
+  it('(B)',313.2,186,20),it('36',334,189.7,12),
+  it('(C)',313.2,198,20),it('48',334,201.7,12)
+ ],595.28,H);
+ assert.ok(rows.some(r=>r.text==='(A) 24'));
+ assert.ok(rows.some(r=>r.text==='(B) 36'));
+ assert.ok(rows.some(r=>r.text==='(C) 48'));
+});
