@@ -196,6 +196,66 @@ export function addExam(state,meta,parsed,key={}){
   }
   state.exams.push(exam);return exam;
 }
+/**
+ * Reimportação segura de uma prova que já foi salva como imagens de página
+ * inteira. Atualiza somente sua representação textual, preservando IDs,
+ * códigos, respostas, tentativas, exclusões de alternativas e simulados.
+ * Requer prova/cargo/gabarito e trechos dos enunciados compatíveis.
+ */
+export function upgradeRecoveredExam(state,meta,parsed,key={}){
+ if(!parsed.length||parsed.every(q=>q.extractionFallback))return null;
+ const matches=[];
+ for(const exam of state.exams.filter(e=>e.title===meta.title&&e.questionIds?.length===parsed.length)){
+  const oldRows=exam.questionIds.map(id=>state.questions.find(q=>q.id===id));
+  if(oldRows.some(q=>!q||!q.extractionFallback||q.status!=='needs-review'||q.answer!==key[q.originalNumber]))continue;
+  const byNumber=new Map(oldRows.map(q=>[q.originalNumber,q]));
+  if(byNumber.size!==parsed.length||parsed.some(q=>!byNumber.has(q.originalNumber)))continue;
+  const sameStem=parsed.filter(q=>{
+   const old=byNumber.get(q.originalNumber);
+   return old.sourcePage===q.sourcePage&&
+    textNorm(old.stem).slice(0,120)===textNorm(q.stem).slice(0,120);
+  }).length;
+  if(sameStem<Math.ceil(parsed.length*.75))continue;
+  matches.push({exam,oldRows,byNumber});
+ }
+ // Não alterar nenhuma prova quando houver ambiguidade entre cadernos.
+ if(matches.length!==1)return null;
+ const {exam,byNumber}=matches[0];
+ const backups=[];
+ for(const item of parsed){
+  const old=byNumber.get(item.originalNumber);
+  const index=state.questions.findIndex(q=>q.id===old.id);
+  backups.push({index,question:old});
+  const {pageImage:_pageImage,imageError:_imageError,
+   extractionFallback:_extractionFallback,visualSegments:_visualSegments,...base}=old;
+  const updated={...base,...item,id:old.id,examId:old.examId,
+   code:old.code,answer:old.answer,year:old.year,banca:old.banca,
+   orgao:old.orgao,status:item.extractionReview?'needs-review':'active'};
+  if(!updated.imageOnly)delete updated.pageImage;
+  state.questions[index]=updated;
+ }
+ return {exam,upgraded:parsed.filter(q=>!q.extractionFallback).length,
+  rollback:()=>{for(const {index,question} of backups)state.questions[index]=question;}};
+}
+
+/** Não cadastrar novamente um caderno idêntico já importado. */
+export function findPreviouslyImportedExam(state,meta,parsed,key={}){
+ return state.exams.find(exam=>{
+  if(exam.title!==meta.title||exam.questionIds.length!==parsed.length)return false;
+  const old=exam.questionIds.map(id=>state.questions.find(q=>q.id===id));
+  if(old.some(q=>!q)||old.length!==parsed.length)return false;
+  const byNumber=new Map(old.map(q=>[q.originalNumber,q]));
+  return byNumber.size===parsed.length&&parsed.every(q=>{
+   const prior=byNumber.get(q.originalNumber);
+   return prior&&prior.answer===key[q.originalNumber]&&
+    textNorm(prior.stem)===textNorm(q.stem)&&
+    (prior.options||[]).length===(q.options||[]).length&&
+    (prior.options||[]).every((o,i)=>o.letter===q.options[i].letter&&
+     textNorm(o.text)===textNorm(q.options[i].text));
+  });
+ })||null;
+}
+
 export function validAnswer(answer){return /^[A-E]$/.test(String(answer||'').toUpperCase())}
 export function latestAnswer(state,profileId,questionId){
   for(let i=state.attempts.length-1;i>=0;i--){
