@@ -1,9 +1,20 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.22 — 16/11/2026**  
+**Versão experimental 0.6.23 — 16/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.23 — leitor genérico de gabaritos tabulados por cargo
+
+- A importação da prova **FEPESE, Consórcio Público Interfederativo de Saúde da Região da Grande Florianópolis, Auxiliar de Serviços Gerais (F1), 16/08/2026** foi corrigida no leitor geral de gabaritos.
+- O PDF oficial contém **seis cargos** distribuídos em duas páginas; o cargo **F1** tem **35 respostas**, enquanto M1, M2, S1, S2 e S3 possuem **40**. A versão anterior usava um leitor inadequado e identificava apenas **7 respostas**.
+- Implementado um identificador **por estrutura, não por banca**: procura código do cargo, título e duas linhas consecutivas (numeração de 1 até N; respostas A–E), verifica alinhamento e seleciona o par correspondente à capa. Um código ausente ou incompatível continua bloqueando a importação, sem selecionar o primeiro cargo da lista por aproximação.
+- O mesmo identificador atende tabelas com comprimentos diferentes (35/40 ou outros totais válidos), sem misturar seções de cargos.
+- Teste de regressão reproduz as **35 respostas oficiais do F1**, de **1-C a 35-B**, verifica todas individualmente e confirma que os demais cinco gabaritos não são confundidos.
+- Reconhece FEPESE, 2026, o consórcio de saúde da Grande Florianópolis e a divisão efetiva da prova: **1–5 Português, 6–10 Conhecimentos Gerais, 11–15 Higiene e Segurança no Trabalho e 16–35 Conhecimentos Específicos**.
+- Preserva o texto de Português iniciado na coluna esquerda e continuado na direita como apoio às questões **1–5**, incluindo as páginas seguintes.
+- Testes automatizados, inclusive os de provas anteriores, passaram. Não houve migração, exclusão ou duplicação de dados; a importação real no navegador ainda precisa ser confirmada.
 
 ## Versão 0.6.22 — tolerância controlada a caracteres incorretos no cargo do gabarito
 
