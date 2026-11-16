@@ -1,3 +1,9 @@
+## 0.6.29 — 16/11/2026
+
+- Banco populado diretamente com 31 provas curadas: 342 questões de Saúde e 515 de TI, com gabaritos incorporados e numeração própria.
+- Estão em revisão 58 questões com extração/elementos gráficos incertos; as demais foram disponibilizadas. Perfis e estatísticas zeradas preservados.
+- Retirada a identificação manual do importador; formulários seguem para importações com dois PDFs separados. PDFs já preparados foram inseridos diretamente no banco.
+
 ## 0.6.28 — 16/11/2026
 
 - Corrigido importador de Professor Nível II — Pedagogo — Séries Iniciais, MS Concursos, Prefeitura de Ouro Preto do Oeste/RO (Edital 08/2016): 40 questões, 37 páginas de gabarito, cargo selecionado exclusivamente na página 30.

@@ -1,6 +1,6 @@
 import {STORAGE_KEY,newId,fresh,normalizeState,parseExamText,parseKey,inferExamMetadata,completeExamMetadata,classify,classifyByExamDivision,repeatedSupportText,addExam,upgradeRecoveredExam,findPreviouslyImportedExam,recordAttempt,latestAnswer,outcome,stats,filtered,normalizeOutcomeSelection,prioritize,createSimulation,finishSimulation,simulationResult,expire,validAnswer} from './core.mjs';
 import {readPdf} from './pdf-import.mjs';
-import {chosenAnswerSection,verifiedExamJob,parseGridKey,questionIntegrity,declaredQuestionCount,declaredAlternativeCount,inferredAlternativeCount} from './pdf-layout.mjs';
+import {chosenAnswerSection,parseGridKey,questionIntegrity,declaredQuestionCount,declaredAlternativeCount,inferredAlternativeCount} from './pdf-layout.mjs';
 import {createSyncClient} from './sync-client.mjs';
 import {STUDY_CONTEXT,eligibleForList} from './study-context.mjs';
 import {CATALOGS,currentCatalog,allTopics,classifyForCargo,subjectSummary,EDITAL_SCOPE_OPTIONS,normalizeEditalScope,inEditalScope,STUDY_ALL,ALL_STUDY_DISCIPLINES,studyAllGroup,filterStudyAllQuestions} from './edital-classification.mjs';
@@ -211,17 +211,6 @@ function importScreen(){
       <div class="field span-all"><label for="key-pdf">PDF do gabarito oficial</label><input id="key-pdf" name="keyPdf" type="file" accept=".pdf,application/pdf" required><p class="hint" id="key-pdf-info">Selecione o arquivo PDF do gabarito.</p></div>
     </div>
     <p class="hint">O ano, a banca, o órgão, o título e as classificações serão identificados automaticamente quando possível. Dados não identificados serão sinalizados para conferência.</p>
-    <details class="program-panel">
-      <summary>Identificação manual — somente se o PDF não permitir reconhecer os dados</summary>
-      <p class="hint">Preencha somente os dados que não forem reconhecidos automaticamente. Consulte a capa ou o gabarito oficial. A verificação de todas as questões e respostas permanece obrigatória.</p>
-      <div class="form-grid" style="margin-top:12px">
-        <div class="field"><label for="manual-year">Ano do concurso</label><input id="manual-year" name="manualYear" inputmode="numeric" maxlength="4" placeholder="Ex.: 2026"></div>
-        <div class="field"><label for="manual-banca">Banca organizadora</label><input id="manual-banca" name="manualBanca" maxlength="70" placeholder="Ex.: VUNESP"></div>
-        <div class="field"><label for="manual-orgao">Órgão da prova</label><input id="manual-orgao" name="manualOrgao" maxlength="70" placeholder="Ex.: UNESP"></div>
-        <div class="field"><label for="manual-code">Código do caderno (se houver vários gabaritos)</label><input id="manual-code" name="manualCode" maxlength="3" inputmode="numeric" placeholder="Ex.: 002"></div>
-      </div>
-      <div id="answer-page-review" aria-live="polite"></div>
-    </details>
     <div class="actions"><button type="submit" id="import-submit" class="primary">Importar questões</button></div>
   </form>
   ${latestImportMessage?`<div class="notice info">${h(latestImportMessage)}</div>`:''}`;
@@ -536,47 +525,10 @@ async function importData(form){
     const examRead=await readPdf(pdf,{images:true,extractQuestions:true});
     const keyRead=await readPdf(keyPdf,{images:false});
     const inferred=inferExamMetadata(examRead.text,pdf.name,keyRead.text,keyPdf.name);
-    const meta=completeExamMetadata(inferred,{
-      year:String(fd.get('manualYear')||''),
-      banca:String(fd.get('manualBanca')||''),
-      orgao:String(fd.get('manualOrgao')||'')
-    });
-    const answerMatchInfo={
-      examFilename:pdf.name,examTitle:meta.title,
-      bookletCode:String(fd.get('manualCode')||''),
-      answerPage:String(fd.get('manualAnswerPage')||'')
-    };
+    const meta=completeExamMetadata(inferred);
+    const answerMatchInfo={examFilename:pdf.name,examTitle:meta.title};
     let selected=chosenAnswerSection(keyRead.text,examRead.text,answerMatchInfo);
-    // Segunda verificação independente: a extração espacial da capa pode
-    // diferir do texto agregado. Só recupera automaticamente uma página
-    // ÚNICA cujo cargo esteja confirmado no caderno ou no nome do arquivo.
-    if(selected.error&&selected.availableSections?.length===1&&!answerMatchInfo.answerPage){
-      const sole=selected.availableSections[0];
-      const coverRows=(examRead.pages[0]?.lines||[]).map(row=>row.text).join('\n');
-      if(verifiedExamJob(sole.role,coverRows,{examFilename:pdf.name,examTitle:meta.title}))
-        selected=chosenAnswerSection(keyRead.text,examRead.text,{
-          ...answerMatchInfo,answerPage:String(sole.pageNumber)
-        });
-    }
-    if(selected.error){
-      if(selected.availableSections?.length>1){
-        const holder=form.querySelector('#answer-page-review');
-        if(holder){
-          const previous=String(fd.get('manualAnswerPage')||'');
-          holder.innerHTML='<div class="field span-all" style="margin-top:12px">'+
-            '<label for="manual-answer-page">Cargo no PDF do gabarito</label>'+
-            '<select id="manual-answer-page" name="manualAnswerPage" required>'+
-              '<option value="">Selecione o cargo correto</option>'+
-              selected.availableSections.map(item=>'<option value="'+h(item.pageNumber)+'" '+
-                (previous===String(item.pageNumber)?'selected':'')+'>'+
-                h('Página '+item.pageNumber+' — '+item.role)+'</option>').join('')+
-            '</select><p class="hint">Use a identificação impressa no gabarito. Somente a página escolhida será considerada, e todas as respostas continuarão sendo verificadas.</p></div>';
-          const panel=holder.closest('details');
-          if(panel)panel.open=true;
-        }
-      }
-      throw Error(selected.error);
-    }
+    if(selected.error)throw Error(selected.error);
     const key=selected.format==='grid'?parseGridKey(selected.text):parseKey(selected.text);
     const parsed=examRead.questions.map(q=>{const category=classify(q.stem,q.heading);if(category.disciplineCode==='CE'&&/ANALISTA DE INFORMÁTICA/i.test(meta.title)){category.discipline='Informática';category.disciplineCode='IN';category.confidence='média';}return {...q,...classifyByExamDivision(q,meta,category)};});
     // O total oficial é obtido exclusivamente da capa, quando informado.

@@ -1,9 +1,16 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.28 — 16/11/2026**  
+**Versão experimental 0.6.29 — 16/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.29 — banco de provas preparadas e interface sem identificação manual
+
+- Inseridas diretamente em `data/state.json`, sem usar o formulário web, **15 provas de Saúde (342 questões)** e **16 provas de TI (515 questões)** dos PDFs unificados preparados, totalizando **31 provas e 857 questões**.
+- Foram mantidos os gabaritos internos, numerações originais selecionadas, dois perfis e zero respostas/simulados. **58 questões estão sinalizadas para revisão** de extração, fórmulas ou figuras e não entram nos filtros normais até correção.
+- Removida a seção **Identificação manual** do formulário de importação; a identificação por PDF é automática e provas com correspondência ambígua são bloqueadas, em vez de pedir correção manual.
+- **Limitação:** o importador web permanece destinado aos dois PDFs (prova e gabarito separados). Para as duas coletâneas unificadas atuais a inserção foi feita diretamente no GitHub. Não há importação automática genérica de quaisquer PDFs unificados pelo site nesta versão.
 
 ## Versão 0.6.28 — gabarito multicargo MS Concursos, Ouro Preto do Oeste (2016)
 
