@@ -1,3 +1,11 @@
+## 0.6.26 — 16/11/2026
+
+- Corrigida a importação de Auxiliar de Serviços Gerais, Câmara Municipal de Pouso Alto/MG, 2025: o caderno possui 30 questões, embora seis outras páginas de gabarito tenham 40 respostas.
+- Parser reutilizável identifica cada cargo, tipo/cor e pares de respostas em duas colunas por página; seleciona apenas o gabarito de Auxiliar de Serviços Gerais (página 7, questões 1–30). Impede leitura global de gabaritos multicargo não reconhecidos.
+- Reconhece “trinta questões” na capa, órgão CM-POUSO-ALTO e banca CONSULPLAN por referência específica verificada do edital 01/2025, cujo logotipo é uma imagem.
+- Preserva a crônica compartilhada de Português até a questão 10 e mantém as disciplinas corretas de Português (1–10), Informática (11–20) e Conhecimentos Gerais (21–30).
+- Testes confirmam 30 respostas e rejeitam gabarito de outro cargo ou tipo, bem como formatos multicargo incompletos. Sem alterações no banco, provas antigas ou histórico.
+
 ## 0.6.25 — 16/11/2026
 
 - Corrigida a numeração repetida ao importar a prova do Instituto Legalle, Cândido Godói/RS (Lei nº 15.474 confundida com questão 15); a capa com quadro de rascunho é ignorada.
