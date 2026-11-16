@@ -752,3 +752,18 @@ test('VUNESP: tirinha com grande espaço vira imagem apenas da figura, não da q
  assert.ok(q.visualSegments.top<150);
  assert.ok(q.visualSegments.bottom<430);
 });
+
+test('caderno sem código pode usar código manual, mas não pode contradizer a capa',()=>{
+ const rows=arr=>arr.map((letter,i)=>(i+1)+' - '+letter).join('\n');
+ const source='001. PROVA OBJETIVA\nASSISTENTE OPERACIONAL III\n'+rows(Array(40).fill('A'))+
+ '\n002. PROVA OBJETIVA\nANALISTA DE INFORMÁTICA II\n'+rows(Array(40).fill('B'))+
+ '\n003. PROVA OBJETIVA\nANALISTA DE INFORMÁTICA II\n'+rows(Array(40).fill('C'));
+ const manually=chosenAnswerSection(source,'Prova para Analista de Informática II',{bookletCode:'002'});
+ assert.equal(manually.error,null);
+ assert.equal(manually.section,'002');
+ assert.equal(parseKey(manually.text)[23],'B');
+ assert.ok(chosenAnswerSection(source,'002. PROVA OBJETIVA\nANALISTA DE INFORMÁTICA II',{bookletCode:'003'}).error);
+ assert.ok(chosenAnswerSection(source,'Analista de Informática II',{bookletCode:'004'}).error);
+ assert.ok(chosenAnswerSection(source,'Analista de Informática II',{bookletCode:'A2'}).error);
+ assert.ok(chosenAnswerSection(source,'Analista de Informática II').error);
+});
