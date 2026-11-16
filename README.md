@@ -1,9 +1,18 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.15 — 16/11/2026**  
+**Versão experimental 0.6.16 — 16/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.16 — Seleção segura do gabarito FCPC/Aracati
+
+- Corrigida a associação das páginas do gabarito preliminar de **Auxiliar de Serviços Gerais (Câmara Municipal de Aracati, banca FCPC, 2026)**. O PDF possui 4 cargos e usa o título do cargo entre “Gabarito Preliminar” e “Prova 1”.
+- A seleção aceita o nome do cargo com espaços, pontuação e quebras de linha produzidas pela extração do PDF; usa o nome do arquivo e o cargo inferido como evidências independentes.
+- A prova denominada `auxiliar_de_servicos_gerais (1).pdf` pode corresponder a “Auxiliar de Serviços Gerais” mesmo com sufixo numérico no nome.
+- Correspondência sempre **única**: a página de Agente Administrativo, Copeiro ou Assessor Técnico não pode ser usada como substituta. Caso não seja possível associar a página, o erro agora informa os cargos efetivamente lidos, sem inventar respostas.
+- Testes de regressão cobrem título dividido em duas linhas, sufixo `(1)`, seleção da página correta e suas 50 respostas, cargos com nome curto e mensagem de diagnóstico.
+- A leitura de questões e a base existente não foram alteradas. A importação final dos PDFs no navegador permanece a ser conferida.
 
 ## Versão 0.6.15 — FCPC Aracati 2026 (Auxiliar de Serviços Gerais)
 
