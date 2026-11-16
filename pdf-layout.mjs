@@ -520,17 +520,58 @@ export function identifyBookletCode(examText='',examInfo={}){
  * A capa pode vir com espaços artificiais, e o título inferido pode
  * usar um nome genérico. Não associa só porque existe uma única tabela.
  */
+/**
+ * Reconhecimento conservador de cargos no caderno e gabarito.
+ * Alguns PDFs com fontes embutidas devolvem "SERVIAOS" no lugar de
+ * "SERVIÇOS". É permitida UMA diferença de caractere em TODO o nome,
+ * somente quando há outros termos distintivos exatos e em sequência.
+ * Nunca usar o total de respostas, apenas a identidade do cargo.
+ */
+export function jobTitleMatches(role,hint){
+ const words=value=>norm(value).replace(/[^A-Z0-9]+/g,' ').trim().split(/\s+/)
+  .filter(word=>word&&!['DE','DA','DO','DAS','DOS','E','EM','PARA'].includes(word));
+ const required=words(role),source=words(hint);
+ if(!required.length||!source.length)return false;
+ const roleExact=required.join(''),sourceExact=source.join('');
+ if(sourceExact.includes(roleExact))return true;
+ if(required.length<2)return false;
+ // Distância de edição limitada a 1 por palavra, com pelo menos duas
+ // palavras substantivas preservadas em um título de três ou mais termos.
+ const near=(a,b)=>{
+  if(a===b)return 0;
+  if(Math.abs(a.length-b.length)>1||Math.min(a.length,b.length)<5)return 2;
+  let i=0,j=0,edits=0;
+  while(i<a.length&&j<b.length){
+   if(a[i]===b[j]){i++;j++;continue;}
+   if(++edits>1)return 2;
+   if(a.length>b.length)i++;
+   else if(b.length>a.length)j++;
+   else{i++;j++;}
+  }
+  edits+=(a.length-i)+(b.length-j);
+  return edits;
+ };
+ for(let start=0;start<=source.length-required.length;start++){
+  let differences=0,exact=0,ok=true;
+  for(let k=0;k<required.length;k++){
+   const diff=near(required[k],source[start+k]);
+   if(diff>1){ok=false;break;}
+   if(diff===0)exact++;
+   else differences+=diff;
+   if(differences>1){ok=false;break;}
+  }
+  if(ok&&differences===1&&exact>=Math.max(1,required.length-1))return true;
+ }
+ return false;
+}
 export function verifiedExamJob(role,examText='',examInfo={}){
- const clean=value=>norm(value).replace(/[^A-Z0-9]+/g,'');
- const expected=clean(role);
- if(expected.length<5)return false;
  const first=String(examText||'').split(/\[\[PAGE:\s*2\]\]/i)[0];
  const sources=[
-  String(examInfo?.examFilename||'').replace(/\.pdf$/i,'').replace(/\s*\(\d+\)\s*$/,''),
-  String(examInfo?.examTitle||''),
+  String(examInfo?.examFilename||'').replace(/\.pdf$/i,'').replace(/\s*\(\d+\)\s*$/,'').replace(/[_-]/g,' '),
+  String(examInfo?.examTitle||'').split(/\s+[—–]\s+/).at(-1)||'',
   first
  ];
- return sources.some(x=>clean(x).includes(expected));
+ return sources.some(hint=>jobTitleMatches(role,hint));
 }
 
 export function chosenAnswerSection(text,examText='',examInfo={}){
@@ -563,37 +604,16 @@ export function chosenAnswerSection(text,examText='',examInfo={}){
    return {text:entry.text,section:entry.role,format:'grid',
     manualSelection:true,pageNumber:entry.pageNumber,error:null};
   }
-  const compact=value=>norm(value).replace(/[^A-Z0-9]/g,'');
-  const normWords=value=>norm(value).replace(/[^A-Z0-9]+/g,' ').trim().split(/\s+/).filter(Boolean);
-  const common=new Set(['DE','DA','DO','DAS','DOS','EM','PARA','E']);
   const evidence=[
    String(examInfo?.examFilename||'').replace(/[_-]+/g,' ')
     .replace(/\.pdf$/i,'').replace(/\s*\(\d+\)\s*$/,''),
    String(examInfo?.examTitle||'').split(/\s+[—–]\s+/).at(-1)||'',
    String(examText||'').split(/\[\[PAGE:\s*2\]\]/i)[0].slice(0,2800)
   ];
-  const matchesRole=(role,hint)=>{
-   const roleCompact=compact(role),hintCompact=compact(hint);
-   if(roleCompact.length>=5&&hintCompact.includes(roleCompact))return true;
-   // Como alguns PDFs dividem letras/palavras em linhas separadas,
-   // exigir todos os termos distintivos, na ordem. Não comparar só
-   // "Auxiliar", pois pode haver Auxiliar Administrativo e outros.
-   const tokens=normWords(role).filter(t=>!common.has(t)&&t.length>2);
-   const hintWords=normWords(hint).filter(t=>!common.has(t));
-   if(tokens.length<2||hintWords.length<2)return false;
-   let position=0;
-   for(const token of tokens){
-    const index=hintWords.findIndex((word,i)=>i>=position&&
-      (word===token||(token.length>=5&&word.startsWith(token)&&token.length>=word.length-2)));
-    if(index<0)return false;
-    position=index+1;
-   }
-   return true;
-  };
   let selected=null;
   for(const hint of evidence){
    if(!hint)continue;
-   const found=pageGrids.filter(section=>matchesRole(section.role,hint));
+   const found=pageGrids.filter(section=>jobTitleMatches(section.role,hint));
    if(found.length>1)return {text:'',section:null,format:'grid',
     availableSections:pageGrids.map(item=>({pageNumber:item.pageNumber,role:item.role})),
     error:'O gabarito tabulado corresponde a mais de um cargo. Selecione o cargo correto na lista de conferência.'};
