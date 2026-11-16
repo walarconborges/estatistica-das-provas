@@ -603,6 +603,52 @@
       "keySection": "AUXILIAR DE SERVICOS GERAIS",
       "keyStatus": "publicado",
       "metadataReview": []
+    },
+    {
+      "id": "159c7af1-9585-4d3f-871f-d7c4331b1826",
+      "title": "2025 — CONSULPLAN — CM-POUSO-ALTO — Auxiliar de Serviços Gerais",
+      "year": "2025",
+      "banca": "CONSULPLAN",
+      "bancaCode": "CONSULPLAN",
+      "orgao": "CM-POUSO-ALTO",
+      "orgaoCode": "CMPOUSOALTO",
+      "createdAt": "2026-11-16T19:56:36.822Z",
+      "questionIds": [
+        "92995c2e-ea03-423c-a1ee-86094c8d2850",
+        "6ea61773-b14a-4c03-bd57-3999211186fd",
+        "380c4fab-2d63-4650-b9db-60d813950c10",
+        "e82e9681-4511-42f4-bb33-8c780592f129",
+        "96dde531-ec64-4dc3-ad67-60d55d2bf909",
+        "044c7da8-1f18-486e-8ece-cc9efaf3a3ff",
+        "f5ab7df1-79b7-404a-9210-3c746bdca7a4",
+        "3cec8ca5-74ce-4e79-b4e5-bf951f65154a",
+        "ac835429-d4c5-470f-8f80-b457c1feeeaf",
+        "24a6ac84-4e68-4f59-9504-ea909c872838",
+        "9a8491dc-3352-412c-b6f6-f91b7884a8e4",
+        "0c53849e-b4f0-44ea-bfbc-369d23acb057",
+        "3b0a9f0b-7c10-4796-91f8-52492c1dae79",
+        "0eb3e0da-65b7-4734-8628-56b86261a168",
+        "a281baa7-c525-49b5-a591-379b9791a647",
+        "a18bc2f8-ecad-4b78-bbdc-65a9dd73070e",
+        "79229a0f-eddd-47d0-b328-38a629b2e365",
+        "f2e83bf7-c1c9-464c-856c-ee403b1faa15",
+        "6e715a95-31fb-4260-8e56-a455fa449010",
+        "dfecfc0f-9c26-4a6b-a68d-0de54e16f4f3",
+        "abec99d0-d418-4ab0-a52a-ba032056860b",
+        "a4ba340a-480d-4e1a-9143-2f2a958f25f5",
+        "48a3c4b8-e09a-4667-a100-8f2f28d33656",
+        "2d505b3d-cd90-435a-8579-c2ff09d726a4",
+        "fe7d6ecf-a874-4e70-88dd-469502ff29a9",
+        "2f567cc9-4d3f-486d-bcd7-06b4946353f0",
+        "925a96cd-a75b-459d-9843-05ec9856055b",
+        "8dcbf2e1-32f9-479e-99fa-a6a609ff3055",
+        "2fd17d41-25db-4f10-ac4d-128350b88e6c",
+        "5a59016c-b8ab-4a9e-a6ba-ea2ddd9cea27"
+      ],
+      "keySection": "AUXILIAR DE SERVICOS GERAIS",
+      "keyStatus": "preliminar",
+      "metadataReview": [],
+      "pdfPath": "storage/pdfs/159c7af1-9585-4d3f-871f-d7c4331b1826.pdf"
     }
   ],
   "questions": [
@@ -35950,6 +35996,2084 @@
       "banca": "LEGALLE",
       "orgao": "PM-CANDIDO-GODOI",
       "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 1,
+      "heading": "LÍNGUA PORTUGUESA",
+      "stem": "De acordo com as características textuais apresentadas, o texto tem como principal objetivo:",
+      "stemRows": [
+        {
+          "y": 451.36999999999995,
+          "text": ""
+        },
+        {
+          "y": 464.68999999999994,
+          "text": "De acordo com as características textuais apresentadas, o texto tem como principal objetivo:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Discutir o processo de ocupação da Lua."
+        },
+        {
+          "letter": "B",
+          "text": "Celebrar o crescimento de um pé de milho."
+        },
+        {
+          "letter": "C",
+          "text": "Mostrar a importância de cuidar da natureza."
+        },
+        {
+          "letter": "D",
+          "text": "Persuadir o leitor sobre a conexão com a terra."
+        }
+      ],
+      "optionsStartY": 477.54999999999995,
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "startY": 451.36999999999995,
+      "endY": 527.9499999999999,
+      "contextText": "Um pé de milho Os americanos, através do radar, entraram em contato com a Lua, o que não deixa de ser importante da semana aconteceu com o meu pé de milho. Aconteceu que no meu quintal, em um monte de terra trazido pelo jardineiro, nasceu alguma coisa que podia ser um pé de capim – mas descobri que era um pé de milho. Transplantei-o para o exíguo canteiro na frente da casa. Secaram as pequenas folhas, pensei que fosse morrer. Mas ele reagiu. Quando estava do tamanho de um palmo veio um amigo e declarou desdenhosamente que na verdade aquilo era capim. Quando estava com dois palmo Sou um ignorante, um pobre homem de cidade. Mas eu tinha razão. Ele cresceu, está com dois metros, lança as suas folhas além do muro – e é um esplêndido pé de milho. Já viu o leitor um pé de milho? Eu nunca tinha milharais – mas é diferente. Um pé de milho sozinho, em um canteiro, espremido, junto do portão, numa esquina de rua lavoura, é um ser vivo e independente. Suas raízes roxas se agarram no chão e suas Detesto comparações surrealistas – mas na glória de seu crescimento, tal como o vi em uma noite de luar, o pé de milho parecia um cavalo empinado, as crinas ao vento – e em outra madrugada parecia um galo cantand Anteontem aconteceu o que era inevitável, mas que nos encantou como se fosse inesperado: meu pé de milho pendoou. Há muitas flores belas no mundo, e a flor de milho não será a mais linda. Mas aquele pendão firme, vertical, beijado pelo ven do mar, veio enriquecer nosso canteirinho vulgar com uma força e uma alegria que fazem bem. É alguma coisa de vivo que se afirma com ímpeto e certeza. Meu pé de milho é um belo gesto da terra. E eu não sou mais um medíocre homem que vive atrás de uma chata máquina de escrever: sou um rico lavrador da Rua Júlio de Castilhos. (BRAGA, Rubem. Um pé de milho. In: ___. 200 crônicas escolhidas. 22",
+      "contextRange": [
+        1,
+        10
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Interpretação de texto",
+      "topicCode": "IT",
+      "id": "92995c2e-ea03-423c-a1ee-86094c8d2850",
+      "examId": "159c7af1-9585-4d3f-871f-d7c4331b1826",
+      "code": "Q2025LPITCONSULPLANCMPOUSOALTO1",
+      "year": "2025",
+      "banca": "CONSULPLAN",
+      "orgao": "CM-POUSO-ALTO",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 2,
+      "heading": "LÍNGUA PORTUGUESA",
+      "stem": "A crônica de Rubem Braga parte de um relato da germinação de um pé de milho e culmina em uma implicação pessoal consequente desse advento. Sobre as ideias textuais, é IMPRÓPRIO afirmar que:",
+      "stemRows": [
+        {
+          "y": 542.9499999999999,
+          "text": ""
+        },
+        {
+          "y": 556.27,
+          "text": "A crônica de Rubem Braga parte de um relato da germinação de um pé de milho e culmina em uma implicação pessoal"
+        },
+        {
+          "y": 569.1099999999999,
+          "text": "consequente desse advento. Sobre as ideias textuais, é IMPRÓPRIO afirmar que:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "As imagens que emanam do vegetal denunciam um lirismo surreal"
+        },
+        {
+          "letter": "B",
+          "text": "A crônica penetra no reino narrativo em uma área fronteiriça entre o sonho e a realidade."
+        },
+        {
+          "letter": "C",
+          "text": "A abordagem do assunto é direta: a lua foi explorada em toda"
+        },
+        {
+          "letter": "D",
+          "text": "Com um olhar apurado, o autor demarca a região fronteiriça entre a imaginação e"
+        }
+      ],
+      "optionsStartY": 581.9499999999999,
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "startY": 542.9499999999999,
+      "endY": 632.9499999999999,
+      "contextText": "Um pé de milho Os americanos, através do radar, entraram em contato com a Lua, o que não deixa de ser importante da semana aconteceu com o meu pé de milho. Aconteceu que no meu quintal, em um monte de terra trazido pelo jardineiro, nasceu alguma coisa que podia ser um pé de capim – mas descobri que era um pé de milho. Transplantei-o para o exíguo canteiro na frente da casa. Secaram as pequenas folhas, pensei que fosse morrer. Mas ele reagiu. Quando estava do tamanho de um palmo veio um amigo e declarou desdenhosamente que na verdade aquilo era capim. Quando estava com dois palmo Sou um ignorante, um pobre homem de cidade. Mas eu tinha razão. Ele cresceu, está com dois metros, lança as suas folhas além do muro – e é um esplêndido pé de milho. Já viu o leitor um pé de milho? Eu nunca tinha milharais – mas é diferente. Um pé de milho sozinho, em um canteiro, espremido, junto do portão, numa esquina de rua lavoura, é um ser vivo e independente. Suas raízes roxas se agarram no chão e suas Detesto comparações surrealistas – mas na glória de seu crescimento, tal como o vi em uma noite de luar, o pé de milho parecia um cavalo empinado, as crinas ao vento – e em outra madrugada parecia um galo cantand Anteontem aconteceu o que era inevitável, mas que nos encantou como se fosse inesperado: meu pé de milho pendoou. Há muitas flores belas no mundo, e a flor de milho não será a mais linda. Mas aquele pendão firme, vertical, beijado pelo ven do mar, veio enriquecer nosso canteirinho vulgar com uma força e uma alegria que fazem bem. É alguma coisa de vivo que se afirma com ímpeto e certeza. Meu pé de milho é um belo gesto da terra. E eu não sou mais um medíocre homem que vive atrás de uma chata máquina de escrever: sou um rico lavrador da Rua Júlio de Castilhos. (BRAGA, Rubem. Um pé de milho. In: ___. 200 crônicas escolhidas. 22",
+      "contextRange": [
+        1,
+        10
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "6ea61773-b14a-4c03-bd57-3999211186fd",
+      "examId": "159c7af1-9585-4d3f-871f-d7c4331b1826",
+      "code": "Q2025LPGCONSULPLANCMPOUSOALTO1",
+      "year": "2025",
+      "banca": "CONSULPLAN",
+      "orgao": "CM-POUSO-ALTO",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 3,
+      "heading": "LÍNGUA PORTUGUESA",
+      "stem": "A crônica valoriza o olhar poético sobre a realidade, em que o “ um novo sentido para o dia a dia. Em relação às ideias apresentadas no texto, é correto afirmar que o nar",
+      "stemRows": [
+        {
+          "y": 647.9499999999999,
+          "text": ""
+        },
+        {
+          "y": 661.3,
+          "text": "A crônica valoriza o olhar poético sobre a realidade, em que o “"
+        },
+        {
+          "y": 674.14,
+          "text": "um novo sentido para o dia a dia. Em relação às ideias apresentadas no texto, é correto afirmar que o nar"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Iguala o ritmo natural da planta – o “belo gesto da terra” – e o desassossego da vida urbana."
+        },
+        {
+          "letter": "B",
+          "text": "Contrasta o ambiente urbano com a natureza, encontrando no canteiro d"
+        },
+        {
+          "letter": "C",
+          "text": "Se sente rico por ter um “ser vivo” para cuidar em seu quintal, destacando a independência da planta."
+        },
+        {
+          "letter": "D",
+          "text": "Encontra beleza e sentido na simplicidade ao observar um pé de milho crescendo no seu quintal urbano. AUXILIAR DE SERVIÇOS GERAIS MANHÃ | TIPO 1 – BRANCA"
+        }
+      ],
+      "optionsStartY": 686.98,
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "startY": 647.9499999999999,
+      "endY": 808.92,
+      "contextText": "Um pé de milho Os americanos, através do radar, entraram em contato com a Lua, o que não deixa de ser importante da semana aconteceu com o meu pé de milho. Aconteceu que no meu quintal, em um monte de terra trazido pelo jardineiro, nasceu alguma coisa que podia ser um pé de capim – mas descobri que era um pé de milho. Transplantei-o para o exíguo canteiro na frente da casa. Secaram as pequenas folhas, pensei que fosse morrer. Mas ele reagiu. Quando estava do tamanho de um palmo veio um amigo e declarou desdenhosamente que na verdade aquilo era capim. Quando estava com dois palmo Sou um ignorante, um pobre homem de cidade. Mas eu tinha razão. Ele cresceu, está com dois metros, lança as suas folhas além do muro – e é um esplêndido pé de milho. Já viu o leitor um pé de milho? Eu nunca tinha milharais – mas é diferente. Um pé de milho sozinho, em um canteiro, espremido, junto do portão, numa esquina de rua lavoura, é um ser vivo e independente. Suas raízes roxas se agarram no chão e suas Detesto comparações surrealistas – mas na glória de seu crescimento, tal como o vi em uma noite de luar, o pé de milho parecia um cavalo empinado, as crinas ao vento – e em outra madrugada parecia um galo cantand Anteontem aconteceu o que era inevitável, mas que nos encantou como se fosse inesperado: meu pé de milho pendoou. Há muitas flores belas no mundo, e a flor de milho não será a mais linda. Mas aquele pendão firme, vertical, beijado pelo ven do mar, veio enriquecer nosso canteirinho vulgar com uma força e uma alegria que fazem bem. É alguma coisa de vivo que se afirma com ímpeto e certeza. Meu pé de milho é um belo gesto da terra. E eu não sou mais um medíocre homem que vive atrás de uma chata máquina de escrever: sou um rico lavrador da Rua Júlio de Castilhos. (BRAGA, Rubem. Um pé de milho. In: ___. 200 crônicas escolhidas. 22",
+      "contextRange": [
+        1,
+        10
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Interpretação de texto",
+      "topicCode": "IT",
+      "id": "380c4fab-2d63-4650-b9db-60d813950c10",
+      "examId": "159c7af1-9585-4d3f-871f-d7c4331b1826",
+      "code": "Q2025LPITCONSULPLANCMPOUSOALTO2",
+      "year": "2025",
+      "banca": "CONSULPLAN",
+      "orgao": "CM-POUSO-ALTO",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 4,
+      "heading": "LÍNGUA PORTUGUESA",
+      "stem": "Sabe-se que em um texto algumas palavras podem ser empregadas para transmitir opinião, int Assinale o trecho que NÃO apresenta a opinião do cronista.",
+      "stemRows": [
+        {
+          "y": 96.25999999999999,
+          "text": ""
+        },
+        {
+          "y": 109.21999999999991,
+          "text": "Sabe-se que em um texto algumas palavras podem ser empregadas para transmitir opinião, int"
+        },
+        {
+          "y": 121.69999999999993,
+          "text": "Assinale o trecho que NÃO apresenta a opinião do cronista."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "“Sou um ignorante, um pobre homem de cidade.” (3º§)."
+        },
+        {
+          "letter": "B",
+          "text": "“[...] lança as suas folhas além do muro – e é um esplêndido pé de milho.”"
+        },
+        {
+          "letter": "C",
+          "text": "“Um pé de milho sozinho, em um canteiro, espremido, junto do portão,"
+        },
+        {
+          "letter": "D",
+          "text": "“[...] nosso canteirinho vulgar com uma força e uma alegria que fazem bem.”"
+        }
+      ],
+      "optionsStartY": 134.29999999999995,
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "startY": 96.25999999999999,
+      "endY": 183.5,
+      "contextText": "Um pé de milho Os americanos, através do radar, entraram em contato com a Lua, o que não deixa de ser importante da semana aconteceu com o meu pé de milho. Aconteceu que no meu quintal, em um monte de terra trazido pelo jardineiro, nasceu alguma coisa que podia ser um pé de capim – mas descobri que era um pé de milho. Transplantei-o para o exíguo canteiro na frente da casa. Secaram as pequenas folhas, pensei que fosse morrer. Mas ele reagiu. Quando estava do tamanho de um palmo veio um amigo e declarou desdenhosamente que na verdade aquilo era capim. Quando estava com dois palmo Sou um ignorante, um pobre homem de cidade. Mas eu tinha razão. Ele cresceu, está com dois metros, lança as suas folhas além do muro – e é um esplêndido pé de milho. Já viu o leitor um pé de milho? Eu nunca tinha milharais – mas é diferente. Um pé de milho sozinho, em um canteiro, espremido, junto do portão, numa esquina de rua lavoura, é um ser vivo e independente. Suas raízes roxas se agarram no chão e suas Detesto comparações surrealistas – mas na glória de seu crescimento, tal como o vi em uma noite de luar, o pé de milho parecia um cavalo empinado, as crinas ao vento – e em outra madrugada parecia um galo cantand Anteontem aconteceu o que era inevitável, mas que nos encantou como se fosse inesperado: meu pé de milho pendoou. Há muitas flores belas no mundo, e a flor de milho não será a mais linda. Mas aquele pendão firme, vertical, beijado pelo ven do mar, veio enriquecer nosso canteirinho vulgar com uma força e uma alegria que fazem bem. É alguma coisa de vivo que se afirma com ímpeto e certeza. Meu pé de milho é um belo gesto da terra. E eu não sou mais um medíocre homem que vive atrás de uma chata máquina de escrever: sou um rico lavrador da Rua Júlio de Castilhos. (BRAGA, Rubem. Um pé de milho. In: ___. 200 crônicas escolhidas. 22",
+      "contextRange": [
+        1,
+        10
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Interpretação de texto",
+      "topicCode": "IT",
+      "id": "e82e9681-4511-42f4-bb33-8c780592f129",
+      "examId": "159c7af1-9585-4d3f-871f-d7c4331b1826",
+      "code": "Q2025LPITCONSULPLANCMPOUSOALTO3",
+      "year": "2025",
+      "banca": "CONSULPLAN",
+      "orgao": "CM-POUSO-ALTO",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 5,
+      "heading": "LÍNGUA PORTUGUESA",
+      "stem": "Considerando o trecho “Quando estava do tamanho de um palmo veio um amigo e declarou verdade aquilo era capim.” (2º§), nas expressões destacadas identificam‐se, respectivamente, noções de:",
+      "stemRows": [
+        {
+          "y": 198.5,
+          "text": ""
+        },
+        {
+          "y": 211.33999999999992,
+          "text": "Considerando o trecho “Quando estava do tamanho de um palmo veio um amigo e declarou"
+        },
+        {
+          "y": 223.93999999999994,
+          "text": "verdade aquilo era capim.” (2º§), nas expressões destacadas identificam‐se, respectivamente, noções de:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Tempo e modo."
+        },
+        {
+          "letter": "B",
+          "text": "Proporção e convicção."
+        },
+        {
+          "letter": "C",
+          "text": "Condição e intensidade."
+        },
+        {
+          "letter": "D",
+          "text": "Consequência e afirmação."
+        }
+      ],
+      "optionsStartY": 236.53999999999996,
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "startY": 198.5,
+      "endY": 285.77,
+      "contextText": "Um pé de milho Os americanos, através do radar, entraram em contato com a Lua, o que não deixa de ser importante da semana aconteceu com o meu pé de milho. Aconteceu que no meu quintal, em um monte de terra trazido pelo jardineiro, nasceu alguma coisa que podia ser um pé de capim – mas descobri que era um pé de milho. Transplantei-o para o exíguo canteiro na frente da casa. Secaram as pequenas folhas, pensei que fosse morrer. Mas ele reagiu. Quando estava do tamanho de um palmo veio um amigo e declarou desdenhosamente que na verdade aquilo era capim. Quando estava com dois palmo Sou um ignorante, um pobre homem de cidade. Mas eu tinha razão. Ele cresceu, está com dois metros, lança as suas folhas além do muro – e é um esplêndido pé de milho. Já viu o leitor um pé de milho? Eu nunca tinha milharais – mas é diferente. Um pé de milho sozinho, em um canteiro, espremido, junto do portão, numa esquina de rua lavoura, é um ser vivo e independente. Suas raízes roxas se agarram no chão e suas Detesto comparações surrealistas – mas na glória de seu crescimento, tal como o vi em uma noite de luar, o pé de milho parecia um cavalo empinado, as crinas ao vento – e em outra madrugada parecia um galo cantand Anteontem aconteceu o que era inevitável, mas que nos encantou como se fosse inesperado: meu pé de milho pendoou. Há muitas flores belas no mundo, e a flor de milho não será a mais linda. Mas aquele pendão firme, vertical, beijado pelo ven do mar, veio enriquecer nosso canteirinho vulgar com uma força e uma alegria que fazem bem. É alguma coisa de vivo que se afirma com ímpeto e certeza. Meu pé de milho é um belo gesto da terra. E eu não sou mais um medíocre homem que vive atrás de uma chata máquina de escrever: sou um rico lavrador da Rua Júlio de Castilhos. (BRAGA, Rubem. Um pé de milho. In: ___. 200 crônicas escolhidas. 22",
+      "contextRange": [
+        1,
+        10
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "96dde531-ec64-4dc3-ad67-60d55d2bf909",
+      "examId": "159c7af1-9585-4d3f-871f-d7c4331b1826",
+      "code": "Q2025LPGCONSULPLANCMPOUSOALTO2",
+      "year": "2025",
+      "banca": "CONSULPLAN",
+      "orgao": "CM-POUSO-ALTO",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 6,
+      "heading": "LÍNGUA PORTUGUESA",
+      "stem": "Em “Os americanos, através do radar, entraram em contato com a Lua assinala que a ação:",
+      "stemRows": [
+        {
+          "y": 300.77,
+          "text": ""
+        },
+        {
+          "y": 313.61,
+          "text": "Em “Os americanos, através do radar, entraram em contato com a Lua"
+        },
+        {
+          "y": 326.2099999999999,
+          "text": "assinala que a ação:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Está totalmente concluída."
+        },
+        {
+          "letter": "B",
+          "text": "Trata-se de uma ideia hipotética."
+        },
+        {
+          "letter": "C",
+          "text": "Ocorreu em um passado recente."
+        },
+        {
+          "letter": "D",
+          "text": "É pontual e teve início no passado."
+        }
+      ],
+      "optionsStartY": 338.68999999999994,
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "startY": 300.77,
+      "endY": 387.89,
+      "contextText": "Um pé de milho Os americanos, através do radar, entraram em contato com a Lua, o que não deixa de ser importante da semana aconteceu com o meu pé de milho. Aconteceu que no meu quintal, em um monte de terra trazido pelo jardineiro, nasceu alguma coisa que podia ser um pé de capim – mas descobri que era um pé de milho. Transplantei-o para o exíguo canteiro na frente da casa. Secaram as pequenas folhas, pensei que fosse morrer. Mas ele reagiu. Quando estava do tamanho de um palmo veio um amigo e declarou desdenhosamente que na verdade aquilo era capim. Quando estava com dois palmo Sou um ignorante, um pobre homem de cidade. Mas eu tinha razão. Ele cresceu, está com dois metros, lança as suas folhas além do muro – e é um esplêndido pé de milho. Já viu o leitor um pé de milho? Eu nunca tinha milharais – mas é diferente. Um pé de milho sozinho, em um canteiro, espremido, junto do portão, numa esquina de rua lavoura, é um ser vivo e independente. Suas raízes roxas se agarram no chão e suas Detesto comparações surrealistas – mas na glória de seu crescimento, tal como o vi em uma noite de luar, o pé de milho parecia um cavalo empinado, as crinas ao vento – e em outra madrugada parecia um galo cantand Anteontem aconteceu o que era inevitável, mas que nos encantou como se fosse inesperado: meu pé de milho pendoou. Há muitas flores belas no mundo, e a flor de milho não será a mais linda. Mas aquele pendão firme, vertical, beijado pelo ven do mar, veio enriquecer nosso canteirinho vulgar com uma força e uma alegria que fazem bem. É alguma coisa de vivo que se afirma com ímpeto e certeza. Meu pé de milho é um belo gesto da terra. E eu não sou mais um medíocre homem que vive atrás de uma chata máquina de escrever: sou um rico lavrador da Rua Júlio de Castilhos. (BRAGA, Rubem. Um pé de milho. In: ___. 200 crônicas escolhidas. 22",
+      "contextRange": [
+        1,
+        10
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "044c7da8-1f18-486e-8ece-cc9efaf3a3ff",
+      "examId": "159c7af1-9585-4d3f-871f-d7c4331b1826",
+      "code": "Q2025LPGCONSULPLANCMPOUSOALTO3",
+      "year": "2025",
+      "banca": "CONSULPLAN",
+      "orgao": "CM-POUSO-ALTO",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 7,
+      "heading": "LÍNGUA PORTUGUESA",
+      "stem": "Assinale a alternativa que expressa ideia de oposição.",
+      "stemRows": [
+        {
+          "y": 402.89,
+          "text": ""
+        },
+        {
+          "y": 415.84999999999997,
+          "text": "Assinale a alternativa que expressa ideia de oposição."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "“Tinha visto centenas de milharais – mas é diferente.” (3º§)."
+        },
+        {
+          "letter": "B",
+          "text": "“Transplantei-o para o exíguo canteiro na frente da casa.” (2º§)"
+        },
+        {
+          "letter": "C",
+          "text": "“É alguma coisa de vivo que se afirma com ímpeto e certeza.”"
+        },
+        {
+          "letter": "D",
+          "text": "“Há muitas flores belas no mundo, e a flor de milho não será a mais linda.”"
+        }
+      ],
+      "optionsStartY": 428.33,
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "startY": 402.89,
+      "endY": 477.54999999999995,
+      "contextText": "Um pé de milho Os americanos, através do radar, entraram em contato com a Lua, o que não deixa de ser importante da semana aconteceu com o meu pé de milho. Aconteceu que no meu quintal, em um monte de terra trazido pelo jardineiro, nasceu alguma coisa que podia ser um pé de capim – mas descobri que era um pé de milho. Transplantei-o para o exíguo canteiro na frente da casa. Secaram as pequenas folhas, pensei que fosse morrer. Mas ele reagiu. Quando estava do tamanho de um palmo veio um amigo e declarou desdenhosamente que na verdade aquilo era capim. Quando estava com dois palmo Sou um ignorante, um pobre homem de cidade. Mas eu tinha razão. Ele cresceu, está com dois metros, lança as suas folhas além do muro – e é um esplêndido pé de milho. Já viu o leitor um pé de milho? Eu nunca tinha milharais – mas é diferente. Um pé de milho sozinho, em um canteiro, espremido, junto do portão, numa esquina de rua lavoura, é um ser vivo e independente. Suas raízes roxas se agarram no chão e suas Detesto comparações surrealistas – mas na glória de seu crescimento, tal como o vi em uma noite de luar, o pé de milho parecia um cavalo empinado, as crinas ao vento – e em outra madrugada parecia um galo cantand Anteontem aconteceu o que era inevitável, mas que nos encantou como se fosse inesperado: meu pé de milho pendoou. Há muitas flores belas no mundo, e a flor de milho não será a mais linda. Mas aquele pendão firme, vertical, beijado pelo ven do mar, veio enriquecer nosso canteirinho vulgar com uma força e uma alegria que fazem bem. É alguma coisa de vivo que se afirma com ímpeto e certeza. Meu pé de milho é um belo gesto da terra. E eu não sou mais um medíocre homem que vive atrás de uma chata máquina de escrever: sou um rico lavrador da Rua Júlio de Castilhos. (BRAGA, Rubem. Um pé de milho. In: ___. 200 crônicas escolhidas. 22",
+      "contextRange": [
+        1,
+        10
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "f5ab7df1-79b7-404a-9210-3c746bdca7a4",
+      "examId": "159c7af1-9585-4d3f-871f-d7c4331b1826",
+      "code": "Q2025LPGCONSULPLANCMPOUSOALTO4",
+      "year": "2025",
+      "banca": "CONSULPLAN",
+      "orgao": "CM-POUSO-ALTO",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 8,
+      "heading": "LÍNGUA PORTUGUESA",
+      "stem": "Em “Sou um ignorante, um pobre homem de cidade.” (3º§), o sujeito pode ser classificado como:",
+      "stemRows": [
+        {
+          "y": 492.54999999999995,
+          "text": ""
+        },
+        {
+          "y": 505.50999999999993,
+          "text": "Em “Sou um ignorante, um pobre homem de cidade.” (3º§), o sujeito pode ser classificado como:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Simples."
+        },
+        {
+          "letter": "B",
+          "text": "Inexistente."
+        },
+        {
+          "letter": "C",
+          "text": "Desinencial."
+        },
+        {
+          "letter": "D",
+          "text": "Indeterminado."
+        }
+      ],
+      "optionsStartY": 517.99,
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "startY": 492.54999999999995,
+      "endY": 567.1899999999999,
+      "contextText": "Um pé de milho Os americanos, através do radar, entraram em contato com a Lua, o que não deixa de ser importante da semana aconteceu com o meu pé de milho. Aconteceu que no meu quintal, em um monte de terra trazido pelo jardineiro, nasceu alguma coisa que podia ser um pé de capim – mas descobri que era um pé de milho. Transplantei-o para o exíguo canteiro na frente da casa. Secaram as pequenas folhas, pensei que fosse morrer. Mas ele reagiu. Quando estava do tamanho de um palmo veio um amigo e declarou desdenhosamente que na verdade aquilo era capim. Quando estava com dois palmo Sou um ignorante, um pobre homem de cidade. Mas eu tinha razão. Ele cresceu, está com dois metros, lança as suas folhas além do muro – e é um esplêndido pé de milho. Já viu o leitor um pé de milho? Eu nunca tinha milharais – mas é diferente. Um pé de milho sozinho, em um canteiro, espremido, junto do portão, numa esquina de rua lavoura, é um ser vivo e independente. Suas raízes roxas se agarram no chão e suas Detesto comparações surrealistas – mas na glória de seu crescimento, tal como o vi em uma noite de luar, o pé de milho parecia um cavalo empinado, as crinas ao vento – e em outra madrugada parecia um galo cantand Anteontem aconteceu o que era inevitável, mas que nos encantou como se fosse inesperado: meu pé de milho pendoou. Há muitas flores belas no mundo, e a flor de milho não será a mais linda. Mas aquele pendão firme, vertical, beijado pelo ven do mar, veio enriquecer nosso canteirinho vulgar com uma força e uma alegria que fazem bem. É alguma coisa de vivo que se afirma com ímpeto e certeza. Meu pé de milho é um belo gesto da terra. E eu não sou mais um medíocre homem que vive atrás de uma chata máquina de escrever: sou um rico lavrador da Rua Júlio de Castilhos. (BRAGA, Rubem. Um pé de milho. In: ___. 200 crônicas escolhidas. 22",
+      "contextRange": [
+        1,
+        10
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "3cec8ca5-74ce-4e79-b4e5-bf951f65154a",
+      "examId": "159c7af1-9585-4d3f-871f-d7c4331b1826",
+      "code": "Q2025LPGCONSULPLANCMPOUSOALTO5",
+      "year": "2025",
+      "banca": "CONSULPLAN",
+      "orgao": "CM-POUSO-ALTO",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 9,
+      "heading": "LÍNGUA PORTUGUESA",
+      "stem": "Considerando o contexto em que são aplicadas, as palavras adquirem significado diverso. No texto, o significado da expres são destacada está corretamente indicado em:",
+      "stemRows": [
+        {
+          "y": 582.1899999999999,
+          "text": ""
+        },
+        {
+          "y": 595.15,
+          "text": "Considerando o contexto em que são aplicadas, as palavras adquirem significado diverso. No texto, o significado da expres"
+        },
+        {
+          "y": 607.63,
+          "text": "são destacada está corretamente indicado em:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "“Detesto comparações surrealistas [...]” (4º§) – reverencio."
+        },
+        {
+          "letter": "B",
+          "text": "“[...] o que não deixa de ser emocionante.” (1º§) – impressionante."
+        },
+        {
+          "letter": "C",
+          "text": "“Um pé de milho sozinho, em um canteiro, espremido, [...]” (4º§)"
+        },
+        {
+          "letter": "D",
+          "text": "“Quando estava com dois palmos veio outro amigo e afirmou"
+        }
+      ],
+      "optionsStartY": 620.23,
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "startY": 582.1899999999999,
+      "endY": 669.4599999999999,
+      "contextText": "Um pé de milho Os americanos, através do radar, entraram em contato com a Lua, o que não deixa de ser importante da semana aconteceu com o meu pé de milho. Aconteceu que no meu quintal, em um monte de terra trazido pelo jardineiro, nasceu alguma coisa que podia ser um pé de capim – mas descobri que era um pé de milho. Transplantei-o para o exíguo canteiro na frente da casa. Secaram as pequenas folhas, pensei que fosse morrer. Mas ele reagiu. Quando estava do tamanho de um palmo veio um amigo e declarou desdenhosamente que na verdade aquilo era capim. Quando estava com dois palmo Sou um ignorante, um pobre homem de cidade. Mas eu tinha razão. Ele cresceu, está com dois metros, lança as suas folhas além do muro – e é um esplêndido pé de milho. Já viu o leitor um pé de milho? Eu nunca tinha milharais – mas é diferente. Um pé de milho sozinho, em um canteiro, espremido, junto do portão, numa esquina de rua lavoura, é um ser vivo e independente. Suas raízes roxas se agarram no chão e suas Detesto comparações surrealistas – mas na glória de seu crescimento, tal como o vi em uma noite de luar, o pé de milho parecia um cavalo empinado, as crinas ao vento – e em outra madrugada parecia um galo cantand Anteontem aconteceu o que era inevitável, mas que nos encantou como se fosse inesperado: meu pé de milho pendoou. Há muitas flores belas no mundo, e a flor de milho não será a mais linda. Mas aquele pendão firme, vertical, beijado pelo ven do mar, veio enriquecer nosso canteirinho vulgar com uma força e uma alegria que fazem bem. É alguma coisa de vivo que se afirma com ímpeto e certeza. Meu pé de milho é um belo gesto da terra. E eu não sou mais um medíocre homem que vive atrás de uma chata máquina de escrever: sou um rico lavrador da Rua Júlio de Castilhos. (BRAGA, Rubem. Um pé de milho. In: ___. 200 crônicas escolhidas. 22",
+      "contextRange": [
+        1,
+        10
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Interpretação de texto",
+      "topicCode": "IT",
+      "id": "ac835429-d4c5-470f-8f80-b457c1feeeaf",
+      "examId": "159c7af1-9585-4d3f-871f-d7c4331b1826",
+      "code": "Q2025LPITCONSULPLANCMPOUSOALTO4",
+      "year": "2025",
+      "banca": "CONSULPLAN",
+      "orgao": "CM-POUSO-ALTO",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 10,
+      "heading": "LÍNGUA PORTUGUESA",
+      "stem": "Em “Anteontem aconteceu o que era inevitável, mas que nos encantou como se fosse inesperado: meu pé de milho pendoou. (5º§), os dois-pontos foram empregados para:",
+      "stemRows": [
+        {
+          "y": 684.4599999999999,
+          "text": ""
+        },
+        {
+          "y": 697.3,
+          "text": "Em “Anteontem aconteceu o que era inevitável, mas que nos encantou como se fosse inesperado: meu pé de milho pendoou."
+        },
+        {
+          "y": 709.9,
+          "text": "(5º§), os dois-pontos foram empregados para:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Expressar ambiguidade."
+        },
+        {
+          "letter": "B",
+          "text": "Introduzir uma explicação."
+        },
+        {
+          "letter": "C",
+          "text": "Indicar continuidade de uma ideia."
+        },
+        {
+          "letter": "D",
+          "text": "Marcar uma pausa completa na leitura. AUXILIAR DE SERVIÇOS GERAIS MANHÃ | TIPO 1 – BRANCA"
+        }
+      ],
+      "optionsStartY": 722.5,
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "startY": 684.4599999999999,
+      "endY": 808.92,
+      "contextText": "Um pé de milho Os americanos, através do radar, entraram em contato com a Lua, o que não deixa de ser importante da semana aconteceu com o meu pé de milho. Aconteceu que no meu quintal, em um monte de terra trazido pelo jardineiro, nasceu alguma coisa que podia ser um pé de capim – mas descobri que era um pé de milho. Transplantei-o para o exíguo canteiro na frente da casa. Secaram as pequenas folhas, pensei que fosse morrer. Mas ele reagiu. Quando estava do tamanho de um palmo veio um amigo e declarou desdenhosamente que na verdade aquilo era capim. Quando estava com dois palmo Sou um ignorante, um pobre homem de cidade. Mas eu tinha razão. Ele cresceu, está com dois metros, lança as suas folhas além do muro – e é um esplêndido pé de milho. Já viu o leitor um pé de milho? Eu nunca tinha milharais – mas é diferente. Um pé de milho sozinho, em um canteiro, espremido, junto do portão, numa esquina de rua lavoura, é um ser vivo e independente. Suas raízes roxas se agarram no chão e suas Detesto comparações surrealistas – mas na glória de seu crescimento, tal como o vi em uma noite de luar, o pé de milho parecia um cavalo empinado, as crinas ao vento – e em outra madrugada parecia um galo cantand Anteontem aconteceu o que era inevitável, mas que nos encantou como se fosse inesperado: meu pé de milho pendoou. Há muitas flores belas no mundo, e a flor de milho não será a mais linda. Mas aquele pendão firme, vertical, beijado pelo ven do mar, veio enriquecer nosso canteirinho vulgar com uma força e uma alegria que fazem bem. É alguma coisa de vivo que se afirma com ímpeto e certeza. Meu pé de milho é um belo gesto da terra. E eu não sou mais um medíocre homem que vive atrás de uma chata máquina de escrever: sou um rico lavrador da Rua Júlio de Castilhos. (BRAGA, Rubem. Um pé de milho. In: ___. 200 crônicas escolhidas. 22",
+      "contextRange": [
+        1,
+        10
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "24a6ac84-4e68-4f59-9504-ea909c872838",
+      "examId": "159c7af1-9585-4d3f-871f-d7c4331b1826",
+      "code": "Q2025LPGCONSULPLANCMPOUSOALTO6",
+      "year": "2025",
+      "banca": "CONSULPLAN",
+      "orgao": "CM-POUSO-ALTO",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 11,
+      "heading": "CONHECIMENTOS DE INFORMÁTICA",
+      "stem": "Roberto é servidor público da Câmara Municipal de Pouso Alto e utiliza um as viagens. Insatisfeito com o desempenho do equipamento, pediu ajuda ao filho Carlos, que sugeriu procurar informática para aumentar a capacidade da memória RAM. Considerando a possibilidade de dobrar a capacidade da memória RAM, trata-se da unidade de medida utilizada na comercialização da memória RAM:",
+      "stemRows": [
+        {
+          "y": 123.9799999999999,
+          "text": ""
+        },
+        {
+          "y": 137.29999999999995,
+          "text": "Roberto é servidor público da Câmara Municipal de Pouso Alto e utiliza um"
+        },
+        {
+          "y": 150.01999999999998,
+          "text": "as viagens. Insatisfeito com o desempenho do equipamento, pediu ajuda ao filho Carlos, que sugeriu procurar"
+        },
+        {
+          "y": 162.86,
+          "text": "informática para aumentar a capacidade da memória RAM. Considerando a possibilidade de dobrar a capacidade da memória"
+        },
+        {
+          "y": 175.69999999999993,
+          "text": "RAM, trata-se da unidade de medida utilizada na comercialização da memória RAM:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "W."
+        },
+        {
+          "letter": "B",
+          "text": "Hz."
+        },
+        {
+          "letter": "C",
+          "text": "GB."
+        },
+        {
+          "letter": "D",
+          "text": "MB."
+        }
+      ],
+      "optionsStartY": 188.53999999999996,
+      "sourcePage": 5,
+      "sourceColumn": 0,
+      "startY": 123.9799999999999,
+      "endY": 238.93999999999994,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Informática",
+      "disciplineCode": "IN",
+      "topic": "Informática geral",
+      "topicCode": "G",
+      "id": "9a8491dc-3352-412c-b6f6-f91b7884a8e4",
+      "examId": "159c7af1-9585-4d3f-871f-d7c4331b1826",
+      "code": "Q2025INGCONSULPLANCMPOUSOALTO1",
+      "year": "2025",
+      "banca": "CONSULPLAN",
+      "orgao": "CM-POUSO-ALTO",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 12,
+      "heading": "CONHECIMENTOS DE INFORMÁTICA",
+      "stem": "Alan é servidor público da Câmara Municipal de Pouso Alto e, recentemente, aumentou a capacidade de memória do utilizado para trabalhar de forma remota. A fim de aprimorá processador por outro com maior frequência de processamento. utilizada na comercialização de processadores é:",
+      "stemRows": [
+        {
+          "y": 253.93999999999994,
+          "text": ""
+        },
+        {
+          "y": 267.26,
+          "text": "Alan é servidor público da Câmara Municipal de Pouso Alto e, recentemente, aumentou a capacidade de memória do"
+        },
+        {
+          "y": 280.13,
+          "text": "utilizado para trabalhar de forma remota. A fim de aprimorá"
+        },
+        {
+          "y": 292.9699999999999,
+          "text": "processador por outro com maior frequência de processamento."
+        },
+        {
+          "y": 305.68999999999994,
+          "text": "utilizada na comercialização de processadores é:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Hz."
+        },
+        {
+          "letter": "B",
+          "text": "Gb."
+        },
+        {
+          "letter": "C",
+          "text": "VA."
+        },
+        {
+          "letter": "D",
+          "text": "GHz."
+        }
+      ],
+      "optionsStartY": 318.53,
+      "sourcePage": 5,
+      "sourceColumn": 0,
+      "startY": 253.93999999999994,
+      "endY": 368.92999999999995,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Informática",
+      "disciplineCode": "IN",
+      "topic": "Informática geral",
+      "topicCode": "G",
+      "id": "0c53849e-b4f0-44ea-bfbc-369d23acb057",
+      "examId": "159c7af1-9585-4d3f-871f-d7c4331b1826",
+      "code": "Q2025INGCONSULPLANCMPOUSOALTO2",
+      "year": "2025",
+      "banca": "CONSULPLAN",
+      "orgao": "CM-POUSO-ALTO",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 13,
+      "heading": "CONHECIMENTOS DE INFORMÁTICA",
+      "stem": "Greyck é o servidor público mais antigo da Câmara Municipal de Pouso Alto. Responsável pelo setor contábil, ele acom panhou, ao longo dos anos, todo o processo de informatização da Câmara, acumulando ampla experiência. Em razão desse histórico, Greyck atua diretamente na orientação dos novos servidores efetivados, compartilhando boas práticas e conheci mentos adquiridos ao longo de sua trajetória. Ciente da relevância e sensibilidade dos arquivos gerados pelo setor contábil, desenvolveu o hábito de realizar backups frequentes, armazenando os dados em mídias removíveis e mantendo cópias em local seguro, fora das dependências do ambiente de trabalho. Sullivan, servidor público recém curiosidade sobre os métodos utilizados no passado, questionou como os computadores modernos, se eram utilizados CDs. No entanto, eram utilizadas mídias removíveis anteriores ao surgimento dos CDs. Trata-se de:",
+      "stemRows": [
+        {
+          "y": 383.92999999999995,
+          "text": ""
+        },
+        {
+          "y": 397.24999999999994,
+          "text": "Greyck é o servidor público mais antigo da Câmara Municipal de Pouso Alto. Responsável pelo setor contábil, ele acom"
+        },
+        {
+          "y": 410.09,
+          "text": "panhou, ao longo dos anos, todo o processo de informatização da Câmara, acumulando ampla experiência. Em razão desse"
+        },
+        {
+          "y": 422.92999999999995,
+          "text": "histórico, Greyck atua diretamente na orientação dos novos servidores efetivados, compartilhando boas práticas e conheci"
+        },
+        {
+          "y": 435.77,
+          "text": "mentos adquiridos ao longo de sua trajetória. Ciente da relevância e sensibilidade dos arquivos gerados pelo setor contábil,"
+        },
+        {
+          "y": 448.60999999999996,
+          "text": "desenvolveu o hábito de realizar backups frequentes, armazenando os dados em mídias removíveis e mantendo cópias em"
+        },
+        {
+          "y": 461.33,
+          "text": "local seguro, fora das dependências do ambiente de trabalho. Sullivan, servidor público recém"
+        },
+        {
+          "y": 474.18999999999994,
+          "text": "curiosidade sobre os métodos utilizados no passado, questionou como os"
+        },
+        {
+          "y": 487.03,
+          "text": "computadores modernos, se eram utilizados CDs. No entanto, eram utilizadas mídias removíveis anteriores ao surgimento"
+        },
+        {
+          "y": 499.86999999999995,
+          "text": "dos CDs. Trata-se de:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Disquete."
+        },
+        {
+          "letter": "B",
+          "text": "HD externo."
+        },
+        {
+          "letter": "C",
+          "text": "Disco óptico."
+        },
+        {
+          "letter": "D",
+          "text": "Cartão de memória."
+        }
+      ],
+      "optionsStartY": 512.71,
+      "sourcePage": 5,
+      "sourceColumn": 0,
+      "startY": 383.92999999999995,
+      "endY": 563.1099999999999,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Informática",
+      "disciplineCode": "IN",
+      "topic": "Informática geral",
+      "topicCode": "G",
+      "id": "3b0a9f0b-7c10-4796-91f8-52492c1dae79",
+      "examId": "159c7af1-9585-4d3f-871f-d7c4331b1826",
+      "code": "Q2025INGCONSULPLANCMPOUSOALTO3",
+      "year": "2025",
+      "banca": "CONSULPLAN",
+      "orgao": "CM-POUSO-ALTO",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 14,
+      "heading": "CONHECIMENTOS DE INFORMÁTICA",
+      "stem": "A Lei Geral de Proteção de Dados Pessoais (LGPD), em seu art. 7º, inciso I, dispõe que o tratamento de dados pessoais somente pode ser realizado mediante o fornecimento de consentimento pelo titular. Já o art. 5º, inciso I, define dado pes como toda informação relacionada a uma pessoa natural identificada ou identificável. Ao acessar considere se deparar com uma caixa, geralmente sobrepondo o personalizado, sendo possível selecionar o que o site coletará desse acesso devido à configuração do próprio site em acesso. Considerando a situação hipotética, qual a funcionalidade que permite a coleta de informações durante a navegação, tendo em vista que algumas são necessárias para o funcionamento do outras são opcionais, como dados estatísticos, de preferência e de",
+      "stemRows": [
+        {
+          "y": 578.1099999999999,
+          "text": ""
+        },
+        {
+          "y": 591.43,
+          "text": "A Lei Geral de Proteção de Dados Pessoais (LGPD), em seu art. 7º, inciso I, dispõe que o tratamento de dados pessoais"
+        },
+        {
+          "y": 604.27,
+          "text": "somente pode ser realizado mediante o fornecimento de consentimento pelo titular. Já o art. 5º, inciso I, define dado pes"
+        },
+        {
+          "y": 616.99,
+          "text": "como toda informação relacionada a uma pessoa natural identificada ou identificável. Ao acessar"
+        },
+        {
+          "y": 629.8299999999999,
+          "text": "considere se deparar com uma caixa, geralmente sobrepondo o"
+        },
+        {
+          "y": 642.67,
+          "text": "personalizado, sendo possível selecionar o que o site coletará desse acesso"
+        },
+        {
+          "y": 655.54,
+          "text": "devido à configuração do próprio site em acesso. Considerando a situação hipotética, qual a funcionalidade que permite a"
+        },
+        {
+          "y": 668.38,
+          "text": "coleta de informações durante a navegação, tendo em vista que algumas são necessárias para o funcionamento do"
+        },
+        {
+          "y": 681.0999999999999,
+          "text": "outras são opcionais, como dados estatísticos, de preferência e de"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Cookies."
+        },
+        {
+          "letter": "B",
+          "text": "Newsletter."
+        },
+        {
+          "letter": "C",
+          "text": "Histórico de navegação."
+        },
+        {
+          "letter": "D",
+          "text": "Extensão de navegadores. AUXILIAR DE SERVIÇOS GERAIS MANHÃ | TIPO 1 – BRANCA"
+        }
+      ],
+      "optionsStartY": 693.9399999999999,
+      "sourcePage": 5,
+      "sourceColumn": 0,
+      "startY": 578.1099999999999,
+      "endY": 808.92,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Informática",
+      "disciplineCode": "IN",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "0eb3e0da-65b7-4734-8628-56b86261a168",
+      "examId": "159c7af1-9585-4d3f-871f-d7c4331b1826",
+      "code": "Q2025INGCONSULPLANCMPOUSOALTO4",
+      "year": "2025",
+      "banca": "CONSULPLAN",
+      "orgao": "CM-POUSO-ALTO",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 15,
+      "heading": "CONHECIMENTOS DE INFORMÁTICA",
+      "stem": "Alexandre é aluno de um curso de informática na cidade de Pouso Alto. Ele está assistindo aulas sobre Sistemas Operacionais utilizando Linux. O professor criou usuários para os alunos nos computadores, para organizar os arquivos produzidos durante as aulas. Sabe-se que as distribuições de Linux possuem um sistema de diretório diferente quando comparadas com Sistemas Operacionais Windows. Trata-se do diretório onde os arquivos do usuário Alexandre podem ser encontrados no",
+      "stemRows": [
+        {
+          "y": 96.5,
+          "text": ""
+        },
+        {
+          "y": 109.81999999999994,
+          "text": "Alexandre é aluno de um curso de informática na cidade de Pouso Alto. Ele está assistindo aulas sobre Sistemas Operacionais"
+        },
+        {
+          "y": 122.53999999999996,
+          "text": "utilizando Linux. O professor criou usuários para os alunos nos computadores, para organizar os arquivos produzidos durante"
+        },
+        {
+          "y": 135.38,
+          "text": "as aulas. Sabe-se que as distribuições de Linux possuem um sistema de diretório diferente quando comparadas com Sistemas"
+        },
+        {
+          "y": 148.2199999999999,
+          "text": "Operacionais Windows. Trata-se do diretório onde os arquivos do usuário Alexandre podem ser encontrados no"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "/boot/desktop"
+        },
+        {
+          "letter": "B",
+          "text": "C:\\linux\\usuários"
+        },
+        {
+          "letter": "C",
+          "text": "/home/alexandre"
+        },
+        {
+          "letter": "D",
+          "text": "C:\\Usuários\\alexandre"
+        }
+      ],
+      "optionsStartY": 161.05999999999995,
+      "sourcePage": 6,
+      "sourceColumn": 0,
+      "startY": 96.5,
+      "endY": 211.45999999999992,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Informática",
+      "disciplineCode": "IN",
+      "topic": "Sistemas operacionais",
+      "topicCode": "SO",
+      "id": "a281baa7-c525-49b5-a591-379b9791a647",
+      "examId": "159c7af1-9585-4d3f-871f-d7c4331b1826",
+      "code": "Q2025INSOCONSULPLANCMPOUSOALTO1",
+      "year": "2025",
+      "banca": "CONSULPLAN",
+      "orgao": "CM-POUSO-ALTO",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 16,
+      "heading": "CONHECIMENTOS DE INFORMÁTICA",
+      "stem": "No final da década de 1990, era comum passar horas na internet expressão “navegar na internet” surgiu justamente dessa prática de visitar diferentes variados. O termo ganhou popularidade após a publicação do artigo “ -americana, que empregou essa metáfora para explicar a forma como as pessoas utilizavam a rede. Para acessar a navegador escolhido pelo usuário deverá interpretar um protocolo de comunicação utilizado na troca de informações entre o cliente e o servidor; assinale-o.",
+      "stemRows": [
+        {
+          "y": 226.45999999999992,
+          "text": ""
+        },
+        {
+          "y": 239.77999999999997,
+          "text": "No final da década de 1990, era comum passar horas na internet"
+        },
+        {
+          "y": 252.62,
+          "text": "expressão “navegar na internet” surgiu justamente dessa prática de visitar diferentes"
+        },
+        {
+          "y": 265.4599999999999,
+          "text": "variados. O termo ganhou popularidade após a publicação do artigo “"
+        },
+        {
+          "y": 278.2099999999999,
+          "text": "-americana, que empregou essa metáfora para explicar a forma como as pessoas utilizavam a rede. Para acessar a"
+        },
+        {
+          "y": 291.04999999999995,
+          "text": "navegador escolhido pelo usuário deverá interpretar um protocolo de comunicação utilizado na troca de informações entre o"
+        },
+        {
+          "y": 303.89,
+          "text": "cliente e o servidor; assinale-o."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "SMB."
+        },
+        {
+          "letter": "B",
+          "text": "DHCP."
+        },
+        {
+          "letter": "C",
+          "text": "FTP / FTPS."
+        },
+        {
+          "letter": "D",
+          "text": "HTTP / HTTPS."
+        }
+      ],
+      "optionsStartY": 316.7299999999999,
+      "sourcePage": 6,
+      "sourceColumn": 0,
+      "startY": 226.45999999999992,
+      "endY": 367.12999999999994,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Informática",
+      "disciplineCode": "IN",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "a18bc2f8-ecad-4b78-bbdc-65a9dd73070e",
+      "examId": "159c7af1-9585-4d3f-871f-d7c4331b1826",
+      "code": "Q2025INGCONSULPLANCMPOUSOALTO5",
+      "year": "2025",
+      "banca": "CONSULPLAN",
+      "orgao": "CM-POUSO-ALTO",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 17,
+      "heading": "CONHECIMENTOS DE INFORMÁTICA",
+      "stem": "O Microsoft Excel é um editor de planilhas desenvolvido pela Microsoft de 1980. Atualmente, é o editor de planilhas mais utilizado no mundo e já passou por diversas versões Em uma planilha do Microsoft Excel Professional Plus 2019 (Configuração Padrão B1, C1 e D1 estão preenchidas, respectivamente, com os valores 10, 20, 30 e 40. Se o usuário selecionar a célula A a tecla Shift pressionada e utilizar a seta para a direita do teclado três vezes, qual será a ação realizada pelo",
+      "stemRows": [
+        {
+          "y": 382.12999999999994,
+          "text": ""
+        },
+        {
+          "y": 395.44999999999993,
+          "text": "O Microsoft Excel é um editor de planilhas desenvolvido pela Microsoft"
+        },
+        {
+          "y": 408.28999999999996,
+          "text": "de 1980. Atualmente, é o editor de planilhas mais utilizado no mundo e já passou por diversas versões"
+        },
+        {
+          "y": 421.12999999999994,
+          "text": "Em uma planilha do Microsoft Excel Professional Plus 2019 (Configuração Padrão"
+        },
+        {
+          "y": 433.84999999999997,
+          "text": "B1, C1 e D1 estão preenchidas, respectivamente, com os valores 10, 20, 30 e 40. Se o usuário selecionar a célula A"
+        },
+        {
+          "y": 446.68999999999994,
+          "text": "a tecla Shift pressionada e utilizar a seta para a direita do teclado três vezes, qual será a ação realizada pelo"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Repetir o valor da célula A1 para as demais células."
+        },
+        {
+          "letter": "B",
+          "text": "Manter selecionados os valores das células A1 até D1."
+        },
+        {
+          "letter": "C",
+          "text": "Movimentar o valor da célula A1 para a célula D1, substituindo"
+        },
+        {
+          "letter": "D",
+          "text": "Fazer a soma dos valores, exibindo o resultado em uma nova célula E1."
+        }
+      ],
+      "optionsStartY": 459.53,
+      "sourcePage": 6,
+      "sourceColumn": 0,
+      "startY": 382.12999999999994,
+      "endY": 509.94999999999993,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": true,
+      "expectedAlternatives": 4,
+      "pageImage": "data:image/jpeg;base64,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",
+      "discipline": "Informática",
+      "disciplineCode": "IN",
+      "topic": "Planilhas eletrônicas",
+      "topicCode": "PE",
+      "id": "79229a0f-eddd-47d0-b328-38a629b2e365",
+      "examId": "159c7af1-9585-4d3f-871f-d7c4331b1826",
+      "code": "Q2025INPECONSULPLANCMPOUSOALTO1",
+      "year": "2025",
+      "banca": "CONSULPLAN",
+      "orgao": "CM-POUSO-ALTO",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 18,
+      "heading": "CONHECIMENTOS DE INFORMÁTICA",
+      "stem": "Considere que o cálculo “=10+(20+30)*2” está presente na célula A1 de uma planilha do 2019 (Configuração Padrão – Idioma Português-Brasil). O cálculo informado pode ser substituído por uma função do Trata-se de uma função do Excel que resulta no mesmo valor obtido pelo cálculo “=10+(20+30)*2” presente na célula A1:",
+      "stemRows": [
+        {
+          "y": 524.9499999999999,
+          "text": ""
+        },
+        {
+          "y": 538.27,
+          "text": "Considere que o cálculo “=10+(20+30)*2” está presente na célula A1 de uma planilha do"
+        },
+        {
+          "y": 551.1099999999999,
+          "text": "2019 (Configuração Padrão – Idioma Português-Brasil). O cálculo informado pode ser substituído por uma função do"
+        },
+        {
+          "y": 563.9499999999999,
+          "text": "Trata-se de uma função do Excel que resulta no mesmo valor obtido pelo cálculo “=10+(20+30)*2” presente na célula A1:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "A função é =DIV(10+(20+30)*2) e o valor será 110."
+        },
+        {
+          "letter": "B",
+          "text": "A função é =SOMA(10+(20+30)*2) e o valor será 110."
+        },
+        {
+          "letter": "C",
+          "text": "A função é =SOMA(10+(20+30)*2) e o valor será 120."
+        },
+        {
+          "letter": "D",
+          "text": "A função é =SOMASE(10+(20+30)*2) e o valor será 120."
+        }
+      ],
+      "optionsStartY": 576.79,
+      "sourcePage": 6,
+      "sourceColumn": 0,
+      "startY": 524.9499999999999,
+      "endY": 627.1899999999999,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": true,
+      "expectedAlternatives": 4,
+      "pageImage": "data:image/jpeg;base64,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",
+      "discipline": "Informática",
+      "disciplineCode": "IN",
+      "topic": "Planilhas eletrônicas",
+      "topicCode": "PE",
+      "id": "f2e83bf7-c1c9-464c-856c-ee403b1faa15",
+      "examId": "159c7af1-9585-4d3f-871f-d7c4331b1826",
+      "code": "Q2025INPECONSULPLANCMPOUSOALTO2",
+      "year": "2025",
+      "banca": "CONSULPLAN",
+      "orgao": "CM-POUSO-ALTO",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 19,
+      "heading": "CONHECIMENTOS DE INFORMÁTICA",
+      "stem": "Em um documento do Microsoft Word Professional Plus 2019 (Configuração Padrão o usuário realize a busca por palavras-chave durante a produção ou a leitura de textos. alternativa que representa o caminho correto para acessar a opçã",
+      "stemRows": [
+        {
+          "y": 642.1899999999999,
+          "text": ""
+        },
+        {
+          "y": 655.54,
+          "text": "Em um documento do Microsoft Word Professional Plus 2019 (Configuração Padrão"
+        },
+        {
+          "y": 668.38,
+          "text": "o usuário realize a busca por palavras-chave durante a produção ou a leitura de textos."
+        },
+        {
+          "y": 681.0999999999999,
+          "text": "alternativa que representa o caminho correto para acessar a opçã"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Página Inicial → Localizar."
+        },
+        {
+          "letter": "B",
+          "text": "Arquivo → Abrir → Localizar."
+        },
+        {
+          "letter": "C",
+          "text": "Layout da Página → Localizar."
+        },
+        {
+          "letter": "D",
+          "text": "Exibir → Ferramentas de Busca → Localizar. AUXILIAR DE SERVIÇOS GERAIS MANHÃ | TIPO 1 – BRANCA"
+        }
+      ],
+      "optionsStartY": 693.9399999999999,
+      "sourcePage": 6,
+      "sourceColumn": 0,
+      "startY": 642.1899999999999,
+      "endY": 808.92,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Informática",
+      "disciplineCode": "IN",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "6e715a95-31fb-4260-8e56-a455fa449010",
+      "examId": "159c7af1-9585-4d3f-871f-d7c4331b1826",
+      "code": "Q2025INGCONSULPLANCMPOUSOALTO6",
+      "year": "2025",
+      "banca": "CONSULPLAN",
+      "orgao": "CM-POUSO-ALTO",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 20,
+      "heading": "CONHECIMENTOS DE INFORMÁTICA",
+      "stem": "“O Internet Explorer foi o primeiro navegador da Microsoft, lançado em meados da década de 1990. Tratava navegador integrado ao Sistema Operacional Windows, fator que contribuiu diretamente para a sua ampla popularidade. Nos tempos atuais, existem diversos navegadores, como Microsoft Edge os mais utilizados. Esses navegadores compartilham similaridades em suas funcionalidades, como, por exemplo, _________, que são páginas abertas dentro da mesma instância do navegador, permitindo o acesso simultâneo a cont variados; ao fechar o navegador, todas as páginas abertas são encerradas.” Assinale a alternativa que completa corretamente a afirmativa anterior.",
+      "stemRows": [
+        {
+          "y": 96.5,
+          "text": ""
+        },
+        {
+          "y": 110.05999999999995,
+          "text": "“O Internet Explorer foi o primeiro navegador da Microsoft, lançado em meados da década de 1990. Tratava"
+        },
+        {
+          "y": 123.13999999999999,
+          "text": "navegador integrado ao Sistema Operacional Windows, fator que contribuiu diretamente para a sua ampla popularidade."
+        },
+        {
+          "y": 136.2199999999999,
+          "text": "Nos tempos atuais, existem diversos navegadores, como Microsoft Edge"
+        },
+        {
+          "y": 149.29999999999995,
+          "text": "os mais utilizados. Esses navegadores compartilham similaridades em suas funcionalidades, como, por exemplo, _________,"
+        },
+        {
+          "y": 162.5,
+          "text": "que são páginas abertas dentro da mesma instância do navegador, permitindo o acesso simultâneo a cont"
+        },
+        {
+          "y": 175.57999999999993,
+          "text": "variados; ao fechar o navegador, todas as páginas abertas são encerradas.” Assinale a alternativa que completa corretamente"
+        },
+        {
+          "y": 188.65999999999997,
+          "text": "a afirmativa anterior."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Guia"
+        },
+        {
+          "letter": "B",
+          "text": "Cache"
+        },
+        {
+          "letter": "C",
+          "text": "Janela"
+        },
+        {
+          "letter": "D",
+          "text": "Browser"
+        }
+      ],
+      "optionsStartY": 201.74,
+      "sourcePage": 7,
+      "sourceColumn": 0,
+      "startY": 96.5,
+      "endY": 281.44999999999993,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Informática",
+      "disciplineCode": "IN",
+      "topic": "Sistemas operacionais",
+      "topicCode": "SO",
+      "id": "dfecfc0f-9c26-4a6b-a68d-0de54e16f4f3",
+      "examId": "159c7af1-9585-4d3f-871f-d7c4331b1826",
+      "code": "Q2025INSOCONSULPLANCMPOUSOALTO2",
+      "year": "2025",
+      "banca": "CONSULPLAN",
+      "orgao": "CM-POUSO-ALTO",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 21,
+      "heading": "CONHECIMENTOS DE INFORMÁTICA",
+      "stem": "Nos últimos anos, medidas adotadas pelo poder público buscaram facilitar o acesso da população a serviços financeiros e ampliar o uso de meios digitais, como o PIX, para fins de pagamentos, transferências e recebimentos, impactando o dia a dia de trabalhadores, consumidores e pequenos negócios. Essas medidas têm como objetivo central:",
+      "stemRows": [
+        {
+          "y": 296.44999999999993,
+          "text": ""
+        },
+        {
+          "y": 310.13,
+          "text": "Nos últimos anos, medidas adotadas pelo poder público buscaram facilitar o acesso da população a serviços financeiros e"
+        },
+        {
+          "y": 323.2099999999999,
+          "text": "ampliar o uso de meios digitais, como o PIX, para fins de pagamentos, transferências e recebimentos, impactando o dia a dia"
+        },
+        {
+          "y": 336.28999999999996,
+          "text": "de trabalhadores, consumidores e pequenos negócios. Essas medidas têm como objetivo central:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Substituir o uso de dinheiro em espécie no país."
+        },
+        {
+          "letter": "B",
+          "text": "Aumentar a cobrança de taxas sobre operações financeiras básicas."
+        },
+        {
+          "letter": "C",
+          "text": "Facilitar transações financeiras e ampliar a inclusão econômica da população."
+        },
+        {
+          "letter": "D",
+          "text": "Modernizar os sistemas de pagamento utilizados por empresas e órgãos públicos."
+        }
+      ],
+      "optionsStartY": 349.36999999999995,
+      "sourcePage": 7,
+      "sourceColumn": 0,
+      "startY": 296.44999999999993,
+      "endY": 401.09,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "abec99d0-d418-4ab0-a52a-ba032056860b",
+      "examId": "159c7af1-9585-4d3f-871f-d7c4331b1826",
+      "code": "Q2025CGGCONSULPLANCMPOUSOALTO1",
+      "year": "2025",
+      "banca": "CONSULPLAN",
+      "orgao": "CM-POUSO-ALTO",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 22,
+      "heading": "CONHECIMENTOS DE INFORMÁTICA",
+      "stem": "“Considerando as manifestações da cultura popular brasileira, ___________ é caracterizad ções coreografadas e músicas tradicionais, geralmente apresentadas em eventos comunitários e celebrações populares em diferentes regiões do país.” Assinale a alternativa que completa corretamente a afirmativa anterior.",
+      "stemRows": [
+        {
+          "y": 416.09,
+          "text": ""
+        },
+        {
+          "y": 429.77,
+          "text": "“Considerando as manifestações da cultura popular brasileira, ___________ é caracterizad"
+        },
+        {
+          "y": 442.84999999999997,
+          "text": "ções coreografadas e músicas tradicionais, geralmente apresentadas em eventos comunitários e celebrações populares em"
+        },
+        {
+          "y": 455.92999999999995,
+          "text": "diferentes regiões do país.” Assinale a alternativa que completa corretamente a afirmativa anterior."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "o maracatu"
+        },
+        {
+          "letter": "B",
+          "text": "a quadrilha"
+        },
+        {
+          "letter": "C",
+          "text": "o samba-enredo"
+        },
+        {
+          "letter": "D",
+          "text": "o bumba meu boi"
+        }
+      ],
+      "optionsStartY": 469.03,
+      "sourcePage": 7,
+      "sourceColumn": 0,
+      "startY": 416.09,
+      "endY": 520.75,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "a4ba340a-480d-4e1a-9143-2f2a958f25f5",
+      "examId": "159c7af1-9585-4d3f-871f-d7c4331b1826",
+      "code": "Q2025CGGCONSULPLANCMPOUSOALTO2",
+      "year": "2025",
+      "banca": "CONSULPLAN",
+      "orgao": "CM-POUSO-ALTO",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 23,
+      "heading": "CONHECIMENTOS DE INFORMÁTICA",
+      "stem": "A Copa do Mundo de 2026 será realizada, pela primeira vez, em mais de um país do mundo em um mesmo torneio. Em quais países a Copa do Mundo de 2026 será realizada?",
+      "stemRows": [
+        {
+          "y": 535.75,
+          "text": ""
+        },
+        {
+          "y": 549.43,
+          "text": "A Copa do Mundo de 2026 será realizada, pela primeira vez, em mais de um país"
+        },
+        {
+          "y": 562.51,
+          "text": "do mundo em um mesmo torneio. Em quais países a Copa do Mundo de 2026 será realizada?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Canadá; México; e Panamá."
+        },
+        {
+          "letter": "B",
+          "text": "Estados Unidos; Canadá; e México."
+        },
+        {
+          "letter": "C",
+          "text": "Estados Unidos; Canadá; e Honduras."
+        },
+        {
+          "letter": "D",
+          "text": "Estados Unidos; México; e Costa Rica."
+        }
+      ],
+      "optionsStartY": 575.5899999999999,
+      "sourcePage": 7,
+      "sourceColumn": 0,
+      "startY": 535.75,
+      "endY": 627.31,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "48a3c4b8-e09a-4667-a100-8f2f28d33656",
+      "examId": "159c7af1-9585-4d3f-871f-d7c4331b1826",
+      "code": "Q2025CGGCONSULPLANCMPOUSOALTO3",
+      "year": "2025",
+      "banca": "CONSULPLAN",
+      "orgao": "CM-POUSO-ALTO",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 24,
+      "heading": "CONHECIMENTOS DE INFORMÁTICA",
+      "stem": "O setor de turismo brasileiro registrou faturamento recorde, alcançando R$ 185 bilhões entre os meses de janeiro e outubro de 2025. Dados divulgados por entidades do setor indicaram crescimento em diversos segmentos, como transporte, alimen tação e hospedagem, em comparação com o ano anterior. Esse resultado",
+      "stemRows": [
+        {
+          "y": 642.31,
+          "text": ""
+        },
+        {
+          "y": 656.02,
+          "text": "O setor de turismo brasileiro registrou faturamento recorde, alcançando R$ 185 bilhões entre os meses de janeiro e outubro"
+        },
+        {
+          "y": 669.0999999999999,
+          "text": "de 2025. Dados divulgados por entidades do setor indicaram crescimento em diversos segmentos, como transporte, alimen"
+        },
+        {
+          "y": 682.18,
+          "text": "tação e hospedagem, em comparação com o ano anterior. Esse resultado"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Cresceu em um tipo de atividade turística."
+        },
+        {
+          "letter": "B",
+          "text": "Beneficia grandes empresas do setor turístico."
+        },
+        {
+          "letter": "C",
+          "text": "D epende da movimentação de turistas estrangeiros."
+        },
+        {
+          "letter": "D",
+          "text": "Ajuda a movimentar a economia e gerar renda no país. AUXILIAR DE SERVIÇOS GERAIS MANHÃ | TIPO 1 – BRANCA"
+        }
+      ],
+      "optionsStartY": 695.26,
+      "sourcePage": 7,
+      "sourceColumn": 0,
+      "startY": 642.31,
+      "endY": 808.92,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "2d505b3d-cd90-435a-8579-c2ff09d726a4",
+      "examId": "159c7af1-9585-4d3f-871f-d7c4331b1826",
+      "code": "Q2025CGGCONSULPLANCMPOUSOALTO4",
+      "year": "2025",
+      "banca": "CONSULPLAN",
+      "orgao": "CM-POUSO-ALTO",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 25,
+      "heading": "CONHECIMENTOS DE INFORMÁTICA",
+      "stem": "Em 2025, notícias destacaram a ampliação do uso do Portal digitais, como acesso a documentos, consultas de informações pessoais e acompanhamento de benefícios. benefício dessa iniciativa para a população é:",
+      "stemRows": [
+        {
+          "y": 96.25999999999999,
+          "text": ""
+        },
+        {
+          "y": 109.21999999999991,
+          "text": "Em 2025, notícias destacaram a ampliação do uso do Portal"
+        },
+        {
+          "y": 121.69999999999993,
+          "text": "digitais, como acesso a documentos, consultas de informações pessoais e acompanhamento de benefícios."
+        },
+        {
+          "y": 134.29999999999995,
+          "text": "benefício dessa iniciativa para a população é:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Modernizar a gestão digital dos serviços oferecidos pelo governo."
+        },
+        {
+          "letter": "B",
+          "text": "Ampliar o uso de plataformas digitais na prestação de serviços públicos."
+        },
+        {
+          "letter": "C",
+          "text": "Facilitar o acesso da população aos serviços públicos por meio da tecnologia."
+        },
+        {
+          "letter": "D",
+          "text": "Ampliar a integração digital entre diferentes órgãos da Administração Pública"
+        }
+      ],
+      "optionsStartY": 146.89999999999998,
+      "sourcePage": 8,
+      "sourceColumn": 0,
+      "startY": 96.25999999999999,
+      "endY": 195.9799999999999,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "fe7d6ecf-a874-4e70-88dd-469502ff29a9",
+      "examId": "159c7af1-9585-4d3f-871f-d7c4331b1826",
+      "code": "Q2025CGGCONSULPLANCMPOUSOALTO5",
+      "year": "2025",
+      "banca": "CONSULPLAN",
+      "orgao": "CM-POUSO-ALTO",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 26,
+      "heading": "CONHECIMENTOS DE INFORMÁTICA",
+      "stem": "As discussões atuais sobre energia têm destacado a importância de rando desafios múltiplos associados à produção e ao uso da energia. Nesse contexto, políticas públicas voltadas ao setor energético costumam buscar equilíbrio entre diferentes interesses envolvidos nes geral, é correto afirmar que uma política energética alinhada aos desafios contemporâneos tende a:",
+      "stemRows": [
+        {
+          "y": 210.9799999999999,
+          "text": ""
+        },
+        {
+          "y": 223.93999999999994,
+          "text": "As discussões atuais sobre energia têm destacado a importância de"
+        },
+        {
+          "y": 236.53999999999996,
+          "text": "rando desafios múltiplos associados à produção e ao uso da energia. Nesse contexto, políticas públicas voltadas ao setor"
+        },
+        {
+          "y": 249.01999999999998,
+          "text": "energético costumam buscar equilíbrio entre diferentes interesses envolvidos nes"
+        },
+        {
+          "y": 261.62,
+          "text": "geral, é correto afirmar que uma política energética alinhada aos desafios contemporâneos tende a:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Estimular a adoção de tecnologias energéticas mais eficientes nos sistemas de produção."
+        },
+        {
+          "letter": "B",
+          "text": "Ampliar investimentos na infraestrutura necessária à produção e distribuição de energia"
+        },
+        {
+          "letter": "C",
+          "text": "Considerar a ampliação da oferta energética, os efeitos ambientais e as condições de acesso da população."
+        },
+        {
+          "letter": "D",
+          "text": "Enfatizar a expansão do setor energético como estratégia central para responder às transfo"
+        }
+      ],
+      "optionsStartY": 274.0999999999999,
+      "sourcePage": 8,
+      "sourceColumn": 0,
+      "startY": 210.9799999999999,
+      "endY": 323.33,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "2f567cc9-4d3f-486d-bcd7-06b4946353f0",
+      "examId": "159c7af1-9585-4d3f-871f-d7c4331b1826",
+      "code": "Q2025CGGCONSULPLANCMPOUSOALTO6",
+      "year": "2025",
+      "banca": "CONSULPLAN",
+      "orgao": "CM-POUSO-ALTO",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 27,
+      "heading": "CONHECIMENTOS DE INFORMÁTICA",
+      "stem": "Medidas recentes adotadas em resposta a eventos climáticos extremos têm reacendido o debate sobre desenvolvimento sustentável no Brasil e no mundo, especialmente quanto ao uso dos recursos naturais e à organização contexto, uma ação coerente com os princípios do desenvolvimento sustentável corresponde àquela que:",
+      "stemRows": [
+        {
+          "y": 338.33,
+          "text": ""
+        },
+        {
+          "y": 351.28999999999996,
+          "text": "Medidas recentes adotadas em resposta a eventos climáticos extremos têm reacendido o debate sobre desenvolvimento"
+        },
+        {
+          "y": 363.77,
+          "text": "sustentável no Brasil e no mundo, especialmente quanto ao uso dos recursos naturais e à organização"
+        },
+        {
+          "y": 376.36999999999995,
+          "text": "contexto, uma ação coerente com os princípios do desenvolvimento sustentável corresponde àquela que:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Integra crescimento econômico, proteção ambiental e melhoria das condições de vida da população."
+        },
+        {
+          "letter": "B",
+          "text": "Concentra esforços em ações ambientais específicas, ajustando os efeitos sociais ao longo do tempo."
+        },
+        {
+          "letter": "C",
+          "text": "Prioriza a expansão econômica como eixo central das políticas públicas voltadas ao desenvolvimento."
+        },
+        {
+          "letter": "D",
+          "text": "Amplia o uso dos recursos naturais para atender às demandas imediatas da sociedade contemporân"
+        }
+      ],
+      "optionsStartY": 388.96999999999997,
+      "sourcePage": 8,
+      "sourceColumn": 0,
+      "startY": 338.33,
+      "endY": 438.16999999999996,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "925a96cd-a75b-459d-9843-05ec9856055b",
+      "examId": "159c7af1-9585-4d3f-871f-d7c4331b1826",
+      "code": "Q2025CGGCONSULPLANCMPOUSOALTO7",
+      "year": "2025",
+      "banca": "CONSULPLAN",
+      "orgao": "CM-POUSO-ALTO",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 28,
+      "heading": "CONHECIMENTOS DE INFORMÁTICA",
+      "stem": "O Ministério da Educação lançou recentemente um edital para selecionar experiências inspiradoras em educação em tempo integral desenvolvidas por redes públicas de ensino – iniciativa que tem sido divulgada como parte das ações de fortalecim dessa modalidade educacional. Nesse contexto, a proposta associada à educação em tempo integral está relacionada à:",
+      "stemRows": [
+        {
+          "y": 453.16999999999996,
+          "text": ""
+        },
+        {
+          "y": 466.03,
+          "text": "O Ministério da Educação lançou recentemente um edital para selecionar experiências inspiradoras em educação em tempo"
+        },
+        {
+          "y": 478.62999999999994,
+          "text": "integral desenvolvidas por redes públicas de ensino – iniciativa que tem sido divulgada como parte das ações de fortalecim"
+        },
+        {
+          "y": 491.10999999999996,
+          "text": "dessa modalidade educacional. Nesse contexto, a proposta associada à educação em tempo integral está relacionada à:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Substituição do ensino regular por ações pontuais voltadas ao desempenho acadêmico."
+        },
+        {
+          "letter": "B",
+          "text": "Reorganização da jornada escolar com foco no cumprimento de conteúdos curriculares."
+        },
+        {
+          "letter": "C",
+          "text": "Adequação das redes de ensino a modelos administrativos padronizados definidos pelo"
+        },
+        {
+          "letter": "D",
+          "text": "Ampliação do tempo escolar com oferta de atividades que contribuam para o desenvolvimento integral dos estudantes."
+        }
+      ],
+      "optionsStartY": 503.71,
+      "sourcePage": 8,
+      "sourceColumn": 0,
+      "startY": 453.16999999999996,
+      "endY": 552.91,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "8dcbf2e1-32f9-479e-99fa-a6a609ff3055",
+      "examId": "159c7af1-9585-4d3f-871f-d7c4331b1826",
+      "code": "Q2025CGGCONSULPLANCMPOUSOALTO8",
+      "year": "2025",
+      "banca": "CONSULPLAN",
+      "orgao": "CM-POUSO-ALTO",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 29,
+      "heading": "CONHECIMENTOS DE INFORMÁTICA",
+      "stem": "O governo brasileiro anunciou intensificação do cerco ao crime organizado, destacando que, em 2025, a Polícia Federal e outros órgãos apreenderam mais de R$ 9,6 bilhões em dinheiro, bens e ativos de facções, além de toneladas de drogas e centenas de armas e munições. Considerando esse tipo de atuação, a lógica que orienta essas medidas está relacionada à:",
+      "stemRows": [
+        {
+          "y": 567.91,
+          "text": ""
+        },
+        {
+          "y": 580.75,
+          "text": "O governo brasileiro anunciou intensificação do cerco ao crime organizado, destacando que, em 2025, a Polícia Federal e"
+        },
+        {
+          "y": 593.3499999999999,
+          "text": "outros órgãos apreenderam mais de R$ 9,6 bilhões em dinheiro, bens e ativos de facções, além de toneladas de drogas e"
+        },
+        {
+          "y": 605.8299999999999,
+          "text": "centenas de armas e munições. Considerando esse tipo de atuação, a lógica que orienta essas medidas está relacionada à:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Intensificação das operações de segurança conduzidas pelas forças policiais."
+        },
+        {
+          "letter": "B",
+          "text": "Ampliação de ações operacionais para responder às atividades do"
+        },
+        {
+          "letter": "C",
+          "text": "Limitação das condições materiais que sustentam a atuação das organizações criminosas."
+        },
+        {
+          "letter": "D",
+          "text": "Coordenação de diferentes órgãos de segurança no combate aos grupos envolvidos em atividades ilícitas."
+        }
+      ],
+      "optionsStartY": 618.43,
+      "sourcePage": 8,
+      "sourceColumn": 0,
+      "startY": 567.91,
+      "endY": 667.66,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "2fd17d41-25db-4f10-ac4d-128350b88e6c",
+      "examId": "159c7af1-9585-4d3f-871f-d7c4331b1826",
+      "code": "Q2025CGGCONSULPLANCMPOUSOALTO9",
+      "year": "2025",
+      "banca": "CONSULPLAN",
+      "orgao": "CM-POUSO-ALTO",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 30,
+      "heading": "CONHECIMENTOS DE INFORMÁTICA",
+      "stem": "Avanços recentes nas negociações envolvendo o Mercosul reacenderam o debate sobre o papel do bloco na sua atuação junto a outros países e regiões. Esse tipo de acordo internacional busca principalmente:",
+      "stemRows": [
+        {
+          "y": 682.66,
+          "text": ""
+        },
+        {
+          "y": 695.6199999999999,
+          "text": "Avanços recentes nas negociações envolvendo o Mercosul reacenderam o debate sobre o papel do bloco na sua atuação"
+        },
+        {
+          "y": 708.0999999999999,
+          "text": "junto a outros países e regiões. Esse tipo de acordo internacional busca principalmente:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Redução da autonomia externa dos países-membros."
+        },
+        {
+          "letter": "B",
+          "text": "Restrição das relações comerciais aos países do bloco."
+        },
+        {
+          "letter": "C",
+          "text": "Centralização das decisões econômicas no âmbito do bloco."
+        },
+        {
+          "letter": "D",
+          "text": "Ampliação das trocas comerciais entre os países envolvidos. AUXILIAR DE SERVIÇOS GERAIS MANHÃ | TIPO 1 – BRANCA"
+        }
+      ],
+      "optionsStartY": 720.6999999999999,
+      "sourcePage": 8,
+      "sourceColumn": 0,
+      "startY": 682.66,
+      "endY": 808.92,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "5a59016c-b8ab-4a9e-a6ba-ea2ddd9cea27",
+      "examId": "159c7af1-9585-4d3f-871f-d7c4331b1826",
+      "code": "Q2025CGGCONSULPLANCMPOUSOALTO10",
+      "year": "2025",
+      "banca": "CONSULPLAN",
+      "orgao": "CM-POUSO-ALTO",
+      "answer": "D",
       "status": "active",
       "secondary": [],
       "aliases": [],
