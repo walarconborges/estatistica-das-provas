@@ -3,7 +3,7 @@ import {readPdf} from './pdf-import.mjs';
 import {chosenAnswerSection,parseGridKey,questionIntegrity,declaredQuestionCount,declaredAlternativeCount,inferredAlternativeCount} from './pdf-layout.mjs';
 import {createSyncClient} from './sync-client.mjs';
 import {STUDY_CONTEXT,eligibleForList} from './study-context.mjs';
-import {CATALOGS,currentCatalog,allTopics,classifyForCargo,subjectSummary} from './edital-classification.mjs';
+import {CATALOGS,currentCatalog,allTopics,classifyForCargo,subjectSummary,EDITAL_SCOPE_OPTIONS,normalizeEditalScope,inEditalScope} from './edital-classification.mjs';
 
 const $=s=>document.querySelector(s);
 const $$=s=>Array.from(document.querySelectorAll(s));
@@ -15,7 +15,7 @@ let state;
 try{state=normalizeState(JSON.parse(localStorage.getItem(STORAGE_KEY)||'null'))}catch{state=fresh()}
 expire(state);
 const initialCargo=['202','505'].includes(localStorage.getItem('estatistica-edital-cargo'))?localStorage.getItem('estatistica-edital-cargo'):'505';
-let profileId=null,view='home',selectedSimId=null,currentFilter={studyArea:'candeias',editalCargo:initialCargo,editalScope:'relevantes'},currentPool=[],limitAvulsas=10,questionSearch='';
+let profileId=null,view='home',selectedSimId=null,currentFilter={studyArea:'candeias',editalCargo:initialCargo,editalScope:'dentro'},currentPool=[],limitAvulsas=10,questionSearch='';
 let latestImportMessage='';
 let statusMessage='';
 const explanationsInView=new Map();
@@ -256,14 +256,14 @@ function catalogPanelFilters(){
  const id=currentFilter.editalCargo||'505',catalog=currentCatalog(id);
  const values=allTopics(id);
  const counts=subjectSummary(state.questions,exam,id).total;
- const scope=currentFilter.editalScope||'relevantes';
+ const scope=normalizeEditalScope(currentFilter.editalScope);
  return '<fieldset class="field span-all syllabus-panel"><legend>Edital de referência</legend>'+
   '<div class="form-grid"><div class="field"><label>Cargo</label><select name="editalCargo">'+
    Object.values(CATALOGS).map(x=>'<option value="'+h(x.id)+'" '+(id===x.id?'selected':'')+'>'+h(x.id+' — '+x.cargo)+'</option>').join('')+
   '</select></div>'+
   '<div class="field"><label>Classificação pelo edital</label><select name="editalScope">'+
-   [['relevantes','Dentro do edital + a conferir'],['dentro','Somente dentro do edital'],['fora','Fora do edital'],['pendente','A conferir'],['all','Todas as classificações']].map(([v,label])=>
-    '<option value="'+v+'" '+(scope===v?'selected':'')+'>'+h(label)+'</option>').join('')+
+   EDITAL_SCOPE_OPTIONS.map(({value,label})=>
+    '<option value="'+value+'" '+(scope===value?'selected':'')+'>'+h(label)+'</option>').join('')+
   '</select></div>'+
   '<div class="field"><label>Disciplina do edital</label><select name="editalDisciplina"><option value="">Todas</option>'+
     catalog.sections.map(sec=>'<option value="'+h(sec.title)+'" '+(currentFilter.editalDisciplina===sec.title?'selected':'')+'>'+h(sec.title)+'</option>').join('')+
@@ -275,27 +275,29 @@ function catalogPanelFilters(){
   '</fieldset>';
 }
 function syllabusFiltered(items,filters=currentFilter){
- const id=filters.editalCargo||'505',status=filters.editalScope||'relevantes';
+ const id=filters.editalCargo||'505',scope=normalizeEditalScope(filters.editalScope);
  return items.filter(q=>{
   const match=classifyForCargo(q,exam(q.examId),id);
-  if(status==='relevantes'&&match.status==='fora')return false;
-  if(status!=='all'&&status!=='relevantes'&&match.status!==status)return false;
+  if(!inEditalScope(match,scope))return false;
   if(filters.editalDisciplina&&match.discipline!==filters.editalDisciplina)return false;
   if(filters.editalTopic&&match.topicId!==filters.editalTopic)return false;
-  // Questões de legislação adaptadas só entram no catálogo 505 quando verificadas.
+  // As questões adaptadas para TI não pertencem ao cargo 202.
   if(id==='202'&&q.originalQuestionId)return false;
   return true;
  });
 }
 function eligibleSyllabusQuestions(items,filters=currentFilter){
- const id=filters.editalCargo||'505',status=filters.editalScope||'relevantes';
+ const id=filters.editalCargo||'505',scope=normalizeEditalScope(filters.editalScope);
  const relevant=syllabusFiltered(items,filters);
- if(id==='202')return relevant;
- // No modo "dentro", somente legislação municipal validada é elegível.
- // Ao consultar "fora" e "a conferir" não ocultar a questão original:
- // elas precisam permanecer visíveis para classificação e revisão.
- if(status!=='dentro'&&status!=='relevantes')return relevant;
- return relevant.filter(q=>eligibleForList(q,exam(q.examId),filters.studyArea||'candeias'));
+ if(id==='202'||scope==='all')return relevant;
+ // "Dentro do edital" inclui a classificação pendente. A pessoa poderá
+ // conferi-la e sinalizar diretamente ao resolver; ela não é apresentada
+ // como norma validada de Candeias.
+ return relevant.filter(q=>{
+  const classification=classifyForCargo(q,exam(q.examId),id);
+  if(classification.status==='pendente')return true;
+  return eligibleForList(q,exam(q.examId),filters.studyArea||'candeias');
+ });
 }
 function filterForm(kind='questions'){
  const u=availableFilters(),mode=kind==='sim',id=currentFilter.editalCargo||'505';
@@ -305,7 +307,7 @@ function filterForm(kind='questions'){
   selectField('year','Ano',u.years,currentFilter.year)+
   selectField('orgao','Órgão',u.orgaos,currentFilter.orgao)+
   (id==='505'?'<div class="field"><label>Legislação municipal</label><select name="studyArea">'+
-    '<option value="candeias" '+(currentFilter.studyArea!=='original'?'selected':'')+'>Candeias — normas verificadas</option>'+
+    '<option value="candeias" '+(currentFilter.studyArea!=='original'?'selected':'')+' >Candeias adaptadas</option>'+
     '<option value="original" '+(currentFilter.studyArea==='original'?'selected':'')+'>Versão original das provas</option>'+
    '</select></div>':'')+
   historyOutcomeFilter()+
@@ -317,7 +319,7 @@ function filterForm(kind='questions'){
    '<div class="field"><label>Mostrar quantas questões?</label><input type="number" name="count" min="1" max="1000" value="'+limitAvulsas+'" required></div>'+
    '<div class="field span-all"><label>Buscar código permanente</label><input class="code-search" name="code" placeholder="Q2026LPGIBGPSEMED1" value="'+h(currentFilter.code||'')+'"></div>')+
   '</div><div class="actions"><button type="submit">'+(mode?'Criar simulado':'Buscar questões')+'</button></div>'+
-  '<p class="hint">Assuntos equivalentes podem entrar mesmo com nomes diferentes. "Fora do edital" não exclui questões; "A conferir" identifica casos incertos. Os gabaritos e resultados históricos não são modificados.</p>'+
+  '<p class="hint">Dentro do edital inclui assuntos identificados e aqueles que ainda precisam de conferência. Ao resolver, use Sinalizar problema se notar erro de classificação. Todas exibe também os assuntos fora do edital. Gabaritos e históricos permanecem inalterados.</p>'+
   '</form>'+targetProgramPanel();
 }
 function alternatives(q,scope,chosen=''){
@@ -352,7 +354,7 @@ function syllabusBadge(q){
  const cls=match.status==='dentro'?'good':match.status==='fora'?'bad':'wait';
  const label=match.status==='dentro'?match.discipline+' / '+match.topic:match.statusLabel;
  return '<div class="syllabus-classification"><span class="badge '+cls+'">'+h(match.statusLabel)+'</span>'+
-  '<span>Cargo '+h(id)+' · '+h(label)+'</span></div>';
+  '<span>Cargo '+h(id)+' · '+h(label)+(match.status==='pendente'?' · Confira o conteúdo e sinalize se necessário.':'')+'</span></div>';
 }
 function syllabusStatistics(){
  const id=currentFilter.editalCargo||'505',catalog=currentCatalog(id);
@@ -408,6 +410,7 @@ function cardQuestion(q,index,scope='single',selected='',previous=null){
   ${alternatives(q,scope,selected)}
   ${scope==='single'?`<div class="actions">${btn('answer-single','Conferir resposta','primary',`data-id="${h(q.id)}"`)}${last&&!q.originalQuestionId?btn('explain-question','Explicar questão','secondary',`data-id="${h(q.id)}"`):''}${btn('flag-question','Sinalizar problema','secondary',`data-id="${h(q.id)}"`)}${btn('question-log','Histórico','secondary',`data-id="${h(q.id)}"`)}</div>
     <div class="question-feedback">${last?`Última resposta válida: <strong>${h(last.answer)}</strong> — ${feedback(q,last.answer)}`:''}</div><div class="legal-result">${last?legalBasisHtml(q):''}</div>${explanationBox(q.id)}`:''}
+  ${scope==='sim'?'<div class="actions">'+btn('flag-question','Sinalizar problema','secondary','data-id="'+h(q.id)+'"')+'</div>':''}
   </article>`;
 }
 function questionsScreen(){
@@ -488,7 +491,7 @@ function updateQuestionFeedback(qid){
 function formsFilter(form){
   const f=new FormData(form);
   const fields=Object.fromEntries(['discipline','topic','banca','year','orgao','status','code','studyArea','editalCargo','editalScope','editalDisciplina','editalTopic'].map(k=>[k,String(f.get(k)||'')]));
-  return {...fields,editalCargo:fields.editalCargo||currentFilter.editalCargo||'505',editalScope:fields.editalScope||'relevantes',studyArea:fields.studyArea||currentFilter.studyArea||'candeias',outcomes:f.getAll('outcome').map(String)};
+  return {...fields,editalCargo:fields.editalCargo||currentFilter.editalCargo||'505',editalScope:normalizeEditalScope(fields.editalScope),studyArea:fields.studyArea||currentFilter.studyArea||'candeias',outcomes:f.getAll('outcome').map(String)};
 }
 async function importData(form){
   const fd=new FormData(form),pdf=fd.get('examPdf'),keyPdf=fd.get('keyPdf');
@@ -670,7 +673,7 @@ document.addEventListener('submit',async e=>{
   if(form.id==='import-form'){await importData(form);return}
   currentFilter=formsFilter(form);
   localStorage.setItem('estatistica-edital-cargo',currentFilter.editalCargo);
-  if(currentFilter.editalCargo==='505'&&['dentro','relevantes'].includes(currentFilter.editalScope)&&currentFilter.studyArea!=='original'&&!automaticAdaptationChecked)
+  if(currentFilter.editalCargo==='505'&&currentFilter.editalScope==='dentro'&&currentFilter.studyArea!=='original'&&!automaticAdaptationChecked)
    await refreshAutomaticAdaptations();
   const beforeTerritory=filtered(state,profileId,currentFilter);
   const candidates=eligibleSyllabusQuestions(beforeTerritory,currentFilter);
