@@ -2,7 +2,7 @@
 import {stripExamFooter} from './core.mjs';
 const norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toUpperCase();
 const noise=s=>/^(?:PCIMARKPCI\b|WWW\.(?:PCICONCURSOS|OBJETIVAS)\.COM\.BR|CVOT\d+|CONFIDENCIAL ATE|R\s*A\s*S\s*C\s*U\s*N\s*H\s*O\s*$)/i.test(norm(s.trim()))||/MDAwM[A-Za-z0-9+/=]{35}/.test(s);
-const questionRx=/^(?:QUEST[AÃ]O\s+0?(\d{1,3})(?:\s*[.):\-]\s*(.*))?|(\d{1,3})\s*[.):\-]\s*(?!\d)(.*))$/i;
+const questionRx=/^(?:QUEST[AÃ]O\s+0?(\d{1,3})(?:\s*[.):\-]\s*(.*))?|(\d{1,3})\s*[.):\-](?!\s*\d{2,3}\b)\s*(.*))$/i;
 const altRx=/^\s*(?:\(([A-E])\)|([A-E])\s*[.):\-])\s*(.*)$/i;
 
 /**
