@@ -1,9 +1,24 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.4 — 15/11/2026**  
+**Versão experimental 0.6.5 — 15/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.5 — Meu histórico em português e multisseleção
+
+O campo **Meu histórico**, usado nos filtros de Questões e Simulados, deixou de ser uma lista de seleção única com rótulos internos em inglês. Agora usa três caixas independentes, traduzidas:
+- **Não respondidas**
+- **Erradas**
+- **Acertadas**
+
+O usuário pode marcar uma, duas ou as três simultaneamente. A busca reúne (critério **OU**) todas as categorias marcadas. **Se nenhuma caixa estiver marcada, todas as situações são incluídas.** Assim, por exemplo, marcar Não respondidas + Erradas traz questões inéditas e aquelas cuja resposta mais recente foi incorreta.
+
+O filtro continua baseado na última resposta válida **do perfil ativo**, não modifica tentativas anteriores e vale também para a geração de simulados. Ao executar a busca, a escolha permanece marcada na tela. O algoritmo mantém compatibilidade com o parâmetro antigo `outcome` de seleção única e agora aceita `outcomes` como lista de valores.
+
+A apresentação das caixas foi ajustada para leitura em celulares, sem alterar o formulário das demais disciplinas ou o conteúdo das provas. Adicionados sete testes sobre seleções únicas, duplas e triplas, ausência de seleção, histórico separado por perfil, tradução e compatibilidade com filtros anteriores.
+
+Nenhuma limpeza do banco é necessária.
 
 ## Versão 0.6.4 — Quadrix: alternativas numéricas e recuperação fiel
 
