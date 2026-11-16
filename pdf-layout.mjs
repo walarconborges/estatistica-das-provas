@@ -438,7 +438,14 @@ export function questionIntegrity(questions,answers,expected=0){
  if(unique.length!==numbers.length)issues.push('Numeração repetida');
  if(expected&&unique.length!==expected)issues.push('Foram identificadas '+unique.length+' questões, mas o PDF declara '+expected);
  if(unique.length){for(let n=1;n<=unique.at(-1);n++)if(!unique.includes(n))issues.push('Questão ausente: '+n);}
- for(const q of questions){if(q.options.length!==5)issues.push('Questão '+q.originalNumber+' contém '+q.options.length+' alternativas');if(q.extractionReview)issues.push('Questão '+q.originalNumber+' tem alternativas não reconhecidas');}
+ for(const q of questions){
+  if(q.options.length!==5)issues.push('Questão '+q.originalNumber+' contém '+q.options.length+' alternativas');
+  // Questão recuperada por imagem permanece marcada para revisão, mas não
+  // impede importar a prova se a imagem original foi recortada com sucesso.
+  // Se o recorte falhar, a integridade CONTINUA bloqueando a importação.
+  if(q.extractionReview&&!(q.extractionFallback&&q.pageImage))
+   issues.push('Questão '+q.originalNumber+' tem alternativas não reconhecidas');
+ }
  if(Object.keys(answers).length!==unique.length)issues.push('O gabarito possui '+Object.keys(answers).length+' respostas para '+unique.length+' questões');
  for(const n of unique)if(!answers[n])issues.push('Gabarito ausente para questão '+n);
  return issues;
