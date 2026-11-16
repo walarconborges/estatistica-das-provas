@@ -273,6 +273,21 @@ function recoverExplicitQuestionHeadings(pages,questions,expectedAlternatives=5)
  return recovered;
 }
 
+/**
+ * A folha de instruções contém itens numerados (01. a 08.), que não
+ * são questões. Só ignorar uma folha com sinais claros de capa e
+ * instruções; páginas iniciais com questões efetivas continuam válidas.
+ */
+export function isInstructionSheet(page){
+ if(page?.number!==1)return false;
+ const text=(page.lines||[]).map(row=>row.text).join('\n')||String(page.text||'');
+ const n=norm(text);
+ return /\bINSTRUCOES\b/.test(n)&&
+  /\bCANDIDAT[OA]\b/.test(n)&&
+  /\b(?:FOLHA RESPOSTA|CADERNO DE QUESTOES|LISTA DE PRESENCA)\b/.test(n)&&
+  /\b(?:DEIXE SOBRE A CARTEIRA|ANTES DE INICIAR|AO TERMINAR A PROVA)\b/.test(n);
+}
+
 export function spatialQuestions(pages){
  const questions=[],contexts=[];let heading='';
  const expectedAlternatives=inferredAlternativeCount(pages);
@@ -287,7 +302,7 @@ export function spatialQuestions(pages){
   if(previous===undefined||row.x<previous)questionLeftMargins.set(col,row.x);
  }
  for(const page of pages){
-  if(!page.lines?.length)continue;
+  if(!page.lines?.length||isInstructionSheet(page))continue;
   for(const col of [0,1]){
    const lines=page.lines.filter(l=>l.col===col);
    if(!lines.length)continue;
@@ -477,6 +492,36 @@ export function identifyBookletCode(examText='',examInfo={}){
 
 export function chosenAnswerSection(text,examText='',examInfo={}){
  const source=String(text||'').replace(/\r/g,'');
+
+ // Gabaritos por página e cargo: a FCPC (Aracati/CE) dispõe as respostas
+ // em tabelas com linhas de números e letras. Cada página pertence a
+ // um cargo diferente, mesmo quando Português e Legislação coincidem.
+ const pageSections=source.match(/\[\[PAGE:\s*\d+\]\][\s\S]*?(?=\[\[PAGE:\s*\d+\]\]|$)/g)||[];
+ const pageGrids=pageSections.map((page)=>{
+  const m=page.match(/GABARITO\s+(?:PRELIMINAR|DEFINITIVO)\s*\n\s*([^\n]+?)\s*\n\s*PROVA\s*1\s*[-–]/i);
+  return m&&/PROVA\s*2\s*[-–]/i.test(page)&&/PROVA\s*3\s*[-–]/i.test(page)
+   ?{role:norm(m[1]).trim(),text:page}:null;
+ }).filter(Boolean);
+ if(pageGrids.length>=2){
+  const sources=[
+   norm(String(examInfo?.examFilename||'').replace(/[_-]+/g,' ')),
+   norm(String(examInfo?.examTitle||'')),
+   norm(String(examText||'').split(/\[\[PAGE:\s*2\]\]/i)[0])
+  ];
+  let chosen=null;
+  for(const evidence of sources){
+   if(!evidence)continue;
+   const matches=pageGrids.filter(grid=>evidence.includes(grid.role));
+   if(matches.length>1)return {text:'',section:null,format:'grid',
+    error:'O gabarito tabulado corresponde a mais de um cargo. Verifique o caderno.'};
+   if(matches.length===1){chosen=matches[0];break;}
+  }
+  if(!chosen)return {text:'',section:null,format:'grid',
+   error:'O gabarito possui páginas para vários cargos, mas não foi possível identificar a página do cargo solicitado.'};
+  return {text:chosen.text,section:chosen.role,format:'grid',error:null};
+ }
+
+
 
  // Bancas que publicam uma tabela por cargo, por exemplo:
  // "Analista em Informática - Tabela 3" + 50 pares "01: A ... 50: D".
@@ -716,7 +761,7 @@ export function declaredAlternativeCount(pages=[]){
 export function declaredQuestionCount(pages=[]){
  const first=pages[0];
  const cover=String(first?.text||(first?.lines||[]).map(line=>line.text).join('\n')||'');
- const counts=[...cover.matchAll(/\b(\d{1,3})\s+QUEST[OÕ]ES\b/giu)]
+ const counts=[...cover.matchAll(/\b(\d{1,3})(?:\s*\([^)]{1,35}\))?\s+QUEST[OÕ]ES\b/giu)]
   .map(match=>Number(match[1])).filter(n=>n>=1&&n<=300);
  return counts.length===1?counts[0]:0;
 }
