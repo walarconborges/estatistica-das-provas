@@ -1,3 +1,10 @@
+## 0.6.8 — 15/11/2026
+
+- Filtro para Candeias: não incluir questões originais sobre a Lei Complementar Municipal nº 143/2009 de Brusque, incluindo a questão 20 (promoção horizontal de 90 horas).
+- Leis complementares municipais de outras localidades passam a ser reconhecidas como legislação local e impedidas no estudo específico de Candeias sem adaptação validada.
+- Mantém a questão e o gabarito na prova original; nenhum histórico ou dado existente foi excluído.
+- Incluídos testes de regressão para elegibilidade jurídica e preservação da prova original.
+
 ## 0.6.7 — 15/11/2026
 
 - FEPESE: letras minúsculas das alternativas são convertidas em A–E antes da validação, evitando 40 questões reproduzidas como imagem.
