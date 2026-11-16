@@ -3,7 +3,7 @@ import {readPdf} from './pdf-import.mjs';
 import {chosenAnswerSection,parseGridKey,questionIntegrity,declaredQuestionCount} from './pdf-layout.mjs';
 import {createSyncClient} from './sync-client.mjs';
 import {STUDY_CONTEXT,eligibleForList} from './study-context.mjs';
-import {PROGRAM_505} from './programa-candeias-505.mjs';
+import {CATALOGS,currentCatalog,allTopics,classifyForCargo,subjectSummary} from './edital-classification.mjs';
 
 const $=s=>document.querySelector(s);
 const $$=s=>Array.from(document.querySelectorAll(s));
@@ -14,7 +14,8 @@ const niceDate=x=>x?new Date(x).toLocaleDateString('pt-BR'):'—';
 let state;
 try{state=normalizeState(JSON.parse(localStorage.getItem(STORAGE_KEY)||'null'))}catch{state=fresh()}
 expire(state);
-let profileId=null,view='home',selectedSimId=null,currentFilter={studyArea:'candeias'},currentPool=[],limitAvulsas=10,questionSearch='';
+const initialCargo=['202','505'].includes(localStorage.getItem('estatistica-edital-cargo'))?localStorage.getItem('estatistica-edital-cargo'):'505';
+let profileId=null,view='home',selectedSimId=null,currentFilter={studyArea:'candeias',editalCargo:initialCargo,editalScope:'dentro'},currentPool=[],limitAvulsas=10,questionSearch='';
 let latestImportMessage='';
 let statusMessage='';
 const explanationsInView=new Map();
@@ -232,38 +233,81 @@ function historyOutcomeFilter(){
 }
 
 function targetProgramPanel(){
+ const program=currentCatalog(currentFilter.editalCargo||'505');
  return '<details class="program-panel">'+
-  '<summary>Consultar conteúdo programático — Candeias, cargo 505</summary>'+
-  '<p class="hint">Resumo organizado do Anexo IV, páginas 4–5 e 7. Consulte o edital para a redação integral. A referência é exclusiva do cargo 505.</p>'+
-  PROGRAM_505.sections.map(section=>'<section class="program-section"><h3>'+h(section.title)+'</h3>'+
-    '<p class="hint">Anexo IV, página(s) '+h(section.pages)+'</p><ul>'+
+  '<summary>Consultar conteúdo programático — cargo '+h(program.id)+' · '+h(program.cargo)+'</summary>'+
+  '<p class="hint">Fonte: '+h(program.annex||'Anexo IV')+' do Edital 01/2026. Confira a redação integral no edital. Assuntos equivalentes são aceitos por conteúdo, e casos incertos são sinalizados para conferência.</p>'+
+  program.sections.map(section=>'<section class="program-section"><h3>'+h(section.title)+'</h3>'+
+    '<p class="hint">Página(s) '+h(section.pages)+'</p><ul>'+
     section.topics.map(topic=>'<li>'+h(topic)+'</li>').join('')+'</ul></section>').join('')+
-  '<p class="hint">A LGPD pertence aos conhecimentos específicos. A legislação municipal cobrada é a Lei Orgânica e as Resoluções nº 001/CMCJ-93 e nº 173/CMCJ/2025; não confundir com outras normas citadas no preâmbulo.</p>'+
   '</details>';
 }
-
+function catalogPanelFilters(){
+ const id=currentFilter.editalCargo||'505',catalog=currentCatalog(id);
+ const values=allTopics(id);
+ const counts=subjectSummary(state.questions,exam,id).total;
+ const scope=currentFilter.editalScope||'dentro';
+ return '<fieldset class="field span-all syllabus-panel"><legend>Edital de referência</legend>'+
+  '<div class="form-grid"><div class="field"><label>Cargo</label><select name="editalCargo">'+
+   Object.values(CATALOGS).map(x=>'<option value="'+h(x.id)+'" '+(id===x.id?'selected':'')+'>'+h(x.id+' — '+x.cargo)+'</option>').join('')+
+  '</select></div>'+
+  '<div class="field"><label>Classificação pelo edital</label><select name="editalScope">'+
+   [['dentro','Dentro do edital'],['fora','Fora do edital'],['pendente','A conferir'],['all','Todas as classificações']].map(([v,label])=>
+    '<option value="'+v+'" '+(scope===v?'selected':'')+'>'+h(label)+'</option>').join('')+
+  '</select></div>'+
+  '<div class="field"><label>Disciplina do edital</label><select name="editalDisciplina"><option value="">Todas</option>'+
+    catalog.sections.map(sec=>'<option value="'+h(sec.title)+'" '+(currentFilter.editalDisciplina===sec.title?'selected':'')+'>'+h(sec.title)+'</option>').join('')+
+  '</select></div>'+
+  '<div class="field span-all"><label>Assunto cadastrado no edital</label><select name="editalTopic"><option value="">Todos os assuntos</option>'+
+    values.map(v=>'<option value="'+h(v.id)+'" '+(currentFilter.editalTopic===v.id?'selected':'')+'>'+h(v.discipline+' — '+v.title)+'</option>').join('')+
+  '</select></div></div>'+
+  '<p class="hint">Banco existente: '+counts.dentro+' dentro do edital, '+counts.fora+' fora do edital, '+counts.pendente+' a conferir. A classificação é independente para cada cargo e é recalculada quando novas provas são importadas, sem alterar os registros originais.</p>'+
+  '</fieldset>';
+}
+function syllabusFiltered(items,filters=currentFilter){
+ const id=filters.editalCargo||'505',status=filters.editalScope||'dentro';
+ return items.filter(q=>{
+  const match=classifyForCargo(q,exam(q.examId),id);
+  if(status!=='all'&&match.status!==status)return false;
+  if(filters.editalDisciplina&&match.discipline!==filters.editalDisciplina)return false;
+  if(filters.editalTopic&&match.topicId!==filters.editalTopic)return false;
+  // Questões de legislação adaptadas só entram no catálogo 505 quando verificadas.
+  if(id==='202'&&q.originalQuestionId)return false;
+  return true;
+ });
+}
+function eligibleSyllabusQuestions(items,filters=currentFilter){
+ const id=filters.editalCargo||'505',status=filters.editalScope||'dentro';
+ const relevant=syllabusFiltered(items,filters);
+ if(id==='202')return relevant;
+ // No modo "dentro", somente legislação municipal validada é elegível.
+ // Ao consultar "fora" e "a conferir" não ocultar a questão original:
+ // elas precisam permanecer visíveis para classificação e revisão.
+ if(status!=='dentro')return relevant;
+ return relevant.filter(q=>eligibleForList(q,exam(q.examId),filters.studyArea||'candeias'));
+}
 function filterForm(kind='questions'){
-  const u=availableFilters();
-  const mode=kind==='sim';
-  const withVariant=new Set(state.questions.filter(q=>q.originalQuestionId).map(q=>q.originalQuestionId));
-  const unsupported=state.questions.filter(q=>!q.originalQuestionId&&!withVariant.has(q.id)&&
-   !eligibleForList(q,exam(q.examId),'candeias')).length;
-  return `<form id="${mode?'generate-form':'filter-form'}" class="card">
-  <div class="form-grid">
-  ${selectField('discipline','Disciplina',u.disciplines,currentFilter.discipline)}
-  ${selectField('topic','Assunto',u.topics,currentFilter.topic)}
-  ${selectField('banca','Banca',u.bancas,currentFilter.banca)}
-  ${selectField('year','Ano',u.years,currentFilter.year)}
-  ${selectField('orgao','Órgão',u.orgaos,currentFilter.orgao)}
-  <div class="field"><label>Legislação municipal</label><select name="studyArea"><option value="candeias" ${currentFilter.studyArea!=='original'?'selected':''}>Candeias do Jamari — somente validada</option><option value="original" ${currentFilter.studyArea==='original'?'selected':''}>Prova original, sem adaptação</option></select></div>
-  ${historyOutcomeFilter()}
-  <div class="field"><label>Situação da questão</label><select name="status"><option value="">Ativas (padrão)</option><option value="all" ${currentFilter.status==='all'?'selected':''}>Todas, incluindo anuladas</option><option value="annulled" ${currentFilter.status==='annulled'?'selected':''}>Somente anuladas</option><option value="outdated" ${currentFilter.status==='outdated'?'selected':''}>Somente desatualizadas</option><option value="needs-review" ${currentFilter.status==='needs-review'?'selected':''}>Necessitam revisão da extração</option></select></div>
-  ${mode?`<div class="field"><label>Quantidade de questões</label><input type="number" name="count" min="1" max="1000" value="20" required></div>`:`<div class="field"><label>Mostrar quantas questões?</label><input type="number" name="count" min="1" max="1000" value="${limitAvulsas}" required></div>`}
-  ${!mode?`<div class="field span-all"><label>Buscar código permanente</label><input class="code-search" name="code" placeholder="Q2026LPGIBGPSEMED1" value="${h(currentFilter.code||'')}"></div>`:''}
-  </div><div class="actions"><button type="submit">${mode?'Criar simulado':'Buscar questões'}</button></div>
-  <p class="hint">Questões de legislação são adaptadas automaticamente quando existe correspondência com as normas oficiais de Candeias. Sem correspondência, ficam inválidas para o modo municipal. A prova original é preservada.</p>
-  ${unsupported&&currentFilter.studyArea!=='original'?`<p class="hint">${unsupported} questão(ões) de legislação sem correspondência verificável — inválidas apenas para o modo Candeias. No modo original, continuam acessíveis.</p>`:''}
-  </form>${targetProgramPanel()}`;
+ const u=availableFilters(),mode=kind==='sim',id=currentFilter.editalCargo||'505';
+ return '<form id="'+(mode?'generate-form':'filter-form')+'" class="card">'+
+  '<div class="form-grid">'+catalogPanelFilters()+
+  selectField('banca','Banca',u.bancas,currentFilter.banca)+
+  selectField('year','Ano',u.years,currentFilter.year)+
+  selectField('orgao','Órgão',u.orgaos,currentFilter.orgao)+
+  (id==='505'?'<div class="field"><label>Legislação municipal</label><select name="studyArea">'+
+    '<option value="candeias" '+(currentFilter.studyArea!=='original'?'selected':'')+'>Candeias — normas verificadas</option>'+
+    '<option value="original" '+(currentFilter.studyArea==='original'?'selected':'')+'>Versão original das provas</option>'+
+   '</select></div>':'')+
+  historyOutcomeFilter()+
+  '<div class="field"><label>Situação da questão</label><select name="status">'+
+   '<option value="">Ativas (padrão)</option>'+
+   [['all','Todas, incluindo anuladas'],['annulled','Somente anuladas'],['outdated','Somente desatualizadas'],['needs-review','Necessitam revisão da extração']].map(([v,l])=>'<option value="'+v+'" '+(currentFilter.status===v?'selected':'')+'>'+h(l)+'</option>').join('')+
+  '</select></div>'+
+  (mode?'<div class="field"><label>Quantidade de questões</label><input type="number" name="count" min="1" max="1000" value="20" required></div>':
+   '<div class="field"><label>Mostrar quantas questões?</label><input type="number" name="count" min="1" max="1000" value="'+limitAvulsas+'" required></div>'+
+   '<div class="field span-all"><label>Buscar código permanente</label><input class="code-search" name="code" placeholder="Q2026LPGIBGPSEMED1" value="'+h(currentFilter.code||'')+'"></div>')+
+  '</div><div class="actions"><button type="submit">'+(mode?'Criar simulado':'Buscar questões')+'</button></div>'+
+  '<p class="hint">Assuntos equivalentes podem entrar mesmo com nomes diferentes. "Fora do edital" não exclui questões; "A conferir" identifica casos incertos. Os gabaritos e resultados históricos não são modificados.</p>'+
+  '</form>'+targetProgramPanel();
 }
 function alternatives(q,scope,chosen=''){
  const options=q.options||[];
