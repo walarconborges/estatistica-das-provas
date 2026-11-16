@@ -336,6 +336,44 @@ function legalBasisHtml(q){
   '</div>';
 }
 
+function syllabusBadge(q){
+ const id=currentFilter.editalCargo||'505',match=classifyForCargo(q,exam(q.examId),id);
+ const cls=match.status==='dentro'?'good':match.status==='fora'?'bad':'wait';
+ const label=match.status==='dentro'?match.discipline+' / '+match.topic:match.statusLabel;
+ return '<div class="syllabus-classification"><span class="badge '+cls+'">'+h(match.statusLabel)+'</span>'+
+  '<span>Cargo '+h(id)+' · '+h(label)+'</span></div>';
+}
+function syllabusStatistics(){
+ const id=currentFilter.editalCargo||'505',catalog=currentCatalog(id);
+ const summary=subjectSummary(state.questions,exam,id);
+ const map=new Map();
+ for(const q of state.questions){
+  if(q.status!=='active')continue;
+  const cls=classifyForCargo(q,exam(q.examId),id);
+  if(cls.status!=='dentro')continue;
+  const o=outcome(state,profileId,q);
+  const key=cls.topicId,entry=map.get(key)||{
+   id:key,discipline:cls.discipline,topic:cls.topic,correct:0,wrong:0,total:0
+  };
+  if(o==='correct'||o==='wrong'){entry[o]++;entry.total++;}
+  map.set(key,entry);
+ }
+ const rows=[...map.values()].sort((a,b)=>b.total-a.total||a.topic.localeCompare(b.topic,'pt-BR'));
+ return '<section class="card"><h2>Desempenho segundo o edital — cargo '+h(id)+'</h2>'+
+  '<p class="hint">'+h(catalog.cargo)+' · Classificação não destrutiva, atualizada conforme as provas cadastradas.</p>'+
+  '<div class="grid three" style="margin-top:10px">'+
+   infoTile(summary.total.dentro,'Dentro do edital')+
+   infoTile(summary.total.fora,'Fora do edital')+
+   infoTile(summary.total.pendente,'A conferir')+
+  '</div>'+
+  '<details class="program-panel"><summary>Acertos e erros por assunto do edital ('+rows.length+')</summary>'+
+  (rows.length?rows.map(x=>'<div class="stat-line syllabus-stat"><div><strong>'+h(x.discipline+' / '+x.topic)+'</strong>'+
+   '<div class="small-muted">'+x.correct+' acertos · '+x.wrong+' erros · '+x.total+' respondidas</div></div>'+
+   '<strong>'+pct(x.total?x.correct/x.total*100:0)+'</strong></div>').join(''):
+   '<p class="hint">Ainda não há assuntos classificados dentro deste edital.</p>')+
+  '</details></section>';
+}
+
 function feedback(q,answer){
   if(!validAnswer(answer))return '<span class="badge wait">Não respondida</span>';
   if(q.status==='annulled')return '<span class="badge wait">Questão anulada</span>';
@@ -349,6 +387,7 @@ function cardQuestion(q,index,scope='single',selected='',previous=null){
   const examTitle=exam(q.examId)?.title||'';
   return `<article class="question" data-question-card="${h(q.id)}">
   <div class="question-head"><div><div class="question-code">${h(q.code)}</div><div class="question-context">Questão ${label} · ${h(q.discipline)} / ${h(q.topic)}</div><details class="question-origin"><summary>Ver origem da questão</summary><div>${h(examTitle)}</div></details></div><div class="chips">${q.status==='annulled'?'<span class="badge wait">Anulada</span>':''}${q.status==='needs-review'?'<span class="badge wait">Revisão da extração</span>':''}${q.status==='outdated'?'<span class="badge wait">Desatualizada</span>':''}${q.originalQuestionId?'<span class="badge good">Adaptada para Candeias</span>':''}${q.confidence==='baixa'?'<span class="badge wait">Classificação incerta</span>':''}</div></div>
+  ${syllabusBadge(q)}
   ${q.contextText?`<details class="support-text" ${repeatedSupportText(previous,q)?'':'open'}><summary>${repeatedSupportText(previous,q)?'Ver texto de apoio novamente (já exibido na questão anterior)':'Texto de apoio — questões '+h(q.contextRange?.join(' a ')||'')}</summary><div class="question-body">${h(q.contextText)}</div></details>`:''}
   ${q.visualSegments&&q.pageImage?
     `<div class="question-body">${h(q.visualSegments.beforeText)}</div><img loading="lazy" class="question-img question-figure" src="${h(q.pageImage)}" alt="Figura ou tabela do enunciado"><div class="question-body">${h(q.visualSegments.afterText)}</div>`:
@@ -387,7 +426,8 @@ function statsScreen(){
   const block=(title,rows)=>`<section class="card"><h2>${title}</h2>${rows.length?rows.map(r=>`<div class="stat-line"><div style="flex:1;min-width:0"><strong>${h(r.name)}</strong><div class="small-muted">${r.correct} acertos · ${r.wrong} erros · ${r.total} respondidas</div><div class="bar"><i style="width:${r.total?100*r.correct/r.total:0}%"></i></div></div><strong>${pct(r.total?100*r.correct/r.total:0)}</strong></div>`).join(''):empty('Ainda não há respostas para esta categoria.')}</section>`;
   return `${headline('Estatísticas de '+profileName(),'A última resposta válida de cada questão determina a situação atual.')}
   <div class="grid four">${infoTile(n(s.total),'Questões únicas respondidas')}${infoTile(n(s.correct),'Acertos')}${infoTile(n(s.wrong),'Erros')}${infoTile(pct(s.rate),'Aproveitamento')}</div>
-  <div class="grid two" style="margin-top:14px">${block('Por disciplina',s.byDiscipline)}${block('Por assunto',s.byTopic)}</div>
+  ${syllabusStatistics()}
+  <div class="grid two" style="margin-top:14px">${block('Por disciplina original',s.byDiscipline)}${block('Por assunto original',s.byTopic)}</div>
   <div class="notice info">Questões em branco não entram em acertos nem em erros; questões anuladas também não entram. Uma classificação secundária aprovada poderá integrar outra estatística de assunto sem duplicar a contagem geral.</div>`;
 }
 function flagsScreen(){
@@ -436,8 +476,8 @@ function updateQuestionFeedback(qid){
 }
 function formsFilter(form){
   const f=new FormData(form);
-  const fields=Object.fromEntries(['discipline','topic','banca','year','orgao','status','code','studyArea'].map(k=>[k,String(f.get(k)||'')]));
-  return {...fields,outcomes:f.getAll('outcome').map(String)};
+  const fields=Object.fromEntries(['discipline','topic','banca','year','orgao','status','code','studyArea','editalCargo','editalScope','editalDisciplina','editalTopic'].map(k=>[k,String(f.get(k)||'')]));
+  return {...fields,editalCargo:fields.editalCargo||currentFilter.editalCargo||'505',editalScope:fields.editalScope||'dentro',studyArea:fields.studyArea||currentFilter.studyArea||'candeias',outcomes:f.getAll('outcome').map(String)};
 }
 async function importData(form){
   const fd=new FormData(form),pdf=fd.get('examPdf'),keyPdf=fd.get('keyPdf');
@@ -613,9 +653,11 @@ document.addEventListener('submit',async e=>{
   }
   if(form.id==='import-form'){await importData(form);return}
   currentFilter=formsFilter(form);
-  if(currentFilter.studyArea!=='original'&&!automaticAdaptationChecked)await refreshAutomaticAdaptations();
+  localStorage.setItem('estatistica-edital-cargo',currentFilter.editalCargo);
+  if(currentFilter.editalCargo==='505'&&currentFilter.editalScope==='dentro'&&currentFilter.studyArea!=='original'&&!automaticAdaptationChecked)
+   await refreshAutomaticAdaptations();
   const beforeTerritory=filtered(state,profileId,currentFilter);
-  const candidates=beforeTerritory.filter(q=>eligibleForList(q,exam(q.examId),currentFilter.studyArea||'candeias'));
+  const candidates=eligibleSyllabusQuestions(beforeTerritory,currentFilter);
   const count=Math.max(1,Math.min(1000,Number(new FormData(form).get('count')||10)));
   if(form.id==='filter-form'){
     limitAvulsas=count;currentPool=prioritize(state,profileId,candidates).slice(0,count);refresh();return;
@@ -632,6 +674,12 @@ document.addEventListener('submit',async e=>{
 });
 document.addEventListener('change',e=>{
   const input=e.target;
+  if(input.matches('select[name="editalCargo"]')){
+    const next=['202','505'].includes(input.value)?input.value:'505';
+    currentFilter={...currentFilter,editalCargo:next,editalDisciplina:'',editalTopic:''};
+    localStorage.setItem('estatistica-edital-cargo',next);
+    refresh();return;
+  }
   if(input.matches('#import-form input[type="file"]')){
     const label=document.getElementById(input.name==='examPdf'?'exam-pdf-info':'key-pdf-info');
     if(label)label.textContent=input.files?.[0]?'Selecionado: '+input.files[0].name:'Nenhum PDF selecionado';
