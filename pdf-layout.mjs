@@ -255,7 +255,7 @@ export function spatialQuestions(pages){
  questions.sort((a,b)=>a.originalNumber-b.originalNumber);
  return {questions,contexts};
 }
-export function chosenAnswerSection(text,examText=''){
+export function chosenAnswerSection(text,examText='',examInfo={}){
  const source=String(text||'').replace(/\r/g,'');
  // Quadrix: um PDF de gabarito pode trazer vários cargos em seções
  // "2.7 ANALISTA DE INFORMÁTICA (CÓDIGO 401)", seguidas por duas
@@ -264,16 +264,39 @@ export function chosenAnswerSection(text,examText=''){
  const quadrixHeaders=[...source.matchAll(/(?:^|\n)\s*(2\.\d{1,2})\s+([^\n]{4,130})/g)]
    .filter(m=>/\b(?:ANALISTA|T[EÉ]CNICO|ADVOGADO|CONTADOR|JORNALISTA|ZELADORIA|MANUTEN[CÇ][AÃ]O|LIMPEZA|AGENTE|AUXILIAR)\b/i.test(m[2]));
  if(quadrixHeaders.length){
-  const exam=norm(examText),job=exam.includes('ANALISTA DE INFORMATICA')?'ANALISTA DE INFORMATICA':
-   exam.includes('TECNICO DE INFORMATICA')?'TECNICO DE INFORMATICA':
-   exam.includes('AUXILIAR ADMINISTRATIVO')?'AUXILIAR ADMINISTRATIVO':
-   null;
+  // No caderno Quadrix CRQ-V, o nome "Analista de Informática" só
+  // aparece no rodapé (linha cortada pela limpeza espacial do PDF).
+  // O nome real do arquivo e o título inferido são fontes adicionais,
+  // mas só se aceita uma seção única e explicitamente identificada.
+  const sources=[
+   norm(examText),
+   norm(examInfo?.examFilename||''),
+   norm(examInfo?.examTitle||'')
+  ];
+  const knownJobs=[
+   'ANALISTA DE INFORMATICA',
+   'TECNICO DE INFORMATICA',
+   'AUXILIAR ADMINISTRATIVO',
+   'ADVOGADO',
+   'CONTADOR',
+   'JORNALISTA',
+   'AGENTE FISCAL',
+   'ZELADORIA',
+   'LIMPEZA',
+   'MANUTENCAO'
+  ];
+  const jobs=knownJobs.filter(job=>sources.some(s=>s.includes(job)));
+  // Gabaritos de vários cargos jamais devem ser misturados, nem
+  // resolvidos por ordem de aparição ou pela primeira seção.
+  if(jobs.length!==1)
+   return {text:'',section:null,format:'grid',error:'O gabarito contém vários cargos; não foi possível associar com segurança o cargo do caderno.'};
+  const job=jobs[0];
   const sections=quadrixHeaders.map((m,i)=>({
    title:norm(m[2]),heading:m[2],
    text:source.slice(m.index,quadrixHeaders[i+1]?.index||source.length)
   }));
-  const matches=job?sections.filter(s=>s.title.includes(job)):[];
-  if(matches.length!==1)return {text:'',section:null,format:'grid',error:'O gabarito contém vários cargos; não foi possível associar com segurança o cargo do caderno.'};
+  const matches=sections.filter(s=>s.title.includes(job));
+  if(matches.length!==1)return {text:'',section:null,format:'grid',error:'O cargo identificado no caderno não corresponde a uma seção única do gabarito.'};
   const code=matches[0].heading.match(/C[OÓ]DIGO\s*(\d{2,4})/i);
   return {text:matches[0].text,section:code?code[1]:job,format:'grid',error:null};
  }
