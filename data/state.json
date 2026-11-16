@@ -548,6 +548,61 @@
       "keyStatus": "publicado",
       "metadataReview": [],
       "pdfPath": "storage/pdfs/9af7c771-af2c-4c81-a03c-9a072511d321.pdf"
+    },
+    {
+      "id": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "title": "2026 — LEGALLE — PM-CANDIDO-GODOI — auxiliar de servicos gerais (3)",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "bancaCode": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "orgaoCode": "PMCANDIDOGODOI",
+      "createdAt": "2026-11-16T19:36:05.014Z",
+      "questionIds": [
+        "0d637651-7c5f-4e5c-b94d-2b4fb7cd5ecc",
+        "9cf7d89c-8b49-4b04-962b-2852b9c1c606",
+        "af06d083-26e1-4a29-ba1d-bd7400746084",
+        "af9b714f-8026-4a41-8898-279b6f77b9a7",
+        "742dfcc6-167d-44aa-8633-8c2eac36882d",
+        "d435936f-3096-4fff-b371-7b8ecab9f67a",
+        "fc02ec0f-4d4b-4537-80d2-2c94c977e892",
+        "a3c2cef8-d538-46d9-a40c-5f4cca7d345d",
+        "ee94b55b-a510-423c-819d-63084fb44d0f",
+        "53773486-2901-4dea-b949-86912e3346b5",
+        "79626af9-1682-4ac4-a113-cc45e7c5a26a",
+        "b6173230-509f-4318-8074-261317554bbf",
+        "60061e0e-0ea8-4407-b608-533e83d7add1",
+        "e5cf88f7-8858-4a93-aa37-edfd1acd5a73",
+        "bc3bcff6-736f-4a3c-b991-103c73006551",
+        "af0e10f8-bd7a-4500-ad13-a7a1f652eb1d",
+        "6e6db88c-ee23-4055-b6cb-95b19b135904",
+        "8617a390-047d-401a-ab83-3ef15ecf26e1",
+        "67d61e58-7e0c-49a9-b9ca-c03b80f73122",
+        "9dc40796-7469-4d1c-874e-b9ed1473286b",
+        "49cdd17e-065e-4bf2-a07b-35f13cf83392",
+        "43065867-6fc1-4b96-bad9-5aa93ba15698",
+        "b0223e39-8112-48fd-8318-c76a33bf76b1",
+        "373d3ce0-2eb4-4b2a-ad00-6477d5ea6b44",
+        "c02cdd48-9473-48a9-9f92-349bd33fe750",
+        "773682fe-1ece-4a77-bbef-621286e5fffc",
+        "19425af9-320b-44b5-89a3-03b17bf4bfe9",
+        "9dd3beac-5dd4-4eec-8937-e6c644966984",
+        "0d619c3c-5e0b-4b16-b389-cfd11654686a",
+        "ecc5127c-d948-4739-a264-e7b51011ab3b",
+        "75f4c4db-5227-4022-8b35-c3780bc29677",
+        "e36b4e13-5774-4ec2-a746-0f2e05eaa721",
+        "46e3553e-f54a-4cff-8819-3a7f5ae92bca",
+        "de1f32e4-8edd-41fd-8d02-ed57863f7590",
+        "4d69f62d-b0c9-4162-8f42-d8a023a1caa2",
+        "d6bd6a96-20bc-4a94-a273-b3717e45c712",
+        "bc2605d0-89c8-49c2-923b-2a4640d3ceb6",
+        "20f80ca9-500e-460d-823c-cde5de170f82",
+        "087b613b-6007-4f78-adf9-7a31184196c1",
+        "9b146c07-764f-4eb7-9cc8-6218a57e5b0d"
+      ],
+      "keySection": "AUXILIAR DE SERVICOS GERAIS",
+      "keyStatus": "publicado",
+      "metadataReview": []
     }
   ],
   "questions": [
@@ -32793,6 +32848,3108 @@
       "banca": "FEPESE",
       "orgao": "CIS-GRANFPOLIS",
       "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 1,
+      "heading": "",
+      "stem": "Com base no primeiro parágrafo do texto, a nova legislação que autoriza o comércio e o porte do spray de pimenta foi criada com a finalidade de:",
+      "stemRows": [
+        {
+          "y": 197.51999999999998,
+          "text": "Com base no primeiro parágrafo do texto, a"
+        },
+        {
+          "y": 210.7199999999999,
+          "text": "nova legislação que autoriza o comércio e o porte do spray"
+        },
+        {
+          "y": 223.67999999999995,
+          "text": "de pimenta foi criada com a finalidade de:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Equipar as cidadãs brasileiras com armamentos de defesa letal para combater a criminalidade urbana."
+        },
+        {
+          "letter": "B",
+          "text": "Garantir que mulheres maiores de 16 anos possam utilizar o dispositivo de forma preventiva contra infrações cotidianas."
+        },
+        {
+          "letter": "C",
+          "text": "Servir como uma ferramenta de menor potencial ofensivo para conter temporariamente um agressor em situações de perigo."
+        },
+        {
+          "letter": "D",
+          "text": "Permitir o uso do aerossol pelas mulheres no combate a crimes dolosos."
+        }
+      ],
+      "optionsStartY": 249.83999999999992,
+      "sourcePage": 2,
+      "sourceColumn": 1,
+      "startY": 197.51999999999998,
+      "endY": 380.99999999999994,
+      "contextText": "Mulheres podem comprar e usar spray de pimenta para defesa pessoal Mulheres maiores de 18 anos podem adquirir e portar spray de pimenta para fins de defesa pessoal em todo o território nacional. A medida está prevista na Lei no 15.474, sancionada pela Presidência da República e publicada ainda no final de julho, no Diário Oficial da União. A norma autoriza a comercialização, a aquisição e a posse desses dispositivos por mulheres adultas, desde que os produtos sejam aprovados pelos orgãos competentes. O objetivo é permitir que o equipamento seja usado para conter temporariamente um agressor em situações de ameaça à integridade física ou sexual. Pela lei, será considerado aerossol de extratos vegetais o dispositivo portátil de menor potencial oÍensivo que utilize spray de pimenta à base de oleorresina de capsicum ou outros extratos vegetais autorizados. Na sanção da lei, foivetado o trecho do projeto que autorizava o uso da substância às mulheres maiores de 16 (dezesseis) e menores de 18 (dezoito) anos, mediante autorização expressa de seu responsável legal. Assim, para comprar o produto, será preciso comprovar ter pelo menos 1B anos, apresentar documento oficial com foto e comprovante de residência fixa, alem de declarar não possuir condenação por crime doloso cometido com violência ou grave ameaça. Os estabelecimentos autorizados a vender o equipamento deverão manter registros das vendas por cinco anos, observando as regras da Lei Geral de Proteção de Dados (LGPD). Tambem terão de fornecer orientações básicas sobre o uso correto do dispositivo e registrar as informações da compradora em um banco de dados a ser criado pelo governo federal. A norma determina ainda que o spray será de uso individual e intransferível e não poderá conter substâncias letais ou de toxicidade permanente. O uso do aerossol será considerado lícito apenas em situações de legítima deÍesa, para repelir agressão injusta, atual ou iminente, conforme previsto no Codigo Penal. A lei estabelece que a utilização deve ser proporcional à ameaça e interrompida assim que o risco for neutralizado. O texto também restringe recipientes com capacidade superior a 50 mililitros. Esses produtos serão classificados como de uso restrito e destinados exclusivamente às Forças Armadas, aos orgãos de segurança pública, às guardas municipais e a instituiçoes responsáveis pela proteção de autoridades e instalações governamentais. A legislação cria ainda o Programa Nacional de Capacitação em DeÍesa Pessoal e Uso de Instrumentos de Menor Potencial Ofensivo para Mulheres. Entre as diretrizes da iniciativa estão a orientação sobre os limites legais da legítima defesa, a divulgação de informações sobre violência domestica e canais de denúncia, alem da promoção de campanhas educativas sobre o uso responsável do spray. Segundo a lei, a implementação do programa ocorrerá de forma gradual, conforme regulamentação posterior do governo. Fonte: https://agenciabrasil.ebc.com.brlgeral/ nolicia /2026- 07lmu lherespodem-comprar-e-usar-spray-de-pimenta -para-deÍesapessoal (adaptado).",
+      "contextRange": [
+        1,
+        15
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "0d637651-7c5f-4e5c-b94d-2b4fb7cd5ecc",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026LPGLEGALLEPMCANDIDOGODOI1",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 2,
+      "heading": "",
+      "stem": "Para que uma mulher possa adquirir legalmente o dispositivo portátil, ela deve cumprir certas exigências no estabelecimento vendedor. Em relação a essas exigências, assinale a alternativa CORRETA.",
+      "stemRows": [
+        {
+          "y": 395.99999999999994,
+          "text": "Para que uma mulher possa adquirir"
+        },
+        {
+          "y": 409.43999999999994,
+          "text": "legalmente o dispositivo portátil, ela deve cumprir certas"
+        },
+        {
+          "y": 422.87999999999994,
+          "text": "exigências no estabelecimento vendedor. Em relação a"
+        },
+        {
+          "y": 436.08,
+          "text": "essas exigências, assinale a alternativa CORRETA."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Apresentar uma autorização judicial expedida por um delegado de polícia de sua cidade."
+        },
+        {
+          "letter": "B",
+          "text": "Apresentar documento oficial com foto, comprovante de moradia fixa e declarar não ter antecedentes criminais violentos específicos."
+        },
+        {
+          "letter": "C",
+          "text": "Assinar um termo de responsabilidade no qual se compromete a realizar testes físicos anuais na delegacia."
+        },
+        {
+          "letter": "D",
+          "text": "Comprovar aprovação prévia em um exame psicotécnico realizado por psicologo credenciado pelo governo."
+        }
+      ],
+      "optionsStartY": 461.03999999999996,
+      "sourcePage": 2,
+      "sourceColumn": 1,
+      "startY": 395.99999999999994,
+      "endY": 605.88,
+      "contextText": "Mulheres podem comprar e usar spray de pimenta para defesa pessoal Mulheres maiores de 18 anos podem adquirir e portar spray de pimenta para fins de defesa pessoal em todo o território nacional. A medida está prevista na Lei no 15.474, sancionada pela Presidência da República e publicada ainda no final de julho, no Diário Oficial da União. A norma autoriza a comercialização, a aquisição e a posse desses dispositivos por mulheres adultas, desde que os produtos sejam aprovados pelos orgãos competentes. O objetivo é permitir que o equipamento seja usado para conter temporariamente um agressor em situações de ameaça à integridade física ou sexual. Pela lei, será considerado aerossol de extratos vegetais o dispositivo portátil de menor potencial oÍensivo que utilize spray de pimenta à base de oleorresina de capsicum ou outros extratos vegetais autorizados. Na sanção da lei, foivetado o trecho do projeto que autorizava o uso da substância às mulheres maiores de 16 (dezesseis) e menores de 18 (dezoito) anos, mediante autorização expressa de seu responsável legal. Assim, para comprar o produto, será preciso comprovar ter pelo menos 1B anos, apresentar documento oficial com foto e comprovante de residência fixa, alem de declarar não possuir condenação por crime doloso cometido com violência ou grave ameaça. Os estabelecimentos autorizados a vender o equipamento deverão manter registros das vendas por cinco anos, observando as regras da Lei Geral de Proteção de Dados (LGPD). Tambem terão de fornecer orientações básicas sobre o uso correto do dispositivo e registrar as informações da compradora em um banco de dados a ser criado pelo governo federal. A norma determina ainda que o spray será de uso individual e intransferível e não poderá conter substâncias letais ou de toxicidade permanente. O uso do aerossol será considerado lícito apenas em situações de legítima deÍesa, para repelir agressão injusta, atual ou iminente, conforme previsto no Codigo Penal. A lei estabelece que a utilização deve ser proporcional à ameaça e interrompida assim que o risco for neutralizado. O texto também restringe recipientes com capacidade superior a 50 mililitros. Esses produtos serão classificados como de uso restrito e destinados exclusivamente às Forças Armadas, aos orgãos de segurança pública, às guardas municipais e a instituiçoes responsáveis pela proteção de autoridades e instalações governamentais. A legislação cria ainda o Programa Nacional de Capacitação em DeÍesa Pessoal e Uso de Instrumentos de Menor Potencial Ofensivo para Mulheres. Entre as diretrizes da iniciativa estão a orientação sobre os limites legais da legítima defesa, a divulgação de informações sobre violência domestica e canais de denúncia, alem da promoção de campanhas educativas sobre o uso responsável do spray. Segundo a lei, a implementação do programa ocorrerá de forma gradual, conforme regulamentação posterior do governo. Fonte: https://agenciabrasil.ebc.com.brlgeral/ nolicia /2026- 07lmu lherespodem-comprar-e-usar-spray-de-pimenta -para-deÍesapessoal (adaptado).",
+      "contextRange": [
+        1,
+        15
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "9cf7d89c-8b49-4b04-962b-2852b9c1c606",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026LPGLEGALLEPMCANDIDOGODOI2",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 3,
+      "heading": "",
+      "stem": "No que tange às obrigações dos estabelecimentos comerciais credenciados para a venda do spray de pimenta, o texto estabelece que eles devem:",
+      "stemRows": [
+        {
+          "y": 620.88,
+          "text": "No que tange às obrigações dos"
+        },
+        {
+          "y": 634.3199999999999,
+          "text": "estabelecimentos comerciais credenciados para a venda"
+        },
+        {
+          "y": 647.04,
+          "text": "do spray de pimenta, o texto estabelece que eles devem:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Guardar os registros das operações comerciais por um perÍodo mínimo de cinco anos, observando as regras da LGPD."
+        },
+        {
+          "letter": "B",
+          "text": "Disponibilizar as informações das compradoras em um site público municipal para consulta dos cidadãos."
+        },
+        {
+          "letter": "C",
+          "text": "Fornecer amostras grátis de 50 mililitros do produto para fins de teste no momento da aquisição do item."
+        },
+        {
+          "letter": "D",
+          "text": "Reter o comprovante de residência original da cliente e repassá-lo mensalmente aos orgãos de segurança pública. 2"
+        }
+      ],
+      "optionsStartY": 672.72,
+      "sourcePage": 2,
+      "sourceColumn": 1,
+      "startY": 620.88,
+      "endY": 806.04,
+      "contextText": "Mulheres podem comprar e usar spray de pimenta para defesa pessoal Mulheres maiores de 18 anos podem adquirir e portar spray de pimenta para fins de defesa pessoal em todo o território nacional. A medida está prevista na Lei no 15.474, sancionada pela Presidência da República e publicada ainda no final de julho, no Diário Oficial da União. A norma autoriza a comercialização, a aquisição e a posse desses dispositivos por mulheres adultas, desde que os produtos sejam aprovados pelos orgãos competentes. O objetivo é permitir que o equipamento seja usado para conter temporariamente um agressor em situações de ameaça à integridade física ou sexual. Pela lei, será considerado aerossol de extratos vegetais o dispositivo portátil de menor potencial oÍensivo que utilize spray de pimenta à base de oleorresina de capsicum ou outros extratos vegetais autorizados. Na sanção da lei, foivetado o trecho do projeto que autorizava o uso da substância às mulheres maiores de 16 (dezesseis) e menores de 18 (dezoito) anos, mediante autorização expressa de seu responsável legal. Assim, para comprar o produto, será preciso comprovar ter pelo menos 1B anos, apresentar documento oficial com foto e comprovante de residência fixa, alem de declarar não possuir condenação por crime doloso cometido com violência ou grave ameaça. Os estabelecimentos autorizados a vender o equipamento deverão manter registros das vendas por cinco anos, observando as regras da Lei Geral de Proteção de Dados (LGPD). Tambem terão de fornecer orientações básicas sobre o uso correto do dispositivo e registrar as informações da compradora em um banco de dados a ser criado pelo governo federal. A norma determina ainda que o spray será de uso individual e intransferível e não poderá conter substâncias letais ou de toxicidade permanente. O uso do aerossol será considerado lícito apenas em situações de legítima deÍesa, para repelir agressão injusta, atual ou iminente, conforme previsto no Codigo Penal. A lei estabelece que a utilização deve ser proporcional à ameaça e interrompida assim que o risco for neutralizado. O texto também restringe recipientes com capacidade superior a 50 mililitros. Esses produtos serão classificados como de uso restrito e destinados exclusivamente às Forças Armadas, aos orgãos de segurança pública, às guardas municipais e a instituiçoes responsáveis pela proteção de autoridades e instalações governamentais. A legislação cria ainda o Programa Nacional de Capacitação em DeÍesa Pessoal e Uso de Instrumentos de Menor Potencial Ofensivo para Mulheres. Entre as diretrizes da iniciativa estão a orientação sobre os limites legais da legítima defesa, a divulgação de informações sobre violência domestica e canais de denúncia, alem da promoção de campanhas educativas sobre o uso responsável do spray. Segundo a lei, a implementação do programa ocorrerá de forma gradual, conforme regulamentação posterior do governo. Fonte: https://agenciabrasil.ebc.com.brlgeral/ nolicia /2026- 07lmu lherespodem-comprar-e-usar-spray-de-pimenta -para-deÍesapessoal (adaptado).",
+      "contextRange": [
+        1,
+        15
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Interpretação de texto",
+      "topicCode": "IT",
+      "id": "af06d083-26e1-4a29-ba1d-bd7400746084",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026LPITLEGALLEPMCANDIDOGODOI1",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 4,
+      "heading": "",
+      "stem": "A lei determina parâmetros técnicos rigorosos para que o spray de pimenta seja comercializado legalmente para uso civil. De acordo com as normas apresentadas, o produto:",
+      "stemRows": [
+        {
+          "y": 47.039999999999964,
+          "text": "A lei determina parâmetros técnicos"
+        },
+        {
+          "y": 60,
+          "text": "rigorosos para que o spray de pimenta seja comercializado"
+        },
+        {
+          "y": 73.67999999999995,
+          "text": "legalmente para uso civil. De acordo com as normas"
+        },
+        {
+          "y": 86.63999999999999,
+          "text": "apresentadas, o produto:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Pode conter compostos letais, desde que sua capacidade interna não ultrapasse o limite de 50 mililitros."
+        },
+        {
+          "letter": "B",
+          "text": "Deve possuir um lacre de segurança inviolável que so poderá ser rompido por autoridade policial."
+        },
+        {
+          "letter": "C",
+          "text": "Deve ser de uso estritamente individual e intransferível, sendo vedado o uso de substâncias que causem toxicidade permanente."
+        },
+        {
+          "letter": "D",
+          "text": "Precisa ser fabricado à base de oleorresina de capsicum de forma exclusiva, proibindo-se outros extratos vegetais."
+        }
+      ],
+      "optionsStartY": 111.83999999999992,
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "startY": 47.039999999999964,
+      "endY": 255.24,
+      "contextText": "Mulheres podem comprar e usar spray de pimenta para defesa pessoal Mulheres maiores de 18 anos podem adquirir e portar spray de pimenta para fins de defesa pessoal em todo o território nacional. A medida está prevista na Lei no 15.474, sancionada pela Presidência da República e publicada ainda no final de julho, no Diário Oficial da União. A norma autoriza a comercialização, a aquisição e a posse desses dispositivos por mulheres adultas, desde que os produtos sejam aprovados pelos orgãos competentes. O objetivo é permitir que o equipamento seja usado para conter temporariamente um agressor em situações de ameaça à integridade física ou sexual. Pela lei, será considerado aerossol de extratos vegetais o dispositivo portátil de menor potencial oÍensivo que utilize spray de pimenta à base de oleorresina de capsicum ou outros extratos vegetais autorizados. Na sanção da lei, foivetado o trecho do projeto que autorizava o uso da substância às mulheres maiores de 16 (dezesseis) e menores de 18 (dezoito) anos, mediante autorização expressa de seu responsável legal. Assim, para comprar o produto, será preciso comprovar ter pelo menos 1B anos, apresentar documento oficial com foto e comprovante de residência fixa, alem de declarar não possuir condenação por crime doloso cometido com violência ou grave ameaça. Os estabelecimentos autorizados a vender o equipamento deverão manter registros das vendas por cinco anos, observando as regras da Lei Geral de Proteção de Dados (LGPD). Tambem terão de fornecer orientações básicas sobre o uso correto do dispositivo e registrar as informações da compradora em um banco de dados a ser criado pelo governo federal. A norma determina ainda que o spray será de uso individual e intransferível e não poderá conter substâncias letais ou de toxicidade permanente. O uso do aerossol será considerado lícito apenas em situações de legítima deÍesa, para repelir agressão injusta, atual ou iminente, conforme previsto no Codigo Penal. A lei estabelece que a utilização deve ser proporcional à ameaça e interrompida assim que o risco for neutralizado. O texto também restringe recipientes com capacidade superior a 50 mililitros. Esses produtos serão classificados como de uso restrito e destinados exclusivamente às Forças Armadas, aos orgãos de segurança pública, às guardas municipais e a instituiçoes responsáveis pela proteção de autoridades e instalações governamentais. A legislação cria ainda o Programa Nacional de Capacitação em DeÍesa Pessoal e Uso de Instrumentos de Menor Potencial Ofensivo para Mulheres. Entre as diretrizes da iniciativa estão a orientação sobre os limites legais da legítima defesa, a divulgação de informações sobre violência domestica e canais de denúncia, alem da promoção de campanhas educativas sobre o uso responsável do spray. Segundo a lei, a implementação do programa ocorrerá de forma gradual, conforme regulamentação posterior do governo. Fonte: https://agenciabrasil.ebc.com.brlgeral/ nolicia /2026- 07lmu lherespodem-comprar-e-usar-spray-de-pimenta -para-deÍesapessoal (adaptado).",
+      "contextRange": [
+        1,
+        15
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "af9b714f-8026-4a41-8898-279b6f77b9a7",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026LPGLEGALLEPMCANDIDOGODOI3",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 5,
+      "heading": "",
+      "stem": "O texto faz uma distinção importante sobre a capacidade volumétrica dos recipientes de spray de pimenta. A respeito dessa distinção, conclui-se que os produtos:",
+      "stemRows": [
+        {
+          "y": 270.24,
+          "text": "O texto faz uma distinção importante sobre"
+        },
+        {
+          "y": 283.19999999999993,
+          "text": "a capacidade volumétrica dos recipientes de spray de"
+        },
+        {
+          "y": 295.67999999999995,
+          "text": "pimenta. A respeito dessa distinção, conclui-se que os"
+        },
+        {
+          "y": 308.64,
+          "text": "produtos:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Com capacidade igual ou inferior a 50 mililitros são classificados como de uso restrito por seu alto potencial ofensivo."
+        },
+        {
+          "letter": "B",
+          "text": "Com capacidade superior a 50 mililitros são de uso restrito e reservados de modo exclusivo a forças de segurança e órgãos públicos."
+        },
+        {
+          "letter": "C",
+          "text": "De qualquer tamanho podem ser adquiridos livremente pelas guardas municipais masculinas e civis habilitados."
+        },
+        {
+          "letter": "D",
+          "text": "Com capacidade de 50 mililítros devem ser lacrados e de uso exclusivo de instituições governamentais de elite."
+        }
+      ],
+      "optionsStartY": 334.32,
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "startY": 270.24,
+      "endY": 489.71999999999997,
+      "contextText": "Mulheres podem comprar e usar spray de pimenta para defesa pessoal Mulheres maiores de 18 anos podem adquirir e portar spray de pimenta para fins de defesa pessoal em todo o território nacional. A medida está prevista na Lei no 15.474, sancionada pela Presidência da República e publicada ainda no final de julho, no Diário Oficial da União. A norma autoriza a comercialização, a aquisição e a posse desses dispositivos por mulheres adultas, desde que os produtos sejam aprovados pelos orgãos competentes. O objetivo é permitir que o equipamento seja usado para conter temporariamente um agressor em situações de ameaça à integridade física ou sexual. Pela lei, será considerado aerossol de extratos vegetais o dispositivo portátil de menor potencial oÍensivo que utilize spray de pimenta à base de oleorresina de capsicum ou outros extratos vegetais autorizados. Na sanção da lei, foivetado o trecho do projeto que autorizava o uso da substância às mulheres maiores de 16 (dezesseis) e menores de 18 (dezoito) anos, mediante autorização expressa de seu responsável legal. Assim, para comprar o produto, será preciso comprovar ter pelo menos 1B anos, apresentar documento oficial com foto e comprovante de residência fixa, alem de declarar não possuir condenação por crime doloso cometido com violência ou grave ameaça. Os estabelecimentos autorizados a vender o equipamento deverão manter registros das vendas por cinco anos, observando as regras da Lei Geral de Proteção de Dados (LGPD). Tambem terão de fornecer orientações básicas sobre o uso correto do dispositivo e registrar as informações da compradora em um banco de dados a ser criado pelo governo federal. A norma determina ainda que o spray será de uso individual e intransferível e não poderá conter substâncias letais ou de toxicidade permanente. O uso do aerossol será considerado lícito apenas em situações de legítima deÍesa, para repelir agressão injusta, atual ou iminente, conforme previsto no Codigo Penal. A lei estabelece que a utilização deve ser proporcional à ameaça e interrompida assim que o risco for neutralizado. O texto também restringe recipientes com capacidade superior a 50 mililitros. Esses produtos serão classificados como de uso restrito e destinados exclusivamente às Forças Armadas, aos orgãos de segurança pública, às guardas municipais e a instituiçoes responsáveis pela proteção de autoridades e instalações governamentais. A legislação cria ainda o Programa Nacional de Capacitação em DeÍesa Pessoal e Uso de Instrumentos de Menor Potencial Ofensivo para Mulheres. Entre as diretrizes da iniciativa estão a orientação sobre os limites legais da legítima defesa, a divulgação de informações sobre violência domestica e canais de denúncia, alem da promoção de campanhas educativas sobre o uso responsável do spray. Segundo a lei, a implementação do programa ocorrerá de forma gradual, conforme regulamentação posterior do governo. Fonte: https://agenciabrasil.ebc.com.brlgeral/ nolicia /2026- 07lmu lherespodem-comprar-e-usar-spray-de-pimenta -para-deÍesapessoal (adaptado).",
+      "contextRange": [
+        1,
+        15
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Interpretação de texto",
+      "topicCode": "IT",
+      "id": "742dfcc6-167d-44aa-8633-8c2eac36882d",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026LPITLEGALLEPMCANDIDOGODOI2",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 6,
+      "heading": "",
+      "stem": "No trecho, O objetivo é permitir que o equipamento seja usado para conter temporariamente um agressor, a palavra sublinhada pode ser substituída, sem prejuízo de sentido no contexto, por qual termo?",
+      "stemRows": [
+        {
+          "y": 504.71999999999997,
+          "text": "No trecho, O objetivo é permitir que o"
+        },
+        {
+          "y": 517.68,
+          "text": "equipamento seja usado para conter temporariamente"
+        },
+        {
+          "y": 529.92,
+          "text": "um agressor, a palavra sublinhada pode ser substituída,"
+        },
+        {
+          "y": 543.1199999999999,
+          "text": "sem prejuízo de sentido no contexto, por qual termo?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "combater"
+        },
+        {
+          "letter": "B",
+          "text": "afastar."
+        },
+        {
+          "letter": "C",
+          "text": "ref rear."
+        },
+        {
+          "letter": "D",
+          "text": "orientar."
+        }
+      ],
+      "optionsStartY": 568.56,
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "startY": 504.71999999999997,
+      "endY": 620.04,
+      "contextText": "Mulheres podem comprar e usar spray de pimenta para defesa pessoal Mulheres maiores de 18 anos podem adquirir e portar spray de pimenta para fins de defesa pessoal em todo o território nacional. A medida está prevista na Lei no 15.474, sancionada pela Presidência da República e publicada ainda no final de julho, no Diário Oficial da União. A norma autoriza a comercialização, a aquisição e a posse desses dispositivos por mulheres adultas, desde que os produtos sejam aprovados pelos orgãos competentes. O objetivo é permitir que o equipamento seja usado para conter temporariamente um agressor em situações de ameaça à integridade física ou sexual. Pela lei, será considerado aerossol de extratos vegetais o dispositivo portátil de menor potencial oÍensivo que utilize spray de pimenta à base de oleorresina de capsicum ou outros extratos vegetais autorizados. Na sanção da lei, foivetado o trecho do projeto que autorizava o uso da substância às mulheres maiores de 16 (dezesseis) e menores de 18 (dezoito) anos, mediante autorização expressa de seu responsável legal. Assim, para comprar o produto, será preciso comprovar ter pelo menos 1B anos, apresentar documento oficial com foto e comprovante de residência fixa, alem de declarar não possuir condenação por crime doloso cometido com violência ou grave ameaça. Os estabelecimentos autorizados a vender o equipamento deverão manter registros das vendas por cinco anos, observando as regras da Lei Geral de Proteção de Dados (LGPD). Tambem terão de fornecer orientações básicas sobre o uso correto do dispositivo e registrar as informações da compradora em um banco de dados a ser criado pelo governo federal. A norma determina ainda que o spray será de uso individual e intransferível e não poderá conter substâncias letais ou de toxicidade permanente. O uso do aerossol será considerado lícito apenas em situações de legítima deÍesa, para repelir agressão injusta, atual ou iminente, conforme previsto no Codigo Penal. A lei estabelece que a utilização deve ser proporcional à ameaça e interrompida assim que o risco for neutralizado. O texto também restringe recipientes com capacidade superior a 50 mililitros. Esses produtos serão classificados como de uso restrito e destinados exclusivamente às Forças Armadas, aos orgãos de segurança pública, às guardas municipais e a instituiçoes responsáveis pela proteção de autoridades e instalações governamentais. A legislação cria ainda o Programa Nacional de Capacitação em DeÍesa Pessoal e Uso de Instrumentos de Menor Potencial Ofensivo para Mulheres. Entre as diretrizes da iniciativa estão a orientação sobre os limites legais da legítima defesa, a divulgação de informações sobre violência domestica e canais de denúncia, alem da promoção de campanhas educativas sobre o uso responsável do spray. Segundo a lei, a implementação do programa ocorrerá de forma gradual, conforme regulamentação posterior do governo. Fonte: https://agenciabrasil.ebc.com.brlgeral/ nolicia /2026- 07lmu lherespodem-comprar-e-usar-spray-de-pimenta -para-deÍesapessoal (adaptado).",
+      "contextRange": [
+        1,
+        15
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "d435936f-3096-4fff-b371-7b8ecab9f67a",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026LPGLEGALLEPMCANDIDOGODOI4",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 7,
+      "heading": "",
+      "stem": "No segundo parágrafo do texto, o autor registra:...maiores de 16 (dezesseis) e menores de 18 (dezoito) anos... Nesse contexto, os parênteses cumprem o papel de:",
+      "stemRows": [
+        {
+          "y": 635.04,
+          "text": "No segundo parágrafo do texto, o autor"
+        },
+        {
+          "y": 647.76,
+          "text": "registra: ...maiores de 16 (dezesseis) e menores de 18"
+        },
+        {
+          "y": 660.24,
+          "text": "(dezoito) anos... Nesse contexto, os parênteses cumprem"
+        },
+        {
+          "y": 673.4399999999999,
+          "text": "o papel de:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Introduzir uma retificação de dados em linguagem coloquial para se aproximar do leitor civil."
+        },
+        {
+          "letter": "B",
+          "text": "Marcar uma opinião de cunho pessoal que demonstra o descontentamento do autor com a LGPD."
+        },
+        {
+          "letter": "C",
+          "text": "Isolar a grafia por extenso de numerais, prática tecnica comum para conferi r clareza a textos legais."
+        },
+        {
+          "letter": "D",
+          "text": "Separar uma oração coordenada explicativa reduzida de gerúndio que restringe o sentido da lei."
+        }
+      ],
+      "optionsStartY": 699.12,
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "startY": 635.04,
+      "endY": 806.28,
+      "contextText": "Mulheres podem comprar e usar spray de pimenta para defesa pessoal Mulheres maiores de 18 anos podem adquirir e portar spray de pimenta para fins de defesa pessoal em todo o território nacional. A medida está prevista na Lei no 15.474, sancionada pela Presidência da República e publicada ainda no final de julho, no Diário Oficial da União. A norma autoriza a comercialização, a aquisição e a posse desses dispositivos por mulheres adultas, desde que os produtos sejam aprovados pelos orgãos competentes. O objetivo é permitir que o equipamento seja usado para conter temporariamente um agressor em situações de ameaça à integridade física ou sexual. Pela lei, será considerado aerossol de extratos vegetais o dispositivo portátil de menor potencial oÍensivo que utilize spray de pimenta à base de oleorresina de capsicum ou outros extratos vegetais autorizados. Na sanção da lei, foivetado o trecho do projeto que autorizava o uso da substância às mulheres maiores de 16 (dezesseis) e menores de 18 (dezoito) anos, mediante autorização expressa de seu responsável legal. Assim, para comprar o produto, será preciso comprovar ter pelo menos 1B anos, apresentar documento oficial com foto e comprovante de residência fixa, alem de declarar não possuir condenação por crime doloso cometido com violência ou grave ameaça. Os estabelecimentos autorizados a vender o equipamento deverão manter registros das vendas por cinco anos, observando as regras da Lei Geral de Proteção de Dados (LGPD). Tambem terão de fornecer orientações básicas sobre o uso correto do dispositivo e registrar as informações da compradora em um banco de dados a ser criado pelo governo federal. A norma determina ainda que o spray será de uso individual e intransferível e não poderá conter substâncias letais ou de toxicidade permanente. O uso do aerossol será considerado lícito apenas em situações de legítima deÍesa, para repelir agressão injusta, atual ou iminente, conforme previsto no Codigo Penal. A lei estabelece que a utilização deve ser proporcional à ameaça e interrompida assim que o risco for neutralizado. O texto também restringe recipientes com capacidade superior a 50 mililitros. Esses produtos serão classificados como de uso restrito e destinados exclusivamente às Forças Armadas, aos orgãos de segurança pública, às guardas municipais e a instituiçoes responsáveis pela proteção de autoridades e instalações governamentais. A legislação cria ainda o Programa Nacional de Capacitação em DeÍesa Pessoal e Uso de Instrumentos de Menor Potencial Ofensivo para Mulheres. Entre as diretrizes da iniciativa estão a orientação sobre os limites legais da legítima defesa, a divulgação de informações sobre violência domestica e canais de denúncia, alem da promoção de campanhas educativas sobre o uso responsável do spray. Segundo a lei, a implementação do programa ocorrerá de forma gradual, conforme regulamentação posterior do governo. Fonte: https://agenciabrasil.ebc.com.brlgeral/ nolicia /2026- 07lmu lherespodem-comprar-e-usar-spray-de-pimenta -para-deÍesapessoal (adaptado).",
+      "contextRange": [
+        1,
+        15
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "fc02ec0f-4d4b-4537-80d2-2c94c977e892",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026LPGLEGALLEPMCANDIDOGODOI5",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 8,
+      "heading": "",
+      "stem": "No quarto parágraÍo do texto, lê-se que O uso do aerossol será considerado lícito apenas em situações de legítima defesa. Sabendo disso, assinale a alternativa que apresenta o antônimo adequado para a palavra sublinhada.",
+      "stemRows": [
+        {
+          "y": 47.27999999999997,
+          "text": "No quarto parágraÍo do texto, lê-se que O"
+        },
+        {
+          "y": 60.95999999999992,
+          "text": "uso do aerossol será considerado lícito apenas em"
+        },
+        {
+          "y": 74.15999999999997,
+          "text": "situações de legítima defesa. Sabendo disso, assinale a"
+        },
+        {
+          "y": 87.12,
+          "text": "alternativa que apresenta o antônimo adequado para a"
+        },
+        {
+          "y": 100.31999999999994,
+          "text": "palavra sublinhada."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "irregular."
+        },
+        {
+          "letter": "B",
+          "text": "ilegal."
+        },
+        {
+          "letter": "C",
+          "text": "improprio."
+        },
+        {
+          "letter": "D",
+          "text": "inútil."
+        }
+      ],
+      "optionsStartY": 126.72000000000003,
+      "sourcePage": 3,
+      "sourceColumn": 1,
+      "startY": 47.27999999999997,
+      "endY": 180.36,
+      "contextText": "Mulheres podem comprar e usar spray de pimenta para defesa pessoal Mulheres maiores de 18 anos podem adquirir e portar spray de pimenta para fins de defesa pessoal em todo o território nacional. A medida está prevista na Lei no 15.474, sancionada pela Presidência da República e publicada ainda no final de julho, no Diário Oficial da União. A norma autoriza a comercialização, a aquisição e a posse desses dispositivos por mulheres adultas, desde que os produtos sejam aprovados pelos orgãos competentes. O objetivo é permitir que o equipamento seja usado para conter temporariamente um agressor em situações de ameaça à integridade física ou sexual. Pela lei, será considerado aerossol de extratos vegetais o dispositivo portátil de menor potencial oÍensivo que utilize spray de pimenta à base de oleorresina de capsicum ou outros extratos vegetais autorizados. Na sanção da lei, foivetado o trecho do projeto que autorizava o uso da substância às mulheres maiores de 16 (dezesseis) e menores de 18 (dezoito) anos, mediante autorização expressa de seu responsável legal. Assim, para comprar o produto, será preciso comprovar ter pelo menos 1B anos, apresentar documento oficial com foto e comprovante de residência fixa, alem de declarar não possuir condenação por crime doloso cometido com violência ou grave ameaça. Os estabelecimentos autorizados a vender o equipamento deverão manter registros das vendas por cinco anos, observando as regras da Lei Geral de Proteção de Dados (LGPD). Tambem terão de fornecer orientações básicas sobre o uso correto do dispositivo e registrar as informações da compradora em um banco de dados a ser criado pelo governo federal. A norma determina ainda que o spray será de uso individual e intransferível e não poderá conter substâncias letais ou de toxicidade permanente. O uso do aerossol será considerado lícito apenas em situações de legítima deÍesa, para repelir agressão injusta, atual ou iminente, conforme previsto no Codigo Penal. A lei estabelece que a utilização deve ser proporcional à ameaça e interrompida assim que o risco for neutralizado. O texto também restringe recipientes com capacidade superior a 50 mililitros. Esses produtos serão classificados como de uso restrito e destinados exclusivamente às Forças Armadas, aos orgãos de segurança pública, às guardas municipais e a instituiçoes responsáveis pela proteção de autoridades e instalações governamentais. A legislação cria ainda o Programa Nacional de Capacitação em DeÍesa Pessoal e Uso de Instrumentos de Menor Potencial Ofensivo para Mulheres. Entre as diretrizes da iniciativa estão a orientação sobre os limites legais da legítima defesa, a divulgação de informações sobre violência domestica e canais de denúncia, alem da promoção de campanhas educativas sobre o uso responsável do spray. Segundo a lei, a implementação do programa ocorrerá de forma gradual, conforme regulamentação posterior do governo. Fonte: https://agenciabrasil.ebc.com.brlgeral/ nolicia /2026- 07lmu lherespodem-comprar-e-usar-spray-de-pimenta -para-deÍesapessoal (adaptado).",
+      "contextRange": [
+        1,
+        15
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "a3c2cef8-d538-46d9-a40c-5f4cca7d345d",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026LPGLEGALLEPMCANDIDOGODOI6",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 9,
+      "heading": "",
+      "stem": "No primeiro parágraÍo, o texto menciona que a nova medida foi sancionada pela Presidência da República. No contexto de criação de leis, a palavra destacada significa que o projeto foi:",
+      "stemRows": [
+        {
+          "y": 195.36,
+          "text": "No primeiro parágraÍo, o texto menciona que"
+        },
+        {
+          "y": 208.55999999999995,
+          "text": "a nova medida foi sancionada pela Presidência da"
+        },
+        {
+          "y": 221.76,
+          "text": "República. No contexto de criação de leis, a palavra"
+        },
+        {
+          "y": 235.43999999999994,
+          "text": "destacada significa que o projeto foi:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Debatido pela comissão tecnica."
+        },
+        {
+          "letter": "B",
+          "text": "Aprovado pelo Vice-Presidente."
+        },
+        {
+          "letter": "C",
+          "text": "Proposto pelo Poder Legislativo."
+        },
+        {
+          "letter": "D",
+          "text": "Aprovado e transformado em lei"
+        }
+      ],
+      "optionsStartY": 261.36,
+      "sourcePage": 3,
+      "sourceColumn": 1,
+      "startY": 195.36,
+      "endY": 314.76,
+      "contextText": "Mulheres podem comprar e usar spray de pimenta para defesa pessoal Mulheres maiores de 18 anos podem adquirir e portar spray de pimenta para fins de defesa pessoal em todo o território nacional. A medida está prevista na Lei no 15.474, sancionada pela Presidência da República e publicada ainda no final de julho, no Diário Oficial da União. A norma autoriza a comercialização, a aquisição e a posse desses dispositivos por mulheres adultas, desde que os produtos sejam aprovados pelos orgãos competentes. O objetivo é permitir que o equipamento seja usado para conter temporariamente um agressor em situações de ameaça à integridade física ou sexual. Pela lei, será considerado aerossol de extratos vegetais o dispositivo portátil de menor potencial oÍensivo que utilize spray de pimenta à base de oleorresina de capsicum ou outros extratos vegetais autorizados. Na sanção da lei, foivetado o trecho do projeto que autorizava o uso da substância às mulheres maiores de 16 (dezesseis) e menores de 18 (dezoito) anos, mediante autorização expressa de seu responsável legal. Assim, para comprar o produto, será preciso comprovar ter pelo menos 1B anos, apresentar documento oficial com foto e comprovante de residência fixa, alem de declarar não possuir condenação por crime doloso cometido com violência ou grave ameaça. Os estabelecimentos autorizados a vender o equipamento deverão manter registros das vendas por cinco anos, observando as regras da Lei Geral de Proteção de Dados (LGPD). Tambem terão de fornecer orientações básicas sobre o uso correto do dispositivo e registrar as informações da compradora em um banco de dados a ser criado pelo governo federal. A norma determina ainda que o spray será de uso individual e intransferível e não poderá conter substâncias letais ou de toxicidade permanente. O uso do aerossol será considerado lícito apenas em situações de legítima deÍesa, para repelir agressão injusta, atual ou iminente, conforme previsto no Codigo Penal. A lei estabelece que a utilização deve ser proporcional à ameaça e interrompida assim que o risco for neutralizado. O texto também restringe recipientes com capacidade superior a 50 mililitros. Esses produtos serão classificados como de uso restrito e destinados exclusivamente às Forças Armadas, aos orgãos de segurança pública, às guardas municipais e a instituiçoes responsáveis pela proteção de autoridades e instalações governamentais. A legislação cria ainda o Programa Nacional de Capacitação em DeÍesa Pessoal e Uso de Instrumentos de Menor Potencial Ofensivo para Mulheres. Entre as diretrizes da iniciativa estão a orientação sobre os limites legais da legítima defesa, a divulgação de informações sobre violência domestica e canais de denúncia, alem da promoção de campanhas educativas sobre o uso responsável do spray. Segundo a lei, a implementação do programa ocorrerá de forma gradual, conforme regulamentação posterior do governo. Fonte: https://agenciabrasil.ebc.com.brlgeral/ nolicia /2026- 07lmu lherespodem-comprar-e-usar-spray-de-pimenta -para-deÍesapessoal (adaptado).",
+      "contextRange": [
+        1,
+        15
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Interpretação de texto",
+      "topicCode": "IT",
+      "id": "ee94b55b-a510-423c-819d-63084fb44d0f",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026LPITLEGALLEPMCANDIDOGODOI3",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 10,
+      "heading": "",
+      "stem": "A palavra Diário, presente ao longo do texto, recebe acento gráfico. Quanto à posição da sílaba tônica, essa palavra classifica-se como:",
+      "stemRows": [
+        {
+          "y": 329.76,
+          "text": "A palavra Diário, presente ao longo do texto,"
+        },
+        {
+          "y": 343.44,
+          "text": "recebe acento gráfico. Quanto à posição da sílaba tônica,"
+        },
+        {
+          "y": 356.15999999999997,
+          "text": "essa palavra classifica-se como:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Oxítona."
+        },
+        {
+          "letter": "B",
+          "text": "Proparoxítona."
+        },
+        {
+          "letter": "C",
+          "text": "Paroxítona."
+        },
+        {
+          "letter": "D",
+          "text": "Monossílabo tônico"
+        }
+      ],
+      "optionsStartY": 382.32,
+      "sourcePage": 3,
+      "sourceColumn": 1,
+      "startY": 329.76,
+      "endY": 435.71999999999997,
+      "contextText": "Mulheres podem comprar e usar spray de pimenta para defesa pessoal Mulheres maiores de 18 anos podem adquirir e portar spray de pimenta para fins de defesa pessoal em todo o território nacional. A medida está prevista na Lei no 15.474, sancionada pela Presidência da República e publicada ainda no final de julho, no Diário Oficial da União. A norma autoriza a comercialização, a aquisição e a posse desses dispositivos por mulheres adultas, desde que os produtos sejam aprovados pelos orgãos competentes. O objetivo é permitir que o equipamento seja usado para conter temporariamente um agressor em situações de ameaça à integridade física ou sexual. Pela lei, será considerado aerossol de extratos vegetais o dispositivo portátil de menor potencial oÍensivo que utilize spray de pimenta à base de oleorresina de capsicum ou outros extratos vegetais autorizados. Na sanção da lei, foivetado o trecho do projeto que autorizava o uso da substância às mulheres maiores de 16 (dezesseis) e menores de 18 (dezoito) anos, mediante autorização expressa de seu responsável legal. Assim, para comprar o produto, será preciso comprovar ter pelo menos 1B anos, apresentar documento oficial com foto e comprovante de residência fixa, alem de declarar não possuir condenação por crime doloso cometido com violência ou grave ameaça. Os estabelecimentos autorizados a vender o equipamento deverão manter registros das vendas por cinco anos, observando as regras da Lei Geral de Proteção de Dados (LGPD). Tambem terão de fornecer orientações básicas sobre o uso correto do dispositivo e registrar as informações da compradora em um banco de dados a ser criado pelo governo federal. A norma determina ainda que o spray será de uso individual e intransferível e não poderá conter substâncias letais ou de toxicidade permanente. O uso do aerossol será considerado lícito apenas em situações de legítima deÍesa, para repelir agressão injusta, atual ou iminente, conforme previsto no Codigo Penal. A lei estabelece que a utilização deve ser proporcional à ameaça e interrompida assim que o risco for neutralizado. O texto também restringe recipientes com capacidade superior a 50 mililitros. Esses produtos serão classificados como de uso restrito e destinados exclusivamente às Forças Armadas, aos orgãos de segurança pública, às guardas municipais e a instituiçoes responsáveis pela proteção de autoridades e instalações governamentais. A legislação cria ainda o Programa Nacional de Capacitação em DeÍesa Pessoal e Uso de Instrumentos de Menor Potencial Ofensivo para Mulheres. Entre as diretrizes da iniciativa estão a orientação sobre os limites legais da legítima defesa, a divulgação de informações sobre violência domestica e canais de denúncia, alem da promoção de campanhas educativas sobre o uso responsável do spray. Segundo a lei, a implementação do programa ocorrerá de forma gradual, conforme regulamentação posterior do governo. Fonte: https://agenciabrasil.ebc.com.brlgeral/ nolicia /2026- 07lmu lherespodem-comprar-e-usar-spray-de-pimenta -para-deÍesapessoal (adaptado).",
+      "contextRange": [
+        1,
+        15
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": true,
+      "expectedAlternatives": 4,
+      "pageImage": "data:image/jpeg;base64,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",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "53773486-2901-4dea-b949-86912e3346b5",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026LPGLEGALLEPMCANDIDOGODOI7",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 11,
+      "heading": "",
+      "stem": "A palavra comercialização e importante no contexto da venda do spray de pimenta. Diante disso, assinale a alternativa que apresenta a separação silábica CORRETA desse vocábulo.",
+      "stemRows": [
+        {
+          "y": 450.71999999999997,
+          "text": "A palavra comercialização e importante no"
+        },
+        {
+          "y": 463.91999999999996,
+          "text": "contexto da venda do spray de pimenta. Diante disso,"
+        },
+        {
+          "y": 477.59999999999997,
+          "text": "assinale a alternativa que apresenta a separação silábica"
+        },
+        {
+          "y": 490.79999999999995,
+          "text": "CORRETA desse vocábulo."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "co-mer-cia-li-za-ção."
+        },
+        {
+          "letter": "B",
+          "text": "com-er-ci-a-li-za-ção."
+        },
+        {
+          "letter": "C",
+          "text": "co-mer-ci-a-li-zaç-ão."
+        },
+        {
+          "letter": "D",
+          "text": "co-mer-ci-a-li-za-ção."
+        }
+      ],
+      "optionsStartY": 516.24,
+      "sourcePage": 3,
+      "sourceColumn": 1,
+      "startY": 450.71999999999997,
+      "endY": 569.64,
+      "contextText": "Mulheres podem comprar e usar spray de pimenta para defesa pessoal Mulheres maiores de 18 anos podem adquirir e portar spray de pimenta para fins de defesa pessoal em todo o território nacional. A medida está prevista na Lei no 15.474, sancionada pela Presidência da República e publicada ainda no final de julho, no Diário Oficial da União. A norma autoriza a comercialização, a aquisição e a posse desses dispositivos por mulheres adultas, desde que os produtos sejam aprovados pelos orgãos competentes. O objetivo é permitir que o equipamento seja usado para conter temporariamente um agressor em situações de ameaça à integridade física ou sexual. Pela lei, será considerado aerossol de extratos vegetais o dispositivo portátil de menor potencial oÍensivo que utilize spray de pimenta à base de oleorresina de capsicum ou outros extratos vegetais autorizados. Na sanção da lei, foivetado o trecho do projeto que autorizava o uso da substância às mulheres maiores de 16 (dezesseis) e menores de 18 (dezoito) anos, mediante autorização expressa de seu responsável legal. Assim, para comprar o produto, será preciso comprovar ter pelo menos 1B anos, apresentar documento oficial com foto e comprovante de residência fixa, alem de declarar não possuir condenação por crime doloso cometido com violência ou grave ameaça. Os estabelecimentos autorizados a vender o equipamento deverão manter registros das vendas por cinco anos, observando as regras da Lei Geral de Proteção de Dados (LGPD). Tambem terão de fornecer orientações básicas sobre o uso correto do dispositivo e registrar as informações da compradora em um banco de dados a ser criado pelo governo federal. A norma determina ainda que o spray será de uso individual e intransferível e não poderá conter substâncias letais ou de toxicidade permanente. O uso do aerossol será considerado lícito apenas em situações de legítima deÍesa, para repelir agressão injusta, atual ou iminente, conforme previsto no Codigo Penal. A lei estabelece que a utilização deve ser proporcional à ameaça e interrompida assim que o risco for neutralizado. O texto também restringe recipientes com capacidade superior a 50 mililitros. Esses produtos serão classificados como de uso restrito e destinados exclusivamente às Forças Armadas, aos orgãos de segurança pública, às guardas municipais e a instituiçoes responsáveis pela proteção de autoridades e instalações governamentais. A legislação cria ainda o Programa Nacional de Capacitação em DeÍesa Pessoal e Uso de Instrumentos de Menor Potencial Ofensivo para Mulheres. Entre as diretrizes da iniciativa estão a orientação sobre os limites legais da legítima defesa, a divulgação de informações sobre violência domestica e canais de denúncia, alem da promoção de campanhas educativas sobre o uso responsável do spray. Segundo a lei, a implementação do programa ocorrerá de forma gradual, conforme regulamentação posterior do governo. Fonte: https://agenciabrasil.ebc.com.brlgeral/ nolicia /2026- 07lmu lherespodem-comprar-e-usar-spray-de-pimenta -para-deÍesapessoal (adaptado).",
+      "contextRange": [
+        1,
+        15
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "79626af9-1682-4ac4-a113-cc45e7c5a26a",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026LPGLEGALLEPMCANDIDOGODOI8",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 12,
+      "heading": "",
+      "stem": "No período, A norma determina ainda que o spray será de uso individual e intransferíve1..., a conjunção sublinhada estabelece entre os termos uma relação gramatical de:",
+      "stemRows": [
+        {
+          "y": 584.64,
+          "text": "No período, A norma determina ainda que"
+        },
+        {
+          "y": 597.8399999999999,
+          "text": "o spray será de uso individual e intransferíve1..., a"
+        },
+        {
+          "y": 611.28,
+          "text": "conjunção sublinhada estabelece entre os termos uma"
+        },
+        {
+          "y": 624.24,
+          "text": "relação gramatical de:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Explicação, pois justifica o motivo pelo qual o aerossol de menor potencial não pode ser empregado de forma coletiva."
+        },
+        {
+          "letter": "B",
+          "text": "Oposição, uma vez que contrapõe a natureza pessoal do dispositivo com a proibição de emprestá-lo a terceiros."
+        },
+        {
+          "letter": "C",
+          "text": "Adição, pois acrescenta uma característica obrigatória do dispositivo àquela que já havia sido concluída anteriormente."
+        },
+        {
+          "letter": "D",
+          "text": "Conclusão, já que encerra o período demonstrando o resultado lógico das restrições volumetricas da lei. 3"
+        }
+      ],
+      "optionsStartY": 649.92,
+      "sourcePage": 3,
+      "sourceColumn": 1,
+      "startY": 584.64,
+      "endY": 806.28,
+      "contextText": "Mulheres podem comprar e usar spray de pimenta para defesa pessoal Mulheres maiores de 18 anos podem adquirir e portar spray de pimenta para fins de defesa pessoal em todo o território nacional. A medida está prevista na Lei no 15.474, sancionada pela Presidência da República e publicada ainda no final de julho, no Diário Oficial da União. A norma autoriza a comercialização, a aquisição e a posse desses dispositivos por mulheres adultas, desde que os produtos sejam aprovados pelos orgãos competentes. O objetivo é permitir que o equipamento seja usado para conter temporariamente um agressor em situações de ameaça à integridade física ou sexual. Pela lei, será considerado aerossol de extratos vegetais o dispositivo portátil de menor potencial oÍensivo que utilize spray de pimenta à base de oleorresina de capsicum ou outros extratos vegetais autorizados. Na sanção da lei, foivetado o trecho do projeto que autorizava o uso da substância às mulheres maiores de 16 (dezesseis) e menores de 18 (dezoito) anos, mediante autorização expressa de seu responsável legal. Assim, para comprar o produto, será preciso comprovar ter pelo menos 1B anos, apresentar documento oficial com foto e comprovante de residência fixa, alem de declarar não possuir condenação por crime doloso cometido com violência ou grave ameaça. Os estabelecimentos autorizados a vender o equipamento deverão manter registros das vendas por cinco anos, observando as regras da Lei Geral de Proteção de Dados (LGPD). Tambem terão de fornecer orientações básicas sobre o uso correto do dispositivo e registrar as informações da compradora em um banco de dados a ser criado pelo governo federal. A norma determina ainda que o spray será de uso individual e intransferível e não poderá conter substâncias letais ou de toxicidade permanente. O uso do aerossol será considerado lícito apenas em situações de legítima deÍesa, para repelir agressão injusta, atual ou iminente, conforme previsto no Codigo Penal. A lei estabelece que a utilização deve ser proporcional à ameaça e interrompida assim que o risco for neutralizado. O texto também restringe recipientes com capacidade superior a 50 mililitros. Esses produtos serão classificados como de uso restrito e destinados exclusivamente às Forças Armadas, aos orgãos de segurança pública, às guardas municipais e a instituiçoes responsáveis pela proteção de autoridades e instalações governamentais. A legislação cria ainda o Programa Nacional de Capacitação em DeÍesa Pessoal e Uso de Instrumentos de Menor Potencial Ofensivo para Mulheres. Entre as diretrizes da iniciativa estão a orientação sobre os limites legais da legítima defesa, a divulgação de informações sobre violência domestica e canais de denúncia, alem da promoção de campanhas educativas sobre o uso responsável do spray. Segundo a lei, a implementação do programa ocorrerá de forma gradual, conforme regulamentação posterior do governo. Fonte: https://agenciabrasil.ebc.com.brlgeral/ nolicia /2026- 07lmu lherespodem-comprar-e-usar-spray-de-pimenta -para-deÍesapessoal (adaptado).",
+      "contextRange": [
+        1,
+        15
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "b6173230-509f-4318-8074-261317554bbf",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026LPGLEGALLEPMCANDIDOGODOI9",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 13,
+      "heading": "",
+      "stem": "Assinale a alternativa que indica a palavra retirada do texto que contem um encontro consonantal perfeito (em que as consoantes aparecem na mesma sílaba mantendo seus sons individuais na pronúncia).",
+      "stemRows": [
+        {
+          "y": 42.48000000000002,
+          "text": "Assinale a alternativa que indica a palavra"
+        },
+        {
+          "y": 55.43999999999994,
+          "text": "retirada do texto que contem um encontro consonantal"
+        },
+        {
+          "y": 68.39999999999998,
+          "text": "perfeito (em que as consoantes aparecem na mesma"
+        },
+        {
+          "y": 82.31999999999994,
+          "text": "sílaba mantendo seus sons individuais na pronúncia)."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Extratos."
+        },
+        {
+          "letter": "B",
+          "text": "Pimenta."
+        },
+        {
+          "letter": "C",
+          "text": "Pessoa."
+        },
+        {
+          "letter": "D",
+          "text": "Mulheres."
+        }
+      ],
+      "optionsStartY": 108.24000000000001,
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "startY": 42.48000000000002,
+      "endY": 162.12,
+      "contextText": "Mulheres podem comprar e usar spray de pimenta para defesa pessoal Mulheres maiores de 18 anos podem adquirir e portar spray de pimenta para fins de defesa pessoal em todo o território nacional. A medida está prevista na Lei no 15.474, sancionada pela Presidência da República e publicada ainda no final de julho, no Diário Oficial da União. A norma autoriza a comercialização, a aquisição e a posse desses dispositivos por mulheres adultas, desde que os produtos sejam aprovados pelos orgãos competentes. O objetivo é permitir que o equipamento seja usado para conter temporariamente um agressor em situações de ameaça à integridade física ou sexual. Pela lei, será considerado aerossol de extratos vegetais o dispositivo portátil de menor potencial oÍensivo que utilize spray de pimenta à base de oleorresina de capsicum ou outros extratos vegetais autorizados. Na sanção da lei, foivetado o trecho do projeto que autorizava o uso da substância às mulheres maiores de 16 (dezesseis) e menores de 18 (dezoito) anos, mediante autorização expressa de seu responsável legal. Assim, para comprar o produto, será preciso comprovar ter pelo menos 1B anos, apresentar documento oficial com foto e comprovante de residência fixa, alem de declarar não possuir condenação por crime doloso cometido com violência ou grave ameaça. Os estabelecimentos autorizados a vender o equipamento deverão manter registros das vendas por cinco anos, observando as regras da Lei Geral de Proteção de Dados (LGPD). Tambem terão de fornecer orientações básicas sobre o uso correto do dispositivo e registrar as informações da compradora em um banco de dados a ser criado pelo governo federal. A norma determina ainda que o spray será de uso individual e intransferível e não poderá conter substâncias letais ou de toxicidade permanente. O uso do aerossol será considerado lícito apenas em situações de legítima deÍesa, para repelir agressão injusta, atual ou iminente, conforme previsto no Codigo Penal. A lei estabelece que a utilização deve ser proporcional à ameaça e interrompida assim que o risco for neutralizado. O texto também restringe recipientes com capacidade superior a 50 mililitros. Esses produtos serão classificados como de uso restrito e destinados exclusivamente às Forças Armadas, aos orgãos de segurança pública, às guardas municipais e a instituiçoes responsáveis pela proteção de autoridades e instalações governamentais. A legislação cria ainda o Programa Nacional de Capacitação em DeÍesa Pessoal e Uso de Instrumentos de Menor Potencial Ofensivo para Mulheres. Entre as diretrizes da iniciativa estão a orientação sobre os limites legais da legítima defesa, a divulgação de informações sobre violência domestica e canais de denúncia, alem da promoção de campanhas educativas sobre o uso responsável do spray. Segundo a lei, a implementação do programa ocorrerá de forma gradual, conforme regulamentação posterior do governo. Fonte: https://agenciabrasil.ebc.com.brlgeral/ nolicia /2026- 07lmu lherespodem-comprar-e-usar-spray-de-pimenta -para-deÍesapessoal (adaptado).",
+      "contextRange": [
+        1,
+        15
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "60061e0e-0ea8-4407-b608-533e83d7add1",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026LPGLEGALLEPMCANDIDOGODOI10",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 14,
+      "heading": "",
+      "stem": "Considere a seguinte frase adaptada do texto: Entre os requisitos obrigatórios para a compra estão: ter dezoito anos; apresentar documento com foto; e comprovar residência. O sinal de dois-pontos foi empregado CORRETAMENTE com a finalidade de:",
+      "stemRows": [
+        {
+          "y": 177.12,
+          "text": "Considere a seguinte frase adaptada do"
+        },
+        {
+          "y": 190.31999999999994,
+          "text": "texto: Entre os requisitos obrigatórios para a compra"
+        },
+        {
+          "y": 203.51999999999998,
+          "text": "estão: ter dezoito anos; apresentar documento com"
+        },
+        {
+          "y": 216.72000000000003,
+          "text": "foto; e comprovar residência. O sinal de dois-pontos foi"
+        },
+        {
+          "y": 230.15999999999997,
+          "text": "empregado CORRETAMENTE com a finalidade de:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Sinalizar uma citação direta retirada de uma ata oficial da Polícia Federal."
+        },
+        {
+          "letter": "B",
+          "text": "Marcar a suspensão de um pensamento interrompido pela hesitação do narrador."
+        },
+        {
+          "letter": "C",
+          "text": "Introduzir uma oração coordenada sindética explicativa de valor subjetivo."
+        },
+        {
+          "letter": "D",
+          "text": "Introduzir uma enumeração que especifica as exigências apresentadas de forma genérica."
+        }
+      ],
+      "optionsStartY": 256.0799999999999,
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "startY": 177.12,
+      "endY": 362.52,
+      "contextText": "Mulheres podem comprar e usar spray de pimenta para defesa pessoal Mulheres maiores de 18 anos podem adquirir e portar spray de pimenta para fins de defesa pessoal em todo o território nacional. A medida está prevista na Lei no 15.474, sancionada pela Presidência da República e publicada ainda no final de julho, no Diário Oficial da União. A norma autoriza a comercialização, a aquisição e a posse desses dispositivos por mulheres adultas, desde que os produtos sejam aprovados pelos orgãos competentes. O objetivo é permitir que o equipamento seja usado para conter temporariamente um agressor em situações de ameaça à integridade física ou sexual. Pela lei, será considerado aerossol de extratos vegetais o dispositivo portátil de menor potencial oÍensivo que utilize spray de pimenta à base de oleorresina de capsicum ou outros extratos vegetais autorizados. Na sanção da lei, foivetado o trecho do projeto que autorizava o uso da substância às mulheres maiores de 16 (dezesseis) e menores de 18 (dezoito) anos, mediante autorização expressa de seu responsável legal. Assim, para comprar o produto, será preciso comprovar ter pelo menos 1B anos, apresentar documento oficial com foto e comprovante de residência fixa, alem de declarar não possuir condenação por crime doloso cometido com violência ou grave ameaça. Os estabelecimentos autorizados a vender o equipamento deverão manter registros das vendas por cinco anos, observando as regras da Lei Geral de Proteção de Dados (LGPD). Tambem terão de fornecer orientações básicas sobre o uso correto do dispositivo e registrar as informações da compradora em um banco de dados a ser criado pelo governo federal. A norma determina ainda que o spray será de uso individual e intransferível e não poderá conter substâncias letais ou de toxicidade permanente. O uso do aerossol será considerado lícito apenas em situações de legítima deÍesa, para repelir agressão injusta, atual ou iminente, conforme previsto no Codigo Penal. A lei estabelece que a utilização deve ser proporcional à ameaça e interrompida assim que o risco for neutralizado. O texto também restringe recipientes com capacidade superior a 50 mililitros. Esses produtos serão classificados como de uso restrito e destinados exclusivamente às Forças Armadas, aos orgãos de segurança pública, às guardas municipais e a instituiçoes responsáveis pela proteção de autoridades e instalações governamentais. A legislação cria ainda o Programa Nacional de Capacitação em DeÍesa Pessoal e Uso de Instrumentos de Menor Potencial Ofensivo para Mulheres. Entre as diretrizes da iniciativa estão a orientação sobre os limites legais da legítima defesa, a divulgação de informações sobre violência domestica e canais de denúncia, alem da promoção de campanhas educativas sobre o uso responsável do spray. Segundo a lei, a implementação do programa ocorrerá de forma gradual, conforme regulamentação posterior do governo. Fonte: https://agenciabrasil.ebc.com.brlgeral/ nolicia /2026- 07lmu lherespodem-comprar-e-usar-spray-de-pimenta -para-deÍesapessoal (adaptado).",
+      "contextRange": [
+        1,
+        15
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "e5cf88f7-8858-4a93-aa37-edfd1acd5a73",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026LPGLEGALLEPMCANDIDOGODOI11",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 15,
+      "heading": "",
+      "stem": "Acerca das frases adaptadas do texto, assinale a alternativa que apresenta a concordância verbal inteiramente CORRETA de acordo com as exigências da norma-padrão da Língua Portuguesa.",
+      "stemRows": [
+        {
+          "y": 377.52,
+          "text": "Acerca das frases adaptadas do texto,"
+        },
+        {
+          "y": 390.71999999999997,
+          "text": "assinale a alternativa que apresenta a concordância verbal"
+        },
+        {
+          "y": 403.91999999999996,
+          "text": "inteiramente CORRETA de acordo com as exigências da"
+        },
+        {
+          "y": 417.11999999999995,
+          "text": "norma-padrão da Língua Portuguesa."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Haviam muitos estabelecimentos interessados em vender o dispositivo portátil."
+        },
+        {
+          "letter": "B",
+          "text": "Havia muitos estabelecimentos interessados em vender o dispositivo portátil."
+        },
+        {
+          "letter": "C",
+          "text": "Devem fazer os cinco anos que a lei de defesa pessoal foi regulamentada."
+        },
+        {
+          "letter": "D",
+          "text": "Sobrou apenas algumas unidades de sprays menores de 50 milllitros na prateleira. MATEMÁICA/RACXOCÍruIO lÓCrCO"
+        }
+      ],
+      "optionsStartY": 442.55999999999995,
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "startY": 377.52,
+      "endY": 559.3199999999999,
+      "contextText": "Mulheres podem comprar e usar spray de pimenta para defesa pessoal Mulheres maiores de 18 anos podem adquirir e portar spray de pimenta para fins de defesa pessoal em todo o território nacional. A medida está prevista na Lei no 15.474, sancionada pela Presidência da República e publicada ainda no final de julho, no Diário Oficial da União. A norma autoriza a comercialização, a aquisição e a posse desses dispositivos por mulheres adultas, desde que os produtos sejam aprovados pelos orgãos competentes. O objetivo é permitir que o equipamento seja usado para conter temporariamente um agressor em situações de ameaça à integridade física ou sexual. Pela lei, será considerado aerossol de extratos vegetais o dispositivo portátil de menor potencial oÍensivo que utilize spray de pimenta à base de oleorresina de capsicum ou outros extratos vegetais autorizados. Na sanção da lei, foivetado o trecho do projeto que autorizava o uso da substância às mulheres maiores de 16 (dezesseis) e menores de 18 (dezoito) anos, mediante autorização expressa de seu responsável legal. Assim, para comprar o produto, será preciso comprovar ter pelo menos 1B anos, apresentar documento oficial com foto e comprovante de residência fixa, alem de declarar não possuir condenação por crime doloso cometido com violência ou grave ameaça. Os estabelecimentos autorizados a vender o equipamento deverão manter registros das vendas por cinco anos, observando as regras da Lei Geral de Proteção de Dados (LGPD). Tambem terão de fornecer orientações básicas sobre o uso correto do dispositivo e registrar as informações da compradora em um banco de dados a ser criado pelo governo federal. A norma determina ainda que o spray será de uso individual e intransferível e não poderá conter substâncias letais ou de toxicidade permanente. O uso do aerossol será considerado lícito apenas em situações de legítima deÍesa, para repelir agressão injusta, atual ou iminente, conforme previsto no Codigo Penal. A lei estabelece que a utilização deve ser proporcional à ameaça e interrompida assim que o risco for neutralizado. O texto também restringe recipientes com capacidade superior a 50 mililitros. Esses produtos serão classificados como de uso restrito e destinados exclusivamente às Forças Armadas, aos orgãos de segurança pública, às guardas municipais e a instituiçoes responsáveis pela proteção de autoridades e instalações governamentais. A legislação cria ainda o Programa Nacional de Capacitação em DeÍesa Pessoal e Uso de Instrumentos de Menor Potencial Ofensivo para Mulheres. Entre as diretrizes da iniciativa estão a orientação sobre os limites legais da legítima defesa, a divulgação de informações sobre violência domestica e canais de denúncia, alem da promoção de campanhas educativas sobre o uso responsável do spray. Segundo a lei, a implementação do programa ocorrerá de forma gradual, conforme regulamentação posterior do governo. Fonte: https://agenciabrasil.ebc.com.brlgeral/ nolicia /2026- 07lmu lherespodem-comprar-e-usar-spray-de-pimenta -para-deÍesapessoal (adaptado).",
+      "contextRange": [
+        1,
+        15
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Gramática",
+      "topicCode": "G",
+      "id": "bc3bcff6-736f-4a3c-b991-103c73006551",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026LPGLEGALLEPMCANDIDOGODOI12",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 16,
+      "heading": "",
+      "stem": "Considere as seguintes sentenças encontradas em um manual de conduta de servidores: I. O atendimento deve ser cortês. II. Se o protocolo for aberto, então o prazo começa a contar. III. João é arquivista e Maria é técnica. IV. Protocolize este documento agora! De acordo com a lógica, um analista deve identificar quais dessas sentenças são consideradas proposições compostas, as quais são:",
+      "stemRows": [
+        {
+          "y": 574.3199999999999,
+          "text": "Considere as seguintes sentenças"
+        },
+        {
+          "y": 587.76,
+          "text": "encontradas em um manual de conduta de servidores:"
+        },
+        {
+          "y": 614.16,
+          "text": "I. O atendimento deve ser cortês."
+        },
+        {
+          "y": 626.88,
+          "text": "II. Se o protocolo for aberto, então o prazo começa a"
+        },
+        {
+          "y": 640.8,
+          "text": "contar."
+        },
+        {
+          "y": 653.76,
+          "text": "III. João é arquivista e Maria é técnica."
+        },
+        {
+          "y": 666.96,
+          "text": "IV. Protocolize este documento agora!"
+        },
+        {
+          "y": 693.5999999999999,
+          "text": "De acordo com a lógica, um analista deve identificar quais"
+        },
+        {
+          "y": 706.56,
+          "text": "dessas sentenças são consideradas proposições"
+        },
+        {
+          "y": 719.52,
+          "text": "compostas, as quais são:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "IelV,apenas."
+        },
+        {
+          "letter": "B",
+          "text": "II e III, apenas."
+        },
+        {
+          "letter": "C",
+          "text": "Iell,apenas."
+        },
+        {
+          "letter": "D",
+          "text": "nl e IV, apenas"
+        }
+      ],
+      "optionsStartY": 745.92,
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "startY": 574.3199999999999,
+      "endY": 806.28,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Raciocínio Lógico e Matemática",
+      "disciplineCode": "RL",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "af0e10f8-bd7a-4500-ad13-a7a1f652eb1d",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026RLGLEGALLEPMCANDIDOGODOI1",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 17,
+      "heading": "",
+      "stem": "Um setor administrativo planejou a compra de novos suprimentos para otimizar o atendimento ao público. Foram adquiridos doze pacotes de papel por R$ 18,00 cada, sete caixas de canetas por R$ 24,00 cada e quatro grampeadores por R$ 35,00 cada. O responsável pelo setor pagou a conta com sete notas de R$ 100,00. Considerando que o valor total da compra deve ser subtraído do montante entregue em espécie, qual será o valor exato do troco em cedulas que o servidor deverá receber apos a transação?",
+      "stemRows": [
+        {
+          "y": 42.72000000000003,
+          "text": "Um setor administrativo planejou a compra"
+        },
+        {
+          "y": 55.19999999999993,
+          "text": "de novos suprimentos para otimizar o atendimento ao"
+        },
+        {
+          "y": 67.91999999999996,
+          "text": "público. Foram adquiridos doze pacotes de papel por R$"
+        },
+        {
+          "y": 81.12,
+          "text": "18,00 cada, sete caixas de canetas por R$ 24,00 cada e"
+        },
+        {
+          "y": 93.83999999999992,
+          "text": "quatro grampeadores por R$ 35,00 cada. O responsável"
+        },
+        {
+          "y": 106.79999999999995,
+          "text": "pelo setor pagou a conta com sete notas de R$ 100,00."
+        },
+        {
+          "y": 119.75999999999999,
+          "text": "Considerando que o valor total da compra deve ser"
+        },
+        {
+          "y": 132.95999999999992,
+          "text": "subtraído do montante entregue em espécie, qual será o"
+        },
+        {
+          "y": 145.43999999999994,
+          "text": "valor exato do troco em cedulas que o servidor deverá"
+        },
+        {
+          "y": 158.64,
+          "text": "receber apos a transação?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "R$ 1e6,00"
+        },
+        {
+          "letter": "B",
+          "text": "R$ 206,00"
+        },
+        {
+          "letter": "C",
+          "text": "R$ 176,00"
+        },
+        {
+          "letter": "D",
+          "text": "R$ 186,00"
+        }
+      ],
+      "optionsStartY": 181.19999999999993,
+      "sourcePage": 4,
+      "sourceColumn": 1,
+      "startY": 42.72000000000003,
+      "endY": 233.15999999999997,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Raciocínio Lógico e Matemática",
+      "disciplineCode": "RL",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "6e6db88c-ee23-4055-b6cb-95b19b135904",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026RLGLEGALLEPMCANDIDOGODOI2",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 18,
+      "heading": "",
+      "stem": "Durante a reforma de uma área de atendimento, um técnico precisou instalar um cabo de rede conectando duas salas distantes. O rolo inicial de cabo possuía exatamente vinte metros de comprimento. Na primeira etapa, foram utilizados setecentos e cinquenta centímetros. Na segunda etapa, foram retirados mais cinco mil milímetros para realizar as conexÕes internas. Sabendo que NÃO houve desperdício, quantos centímetros de cabo ainda restam no rolo original após as duas etapas?",
+      "stemRows": [
+        {
+          "y": 248.15999999999997,
+          "text": "Durante a reforma de uma área de"
+        },
+        {
+          "y": 260.64,
+          "text": "atendimento, um técnico precisou instalar um cabo de"
+        },
+        {
+          "y": 273.8399999999999,
+          "text": "rede conectando duas salas distantes. O rolo inicial de"
+        },
+        {
+          "y": 286.31999999999994,
+          "text": "cabo possuía exatamente vinte metros de comprimento."
+        },
+        {
+          "y": 299.28,
+          "text": "Na primeira etapa, foram utilizados setecentos e cinquenta"
+        },
+        {
+          "y": 312.48,
+          "text": "centímetros. Na segunda etapa, foram retirados mais cinco"
+        },
+        {
+          "y": 324.9599999999999,
+          "text": "mil milímetros para realizar as conexÕes internas. Sabendo"
+        },
+        {
+          "y": 337.67999999999995,
+          "text": "que NÃO houve desperdício, quantos centímetros de cabo"
+        },
+        {
+          "y": 350.88,
+          "text": "ainda restam no rolo original após as duas etapas?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "750 cm"
+        },
+        {
+          "letter": "B",
+          "text": "950 cm"
+        },
+        {
+          "letter": "C",
+          "text": "850 cm"
+        },
+        {
+          "letter": "D",
+          "text": "650 cm"
+        }
+      ],
+      "optionsStartY": 373.44,
+      "sourcePage": 4,
+      "sourceColumn": 1,
+      "startY": 248.15999999999997,
+      "endY": 424.91999999999996,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Raciocínio Lógico e Matemática",
+      "disciplineCode": "RL",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "8617a390-047d-401a-ab83-3ef15ecf26e1",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026RLGLEGALLEPMCANDIDOGODOI3",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 19,
+      "heading": "",
+      "stem": "Um centro de distribuição recebeu uma carga total de quatro toneladas de alimentos para ser organizada em cestas menores. Cada cesta individual deve conter exatamente oito quilogramas de produtos variados para garantir a equidade na entrega aos cidadãos. Apos a montagem de duzentas e clnquenta cestas, quanto da carga original, expressa em quilogramas, ainda está disponível no armazém para dar continuidade ao processo de pesagem e embalagem final?",
+      "stemRows": [
+        {
+          "y": 439.91999999999996,
+          "text": "Um centro de distribuição recebeu uma"
+        },
+        {
+          "y": 452.64,
+          "text": "carga total de quatro toneladas de alimentos para ser"
+        },
+        {
+          "y": 465.59999999999997,
+          "text": "organizada em cestas menores. Cada cesta individual deve"
+        },
+        {
+          "y": 478.08,
+          "text": "conter exatamente oito quilogramas de produtos variados"
+        },
+        {
+          "y": 490.79999999999995,
+          "text": "para garantir a equidade na entrega aos cidadãos. Apos a"
+        },
+        {
+          "y": 504,
+          "text": "montagem de duzentas e clnquenta cestas, quanto da"
+        },
+        {
+          "y": 516.72,
+          "text": "carga original, expressa em quilogramas, ainda está"
+        },
+        {
+          "y": 529.44,
+          "text": "disponível no armazém para dar continuidade ao processo"
+        },
+        {
+          "y": 542.16,
+          "text": "de pesagem e embalagem final?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "2.500 kg."
+        },
+        {
+          "letter": "B",
+          "text": "1.500 kg."
+        },
+        {
+          "letter": "C",
+          "text": "3.000 kg."
+        },
+        {
+          "letter": "D",
+          "text": "2.000 kg."
+        }
+      ],
+      "optionsStartY": 565.2,
+      "sourcePage": 4,
+      "sourceColumn": 1,
+      "startY": 439.91999999999996,
+      "endY": 616.92,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Raciocínio Lógico e Matemática",
+      "disciplineCode": "RL",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "67d61e58-7e0c-49a9-b9ca-c03b80f73122",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026RLGLEGALLEPMCANDIDOGODOI4",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 20,
+      "heading": "",
+      "stem": "Um processo de auditoria interna foi dividido em três fases distintas para garantir a precisão dos dados. A primeira fase durou exatamente duas horas e quarenta minutos. A segunda fase, por ser mais complexa, demandou cento e quinze minutos de trabalho contínuo. A terceira fase foi concluída em apenas setenta e cinco minutos. Considerando que um gestor precisa consolidar o tempo total gasto em toda a auditoria, qual é o valor do resultado final expresso apenas em minutos?",
+      "stemRows": [
+        {
+          "y": 631.92,
+          "text": "Um processo de auditoria interna foi dividido"
+        },
+        {
+          "y": 644.4,
+          "text": "em três fases distintas para garantir a precisão dos dados."
+        },
+        {
+          "y": 657.5999999999999,
+          "text": "A primeira fase durou exatamente duas horas e quarenta"
+        },
+        {
+          "y": 670.0799999999999,
+          "text": "minutos. A segunda fase, por ser mais complexa,"
+        },
+        {
+          "y": 682.8,
+          "text": "demandou cento e quinze minutos de trabalho contínuo."
+        },
+        {
+          "y": 696,
+          "text": "A terceira fase foi concluída em apenas setenta e cinco"
+        },
+        {
+          "y": 708.48,
+          "text": "minutos. Considerando que um gestor precisa consolidar"
+        },
+        {
+          "y": 721.4399999999999,
+          "text": "o tempo total gasto em toda a auditoria, qual é o valor do"
+        },
+        {
+          "y": 734.64,
+          "text": "resultado final expresso apenas em minutos?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "340 rnin."
+        },
+        {
+          "letter": "B",
+          "text": "350 min."
+        },
+        {
+          "letter": "C",
+          "text": "360 min."
+        },
+        {
+          "letter": "D",
+          "text": "330 rnin. 4"
+        }
+      ],
+      "optionsStartY": 756.96,
+      "sourcePage": 4,
+      "sourceColumn": 1,
+      "startY": 631.92,
+      "endY": 806.28,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Raciocínio Lógico e Matemática",
+      "disciplineCode": "RL",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "9dc40796-7469-4d1c-874e-b9ed1473286b",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026RLGLEGALLEPMCANDIDOGODOI5",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 21,
+      "heading": "",
+      "stem": "Em uma unidade de prestação de serviços, três equipamentos passam por manutenção preventiva em intervalos regulares. O primeiro equipamento é revisado a cada doze dias, o segundo a cada dezoito dias e o terceiro a cada vinte dias. Se hoje todos os três equipamentos passaram pela manutenção simultaneamente, apos quantos dias, no mínimo, essa coincidência ocorrerá novamente, permitindo a organização previa da equipe de engenharia para realizar o trabalho conjunto?",
+      "stemRows": [
+        {
+          "y": 47.75999999999999,
+          "text": "Em uma unidade de prestação de serviços,"
+        },
+        {
+          "y": 60.24000000000001,
+          "text": "três equipamentos passam por manutenção preventiva"
+        },
+        {
+          "y": 72.95999999999992,
+          "text": "em intervalos regulares. O primeiro equipamento é revi-"
+        },
+        {
+          "y": 85.91999999999996,
+          "text": "sado a cada doze dias, o segundo a cada dezoito dias e o"
+        },
+        {
+          "y": 98.88,
+          "text": "terceiro a cada vinte dias. Se hoje todos os três equipa-"
+        },
+        {
+          "y": 111.3599999999999,
+          "text": "mentos passaram pela manutenção simultaneamente,"
+        },
+        {
+          "y": 124.31999999999994,
+          "text": "apos quantos dias, no mínimo, essa coincidência ocorrerá"
+        },
+        {
+          "y": 136.79999999999995,
+          "text": "novamente, permitindo a organização previa da equipe de"
+        },
+        {
+          "y": 149.76,
+          "text": "engenharia para realizar o trabalho conjunto?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "360 dias."
+        },
+        {
+          "letter": "B",
+          "text": "120 dias."
+        },
+        {
+          "letter": "C",
+          "text": "180 dias."
+        },
+        {
+          "letter": "D",
+          "text": "150 dias."
+        }
+      ],
+      "optionsStartY": 170.88,
+      "sourcePage": 5,
+      "sourceColumn": 0,
+      "startY": 47.75999999999999,
+      "endY": 221.39999999999998,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Raciocínio Lógico e Matemática",
+      "disciplineCode": "RL",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "49cdd17e-065e-4bf2-a07b-35f13cf83392",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026RLGLEGALLEPMCANDIDOGODOI6",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 22,
+      "heading": "",
+      "stem": "Um servidor recebeu três lotes de processos antigos para arquivamento: o primeiro com 120 pastas, o segundo com 1 50 e o terceiro com 180. Ele deve organizar esses processos em caixas, todas com o mesmo número de pastas, sendo esse número o maior possível, de modo que não sobre nenhuma pasta fora das caixas e os lotes não sejam misturados. Diante disso, qual é a quantidade máxima de pastas que o servidor poderá colocar em cada uma das caixas para cumprir tal determinação?",
+      "stemRows": [
+        {
+          "y": 236.39999999999998,
+          "text": "Um servidor recebeu três lotes de processos"
+        },
+        {
+          "y": 249.12,
+          "text": "antigos para arquivamento: o primeiro com 120 pastas, o"
+        },
+        {
+          "y": 262.31999999999994,
+          "text": "segundo com 1 50 e o terceiro com 180. Ele deve organizar"
+        },
+        {
+          "y": 274.79999999999995,
+          "text": "esses processos em caixas, todas com o mesmo número"
+        },
+        {
+          "y": 287.28,
+          "text": "de pastas, sendo esse número o maior possível, de modo"
+        },
+        {
+          "y": 300,
+          "text": "que não sobre nenhuma pasta fora das caixas e os lotes"
+        },
+        {
+          "y": 312.7199999999999,
+          "text": "não sejam misturados. Diante disso, qual é a quantidade"
+        },
+        {
+          "y": 325.43999999999994,
+          "text": "máxima de pastas que o servidor poderá colocar em cada"
+        },
+        {
+          "y": 338.15999999999997,
+          "text": "uma das caixas para cumprir tal determinação?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "20 pastas"
+        },
+        {
+          "letter": "B",
+          "text": "60 pastas"
+        },
+        {
+          "letter": "C",
+          "text": "1 5 pastas"
+        },
+        {
+          "letter": "D",
+          "text": "30 pastas"
+        }
+      ],
+      "optionsStartY": 359.52,
+      "sourcePage": 5,
+      "sourceColumn": 0,
+      "startY": 236.39999999999998,
+      "endY": 410.28,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Raciocínio Lógico e Matemática",
+      "disciplineCode": "RL",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "43065867-6fc1-4b96-bad9-5aa93ba15698",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026RLGLEGALLEPMCANDIDOGODOI7",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 23,
+      "heading": "",
+      "stem": "Para um treinamento de integração, um grupo de servidores foi dividido em equipes menores. O coordenador notou que o número total de participantes e um múltiplo de sete e também um múltiplo de nove. Além disso, sabe-se que esse número total de pessoas e o maior múltiplo comum possível dentro de um intervalo compreendido entre cem e duzentos participantes. Com base nessas propriedades aritméticas, qual é a quantidade exata de servidores que estão participando desse treinamento?",
+      "stemRows": [
+        {
+          "y": 425.28,
+          "text": "Para um treinamento de integração, um"
+        },
+        {
+          "y": 437.99999999999994,
+          "text": "grupo de servidores foi dividido em equipes menores. O"
+        },
+        {
+          "y": 450.23999999999995,
+          "text": "coordenador notou que o número total de participantes e"
+        },
+        {
+          "y": 463.19999999999993,
+          "text": "um múltiplo de sete e também um múltiplo de nove. Além"
+        },
+        {
+          "y": 475.67999999999995,
+          "text": "disso, sabe-se que esse número total de pessoas e o maior"
+        },
+        {
+          "y": 488.63999999999993,
+          "text": "múltiplo comum possível dentro de um intervalo"
+        },
+        {
+          "y": 501.11999999999995,
+          "text": "compreendido entre cem e duzentos participantes. Com"
+        },
+        {
+          "y": 513.5999999999999,
+          "text": "base nessas propriedades aritméticas, qual é a quantidade"
+        },
+        {
+          "y": 526.0799999999999,
+          "text": "exata de servidores que estão participando desse"
+        },
+        {
+          "y": 539.52,
+          "text": "treinamento?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "189 servidores."
+        },
+        {
+          "letter": "B",
+          "text": "126 servidores."
+        },
+        {
+          "letter": "C",
+          "text": "162 servidores."
+        },
+        {
+          "letter": "D",
+          "text": "147 servidores."
+        }
+      ],
+      "optionsStartY": 560.16,
+      "sourcePage": 5,
+      "sourceColumn": 0,
+      "startY": 425.28,
+      "endY": 610.68,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Raciocínio Lógico e Matemática",
+      "disciplineCode": "RL",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "b0223e39-8112-48fd-8318-c76a33bf76b1",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026RLGLEGALLEPMCANDIDOGODOI8",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 24,
+      "heading": "",
+      "stem": "Um sistema de acesso digital utiliza codigos numericos baseados em propriedades de números primos. Um servidor precisa criar uma nova senha que seja o resultado da soma de todos os números primos estritamente maiores que dez e estritamente menores que trinta. Ao realizar essa operação aritmetica simples, seguindo as regras de segurança estabelecidas pelo departamento de tecnologia da informação, o servidor chegará a um valor final. Diante disso, qual é esse número que compõe a senha de acesso?",
+      "stemRows": [
+        {
+          "y": 625.68,
+          "text": "Um sistema de acesso digital utiliza codigos"
+        },
+        {
+          "y": 637.68,
+          "text": "numericos baseados em propriedades de números primos."
+        },
+        {
+          "y": 650.4,
+          "text": "Um servidor precisa criar uma nova senha que seja o"
+        },
+        {
+          "y": 663.1199999999999,
+          "text": "resultado da soma de todos os números primos"
+        },
+        {
+          "y": 676.0799999999999,
+          "text": "estritamente maiores que dez e estritamente menores que"
+        },
+        {
+          "y": 688.8,
+          "text": "trinta. Ao realizar essa operação aritmetica simples,"
+        },
+        {
+          "y": 701.04,
+          "text": "seguindo as regras de segurança estabelecidas pelo"
+        },
+        {
+          "y": 714,
+          "text": "departamento de tecnologia da informação, o servidor"
+        },
+        {
+          "y": 726.24,
+          "text": "chegará a um valor final. Diante disso, qual é esse número"
+        },
+        {
+          "y": 738.9599999999999,
+          "text": "que compõe a senha de acesso?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "112."
+        },
+        {
+          "letter": "B",
+          "text": "121."
+        },
+        {
+          "letter": "C",
+          "text": "1 1s."
+        },
+        {
+          "letter": "D",
+          "text": "104."
+        }
+      ],
+      "optionsStartY": 760.0799999999999,
+      "sourcePage": 5,
+      "sourceColumn": 0,
+      "startY": 625.68,
+      "endY": 805.8,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Raciocínio Lógico e Matemática",
+      "disciplineCode": "RL",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "373d3ce0-2eb4-4b2a-ad00-6477d5ea6b44",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026RLGLEGALLEPMCANDIDOGODOI9",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 25,
+      "heading": "",
+      "stem": "Um setor operacional registrou o tempo de trabalho de uma equipe em dois turnos diferentes durante cinco dias úteis. No primeiro turno, cada servidor trabalhou quatro horas e, no segundo turno, três horas. Para calcular o total de horas trabalhadas por um servidor na semana, o chefe utilizou a propriedade distributiva da multiplicação em relação à adição: 5 x ( 4 + 3 ). Considerando que um estagiário deseja saber o valor numérico final desse cálculo para reportar a produtividade semanal CORRETA desse servidor, qual seria o valor?",
+      "stemRows": [
+        {
+          "y": 48,
+          "text": "Um setor operacional registrou o tempo de"
+        },
+        {
+          "y": 61.91999999999996,
+          "text": "trabalho de uma equipe em dois turnos diferentes durante"
+        },
+        {
+          "y": 74.88,
+          "text": "cinco dias úteis. No primeiro turno, cada servidor"
+        },
+        {
+          "y": 88.79999999999995,
+          "text": "trabalhou quatro horas e, no segundo turno, três horas."
+        },
+        {
+          "y": 102.24000000000001,
+          "text": "Para calcular o total de horas trabalhadas por um servidor"
+        },
+        {
+          "y": 116.39999999999998,
+          "text": "na semana, o chefe utilizou a propriedade distributiva da"
+        },
+        {
+          "y": 129.83999999999992,
+          "text": "multiplicação em relação à adição: 5 x ( 4 + 3 )."
+        },
+        {
+          "y": 143.27999999999997,
+          "text": "Considerando que um estagiário deseja saber o valor"
+        },
+        {
+          "y": 156.7199999999999,
+          "text": "numérico final desse cálculo para reportar a produtividade"
+        },
+        {
+          "y": 170.88,
+          "text": "semanal CORRETA desse servidor, qual seria o valor?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "23 horas."
+        },
+        {
+          "letter": "B",
+          "text": "30 horas."
+        },
+        {
+          "letter": "C",
+          "text": "35 horas."
+        },
+        {
+          "letter": "D",
+          "text": "40 horas. UTILIZE ESTE ESP PARA CÁLCULOS ATUAUDADES"
+        }
+      ],
+      "optionsStartY": 197.76,
+      "sourcePage": 5,
+      "sourceColumn": 1,
+      "startY": 48,
+      "endY": 692.28,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Raciocínio Lógico e Matemática",
+      "disciplineCode": "RL",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "c02cdd48-9473-48a9-9f92-349bd33fe750",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026RLGLEGALLEPMCANDIDOGODOI10",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 26,
+      "heading": "",
+      "stem": "Em qualdia e mês a comunidade de Cândido Godoi celebra oficialmente o seu aniversário de fundação e emancipação política?",
+      "stemRows": [
+        {
+          "y": 707.28,
+          "text": "Em qualdia e mês a comunidade de Cândido"
+        },
+        {
+          "y": 720.9599999999999,
+          "text": "Godoi celebra oficialmente o seu aniversário de fundação"
+        },
+        {
+          "y": 733.68,
+          "text": "e emancipação política?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "9 de outubro."
+        },
+        {
+          "letter": "B",
+          "text": "25 de janeiro."
+        },
+        {
+          "letter": "C",
+          "text": "18 de setembro."
+        },
+        {
+          "letter": "D",
+          "text": "1 de julho. 5"
+        }
+      ],
+      "optionsStartY": 759.8399999999999,
+      "sourcePage": 5,
+      "sourceColumn": 1,
+      "startY": 707.28,
+      "endY": 805.8,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Atualidades",
+      "disciplineCode": "CG",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "773682fe-1ece-4a77-bbef-621286e5fffc",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026CGGLEGALLEPMCANDIDOGODOI1",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 27,
+      "heading": "",
+      "stem": "Os portugueses iniciaram a exploração do territorio brasileiro a partir do ano de 1500. Qual foi o primeiro produto natural retirado e comercializado por eles na fase colonial?",
+      "stemRows": [
+        {
+          "y": 40.319999999999936,
+          "text": "Os portugueses iniciaram a exploração do"
+        },
+        {
+          "y": 53.039999999999964,
+          "text": "territorio brasileiro a partir do ano de 1500. Qual foi o"
+        },
+        {
+          "y": 65.75999999999999,
+          "text": "primeiro produto natural retirado e comercializado por"
+        },
+        {
+          "y": 78.95999999999992,
+          "text": "eles na fase colonial?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Cana-de-açúcar."
+        },
+        {
+          "letter": "B",
+          "text": "Ouro e diamantes"
+        },
+        {
+          "letter": "C",
+          "text": "Pau-brasil."
+        },
+        {
+          "letter": "D",
+          "text": "Café em grão."
+        }
+      ],
+      "optionsStartY": 104.15999999999997,
+      "sourcePage": 6,
+      "sourceColumn": 0,
+      "startY": 40.319999999999936,
+      "endY": 155.88,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Atualidades",
+      "disciplineCode": "CG",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "19425af9-320b-44b5-89a3-03b17bf4bfe9",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026CGGLEGALLEPMCANDIDOGODOI2",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 28,
+      "heading": "",
+      "stem": "O Instituto Brasileiro de Geografia e Estatística (IBGE) mapeia a cobertura vegetal das cidades. Diante disso, qual é o bioma predominante do município de Cândido Godoi?",
+      "stemRows": [
+        {
+          "y": 170.88,
+          "text": "O Instituto Brasileiro de Geografia e"
+        },
+        {
+          "y": 183.12,
+          "text": "Estatística (IBGE) mapeia a cobertura vegetal das cidades."
+        },
+        {
+          "y": 196.31999999999994,
+          "text": "Diante disso, qual é o bioma predominante do município"
+        },
+        {
+          "y": 209.76,
+          "text": "de Cândido Godoi?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Pampa."
+        },
+        {
+          "letter": "B",
+          "text": "Mata Atlântica."
+        },
+        {
+          "letter": "C",
+          "text": "Cerrado."
+        },
+        {
+          "letter": "D",
+          "text": "Caatinga."
+        }
+      ],
+      "optionsStartY": 234.7199999999999,
+      "sourcePage": 6,
+      "sourceColumn": 0,
+      "startY": 170.88,
+      "endY": 286.67999999999995,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Atualidades",
+      "disciplineCode": "CG",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "9dd3beac-5dd4-4eec-8937-e6c644966984",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026CGGLEGALLEPMCANDIDOGODOI3",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 29,
+      "heading": "",
+      "stem": "A instauração da República no Brasil ocorreu após um movimento conduzido por militares no final do século XIX. Com isso, qual marechal liderou esse movimento militar em 15 de novembro de 1889?",
+      "stemRows": [
+        {
+          "y": 301.67999999999995,
+          "text": "A instauração da República no Brasil ocorreu"
+        },
+        {
+          "y": 314.15999999999997,
+          "text": "após um movimento conduzido por militares no final do"
+        },
+        {
+          "y": 327.11999999999995,
+          "text": "século XIX. Com isso, qual marechal liderou esse"
+        },
+        {
+          "y": 339.84,
+          "text": "movimento militar em 15 de novembro de 1889?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Washington Luís."
+        },
+        {
+          "letter": "B",
+          "text": "Eurico Gaspar Dutra."
+        },
+        {
+          "letter": "C",
+          "text": "Deodoro da Fonseca"
+        },
+        {
+          "letter": "D",
+          "text": "Getúlio Vargas."
+        }
+      ],
+      "optionsStartY": 365.03999999999996,
+      "sourcePage": 6,
+      "sourceColumn": 0,
+      "startY": 301.67999999999995,
+      "endY": 416.28,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Atualidades",
+      "disciplineCode": "CG",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "0d619c3c-5e0b-4b16-b389-cfd11654686a",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026CGGLEGALLEPMCANDIDOGODOI4",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 30,
+      "heading": "",
+      "stem": "O Brasil comercializa regularmente uma grande diversidade de mercadorias no exterior. Assim, qual nação e, atualmente, o nosso principal parceiro comercial e destino das nossas exportações?",
+      "stemRows": [
+        {
+          "y": 431.28,
+          "text": "O Brasil comercializa regularmente uma"
+        },
+        {
+          "y": 443.76,
+          "text": "grande diversidade de mercadorias no exterior. Assim,"
+        },
+        {
+          "y": 456.47999999999996,
+          "text": "qual nação e, atualmente, o nosso principal parceiro"
+        },
+        {
+          "y": 469.67999999999995,
+          "text": "comercial e destino das nossas exportações?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Estados Unidos."
+        },
+        {
+          "letter": "B",
+          "text": "Argentina."
+        },
+        {
+          "letter": "C",
+          "text": "China."
+        },
+        {
+          "letter": "D",
+          "text": "Alemanha."
+        }
+      ],
+      "optionsStartY": 494.87999999999994,
+      "sourcePage": 6,
+      "sourceColumn": 0,
+      "startY": 431.28,
+      "endY": 555.24,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Atualidades",
+      "disciplineCode": "CG",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "ecc5127c-d948-4739-a264-e7b51011ab3b",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026CGGLEGALLEPMCANDIDOGODOI5",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 31,
+      "heading": "",
+      "stem": "Analise as partes que seguem: O servidor só perde o cargo em virtude de sentença judicial transitada em julgado, ou mediante processo administrativo em que lhe seja assegurada ampla defesa (f a parte), ou ainda mediante procedimento de avaliação periodica de desempenho, assegurada ampla defesa (2a parte). Acerca das partes, pode-se afirmar que, conforme o Estatuto e Regime Jurídico dos Servidores Públicos:",
+      "stemRows": [
+        {
+          "y": 570.24,
+          "text": "Analise as partes que seguem: O servidor só"
+        },
+        {
+          "y": 582.48,
+          "text": "perde o cargo em virtude de sentença judicial transitada"
+        },
+        {
+          "y": 595.1999999999999,
+          "text": "em julgado, ou mediante processo administrativo em que"
+        },
+        {
+          "y": 605.76,
+          "text": "lhe seja assegurada ampla defesa (f a parte), ou ainda"
+        },
+        {
+          "y": 621.5999999999999,
+          "text": "mediante procedimento de avaliação periodica de"
+        },
+        {
+          "y": 634.3199999999999,
+          "text": "desempenho, assegurada ampla defesa (2a parte)."
+        },
+        {
+          "y": 660,
+          "text": "Acerca das partes, pode-se afirmar que, conforme o"
+        },
+        {
+          "y": 673.1999999999999,
+          "text": "Estatuto e Regime Jurídico dos Servidores Públicos:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Assim como a 1a parte está correta, tem-se que a 2\" parte também está."
+        },
+        {
+          "letter": "B",
+          "text": "Enquanto a 1a parte está correta, sabe-se que a 2a parte não está."
+        },
+        {
+          "letter": "C",
+          "text": "Enquanto a 1u parte está incorreta, sabe-se que a 2u parte não está."
+        },
+        {
+          "letter": "D",
+          "text": "Assim como a 'l a parte está incorreta, tem-se que a 2a parte também está."
+        }
+      ],
+      "optionsStartY": 698.16,
+      "sourcePage": 6,
+      "sourceColumn": 0,
+      "startY": 570.24,
+      "endY": 806.04,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Legislação municipal",
+      "topicCode": "G",
+      "id": "75f4c4db-5227-4022-8b35-c3780bc29677",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026LEGLEGALLEPMCANDIDOGODOI1",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 32,
+      "heading": "",
+      "stem": "Para posse e para exercício, o Estatuto e Regime Jurídico dos Servidores Públicos apresenta determinados prazos que devem ser observados e rigidamente seguidos. Nesse sentido, considerando que exercício é o efetivo desempenho das atribuições do cargo, qual das alternativas abaixo apresenta o prazo contado da data da posse existente para o exercício, e se há possibilidade de prorrogação?",
+      "stemRows": [
+        {
+          "y": 40.07999999999993,
+          "text": "Para posse e para exercício, o Estatuto e"
+        },
+        {
+          "y": 53.51999999999998,
+          "text": "Regime Jurídico dos Servidores Públicos apresenta"
+        },
+        {
+          "y": 66.48000000000002,
+          "text": "determinados prazos que devem ser observados e"
+        },
+        {
+          "y": 79.67999999999995,
+          "text": "rigidamente seguidos. Nesse sentido, considerando que"
+        },
+        {
+          "y": 92.63999999999999,
+          "text": "exercício é o efetivo desempenho das atribuições do"
+        },
+        {
+          "y": 105.36000000000001,
+          "text": "cargo, qual das alternativas abaixo apresenta o prazo"
+        },
+        {
+          "y": 118.31999999999994,
+          "text": "contado da data da posse existente para o exercício, e se"
+        },
+        {
+          "y": 131.27999999999997,
+          "text": "há possibilidade de prorrogação?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "'10 dias, sem possibilidade de prorrogação."
+        },
+        {
+          "letter": "B",
+          "text": "15 dias, sem possibilidade de prorrogação."
+        },
+        {
+          "letter": "C",
+          "text": "10 dias, com possibilidade de prorrogação."
+        },
+        {
+          "letter": "D",
+          "text": "15 dias, com possibilidade de prorrogação."
+        }
+      ],
+      "optionsStartY": 154.07999999999993,
+      "sourcePage": 6,
+      "sourceColumn": 1,
+      "startY": 40.07999999999993,
+      "endY": 209.64,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Legislação municipal",
+      "topicCode": "G",
+      "id": "e36b4e13-5774-4ec2-a746-0f2e05eaa721",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026LEGLEGALLEPMCANDIDOGODOI2",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 33,
+      "heading": "",
+      "stem": "Sabe-se, através da Lei Orgânica, que a cidade de Cândido Godoi é a sede do Município, a qual somente pode ser alterada mediante lei complementar municipal e apos a consulta plebiscitária. Ainda, o Município pode descentralizar sua Admirristração atraves da criação, por lei, de:",
+      "stemRows": [
+        {
+          "y": 224.64,
+          "text": "Sabe-se, através da Lei Orgânica, que a"
+        },
+        {
+          "y": 237.5999999999999,
+          "text": "cidade de Cândido Godoi é a sede do Município, a qual"
+        },
+        {
+          "y": 250.55999999999995,
+          "text": "somente pode ser alterada mediante lei complementar"
+        },
+        {
+          "y": 263.28,
+          "text": "municipal e apos a consulta plebiscitária. Ainda, o"
+        },
+        {
+          "y": 276.7199999999999,
+          "text": "Município pode descentralizar sua Admirristração atraves"
+        },
+        {
+          "y": 289.43999999999994,
+          "text": "da criação, por lei, de:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Vilas Históricas."
+        },
+        {
+          "letter": "B",
+          "text": "Distritos Administrativos."
+        },
+        {
+          "letter": "C",
+          "text": "Bairros Tradicionais."
+        },
+        {
+          "letter": "D",
+          "text": "Vilarejos Locais."
+        }
+      ],
+      "optionsStartY": 314.88,
+      "sourcePage": 6,
+      "sourceColumn": 1,
+      "startY": 224.64,
+      "endY": 367.08,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Legislação municipal",
+      "topicCode": "G",
+      "id": "46e3553e-f54a-4cff-8819-3a7f5ae92bca",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026LEGLEGALLEPMCANDIDOGODOI3",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 34,
+      "heading": "",
+      "stem": "Atuar com a cooperação técnica e financeira da União e do Estado, nos programas de educação preescolar e de ensino fundamental em consonância com o sistema estadual de ensino, e estabelecer normas de edificação, loteamento, arruamento e zoneamento urbano e rural, bem como as limitaçoes urbanísticas convenientes à ordenação do seu território, observada a lei federal, conforme a Lei Orgânica, são dois exemplos de atribuições de competência:",
+      "stemRows": [
+        {
+          "y": 382.08,
+          "text": "Atuar com a cooperação técnica e financeira"
+        },
+        {
+          "y": 395.03999999999996,
+          "text": "da União e do Estado, nos programas de educação pre-"
+        },
+        {
+          "y": 407.99999999999994,
+          "text": "escolar e de ensino fundamental em consonância com o"
+        },
+        {
+          "y": 420.71999999999997,
+          "text": "sistema estadual de ensino, e estabelecer normas de"
+        },
+        {
+          "y": 433.91999999999996,
+          "text": "edificação, loteamento, arruamento e zoneamento urbano"
+        },
+        {
+          "y": 446.64,
+          "text": "e rural, bem como as limitaçoes urbanísticas convenientes"
+        },
+        {
+          "y": 459.59999999999997,
+          "text": "à ordenação do seu território, observada a lei federal,"
+        },
+        {
+          "y": 472.55999999999995,
+          "text": "conforme a Lei Orgânica, são dois exemplos de atribuições"
+        },
+        {
+          "y": 485.76,
+          "text": "de competência:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Comum."
+        },
+        {
+          "letter": "B",
+          "text": "Associada."
+        },
+        {
+          "letter": "C",
+          "text": "Privada."
+        },
+        {
+          "letter": "D",
+          "text": "Suplementar"
+        }
+      ],
+      "optionsStartY": 510.71999999999997,
+      "sourcePage": 6,
+      "sourceColumn": 1,
+      "startY": 382.08,
+      "endY": 562.92,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Legislação municipal",
+      "topicCode": "G",
+      "id": "de1f32e4-8edd-41fd-8d02-ed57863f7590",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026LEGLEGALLEPMCANDIDOGODOI4",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 35,
+      "heading": "",
+      "stem": "De acordo com o Estatuto e Regime Jurídico dos Servidores Públicos, nos casos de cometimento de falta disciplinar, inclusive durante o primeiro e o último trimestre, o estagiário terá a sua responsabilidade apurada atraves de sindicância ou processo administrativo disciplinar, observadas as normas estatutárias. A partir disso, assinale a alternativa CORRETA.",
+      "stemRows": [
+        {
+          "y": 577.92,
+          "text": "De acordo com o Estatuto e Regime Jurídico"
+        },
+        {
+          "y": 590.88,
+          "text": "dos Servidores Públicos, nos casos de cometimento de"
+        },
+        {
+          "y": 603.5999999999999,
+          "text": "falta disciplinar, inclusive durante o primeiro e o último"
+        },
+        {
+          "y": 617.04,
+          "text": "trimestre, o estagiário terá a sua responsabilidade apurada"
+        },
+        {
+          "y": 629.52,
+          "text": "atraves de sindicância ou processo administrativo"
+        },
+        {
+          "y": 642.72,
+          "text": "disciplinar, observadas as normas estatutárias. A partir"
+        },
+        {
+          "y": 655.92,
+          "text": "disso, assinale a alternativa CORRETA."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Enquanto a responsabilidade for apurada, o estágio probatório entra em suspensão e não e mais avaliado."
+        },
+        {
+          "letter": "B",
+          "text": "A responsabilidade será apurada independentemente da continuidade da apuração do estágio probatorio."
+        },
+        {
+          "letter": "C",
+          "text": "O suposto cometimento de falta e suficiente para exoneração no processo de avaliação do estágio."
+        },
+        {
+          "letter": "D",
+          "text": "Em virtude de o servidor estar em estágio, não ocorre avaliação de responsabilidade por falta disciplinar. b"
+        }
+      ],
+      "optionsStartY": 680.88,
+      "sourcePage": 6,
+      "sourceColumn": 1,
+      "startY": 577.92,
+      "endY": 806.04,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Legislação municipal",
+      "topicCode": "G",
+      "id": "4d69f62d-b0c9-4162-8f42-d8a023a1caa2",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026LEGLEGALLEPMCANDIDOGODOI5",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 36,
+      "heading": "",
+      "stem": "Analise o texto que segue, acerca da Lei Orgânica: O Poder Legíslativo é exercido pela Prefeitura Municipal constituída de representdntes do povo, eleitos pelo sistema proporcional, por voto díreto e secreto, em eleições simu/tâneas em todo o país, observadas algumas condições de elegíbi/idade. Acerca do texto, pode-se afirmar que ele está:",
+      "stemRows": [
+        {
+          "y": 47.75999999999999,
+          "text": "Analise o texto que segue, acerca da Lei"
+        },
+        {
+          "y": 61.91999999999996,
+          "text": "Orgânica:"
+        },
+        {
+          "y": 89.27999999999997,
+          "text": "O Poder Legíslativo é exercido pela Prefeitura Municipal"
+        },
+        {
+          "y": 102.95999999999992,
+          "text": "constituída de representdntes do povo, eleitos pelo"
+        },
+        {
+          "y": 116.63999999999999,
+          "text": "sistema proporcional, por voto díreto e secreto, em"
+        },
+        {
+          "y": 130.55999999999995,
+          "text": "eleições simu/tâneas em todo o país, observadas algumas"
+        },
+        {
+          "y": 144.7199999999999,
+          "text": "condições de elegíbi/idade."
+        },
+        {
+          "y": 171.83999999999992,
+          "text": "Acerca do texto, pode-se afirmar que ele está:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Plenamente adequado, visto que observa a legislação municipal vigente."
+        },
+        {
+          "letter": "B",
+          "text": "Plenamente inadequado, visto que em nada observa a legislação municipal vigente."
+        },
+        {
+          "letter": "C",
+          "text": "Parcialmente adequado, visto que o voto é direto mas não é secreto."
+        },
+        {
+          "letter": "D",
+          "text": "Parcialmente adequado, visto que o Poder Legislativo é exercido pela Câmara Municipal."
+        }
+      ],
+      "optionsStartY": 199.19999999999993,
+      "sourcePage": 7,
+      "sourceColumn": 0,
+      "startY": 47.75999999999999,
+      "endY": 310.91999999999996,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Legislação municipal",
+      "topicCode": "G",
+      "id": "d6bd6a96-20bc-4a94-a273-b3717e45c712",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026LEGLEGALLEPMCANDIDOGODOI6",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 37,
+      "heading": "",
+      "stem": "Antes de um cidadão ingressar no serviço público, haverá sempre uma inspeção médica a ser realizada pelo orgão de perícia oficial. Acerca disso, conforme o Estatuto e Regime.Jurídico dos Servidores Públicos, analise as assertivas: I. Não podem ser exigidos exames suplementares, somente os exames padronizados esperados de todos. II. Os candidatos julgados temporariamente inaptos não podem pedir nova inspeção medica. Acerca das assertivas, pode-se afirmar que:",
+      "stemRows": [
+        {
+          "y": 325.91999999999996,
+          "text": "Antes de um cidadão ingressar no serviço"
+        },
+        {
+          "y": 339.35999999999996,
+          "text": "público, haverá sempre uma inspeção médica a ser"
+        },
+        {
+          "y": 353.28,
+          "text": "realizada pelo orgão de perícia oficial. Acerca disso,"
+        },
+        {
+          "y": 367.43999999999994,
+          "text": "conforme o Estatuto e Regime .Jurídico dos Servidores"
+        },
+        {
+          "y": 381.11999999999995,
+          "text": "Públicos, analise as assertivas:"
+        },
+        {
+          "y": 408.23999999999995,
+          "text": "I. Não podem ser exigidos exames suplementares,"
+        },
+        {
+          "y": 422.15999999999997,
+          "text": "somente os exames padronizados esperados de todos."
+        },
+        {
+          "y": 435.35999999999996,
+          "text": "II. Os candidatos julgados temporariamente inaptos não"
+        },
+        {
+          "y": 449.76,
+          "text": "podem pedir nova inspeção medica."
+        },
+        {
+          "y": 477.59999999999997,
+          "text": "Acerca das assertivas, pode-se afirmar que:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Apenas I está correta."
+        },
+        {
+          "letter": "B",
+          "text": "I e II estão corretas."
+        },
+        {
+          "letter": "C",
+          "text": "Apenas I está incorreta."
+        },
+        {
+          "letter": "D",
+          "text": "I e II estão incorretas."
+        }
+      ],
+      "optionsStartY": 504.47999999999996,
+      "sourcePage": 7,
+      "sourceColumn": 0,
+      "startY": 325.91999999999996,
+      "endY": 560.52,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Legislação municipal",
+      "topicCode": "G",
+      "id": "bc2605d0-89c8-49c2-923b-2a4640d3ceb6",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026LEGLEGALLEPMCANDIDOGODOI7",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 38,
+      "heading": "",
+      "stem": "As assertivas a seguir apresentam exemplos de princípios e objetivos do Município, conÍorme a Lei Orgânica: I. Busca permanente da justiça social. II. Defesa do meio ambiente e da qualidade de vida. III. Prestação eficiente dos serviços públicos, garantida a modalidade das tarifas. Estão CORRETAS:",
+      "stemRows": [
+        {
+          "y": 575.52,
+          "text": "As assertivas a seguir apresentam exemplos"
+        },
+        {
+          "y": 588.9599999999999,
+          "text": "de princípios e objetivos do Município, conÍorme a Lei"
+        },
+        {
+          "y": 603.12,
+          "text": "Orgânica:"
+        },
+        {
+          "y": 629.76,
+          "text": "I. Busca permanente da justiça social."
+        },
+        {
+          "y": 644.16,
+          "text": "II. Defesa do meio ambiente e da qualidade de vida."
+        },
+        {
+          "y": 658.0799999999999,
+          "text": "III. Prestação eficiente dos serviços públicos, garantida a"
+        },
+        {
+          "y": 671.76,
+          "text": "modalidade das tarifas."
+        },
+        {
+          "y": 699.12,
+          "text": "Estão CORRETAS:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Apenaslell."
+        },
+        {
+          "letter": "B",
+          "text": "Apenaslelll."
+        },
+        {
+          "letter": "C",
+          "text": "Apenas II e III."
+        },
+        {
+          "letter": "D",
+          "text": "I,ll e III."
+        }
+      ],
+      "optionsStartY": 726,
+      "sourcePage": 7,
+      "sourceColumn": 0,
+      "startY": 575.52,
+      "endY": 806.04,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Legislação municipal",
+      "topicCode": "G",
+      "id": "20f80ca9-500e-460d-823c-cde5de170f82",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026LEGLEGALLEPMCANDIDOGODOI8",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 39,
+      "heading": "",
+      "stem": "Observando o que traz a Lei Orgânica, como podem ser chamados os bens públicos municipais que contemplam o patrimônio administrativo destinado à Administração, tais como os edifícios das repartições públicas, os terrenos e equipamentos destinados ao serviço público, veículos, matadouros, mercados e outras serventias da mesma espécie?",
+      "stemRows": [
+        {
+          "y": 47.75999999999999,
+          "text": "Observando o que traz a Lei Orgânica, como"
+        },
+        {
+          "y": 60.95999999999992,
+          "text": "podem ser chamados os bens públicos municipais que"
+        },
+        {
+          "y": 74.15999999999997,
+          "text": "contemplam o patrimônio administrativo destinado à"
+        },
+        {
+          "y": 87.83999999999992,
+          "text": "Administração, tais como os edifícios das repartições"
+        },
+        {
+          "y": 100.79999999999995,
+          "text": "públicas, os terrenos e equipamentos destinados ao"
+        },
+        {
+          "y": 114,
+          "text": "serviço público, veículos, matadouros, mercados e outras"
+        },
+        {
+          "y": 127.91999999999996,
+          "text": "serventias da mesma espécie?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "De uso privado do Prefeito"
+        },
+        {
+          "letter": "B",
+          "text": "De uso especial."
+        },
+        {
+          "letter": "C",
+          "text": "De uso comum do povo."
+        },
+        {
+          "letter": "D",
+          "text": "Dominiais."
+        }
+      ],
+      "optionsStartY": 153.36,
+      "sourcePage": 7,
+      "sourceColumn": 1,
+      "startY": 47.75999999999999,
+      "endY": 207.48000000000002,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Legislação municipal",
+      "topicCode": "G",
+      "id": "087b613b-6007-4f78-adf9-7a31184196c1",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026LEGLEGALLEPMCANDIDOGODOI9",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 40,
+      "heading": "",
+      "stem": "Ao entrar em exercício, o servidor nomeado para cargo de provimento efetivo ficará sujeito a estágio probatório por período de trinta e seis meses, durante o qual a sua aptidão, capacidade e desempenho serão objeto de avaliação por Comissão Especial designada para esse fim, com vista à aquisição da estabilidade. Diante disso, quantos dos seguintes itens apresentam quesitos que serão observados nessa avaliação, conforme o Estatuto e Regime Jurídico dos Servidores Públicos? I. Responsabilidade; IL Asseio; III. Relacionamento.",
+      "stemRows": [
+        {
+          "y": 222.48000000000002,
+          "text": "Ao entrar em exercício, o servidor nomeado"
+        },
+        {
+          "y": 235.19999999999993,
+          "text": "para cargo de provimento efetivo ficará sujeito a estágio"
+        },
+        {
+          "y": 248.39999999999998,
+          "text": "probatório por período de trinta e seis meses, durante o"
+        },
+        {
+          "y": 261.8399999999999,
+          "text": "qual a sua aptidão, capacidade e desempenho serão"
+        },
+        {
+          "y": 275.03999999999996,
+          "text": "objeto de avaliação por Comissão Especial designada para"
+        },
+        {
+          "y": 288.48,
+          "text": "esse fim, com vista à aquisição da estabilidade. Diante"
+        },
+        {
+          "y": 301.43999999999994,
+          "text": "disso, quantos dos seguintes itens apresentam quesitos"
+        },
+        {
+          "y": 314.88,
+          "text": "que serão observados nessa avaliação, conforme o"
+        },
+        {
+          "y": 328.55999999999995,
+          "text": "Estatuto e Regime Jurídico dos Servidores Públicos? I."
+        },
+        {
+          "y": 341.76,
+          "text": "Responsabilidade; IL Asseio; III. Relacionamento."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Nenhum deles."
+        },
+        {
+          "letter": "B",
+          "text": "Apenas 1 deles."
+        },
+        {
+          "letter": "C",
+          "text": "Apenas 2 deles."
+        },
+        {
+          "letter": "D",
+          "text": "Todos os 3. 7"
+        }
+      ],
+      "optionsStartY": 367.43999999999994,
+      "sourcePage": 7,
+      "sourceColumn": 1,
+      "startY": 222.48000000000002,
+      "endY": 806.04,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 4,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Legislação municipal",
+      "topicCode": "G",
+      "id": "9b146c07-764f-4eb7-9cc8-6218a57e5b0d",
+      "examId": "fa9af2d6-37d4-466e-ab75-76beeab2a919",
+      "code": "Q2026LEGLEGALLEPMCANDIDOGODOI10",
+      "year": "2026",
+      "banca": "LEGALLE",
+      "orgao": "PM-CANDIDO-GODOI",
+      "answer": "C",
       "status": "active",
       "secondary": [],
       "aliases": [],
