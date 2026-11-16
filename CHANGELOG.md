@@ -1,3 +1,14 @@
+## 0.6.2 — 15/11/2026
+- Incorporado o Anexo IV do Edital nº 01/2026 ao perfil de estudo de Candeias, com foco no cargo 505 — Analista de Tecnologia e Informática.
+- Registrados seis grupos programáticos, páginas de referência e os tópicos exigidos de Conhecimentos Específicos de TI.
+- Criado módulo `programa-candeias-505.mjs` e painel recolhível de consulta em Questões e Simulados.
+- A disciplina Legislação Municipal foi delimitada à Lei Orgânica e às Resoluções nº 001/CMCJ-93 e nº 173/CMCJ/2025.
+- As Leis Municipais nº 100/1997, nº 1.267/2021 e nº 1.268/2021 permanecem como referências do preâmbulo, sem ser presumidas como conteúdo diretamente cobrado.
+- LGPD nº 13.709/2018 confirmada em Conhecimentos Específicos do cargo 505, não como quarta norma da disciplina municipal.
+- Adaptação de normas sem artigos previamente conferidos permanece bloqueada; apenas o catálogo validado produz questões adaptadas.
+- Adicionados testes de regressão do programa e corrigida a documentação histórica sobre a ausência anterior do anexo.
+- Dados de provas, questões, perfis e estatísticas preservados; sem reimportação necessária.
+
 ## 0.6.1 — 15/11/2026
 - Corrigida importação da prova Quadrix/CRQ-V 2026 de Analista de Informática com títulos `QUESTÃO N` sem pontuação.
 - Textos de apoio como “Texto para as questões de 1 a 15” são associados às questões em duas colunas e páginas seguintes.
