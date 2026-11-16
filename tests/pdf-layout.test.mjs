@@ -1198,3 +1198,51 @@ test('FCPC: seleção manual da página com cargo correto recupera todas as 50 r
  assert.ok(chosenAnswerSection(key,'', {answerPage:'5'}).error);
  assert.ok(chosenAnswerSection(key,'', {answerPage:'invalid'}).error);
 });
+
+
+test('FCPC Aracati: PDF isolado do gabarito de Auxiliar de Serviços Gerais é grid com 50 respostas',()=>{
+ // Transcrição fiel das linhas do gabarito isolado de 1 página.
+ const page=[
+  '[[PAGE:1]]',
+  'CÂMARA MUNICIPAL DE ARACATI',
+  'FUNDAÇÃO CEARENSE DE PESQUISA E CULTURA – FCPC',
+  'EDITAL Nº 001',
+  'GABARITO PRELIMINAR',
+  'Auxiliar de Serviços Gerais',
+  'PROVA 1 - LÍNGUA PORTUGUESA',
+  '01 02 03 04 05 06 07 08 09 10',
+  'A A D D B C D C A B',
+  'PROVA 2 - LEGISLAÇÃO',
+  '11 12 13 14 15 16 17 18 19 20',
+  'B A D B D C A D C A',
+  'PROVA 3 - CONHECIMENTOS ESPECÍFICOS',
+  '21 22 23 24 25 26 27 28 29 30 31 32 33 34 35',
+  'C B C D D C A B A A B C B B C',
+  '36 37 38 39 40 41 42 43 44 45 46 47 48 49 50',
+  'A D C D D A B D B A C D A A D',
+  'Fortaleza, 30 de agosto de 2026.'
+ ].join('\n');
+ const exam='[[PAGE:1]]\nCÂMARA MUNICIPAL DE ARACATI\nAuxiliar de Serviços Gerais\n50 (cinquenta) questões';
+ const selected=chosenAnswerSection(page,exam,{
+  examFilename:'auxiliar_de_servicos_gerais (1).pdf',
+  examTitle:'2026 — FCPC — CM-ARACATI — Auxiliar de Serviços Gerais'
+ });
+ assert.equal(selected.error,null);
+ assert.equal(selected.format,'grid','Não pode voltar a usar parseKey() para 1 página!');
+ assert.equal(selected.section,'AUXILIAR DE SERVICOS GERAIS');
+ const key=parseGridKey(selected.text);
+ assert.equal(Object.keys(key).length,50);
+ const official=[
+  'A','A','D','D','B','C','D','C','A','B',
+  'B','A','D','B','D','C','A','D','C','A',
+  'C','B','C','D','D','C','A','B','A','A','B','C','B','B','C',
+  'A','D','C','D','D','A','B','D','B','A','C','D','A','A','D'
+ ];
+ assert.equal(official.length,50);
+ for(let n=1;n<=50;n++)assert.equal(key[n],official[n-1],'questão '+n);
+ const wrong=chosenAnswerSection(page,'[[PAGE:1]]\nCaderno de Copeiro',{
+  examFilename:'copeiro.pdf',examTitle:'2026 — FCPC — CM-ARACATI — Copeiro'
+ });
+ assert.ok(wrong.error,'Gabarito isolado de outro cargo não deve ser aceito');
+ assert.equal(wrong.format,'grid');
+});
