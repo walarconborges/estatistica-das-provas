@@ -40,3 +40,26 @@ test('adaptação automática com artigo e gabarito fica disponível, mas não a
  assert.equal(studyEligibility(q,exam,'original').allowed,false);
  assert.equal(studyEligibility({...q,answer:'A'},exam,'candeias').allowed,false);
 });
+
+test('FEPESE Brusque questão 20: lei complementar de outra cidade fica só na prova original',()=>{
+ const fepe={id:'exam-fepe',orgao:'PM-BRUSQUE',banca:'FEPESE',title:'2026 — FEPESE — PM-BRUSQUE — Analista de Informática'};
+ const q={
+  originalNumber:20,
+  discipline:'Legislação',disciplineCode:'LE',topic:'Geral',
+  stem:'Com base na Lei Complementar Municipal de Brusque nº 143/2009 (Plano de Cargos e Carreiras), a promoção horizontal é a passagem do servidor estável. Para especialistas, será considerada a participação em cursos de formação continuada com carga horária mínima total de:',
+  answer:'D',
+  options:'ABCDE'.split('').map((letter,i)=>({letter,text:['15h','30h','60h','90h','120h'][i]}))
+ };
+ assert.equal(isLocalLegislation(q,fepe),true);
+ assert.equal(studyEligibility(q,fepe,'candeias').allowed,false);
+ assert.equal(eligibleForList(q,fepe,'candeias'),false);
+ assert.equal(eligibleForList(q,fepe,'original'),true);
+ assert.equal(studyEligibility(q,fepe,'candeias').status,'invalid-for-candeias');
+});
+test('citação incidental de lei municipal de cidade diferente não vira conteúdo de Candeias',()=>{
+ const q={discipline:'Legislação',disciplineCode:'LE',
+  stem:'Segundo a Lei Complementar Municipal de Brusque nº 143/2009, qual requisito vale para o servidor?'};
+ const e={orgao:'PM-BRUSQUE',title:'2026 — FEPESE — PM-BRUSQUE'};
+ assert.equal(studyEligibility(q,e,'candeias').allowed,false);
+ assert.equal(studyEligibility(q,e,'original').allowed,true);
+});
