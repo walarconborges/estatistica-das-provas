@@ -1,9 +1,19 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.18 — 16/11/2026**  
+**Versão experimental 0.6.19 — 16/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.19 — detecção automática de gabarito tabulado com 1 ou várias páginas
+
+- Corrigida a causa da mensagem "O gabarito possui 6 respostas para 50 questões" no PDF isolado de Auxiliar de Serviços Gerais (FCPC/Câmara Municipal de Aracati/CE).
+- O importador reconhecia corretamente as tabelas numéricas quando o arquivo reunia vários cargos, porém só ativava o leitor de gabarito tabulado se houvesse duas ou mais páginas/cargos. Ao separar a página de Auxiliar, ele usava o leitor genérico de pares e encontrava apenas seis correspondências incidentais.
+- Agora uma única página de gabarito tabulado também é reconhecida automaticamente: o cargo do cabeçalho é conferido contra a identificação do caderno e as quatro linhas de números/respostas produzem as 50 letras.
+- Mantidas as validações que impedem associar automaticamente gabaritos de cargos diferentes. O arquivo original com quatro páginas continua selecionando a seção de Auxiliar de Serviços Gerais.
+- Teste de regressão com as 50 respostas transcritas do PDF isolado anexado, exigindo formato de tabela, total 50, correspondência exata de cada resposta e recusa de cargo divergente.
+- Nenhum preenchimento manual é necessário para essa prova. Nenhuma prova, gabarito, tentativa, simulado ou classificação existente foi modificada.
+- Testes automatizados e publicação aprovados; importação no navegador ainda precisa de confirmação.
 
 ## Versão 0.6.18 — escolha do cargo no gabarito quando a identificação automática falhar
 
