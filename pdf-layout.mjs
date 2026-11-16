@@ -2,7 +2,7 @@
 import {stripExamFooter} from './core.mjs';
 const norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toUpperCase();
 const noise=s=>/^(?:PCIMARKPCI\b|WWW\.(?:PCICONCURSOS|OBJETIVAS)\.COM\.BR|CVOT\d+|CONFIDENCIAL ATE|R\s*A\s*S\s*C\s*U\s*N\s*H\s*O\s*$)/i.test(norm(s.trim()))||/MDAwM[A-Za-z0-9+/=]{35}/.test(s);
-const questionRx=/^(?:QUEST[AÃ]O\s+0?(\d{1,3})(?:\s*[.):\-]\s*(.*))?|(\d{1,3})\s*[.):\-]\s*(.*))$/i;
+const questionRx=/^(?:QUEST[AÃ]O\s+0?(\d{1,3})(?:\s*[.):\-]\s*(.*))?|(\d{1,3})\s*[.):\-]\s*(?!\d)(.*))$/i;
 const altRx=/^\s*(?:\(([A-E])\)|([A-E])\s*[.):\-])\s*(.*)$/i;
 
 /**
@@ -283,6 +283,12 @@ export function isInstructionSheet(page){
  if(page?.number!==1)return false;
  const text=(page.lines||[]).map(row=>row.text).join('\n')||String(page.text||'');
  const n=norm(text);
+ // Capa com quadro RASCUNHO PARA GABARITO: seus números não são questões.
+ // O reconhecimento independe da palavra INSTRUÇÕES, que pode ser lida
+ // erroneamente por fontes próprias como TNSTRUÇÕES.
+ if(/RASCUNHO\s+PARA\s+GABARITO/.test(n)&&
+   /\b(?:CADERNO|PROVA\s+TEORICO|CONCURSO\s+PUBLICO)\b/.test(n)&&
+   /\b(?:40|50|35)\s+QUESTOES\b/.test(n))return true;
  return /\bINSTRUCOES\b/.test(n)&&
   /\bCANDIDAT[OA]\b/.test(n)&&
   /\b(?:FOLHA RESPOSTA|CADERNO DE QUESTOES|LISTA DE PRESENCA)\b/.test(n)&&
