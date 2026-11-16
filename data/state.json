@@ -497,6 +497,57 @@
       "keyStatus": "preliminar",
       "metadataReview": [],
       "pdfPath": "storage/pdfs/6efc9137-efad-448f-9918-81115b2f9d56.pdf"
+    },
+    {
+      "id": "9af7c771-af2c-4c81-a03c-9a072511d321",
+      "title": "2026 — FEPESE — CIS-GRANFPOLIS — Auxiliar de Serviços Gerais",
+      "year": "2026",
+      "banca": "FEPESE",
+      "bancaCode": "FEPESE",
+      "orgao": "CIS-GRANFPOLIS",
+      "orgaoCode": "CISGRANFPOLIS",
+      "createdAt": "2026-11-16T19:11:30.771Z",
+      "questionIds": [
+        "79504364-454e-4b06-a9bb-cb3e1f2a0599",
+        "6eb288ab-d1dd-496a-8288-b996ca8d6e99",
+        "b34ea0f2-80a4-4866-b8cd-d2bd806a5820",
+        "bed7ed87-bca8-42d7-988e-8f823776ed82",
+        "e1a40f11-9994-40bb-8846-4b7ad2877bca",
+        "e0a04255-3ca1-44db-a177-72a2514dc48d",
+        "1c9cf81f-ecef-46aa-a89b-63c5d5ab2f51",
+        "12eb2914-1b83-4aec-b462-b8d572efe9ad",
+        "14eb9a86-4639-48b8-ae6b-b47d59e69235",
+        "fb375d9a-3265-410a-91bc-9cae56fc2f96",
+        "065faf08-a0cc-49f1-8c9b-0d79c1f912fe",
+        "39d29490-8d1a-448c-b053-009f599c1708",
+        "b28b6ad4-6615-45df-ad09-f4daea18c5ab",
+        "fa47d132-bb76-461d-a9f2-4706d7601bf0",
+        "c55dbbfe-b224-48d0-9cfc-a84b5897749d",
+        "4b0cc2ba-4d90-434f-b315-c3284e5e3994",
+        "71eeb600-01d5-48c9-ad09-2a6746e66a62",
+        "8959c1eb-de1e-405c-860a-b12f9fae4dd6",
+        "d18d98f0-6067-4605-8f6c-c73f9001136e",
+        "66f3dea1-f8c9-47c5-b1e2-f7cd5131b6f8",
+        "a97beef4-3d65-4991-b2dd-20299b0de649",
+        "75dffe99-ed70-4eab-9c72-aaa0658fe3dd",
+        "843602ec-89bd-4c6c-8358-7cf7fa0029fc",
+        "20dfcb6e-6c98-4e6a-8e68-a931b344c2f4",
+        "18ae46a4-6431-4be3-a6fa-6d81b5587bec",
+        "2ccc14c6-6a79-44ac-8b89-6b1882da7a9e",
+        "0fa280b1-561e-4a3a-9a6b-24aab76c2e4a",
+        "e6be4986-8665-4193-b6ea-3a57007bcb7a",
+        "690c55bf-469f-4ca8-9ac4-3d66e42f3c8b",
+        "34e59b42-70a7-4f1c-83b3-a73f98092bc5",
+        "6d6af3dd-cdcb-44aa-9a78-2ea211c8a974",
+        "c7b0842a-add3-4022-b034-a300882859cd",
+        "10df0323-60bf-4bb9-b48a-65002d10f0bb",
+        "be277531-d4c8-4e8c-8082-efbac74517b3",
+        "5233ca76-4171-4ce6-a0e7-ab0b04676410"
+      ],
+      "keySection": "F1",
+      "keyStatus": "publicado",
+      "metadataReview": [],
+      "pdfPath": "storage/pdfs/9af7c771-af2c-4c81-a03c-9a072511d321.pdf"
     }
   ],
   "questions": [
@@ -30399,6 +30450,2349 @@
       "banca": "FCPC",
       "orgao": "CM-ARACATI",
       "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 1,
+      "heading": "Língua Portuguesa 5 questões",
+      "stem": "Segundo o texto, o que Beatriz e sua avó gostam de fazer juntas?",
+      "stemRows": [
+        {
+          "y": 425.39219999999995,
+          "text": "Segundo o texto, o que Beatriz e sua avó gostam"
+        },
+        {
+          "y": 437.39219999999995,
+          "text": "de fazer juntas?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Jogar bola."
+        },
+        {
+          "letter": "B",
+          "text": "Andar de bicicleta."
+        },
+        {
+          "letter": "C",
+          "text": "Pintar quadros."
+        },
+        {
+          "letter": "D",
+          "text": "Cozinhar."
+        },
+        {
+          "letter": "E",
+          "text": "Viajar."
+        }
+      ],
+      "optionsStartY": 455.06149999999997,
+      "sourcePage": 3,
+      "sourceColumn": 1,
+      "startY": 425.39219999999995,
+      "endY": 517.0693,
+      "contextText": "Texto Já notou que seus avós encolhem enquanto você cresce? A medicina explica — Como em uma gangorra, idosos perdem até sete centímetros, enquanto a altura dos netos aumenta — Funcionamento dos ossos e dos músculos em idades avançadas contribuem para o encolhimento Autor: João Kawada Beatriz, de 11 anos, passa parte das férias na casa da avó Thereza, de 80. Juntas, adoram pintar quadros de gatinhos e paisagens coloridas. Entre uma visita e outra, Bibi, o apelido da mais nova, foi percebendo que a avó parecia menor diante do cavalete, enquanto ela o alcançava sem esforço. Dona Thereza até brinca com a situação: “Vou começar a pintar de salto alto”. Talvez você já tenha percebido esse fenômeno. Com o tempo, os netos crescem, ficando cada vez mais altos, e os avós decrescem, encolhendo conforme avança a idade. É como numa gangorra: as coisas se invertem. E isso não é mera impressão, segundo a medicina. A partir dos 40 anos, o ser humano a perde cerca de 1 centímetro por década, segundo o MedlinePlus, site que funciona como uma enorme biblioteca de medicina. Depois dos 70, o processo acelera, podendo variar de 2,5 cm a 7,5 cm ao longo do restante da vida — equivalente ao tamanho de uma bola de tênis. Isso acontece por vários motivos. É comum, por exemplo, a postura encurvar, em especial na parte de cima das costas, explica o ortopedista Henrique Motizuki, da Sociedade Brasileira de Coluna — ortopedista é o médico que cuida de ossos, músculos e coluna. Os ossos funcionam como pilares que sustentam o corpo, parecidos com os mesmos pilares usados para segurar uma casa ou os famosos templos da Grécia. Sem eles, seríamos moles como gelatina. Com o tempo, eles ficam mais fracos e achatados, o que nos faz diminuir. Se você já notou que sua avó encolhe mais do que o seu avô, há uma explicação também para isso. Os ossos dela tendem a ficar mais frágeis depois da menopausa, fase na qual o corpo da mulher deixa de poder ter filhos e diminui a produção de hormônios — substâncias mensageiras que indicam ao organismo suas tarefas. […] Os músculos também mudam. São como elásticos que puxam ossos para correr, brincar, falar e até respirar. Com o passar dos anos, ficam menores e mais fracos, o que pode dificultar movimentos simples, como levantar-se de uma cadeira ou carregar peso. E tem mais: a coluna é um tubo de ossos empilhados nas costas com a função de mexer, virar e dobrar. Nela, há 23 discos —parecidos com almofadinhas cheias de água— que amortecem movimentos. Durante o dia, eles perdem líquido quando andamos e pulamos. À noite, recuperam parte da água, mas, com os anos, param de “inchar” como antes. Nesse processo, alguns centímetros também se vão. Mas dá para prevenir tudo isso? Sim. O ortopedista Lucas Jacobus, do Hospital de Clínicas de Porto Alegre, recomenda alguns cuidados durante a juventude: alimentar-se bem, com cálcio e vitamina D, tomar sol e praticar atividades físicas de força e equilíbrio. Também é importante, ele diz, evitar o cigarro e o excesso de álcool, além de tratar cedo doenças que enfraquecem. Fonte: https://www1.folha.uol.com.br/folhinha/2025/09/ja-notouque-seus-avos-encolhem-enquanto-voce-cresce-a-medicinaexplica.shtml",
+      "contextRange": [
+        1,
+        5
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 5,
+      "sourceLayout": "FEPESE",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Interpretação de texto",
+      "topicCode": "IT",
+      "id": "79504364-454e-4b06-a9bb-cb3e1f2a0599",
+      "examId": "9af7c771-af2c-4c81-a03c-9a072511d321",
+      "code": "Q2026LPITFEPESECISGRANFPOLIS1",
+      "year": "2026",
+      "banca": "FEPESE",
+      "orgao": "CIS-GRANFPOLIS",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 2,
+      "heading": "Língua Portuguesa 5 questões",
+      "stem": "No trecho “É como numa gangorra: as coisas se invertem”, a comparação com uma gangorra significa que:",
+      "stemRows": [
+        {
+          "y": 532.0693,
+          "text": "No trecho “É como numa gangorra: as coisas se inver-"
+        },
+        {
+          "y": 544.0693,
+          "text": "tem”, a comparação com uma gangorra significa que:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "os avós e netos costumam brincar juntos em gangorras."
+        },
+        {
+          "letter": "B",
+          "text": "os avós ficam mais altos que os netos com o passar dos anos."
+        },
+        {
+          "letter": "C",
+          "text": "netos e avós continuam crescendo ao longo da vida, o que faz com que os avós sejam sempre mais altos."
+        },
+        {
+          "letter": "D",
+          "text": "todos os avós mantêm a mesma altura ao longo da vida, enquanto apenas os netos continuam crescendo."
+        },
+        {
+          "letter": "E",
+          "text": "um toma o lugar do outro, porque, enquanto os netos crescem, os avós tendem a diminuir de altura. Página 3"
+        }
+      ],
+      "optionsStartY": 561.7385999999999,
+      "sourcePage": 3,
+      "sourceColumn": 1,
+      "startY": 532.0693,
+      "endY": 746.53,
+      "contextText": "Texto Já notou que seus avós encolhem enquanto você cresce? A medicina explica — Como em uma gangorra, idosos perdem até sete centímetros, enquanto a altura dos netos aumenta — Funcionamento dos ossos e dos músculos em idades avançadas contribuem para o encolhimento Autor: João Kawada Beatriz, de 11 anos, passa parte das férias na casa da avó Thereza, de 80. Juntas, adoram pintar quadros de gatinhos e paisagens coloridas. Entre uma visita e outra, Bibi, o apelido da mais nova, foi percebendo que a avó parecia menor diante do cavalete, enquanto ela o alcançava sem esforço. Dona Thereza até brinca com a situação: “Vou começar a pintar de salto alto”. Talvez você já tenha percebido esse fenômeno. Com o tempo, os netos crescem, ficando cada vez mais altos, e os avós decrescem, encolhendo conforme avança a idade. É como numa gangorra: as coisas se invertem. E isso não é mera impressão, segundo a medicina. A partir dos 40 anos, o ser humano a perde cerca de 1 centímetro por década, segundo o MedlinePlus, site que funciona como uma enorme biblioteca de medicina. Depois dos 70, o processo acelera, podendo variar de 2,5 cm a 7,5 cm ao longo do restante da vida — equivalente ao tamanho de uma bola de tênis. Isso acontece por vários motivos. É comum, por exemplo, a postura encurvar, em especial na parte de cima das costas, explica o ortopedista Henrique Motizuki, da Sociedade Brasileira de Coluna — ortopedista é o médico que cuida de ossos, músculos e coluna. Os ossos funcionam como pilares que sustentam o corpo, parecidos com os mesmos pilares usados para segurar uma casa ou os famosos templos da Grécia. Sem eles, seríamos moles como gelatina. Com o tempo, eles ficam mais fracos e achatados, o que nos faz diminuir. Se você já notou que sua avó encolhe mais do que o seu avô, há uma explicação também para isso. Os ossos dela tendem a ficar mais frágeis depois da menopausa, fase na qual o corpo da mulher deixa de poder ter filhos e diminui a produção de hormônios — substâncias mensageiras que indicam ao organismo suas tarefas. […] Os músculos também mudam. São como elásticos que puxam ossos para correr, brincar, falar e até respirar. Com o passar dos anos, ficam menores e mais fracos, o que pode dificultar movimentos simples, como levantar-se de uma cadeira ou carregar peso. E tem mais: a coluna é um tubo de ossos empilhados nas costas com a função de mexer, virar e dobrar. Nela, há 23 discos —parecidos com almofadinhas cheias de água— que amortecem movimentos. Durante o dia, eles perdem líquido quando andamos e pulamos. À noite, recuperam parte da água, mas, com os anos, param de “inchar” como antes. Nesse processo, alguns centímetros também se vão. Mas dá para prevenir tudo isso? Sim. O ortopedista Lucas Jacobus, do Hospital de Clínicas de Porto Alegre, recomenda alguns cuidados durante a juventude: alimentar-se bem, com cálcio e vitamina D, tomar sol e praticar atividades físicas de força e equilíbrio. Também é importante, ele diz, evitar o cigarro e o excesso de álcool, além de tratar cedo doenças que enfraquecem. Fonte: https://www1.folha.uol.com.br/folhinha/2025/09/ja-notouque-seus-avos-encolhem-enquanto-voce-cresce-a-medicinaexplica.shtml",
+      "contextRange": [
+        1,
+        5
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 5,
+      "sourceLayout": "FEPESE",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "6eb288ab-d1dd-496a-8288-b996ca8d6e99",
+      "examId": "9af7c771-af2c-4c81-a03c-9a072511d321",
+      "code": "Q2026LPGFEPESECISGRANFPOLIS1",
+      "year": "2026",
+      "banca": "FEPESE",
+      "orgao": "CIS-GRANFPOLIS",
+      "answer": "E",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 3,
+      "heading": "Língua Portuguesa 5 questões",
+      "stem": "Considere a parte a seguir. “Beatriz, de 11 anos, passa parte das férias na casa da avó Thereza, de 80.” Assinale a alternativa em que a palavra mencionada é um substantivo próprio.",
+      "stemRows": [
+        {
+          "y": 78.36860000000001,
+          "text": "Considere a parte a seguir."
+        },
+        {
+          "y": 96.03789999999992,
+          "text": "“Beatriz, de 11 anos, passa parte das férias na casa da avó"
+        },
+        {
+          "y": 108.03789999999992,
+          "text": "Thereza, de 80.”"
+        },
+        {
+          "y": 125.70709999999997,
+          "text": "Assinale a alternativa em que a palavra mencionada é"
+        },
+        {
+          "y": 137.70709999999997,
+          "text": "um substantivo próprio."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "férias"
+        },
+        {
+          "letter": "B",
+          "text": "Beatriz"
+        },
+        {
+          "letter": "C",
+          "text": "casa"
+        },
+        {
+          "letter": "D",
+          "text": "avó"
+        },
+        {
+          "letter": "E",
+          "text": "parte"
+        }
+      ],
+      "optionsStartY": 155.3764,
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "startY": 78.36860000000001,
+      "endY": 217.38429999999994,
+      "contextText": "Texto Já notou que seus avós encolhem enquanto você cresce? A medicina explica — Como em uma gangorra, idosos perdem até sete centímetros, enquanto a altura dos netos aumenta — Funcionamento dos ossos e dos músculos em idades avançadas contribuem para o encolhimento Autor: João Kawada Beatriz, de 11 anos, passa parte das férias na casa da avó Thereza, de 80. Juntas, adoram pintar quadros de gatinhos e paisagens coloridas. Entre uma visita e outra, Bibi, o apelido da mais nova, foi percebendo que a avó parecia menor diante do cavalete, enquanto ela o alcançava sem esforço. Dona Thereza até brinca com a situação: “Vou começar a pintar de salto alto”. Talvez você já tenha percebido esse fenômeno. Com o tempo, os netos crescem, ficando cada vez mais altos, e os avós decrescem, encolhendo conforme avança a idade. É como numa gangorra: as coisas se invertem. E isso não é mera impressão, segundo a medicina. A partir dos 40 anos, o ser humano a perde cerca de 1 centímetro por década, segundo o MedlinePlus, site que funciona como uma enorme biblioteca de medicina. Depois dos 70, o processo acelera, podendo variar de 2,5 cm a 7,5 cm ao longo do restante da vida — equivalente ao tamanho de uma bola de tênis. Isso acontece por vários motivos. É comum, por exemplo, a postura encurvar, em especial na parte de cima das costas, explica o ortopedista Henrique Motizuki, da Sociedade Brasileira de Coluna — ortopedista é o médico que cuida de ossos, músculos e coluna. Os ossos funcionam como pilares que sustentam o corpo, parecidos com os mesmos pilares usados para segurar uma casa ou os famosos templos da Grécia. Sem eles, seríamos moles como gelatina. Com o tempo, eles ficam mais fracos e achatados, o que nos faz diminuir. Se você já notou que sua avó encolhe mais do que o seu avô, há uma explicação também para isso. Os ossos dela tendem a ficar mais frágeis depois da menopausa, fase na qual o corpo da mulher deixa de poder ter filhos e diminui a produção de hormônios — substâncias mensageiras que indicam ao organismo suas tarefas. […] Os músculos também mudam. São como elásticos que puxam ossos para correr, brincar, falar e até respirar. Com o passar dos anos, ficam menores e mais fracos, o que pode dificultar movimentos simples, como levantar-se de uma cadeira ou carregar peso. E tem mais: a coluna é um tubo de ossos empilhados nas costas com a função de mexer, virar e dobrar. Nela, há 23 discos —parecidos com almofadinhas cheias de água— que amortecem movimentos. Durante o dia, eles perdem líquido quando andamos e pulamos. À noite, recuperam parte da água, mas, com os anos, param de “inchar” como antes. Nesse processo, alguns centímetros também se vão. Mas dá para prevenir tudo isso? Sim. O ortopedista Lucas Jacobus, do Hospital de Clínicas de Porto Alegre, recomenda alguns cuidados durante a juventude: alimentar-se bem, com cálcio e vitamina D, tomar sol e praticar atividades físicas de força e equilíbrio. Também é importante, ele diz, evitar o cigarro e o excesso de álcool, além de tratar cedo doenças que enfraquecem. Fonte: https://www1.folha.uol.com.br/folhinha/2025/09/ja-notouque-seus-avos-encolhem-enquanto-voce-cresce-a-medicinaexplica.shtml",
+      "contextRange": [
+        1,
+        5
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 5,
+      "sourceLayout": "FEPESE",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "b34ea0f2-80a4-4866-b8cd-d2bd806a5820",
+      "examId": "9af7c771-af2c-4c81-a03c-9a072511d321",
+      "code": "Q2026LPGFEPESECISGRANFPOLIS2",
+      "year": "2026",
+      "banca": "FEPESE",
+      "orgao": "CIS-GRANFPOLIS",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 4,
+      "heading": "Língua Portuguesa 5 questões",
+      "stem": "No trecho “Isso acontece por vários motivos. É comum, por exemplo, a postura encurvar, em especial na parte de cima das costas, explica o ortopedista Henrique Motizuki”, qual das palavras é classificada como pronome?",
+      "stemRows": [
+        {
+          "y": 232.38429999999994,
+          "text": "No trecho “Isso acontece por vários motivos. É comum,"
+        },
+        {
+          "y": 244.38429999999994,
+          "text": "por exemplo, a postura encurvar, em especial na parte de"
+        },
+        {
+          "y": 256.38429999999994,
+          "text": "cima das costas, explica o ortopedista Henrique Motizuki”,"
+        },
+        {
+          "y": 268.3843,
+          "text": "qual das palavras é classificada como pronome?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Isso"
+        },
+        {
+          "letter": "B",
+          "text": "acontece"
+        },
+        {
+          "letter": "C",
+          "text": "motivos"
+        },
+        {
+          "letter": "D",
+          "text": "Henrique Motizuki"
+        },
+        {
+          "letter": "E",
+          "text": "ortopedista"
+        }
+      ],
+      "optionsStartY": 286.05359999999996,
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "startY": 232.38429999999994,
+      "endY": 348.06149999999997,
+      "contextText": "Texto Já notou que seus avós encolhem enquanto você cresce? A medicina explica — Como em uma gangorra, idosos perdem até sete centímetros, enquanto a altura dos netos aumenta — Funcionamento dos ossos e dos músculos em idades avançadas contribuem para o encolhimento Autor: João Kawada Beatriz, de 11 anos, passa parte das férias na casa da avó Thereza, de 80. Juntas, adoram pintar quadros de gatinhos e paisagens coloridas. Entre uma visita e outra, Bibi, o apelido da mais nova, foi percebendo que a avó parecia menor diante do cavalete, enquanto ela o alcançava sem esforço. Dona Thereza até brinca com a situação: “Vou começar a pintar de salto alto”. Talvez você já tenha percebido esse fenômeno. Com o tempo, os netos crescem, ficando cada vez mais altos, e os avós decrescem, encolhendo conforme avança a idade. É como numa gangorra: as coisas se invertem. E isso não é mera impressão, segundo a medicina. A partir dos 40 anos, o ser humano a perde cerca de 1 centímetro por década, segundo o MedlinePlus, site que funciona como uma enorme biblioteca de medicina. Depois dos 70, o processo acelera, podendo variar de 2,5 cm a 7,5 cm ao longo do restante da vida — equivalente ao tamanho de uma bola de tênis. Isso acontece por vários motivos. É comum, por exemplo, a postura encurvar, em especial na parte de cima das costas, explica o ortopedista Henrique Motizuki, da Sociedade Brasileira de Coluna — ortopedista é o médico que cuida de ossos, músculos e coluna. Os ossos funcionam como pilares que sustentam o corpo, parecidos com os mesmos pilares usados para segurar uma casa ou os famosos templos da Grécia. Sem eles, seríamos moles como gelatina. Com o tempo, eles ficam mais fracos e achatados, o que nos faz diminuir. Se você já notou que sua avó encolhe mais do que o seu avô, há uma explicação também para isso. Os ossos dela tendem a ficar mais frágeis depois da menopausa, fase na qual o corpo da mulher deixa de poder ter filhos e diminui a produção de hormônios — substâncias mensageiras que indicam ao organismo suas tarefas. […] Os músculos também mudam. São como elásticos que puxam ossos para correr, brincar, falar e até respirar. Com o passar dos anos, ficam menores e mais fracos, o que pode dificultar movimentos simples, como levantar-se de uma cadeira ou carregar peso. E tem mais: a coluna é um tubo de ossos empilhados nas costas com a função de mexer, virar e dobrar. Nela, há 23 discos —parecidos com almofadinhas cheias de água— que amortecem movimentos. Durante o dia, eles perdem líquido quando andamos e pulamos. À noite, recuperam parte da água, mas, com os anos, param de “inchar” como antes. Nesse processo, alguns centímetros também se vão. Mas dá para prevenir tudo isso? Sim. O ortopedista Lucas Jacobus, do Hospital de Clínicas de Porto Alegre, recomenda alguns cuidados durante a juventude: alimentar-se bem, com cálcio e vitamina D, tomar sol e praticar atividades físicas de força e equilíbrio. Também é importante, ele diz, evitar o cigarro e o excesso de álcool, além de tratar cedo doenças que enfraquecem. Fonte: https://www1.folha.uol.com.br/folhinha/2025/09/ja-notouque-seus-avos-encolhem-enquanto-voce-cresce-a-medicinaexplica.shtml",
+      "contextRange": [
+        1,
+        5
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 5,
+      "sourceLayout": "FEPESE",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "bed7ed87-bca8-42d7-988e-8f823776ed82",
+      "examId": "9af7c771-af2c-4c81-a03c-9a072511d321",
+      "code": "Q2026LPGFEPESECISGRANFPOLIS3",
+      "year": "2026",
+      "banca": "FEPESE",
+      "orgao": "CIS-GRANFPOLIS",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 5,
+      "heading": "Língua Portuguesa 5 questões",
+      "stem": "No trecho “Se você já notou que sua avó encolhe mais do que o seu avô, há uma explicação também para isso.”, qual verbo está empregado no passado?",
+      "stemRows": [
+        {
+          "y": 363.06149999999997,
+          "text": "No trecho “Se você já notou que sua avó encolhe"
+        },
+        {
+          "y": 375.06149999999997,
+          "text": "mais do que o seu avô, há uma explicação também para"
+        },
+        {
+          "y": 387.06149999999997,
+          "text": "isso.”, qual verbo está empregado no passado?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "avó"
+        },
+        {
+          "letter": "B",
+          "text": "também"
+        },
+        {
+          "letter": "C",
+          "text": "explicação"
+        },
+        {
+          "letter": "D",
+          "text": "notou"
+        },
+        {
+          "letter": "E",
+          "text": "para"
+        }
+      ],
+      "optionsStartY": 404.7308,
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "startY": 363.06149999999997,
+      "endY": 501.4158,
+      "contextText": "Texto Já notou que seus avós encolhem enquanto você cresce? A medicina explica — Como em uma gangorra, idosos perdem até sete centímetros, enquanto a altura dos netos aumenta — Funcionamento dos ossos e dos músculos em idades avançadas contribuem para o encolhimento Autor: João Kawada Beatriz, de 11 anos, passa parte das férias na casa da avó Thereza, de 80. Juntas, adoram pintar quadros de gatinhos e paisagens coloridas. Entre uma visita e outra, Bibi, o apelido da mais nova, foi percebendo que a avó parecia menor diante do cavalete, enquanto ela o alcançava sem esforço. Dona Thereza até brinca com a situação: “Vou começar a pintar de salto alto”. Talvez você já tenha percebido esse fenômeno. Com o tempo, os netos crescem, ficando cada vez mais altos, e os avós decrescem, encolhendo conforme avança a idade. É como numa gangorra: as coisas se invertem. E isso não é mera impressão, segundo a medicina. A partir dos 40 anos, o ser humano a perde cerca de 1 centímetro por década, segundo o MedlinePlus, site que funciona como uma enorme biblioteca de medicina. Depois dos 70, o processo acelera, podendo variar de 2,5 cm a 7,5 cm ao longo do restante da vida — equivalente ao tamanho de uma bola de tênis. Isso acontece por vários motivos. É comum, por exemplo, a postura encurvar, em especial na parte de cima das costas, explica o ortopedista Henrique Motizuki, da Sociedade Brasileira de Coluna — ortopedista é o médico que cuida de ossos, músculos e coluna. Os ossos funcionam como pilares que sustentam o corpo, parecidos com os mesmos pilares usados para segurar uma casa ou os famosos templos da Grécia. Sem eles, seríamos moles como gelatina. Com o tempo, eles ficam mais fracos e achatados, o que nos faz diminuir. Se você já notou que sua avó encolhe mais do que o seu avô, há uma explicação também para isso. Os ossos dela tendem a ficar mais frágeis depois da menopausa, fase na qual o corpo da mulher deixa de poder ter filhos e diminui a produção de hormônios — substâncias mensageiras que indicam ao organismo suas tarefas. […] Os músculos também mudam. São como elásticos que puxam ossos para correr, brincar, falar e até respirar. Com o passar dos anos, ficam menores e mais fracos, o que pode dificultar movimentos simples, como levantar-se de uma cadeira ou carregar peso. E tem mais: a coluna é um tubo de ossos empilhados nas costas com a função de mexer, virar e dobrar. Nela, há 23 discos —parecidos com almofadinhas cheias de água— que amortecem movimentos. Durante o dia, eles perdem líquido quando andamos e pulamos. À noite, recuperam parte da água, mas, com os anos, param de “inchar” como antes. Nesse processo, alguns centímetros também se vão. Mas dá para prevenir tudo isso? Sim. O ortopedista Lucas Jacobus, do Hospital de Clínicas de Porto Alegre, recomenda alguns cuidados durante a juventude: alimentar-se bem, com cálcio e vitamina D, tomar sol e praticar atividades físicas de força e equilíbrio. Também é importante, ele diz, evitar o cigarro e o excesso de álcool, além de tratar cedo doenças que enfraquecem. Fonte: https://www1.folha.uol.com.br/folhinha/2025/09/ja-notouque-seus-avos-encolhem-enquanto-voce-cresce-a-medicinaexplica.shtml",
+      "contextRange": [
+        1,
+        5
+      ],
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 5,
+      "sourceLayout": "FEPESE",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "e1a40f11-9994-40bb-8846-4b7ad2877bca",
+      "examId": "9af7c771-af2c-4c81-a03c-9a072511d321",
+      "code": "Q2026LPGFEPESECISGRANFPOLIS4",
+      "year": "2026",
+      "banca": "FEPESE",
+      "orgao": "CIS-GRANFPOLIS",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 6,
+      "heading": "Língua Portuguesa 5 questões",
+      "stem": "O território brasileiro é organizado em unidades federativas e apresenta grande diversidade regional. De acordo com o tema, é correto afirmar:",
+      "stemRows": [
+        {
+          "y": 516.4158,
+          "text": "O território brasileiro é organizado em unidades"
+        },
+        {
+          "y": 528.4158,
+          "text": "federativas e apresenta grande diversidade regional."
+        },
+        {
+          "y": 546.0851,
+          "text": "De acordo com o tema, é correto afirmar:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "O Brasil é formado por estados e pelo Distrito Federal, reunidos em uma federação."
+        },
+        {
+          "letter": "B",
+          "text": "O Brasil é organizado apenas por regiões naturais, sem governos estaduais próprios."
+        },
+        {
+          "letter": "C",
+          "text": "O Brasil possui municípios independentes, sem vínculo com estados ou União."
+        },
+        {
+          "letter": "D",
+          "text": "O Brasil é dividido somente por capitais, que administram todo o território nacional."
+        },
+        {
+          "letter": "E",
+          "text": "O Brasil tem divisão administrativa composta apenas por áreas rurais e urbanas. Página 4"
+        }
+      ],
+      "optionsStartY": 563.7544,
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "startY": 516.4158,
+      "endY": 746.53,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 5,
+      "sourceLayout": "FEPESE",
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "e0a04255-3ca1-44db-a177-72a2514dc48d",
+      "examId": "9af7c771-af2c-4c81-a03c-9a072511d321",
+      "code": "Q2026CGGFEPESECISGRANFPOLIS1",
+      "year": "2026",
+      "banca": "FEPESE",
+      "orgao": "CIS-GRANFPOLIS",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 7,
+      "heading": "Língua Portuguesa 5 questões",
+      "stem": "Santa Catarina integra uma região brasileira marcada pela presença de atividades industriais, agropecuárias, turísticas e de serviços. É correto afirmar que Santa Catarina:",
+      "stemRows": [
+        {
+          "y": 78.36849999999993,
+          "text": "Santa Catarina integra uma região brasileira mar-"
+        },
+        {
+          "y": 90.36849999999993,
+          "text": "cada pela presença de atividades industriais, agrope-"
+        },
+        {
+          "y": 102.36849999999993,
+          "text": "cuárias, turísticas e de serviços."
+        },
+        {
+          "y": 120.03779999999995,
+          "text": "É correto afirmar que Santa Catarina:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "está situada na Região Sudeste e tem Curitiba como capital estadual."
+        },
+        {
+          "letter": "B",
+          "text": "pertence à Região Centro-Oeste e possui economia baseada somente na mineração."
+        },
+        {
+          "letter": "C",
+          "text": "fica na Região Norte e tem sua sede administrativa em Joinville."
+        },
+        {
+          "letter": "D",
+          "text": "está localizada na Região Sul do Brasil e tem sua sede administrativa em Florianópolis."
+        },
+        {
+          "letter": "E",
+          "text": "integra a Região Nordeste e possui capital localizada no interior."
+        }
+      ],
+      "optionsStartY": 137.70709999999997,
+      "sourcePage": 4,
+      "sourceColumn": 1,
+      "startY": 78.36849999999993,
+      "endY": 259.7149,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 5,
+      "sourceLayout": "FEPESE",
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "1c9cf81f-ecef-46aa-a89b-63c5d5ab2f51",
+      "examId": "9af7c771-af2c-4c81-a03c-9a072511d321",
+      "code": "Q2026CGGFEPESECISGRANFPOLIS2",
+      "year": "2026",
+      "banca": "FEPESE",
+      "orgao": "CIS-GRANFPOLIS",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 8,
+      "heading": "Língua Portuguesa 5 questões",
+      "stem": "Florianópolis possui importância administrativa, turística e cultural em Santa Catarina. É correto afirmar que Florianópolis:",
+      "stemRows": [
+        {
+          "y": 274.7149,
+          "text": "Florianópolis possui importância administrativa,"
+        },
+        {
+          "y": 286.7149,
+          "text": "turística e cultural em Santa Catarina."
+        },
+        {
+          "y": 304.38419999999996,
+          "text": "É correto afirmar que Florianópolis:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "é município catarinense sem função administrativa ligada ao governo estadual."
+        },
+        {
+          "letter": "B",
+          "text": "é a capital paranaense e concentra apenas atividades industriais pesadas."
+        },
+        {
+          "letter": "C",
+          "text": "é a capital catarinense e reúne áreas insulares e continentais em seu território."
+        },
+        {
+          "letter": "D",
+          "text": "é cidade exclusivamente rural, sem destaque para turismo e serviços."
+        },
+        {
+          "letter": "E",
+          "text": "é distrito estadual sem administração municipal própria organizada."
+        }
+      ],
+      "optionsStartY": 322.05359999999996,
+      "sourcePage": 4,
+      "sourceColumn": 1,
+      "startY": 274.7149,
+      "endY": 444.0614,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 5,
+      "sourceLayout": "FEPESE",
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "12eb2914-1b83-4aec-b462-b8d572efe9ad",
+      "examId": "9af7c771-af2c-4c81-a03c-9a072511d321",
+      "code": "Q2026CGGFEPESECISGRANFPOLIS3",
+      "year": "2026",
+      "banca": "FEPESE",
+      "orgao": "CIS-GRANFPOLIS",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 9,
+      "heading": "Língua Portuguesa 5 questões",
+      "stem": "Considerando os princípios de cidadania e de preservação do meio ambiente previstos na Constituição Federal (art. 225), em espaços de uso coletivo, atitudes simples ajudam na convivência social e na preservação do ambiente. Assinale a alternativa correta em relação ao tema.",
+      "stemRows": [
+        {
+          "y": 459.0614,
+          "text": "Considerando os princípios de cidadania e de pre-"
+        },
+        {
+          "y": 471.0614,
+          "text": "servação do meio ambiente previstos na Constituição"
+        },
+        {
+          "y": 483.0614,
+          "text": "Federal (art. 225), em espaços de uso coletivo, atitudes"
+        },
+        {
+          "y": 495.0614,
+          "text": "simples ajudam na convivência social e na preserva-"
+        },
+        {
+          "y": 507.0614,
+          "text": "ção do ambiente."
+        },
+        {
+          "y": 524.7307,
+          "text": "Assinale a alternativa correta em relação ao tema."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Cuidar de praças, separar resíduos quando possível e respeitar regras de convivência."
+        },
+        {
+          "letter": "B",
+          "text": "Usar bens públicos sem cuidado, desde que outras pessoas façam a manutenção."
+        },
+        {
+          "letter": "C",
+          "text": "Descartar resíduos em vias públicas quando não houver lixeira próxima no local."
+        },
+        {
+          "letter": "D",
+          "text": "Priorizar interesses individuais, mesmo quando prejudicarem o uso coletivo."
+        },
+        {
+          "letter": "E",
+          "text": "Evitar participação comunitária, alegando que a conservação do meio ambiente é responsabilidade exclusiva do governo."
+        }
+      ],
+      "optionsStartY": 542.4,
+      "sourcePage": 4,
+      "sourceColumn": 1,
+      "startY": 459.0614,
+      "endY": 746.53,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 5,
+      "sourceLayout": "FEPESE",
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "14eb9a86-4639-48b8-ae6b-b47d59e69235",
+      "examId": "9af7c771-af2c-4c81-a03c-9a072511d321",
+      "code": "Q2026CGGFEPESECISGRANFPOLIS4",
+      "year": "2026",
+      "banca": "FEPESE",
+      "orgao": "CIS-GRANFPOLIS",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 10,
+      "heading": "Língua Portuguesa 5 questões",
+      "stem": "Um trabalhador iniciou uma tarefa às 8h20 e terminou às 10h05 do mesmo dia. É correto afirmar que o tempo gasto na tarefa pelo trabalhador foi de:",
+      "stemRows": [
+        {
+          "y": 78.36860000000001,
+          "text": "Um trabalhador iniciou uma tarefa às 8h20 e ter-"
+        },
+        {
+          "y": 90.36860000000001,
+          "text": "minou às 10h05 do mesmo dia."
+        },
+        {
+          "y": 108.03789999999992,
+          "text": "É correto afirmar que o tempo gasto na tarefa pelo"
+        },
+        {
+          "y": 120.03789999999992,
+          "text": "trabalhador foi de:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "1 hora e 25 minutos."
+        },
+        {
+          "letter": "B",
+          "text": "1 hora e 45 minutos."
+        },
+        {
+          "letter": "C",
+          "text": "2 horas e 15 minutos."
+        },
+        {
+          "letter": "D",
+          "text": "2 horas e 45 minutos."
+        },
+        {
+          "letter": "E",
+          "text": "3 horas e 05 minutos. Higiene e Segurança no Trabalho 5 questões"
+        }
+      ],
+      "optionsStartY": 137.70709999999997,
+      "sourcePage": 5,
+      "sourceColumn": 0,
+      "startY": 78.36860000000001,
+      "endY": 234.3922,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 5,
+      "sourceLayout": "FEPESE",
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geral",
+      "topicCode": "G",
+      "id": "fb375d9a-3265-410a-91bc-9cae56fc2f96",
+      "examId": "9af7c771-af2c-4c81-a03c-9a072511d321",
+      "code": "Q2026CGGFEPESECISGRANFPOLIS5",
+      "year": "2026",
+      "banca": "FEPESE",
+      "orgao": "CIS-GRANFPOLIS",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 11,
+      "heading": "Língua Portuguesa 5 questões",
+      "stem": "Durante a limpeza de um ambiente de trabalho, o piso fica molhado e pode causar quedas. Assinale a alternativa que indica corretamente a atitude mais adequada nesse caso.",
+      "stemRows": [
+        {
+          "y": 249.3922,
+          "text": "Durante a limpeza de um ambiente de trabalho, o"
+        },
+        {
+          "y": 261.3922,
+          "text": "piso fica molhado e pode causar quedas."
+        },
+        {
+          "y": 279.06149999999997,
+          "text": "Assinale a alternativa que indica corretamente a ati-"
+        },
+        {
+          "y": 291.06149999999997,
+          "text": "tude mais adequada nesse caso."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Deixar o local como está e continuar trabalhando."
+        },
+        {
+          "letter": "B",
+          "text": "Pedir para as pessoas passarem com cuidado apenas."
+        },
+        {
+          "letter": "C",
+          "text": "Cobrir o local com papel para disfarçar a água."
+        },
+        {
+          "letter": "D",
+          "text": "Ignorar a situação por ser temporária."
+        },
+        {
+          "letter": "E",
+          "text": "Sinalizar o local e evitar a circulação até secar."
+        }
+      ],
+      "optionsStartY": 308.73069999999996,
+      "sourcePage": 5,
+      "sourceColumn": 0,
+      "startY": 249.3922,
+      "endY": 382.73859999999996,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 5,
+      "sourceLayout": "FEPESE",
+      "discipline": "Higiene e Segurança no Trabalho",
+      "disciplineCode": "CE",
+      "topic": "Segurança no trabalho",
+      "topicCode": "G",
+      "id": "065faf08-a0cc-49f1-8c9b-0d79c1f912fe",
+      "examId": "9af7c771-af2c-4c81-a03c-9a072511d321",
+      "code": "Q2026CEGFEPESECISGRANFPOLIS1",
+      "year": "2026",
+      "banca": "FEPESE",
+      "orgao": "CIS-GRANFPOLIS",
+      "answer": "E",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 12,
+      "heading": "Língua Portuguesa 5 questões",
+      "stem": "Sobre a higiene no ambiente de trabalho, o funcionário deve:",
+      "stemRows": [
+        {
+          "y": 397.73859999999996,
+          "text": "Sobre a higiene no ambiente de trabalho, o fun-"
+        },
+        {
+          "y": 409.73859999999996,
+          "text": "cionário deve:"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Acumular resíduos até o final do dia."
+        },
+        {
+          "letter": "B",
+          "text": "Deixar lixo em locais inadequados."
+        },
+        {
+          "letter": "C",
+          "text": "Manter o ambiente limpo e organizado."
+        },
+        {
+          "letter": "D",
+          "text": "Ignorar a limpeza do espaço de trabalho."
+        },
+        {
+          "letter": "E",
+          "text": "Realizar limpeza apenas quando solicitado."
+        }
+      ],
+      "optionsStartY": 427.4079,
+      "sourcePage": 5,
+      "sourceColumn": 0,
+      "startY": 397.73859999999996,
+      "endY": 489.4158,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 5,
+      "sourceLayout": "FEPESE",
+      "discipline": "Higiene e Segurança no Trabalho",
+      "disciplineCode": "CE",
+      "topic": "Segurança no trabalho",
+      "topicCode": "G",
+      "id": "39d29490-8d1a-448c-b053-009f599c1708",
+      "examId": "9af7c771-af2c-4c81-a03c-9a072511d321",
+      "code": "Q2026CEGFEPESECISGRANFPOLIS2",
+      "year": "2026",
+      "banca": "FEPESE",
+      "orgao": "CIS-GRANFPOLIS",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 13,
+      "heading": "Língua Portuguesa 5 questões",
+      "stem": "Em caso de pequeno acidente no ambiente de trabalho, como um corte leve, qual é a atitude adequada?",
+      "stemRows": [
+        {
+          "y": 504.4158,
+          "text": "Em caso de pequeno acidente no ambiente"
+        },
+        {
+          "y": 516.4158,
+          "text": "de trabalho, como um corte leve, qual é a atitude"
+        },
+        {
+          "y": 528.4158,
+          "text": "adequada?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Ignorar o ferimento e continuar trabalhando."
+        },
+        {
+          "letter": "B",
+          "text": "Utilizar qualquer material disponível sem limpeza."
+        },
+        {
+          "letter": "C",
+          "text": "Realizar os primeiros cuidados e comunicar o ocorrido."
+        },
+        {
+          "letter": "D",
+          "text": "Esconder o ocorrido dos responsáveis."
+        },
+        {
+          "letter": "E",
+          "text": "Sair do local sem informar ninguém."
+        }
+      ],
+      "optionsStartY": 546.0851,
+      "sourcePage": 5,
+      "sourceColumn": 0,
+      "startY": 504.4158,
+      "endY": 746.53,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 5,
+      "sourceLayout": "FEPESE",
+      "discipline": "Higiene e Segurança no Trabalho",
+      "disciplineCode": "CE",
+      "topic": "Segurança no trabalho",
+      "topicCode": "G",
+      "id": "b28b6ad4-6615-45df-ad09-f4daea18c5ab",
+      "examId": "9af7c771-af2c-4c81-a03c-9a072511d321",
+      "code": "Q2026CEGFEPESECISGRANFPOLIS3",
+      "year": "2026",
+      "banca": "FEPESE",
+      "orgao": "CIS-GRANFPOLIS",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 14,
+      "heading": "Língua Portuguesa 5 questões",
+      "stem": "Ao realizar uma atividade repetitiva, qual cuidado é importante para a saúde?",
+      "stemRows": [
+        {
+          "y": 78.36860000000001,
+          "text": "Ao realizar uma atividade repetitiva, qual cuidado"
+        },
+        {
+          "y": 90.36860000000001,
+          "text": "é importante para a saúde?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Trabalhar sem parar para terminar mais rápido."
+        },
+        {
+          "letter": "B",
+          "text": "Manter a mesma posição por longos períodos."
+        },
+        {
+          "letter": "C",
+          "text": "Evitar alongamentos durante o trabalho."
+        },
+        {
+          "letter": "D",
+          "text": "Realizar movimentos rápidos e contínuos."
+        },
+        {
+          "letter": "E",
+          "text": "Fazer pausas e manter postura adequada."
+        }
+      ],
+      "optionsStartY": 108.03789999999992,
+      "sourcePage": 5,
+      "sourceColumn": 1,
+      "startY": 78.36860000000001,
+      "endY": 170.0457,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 5,
+      "sourceLayout": "FEPESE",
+      "discipline": "Higiene e Segurança no Trabalho",
+      "disciplineCode": "CE",
+      "topic": "Segurança no trabalho",
+      "topicCode": "G",
+      "id": "fa47d132-bb76-461d-a9f2-4706d7601bf0",
+      "examId": "9af7c771-af2c-4c81-a03c-9a072511d321",
+      "code": "Q2026CEGFEPESECISGRANFPOLIS4",
+      "year": "2026",
+      "banca": "FEPESE",
+      "orgao": "CIS-GRANFPOLIS",
+      "answer": "E",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 15,
+      "heading": "Língua Portuguesa 5 questões",
+      "stem": "Ao identificar uma situação em que um colega passa mal no trabalho, qual deve ser a primeira ação?",
+      "stemRows": [
+        {
+          "y": 185.0457,
+          "text": "Ao identificar uma situação em que um colega"
+        },
+        {
+          "y": 197.0457,
+          "text": "passa mal no trabalho, qual deve ser a primeira ação?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Deixar a pessoa sozinha para descansar."
+        },
+        {
+          "letter": "B",
+          "text": "Oferecer qualquer medicamento disponível."
+        },
+        {
+          "letter": "C",
+          "text": "Acionar ajuda e prestar os primeiros cuidados básicos."
+        },
+        {
+          "letter": "D",
+          "text": "Ignorar, pois não é responsabilidade dos colegas."
+        },
+        {
+          "letter": "E",
+          "text": "Remover a pessoa sem avaliar a situação."
+        }
+      ],
+      "optionsStartY": 214.71499999999992,
+      "sourcePage": 5,
+      "sourceColumn": 1,
+      "startY": 185.0457,
+      "endY": 335.40009999999995,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 5,
+      "sourceLayout": "FEPESE",
+      "discipline": "Higiene e Segurança no Trabalho",
+      "disciplineCode": "CE",
+      "topic": "Segurança no trabalho",
+      "topicCode": "G",
+      "id": "c55dbbfe-b224-48d0-9cfc-a84b5897749d",
+      "examId": "9af7c771-af2c-4c81-a03c-9a072511d321",
+      "code": "Q2026CEGFEPESECISGRANFPOLIS5",
+      "year": "2026",
+      "banca": "FEPESE",
+      "orgao": "CIS-GRANFPOLIS",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 16,
+      "heading": "Língua Portuguesa 5 questões",
+      "stem": "Ao iniciar a limpeza de um piso em área de grande circulação, qual procedimento deve ser realizado primeiro?",
+      "stemRows": [
+        {
+          "y": 350.40009999999995,
+          "text": "Ao iniciar a limpeza de um piso em área de"
+        },
+        {
+          "y": 362.40009999999995,
+          "text": "grande circulação, qual procedimento deve ser reali-"
+        },
+        {
+          "y": 374.40009999999995,
+          "text": "zado primeiro?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Aplicar desinfetante diretamente sobre o piso seco."
+        },
+        {
+          "letter": "B",
+          "text": "Recolher resíduos e varrer o local antes da lavagem."
+        },
+        {
+          "letter": "C",
+          "text": "Passar o rodo antes de qualquer outra ação."
+        },
+        {
+          "letter": "D",
+          "text": "Molhar todo o ambiente sem retirar sujeiras soltas."
+        },
+        {
+          "letter": "E",
+          "text": "Iniciar a limpeza com pano úmido, sem varrer."
+        }
+      ],
+      "optionsStartY": 392.0693,
+      "sourcePage": 5,
+      "sourceColumn": 1,
+      "startY": 350.40009999999995,
+      "endY": 490.07719999999995,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 5,
+      "sourceLayout": "FEPESE",
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Serviços gerais",
+      "topicCode": "G",
+      "id": "4b0cc2ba-4d90-434f-b315-c3284e5e3994",
+      "examId": "9af7c771-af2c-4c81-a03c-9a072511d321",
+      "code": "Q2026CEGFEPESECISGRANFPOLIS6",
+      "year": "2026",
+      "banca": "FEPESE",
+      "orgao": "CIS-GRANFPOLIS",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 17,
+      "heading": "Língua Portuguesa 5 questões",
+      "stem": "Na limpeza de sanitários, qual prática garante melhor desinfecção do vaso sanitário?",
+      "stemRows": [
+        {
+          "y": 505.07719999999995,
+          "text": "Na limpeza de sanitários, qual prática garante"
+        },
+        {
+          "y": 517.0772,
+          "text": "melhor desinfecção do vaso sanitário?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Aplicar desinfetante e esfregar com escova adequada."
+        },
+        {
+          "letter": "B",
+          "text": "Utilizar apenas água para remover odores."
+        },
+        {
+          "letter": "C",
+          "text": "Limpar somente a parte externa do vaso."
+        },
+        {
+          "letter": "D",
+          "text": "Usar pano seco para remover resíduos."
+        },
+        {
+          "letter": "E",
+          "text": "Misturar vários produtos de limpeza ao mesmo tempo. Página 5"
+        }
+      ],
+      "optionsStartY": 534.7465,
+      "sourcePage": 5,
+      "sourceColumn": 1,
+      "startY": 505.07719999999995,
+      "endY": 746.53,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 5,
+      "sourceLayout": "FEPESE",
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Serviços gerais",
+      "topicCode": "G",
+      "id": "71eeb600-01d5-48c9-ad09-2a6746e66a62",
+      "examId": "9af7c771-af2c-4c81-a03c-9a072511d321",
+      "code": "Q2026CEGFEPESECISGRANFPOLIS7",
+      "year": "2026",
+      "banca": "FEPESE",
+      "orgao": "CIS-GRANFPOLIS",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 18,
+      "heading": "Língua Portuguesa 5 questões",
+      "stem": "Para limpar vidraças sem deixar manchas, qual procedimento é adequado?",
+      "stemRows": [
+        {
+          "y": 78.36860000000001,
+          "text": "Para limpar vidraças sem deixar manchas, qual"
+        },
+        {
+          "y": 90.36860000000001,
+          "text": "procedimento é adequado?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Esfregar com esponja áspera."
+        },
+        {
+          "letter": "B",
+          "text": "Lavar com água em excesso e deixar secar sozinho."
+        },
+        {
+          "letter": "C",
+          "text": "Utilizar vassoura para retirar poeira."
+        },
+        {
+          "letter": "D",
+          "text": "Utilizar pano limpo e produto específico para vidro."
+        },
+        {
+          "letter": "E",
+          "text": "Passar pano de chão molhado."
+        }
+      ],
+      "optionsStartY": 108.03789999999992,
+      "sourcePage": 6,
+      "sourceColumn": 0,
+      "startY": 78.36860000000001,
+      "endY": 194.0457,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 5,
+      "sourceLayout": "FEPESE",
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Serviços gerais",
+      "topicCode": "G",
+      "id": "8959c1eb-de1e-405c-860a-b12f9fae4dd6",
+      "examId": "9af7c771-af2c-4c81-a03c-9a072511d321",
+      "code": "Q2026CEGFEPESECISGRANFPOLIS8",
+      "year": "2026",
+      "banca": "FEPESE",
+      "orgao": "CIS-GRANFPOLIS",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 19,
+      "heading": "Língua Portuguesa 5 questões",
+      "stem": "Ao limpar paredes, qual cuidado deve ser observado?",
+      "stemRows": [
+        {
+          "y": 209.0457,
+          "text": "Ao limpar paredes, qual cuidado deve ser"
+        },
+        {
+          "y": 221.0457,
+          "text": "observado?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Utilizar qualquer produto disponível."
+        },
+        {
+          "letter": "B",
+          "text": "Verificar o tipo de material antes de escolher o produto."
+        },
+        {
+          "letter": "C",
+          "text": "Esfregar com palha de aço."
+        },
+        {
+          "letter": "D",
+          "text": "Aplicar água sanitária pura em todas as superfícies."
+        },
+        {
+          "letter": "E",
+          "text": "Molhar excessivamente a parede."
+        }
+      ],
+      "optionsStartY": 238.71499999999992,
+      "sourcePage": 6,
+      "sourceColumn": 0,
+      "startY": 209.0457,
+      "endY": 324.7229,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 5,
+      "sourceLayout": "FEPESE",
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Serviços gerais",
+      "topicCode": "G",
+      "id": "d18d98f0-6067-4605-8f6c-c73f9001136e",
+      "examId": "9af7c771-af2c-4c81-a03c-9a072511d321",
+      "code": "Q2026CEGFEPESECISGRANFPOLIS9",
+      "year": "2026",
+      "banca": "FEPESE",
+      "orgao": "CIS-GRANFPOLIS",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 20,
+      "heading": "Língua Portuguesa 5 questões",
+      "stem": "Assinale a alternativa que indica o procedimento correto na conservação de móveis.",
+      "stemRows": [
+        {
+          "y": 339.7229,
+          "text": "Assinale a alternativa que indica o procedimento"
+        },
+        {
+          "y": 351.7229,
+          "text": "correto na conservação de móveis."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Jogar água diretamente sobre os móveis."
+        },
+        {
+          "letter": "B",
+          "text": "Usar produtos abrasivos diariamente."
+        },
+        {
+          "letter": "C",
+          "text": "Esfregar com escova dura."
+        },
+        {
+          "letter": "D",
+          "text": "Utilizar somente pano seco em qualquer situação."
+        },
+        {
+          "letter": "E",
+          "text": "Limpar com pano levemente umedecido."
+        }
+      ],
+      "optionsStartY": 369.39219999999995,
+      "sourcePage": 6,
+      "sourceColumn": 0,
+      "startY": 339.7229,
+      "endY": 443.40009999999995,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 5,
+      "sourceLayout": "FEPESE",
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Serviços gerais",
+      "topicCode": "G",
+      "id": "66f3dea1-f8c9-47c5-b1e2-f7cd5131b6f8",
+      "examId": "9af7c771-af2c-4c81-a03c-9a072511d321",
+      "code": "Q2026CEGFEPESECISGRANFPOLIS10",
+      "year": "2026",
+      "banca": "FEPESE",
+      "orgao": "CIS-GRANFPOLIS",
+      "answer": "E",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 21,
+      "heading": "Língua Portuguesa 5 questões",
+      "stem": "Assinale a alternativa que indica o procedimento correto na coleta de resíduos.",
+      "stemRows": [
+        {
+          "y": 458.40009999999995,
+          "text": "Assinale a alternativa que indica o procedimento"
+        },
+        {
+          "y": 470.40009999999995,
+          "text": "correto na coleta de resíduos."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Separar o lixo comum do reciclável em recipientes diferentes."
+        },
+        {
+          "letter": "B",
+          "text": "Misturar todos os resíduos no mesmo saco."
+        },
+        {
+          "letter": "C",
+          "text": "Descartar recicláveis no lixo comum."
+        },
+        {
+          "letter": "D",
+          "text": "Armazenar resíduos sem identificação."
+        },
+        {
+          "letter": "E",
+          "text": "Depositar lixo fora dos recipientes."
+        }
+      ],
+      "optionsStartY": 488.0693,
+      "sourcePage": 6,
+      "sourceColumn": 0,
+      "startY": 458.40009999999995,
+      "endY": 562.0772,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 5,
+      "sourceLayout": "FEPESE",
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Serviços gerais",
+      "topicCode": "G",
+      "id": "a97beef4-3d65-4991-b2dd-20299b0de649",
+      "examId": "9af7c771-af2c-4c81-a03c-9a072511d321",
+      "code": "Q2026CEGFEPESECISGRANFPOLIS11",
+      "year": "2026",
+      "banca": "FEPESE",
+      "orgao": "CIS-GRANFPOLIS",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 22,
+      "heading": "Língua Portuguesa 5 questões",
+      "stem": "Ao utilizar produtos de limpeza, qual atitude é adequada?",
+      "stemRows": [
+        {
+          "y": 577.0772,
+          "text": "Ao utilizar produtos de limpeza, qual atitude é"
+        },
+        {
+          "y": 589.0772,
+          "text": "adequada?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Misturar produtos para aumentar o efeito."
+        },
+        {
+          "letter": "B",
+          "text": "Usar qualquer quantidade disponível."
+        },
+        {
+          "letter": "C",
+          "text": "Aplicar sem observar o tipo de superfície."
+        },
+        {
+          "letter": "D",
+          "text": "Seguir as instruções do fabricante."
+        },
+        {
+          "letter": "E",
+          "text": "Utilizar apenas água em todas as situações. Página 6"
+        }
+      ],
+      "optionsStartY": 606.7465,
+      "sourcePage": 6,
+      "sourceColumn": 0,
+      "startY": 577.0772,
+      "endY": 746.53,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 5,
+      "sourceLayout": "FEPESE",
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Serviços gerais",
+      "topicCode": "G",
+      "id": "75dffe99-ed70-4eab-9c72-aaa0658fe3dd",
+      "examId": "9af7c771-af2c-4c81-a03c-9a072511d321",
+      "code": "Q2026CEGFEPESECISGRANFPOLIS12",
+      "year": "2026",
+      "banca": "FEPESE",
+      "orgao": "CIS-GRANFPOLIS",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 23,
+      "heading": "Língua Portuguesa 5 questões",
+      "stem": "Assinale a alternativa que indica o procedimento correto no uso de equipamentos de limpeza.",
+      "stemRows": [
+        {
+          "y": 78.36860000000001,
+          "text": "Assinale a alternativa que indica o procedimento"
+        },
+        {
+          "y": 90.36860000000001,
+          "text": "correto no uso de equipamentos de limpeza."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Guardar equipamentos sujos para uso posterior."
+        },
+        {
+          "letter": "B",
+          "text": "Utilizar equipamentos sem verificar suas condições."
+        },
+        {
+          "letter": "C",
+          "text": "Manter os equipamentos limpos e conservados após o uso."
+        },
+        {
+          "letter": "D",
+          "text": "Deixar rodos e vassouras espalhados no ambiente."
+        },
+        {
+          "letter": "E",
+          "text": "Usar equipamentos quebrados em tarefas simples."
+        }
+      ],
+      "optionsStartY": 108.03789999999992,
+      "sourcePage": 6,
+      "sourceColumn": 1,
+      "startY": 78.36860000000001,
+      "endY": 218.0457,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 5,
+      "sourceLayout": "FEPESE",
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Serviços gerais",
+      "topicCode": "G",
+      "id": "843602ec-89bd-4c6c-8358-7cf7fa0029fc",
+      "examId": "9af7c771-af2c-4c81-a03c-9a072511d321",
+      "code": "Q2026CEGFEPESECISGRANFPOLIS13",
+      "year": "2026",
+      "banca": "FEPESE",
+      "orgao": "CIS-GRANFPOLIS",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 24,
+      "heading": "Língua Portuguesa 5 questões",
+      "stem": "Assinale a alternativa que indica o procedimento correto no armazenamento de produtos de limpeza.",
+      "stemRows": [
+        {
+          "y": 233.0457,
+          "text": "Assinale a alternativa que indica o procedimento"
+        },
+        {
+          "y": 245.0457,
+          "text": "correto no armazenamento de produtos de limpeza."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Guardar produtos abertos sem identificação."
+        },
+        {
+          "letter": "B",
+          "text": "Misturar produtos no mesmo recipiente."
+        },
+        {
+          "letter": "C",
+          "text": "Armazenar próximos a alimentos."
+        },
+        {
+          "letter": "D",
+          "text": "Retirar rótulos dos produtos antes de guardar."
+        },
+        {
+          "letter": "E",
+          "text": "Guardar em local seguro e identificado."
+        }
+      ],
+      "optionsStartY": 262.7149999999999,
+      "sourcePage": 6,
+      "sourceColumn": 1,
+      "startY": 233.0457,
+      "endY": 324.7229,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 5,
+      "sourceLayout": "FEPESE",
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Serviços gerais",
+      "topicCode": "G",
+      "id": "20dfcb6e-6c98-4e6a-8e68-a931b344c2f4",
+      "examId": "9af7c771-af2c-4c81-a03c-9a072511d321",
+      "code": "Q2026CEGFEPESECISGRANFPOLIS14",
+      "year": "2026",
+      "banca": "FEPESE",
+      "orgao": "CIS-GRANFPOLIS",
+      "answer": "E",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 25,
+      "heading": "Língua Portuguesa 5 questões",
+      "stem": "Em relação aos Equipamentos de Proteção Individual (EPIs), qual é a conduta adequada?",
+      "stemRows": [
+        {
+          "y": 339.7229,
+          "text": "Em relação aos Equipamentos de Proteção Indivi-"
+        },
+        {
+          "y": 351.7229,
+          "text": "dual (EPIs), qual é a conduta adequada?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Usar EPIs apenas quando solicitado."
+        },
+        {
+          "letter": "B",
+          "text": "Compartilhar EPIs sem higienização."
+        },
+        {
+          "letter": "C",
+          "text": "Utilizar EPIs danificados."
+        },
+        {
+          "letter": "D",
+          "text": "Utilizar equipamentos de proteção conforme a atividade."
+        },
+        {
+          "letter": "E",
+          "text": "Evitar o uso sempre que possível."
+        }
+      ],
+      "optionsStartY": 369.39219999999995,
+      "sourcePage": 6,
+      "sourceColumn": 1,
+      "startY": 339.7229,
+      "endY": 443.40009999999995,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 5,
+      "sourceLayout": "FEPESE",
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Serviços gerais",
+      "topicCode": "G",
+      "id": "18ae46a4-6431-4be3-a6fa-6d81b5587bec",
+      "examId": "9af7c771-af2c-4c81-a03c-9a072511d321",
+      "code": "Q2026CEGFEPESECISGRANFPOLIS15",
+      "year": "2026",
+      "banca": "FEPESE",
+      "orgao": "CIS-GRANFPOLIS",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 26,
+      "heading": "Língua Portuguesa 5 questões",
+      "stem": "Ao realizar a limpeza de áreas externas, qual prática contribui para a segurança?",
+      "stemRows": [
+        {
+          "y": 458.40009999999995,
+          "text": "Ao realizar a limpeza de áreas externas, qual prá-"
+        },
+        {
+          "y": 470.40009999999995,
+          "text": "tica contribui para a segurança?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Sinalizar o local para evitar circulação durante a limpeza."
+        },
+        {
+          "letter": "B",
+          "text": "Lavar o espaço sem qualquer aviso."
+        },
+        {
+          "letter": "C",
+          "text": "Utilizar apenas água sem organização."
+        },
+        {
+          "letter": "D",
+          "text": "Deixar equipamentos espalhados pelo local."
+        },
+        {
+          "letter": "E",
+          "text": "Realizar a limpeza sem planejamento."
+        }
+      ],
+      "optionsStartY": 488.0693,
+      "sourcePage": 6,
+      "sourceColumn": 1,
+      "startY": 458.40009999999995,
+      "endY": 562.0772,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 5,
+      "sourceLayout": "FEPESE",
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Serviços gerais",
+      "topicCode": "G",
+      "id": "2ccc14c6-6a79-44ac-8b89-6b1882da7a9e",
+      "examId": "9af7c771-af2c-4c81-a03c-9a072511d321",
+      "code": "Q2026CEGFEPESECISGRANFPOLIS16",
+      "year": "2026",
+      "banca": "FEPESE",
+      "orgao": "CIS-GRANFPOLIS",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 27,
+      "heading": "Língua Portuguesa 5 questões",
+      "stem": "Assinale a alternativa que indica o procedimento correto na reposição de materiais de higiene.",
+      "stemRows": [
+        {
+          "y": 577.0772,
+          "text": "Assinale a alternativa que indica o procedimento"
+        },
+        {
+          "y": 589.0772,
+          "text": "correto na reposição de materiais de higiene."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Repor somente quando houver reclamação."
+        },
+        {
+          "letter": "B",
+          "text": "Verificar a necessidade e repor antes de faltar."
+        },
+        {
+          "letter": "C",
+          "text": "Ignorar o nível dos materiais disponíveis."
+        },
+        {
+          "letter": "D",
+          "text": "Substituir por materiais inadequados."
+        },
+        {
+          "letter": "E",
+          "text": "Repor sem observar o tipo de produto."
+        }
+      ],
+      "optionsStartY": 606.7465,
+      "sourcePage": 6,
+      "sourceColumn": 1,
+      "startY": 577.0772,
+      "endY": 746.53,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 5,
+      "sourceLayout": "FEPESE",
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Serviços gerais",
+      "topicCode": "G",
+      "id": "0fa280b1-561e-4a3a-9a6b-24aab76c2e4a",
+      "examId": "9af7c771-af2c-4c81-a03c-9a072511d321",
+      "code": "Q2026CEGFEPESECISGRANFPOLIS17",
+      "year": "2026",
+      "banca": "FEPESE",
+      "orgao": "CIS-GRANFPOLIS",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 28,
+      "heading": "Língua Portuguesa 5 questões",
+      "stem": "Assinale a alternativa que indica prática correta em relação ao uso racional da água.",
+      "stemRows": [
+        {
+          "y": 78.36860000000001,
+          "text": "Assinale a alternativa que indica prática correta"
+        },
+        {
+          "y": 90.36860000000001,
+          "text": "em relação ao uso racional da água."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Manter torneiras abertas continuamente."
+        },
+        {
+          "letter": "B",
+          "text": "Usar água em excesso em todas as atividades."
+        },
+        {
+          "letter": "C",
+          "text": "Desprezar controle de consumo."
+        },
+        {
+          "letter": "D",
+          "text": "Lavar áreas limpas repetidamente."
+        },
+        {
+          "letter": "E",
+          "text": "Utilizar apenas a quantidade necessária durante a limpeza."
+        }
+      ],
+      "optionsStartY": 108.03789999999992,
+      "sourcePage": 7,
+      "sourceColumn": 0,
+      "startY": 78.36860000000001,
+      "endY": 182.0457,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 5,
+      "sourceLayout": "FEPESE",
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Serviços gerais",
+      "topicCode": "G",
+      "id": "e6be4986-8665-4193-b6ea-3a57007bcb7a",
+      "examId": "9af7c771-af2c-4c81-a03c-9a072511d321",
+      "code": "Q2026CEGFEPESECISGRANFPOLIS18",
+      "year": "2026",
+      "banca": "FEPESE",
+      "orgao": "CIS-GRANFPOLIS",
+      "answer": "E",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 29,
+      "heading": "Língua Portuguesa 5 questões",
+      "stem": "Assinale a alternativa que indica a atitude correta na organização do ambiente de trabalho.",
+      "stemRows": [
+        {
+          "y": 197.0457,
+          "text": "Assinale a alternativa que indica a atitude correta"
+        },
+        {
+          "y": 209.0457,
+          "text": "na organização do ambiente de trabalho."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Manter materiais organizados e limpos após o uso."
+        },
+        {
+          "letter": "B",
+          "text": "Deixar objetos espalhados."
+        },
+        {
+          "letter": "C",
+          "text": "Guardar materiais sem critério."
+        },
+        {
+          "letter": "D",
+          "text": "Misturar materiais limpos e sujos."
+        },
+        {
+          "letter": "E",
+          "text": "Ignorar a organização do espaço."
+        }
+      ],
+      "optionsStartY": 226.71499999999992,
+      "sourcePage": 7,
+      "sourceColumn": 0,
+      "startY": 197.0457,
+      "endY": 300.7229,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 5,
+      "sourceLayout": "FEPESE",
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Serviços gerais",
+      "topicCode": "G",
+      "id": "690c55bf-469f-4ca8-9ac4-3d66e42f3c8b",
+      "examId": "9af7c771-af2c-4c81-a03c-9a072511d321",
+      "code": "Q2026CEGFEPESECISGRANFPOLIS19",
+      "year": "2026",
+      "banca": "FEPESE",
+      "orgao": "CIS-GRANFPOLIS",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 30,
+      "heading": "Língua Portuguesa 5 questões",
+      "stem": "Ao identificar um pequeno problema estrutural, como uma torneira com vazamento, qual ação é adequada?",
+      "stemRows": [
+        {
+          "y": 315.7229,
+          "text": "Ao identificar um pequeno problema estrutu-"
+        },
+        {
+          "y": 327.7229,
+          "text": "ral, como uma torneira com vazamento, qual ação é"
+        },
+        {
+          "y": 339.7229,
+          "text": "adequada?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Ignorar a situação."
+        },
+        {
+          "letter": "B",
+          "text": "Tentar resolver sem conhecimento técnico."
+        },
+        {
+          "letter": "C",
+          "text": "Aguardar outro funcionário perceber."
+        },
+        {
+          "letter": "D",
+          "text": "Comunicar o responsável pela manutenção."
+        },
+        {
+          "letter": "E",
+          "text": "Continuar usando normalmente sem informar."
+        }
+      ],
+      "optionsStartY": 357.39219999999995,
+      "sourcePage": 7,
+      "sourceColumn": 0,
+      "startY": 315.7229,
+      "endY": 419.40009999999995,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 5,
+      "sourceLayout": "FEPESE",
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Serviços gerais",
+      "topicCode": "G",
+      "id": "34e59b42-70a7-4f1c-83b3-a73f98092bc5",
+      "examId": "9af7c771-af2c-4c81-a03c-9a072511d321",
+      "code": "Q2026CEGFEPESECISGRANFPOLIS20",
+      "year": "2026",
+      "banca": "FEPESE",
+      "orgao": "CIS-GRANFPOLIS",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 31,
+      "heading": "Língua Portuguesa 5 questões",
+      "stem": "Sobre o trabalho em equipe, qual atitude contribui para um bom ambiente?",
+      "stemRows": [
+        {
+          "y": 434.40009999999995,
+          "text": "Sobre o trabalho em equipe, qual atitude contri-"
+        },
+        {
+          "y": 446.40009999999995,
+          "text": "bui para um bom ambiente?"
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Trabalhar de forma isolada."
+        },
+        {
+          "letter": "B",
+          "text": "Ignorar solicitações de ajuda."
+        },
+        {
+          "letter": "C",
+          "text": "Evitar comunicação com a equipe."
+        },
+        {
+          "letter": "D",
+          "text": "Priorizar apenas tarefas individuais."
+        },
+        {
+          "letter": "E",
+          "text": "Trabalhar priorizando a coletividade e a comunicação constante."
+        }
+      ],
+      "optionsStartY": 464.0693,
+      "sourcePage": 7,
+      "sourceColumn": 0,
+      "startY": 434.40009999999995,
+      "endY": 538.0772,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 5,
+      "sourceLayout": "FEPESE",
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Serviços gerais",
+      "topicCode": "G",
+      "id": "6d6af3dd-cdcb-44aa-9a78-2ea211c8a974",
+      "examId": "9af7c771-af2c-4c81-a03c-9a072511d321",
+      "code": "Q2026CEGFEPESECISGRANFPOLIS21",
+      "year": "2026",
+      "banca": "FEPESE",
+      "orgao": "CIS-GRANFPOLIS",
+      "answer": "E",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 32,
+      "heading": "Língua Portuguesa 5 questões",
+      "stem": "Assinale a alternativa que indica corretamente um comportamento adequado no atendimento ao público.",
+      "stemRows": [
+        {
+          "y": 553.0772,
+          "text": "Assinale a alternativa que indica corretamente"
+        },
+        {
+          "y": 565.0772,
+          "text": "um comportamento adequado no atendimento ao"
+        },
+        {
+          "y": 577.0772,
+          "text": "público."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Ignorar as pessoas."
+        },
+        {
+          "letter": "B",
+          "text": "Agir com cordialidade e respeito."
+        },
+        {
+          "letter": "C",
+          "text": "Responder de forma rude."
+        },
+        {
+          "letter": "D",
+          "text": "Evitar contato visual."
+        },
+        {
+          "letter": "E",
+          "text": "Demonstrar impaciência."
+        }
+      ],
+      "optionsStartY": 594.7465,
+      "sourcePage": 7,
+      "sourceColumn": 0,
+      "startY": 553.0772,
+      "endY": 746.53,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 5,
+      "sourceLayout": "FEPESE",
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Serviços gerais",
+      "topicCode": "G",
+      "id": "c7b0842a-add3-4022-b034-a300882859cd",
+      "examId": "9af7c771-af2c-4c81-a03c-9a072511d321",
+      "code": "Q2026CEGFEPESECISGRANFPOLIS22",
+      "year": "2026",
+      "banca": "FEPESE",
+      "orgao": "CIS-GRANFPOLIS",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 33,
+      "heading": "Língua Portuguesa 5 questões",
+      "stem": "Assinale a alternativa que indica prática correta na prevenção de acidentes.",
+      "stemRows": [
+        {
+          "y": 78.36860000000001,
+          "text": "Assinale a alternativa que indica prática correta"
+        },
+        {
+          "y": 90.36860000000001,
+          "text": "na prevenção de acidentes."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Deixar objetos no caminho."
+        },
+        {
+          "letter": "B",
+          "text": "Ignorar riscos no local."
+        },
+        {
+          "letter": "C",
+          "text": "Utilizar equipamentos de forma inadequada."
+        },
+        {
+          "letter": "D",
+          "text": "Manter o ambiente limpo e organizado."
+        },
+        {
+          "letter": "E",
+          "text": "Trabalhar sem organização."
+        }
+      ],
+      "optionsStartY": 108.03789999999992,
+      "sourcePage": 7,
+      "sourceColumn": 1,
+      "startY": 78.36860000000001,
+      "endY": 170.0457,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 5,
+      "sourceLayout": "FEPESE",
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Serviços gerais",
+      "topicCode": "G",
+      "id": "10df0323-60bf-4bb9-b48a-65002d10f0bb",
+      "examId": "9af7c771-af2c-4c81-a03c-9a072511d321",
+      "code": "Q2026CEGFEPESECISGRANFPOLIS23",
+      "year": "2026",
+      "banca": "FEPESE",
+      "orgao": "CIS-GRANFPOLIS",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 34,
+      "heading": "Língua Portuguesa 5 questões",
+      "stem": "Assinale a alternativa que indica atitude correta em relação à higiene pessoal no trabalho.",
+      "stemRows": [
+        {
+          "y": 185.0457,
+          "text": "Assinale a alternativa que indica atitude correta"
+        },
+        {
+          "y": 197.0457,
+          "text": "em relação à higiene pessoal no trabalho."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Ignorar cuidados pessoais."
+        },
+        {
+          "letter": "B",
+          "text": "Trabalhar com roupas inadequadas."
+        },
+        {
+          "letter": "C",
+          "text": "Manter limpeza e apresentação adequadas."
+        },
+        {
+          "letter": "D",
+          "text": "Desconsiderar normas de higiene."
+        },
+        {
+          "letter": "E",
+          "text": "Utilizar uniforme sujo."
+        }
+      ],
+      "optionsStartY": 214.71499999999992,
+      "sourcePage": 7,
+      "sourceColumn": 1,
+      "startY": 185.0457,
+      "endY": 276.7229,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 5,
+      "sourceLayout": "FEPESE",
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Serviços gerais",
+      "topicCode": "G",
+      "id": "be277531-d4c8-4e8c-8082-efbac74517b3",
+      "examId": "9af7c771-af2c-4c81-a03c-9a072511d321",
+      "code": "Q2026CEGFEPESECISGRANFPOLIS24",
+      "year": "2026",
+      "banca": "FEPESE",
+      "orgao": "CIS-GRANFPOLIS",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null
+    },
+    {
+      "originalNumber": 35,
+      "heading": "Língua Portuguesa 5 questões",
+      "stem": "Assinale a alternativa que indica prática correta na preservação do patrimônio público.",
+      "stemRows": [
+        {
+          "y": 291.7229,
+          "text": "Assinale a alternativa que indica prática correta"
+        },
+        {
+          "y": 303.7229,
+          "text": "na preservação do patrimônio público."
+        }
+      ],
+      "options": [
+        {
+          "letter": "A",
+          "text": "Usar equipamentos sem atenção."
+        },
+        {
+          "letter": "B",
+          "text": "Utilizar materiais e equipamentos com cuidado."
+        },
+        {
+          "letter": "C",
+          "text": "Descartar materiais em bom estado."
+        },
+        {
+          "letter": "D",
+          "text": "Danificar objetos de uso comum."
+        },
+        {
+          "letter": "E",
+          "text": "Ignorar a conservação dos espaços. Página 7"
+        }
+      ],
+      "optionsStartY": 321.39219999999995,
+      "sourcePage": 7,
+      "sourceColumn": 1,
+      "startY": 291.7229,
+      "endY": 746.53,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "expectedAlternatives": 5,
+      "sourceLayout": "FEPESE",
+      "discipline": "Conhecimentos específicos",
+      "disciplineCode": "CE",
+      "topic": "Serviços gerais",
+      "topicCode": "G",
+      "id": "5233ca76-4171-4ce6-a0e7-ab0b04676410",
+      "examId": "9af7c771-af2c-4c81-a03c-9a072511d321",
+      "code": "Q2026CEGFEPESECISGRANFPOLIS25",
+      "year": "2026",
+      "banca": "FEPESE",
+      "orgao": "CIS-GRANFPOLIS",
+      "answer": "B",
       "status": "active",
       "secondary": [],
       "aliases": [],
