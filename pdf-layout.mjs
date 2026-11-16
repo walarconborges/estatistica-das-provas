@@ -389,6 +389,38 @@ export function spatialQuestions(pages){
   }
  }
  questions.push(...recoverExplicitQuestionHeadings(pages,questions,expectedAlternatives));
+
+ // Algumas provas colocam o texto-base antes da questão 1, sem escrever
+ // "leia o texto para responder às questões...". Preservar o preâmbulo
+ // extenso de Português e vinculá-lo às questões que fazem referência
+ // ao texto, inclusive quando elas aparecem na coluna ao lado.
+ const first=questions.find(q=>q.originalNumber===1);
+ if(first&&!first.contextText){
+  const page=pages.find(p=>p.number===first.sourcePage);
+  const above=(page?.lines||[])
+   .filter(row=>row.col===first.sourceColumn&&row.y<first.startY-10)
+   .sort((a,b)=>a.y-b.y);
+  const headingIndex=above.findIndex(row=>/L[IÍ]NGUA PORTUGUESA(?:\s*\|\s*\d+\s*QUEST[OÕ]ES)?/i.test(row.text));
+  const sourceRows=headingIndex>=0?above.slice(headingIndex+1):[];
+  const opening=humanizePdfText(sourceRows.filter(row=>!/^(?:WWW\.|FONTE:|P[AÁ]GINA\s+\d+)/i.test(row.text.trim()))
+    .map(row=>row.text).join('\n'));
+  if(opening.length>=180&&sourceRows.length>=5){
+   const sorted=questions.filter(q=>q.originalNumber>=1&&q.originalNumber<=15)
+    .sort((a,b)=>a.originalNumber-b.originalNumber);
+   let last=0;
+   for(const q of sorted){
+    const refer=/\b(?:TEXTO|INFORMA[CÇ][ÕO]ES|PAR[AÁ]GRAFO|TRECHO|SUBLINHAD[OA]S?|LEITURA)\b/i.test(q.stem);
+    if(q.originalNumber!==last+1||(!refer&&q.originalNumber!==1))break;
+    if(!q.contextText){q.contextText=opening;q.contextRange=[1,q.originalNumber];}
+    last=q.originalNumber;
+   }
+   if(last>0){
+    for(const q of sorted.slice(0,last))if(q.contextText===opening)q.contextRange=[1,last];
+    contexts.push({from:1,to:last,text:opening,page:page.number,col:first.sourceColumn});
+   }
+  }
+ }
+
  // FEPESE: o Texto 1 da questão 1 está na coluna esquerda, mas
  // continua na coluna direita ANTES da questão. Sem este vínculo,
  // os artigos da lei reproduzida no caderno desaparecem da questão.
