@@ -1,9 +1,25 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.3 — 15/11/2026**  
+**Versão experimental 0.6.4 — 15/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.4 — Quadrix: alternativas numéricas e recuperação fiel
+
+**Erro reproduzido:** na prova Quadrix/CRQ-V de Analista de Informática, o importador identificou 46 de 50 questões. Perdeu as questões 16, 17, 18 e 20, reconheceu só duas alternativas na 25 e quatro na 43.
+
+**Correções:**
+- Valores numéricos curtos (`4`, `24`, `36` etc.) não são mais descartados automaticamente como se fossem números de página. A verificação geométrica dos itens foi ajustada para recuperar letras e números com pequenas diferenças verticais ou horizontais.
+- Quando o PDF separa o título `QUESTÃO` do respectivo número em itens gráficos, o leitor recompõe o cabeçalho. Um título explícito `QUESTÃO N` não é tratado como número solto do enunciado.
+- Uma questão não é descartada porque o texto das alternativas ficou incompleto. Caso a transcrição textual falhe, o sistema gera um **recorte visual com a questão inteira e as alternativas originais**. O usuário continua podendo selecionar A–E e consultar o gabarito oficial, mas o texto das opções não é inventado.
+- O recorte de recuperação inclui **todas as alternativas**, em vez de parar antes da alternativa A; para casos como a 25, termina antes da área de anotações.
+- Questões apresentadas por imagem ficam com o estado **Revisão da extração** e são contabilizadas explicitamente na mensagem e na lista de provas.
+- O controle de integridade permite o recorte visual **somente quando a imagem foi realmente gerada**. Se não houver imagem, persistirem questões ausentes ou o gabarito não tiver as 50 respostas correspondentes, a importação permanece bloqueada.
+
+**Validação:** o PDF original foi inspecionado e contém os títulos explícitos das questões 1 a 50. A suíte automatizada inclui 85 cenários aprovados, entre eles uma simulação da prova com 50 questões e seis extrações propositalmente incompletas, recuperadas por imagem. A **importação integral no navegador com PDF.js ainda precisa ser confirmada**: não apresentar os testes simulados como prova de funcionamento em produção.
+
+Não houve alterações no banco existente, nos perfis, nos gabaritos cadastrados ou nas estatísticas. Os arquivos originais da Quadrix podem ser importados novamente quando o rodapé indicar 0.6.4.
 
 ## Versão 0.6.3 — Identificação do cargo no gabarito Quadrix
 
