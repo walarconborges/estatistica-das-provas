@@ -1,3 +1,11 @@
+## 0.6.22 — 16/11/2026
+
+- Corrigida a comparação literal entre o cargo do caderno e o do gabarito FCPC/Aracati. Extração de fonte incorporada troca a letra em SERVIÇOS, resultando em SERVIAOS.
+- Comparador de cargos aceita uma única diferença de caractere, com os demais termos substantivos preservados e na ordem, para arquivos de um cargo ou multicargo.
+- Mantidas salvaguardas que impedem selecionar gabarito de cargo diferente.
+- Testes verificam 50 respostas, comparação tolerante e recusa de cargos incompatíveis.
+- Nenhum dado pré-existente precisa ser apagado ou migrado.
+
 ## 0.6.21 — 16/11/2026
 
 - Novo cargo “Todos — estudo geral, sem edital” em Questões e Simulados, com filtros transversais de Português, Raciocínio Lógico/Matemática, Informática, Conhecimentos Gerais, Legislação e conhecimentos específicos.
