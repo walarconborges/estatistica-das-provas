@@ -696,7 +696,8 @@ test('FEPESE: 560 e 1.036 são alternativas distintas, sem fração automática'
 
 test('VUNESP 002: capa numerada não cria questão 2 duplicada',()=>{
  const page1={number:1,width:595.28,height:841.89,lines:[
-  {col:0,x:204,y:195,text:'002. Prova Objetiva'},
+  {col:0,x:204,y:195,text:'002. Prova'},
+  {col:1,x:309,y:195,text:'Objetiva'},
   {col:0,x:188,y:230,text:'Analista de Informática II'},
   {col:0,x:102,y:260,text:'Área de atuação: desenvolvimento de sistemas institucionais'},
   {col:0,x:34,y:310,text:'Você recebeu este caderno contendo 40 questões objetivas.'}
