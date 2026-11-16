@@ -218,6 +218,18 @@ export function stats(state,profileId){
   };
   return {total:done.length,correct,wrong,rate:done.length?correct/done.length*100:0,byDiscipline:group('discipline'),byTopic:group('topic')};
 }
+/**
+ * Filtro inclusivo: uma ou várias situações podem ser selecionadas.
+ * Nenhuma seleção significa todas; aceita também o formato antigo
+ * "outcome" (seleção única) para manter compatibilidade.
+ */
+export function normalizeOutcomeSelection(filters={}){
+ const raw=Array.isArray(filters.outcomes)?filters.outcomes:
+  typeof filters.outcomes==='string'?filters.outcomes.split(','):
+  filters.outcome&&filters.outcome!=='all'?[filters.outcome]:[];
+ const allowed=new Set(['unanswered','wrong','correct']);
+ return [...new Set(raw.filter(v=>allowed.has(v)))];
+}
 export function filtered(state,profileId,f={}){
   let result=state.questions.filter(q=>{
     if(f.examId&&q.examId!==f.examId)return false;
@@ -230,7 +242,8 @@ export function filtered(state,profileId,f={}){
     if(f.topic&&!types.some(x=>x.topic===f.topic))return false;
     if(f.status&&f.status!=='all'&&q.status!==f.status)return false;
     if(!f.status&&q.status!=='active')return false;
-    if(f.outcome&&f.outcome!=='all'&&outcome(state,profileId,q)!==f.outcome)return false;
+    const selectedOutcomes=normalizeOutcomeSelection(f);
+    if(selectedOutcomes.length&&!selectedOutcomes.includes(outcome(state,profileId,q)))return false;
     return true;
   });
   return result;
