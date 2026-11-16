@@ -358,3 +358,23 @@ test('Legalle 2026 Cândido Godói: metadados detectados pelo gabarito e pela ca
  assert.deepEqual(result.missing,[]);
  assert.equal(result.title,'2026 — LEGALLE — PM-CANDIDO-GODOI — Auxiliar de Serviços Gerais');
 });
+
+
+test('Legalle Cândido Godói: blocos originais da prova 1–15, 16–25, 26–30 e 31–40',()=>{
+ const meta={banca:'LEGALLE',orgao:'PM-CANDIDO-GODOI',
+  title:'2026 — LEGALLE — PM-CANDIDO-GODOI — Auxiliar de Serviços Gerais'};
+ const guessed={discipline:'Não classificada',disciplineCode:'NC',topic:'Geral',topicCode:'G'};
+ const expected=[
+  [1,'LP','Língua Portuguesa'],[15,'LP','Língua Portuguesa'],
+  [16,'RL','Raciocínio Lógico e Matemática'],
+  [25,'RL','Raciocínio Lógico e Matemática'],
+  [26,'CG','Atualidades'],[30,'CG','Atualidades'],
+  [31,'LE','Legislação'],[40,'LE','Legislação']
+ ];
+ for(const [n,code,name] of expected){
+  const result=classifyByExamDivision({originalNumber:n},meta,guessed);
+  assert.equal(result.disciplineCode,code,'questão '+n);
+  assert.equal(result.discipline,name,'questão '+n);
+ }
+ assert.equal(classifyByExamDivision({originalNumber:41},meta,guessed).disciplineCode,'NC');
+});
