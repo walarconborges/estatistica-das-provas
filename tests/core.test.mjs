@@ -254,3 +254,23 @@ test('Objetiva 2026 Sossêgo: reconhece banca, prefeitura, cargo 202 e número d
   assert.equal(updated.disciplineCode,discipline,'Questão '+number);
  }
 });
+
+
+test('FCPC / Câmara de Aracati: metadados e blocos oficiais das 50 questões',()=>{
+ const exam='CÂMARA MUNICIPAL DE ARACATI\nFUNDAÇÃO CEARENSE DE PESQUISA E CULTURA – FCPC\n'+
+ 'EDITAL Nº 001\nAuxiliar de Serviços Gerais\nInstruções\n'+
+ 'Data: 30 de agosto de 2026.\n50 (cinquenta) questões';
+ const key='CÂMARA MUNICIPAL DE ARACATI\nFUNDAÇÃO CEARENSE DE PESQUISA E CULTURA – FCPC\n'+
+ 'GABARITO PRELIMINAR\nAuxiliar de Serviços Gerais';
+ const meta=inferExamMetadata(exam,'auxiliar_de_servicos_gerais (1).pdf',key,'gabarito (1)(1).pdf');
+ assert.equal(meta.banca,'FCPC');
+ assert.equal(meta.orgao,'CM-ARACATI');
+ assert.equal(meta.year,'2026');
+ assert.equal(meta.title,'2026 — FCPC — CM-ARACATI — Auxiliar de Serviços Gerais');
+ assert.deepEqual(meta.missing,[]);
+ const guessed={discipline:'Geral',disciplineCode:'CG',topic:'Geral',topicCode:'G'};
+ for(const [n,code] of [[1,'LP'],[10,'LP'],[11,'LE'],[20,'LE'],[21,'CE'],[50,'CE']]){
+  const answer=classifyByExamDivision({originalNumber:n},meta,guessed);
+  assert.equal(answer.disciplineCode,code,'questão '+n);
+ }
+});
