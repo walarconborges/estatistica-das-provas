@@ -8,7 +8,15 @@ export const STUDY_CONTEXT=Object.freeze({
  label:'Candeias do Jamari — RO',
  municipality:'Candeias do Jamari',
  state:'RO',
- edital:'Câmara Municipal de Candeias do Jamari — Edital 01/2026',
+ edital:'Câmara Municipal de Candeias do Jamari — Edital 01/2026, consolidado até a Retificação nº 01',
+ legalCutoff:'Item 1.5: normas que entrarem em vigor após a publicação do edital não serão avaliadas',
+ legalFramework:[
+  'Lei Orgânica Municipal de 11 de outubro de 1993 e alterações',
+  'Lei Municipal nº 100, de 17 de dezembro de 1997 — regime jurídico dos servidores',
+  'Lei Municipal nº 1.267, de 27 de janeiro de 2021 — estrutura organizacional político-administrativa da Câmara',
+  'Lei Municipal nº 1.268, de 27 de dezembro de 2021 — quadro efetivo de cargos e remunerações',
+  'Resolução nº 173/CMCJ/2025, de 12 de março de 2025 — quadro efetivo de cargos e remunerações'
+ ],
  sources:[
   {title:'Portal de legislação da Câmara',url:'https://legislacao.candeiasdojamari.ro.leg.br/consolidacao/1/'},
   {title:'Resolução 173/CMCJ/2025',url:'https://athus4.candeiasdojamari.ro.leg.br/transparencia/documento/ver/25935D61EE0A1BFB7E6F55E9168A5A42D2BE25A6/'}
