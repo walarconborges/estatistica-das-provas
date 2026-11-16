@@ -270,7 +270,7 @@ export function chosenAnswerSection(text,examText='',examInfo={}){
   // mas só se aceita uma seção única e explicitamente identificada.
   const sources=[
    norm(examText),
-   norm(examInfo?.examFilename||''),
+   norm(String(examInfo?.examFilename||'').replace(/[_-]+/g,' ')),
    norm(examInfo?.examTitle||'')
   ];
   const knownJobs=[
