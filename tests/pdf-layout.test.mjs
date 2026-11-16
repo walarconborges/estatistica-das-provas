@@ -362,3 +362,44 @@ test('Quadrix CRQ-V 2026 identifica órgão e disciplina conforme divisão do ga
  assert.equal(m.discipline,'Raciocínio Lógico e Matemática');
  assert.equal(t.discipline,'Informática');
 });
+
+
+test('REGRESSÃO CRQ-V: cargo no rodapé é excluído, mas nome real do PDF identifica código 401',()=>{
+ const source='CONSELHO REGIONAL DE QUÍMICA DA 5ª REGIÃO\nQuadrix | 2026\nPROVA OBJETIVA\nCONHECIMENTOS BÁSICOS\nTexto para as questões de 1 a 15.';
+ const values1='B A E C B D C D A E E A B C D B D A E C B A D E C';
+ const values2='B D A C E C A B D E B D A C E C A B D E B D B E C';
+ const n=start=>Array.from({length:25},(_,i)=>start+i).join(' ');
+ const sec=(section,role,code,last)=>
+  section+' '+role+' (CÓDIGO '+code+')\n'+n(1)+'\n'+values1+'\n'+n(26)+'\n'+last+'\n';
+ const text=sec('2.6','ADVOGADO',400,'C A E B D C C B D E B A D B E D D E A E A C B E C')+
+  sec('2.7','ANALISTA DE INFORMÁTICA',401,values2)+
+  sec('2.8','CONTADOR',402,'C A D A C E D B B D E C A C B B D D C C B B B E C');
+ assert.match(chosenAnswerSection(text,source).error,/vários cargos/);
+ const meta=inferExamMetadata(source,'analista_de_informatica (2).pdf',text,'gabarito (2).pdf');
+ assert.equal(meta.title,'2026 — QUADRIX — CRQ-V — Analista de Informática');
+ const selected=chosenAnswerSection(text,source,{
+  examFilename:'analista_de_informatica (2).pdf',examTitle:meta.title
+ });
+ assert.equal(selected.error,null);
+ assert.equal(selected.section,'401');
+ assert.equal(selected.format,'grid');
+ const key=parseGridKey(selected.text);
+ assert.equal(Object.keys(key).length,50);
+ assert.equal(key[1],'B');assert.equal(key[26],'B');assert.equal(key[50],'C');
+ assert.equal(chosenAnswerSection(text,source,{examTitle:meta.title}).section,'401');
+ assert.match(chosenAnswerSection(text,source,{examFilename:'prova_sem_cargo.pdf'}).error,/vários cargos/);
+});
+test('seleção Quadrix recusa cargo errado ou múltiplo, sem misturar respostas',()=>{
+ const nums=Array.from({length:25},(_,i)=>i+1).join(' ');
+ const values=Array(25).fill('A').join(' ');
+ const text='2.7 ANALISTA DE INFORMÁTICA (CÓDIGO 401)\n'+nums+'\n'+values+
+  '\n2.8 CONTADOR (CÓDIGO 402)\n'+nums+'\n'+values;
+ const selected=chosenAnswerSection(text,'Quadrix | 2026',{
+  examFilename:'analista_de_informatica_e_contador.pdf'
+ });
+ assert.match(selected.error,/vários cargos/);
+ const bad=chosenAnswerSection(text,'Quadrix | 2026',{
+  examFilename:'jornalista.pdf'
+ });
+ assert.match(bad.error,/não corresponde/);
+});
