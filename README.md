@@ -1,9 +1,19 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.5 — 15/11/2026**  
+**Versão experimental 0.6.6 — 15/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.6 — FEPESE Brusque S01 e extração fiel
+
+- **Prova:** 2026, Município de Brusque/SC, banca FEPESE, cargo **S01 Analista de Informática**; o caderno anuncia **40 questões**.
+- **Gabarito multicargo:** seleciona exclusivamente a seção S01, sem misturar outros cargos; tabela horizontal de 1 a 40 com letras A–E. Se o código ou cargo for ambíguo, a importação continua bloqueada.
+- **Numeração:** listas internas recuadas não viram novas questões. A proteção específica se aplica ao formato FEPESE, preservando leitores de outras bancas.
+- **Texto 1:** preserva os artigos legais que começam na coluna esquerda e continuam na direita, antes da questão 1.
+- **Contagem:** a mensagem "PDF declara X" só é usada para total anunciado na capa, jamais para um número parcial de respostas extraídas.
+- **Metadados e disciplinas:** FEPESE e Município de Brusque reconhecidos; Português (1–5), Conhecimentos Gerais (6–8), Raciocínio Lógico (9–13), Legislação (14–20), Informática/Conhecimentos Específicos (21–40).
+- **Integridade:** não modifica provas, perfis, tentativas e gabaritos preexistentes. Testes automatizados adicionados. A importação integral dos PDFs originais em navegador ainda precisa de conferência.
 
 ## Versão 0.6.5 — Meu histórico em português e multisseleção
 
