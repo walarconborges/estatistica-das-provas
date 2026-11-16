@@ -1,4 +1,4 @@
-import {STORAGE_KEY,newId,fresh,normalizeState,parseExamText,parseKey,inferExamMetadata,classify,classifyByExamDivision,repeatedSupportText,addExam,recordAttempt,latestAnswer,outcome,stats,filtered,prioritize,createSimulation,finishSimulation,simulationResult,expire,validAnswer} from './core.mjs';
+import {STORAGE_KEY,newId,fresh,normalizeState,parseExamText,parseKey,inferExamMetadata,classify,classifyByExamDivision,repeatedSupportText,addExam,recordAttempt,latestAnswer,outcome,stats,filtered,normalizeOutcomeSelection,prioritize,createSimulation,finishSimulation,simulationResult,expire,validAnswer} from './core.mjs';
 import {readPdf} from './pdf-import.mjs';
 import {chosenAnswerSection,parseGridKey,questionIntegrity} from './pdf-layout.mjs';
 import {createSyncClient} from './sync-client.mjs';
@@ -214,6 +214,23 @@ function availableFilters(){
 function selectField(name,label,items,current='',placeholder='Todas'){
   return `<div class="field"><label>${h(label)}</label><select name="${h(name)}"><option value="">${h(placeholder)}</option>${items.map(s=>`<option value="${h(s)}" ${current===s?'selected':''}>${h(s)}</option>`).join('')}</select></div>`;
 }
+function historyOutcomeFilter(){
+ const selected=new Set(normalizeOutcomeSelection(currentFilter));
+ const items=[
+  ['unanswered','Não respondidas'],
+  ['wrong','Erradas'],
+  ['correct','Acertadas']
+ ];
+ return `<fieldset class="field span-all history-filter">
+  <legend>Meu histórico</legend>
+  <div class="history-choices">${items.map(([value,label])=>`<label class="history-choice">
+   <input type="checkbox" name="outcome" value="${value}" ${selected.has(value)?'checked':''}>
+   <span>${label}</span>
+  </label>`).join('')}</div>
+  <p class="hint">Marque uma ou mais opções. Sem nenhuma seleção, serão incluídas todas as questões.</p>
+ </fieldset>`;
+}
+
 function targetProgramPanel(){
  return '<details class="program-panel">'+
   '<summary>Consultar conteúdo programático — Candeias, cargo 505</summary>'+
@@ -239,7 +256,7 @@ function filterForm(kind='questions'){
   ${selectField('year','Ano',u.years,currentFilter.year)}
   ${selectField('orgao','Órgão',u.orgaos,currentFilter.orgao)}
   <div class="field"><label>Legislação municipal</label><select name="studyArea"><option value="candeias" ${currentFilter.studyArea!=='original'?'selected':''}>Candeias do Jamari — somente validada</option><option value="original" ${currentFilter.studyArea==='original'?'selected':''}>Prova original, sem adaptação</option></select></div>
-  ${selectField('outcome','Meu histórico',[['unanswered','Não respondidas'],['wrong','Erradas'],['correct','Acertadas']].map(x=>x[0]),currentFilter.outcome,'Todas')}
+  ${historyOutcomeFilter()}
   <div class="field"><label>Situação da questão</label><select name="status"><option value="">Ativas (padrão)</option><option value="all" ${currentFilter.status==='all'?'selected':''}>Todas, incluindo anuladas</option><option value="annulled" ${currentFilter.status==='annulled'?'selected':''}>Somente anuladas</option><option value="outdated" ${currentFilter.status==='outdated'?'selected':''}>Somente desatualizadas</option><option value="needs-review" ${currentFilter.status==='needs-review'?'selected':''}>Necessitam revisão da extração</option></select></div>
   ${mode?`<div class="field"><label>Quantidade de questões</label><input type="number" name="count" min="1" max="1000" value="20" required></div>`:`<div class="field"><label>Mostrar quantas questões?</label><input type="number" name="count" min="1" max="1000" value="${limitAvulsas}" required></div>`}
   ${!mode?`<div class="field span-all"><label>Buscar código permanente</label><input class="code-search" name="code" placeholder="Q2026LPGIBGPSEMED1" value="${h(currentFilter.code||'')}"></div>`:''}
@@ -375,7 +392,8 @@ function updateQuestionFeedback(qid){
 }
 function formsFilter(form){
   const f=new FormData(form);
-  return Object.fromEntries(['discipline','topic','banca','year','orgao','outcome','status','code','studyArea'].map(k=>[k,String(f.get(k)||'')]));
+  const fields=Object.fromEntries(['discipline','topic','banca','year','orgao','status','code','studyArea'].map(k=>[k,String(f.get(k)||'')]));
+  return {...fields,outcomes:f.getAll('outcome').map(String)};
 }
 async function importData(form){
   const fd=new FormData(form),pdf=fd.get('examPdf'),keyPdf=fd.get('keyPdf');
