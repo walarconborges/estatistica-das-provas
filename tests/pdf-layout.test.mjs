@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {spatialLines,spatialQuestions,chosenAnswerSection,parseGridKey,questionIntegrity,declaredQuestionCount,humanizePdfText,attachSuperscriptOrdinals,formatQuestionStem} from '../pdf-layout.mjs';
+import {spatialLines,spatialQuestions,chosenAnswerSection,identifyBookletCode,parseGridKey,questionIntegrity,declaredQuestionCount,humanizePdfText,attachSuperscriptOrdinals,formatQuestionStem} from '../pdf-layout.mjs';
 import {parseKey,inferExamMetadata,classifyByExamDivision} from '../core.mjs';
 function item(str,x,y,width=40){return {str,transform:[1,0,0,1,x,842-y],width};}
 test('leitura espacial separa duas colunas e preserva a numeração original',()=>{
@@ -767,4 +767,38 @@ test('caderno sem código pode usar código manual, mas não pode contradizer a 
  assert.ok(chosenAnswerSection(source,'Analista de Informática II',{bookletCode:'004'}).error);
  assert.ok(chosenAnswerSection(source,'Analista de Informática II',{bookletCode:'A2'}).error);
  assert.ok(chosenAnswerSection(source,'Analista de Informática II').error);
+});
+
+
+test('VUNESP UNESP 002: recuperar automaticamente o código apesar da capa dividida em duas colunas',()=>{
+ const exam='[[PAGE:1]]\nreitoria\nconcurso público\n002. Prova\nanalista de informática II\n'+
+  'área de atuação: desenvolvimento de sistemas institucionais\nObjetiva\n'+
+  '40 questões objetivas\n[[PAGE:2]]\nConhecimentos Gerais\n01. Leia a tira\n'+
+  'VNSP2511/002-AnInfor-II-DesenvSistemasInstitucionais';
+ const answers=['C','B','B','D','A','C','E','C','A','E','C','C','D','E','A','C','E','B','E','B',
+  'A','B','C','D','B','A','A','E','D','E','B','E','D','E','A','C','B','C','D','C'];
+ const rows=a=>a.map((letter,i)=>(i+1)+' - '+letter).join(' ');
+ const key='[[PAGE:1]]\nUNIVERSIDADE ESTADUAL PAULISTA - UNESP\n'+
+  '001. PROVA OBJETIVA\nASSISTENTE OPERACIONAL III\n'+rows(Array(40).fill('A'))+'\n'+
+  '002. PROVA OBJETIVA\nANALISTA DE INFORMÁTICA II\n'+
+  'ÁREA DE ATUAÇÃO: DESENVOLVIMENTO DE SISTEMAS INSTITUCIONAIS\n'+rows(answers)+'\n'+
+  '[[PAGE:2]]\n003. PROVA OBJETIVA\nANALISTA DE INFORMÁTICA II\n'+
+  'ÁREA DE ATUAÇÃO: REDES E INFRAESTRUTURA\n'+rows(Array(40).fill('B'));
+ assert.deepEqual(identifyBookletCode(exam),{code:2,error:null});
+ assert.deepEqual(identifyBookletCode(exam.split('VNSP2511')[0]),{code:2,error:null});
+ assert.deepEqual(identifyBookletCode('VNSP2511/002-AnInfor-II'),{code:2,error:null});
+ const selected=chosenAnswerSection(key,exam,{examFilename:'analista_de_informatica_ii_desenvolvimento_de_sistemas_institucionais.pdf'});
+ assert.equal(selected.error,null);
+ assert.equal(selected.section,'002');
+ const parsed=parseKey(selected.text);
+ assert.equal(Object.keys(parsed).length,40);
+ assert.deepEqual([parsed[1],parsed[15],parsed[20],parsed[21],parsed[40]],['C','A','B','A','C']);
+ assert.ok(chosenAnswerSection(key,exam,{bookletCode:'003'}).error,'código manual não pode contrariar o PDF');
+ assert.ok(identifyBookletCode('[[PAGE:1]]\n002. Prova\nVNSP2511/003-AnInfor-II').error);
+});
+test('código editorial só é inferido de capa ou de rodapé, não de um número citado no enunciado',()=>{
+ const exam='[[PAGE:1]]\nProva do candidato\n[[PAGE:2]]\n'+
+  'A legislação diz que o edital 002. Prova é diferente do gabarito.';
+ assert.equal(identifyBookletCode(exam).code,null);
+ assert.deepEqual(identifyBookletCode(exam,{bookletCode:'002'}),{code:2,error:null});
 });
