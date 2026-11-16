@@ -711,9 +711,90 @@ export function pairedAnswerSections(raw){
  return sections;
 }
 
+
+/**
+ * Tabelas de gabarito em páginas separadas, com título do cargo e
+ * duas metades na mesma linha: "01 B 21 C" ou "01 B 16 D".
+ * O número de respostas pode variar entre os cargos do mesmo PDF.
+ * Não usa a primeira página nem confia apenas no total de respostas.
+ */
+export function titledPageAnswerTables(raw){
+ const pages=String(raw||'').replace(/\r/g,'')
+  .match(/\[\[PAGE:\s*\d+\]\][\s\S]*?(?=\[\[PAGE:\s*\d+\]\]|$)/gi)||[];
+ const tables=[];
+ for(const page of pages){
+  const rows=page.split('\n').map(s=>s.trim()).filter(Boolean);
+  const titleIndex=rows.findIndex(s=>/^PROVA\s+TIPO\s+\d{1,2}\s*[-–]\s*(?:BRANCA|AMARELA|AZUL|VERDE|ROSA|CINZA|LARANJA)\b/i.test(s));
+  if(titleIndex<1)continue;
+  const title=rows[titleIndex-1];
+  if(!/^[\p{L}][\p{L}\s.\-º]{3,90}$/iu.test(title))continue;
+  const type=norm(rows[titleIndex]).replace(/\s+/g,' ').trim();
+  const answers={};let pairs=0,invalid=false;
+  for(let i=titleIndex+1;i<rows.length;i++){
+   const line=rows[i];
+   // Cada linha da tabela contém um ou dois pares (número e letra).
+   // A presença de mais colunas não permite associar letras a outro cargo.
+   const m=line.match(/^0?(\d{1,3})\s+([A-E])(?:\s+0?(\d{1,3})\s+([A-E]))?$/i);
+   if(!m)continue;
+   const cells=[[Number(m[1]),m[2].toUpperCase()]];
+   if(m[3])cells.push([Number(m[3]),m[4].toUpperCase()]);
+   for(const [n,letter] of cells){
+    if(n<1||n>300||answers[n]){invalid=true;break;}
+    answers[n]=letter;pairs++;
+   }
+   if(invalid)break;
+  }
+  if(invalid||pairs<15)continue;
+  const nums=Object.keys(answers).map(Number).sort((a,b)=>a-b);
+  if(nums[0]!==1||nums.some((n,i)=>n!==i+1))continue;
+  tables.push({pageNumber:Number(page.match(/^\[\[PAGE:\s*(\d+)\]\]/i)?.[1]||0),
+   title:norm(title).trim(),type,count:nums.length,answers,
+   text:nums.map(n=>n+') '+answers[n]).join('\n')});
+ }
+ return tables;
+}
+
 export function chosenAnswerSection(text,examText='',examInfo={}){
  const source=String(text||'').replace(/\r/g,'');
 
+
+
+ // Um cargo por página, e cada linha impressa possui "01 B 21 C".
+ // Selecionar primeiro pelo cargo da CAPA e depois conferir o tipo.
+ // O mesmo documento pode combinar 40 questões em cargos superiores
+ // com 30 no cargo auxiliar; os demais gabaritos não são considerados.
+ const pageTables=titledPageAnswerTables(source);
+ if(pageTables.length){
+  const cover=String(examText||'').split(/\[\[PAGE:\s*2\]\]/i)[0];
+  const hints=[
+   String(examInfo?.examFilename||'').replace(/[_-]+/g,' ')
+    .replace(/\.pdf$/i,'').replace(/\s*\(\d+\)\s*$/,''),
+   String(examInfo?.examTitle||'').split(/\s+[—–]\s+/).at(-1)||'',
+   cover
+  ];
+  // É exigida correspondência na capa ou no arquivo. Não aceitar por
+  // número de questões nem por ser a única tabela de 30 respostas.
+  const candidates=pageTables.filter(t=>hints.some(h=>jobTitleMatches(t.title,h)));
+  if(candidates.length!==1)return {text:'',section:null,format:'pairs',
+   error:candidates.length?'Mais de uma página do gabarito corresponde ao cargo.'
+    :'Nenhuma página do gabarito corresponde ao cargo declarado no caderno.'};
+  const chosen=candidates[0];
+  if(!jobTitleMatches(chosen.title,cover))return {text:'',section:null,format:'pairs',
+   error:'O nome do cargo no gabarito não corresponde ao nome impresso na capa da prova.'};
+  const coverType=norm(cover).match(/\bTIPO\s*(\d{1,2})\s*[-–]?\s*(BRANCA|AMARELA|AZUL|VERDE|ROSA|CINZA|LARANJA)\b/);
+  const keyType=chosen.type.match(/\bTIPO\s*(\d{1,2})\s*[-–]?\s*(BRANCA|AMARELA|AZUL|VERDE|ROSA|CINZA|LARANJA)\b/);
+  if(coverType&&keyType&&(coverType[1]!==keyType[1]||coverType[2]!==keyType[2]))
+   return {text:'',section:null,format:'pairs',
+    error:'O tipo e a cor do caderno não correspondem ao gabarito selecionado.'};
+  return {text:chosen.text,section:chosen.title,format:'pairs',error:null};
+ }
+
+ // Se um documento explicitamente tem várias páginas, cada uma com
+ // "PROVA TIPO", mas nenhuma tabela validada, não recair na leitura
+ // global que misturaria números e letras de diferentes cargos.
+ if((source.match(/\bPROVA\s+TIPO\s+\d+/gi)||[]).length>=2)
+  return {text:'',section:null,format:'pairs',
+   error:'O gabarito possui vários cargos, mas suas tabelas não foram reconhecidas com segurança.'};
 
  // Gabarito estruturado com um código de caderno e duas linhas
  // (questões / respostas) por cargo. Reconhece F1, M1, S1, etc. sem
