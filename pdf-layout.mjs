@@ -3,6 +3,23 @@ const norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toUp
 const noise=s=>/^(?:PCIMARKPCI\b|WWW\.PCICONCURSOS\.|CVOT\d+|CONFIDENCIAL ATE|R\s*A\s*S\s*C\s*U\s*N\s*H\s*O\s*$)/i.test(norm(s.trim()))||/MDAwM[A-Za-z0-9+/=]{35}/.test(s);
 const questionRx=/^(?:QUEST[AÃ]O\s+0?(\d{1,3})(?:\s*[.):\-]\s*(.*))?|(\d{1,3})\s*[.):\-]\s*(.*))$/i;
 const altRx=/^\s*(?:\(([A-E])\)|([A-E])\s*[.):\-])\s*(.*)$/i;
+
+/**
+ * Títulos de questão podem ter erros de extração em PDFs com fontes próprias:
+ * "Questão 1 1." (11) e "Questão 4O." (40, letra O).
+ * A normalização vale SOMENTE para marcadores explícitos "Questão",
+ * não para números dos enunciados, alternativas ou valores matemáticos.
+ */
+export function normalizeQuestionHeading(line){
+ return String(line||'').replace(/^(\s*QUEST[AÃ]O)\s+([0-9OIl|]{1,3}(?:\s+[0-9OIl|]{1,2})?)\s*([.):-])\s*/i,
+  (whole,prefix,number,punct)=>{
+   if(!/\d/.test(number))return whole;
+   const digits=number.replace(/\s+/g,'').replace(/[Oo]/g,'0').replace(/[Il|]/g,'1');
+   const n=Number(digits);
+   return n>=1&&n<=300?prefix+' '+n+punct+' ':whole;
+  });
+}
+
 // A FEPESE imprime marcas de quadrinhos, inclusive a opção assinalada.
 // Estes glifos não são parte das alternativas e não podem revelar o gabarito.
 const stripAnswerBox=s=>String(s||'').replace(/^\s*(?:(?:Check[\s-]*square|SQUARE)\b|[☑☒☐□■])\s*/i,'').trim();
@@ -205,18 +222,18 @@ function needsImage(stem){
  * permanecem selecionáveis, mas não se inventa texto nem gabarito.
  * A questão recebe o sinal de revisão da extração.
  */
-function preserveOriginalInImage(q){
+function preserveOriginalInImage(q,expectedAlternatives=5){
  q.extractionFallback=true;
  q.extractionReview=true;
  q.imageOnly=true;
  q.visualSegments=null;
- q.options='ABCDE'.split('').map(letter=>({letter,text:''}));
+ q.options='ABCDE'.slice(0,expectedAlternatives).split('').map(letter=>({letter,text:''}));
  q.confidence='baixa';
  q.stem=q.stem||'Questão reproduzida diretamente do PDF original.';
  return q;
 }
-function hasCompleteOptions(options){
- return Array.isArray(options)&&options.length===5&&
+function hasCompleteOptions(options,expectedAlternatives=5){
+ return Array.isArray(options)&&options.length===expectedAlternatives&&
   options.every((o,i)=>o.letter===String.fromCharCode(65+i)&&String(o.text||'').trim());
 }
 /**
@@ -224,14 +241,14 @@ function hasCompleteOptions(options){
  * agrupamento de linhas e alternativas. O recorte com o enunciado
  * original evita qualquer reconstituição de conteúdo não confiável.
  */
-function recoverExplicitQuestionHeadings(pages,questions){
+function recoverExplicitQuestionHeadings(pages,questions,expectedAlternatives=5){
  const existing=new Set(questions.map(q=>q.originalNumber));
  const recovered=[];
  for(const page of pages){
   for(const col of [0,1]){
    const lines=(page.lines||[]).filter(r=>r.col===col).sort((a,b)=>a.y-b.y);
    const headings=lines.map((r,i)=>{
-    const m=r.text.trim().match(/^QUEST[AÃ]O\s+0?(\d{1,3})\s*[.):\-]?\s*$/i);
+    const m=normalizeQuestionHeading(r.text).trim().match(/^QUEST[AÃ]O\s+0?(\d{1,3})\s*[.):\-]?\s*$/i);
     return m?{row:r,index:i,n:Number(m[1])}:null;
    }).filter(Boolean);
    for(let j=0;j<headings.length;j++){
@@ -248,7 +265,7 @@ function recoverExplicitQuestionHeadings(pages,questions){
      sourcePage:page.number,sourceColumn:col,
      startY:h.row.y,endY:Math.max(h.row.y+35,end),
      optionsStartY:null,contextText:'',contextRange:null
-    });
+    },expectedAlternatives);
     recovered.push(item);existing.add(h.n);
    }
   }
@@ -258,6 +275,7 @@ function recoverExplicitQuestionHeadings(pages,questions){
 
 export function spatialQuestions(pages){
  const questions=[],contexts=[];let heading='';
+ const expectedAlternatives=declaredAlternativeCount(pages)||5;
  // Questões de bancas como a FEPESE começam na margem da coluna.
  // Listas numeradas dentro do enunciado começam recuadas: "1.", "2." etc.
  // A margem é obtida do próprio caderno, sem assumir coordenadas fixas.
@@ -318,7 +336,7 @@ export function spatialQuestions(pages){
         bottom:rows[bestIndex+1].y-3
       };
     }
-    current.extractionReview=!hasCompleteOptions(current.options);
+    current.extractionReview=!hasCompleteOptions(current.options,expectedAlternatives);
     // Para FEPESE, não reproduzir o enunciado completo como imagem: apenas
     // imagens genuínas com região gráfica separável por coordenadas.
     current.imageOnly=needsImage(current.stem)&&(!useIndentationProtection||Boolean(current.visualSegments));
@@ -326,12 +344,13 @@ export function spatialQuestions(pages){
     // Jamais descarta silenciosamente uma QUESTÃO N porque alguma alternativa
     // foi separada pelo leitor do PDF. Usa o recorte fiel e 5 controles A–E.
     if(current.extractionReview||!current.stem)
-      preserveOriginalInImage(current);
+      preserveOriginalInImage(current,expectedAlternatives);
+    current.expectedAlternatives=expectedAlternatives;
     questions.push(current);
     current=null;
    }
    for(const row of lines){
-    const s=row.text.trim();if(!s||noise(s))continue;
+    const s=normalizeQuestionHeading(row.text).trim();if(!s||noise(s))continue;
     if(creditLine.test(s)){if(current)current.creditY=row.y;continue;}
     const foundContext=contextMarker(s);
     if(foundContext){finish(row.y-2);storeContext();collecting={...foundContext,text:[],page:page.number,col,startY:row.y};continue;}
@@ -369,7 +388,7 @@ export function spatialQuestions(pages){
    storeContext();
   }
  }
- questions.push(...recoverExplicitQuestionHeadings(pages,questions));
+ questions.push(...recoverExplicitQuestionHeadings(pages,questions,expectedAlternatives));
  // FEPESE: o Texto 1 da questão 1 está na coluna esquerda, mas
  // continua na coluna direita ANTES da questão. Sem este vínculo,
  // os artigos da lei reproduzida no caderno desaparecem da questão.
@@ -571,6 +590,15 @@ export function parseGridKey(section){
  return answers;
 }
 
+
+/** Retorna a quantidade declarada na capa (quatro ou cinco), quando inequívoca. */
+export function declaredAlternativeCount(pages=[]){
+ const first=pages[0];
+ const cover=String(first?.text||(first?.lines||[]).map(line=>line.text).join('\n')||'');
+ const counts=[...cover.matchAll(/\b([45])\s+ALTERNATIVAS?\b/giu)].map(m=>Number(m[1]));
+ return new Set(counts).size===1?counts[0]:0;
+}
+
 /** Total explicitamente anunciado na capa; não confundir com respostas extraídas. */
 export function declaredQuestionCount(pages=[]){
  const first=pages[0];
@@ -580,7 +608,7 @@ export function declaredQuestionCount(pages=[]){
  return counts.length===1?counts[0]:0;
 }
 
-export function questionIntegrity(questions,answers,expected=0){
+export function questionIntegrity(questions,answers,expected=0,optionsExpected=5){
  const numbers=questions.map(q=>q.originalNumber),unique=[...new Set(numbers)].sort((a,b)=>a-b),issues=[];
  if(!unique.length)issues.push('Nenhuma questão identificada');
  if(unique[0]!==1)issues.push('A numeração não começa em 1');
@@ -588,7 +616,7 @@ export function questionIntegrity(questions,answers,expected=0){
  if(expected&&unique.length!==expected)issues.push('Foram identificadas '+unique.length+' questões, mas o PDF declara '+expected);
  if(unique.length){for(let n=1;n<=unique.at(-1);n++)if(!unique.includes(n))issues.push('Questão ausente: '+n);}
  for(const q of questions){
-  if(q.options.length!==5)issues.push('Questão '+q.originalNumber+' contém '+q.options.length+' alternativas');
+  if(q.options.length!==optionsExpected)issues.push('Questão '+q.originalNumber+' contém '+q.options.length+' alternativas (o caderno declara '+optionsExpected+')');
   // Questão recuperada por imagem permanece marcada para revisão, mas não
   // impede importar a prova se a imagem original foi recortada com sucesso.
   // Se o recorte falhar, a integridade CONTINUA bloqueando a importação.
