@@ -1,3 +1,12 @@
+## 0.6.23 — 16/11/2026
+
+- Gabaritos com vários cargos e tabelas numéricas: novo leitor estrutural reutilizável seleciona automaticamente por código + nome da função, sem regras dependentes da banca.
+- FEPESE F1 da Grande Florianópolis: 35 respostas corretas, inclusive 1-C e 35-B; cinco gabaritos de outros cargos são isolados.
+- Rejeita código de caderno inexistente ou correspondente a outro cargo, mesmo que o título de uma outra tabela pareça semelhante.
+- Metadados e grupos oficiais de disciplinas da prova 2026 de Auxiliar de Serviços Gerais reconhecidos.
+- Texto-base em duas colunas vinculado às questões 1–5 de Português.
+- Testes de regressão com gabarito real e sem alteração no banco de dados ou nos históricos.
+
 ## 0.6.22 — 16/11/2026
 
 - Corrigida a comparação literal entre o cargo do caderno e o do gabarito FCPC/Aracati. Extração de fonte incorporada troca a letra em SERVIÇOS, resultando em SERVIAOS.
