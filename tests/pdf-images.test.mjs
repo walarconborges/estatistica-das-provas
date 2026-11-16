@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {questionCropBounds,renderVisualQuestions} from '../pdf-import.mjs';
+import {questionCropBounds,renderVisualQuestions,pdfMetadataHints} from '../pdf-import.mjs';
 import {spatialQuestions,questionIntegrity,spatialLines} from '../pdf-layout.mjs';
 
 function canvas(){
@@ -115,4 +115,16 @@ test('FEPESE: tirinha original de Brusque não perde os 12 pontos da borda direi
  assert.ok(crop.right>=297.63,'A imagem da página 4 termina em x=297.62');
  assert.ok(crop.right<304,'Não incluir texto da coluna direita.');
  assert.ok(crop.top<=91.7&&crop.bottom>=384.7,'A figura completa deve estar no recorte');
+});
+
+test('VUNESP: assinatura no rodapé excluído da página continua disponível para metadados',()=>{
+ const items=[
+  {str:'002. Prova Objetiva',transform:[1,0,0,1,204,642],width:190},
+  {str:'VNSP2511/002-AnInfor-II-DesenvSistemasInstitucionais',
+   transform:[1,0,0,1,34,19],width:280}
+ ];
+ const visible=spatialLines(items,595.28,841.89).map(r=>r.text).join('\n');
+ assert.ok(!visible.includes('VNSP2511'));
+ assert.match(pdfMetadataHints(items,visible),/VNSP2511\/002/);
+ assert.equal(pdfMetadataHints(items,visible+'\n'+items[1].str),'');
 });
