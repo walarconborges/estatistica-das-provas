@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {fresh,addExam,upgradeRecoveredExam,findPreviouslyImportedExam,parseExamText,parseKey,inferExamMetadata,completeExamMetadata,classifyByExamDivision,repeatedSupportText,sameQuestion,recordAttempt,outcome,stats,createSimulation,finishSimulation,simulationResult,filtered,prioritize} from '../core.mjs';
+import {fresh,stripExamFooter,normalizeState,addExam,upgradeRecoveredExam,findPreviouslyImportedExam,parseExamText,parseKey,inferExamMetadata,completeExamMetadata,classifyByExamDivision,repeatedSupportText,sameQuestion,recordAttempt,outcome,stats,createSimulation,finishSimulation,simulationResult,filtered,prioritize} from '../core.mjs';
 const meta={title:'Prova IBGP 2026',year:'2026',banca:'IBGP',orgao:'SEMED'};
 const sample=()=>({stem:'Qual é o plural de cidadão?',originalNumber:1,options:[{letter:'A',text:'Cidadãos'},{letter:'B',text:'Cidadões'}],discipline:'Língua Portuguesa',disciplineCode:'LP',topic:'Gramática',topicCode:'G'});
 function data(){const s=fresh();const e=addExam(s,meta,[sample(),{...sample(),originalNumber:2,stem:'Outra questão'}],{1:'A',2:'B'});return {s,e,q:s.questions[0]}}
@@ -301,4 +301,41 @@ test('FEPESE F1 2026: identifica CIS Grande Florianópolis e os quatro blocos do
   assert.equal(category.disciplineCode,code,'código '+n);
   assert.equal(category.discipline,title,'disciplina '+n);
  }
+});
+
+
+test('Objetiva Sossego Q21: rodapé acidental é retirado sem perder alternativa, gabarito ou tentativas',()=>{
+ const wrong='E - C - C. www.objetivas.com.br';
+ assert.equal(stripExamFooter(wrong),'E - C - C.');
+ assert.equal(stripExamFooter('E - C - C. \nwww.objetivas.com.br'),'E - C - C.');
+ assert.equal(stripExamFooter('E - C - C. WWW.OBJETIVAS.COM.BR'),'E - C - C.');
+ assert.equal(stripExamFooter('Acesse www.objetivas.com.br para verificar o edital'),'Acesse www.objetivas.com.br para verificar o edital');
+ assert.equal(stripExamFooter('https://www.exemplo.com.br'),'https://www.exemplo.com.br');
+ assert.equal(stripExamFooter('E - C - C.  '),'E - C - C.  ');
+ const data=fresh();
+ const id='q-sossego-21';
+ data.questions.push({
+  id,code:'Q2026MAGOBJETIVAPMSOSSEGO6',
+  originalNumber:21,stem:'Avaliar se as afirmativas são certas (C) ou erradas (E).',
+  options:[
+   {letter:'A',text:'C - C - E.'},
+   {letter:'B',text:'E - E - C.'},
+   {letter:'C',text:'C - E - E.'},
+   {letter:'D',text:wrong}
+  ],answer:'A',examId:'sossego-2026',discipline:'Matemática'
+ });
+ data.attempts.push({id:'a-21',profileId:'perfil1',questionId:id,answer:'A',at:'2026-11-16T00:00:00Z'});
+ data.exams.push({id:'sossego-2026',questionIds:[id],title:'Prova da Objetiva'});
+ const backup=JSON.stringify(data);
+ const fixed=normalizeState(data);
+ const q=fixed.questions[0];
+ assert.equal(q.options[3].text,'E - C - C.');
+ assert.equal(q.options[0].text,'C - C - E.');
+ assert.equal(q.answer,'A');
+ assert.equal(q.code,'Q2026MAGOBJETIVAPMSOSSEGO6');
+ assert.equal(q.originalNumber,21);
+ assert.deepEqual(fixed.attempts,data.attempts);
+ assert.deepEqual(fixed.exams,data.exams);
+ assert.equal(JSON.stringify(data),backup,'normalização não altera objeto do banco original');
+ assert.deepEqual(normalizeState(fixed),fixed,'reparação idempotente');
 });
