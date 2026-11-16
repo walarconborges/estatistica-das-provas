@@ -1,5 +1,6 @@
 /** A aprovação ocorre exclusivamente por comentário "aprovar" ou "rejeitar" do proprietário no GitHub. */
 import {makeCode,codePart} from '../core.mjs';
+import {approveEdictReview} from '../edital-classification.mjs';
 const token=process.env.GH_TOKEN,repo=process.env.REPOSITORY;
 const number=Number(process.env.ISSUE_NUMBER),decision=String(process.env.DECISION||'').trim().toLowerCase();
 if(!token||!repo||!Number.isInteger(number)||!['aprovar','rejeitar'].includes(decision))throw Error('Parâmetros administrativos inválidos.');
@@ -13,7 +14,9 @@ function applyReview(state,flag){
  const q=state.questions.find(x=>x.id===flag.questionId);
  if(!q)throw Error('Questão não encontrada.');
  const p=flag.proposed||{};
- if(flag.type==='classification'){
+ if(flag.type==='edital-review'){
+  approveEdictReview(q,p);
+ }else if(flag.type==='classification'){
   if(!p.discipline||!p.topic)throw Error('Classificação sugerida incompleta.');
   const old=q.code;
   q.discipline=String(p.discipline).slice(0,100);q.topic=String(p.topic).slice(0,100);
