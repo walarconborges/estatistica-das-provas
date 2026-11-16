@@ -307,7 +307,7 @@ function simScreen(){
 }
 function examScreen(){
   return `${headline('Provas completas','Resolva a prova original, na ordem e com a numeração original, ou imprima.')}
-  <section class="card">${state.exams.length?state.exams.map(e=>`<div class="stat-line"><div><strong>${h(e.title)}</strong><div class="small-muted">${h(e.year)} · ${h(e.banca)} · ${h(e.orgao)} · ${e.questionIds.length} questões</div></div><div class="row">${btn('start-exam','Resolver','primary',`data-id="${h(e.id)}"`)}${btn('print-exam','Imprimir','secondary',`data-id="${h(e.id)}"`)}${e.pdfPath?btn('open-original-pdf','Abrir PDF original','secondary',`data-id="${h(e.id)}"`):''}</div></div>`).join(''):empty('Nenhuma prova cadastrada.')}</section>`;
+  <section class="card">${state.exams.length?state.exams.map(e=>`<div class="stat-line"><div><strong>${h(e.title)}</strong><div class="small-muted">${h(e.year)} · ${h(e.banca)} · ${h(e.orgao)} · ${e.questionIds.length} questões${e.keyStatus==='preliminar'?' · Gabarito preliminar':''}</div></div><div class="row">${btn('start-exam','Resolver','primary',`data-id="${h(e.id)}"`)}${btn('print-exam','Imprimir','secondary',`data-id="${h(e.id)}"`)}${e.pdfPath?btn('open-original-pdf','Abrir PDF original','secondary',`data-id="${h(e.id)}"`):''}</div></div>`).join(''):empty('Nenhuma prova cadastrada.')}</section>`;
 }
 function statsScreen(){
   const s=stats(state,profileId);
@@ -396,6 +396,7 @@ async function importData(form){
     }
     const e=addExam(state,meta,parsed,key);
     e.keySection=selected.section;
+    e.keyStatus=/GABARITO\s+PRELIMINAR/i.test(keyRead.text)?'preliminar':'publicado';
     e.metadataReview=meta.missing;
      if(pdf instanceof File&&pdf.size&&sync.isConfigured()){
        if(pdf.size>4*1024*1024)toast('PDF acima de 4 MB: o texto será sincronizado, mas o original não.');
@@ -410,7 +411,7 @@ async function importData(form){
        }
      }
      if(!save()){state.exams=state.exams.filter(x=>x.id!==e.id);state.questions=state.questions.filter(x=>x.examId!==e.id);return}
-    latestImportMessage=`${parsed.length} questão(ões) importada(s) em “${meta.title}”. ${Object.keys(key).length} resposta(s) identificada(s) no gabarito. ${meta.missing.length?'Dados não identificados ('+meta.missing.join(', ')+') aguardam conferência. ':''}Confira a extração e as alternativas.`;
+    latestImportMessage=`${parsed.length} questão(ões) importada(s) em “${meta.title}”. ${Object.keys(key).length} resposta(s) identificada(s) no gabarito. ${meta.missing.length?'Dados não identificados ('+meta.missing.join(', ')+') aguardam conferência. ':''}Confira a extração e as alternativas.${e.keyStatus==='preliminar'?' Atenção: o gabarito informado é preliminar.':''}`;
     toast('Prova importada.');navigate('exams');
   }catch(err){console.error(err);toast('Não foi possível importar: '+err.message)}
   finally{button.disabled=false;button.textContent='Importar questões'}
