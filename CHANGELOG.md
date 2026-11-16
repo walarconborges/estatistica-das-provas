@@ -1,3 +1,12 @@
+## 0.6.16 — 16/11/2026
+
+- FCPC Aracati: corrigido o erro “O gabarito possui páginas para vários cargos, mas não foi possível identificar a página do cargo solicitado”.
+- Reconhecimento do cargo via normalização do título entre “Gabarito Preliminar” e “Prova 1”, mesmo com fragmentação de palavras/linhas.
+- Remoção de sufixos como `(1)` no nome do PDF para a identificação, sem renomear o arquivo.
+- Seleção exata e única da página de Auxiliar de Serviços Gerais, sem misturar respostas de outros cargos.
+- Novo diagnóstico informa quais cargos o leitor conseguiu reconhecer quando a identificação falha.
+- Testes completos aprovados. Nenhuma migração ou alteração em dados salvos.
+
 ## 0.6.15 — 16/11/2026
 
 - FCPC/Aracati: identificação da banca, Câmara Municipal e cargo Auxiliar de Serviços Gerais.
