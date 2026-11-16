@@ -1548,3 +1548,38 @@ test('Legalle: extrai 40 respostas do cargo Auxiliar em gabarito com 6 cargos na
  assert.equal(another.error,null);
  assert.equal(parseKey(another.text)[1],'A');
 });
+
+
+test('Legalle: artigo da Lei 15.474 ocupa duas colunas e permanece ligado às questões 1–15',()=>{
+ const pg={number:2,width:595,height:842,lines:[
+  {col:0,x:40,y:55,text:'Língua Portuguesa'},
+  {col:0,x:40,y:70,text:'Para responder às questões 01 a 15, leia o texto abaixo.'},
+  {col:0,x:40,y:90,text:'Mulheres podem comprar e usar spray de pimenta para defesa pessoal.'},
+  {col:0,x:40,y:112,text:'A lei 15.474 autoriza o uso de aerossol para conter temporariamente um agressor.'},
+  {col:0,x:40,y:136,text:'Os estabelecimentos devem manter registros de vendas por cinco anos.'},
+  {col:0,x:40,y:158,text:'O uso será individual e intransferível, observadas as condições legais.'},
+  {col:1,x:310,y:58,text:'Da iniciativa estão a orientação sobre os limites legais da legítima defesa.'},
+  {col:1,x:310,y:80,text:'Também estão previstas campanhas educativas e canais de denúncia.'},
+  {col:1,x:310,y:102,text:'O programa ocorrerá de forma gradual, segundo regulamentação posterior.'},
+  {col:1,x:310,y:130,text:'Fonte: Agência Brasil. Texto adaptado.'},
+  {col:1,x:310,y:195,text:'Questão 01. Conforme o primeiro parágrafo, qual a finalidade da norma?'},
+  ...'ABCD'.split('').map((letter,i)=>({col:1,x:320,y:220+i*22,text:'('+letter+') Alternativa '+letter})),
+  {col:1,x:310,y:350,text:'Questão 02. Segundo o texto, qual o público da medida?'},
+  ...'ABCD'.split('').map((letter,i)=>({col:1,x:320,y:381+i*22,text:'('+letter+') Alternativa '+letter}))
+ ]};
+ const pg3={number:3,width:595,height:842,lines:[
+  {col:0,x:40,y:50,text:'Questão 03. Qual o assunto do texto?'},
+  ...'ABCD'.split('').map((letter,i)=>({col:0,x:45,y:80+i*22,text:'('+letter+') Alternativa '+letter}))
+ ]};
+ const result=spatialQuestions([pg,pg3]);
+ assert.deepEqual(result.questions.map(x=>x.originalNumber),[1,2,3]);
+ assert.equal(result.contexts.length,1);
+ assert.equal(result.contexts[0].from,1);
+ assert.equal(result.contexts[0].to,15);
+ for(const q of result.questions){
+  assert.match(q.contextText,/15.474/);
+  assert.match(q.contextText,/campanhas educativas/);
+  assert.deepEqual(q.contextRange,[1,15]);
+ }
+ assert.equal(result.questions.filter(q=>q.originalNumber===15).length,0);
+});
