@@ -1,6 +1,6 @@
 import {STORAGE_KEY,newId,fresh,normalizeState,parseExamText,parseKey,inferExamMetadata,completeExamMetadata,classify,classifyByExamDivision,repeatedSupportText,addExam,upgradeRecoveredExam,findPreviouslyImportedExam,recordAttempt,latestAnswer,outcome,stats,filtered,normalizeOutcomeSelection,prioritize,createSimulation,finishSimulation,simulationResult,expire,validAnswer} from './core.mjs';
 import {readPdf} from './pdf-import.mjs';
-import {chosenAnswerSection,parseGridKey,questionIntegrity,declaredQuestionCount,declaredAlternativeCount} from './pdf-layout.mjs';
+import {chosenAnswerSection,parseGridKey,questionIntegrity,declaredQuestionCount,declaredAlternativeCount,inferredAlternativeCount} from './pdf-layout.mjs';
 import {createSyncClient} from './sync-client.mjs';
 import {STUDY_CONTEXT,eligibleForList} from './study-context.mjs';
 import {CATALOGS,currentCatalog,allTopics,classifyForCargo,subjectSummary} from './edital-classification.mjs';
@@ -512,7 +512,7 @@ async function importData(form){
     // Não chamar de 'PDF declara' a quantidade parcial de respostas lidas.
     // A divergência entre gabarito e questões é conferida separadamente.
     const expected=declaredQuestionCount(examRead.pages);
-    const problems=questionIntegrity(parsed,key,expected,declaredAlternativeCount(examRead.pages)||5);
+    const problems=questionIntegrity(parsed,key,expected,inferredAlternativeCount(examRead.pages));
     if(selected.format==='grid'&&expected<20)problems.push('Gabarito tabulado incompleto ou sem a seção correta do cargo');
     const baseTextMarkers=(examRead.text.match(/(?:LEIA|CONSIDERE)\s+(?:O\s+)?TEXTO\s+PARA\s+RESPONDER/gi)||[]).length;
     if(baseTextMarkers>examRead.contexts.length)problems.push('Um ou mais textos-base não foram associados às questões');
