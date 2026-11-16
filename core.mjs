@@ -9,9 +9,8 @@ export const fresh=()=>({version:1,profiles:[],exams:[],questions:[],attempts:[]
  */
 export function stripExamFooter(value){
  const source=String(value??'');
- return source
-  .replace(/(?:^|[ \t\n])(?:https?:\/\/)?www\.objetivas\.com\.br[ \t]*$/iu,'')
-  .trimEnd();
+ const fixed=source.replace(/(?:^|[ \t\n])(?:https?:\/\/)?www\.objetivas\.com\.br[ \t]*$/iu,'');
+ return fixed===source?source:fixed.trimEnd();
 }
 /**
  * Reparação determinística das opções extraídas. Mantém IDs, gabarito,
