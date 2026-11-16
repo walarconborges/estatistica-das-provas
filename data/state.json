@@ -13263,6 +13263,14 @@
       "answer": "D",
       "simulationId": "",
       "at": "2026-11-16T01:34:26.071Z"
+    },
+    {
+      "id": "3c1e5bd9-fe47-4abb-b063-6a0154e3bd56",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "d229c4c6-0b50-45a7-888e-a970a87f71f0",
+      "answer": "C",
+      "simulationId": "",
+      "at": "2026-11-16T01:38:43.739Z"
     }
   ],
   "simulations": [
