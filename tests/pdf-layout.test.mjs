@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {spatialLines,spatialQuestions,chosenAnswerSection,verifiedExamJob,identifyBookletCode,parseGridKey,questionIntegrity,isInstructionSheet,declaredQuestionCount,declaredAlternativeCount,inferredAlternativeCount,normalizeQuestionHeading,humanizePdfText,attachSuperscriptOrdinals,formatQuestionStem} from '../pdf-layout.mjs';
+import {spatialLines,spatialQuestions,chosenAnswerSection,verifiedExamJob,jobTitleMatches,identifyBookletCode,parseGridKey,questionIntegrity,isInstructionSheet,declaredQuestionCount,declaredAlternativeCount,inferredAlternativeCount,normalizeQuestionHeading,humanizePdfText,attachSuperscriptOrdinals,formatQuestionStem} from '../pdf-layout.mjs';
 import {parseKey,inferExamMetadata,classifyByExamDivision} from '../core.mjs';
 function item(str,x,y,width=40){return {str,transform:[1,0,0,1,x,842-y],width};}
 test('leitura espacial separa duas colunas e preserva a numeração original',()=>{
@@ -1265,4 +1265,54 @@ test('FCPC: cargo da capa e nome de arquivo conferem automaticamente, mesmo apó
  assert.equal(verifiedExamJob('COPEIRO',cover,meta),false);
  assert.equal(verifiedExamJob(role,'[[PAGE:1]]\nInstruções',{examFilename:'copeiro.pdf'}),false);
  assert.equal(verifiedExamJob(role,'[[PAGE:1]]\nAuxiliar de Serviços\nGerais',{examFilename:'documento.pdf'}),true);
+});
+
+
+test('FCPC Aracati: glifo SERVIAOS é comparado com SERVIÇOS sem confundir cargos',()=>{
+ assert.equal(jobTitleMatches('AUXILIAR DE SERVIAOS GERAIS','auxiliar_de_servicos_gerais (1).pdf'),true);
+ assert.equal(jobTitleMatches('Auxiliar de Serviços Gerais','AUXILIAR DE SERVIAOS GERAIS'),true);
+ assert.equal(verifiedExamJob('AUXILIAR DE SERVIAOS GERAIS',
+   '[[PAGE:1]]\nInstruções',{examFilename:'auxiliar_de_servicos_gerais (1).pdf'}),true);
+ assert.equal(verifiedExamJob('AUXILIAR DE SERVIAOS GERAIS',
+   '[[PAGE:1]]\nAuxiliar de Serviços Gerais',{examFilename:'prova.pdf'}),true);
+ assert.equal(jobTitleMatches('AUXILIAR ADMINISTRATIVO','auxiliar_de_servicos_gerais (1).pdf'),false);
+ assert.equal(jobTitleMatches('AUXILIAR DE SERVIAOS ESCOLARES','auxiliar_de_servicos_gerais (1).pdf'),false);
+ assert.equal(jobTitleMatches('AUXILIAR DE SERVICOS GERAIS','auxiliar_de_servicos_escolares.pdf'),false);
+ assert.equal(jobTitleMatches('COPEIRO','COZINHEIRO'),false);
+ assert.equal(jobTitleMatches('AUXILIAR DE SERVAAOS GERAIS','auxiliar_de_servicos_gerais (1).pdf'),false);
+});
+
+test('FCPC: gabarito único com cargo corrompido SERVIAOS recupera 50 respostas sem intervenção',()=>{
+ const letters=['A','A','D','D','B','C','D','C','A','B',
+  'B','A','D','B','D','C','A','D','C','A',
+  'C','B','C','D','D','C','A','B','A','A','B','C','B','B','C',
+  'A','D','C','D','D','A','B','D','B','A','C','D','A','A','D'];
+ const grid=(from,to)=>[
+  Array.from({length:to-from+1},(_,i)=>String(from+i).padStart(2,'0')).join(' '),
+  letters.slice(from-1,to).join(' ')
+ ].join('\n');
+ const template=role=>'[[PAGE:1]]\nCÂMARA MUNICIPAL DE ARACATI\n'+
+  'GABARITO PRELIMINAR\n'+role+
+  '\nPROVA 1 - LÍNGUA PORTUGUESA\n'+grid(1,10)+
+  '\nPROVA 2 - LEGISLAÇÃO\n'+grid(11,20)+
+  '\nPROVA 3 - CONHECIMENTOS ESPECÍFICOS\n'+grid(21,35)+'\n'+grid(36,50);
+ const metadata={examFilename:'auxiliar_de_servicos_gerais (1).pdf',
+  examTitle:'2026 — FCPC — CM-ARACATI — Auxiliar de Serviços Gerais'};
+ const extracted='[[PAGE:1]]\nCÂMARA MUNICIPAL DE ARACATI\nAuxiliar de Serviços Gerais';
+ const one=chosenAnswerSection(template('AUXILIAR DE SERVIAOS GERAIS'),extracted,metadata);
+ assert.equal(one.error,null);
+ assert.equal(one.section,'AUXILIAR DE SERVIAOS GERAIS');
+ const answer=parseGridKey(one.text);
+ assert.equal(Object.keys(answer).length,50);
+ for(let i=1;i<=50;i++)assert.equal(answer[i],letters[i-1],'Questão '+i);
+ const two=chosenAnswerSection([
+  template('AGENTE ADMINISTRATIVO'),
+  template('AUXILIAR DE SERVIAOS GERAIS').replace('[[PAGE:1]]','[[PAGE:2]]'),
+  template('COPEIRO').replace('[[PAGE:1]]','[[PAGE:3]]')
+ ].join('\n'),extracted,metadata);
+ assert.equal(two.error,null);
+ assert.equal(two.section,'AUXILIAR DE SERVIAOS GERAIS');
+ assert.equal(Object.keys(parseGridKey(two.text)).length,50);
+ const wrong=chosenAnswerSection(template('AUXILIAR DE SERVIAOS ESCOLARES'),extracted,metadata);
+ assert.ok(wrong.error,'Cargo diferente deve continuar bloqueado');
 });
