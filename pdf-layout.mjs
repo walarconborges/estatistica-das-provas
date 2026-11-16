@@ -489,8 +489,14 @@ export function chosenAnswerSection(text,examText='',examInfo={}){
  if(!marks.length)return {text:source,section:'única',error:null};
  const exam=norm(examText),code=exam.match(/\b0{0,2}(\d{1,3})\s*[.]\s*PROVA\s+OBJETIVA/),cargo=exam.includes('ANALISTA DE INFORMATICA')?'ANALISTA DE INFORMATICA':null;
  const sections=marks.map((m,i)=>({code:Number(m[1]),text:source.slice(m.index,marks[i+1]?.index||source.length)}));
+ if(code&&!sections.some(x=>x.code===Number(code[1])))
+  return {text:'',section:null,error:'O código da prova não consta no gabarito enviado. Confira se os arquivos correspondem ao mesmo cargo.'};
  let found=code?sections.find(x=>x.code===Number(code[1])):null;
- if(!found&&cargo)found=sections.find(x=>norm(x.text.slice(0,140)).includes(cargo));
+ if(!found&&cargo){
+  const matches=sections.filter(x=>norm(x.text.slice(0,190)).includes(cargo));
+  if(matches.length>1)return {text:'',section:null,error:'Várias seções do gabarito possuem o mesmo cargo. É necessário o código exato do caderno.'};
+  found=matches[0]||null;
+ }
  if(!found&&sections.length===1)found=sections[0];
  if(!found)return {text:'',section:null,error:'O documento contém vários gabaritos e não foi possível encontrar o cargo correspondente.'};
  if(cargo&&!norm(found.text.slice(0,145)).includes(cargo))return {text:'',section:null,error:'O código da prova não corresponde ao cargo identificado no gabarito.'};
