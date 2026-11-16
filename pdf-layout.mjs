@@ -202,7 +202,9 @@ function recoverExplicitQuestionHeadings(pages,questions){
    for(let j=0;j<headings.length;j++){
     const h=headings[j];
     if(h.n<1||h.n>300||existing.has(h.n))continue;
-    const end=headings[j+1]?.row.y-12||page.height-33;
+    const nextHeadingAt=headings[j+1]?.row.y||page.height-33;
+    const notes=lines.slice(h.index+1).find(r=>r.y<nextHeadingAt&&/^ANOTA[ÇC][ÕO]ES$/i.test(r.text.trim()));
+    const end=Math.min(nextHeadingAt-12,notes?.y-8||page.height-33);
     const rows=lines.slice(h.index+1,headings[j+1]?.index||lines.length)
      .filter(r=>r.y<end&&!/^(?:ANOTA[ÇC][ÕO]ES|QUEST[AÃ]O\s+\d+)$/i.test(r.text.trim()));
     const stem=humanizePdfText(rows.filter(r=>!altRx.test(r.text)).map(r=>r.text).join('\n'));
@@ -293,7 +295,10 @@ export function spatialQuestions(pages){
     const qm=s.match(questionRx);
     if(qm&&Number(qm[1]||qm[3])>=1&&Number(qm[1]||qm[3])<=300){
      const qNumber=Number(qm[1]||qm[3]),qText=qm[2]||qm[4]||'';
-     if(current&&current.options.length<3&&qNumber!==current.originalNumber+1){
+     // Títulos "QUESTÃO N" são marcadores editoriais inequívocos;
+     // só os falsos números "2.520" devem acionar a proteção.
+     const explicitQuestionHeading=/^QUEST[AÃ]O\s+\d{1,3}\b/i.test(s);
+     if(current&&current.options.length<3&&qNumber!==current.originalNumber+1&&!explicitQuestionHeading){
       current.stem.push(s);continue; // Frações tipográficas como 2.520 não criam questões novas.
      }
      finish(row.y-15);
