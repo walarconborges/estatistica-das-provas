@@ -115,3 +115,24 @@ button.alternative-cross[aria-pressed="true"]:not(.quiet):not(.plain):not(.tab-b
 .history-choice:has(input:checked){border-color:#176995;background:#eef7fc}
 .history-filter .hint{margin-top:8px}
 @media(max-width:490px){.history-choices{display:grid;grid-template-columns:1fr 1fr}.history-choice{min-width:0}.history-choice:last-child{grid-column:1/-1}}
+
+/* Catálogos de edital — controles compactos, independentes do banco original. */
+.syllabus-panel{
+ border:1px solid #d7e1e8;border-radius:10px;padding:13px 14px;
+ margin:1px 0 4px;min-width:0;background:#f9fbfd
+}
+.syllabus-panel legend{font-weight:600;font-size:.9rem;color:#225272;padding:0 6px}
+.syllabus-panel .form-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.syllabus-panel .field{min-width:0}
+.syllabus-panel select{max-width:100%;overflow:hidden;text-overflow:ellipsis}
+.syllabus-classification{
+ display:flex;gap:8px;align-items:center;flex-wrap:wrap;
+ font-size:.79rem;color:#536a7f;margin:0 0 9px;line-height:1.4
+}
+.syllabus-classification .badge{flex-shrink:0}
+.syllabus-stat>div{flex:1;min-width:0;overflow-wrap:break-word}
+.syllabus-stat>strong{white-space:nowrap}
+@media(max-width:590px){
+ .syllabus-panel .form-grid{grid-template-columns:1fr}
+ .syllabus-panel{padding:12px}
+}
