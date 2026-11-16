@@ -1,6 +1,6 @@
 import {STORAGE_KEY,newId,fresh,normalizeState,parseExamText,parseKey,inferExamMetadata,classify,classifyByExamDivision,repeatedSupportText,addExam,recordAttempt,latestAnswer,outcome,stats,filtered,normalizeOutcomeSelection,prioritize,createSimulation,finishSimulation,simulationResult,expire,validAnswer} from './core.mjs';
 import {readPdf} from './pdf-import.mjs';
-import {chosenAnswerSection,parseGridKey,questionIntegrity} from './pdf-layout.mjs';
+import {chosenAnswerSection,parseGridKey,questionIntegrity,declaredQuestionCount} from './pdf-layout.mjs';
 import {createSyncClient} from './sync-client.mjs';
 import {STUDY_CONTEXT,eligibleForList} from './study-context.mjs';
 import {PROGRAM_505} from './programa-candeias-505.mjs';
@@ -408,9 +408,10 @@ async function importData(form){
     if(selected.error)throw Error(selected.error);
     const key=selected.format==='grid'?parseGridKey(selected.text):parseKey(selected.text);
     const parsed=examRead.questions.map(q=>{const category=classify(q.stem,q.heading);if(category.disciplineCode==='CE'&&/ANALISTA DE INFORMÁTICA/i.test(meta.title)){category.discipline='Informática';category.disciplineCode='IN';category.confidence='média';}return {...q,...classifyByExamDivision(q,meta,category)};});
-    // O total de respostas selecionado no cargo prevalece sobre números
-    // próximos de 'QUESTÕES OBJETIVAS' no texto extraído do PDF.
-    const expected=Object.keys(key).length;
+    // O total oficial é obtido exclusivamente da capa, quando informado.
+    // Não chamar de 'PDF declara' a quantidade parcial de respostas lidas.
+    // A divergência entre gabarito e questões é conferida separadamente.
+    const expected=declaredQuestionCount(examRead.pages);
     const problems=questionIntegrity(parsed,key,expected);
     if(selected.format==='grid'&&expected<20)problems.push('Gabarito tabulado incompleto ou sem a seção correta do cargo');
     const baseTextMarkers=(examRead.text.match(/(?:LEIA|CONSIDERE)\s+(?:O\s+)?TEXTO\s+PARA\s+RESPONDER/gi)||[]).length;
