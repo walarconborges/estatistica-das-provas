@@ -1,6 +1,6 @@
 import {STORAGE_KEY,newId,fresh,normalizeState,parseExamText,parseKey,inferExamMetadata,completeExamMetadata,classify,classifyByExamDivision,repeatedSupportText,addExam,upgradeRecoveredExam,findPreviouslyImportedExam,recordAttempt,latestAnswer,outcome,stats,filtered,normalizeOutcomeSelection,prioritize,createSimulation,finishSimulation,simulationResult,expire,validAnswer} from './core.mjs';
 import {readPdf} from './pdf-import.mjs';
-import {chosenAnswerSection,parseGridKey,questionIntegrity,declaredQuestionCount,declaredAlternativeCount,inferredAlternativeCount} from './pdf-layout.mjs';
+import {chosenAnswerSection,verifiedExamJob,parseGridKey,questionIntegrity,declaredQuestionCount,declaredAlternativeCount,inferredAlternativeCount} from './pdf-layout.mjs';
 import {createSyncClient} from './sync-client.mjs';
 import {STUDY_CONTEXT,eligibleForList} from './study-context.mjs';
 import {CATALOGS,currentCatalog,allTopics,classifyForCargo,subjectSummary,EDITAL_SCOPE_OPTIONS,normalizeEditalScope,inEditalScope} from './edital-classification.mjs';
@@ -213,7 +213,7 @@ function importScreen(){
     <p class="hint">O ano, a banca, o órgão, o título e as classificações serão identificados automaticamente quando possível. Dados não identificados serão sinalizados para conferência.</p>
     <details class="program-panel">
       <summary>Identificação manual — somente se o PDF não permitir reconhecer os dados</summary>
-      <p class="hint">Preencha apenas os campos que não são reconhecidos automaticamente. Consulte a capa ou o gabarito oficial. A verificação das 40 questões e de todas as respostas continua obrigatória.</p>
+      <p class="hint">Preencha somente os dados que não forem reconhecidos automaticamente. Consulte a capa ou o gabarito oficial. A verificação de todas as questões e respostas permanece obrigatória.</p>
       <div class="form-grid" style="margin-top:12px">
         <div class="field"><label for="manual-year">Ano do concurso</label><input id="manual-year" name="manualYear" inputmode="numeric" maxlength="4" placeholder="Ex.: 2026"></div>
         <div class="field"><label for="manual-banca">Banca organizadora</label><input id="manual-banca" name="manualBanca" maxlength="70" placeholder="Ex.: VUNESP"></div>
@@ -515,11 +515,23 @@ async function importData(form){
       banca:String(fd.get('manualBanca')||''),
       orgao:String(fd.get('manualOrgao')||'')
     });
-    const selected=chosenAnswerSection(keyRead.text,examRead.text,{
+    const answerMatchInfo={
       examFilename:pdf.name,examTitle:meta.title,
       bookletCode:String(fd.get('manualCode')||''),
       answerPage:String(fd.get('manualAnswerPage')||'')
-    });
+    };
+    let selected=chosenAnswerSection(keyRead.text,examRead.text,answerMatchInfo);
+    // Segunda verificação independente: a extração espacial da capa pode
+    // diferir do texto agregado. Só recupera automaticamente uma página
+    // ÚNICA cujo cargo esteja confirmado no caderno ou no nome do arquivo.
+    if(selected.error&&selected.availableSections?.length===1&&!answerMatchInfo.answerPage){
+      const sole=selected.availableSections[0];
+      const coverRows=(examRead.pages[0]?.lines||[]).map(row=>row.text).join('\n');
+      if(verifiedExamJob(sole.role,coverRows,{examFilename:pdf.name,examTitle:meta.title}))
+        selected=chosenAnswerSection(keyRead.text,examRead.text,{
+          ...answerMatchInfo,answerPage:String(sole.pageNumber)
+        });
+    }
     if(selected.error){
       if(selected.availableSections?.length){
         const holder=form.querySelector('#answer-page-review');
