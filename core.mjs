@@ -77,6 +77,21 @@ export function classify(stem,heading='',options=[]){
  */
 export function classifyByExamDivision(q,meta,guessed){
  const n=Number(q.originalNumber),b=textNorm(meta?.banca),org=textNorm(meta?.orgao),title=textNorm(meta?.title);
+ // A própria prova FEPESE/Brusque S01 identifica os blocos por
+ // disciplina e quantidade. A divisão oficial prevalece sobre palavras
+ // do enunciado (a questão 1 reproduz uma lei, mas é de Português).
+ if(b==='FEPESE'&&org==='PM-BRUSQUE'&&title.includes('ANALISTA DE INFORMATICA')&&n>=1&&n<=40){
+  const [discipline,disciplineCode,defaultTopic]=n<=5?['Língua Portuguesa','LP','Geral']:
+   n<=8?['Conhecimentos Gerais','CG','Geral']:
+   n<=13?['Raciocínio Lógico','RL','Geral']:
+   n<=20?['Legislação','LE','Legislação municipal']:
+   ['Informática','IN','Conhecimentos específicos'];
+  const preserveTopic=guessed.disciplineCode===disciplineCode;
+  return {...guessed,discipline,disciplineCode,
+   topic:preserveTopic?guessed.topic:defaultTopic,
+   topicCode:preserveTopic?guessed.topicCode:'G',
+   confidence:'alta'};
+ }
  if(b!=='QUADRIX'||org!=='CRQ-V'||!title.includes('ANALISTA DE INFORMATICA')||n<1||n>50)return guessed;
  if(n<=15){
   const isGrammar=guessed.disciplineCode==='LP'&&guessed.topic==='Gramática';
@@ -311,12 +326,14 @@ export function inferExamMetadata(examText='',examFilename='',keyText='',keyFile
   ['IBADE',/\bIBADE\b/],
   ['IDECAN',/\bIDECAN\b/],
   ['QUADRIX',/\bQUADRIX\b/],
+  ['FEPESE',/\bFEPESE\b/],
   ['UNOCHAPECO',/\bUNOCHAPECO\b/],
   ['FURB',/\bFURB\b/],
   ['FAUEL',/\bFAUEL\b/]
  ];
  const orgaos=[
   ['CRQ-V',/CONSELHO REGIONAL DE QUIMICA DA 5(?:A|ª) REGIAO|\bCRQ\s*[-–]?\s*V\b/],
+  ['PM-BRUSQUE',/\bMUNICIPIO DE BRUSQUE\b|\bPREFEITURA MUNICIPAL DE BRUSQUE\b/],
   ['CMVOTORANTIM',/CAMARA MUNICIPAL DE VOTORANTIM/],
   ['SEMUSA',/\bSEMUSA\b|SECRETARIA MUNICIPAL DE SAUDE/],
   ['SEMED',/\bSEMED\b|SECRETARIA MUNICIPAL DE EDUCACAO/],
