@@ -274,3 +274,31 @@ test('FCPC / Câmara de Aracati: metadados e blocos oficiais das 50 questões',(
   assert.equal(answer.disciplineCode,code,'questão '+n);
  }
 });
+
+
+test('FEPESE F1 2026: identifica CIS Grande Florianópolis e os quatro blocos do caderno',()=>{
+ const cover='Consórcio Público Interfederativo de Saúde da Região da Grande Florianópolis\n'+
+  'Concurso Público • Edital 001/2026\n'+
+  'https://2026cpcisgranfpolis.fepese.org.br\nF1 Auxiliar de Serviços Gerais\n'+
+  'Para cada questão são apresentadas 5 alternativas\n16 de agosto • 35 questões';
+ const key='16 de agosto de 2026\nEmprego Público com exigência de ensino fundamental\n'+
+  'F1 Auxiliar de Serviços Gerais\n1 2 3 4 5 6 7 8 9 10 11\nc e b a d a d c a b e';
+ const m=inferExamMetadata(cover,'auxiliar_de_servicos_gerais (2).pdf',key,'gabarito (2)(2).pdf');
+ assert.equal(m.year,'2026');
+ assert.equal(m.banca,'FEPESE');
+ assert.equal(m.orgao,'CIS-GRANFPOLIS');
+ assert.equal(m.title,'2026 — FEPESE — CIS-GRANFPOLIS — Auxiliar de Serviços Gerais');
+ assert.deepEqual(m.missing,[]);
+ const guessed={discipline:'Geral',disciplineCode:'CG',topic:'Geral',topicCode:'G'};
+ const cases=[
+  [1,'LP','Língua Portuguesa'],[5,'LP','Língua Portuguesa'],
+  [6,'CG','Conhecimentos Gerais'],[10,'CG','Conhecimentos Gerais'],
+  [11,'CE','Higiene e Segurança no Trabalho'],[15,'CE','Higiene e Segurança no Trabalho'],
+  [16,'CE','Conhecimentos específicos'],[35,'CE','Conhecimentos específicos']
+ ];
+ for(const [n,code,title] of cases){
+  const category=classifyByExamDivision({originalNumber:n},m,guessed);
+  assert.equal(category.disciplineCode,code,'código '+n);
+  assert.equal(category.discipline,title,'disciplina '+n);
+ }
+});
