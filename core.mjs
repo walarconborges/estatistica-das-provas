@@ -457,7 +457,13 @@ export function inferExamMetadata(examText='',examFilename='',keyText='',keyFile
  const basename=filename.replace(/\.pdf$/i,'').replace(/[_-]+/g,' ').replace(/\s+/g,' ').trim().slice(0,90);
  const namedCargo=source.match(/ANALISTA DE INFORMATICA(?:\s+II)?/);
  const areaLine=String(head||'').split('\n').find(x=>/^[\s\t]*(?:[ÁA]REA DE ATUA[CÇ][AÃ]O\s*:\s*)/i.test(x));
- const area=areaLine?textNorm(areaLine.split(/:\s*/).slice(1).join(':')).slice(0,85):'';
+ let area=areaLine?textNorm(areaLine.split(/:\s*/).slice(1).join(':')).slice(0,85):'';
+ // Títulos centralizados atravessam as duas colunas do leitor PDF.
+ // Quando o nome do arquivo repete o começo da área identificada,
+ // recuperar a expressão completa sem adivinhar outras palavras.
+ const fileJob=textNorm(filename.replace(/\.pdf$/i,'').replace(/[_-]+/g,' ').replace(/\s*\(\d+\)\s*$/,''));
+ const fileArea=fileJob.match(/\bANALISTA DE INFORMATICA II\s+([A-Z0-9 ]{6,90})$/)?.[1]?.trim()||'';
+ if(area&&fileArea.startsWith(area)&&fileArea.length>area.length)area=fileArea.slice(0,85);
  const cargo=namedCargo?(namedCargo[0].endsWith(' II')?'Analista de Informática II':'Analista de Informática')+
    (area?' — '+area.toLocaleLowerCase('pt-BR'):''):
    basename||'Prova importada';
