@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {spatialLines,spatialQuestions,chosenAnswerSection,verifiedExamJob,jobTitleMatches,identifyBookletCode,parseGridKey,questionIntegrity,isInstructionSheet,declaredQuestionCount,declaredAlternativeCount,inferredAlternativeCount,normalizeQuestionHeading,humanizePdfText,attachSuperscriptOrdinals,formatQuestionStem} from '../pdf-layout.mjs';
+import {spatialLines,spatialQuestions,chosenAnswerSection,codedAnswerTables,verifiedExamJob,jobTitleMatches,identifyBookletCode,parseGridKey,questionIntegrity,isInstructionSheet,declaredQuestionCount,declaredAlternativeCount,inferredAlternativeCount,normalizeQuestionHeading,humanizePdfText,attachSuperscriptOrdinals,formatQuestionStem} from '../pdf-layout.mjs';
 import {parseKey,inferExamMetadata,classifyByExamDivision} from '../core.mjs';
 function item(str,x,y,width=40){return {str,transform:[1,0,0,1,x,842-y],width};}
 test('leitura espacial separa duas colunas e preserva a numeração original',()=>{
@@ -1315,4 +1315,59 @@ test('FCPC: gabarito único com cargo corrompido SERVIAOS recupera 50 respostas 
  assert.equal(Object.keys(parseGridKey(two.text)).length,50);
  const wrong=chosenAnswerSection(template('AUXILIAR DE SERVIAOS ESCOLARES'),extracted,metadata);
  assert.ok(wrong.error,'Cargo diferente deve continuar bloqueado');
+});
+
+
+test('gabarito tabular genérico: FEPESE F1 de 35 questões não mistura M1/M2/S1/S2/S3',()=>{
+ // Gabarito real (16/08/2026): F1 tem 35 respostas, outros cargos têm 40.
+ // Preservar sequência completa de letras; linhas vizinhas não são pares.
+ const official='C E B A D A D C A B E C C E C B A D B E A D C E D A B E A D E B D C B'.split(' ');
+ const alternate='D B C A E D B C E A E D B C A D C A B E C B A D E A C D A B E C E B A D C B E D'.split(' ');
+ const nums=n=>Array.from({length:n},(_,i)=>String(i+1)).join(' ');
+ const table=(code,title,letters)=>[
+  code+' '+title,nums(letters.length),letters.join(' ')
+ ].join('\n');
+ const source=[
+  '[[PAGE:1]]','16 de agosto de 2026',
+  'Emprego Público com exigência de ensino fundamental',
+  table('F1','Auxiliar de Serviços Gerais',official),
+  'Empregos Públicos com exigência de curso de ensino médio/técnico',
+  table('M1','Auxiliar Administrativo',alternate),
+  table('M2','Técnico em Enfermagem',alternate),
+  'Página 1 de 2',
+  '[[PAGE:2]]','16 de agosto de 2026',
+  'Empregos Públicos com exigência de curso de ensino superior',
+  table('S1','Contador',alternate),
+  table('S2','Controlador Interno',alternate),
+  table('S3','Enfermeiro',alternate),
+  'Página 2 de 2'
+ ].join('\n');
+ const entries=codedAnswerTables(source);
+ assert.equal(entries.length,6);
+ assert.deepEqual(entries.map(t=>t.code),['F1','M1','M2','S1','S2','S3']);
+ assert.deepEqual(entries.map(t=>t.count),[35,40,40,40,40,40]);
+ assert.equal(entries[0].answers[1],'C');
+ assert.equal(entries[0].answers[35],'B');
+ const cover='[[PAGE:1]]\nConsórcio Público Interfederativo de Saúde da Região da Grande Florianópolis\n'+
+ 'Concurso Público Edital 001/2026\nF1 Auxiliar de Serviços Gerais\n35 questões';
+ const sel=chosenAnswerSection(source,cover,{examFilename:'auxiliar_de_servicos_gerais (2).pdf',examTitle:'2026 — FEPESE — CIS — Auxiliar de Serviços Gerais'});
+ assert.equal(sel.error,null);
+ assert.equal(sel.format,'grid');
+ assert.match(sel.section,/F1 — AUXILIAR DE SERVICOS GERAIS/);
+ const key=parseGridKey(sel.text);
+ assert.equal(Object.keys(key).length,35);
+ official.forEach((letter,i)=>assert.equal(key[i+1],letter,'questão '+(i+1)));
+ assert.deepEqual(questionIntegrity(
+   Array.from({length:35},(_,i)=>({originalNumber:i+1,options:'ABCDE'.split('').map(letter=>({letter,text:'Opção '+letter}))})),
+   key,35,5),[]);
+ const bad=chosenAnswerSection(source,
+  '[[PAGE:1]]\nF1 Técnico em Enfermagem\n35 questões',
+  {examFilename:'tecnico_em_enfermagem.pdf',examTitle:'Técnico em Enfermagem'});
+ assert.ok(bad.error,'Caderno com F1 mas outro cargo não pode obter gabarito F1 de Auxiliar');
+ const other=chosenAnswerSection(source,'[[PAGE:1]]\nM1 Auxiliar Administrativo\n40 questões',
+  {examFilename:'auxiliar_administrativo.pdf'});
+ assert.equal(other.error,null);
+ assert.equal(other.format,'grid');
+ assert.equal(Object.keys(parseGridKey(other.text)).length,40);
+ assert.equal(parseGridKey(other.text)[1],'D');
 });
