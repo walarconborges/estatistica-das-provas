@@ -466,7 +466,7 @@ export function spatialQuestions(pages){
  // os artigos da lei reproduzida no caderno desaparecem da questão.
  if(useIndentationProtection){
   for(const page of pages){
-   const marker=(page.lines||[]).find(r=>/^TEXTO\s+\d+$/i.test(String(r.text||'').trim()));
+   const marker=(page.lines||[]).find(r=>/^TEXTO(?:\s+\d+)?$/i.test(String(r.text||'').trim()));
    if(!marker)continue;
    const targets=questions.filter(q=>q.sourcePage===page.number&&q.sourceColumn!==marker.col);
    const target=targets.sort((a,b)=>a.startY-b.startY)[0];
@@ -478,10 +478,25 @@ export function spatialQuestions(pages){
      r.y>=marker.y-45&&!noise(String(r.text||'')))
      .sort((a,b)=>a.y-b.y).map(r=>r.text);
    const shared=humanizePdfText([...left,...right].join('\n'));
-   if(shared){
-    target.contextText=shared;
-    target.contextRange=[target.originalNumber,target.originalNumber];
-    contexts.push({from:target.originalNumber,to:target.originalNumber,
+   if(shared.length>=120){
+    // Quando a banca escreve apenas "Texto" e anuncia
+    // "Língua Portuguesa 5 questões", esse texto é compartilhado
+    // pelo bloco inteiro, mesmo nas páginas seguintes.
+    // Marcadores "Texto 1", "Texto 2" não autorizam expandir
+    // automaticamente: podem ter alcance menor.
+    const plain=/^TEXTO$/i.test(String(marker.text||'').trim());
+    const subtitle=(page.lines||[])
+      .filter(r=>r.col===marker.col&&r.y<=marker.y)
+      .map(r=>String(r.text||'')).join(' ');
+    const n=subtitle.match(/L[IÍ]NGUA PORTUGUESA\s+(\d{1,2})\s+QUEST[OÕ]ES/i);
+    const end=plain&&n?Math.min(35,target.originalNumber+Number(n[1])-1):target.originalNumber;
+    for(const question of questions){
+     if(question.originalNumber>=target.originalNumber&&question.originalNumber<=end&&!question.contextText){
+      question.contextText=shared;
+      question.contextRange=[target.originalNumber,end];
+     }
+    }
+    contexts.push({from:target.originalNumber,to:end,
       text:shared,page:page.number,col:marker.col});
    }
   }
