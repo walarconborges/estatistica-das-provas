@@ -84,6 +84,16 @@ export async function renderVisualQuestions(doc,questions,{createCanvas=()=>docu
  return errors;
 }
 
+/**
+ * O rodapé identifica algumas bancas mesmo quando está fora da área
+ * extraída para as questões. Preservar a assinatura como METADADO,
+ * sem inserir o rodapé nos enunciados nem nos recortes.
+ */
+export function pdfMetadataHints(items=[],visibleText=''){
+ const signatures=[...new Set(items.map(x=>String(x?.str||'').trim())
+  .filter(x=>/\bVNSP\d{3,}\/\d{2,3}/i.test(x)))];
+ return signatures.filter(x=>!visibleText.includes(x)).slice(0,4).join('\n');
+}
 export async function readPdf(file,{images=true,extractQuestions=false}={}){
  if(!file)return {text:'',pages:[],questions:[],contexts:[],imageErrors:[]};
  const lib=await pdfjs();
@@ -97,7 +107,9 @@ export async function readPdf(file,{images=true,extractQuestions=false}={}){
    const content=await page.getTextContent();
    const width=page.view[2]-page.view[0],height=page.view[3]-page.view[1];
    const lines=spatialLines(content.items||[],width,height,{split:extractQuestions});
-   pages.push({number,width,height,lines,text:lines.map(l=>l.text).join('\n')});
+   const visible=lines.map(l=>l.text).join('\n');
+   const metadataFooter=pdfMetadataHints(content.items||[],visible);
+   pages.push({number,width,height,lines,text:visible+(metadataFooter?'\n'+metadataFooter:'')});
    // A limpeza é adiada porque páginas com tabelas poderão ser renderizadas mais tarde.
   }
   const extraction=extractQuestions?spatialQuestions(pages):{questions:[],contexts:[]};
