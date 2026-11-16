@@ -3,6 +3,7 @@ import {readPdf} from './pdf-import.mjs';
 import {chosenAnswerSection,parseGridKey,questionIntegrity} from './pdf-layout.mjs';
 import {createSyncClient} from './sync-client.mjs';
 import {STUDY_CONTEXT,eligibleForList} from './study-context.mjs';
+import {PROGRAM_505} from './programa-candeias-505.mjs';
 
 const $=s=>document.querySelector(s);
 const $$=s=>Array.from(document.querySelectorAll(s));
@@ -213,6 +214,17 @@ function availableFilters(){
 function selectField(name,label,items,current='',placeholder='Todas'){
   return `<div class="field"><label>${h(label)}</label><select name="${h(name)}"><option value="">${h(placeholder)}</option>${items.map(s=>`<option value="${h(s)}" ${current===s?'selected':''}>${h(s)}</option>`).join('')}</select></div>`;
 }
+function targetProgramPanel(){
+ return '<details class="program-panel">'+
+  '<summary>Consultar conteúdo programático — Candeias, cargo 505</summary>'+
+  '<p class="hint">Resumo organizado do Anexo IV, páginas 4–5 e 7. Consulte o edital para a redação integral. A referência é exclusiva do cargo 505.</p>'+
+  PROGRAM_505.sections.map(section=>'<section class="program-section"><h3>'+h(section.title)+'</h3>'+
+    '<p class="hint">Anexo IV, página(s) '+h(section.pages)+'</p><ul>'+
+    section.topics.map(topic=>'<li>'+h(topic)+'</li>').join('')+'</ul></section>').join('')+
+  '<p class="hint">A LGPD pertence aos conhecimentos específicos. A legislação municipal cobrada é a Lei Orgânica e as Resoluções nº 001/CMCJ-93 e nº 173/CMCJ/2025; não confundir com outras normas citadas no preâmbulo.</p>'+
+  '</details>';
+}
+
 function filterForm(kind='questions'){
   const u=availableFilters();
   const mode=kind==='sim';
@@ -234,7 +246,7 @@ function filterForm(kind='questions'){
   </div><div class="actions"><button type="submit">${mode?'Criar simulado':'Buscar questões'}</button></div>
   <p class="hint">Questões de legislação são adaptadas automaticamente quando existe correspondência com as normas oficiais de Candeias. Sem correspondência, ficam inválidas para o modo municipal. A prova original é preservada.</p>
   ${unsupported&&currentFilter.studyArea!=='original'?`<p class="hint">${unsupported} questão(ões) de legislação sem correspondência verificável — inválidas apenas para o modo Candeias. No modo original, continuam acessíveis.</p>`:''}
-  </form>`;
+  </form>${targetProgramPanel()}`;
 }
 function alternatives(q,scope,chosen=''){
  const options=q.options||[];
