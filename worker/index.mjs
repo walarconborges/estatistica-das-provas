@@ -32,6 +32,39 @@ async function writeFile(env,path,body,sha,message){
  return true;
 }
 function readRow(value){if(!value||typeof value!=='object'||Array.isArray(value)||typeof value.id!=='string'||value.id.length<3||value.id.length>100)throw Error('Identificador de registro inválido.');return clone(value);}
+/**
+ * Apenas a correção de EXTRAÇÃO de questões antigas é permitida.
+ * Não altera resposta oficial, código, enunciado, origem ou disciplina.
+ * Não oferece edição genérica a participantes do site.
+ */
+export function extractionOnlyUpgrade(old,incoming){
+ if(!old||!incoming||old.extractionFallback!==true||old.status!=='needs-review')return null;
+ const immutable=['id','examId','code','originalNumber','sourcePage','sourceColumn',
+  'answer','year','banca','orgao','discipline','disciplineCode','topic','topicCode'];
+ for(const prop of immutable)if(JSON.stringify(old[prop]??null)!==JSON.stringify(incoming[prop]??null))return null;
+ const normalize=s=>String(s??'').replace(/\s+/g,' ').trim();
+ if(normalize(old.stem)!==normalize(incoming.stem))return null;
+ if(incoming.extractionFallback||incoming.extractionReview||
+  incoming.status!=='active'||!Array.isArray(incoming.options)||
+  incoming.options.length!==5)return null;
+ const letters=['A','B','C','D','E'];
+ if(incoming.options.some((opt,i)=>opt.letter!==letters[i]||
+  !String(opt.text||'').trim()||/Check[\s-]*square|\bSQUARE\b/i.test(opt.text)))return null;
+ if((old.options||[]).length!==5||(old.options||[]).some((opt,i)=>
+  opt.letter!==letters[i]||String(opt.text||'').trim()))return null;
+ if(incoming.imageOnly&&(!incoming.pageImage||!String(incoming.pageImage).startsWith('data:image/')))return null;
+ const result={...old,options:clone(incoming.options),imageOnly:Boolean(incoming.imageOnly),
+  extractionReview:false,extractionFallback:false,status:'active'};
+ if(incoming.imageOnly){
+  result.pageImage=incoming.pageImage;
+  result.visualSegments=clone(incoming.visualSegments||null);
+ }else{
+  delete result.pageImage;
+  delete result.visualSegments;
+ }
+ delete result.imageError;
+ return result;
+}
 export function applyDelta(existing,delta){
  const state=normalizeState(clone(existing));if(!delta||typeof delta!=='object')throw Error('Dados de sincronização inválidos.');
  let quantity=0;const newFlags=[];
@@ -48,6 +81,11 @@ export function applyDelta(existing,delta){
    if(type==='simulations'&&item.questionIds?.some(id=>(state.tombstones?.questions||[]).includes(id)))continue;
    if(++quantity>350)throw Error('Lote grande demais.');
    if(found.has(item.id)){
+    if(type==='questions'){
+     const previous=state.questions[found.get(item.id)];
+     const repaired=extractionOnlyUpgrade(previous,item);
+     if(repaired)state.questions[found.get(item.id)]=repaired;
+    }
     if(type==='simulations'){
      const old=state.simulations[found.get(item.id)];
      if(old.status!=='pending'||old.profileId!==item.profileId||JSON.stringify(old.questionIds)!==JSON.stringify(item.questionIds))continue;
