@@ -1424,3 +1424,28 @@ test('FEPESE F1: Texto em duas colunas acompanha Português 1 a 5 em páginas di
  }
  assert.equal(result.questions.find(q=>q.originalNumber===6).contextText,'');
 });
+
+
+test('Objetiva Q21: remove rodapé acoplado à alternativa D em extração espacial e mantém alternativas',()=>{
+ const cover={number:1,width:595,height:842,text:'Caderno com 4 alternativas para cada questão',lines:[
+  {col:0,x:40,y:40,text:'4 alternativas'}
+ ]};
+ const page={number:2,width:595,height:842,lines:[
+  {col:0,x:45,y:72,text:'21. Avaliar se as afirmativas são certas (C) ou erradas (E) e assinalar a sequência correspondente.'},
+  {col:0,x:50,y:130,text:'A) C - C - E.'},
+  {col:0,x:50,y:155,text:'B) E - E - C.'},
+  {col:0,x:50,y:180,text:'C) C - E - E.'},
+  {col:0,x:50,y:205,text:'D) E - C - C. www.objetivas.com.br'}
+ ]};
+ const result=spatialQuestions([cover,page]);
+ assert.equal(result.questions.length,1);
+ const q=result.questions[0];
+ assert.equal(q.originalNumber,21);
+ assert.equal(q.options.length,4);
+ assert.equal(q.extractionFallback,undefined);
+ assert.equal(q.options[3].text,'E - C - C.');
+ assert.equal(q.options[0].text,'C - C - E.');
+ assert.equal(humanizePdfText('E - C - C.\nwww.objetivas.com.br'),'E - C - C.');
+ const lines=spatialLines([item('www.objetivas.com.br',40,600,150)],595,842);
+ assert.deepEqual(lines,[],'rodapé independente não deve virar texto da questão');
+});
