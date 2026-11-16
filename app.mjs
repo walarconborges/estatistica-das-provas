@@ -386,7 +386,7 @@ async function importData(form){
     const examRead=await readPdf(pdf,{images:true,extractQuestions:true});
     const keyRead=await readPdf(keyPdf,{images:false});
     const meta=inferExamMetadata(examRead.text,pdf.name,keyRead.text,keyPdf.name);
-    const selected=chosenAnswerSection(keyRead.text,examRead.text);
+    const selected=chosenAnswerSection(keyRead.text,examRead.text,{examFilename:pdf.name,examTitle:meta.title});
     if(selected.error)throw Error(selected.error);
     const key=selected.format==='grid'?parseGridKey(selected.text):parseKey(selected.text);
     const parsed=examRead.questions.map(q=>{const category=classify(q.stem,q.heading);if(category.disciplineCode==='CE'&&/ANALISTA DE INFORMÁTICA/i.test(meta.title)){category.discipline='Informática';category.disciplineCode='IN';category.confidence='média';}return {...q,...classifyByExamDivision(q,meta,category)};});
