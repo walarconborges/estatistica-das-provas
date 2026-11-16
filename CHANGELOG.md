@@ -1,3 +1,13 @@
+## 0.6.13 — 16/11/2026
+
+- Identificação da banca Objetiva Concursos e órgão PM-SOSSEGO para o caderno Auxiliar de Serviços Gerais, concurso 01/2026.
+- Gabarito preliminar multicargo: a seleção da seção exata do cargo elimina risco de utilizar respostas de Agente Comunitário, Gari ou outros cargos. Reconhece cabeçalhos curtos.
+- Importador detecta quatro alternativas pelo padrão reiterado A–D quando a capa não informa 4/5 explicitamente.
+- Preserva o texto-base sobre pressão arterial para as primeiras questões de Português.
+- Separação oficial de disciplinas 1–15 Português, 16–25 Matemática e 26–40 Conhecimentos específicos.
+- Testes de regressão e integridade aprovados; importação real no navegador ainda depende de confirmação.
+- Banco de dados, tentativas, simulados e classificações personalizadas preservados.
+
 ## 0.6.12 — 16/11/2026
 
 - Corrigidas questões 11 (`Questão 1 1.`) e 40 (`Questão 4O.`) da Legalle/CISCOPAR.
