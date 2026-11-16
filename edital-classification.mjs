@@ -6,6 +6,7 @@
  * Reconhece equivalências por conteúdo; nome diferente NÃO significa "fora".
  */
 import {PROGRAM_505} from './programa-candeias-505.mjs';
+import {PROGRAM_PROFESSOR,PROFESSOR_CARGO_ID,matchProfessorNewTopic,normalizeProfessorText} from './programa-semed-professor.mjs';
 export const CURRENT_CARGO_202='202', CURRENT_CARGO_505='505';
 export const CARGO_202={
  id:'202', cargo:'Auxiliar de Serviços Gerais', level:'Ensino fundamental completo',
@@ -40,7 +41,8 @@ export const CARGO_202={
 };
 export const CATALOGS=Object.freeze({
  '202':CARGO_202,
- '505':{...PROGRAM_505,id:'505',cargo:PROGRAM_505.cargo,pages:'4–5 e 7'}
+ '505':{...PROGRAM_505,id:'505',cargo:PROGRAM_505.cargo,pages:'4–5 e 7'},
+ [PROFESSOR_CARGO_ID]:PROGRAM_PROFESSOR
 });
 export const currentCatalog=id=>CATALOGS[String(id)]||CATALOGS['505'];
 /** Modo transversal: só considera as disciplinas ORIGINAIS da prova.
@@ -255,10 +257,88 @@ function inferClassificationForCargo(q,exam,cargoId='505'){
  if(sectionId==='legislacao')return denied('Lei não incluída nas normas municipais exigidas.');
  return pending(section.title,'Disciplina prevista, mas o subassunto exige conferência por equivalência.');
 }
+/**
+ * Catálogo de Professor — blocos compartilhados reutilizam a classificação
+ * do cargo 505. Só as lacunas de RLM, legislação educacional e pedagogia
+ * recebem correspondências novas. Nunca reescreve a questão original.
+ */
+function inferProfessorClassification(q,exam){
+ const cargo=PROFESSOR_CARGO_ID,catalog=currentCatalog(cargo);
+ const denied=(reason='Disciplina ou assunto não previsto no edital do Professor Nível II.')=>({
+  cargoId:cargo,status:'fora',statusLabel:'Fora do edital',
+  discipline:'Fora do edital',topic:'Fora do edital',topicId:'',reason
+ });
+ const pending=(sectionId,reason='Disciplina prevista; assunto exige conferência.')=>{
+  const section=catalog.sections.find(s=>s.id===sectionId);
+  return {cargoId:cargo,status:'pendente',statusLabel:'A conferir',
+   discipline:section?.title||'A conferir',topic:'A conferir',topicId:'',reason};
+ };
+ const inside=(sectionId,idx,reason)=>{
+  const section=catalog.sections.find(s=>s.id===sectionId);
+  if(!section||!section.topics[idx])return pending(sectionId);
+  return {cargoId:cargo,status:'dentro',statusLabel:'Dentro do edital',
+   discipline:section.title,topic:section.topics[idx],
+   topicId:sectionId+':'+idx,
+   reason:reason||'Correspondência conceitual com o Anexo IV da SEMED Porto Velho.'};
+ };
+ // A questão derivada para LEGISLAÇÃO DE CANDEIAS não pode ser aproveitada
+ // automaticamente em Porto Velho. As originais continuam disponíveis.
+ if(q?.originalQuestionId)return denied('Adaptação destinada a Candeias; consultar a questão original para Porto Velho.');
+ const code=norm(q?.disciplineCode),discipline=norm(q?.discipline);
+ const source=normalizeProfessorText([q?.stem,q?.heading,q?.topic].join(' '));
+ const baseGroup=studyAllGroup(q);
+ const sectionId=baseGroup==='LP'?'portugues':
+  baseGroup==='RLM'?'raciocinio':baseGroup==='CG'?'gerais':null;
+ if(sectionId){
+  if(sectionId==='raciocinio'){
+   if(/GEOMETRIA ANALITICA|TRIGONOMETRIA|CALCULO DIFERENCIAL/.test(source))
+    return denied('Assunto não previsto no programa de Raciocínio Lógico.');
+   const extra=matchProfessorNewTopic('raciocinio',source);
+   if(extra>=0)return inside('raciocinio',extra,'Complemento de RLM específico do edital da SEMED.');
+  }
+  if(sectionId==='gerais'&&/PREFEITURA(?: MUNICIPAL)? DE PORTO VELHO|SITE DA PREFEITURA DE PORTO VELHO/.test(source))
+   return inside('gerais',catalog.sections.find(s=>s.id==='gerais').topics.length-1);
+  const reused=inferClassificationForCargo(q,exam,'505');
+  if(reused.status==='dentro'&&reused.topicId.startsWith(sectionId+':')){
+   const idx=Number(reused.topicId.split(':')[1]);
+   if(sectionId==='gerais'&&idx===6)
+    return pending(sectionId,'Notícias específicas de Candeias não equivalem à fonte municipal de Porto Velho.');
+   return inside(sectionId,idx,'Conteúdo compartilhado com o catálogo já existente de Português/RLM/Gerais.');
+  }
+  return reused.status==='fora'?denied(reused.reason):pending(sectionId);
+ }
+ const legalIndex=matchProfessorNewTopic('legislacao-educacao',source);
+ const specificIndex=matchProfessorNewTopic('especificos',source);
+ const legalDiscipline=code==='LE'||['DA','DC'].includes(code)||/LEGISLACAO|DIREITO EDUCACIONAL/.test(discipline);
+ const pedagogicalDiscipline=code==='CE'||/PEDAGOG|DIDATICA|FUNDAMENTOS DA EDUCACAO|CONHECIMENTOS ESPECIFICOS|EDUCACAO INFANTIL|ALFABETIZACAO|PSICOLOGIA DA EDUCACAO/.test(discipline);
+ if(legalDiscipline){
+  if(legalIndex>=0)return inside('legislacao-educacao',legalIndex);
+  return denied('Norma jurídica não encontrada na lista de Legislação Educação.');
+ }
+ if(pedagogicalDiscipline){
+  if(specificIndex>=0)return inside('especificos',specificIndex);
+  // Não presumir que qualquer questão de Conhecimentos Específicos
+  // de outro cargo seja pedagógica.
+  const title=normalizeProfessorText([exam?.title,exam?.cargo,q?.discipline,q?.topic].join(' '));
+  if(/INFORMATICA|TECNOLOGIA DA INFORMACAO|PROGRAMACAO|ANALISTA DE|MOTORISTA|SERVICOS GERAIS|SAUDE|SECRETARIA/.test(title))
+   return denied('Conhecimentos específicos de outro cargo, sem correspondência pedagógica.');
+  return /PROFESSOR|PEDAGOG|EDUCACAO|ENSINO/.test(title)
+   ?pending('especificos','Conteúdo possivelmente pedagógico; correspondência a conferir.')
+   :denied('Não há evidência de pertinência aos conhecimentos específicos de Séries Iniciais.');
+ }
+ // Algumas provas antigas não têm a disciplina original corretamente
+ // identificada, mas trazem o objeto legal ou pedagógico no enunciado.
+ if(legalIndex>=0&&/LDB|BNCC|FUNDEB|ECA|MAGISTERIO|EDUCACAO|ESCOLA/.test(source))
+  return inside('legislacao-educacao',legalIndex);
+ if(specificIndex>=0&&/ALFABETIZ|LETRAMENT|DIDATICA|PEDAGOG|APRENDIZAGEM|EDUCACAO INFANTIL|PPP|PRIMEIROS SOCORROS/.test(source))
+  return inside('especificos',specificIndex);
+ return denied();
+}
+
 /** Persistir apenas após aprovação administrativa da sinalização. */
 export function approveEdictReview(question,proposed){
  const cargo=String(proposed?.editalCargo||''),status=String(proposed?.status||'');
- if(!['202','505'].includes(cargo)||!['dentro','fora'].includes(status))
+ if(!['202','505',PROFESSOR_CARGO_ID].includes(cargo)||!['dentro','fora'].includes(status))
   throw Error('Parecer do edital inválido (cargo e situação são obrigatórios).');
  question.editalReview={...(question.editalReview||{}),[cargo]:{status}};
  return question;
@@ -269,8 +349,8 @@ export function approveEdictReview(question,proposed){
  * Cada cargo mantém sua própria revisão; o original permanece inalterado.
  */
 export function classifyForCargo(q,exam,cargoId='505'){
- const cargo=String(cargoId)==='202'?'202':'505';
- const computed=inferClassificationForCargo(q,exam,cargo);
+ const cargo=['202','505',PROFESSOR_CARGO_ID].includes(String(cargoId))?String(cargoId):'505';
+ const computed=cargo===PROFESSOR_CARGO_ID?inferProfessorClassification(q,exam):inferClassificationForCargo(q,exam,cargo);
  const reviewed=q?.editalReview?.[cargo];
  if(!reviewed||!['dentro','fora'].includes(reviewed.status))return computed;
  if(reviewed.status==='fora')return {

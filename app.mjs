@@ -21,7 +21,7 @@ const niceDate=x=>x?new Date(x).toLocaleDateString('pt-BR'):'—';
 let state;
 try{state=normalizeState(JSON.parse(localStorage.getItem(STORAGE_KEY)||'null'))}catch{state=fresh()}
 expire(state);
-const initialCargo=['202','505','all'].includes(localStorage.getItem('estatistica-edital-cargo'))?localStorage.getItem('estatistica-edital-cargo'):'505';
+const initialCargo=[...Object.keys(CATALOGS),STUDY_ALL].includes(localStorage.getItem('estatistica-edital-cargo'))?localStorage.getItem('estatistica-edital-cargo'):'505';
 let profileId=null,view='home',selectedSimId=null,currentFilter={studyArea:'candeias',editalCargo:initialCargo,editalScope:'dentro'},currentPool=[],limitAvulsas=10,questionSearch='';
 let latestImportMessage='';
 let statusMessage='';
@@ -255,7 +255,7 @@ function targetProgramPanel(){
  const program=currentCatalog(currentFilter.editalCargo||'505');
  return '<details class="program-panel">'+
   '<summary>Consultar conteúdo programático — cargo '+h(program.id)+' · '+h(program.cargo)+'</summary>'+
-  '<p class="hint">Fonte: '+h(program.annex||'Anexo IV')+' do Edital 01/2026. Confira a redação integral no edital. Assuntos equivalentes são aceitos por conteúdo, e casos incertos são sinalizados para conferência.</p>'+
+  '<p class="hint">Fonte: '+h(program.annex||'Anexo IV')+' — '+h(program.edital||'edital de referência')+'. Confira a redação integral no edital. Assuntos equivalentes são aceitos por conteúdo, e casos incertos são sinalizados para conferência.</p>'+
   program.sections.map(section=>'<section class="program-section"><h3>'+h(section.title)+'</h3>'+
     '<p class="hint">Página(s) '+h(section.pages)+'</p><ul>'+
     section.topics.map(topic=>'<li>'+h(topic)+'</li>').join('')+'</ul></section>').join('')+
@@ -311,8 +311,8 @@ function syllabusFiltered(items,filters=currentFilter){
   if(!inEditalScope(match,scope))return false;
   if(filters.editalDisciplina&&match.discipline!==filters.editalDisciplina)return false;
   if(filters.editalTopic&&match.topicId!==filters.editalTopic)return false;
-  // As questões adaptadas para TI não pertencem ao cargo 202.
-  if(id==='202'&&q.originalQuestionId)return false;
+  // Adaptações de legislação feitas para Candeias nunca são reutilizadas em outro edital.
+  if(id!=='505'&&q.originalQuestionId)return false;
   return true;
  });
 }
@@ -321,7 +321,7 @@ function eligibleSyllabusQuestions(items,filters=currentFilter){
  if(id===STUDY_ALL)return syllabusFiltered(items,filters);
  const scope=normalizeEditalScope(filters.editalScope);
  const relevant=syllabusFiltered(items,filters);
- if(id==='202'||scope==='all')return relevant;
+ if(id!=='505'||scope==='all')return relevant;
  // "Dentro do edital" inclui a classificação pendente. A pessoa poderá
  // conferi-la e sinalizar diretamente ao resolver; ela não é apresentada
  // como norma validada de Candeias.
@@ -676,8 +676,8 @@ function printQuestions(qs,title,options={}){
 function reviewEdict(qid){
  const q=question(qid);
  const cargo=currentFilter.editalCargo;
- if(!q||!['202','505'].includes(cargo)){
-  toast('Selecione o cargo 202 ou 505 para conferir a questão conforme o edital.');return;
+ if(!q||!Object.hasOwn(CATALOGS,cargo)){
+  toast('Selecione um cargo com edital para conferir a questão.');return;
  }
  const current=classifyForCargo(q,exam(q.examId),cargo);
  const input=prompt('A questão '+q.code+' está prevista no edital do cargo '+cargo+'?\nDigite DENTRO ou FORA.\nClassificação automática atual: '+current.statusLabel,
@@ -774,7 +774,7 @@ document.addEventListener('submit',async e=>{
   if(form.id==='filter-form'){
     limitAvulsas=count;currentPool=prioritize(state,profileId,candidates).slice(0,count);refresh();return;
   }
-  if(!candidates.length){toast(beforeTerritory.length?'Legislação municipal sem adaptação validada para Candeias. Selecione Prova original para consultá-la.':'Não há questões que correspondam aos filtros.');return}
+  if(!candidates.length){toast(beforeTerritory.length&&currentFilter.editalCargo==='505'?'Legislação municipal sem adaptação validada para Candeias. Selecione Prova original para consultá-la.':'Não há questões que correspondam aos filtros.');return}
   const seen=new Set(),picked=[];
   for(const q of prioritize(state,profileId,candidates)){
     const group=q.duplicateGroup||q.id;
@@ -787,7 +787,7 @@ document.addEventListener('submit',async e=>{
 document.addEventListener('change',e=>{
   const input=e.target;
   if(input.matches('select[name="editalCargo"]')){
-    const next=['202','505','all'].includes(input.value)?input.value:'505';
+    const next=[...Object.keys(CATALOGS),STUDY_ALL].includes(input.value)?input.value:'505';
     currentFilter={...currentFilter,editalCargo:next,editalDisciplina:'',editalTopic:'',generalDiscipline:'',generalTopic:''};
     currentPool=[];
     localStorage.setItem('estatistica-edital-cargo',next);

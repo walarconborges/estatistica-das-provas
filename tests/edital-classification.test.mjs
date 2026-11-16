@@ -11,7 +11,7 @@ const question=(number,code,discipline,stem)=>({
 });
 
 test('Anexo IV tem os dois cargos e não atribui informática ou legislação ao cargo 202',()=>{
- assert.deepEqual(Object.keys(CATALOGS).sort(),['202','505']);
+ assert.deepEqual(Object.keys(CATALOGS).sort(),['202','505','519-552']);
  assert.equal(CARGO_202.cargo,'Auxiliar de Serviços Gerais');
  assert.deepEqual(CARGO_202.sections.map(x=>x.title),['Português','Matemática','Conhecimentos Gerais']);
  assert.ok(!CARGO_202.sections.some(x=>/Informática|Legislação/.test(x.title)));

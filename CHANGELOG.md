@@ -1,3 +1,10 @@
+## 0.6.27 — 16/11/2026
+
+- Pré-cadastrado o programa do cargo Professor Nível II — Séries Iniciais (códigos 519 a 552) da SEMED Porto Velho/RO, Edital nº 24/2026, Anexo IV — Retificação nº 01.
+- Reutilizados os assuntos de Português e RLM compartilhados com o cargo 505; incluídos apenas complementos de RLM, notícias locais de Porto Velho, legislação educacional e conhecimentos específicos pedagógicos.
+- Classificação por cargo e conferência do edital independentes, sem duplicar questões, modificar gabaritos nem reaproveitar adaptações legislativas de Candeias em Porto Velho.
+- Catálogo do Professor incluído em Questões/Simulados; novo módulo publicado no GitHub Pages; testes específicos de regressão adicionados.
+
 ## 0.6.26 — 16/11/2026
 
 - Corrigida a importação de Auxiliar de Serviços Gerais, Câmara Municipal de Pouso Alto/MG, 2025: o caderno possui 30 questões, embora seis outras páginas de gabarito tenham 40 respostas.

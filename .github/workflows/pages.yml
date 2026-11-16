@@ -40,7 +40,7 @@ jobs:
       - name: Preparar somente arquivos públicos
         run: |
           mkdir public
-          cp index.html styles.css app.mjs core.mjs pdf-import.mjs pdf-layout.mjs study-context.mjs programa-candeias-505.mjs edital-classification.mjs sync-client.mjs config.js public/
+          cp index.html styles.css app.mjs core.mjs pdf-import.mjs pdf-layout.mjs study-context.mjs programa-candeias-505.mjs programa-semed-professor.mjs edital-classification.mjs sync-client.mjs config.js public/
           node build-pages.mjs public '${{ github.sha }}'
       - name: Enviar conteúdo
         uses: actions/upload-pages-artifact@v3

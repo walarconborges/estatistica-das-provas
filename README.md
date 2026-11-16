@@ -1,9 +1,18 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.26 — 16/11/2026**  
+**Versão experimental 0.6.27 — 16/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.27 — programa SEMED Porto Velho, Professor Nível II (519 a 552)
+
+- Cadastrado **Professor Nível II — Séries Iniciais, códigos 519–552**, com base no **Anexo IV, Retificação nº 01 do Edital 24/2026 da SEMED Porto Velho/RO** (Português e RLM no bloco superior, páginas 2–3; específicos nas páginas 5–6).
+- **Português reutilizado do cargo 505**, sem criar outro banco de questões; **Raciocínio Lógico** reaproveita os assuntos anteriores e acrescenta somente razões e proporções, porcentagem, medidas, equações/função do 1º grau, médias, quantificadores/diagramas e argumentação explícita.
+- **Conhecimentos Gerais** reaproveitam assuntos gerais, mas a fonte de notícias municipais passa a ser a **Prefeitura de Porto Velho**, não a Câmara de Candeias.
+- Pré-cadastrados os novos catálogos de **Legislação Educação** (15 assuntos) e **Conhecimentos Específicos Pedagógicos** (28 assuntos), incluindo BNCC, LDB, ECA, educação inclusiva, Fundeb, PNE, alfabetização, Educação Infantil, didática, avaliação, PPP e primeiros socorros. A Lei nº 15.388/2026 é apresentada conforme a redação do edital fornecido.
+- O cargo está disponível nos filtros de **Questões** e **Simulados** e no botão **Conferir edital**, com revisões independentes. Adaptações de legislação municipal destinadas a Candeias são excluídas dos outros cargos; **provas importadas, gabaritos, perfis, tentativas e estatísticas originais não são alterados**.
+- Classificação de temas pedagógicos é conservadora e conserva dúvidas como **A conferir**; a seleção de cargo não transforma questões de TI em pedagógicas. Teste de uso no navegador ainda recomendado.
 
 ## Versão 0.6.26 — prova de 30 questões em gabarito multicargo de 40
 
