@@ -476,6 +476,37 @@ export function chosenAnswerSection(text,examText='',examInfo={}){
   return {text:match.text,section:match.job+' - Tabela '+match.table,format:'pairs',error:null};
  }
 
+
+ // Objetiva: páginas com vários cargos, cada cargo é seguido por linhas
+ // "01) D 11) C 21) A 31) B". Não usar o primeiro gabarito por engano.
+ // Os títulos são reconhecidos somente quando imediatamente seguidos
+ // pelo par "01) letra", evitando capturar cabeçalhos de páginas.
+ const objectiveHeads=[...source.matchAll(/(?:^|\n)[ \t]*([A-ZÀ-Ü][A-ZÀ-Ü |()\-º]{5,115})[ \t]*\n[ \t]*0?1\)[ \t]*[A-E]\b/gm)];
+ if(objectiveHeads.length>=2){
+  const sections=objectiveHeads.map((m,i)=>({
+   job:norm(m[1]).replace(/\s+/g,' ').trim(),
+   text:source.slice(m.index,objectiveHeads[i+1]?.index||source.length)
+  }));
+  // Primeiro identificamos o cargo no caderno. Nunca usar as respostas
+  // de outro cargo mesmo que a prova tenha a mesma quantidade de questões.
+  const evidence=[
+   norm(String(examInfo?.examFilename||'').replace(/[_-]+/g,' ')),
+   norm(examText.split(/\[\[PAGE:\s*2\]\]/i)[0].slice(0,2500)),
+   norm(examInfo?.examTitle||'')
+  ];
+  let selected=null;
+  for(const item of evidence){
+   if(!item)continue;
+   const found=sections.filter(x=>item.includes(x.job));
+   if(found.length>1)return {text:'',section:null,format:'pairs',
+    error:'O gabarito da Objetiva contém mais de uma seção correspondente ao cargo. Confira a identificação.'};
+   if(found.length===1){selected=found[0];break;}
+  }
+  if(!selected)return {text:'',section:null,format:'pairs',
+   error:'Gabarito da Objetiva com vários cargos: não foi possível localizar uma seção única da prova.'};
+  return {text:selected.text,section:selected.job,format:'pairs',error:null};
+ }
+
  // Quadrix: um PDF de gabarito pode trazer vários cargos em seções
  // "2.7 ANALISTA DE INFORMÁTICA (CÓDIGO 401)", seguidas por duas
  // linhas de números e letras. A seleção é feita por cargo, não por
