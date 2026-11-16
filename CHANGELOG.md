@@ -1,3 +1,14 @@
+## 0.6.4 — 15/11/2026
+- Corrigida perda de alternativas numéricas isoladas e títulos `QUESTÃO` separados de seus números no PDF Quadrix.
+- Aumentada a tolerância geométrica para reunir rótulos e valores próximos sem fundir alternativas de linhas diferentes.
+- Questões com extração incompleta deixam de ser descartadas: são recuperadas como recorte fiel do PDF com controles A–E.
+- Corrigido o recorte para incluir alternativas e, quando aplicável, encerrar antes de `ANOTAÇÕES`.
+- Permissão de importação somente quando os recortes forem gerados com sucesso; falhas de imagem e de numeração continuam bloqueando a importação.
+- Questões recuperadas continuam marcadas como `Revisão da extração` e são identificadas na mensagem de sucesso.
+- Adicionados testes para os casos das questões 16–20, 25 e 43, para cabeçalhos gráficos divididos e para recuperação de 50 questões.
+- 85 testes automatizados aprovados; importação completa no navegador ainda requer validação.
+- Banco, gabaritos, perfis e histórico existentes preservados.
+
 ## 0.6.3 — 15/11/2026
 - Corrigido erro de seleção do gabarito Quadrix CRQ-V: o cargo está no rodapé da prova e era removido pela leitura espacial.
 - O seletor de gabarito agora considera o nome real do PDF e o título inferido, além do texto extraído.
