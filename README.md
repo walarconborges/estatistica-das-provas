@@ -1,9 +1,21 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.7 — 15/11/2026**  
+**Versão experimental 0.6.9 — 15/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.9 — Classificação personalizada por edital
+
+Há dois perfis oficiais no mesmo concurso da Câmara de Candeias do Jamari/RO (Edital 01/2026):
+- **202 — Auxiliar de Serviços Gerais:** Anexo IV, páginas 1–2, apenas Português, Matemática e Conhecimentos Gerais.
+- **505 — Analista de Tecnologia e Informática:** Anexo IV, páginas 4–5 e 7; Português, Raciocínio Lógico, Noções de Informática, Legislação Municipal, Conhecimentos Gerais e Conhecimentos Específicos.
+
+Em **Questões** e **Simulados**, selecione o cargo, a disciplina, o assunto e a situação **Dentro do edital**, **Fora do edital** ou **A conferir**. O filtro inicial inclui **Dentro do edital + A conferir**. Em **Estatísticas**, há uma seção específica de desempenho por assunto do cargo selecionado. A classificação original da prova continua visível.
+
+O mecanismo associa temas equivalentes mesmo quando a nomenclatura difere. Se a pertinência for incerta, mantém a questão em **A conferir**, em vez de classificá-la indevidamente como **Fora do edital**. Leis municipais de outros municípios não são admitidas como se fossem de Candeias sem validação jurídica.
+
+**Importações durante a atualização são permitidas.** A classificação é calculada sobre o banco em tempo de consulta, sem modificar o banco de dados e sem apagar histórico de perfis, questões, gabaritos, simulados ou tentativas. Os novos cadernos passam a ser avaliados automaticamente pelo edital selecionado. Para alterar o programa, deve-se revisar o catálogo correspondente sem recriar o banco.
 
 ## Versão 0.6.7 — FEPESE: enunciados e alternativas em texto
 
