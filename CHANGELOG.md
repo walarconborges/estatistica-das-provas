@@ -1,3 +1,10 @@
+## 0.6.28 — 16/11/2026
+
+- Corrigido importador de Professor Nível II — Pedagogo — Séries Iniciais, MS Concursos, Prefeitura de Ouro Preto do Oeste/RO (Edital 08/2016): 40 questões, 37 páginas de gabarito, cargo selecionado exclusivamente na página 30.
+- Capa com 15 instruções numeradas ignorada; detecção de caderno de uma coluna, imagem composta para questão com alternativas ou figuras distribuídas em duas páginas e preservação de texto-base anunciado para as próximas seis questões.
+- Metadados e divisões de disciplinas verificados, sem alterar o banco de dados nem o histórico de desempenho.
+- Testes de regressão incluem recusa de gabaritos de outros cargos, seleção exata da página correta e preservação de enunciados entre páginas.
+
 ## 0.6.27 — 16/11/2026
 
 - Pré-cadastrado o programa do cargo Professor Nível II — Séries Iniciais (códigos 519 a 552) da SEMED Porto Velho/RO, Edital nº 24/2026, Anexo IV — Retificação nº 01.

@@ -24,7 +24,7 @@ export function normalizeQuestionHeading(line){
 // A FEPESE imprime marcas de quadrinhos, inclusive a opção assinalada.
 // Estes glifos não são parte das alternativas e não podem revelar o gabarito.
 const stripAnswerBox=s=>String(s||'').replace(/^\s*(?:(?:Check[\s-]*square|SQUARE)\b|[☑☒☐□■])\s*/i,'').trim();
-const isHeading=s=>/^(?:L[IÍ]NGUA PORTUGUESA|MATEM[AÁ]TICA(?:\s+E\s+RACIOC[IÍ]NIO\s+L[OÓ]GICO)?|RACIOC[IÍ]NIO L[OÓ]GICO(?:\s+E\s+MATEM[AÁ]TICA)?|LEGISLA[CÇ][AÃ]O|CONHECIMENTOS ESPEC[IÍ]FICOS|(?:CONHECIMENTOS\s+DE\s+)?INFORM[AÁ]TICA|DIREITO ADMINISTRATIVO|DIREITO CONSTITUCIONAL|CONHECIMENTOS GERAIS)(?:\s+\d{1,3}\s+QUEST[OÕ]ES)?$/i.test(s.trim());
+const isHeading=s=>/^(?:L[IÍ]NGUA PORTUGUESA|MATEM[AÁ]TICA(?:\s+E\s+RACIOC[IÍ]NIO\s+L[OÓ]GICO)?|RACIOC[IÍ]NIO L[OÓ]GICO(?:\s+E\s+MATEM[AÁ]TICA)?|LEGISLA[CÇ][AÃ]O|CONHECIMENTOS ESPEC[IÍ]FICOS|(?:CONHECIMENTOS\s+DE\s+)?INFORM[AÁ]TICA(?:\s+B[AÁ]SICA)?|DIREITO ADMINISTRATIVO|DIREITO CONSTITUCIONAL|CONHECIMENTOS GERAIS)(?:\s+\d{1,3}\s+QUEST[OÕ]ES)?$/i.test(s.trim());
 // Números de cadernos/cargos (ex.: "002. PROVA OBJETIVA") não são questões.
 const isExamBookletHeader=(s,pageNumber=0)=>/^\s*0{0,2}\d{1,3}\s*[.)]\s*(?:PROVA\s+OBJETIVA|CADERNO\s+DE\s+(?:PROVA|QUEST[OÕ]ES)|CARGO\b)/i.test(String(s||''))||
  (pageNumber===1&&/^\s*0{1,2}\d{1,3}\s*[.)]\s*PROVA\b/i.test(String(s||'')));
@@ -207,7 +207,12 @@ export function spatialLines(items,pageWidth,pageHeight,{split=true}={}){
 }
 function contextMarker(line){
  const m=line.match(/(?:LEIA|CONSIDERE)\s+(?:O\s+)?TEXTO\s+PARA\s+RESPONDER\s+[ÀA]S?\s+QUEST[OÕ]ES?\s+(?:DE\s*)?0?(\d{1,3})\s*A\s*0?(\d{1,3})\s*:/i)||line.match(/^TEXTO\s+PARA\s+(?:AS\s+)?QUEST[OÕ]ES?\s+(?:DE\s*)?0?(\d{1,3})\s*A\s*0?(\d{1,3})\s*\.?$/i)||line.match(/^PARA\s+RESPONDER\s+[ÀA]S?\s+QUEST[OÕ]ES?\s+0?(\d{1,3})\s*A\s*0?(\d{1,3})\s*,?\s*LEIA\s+O\s+TEXTO\s+ABAIXO\s*[,.:]?$/i);
- return m?{from:Number(m[1]),to:Number(m[2])}:null;
+ // "Leia o texto a seguir, para responder às próximas seis questões".
+ // O início do intervalo só é conhecido ao encontrar a questão seguinte.
+ const relative=norm(line).match(/\bPROXIMAS?\s+(UMA|DUAS|TRES|QUATRO|CINCO|SEIS|SETE|OITO|NOVE|DEZ|\d{1,2})\s+QUESTOES\b/);
+ const written={UMA:1,DUAS:2,TRES:3,QUATRO:4,CINCO:5,SEIS:6,SETE:7,OITO:8,NOVE:9,DEZ:10};
+ const count=relative?(written[relative[1]]||Number(relative[1])):0;
+ return m?{from:Number(m[1]),to:Number(m[2])}:count>=2&&count<=20?{count}:null;
 }
 function needsImage(stem){
  const t=norm(stem);
@@ -286,6 +291,10 @@ export function isInstructionSheet(page){
  // Capa com quadro RASCUNHO PARA GABARITO: seus números não são questões.
  // O reconhecimento independe da palavra INSTRUÇÕES, que pode ser lida
  // erroneamente por fontes próprias como TNSTRUÇÕES.
+ // Uma capa de instruções numeradas não contém questões da prova.
+ if(/LEIA\s+ATENTAMENTE\s+AS\s+INSTRUCOES/.test(n)&&/CARTAO[-\s]?RESPOSTA/.test(n)&&
+  /\bPROVA\s+TEM\s+\d{1,3}\s+QUESTOES\b/.test(n)&&/BOA\s+PROVA/.test(n)&&
+  /\bCARGO\s*:/.test(n))return true;
  if(/RASCUNHO\s+PARA\s+GABARITO/.test(n)&&
    /\b(?:CADERNO|PROVA\s+TEORICO|CONCURSO\s+PUBLICO)\b/.test(n)&&
    /\b(?:40|50|35)\s+QUESTOES\b/.test(n))return true;
@@ -293,6 +302,31 @@ export function isInstructionSheet(page){
   /\bCANDIDAT[OA]\b/.test(n)&&
   /\b(?:FOLHA RESPOSTA|CADERNO DE QUESTOES|LISTA DE PRESENCA)\b/.test(n)&&
   /\b(?:DEIXE SOBRE A CARTEIRA|ANTES DE INICIAR|AO TERMINAR A PROVA)\b/.test(n);
+}
+
+/**
+ * Conserva questões que começam no rodapé e têm alternativas na página
+ * seguinte. Exige sequência numérica e letras A–E antes da questão N+1.
+ * A renderização une as duas páginas em um recorte único e fiel.
+ */
+export function repairPageBreakContinuations(pages,questions,expectedAlternatives=5){
+ for(let k=1;k<pages.length;k++){
+  const previous=pages[k-1],page=pages[k];
+  const before=questions.filter(q=>q.sourcePage===previous.number)
+   .sort((a,b)=>a.startY-b.startY);
+  const after=questions.filter(q=>q.sourcePage===page.number)
+   .sort((a,b)=>a.startY-b.startY);
+  const last=before.at(-1),next=after[0];
+  if(!last||!next||last.originalNumber+1!==next.originalNumber)continue;
+  if(!last.extractionFallback&&!last.extractionReview)continue;
+  const leading=(page.lines||[]).filter(r=>r.y<next.startY-8&&r.y>15);
+  const letters=new Set(leading.map(r=>String(r.text||'').trim().match(altRx))
+   .filter(Boolean).map(m=>(m[1]||m[2]).toUpperCase()));
+  if(!letters.size||![...letters].every(letter=>'ABCDE'.includes(letter)))continue;
+  last.continuation={nextPage:page.number,nextEndY:Math.max(45,next.startY-12)};
+  preserveOriginalInImage(last,expectedAlternatives);
+  last.confidence='baixa';
+ }
 }
 
 export function spatialQuestions(pages){
@@ -314,10 +348,11 @@ export function spatialQuestions(pages){
    const lines=page.lines.filter(l=>l.col===col);
    if(!lines.length)continue;
    let current=null,collecting=null;
-   function storeContext(){
+   function storeContext(nextQuestionNumber=0){
     if(!collecting)return;
     const shared={...collecting,text:humanizePdfText(collecting.text.join('\n'))};
-    if(shared.text)contexts.push(shared);
+    if(shared.count&&nextQuestionNumber>=1){shared.from=nextQuestionNumber;shared.to=nextQuestionNumber+shared.count-1;}
+    if(shared.text&&shared.from>=1&&shared.to>=shared.from)contexts.push(shared);
     collecting=null;
    }
    function finish(at){
@@ -394,7 +429,7 @@ export function spatialQuestions(pages){
       current.stem.push(s);continue; // Frações tipográficas como 2.520 não criam questões novas.
      }
      finish(row.y-15);
-     storeContext();
+     storeContext(qNumber);
      const n=qNumber,context=contexts.find(x=>n>=x.from&&n<=x.to)||null;
      current={originalNumber:n,heading,stem:[qText],stemRows:[{y:row.y,text:qText}],options:[],optionsStartY:null,sourcePage:page.number,sourceColumn:col,startY:row.y,endY:0,contextText:context?.text||'',contextRange:context?[context.from,context.to]:null,confidence:'média'};
      continue;
@@ -411,6 +446,8 @@ export function spatialQuestions(pages){
   }
  }
  questions.push(...recoverExplicitQuestionHeadings(pages,questions,expectedAlternatives));
+ repairPageBreakContinuations(pages,questions,expectedAlternatives);
+ if(pages.some(p=>p.singleColumn))for(const q of questions)q.sourceLayout='SINGLE_COLUMN';
 
  // Textos longos podem ocupar a coluna esquerda inteira e continuar no
  // início da direita ANTES da primeira questão. Aplicar aos blocos que
@@ -759,6 +796,39 @@ export function titledPageAnswerTables(raw){
  return tables;
 }
 
+/**
+ * Gabarito multicargo com um CARGO por página e colunas:
+ * QUESTÃO | RESPOSTA | VALOR DA QUESTÃO | ÁREA DE CONHECIMENTO.
+ * Ex.: Ouro Preto do Oeste, Edital 08/2016: 37 páginas.
+ */
+export function cargoColumnAnswerTables(raw){
+ const pages=String(raw||'').replace(/\r/g,'')
+  .match(/\[\[PAGE:\s*\d+\]\][\s\S]*?(?=\[\[PAGE:\s*\d+\]\]|$)/gi)||[];
+ const tables=[];
+ for(const page of pages){
+  const rows=page.split('\n').map(x=>x.trim()).filter(Boolean);
+  const title=rows.find(row=>/^CARGO\s*:\s*[\p{L}].{5,140}$/iu.test(row));
+  const header=rows.findIndex(row=>/QUEST[AÃ]O\s+RESPOSTA\s+VALOR\s+DA\s+QUEST[AÃ]O/i.test(row));
+  if(!title||header<0||!/GABARITO\s+PROVA\s+OBJETIVA/i.test(page))continue;
+  const answers={},seen=new Set();let invalid=false;
+  for(const row of rows.slice(header+1)){
+   const m=row.match(/^0?(\d{1,3})\s+([A-E])\s+(\d{1,2})(?:[.,]\d+)?\s+(.{5,})$/iu);
+   if(!m)continue;
+   const n=Number(m[1]),letter=m[2].toUpperCase(),area=norm(m[4]);
+   if(!/^(?:LINGUA PORTUGUESA|MATEMATICA|RACIOCINIO LOGICO|INFORMATICA|CONHECIMENTO|DIREITO|LEGISLACAO)/.test(area))continue;
+   if(n<1||n>300||seen.has(n)){invalid=true;break;}
+   seen.add(n);answers[n]=letter;
+  }
+  const nums=Object.keys(answers).map(Number).sort((a,b)=>a-b);
+  if(invalid||nums.length<20||nums[0]!==1||nums.some((n,i)=>n!==i+1))continue;
+  const role=title.replace(/^CARGO\s*:\s*/i,'').trim();
+  const pageNumber=Number(page.match(/^\[\[PAGE:\s*(\d+)\]\]/i)?.[1]||0);
+  tables.push({pageNumber,role,title:norm(role),count:nums.length,answers,
+   text:nums.map(n=>n+') '+answers[n]).join('\n')});
+ }
+ return tables;
+}
+
 export function chosenAnswerSection(text,examText='',examInfo={}){
  const source=String(text||'').replace(/\r/g,'');
 
@@ -793,6 +863,29 @@ export function chosenAnswerSection(text,examText='',examInfo={}){
     error:'O tipo e a cor do caderno não correspondem ao gabarito selecionado.'};
   return {text:chosen.text,section:chosen.title,format:'pairs',error:null};
  }
+
+ // Gabarito com cargo por página e tabela Questão/Resposta/Valor/Área.
+ // Seleção obrigatoriamente confirmada pelo nome do cargo na capa.
+ const cargoTables=cargoColumnAnswerTables(source);
+ if(cargoTables.length){
+  const cover=String(examText||'').split(/\[\[PAGE:\s*2\]\]/i)[0];
+  const candidates=cargoTables.filter(t=>jobTitleMatches(t.role,cover));
+  if(candidates.length!==1)return {text:'',section:null,format:'pairs',
+   availableSections:cargoTables.map(t=>({pageNumber:t.pageNumber,role:t.role})),
+   error:candidates.length?'Mais de uma tabela corresponde ao cargo da prova.':
+    'Gabarito multicargo: não foi possível confirmar o cargo impresso na capa.'};
+  const selected=candidates[0];
+  const declared=norm(cover).match(/\bPROVA\s+TEM\s+(\d{1,3})\s+QUESTOES\b/);
+  if(declared&&Number(declared[1])!==selected.count)
+   return {text:'',section:null,format:'pairs',
+    error:'O total de respostas do cargo difere da quantidade declarada no caderno.'};
+  return {text:selected.text,section:selected.role,format:'pairs',
+   answerPage:selected.pageNumber,error:null};
+ }
+ if((source.match(/\bGABARITO\s+PROVA\s+OBJETIVA/gi)||[]).length>1&&
+    (source.match(/\bCARGO\s*:/gi)||[]).length>1)
+  return {text:'',section:null,format:'pairs',
+   error:'Gabarito multicargo com tabelas não reconhecidas; importação bloqueada para evitar mistura de respostas.'};
 
  // Se um documento explicitamente tem várias páginas, cada uma com
  // "PROVA TIPO", mas nenhuma tabela validada, não recair na leitura

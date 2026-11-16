@@ -1,9 +1,18 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.27 — 16/11/2026**  
+**Versão experimental 0.6.28 — 16/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.28 — gabarito multicargo MS Concursos, Ouro Preto do Oeste (2016)
+
+- Corrigida a importação do caderno **Professor Nível II — Pedagogo — Séries Iniciais**, Prefeitura de Ouro Preto do Oeste/RO, **Edital 08/2016**, com 40 questões e cinco alternativas.
+- A capa possui **15 instruções numeradas** e não deve gerar perguntas falsas. O programa do caderno ocupa uma coluna; a leitura espacial e os recortes de imagens respeitam a largura integral da página.
+- Leitor genérico identifica tabelas de gabarito com colunas **Questão / Resposta / Valor / Área de conhecimento** e **um cargo por página**. No PDF de 37 páginas seleciona a **página 30**, apenas quando o título do cargo coincide com a capa. Rejeita respostas de outros cargos.
+- Identificação de **MS Concursos** baseada no logotipo verificado, limitada à combinação edital/ano/órgão/cargo; identifica o órgão PM-OURO-PRETO-DO-OESTE. Classifica blocos originais: 1–10 Português, 11–15 Raciocínio Lógico, 16–20 Informática, 21–25 Gerais, 26–40 Específicos.
+- Provas com questões que atravessam a quebra de página ganham recortes compostos fiéis das **duas páginas** quando necessário. Não se inventam alternativas extraídas de fórmulas ou imagens: a reprodução fiel fica visível com cinco controles de resposta A–E.
+- Testes novos cobrem capa, identidade do cargo, 40 letras da página 30, incompatibilidades, classificação, texto-base e continuação. Dados antigos, gabaritos e históricos não são modificados. Validar a importação real no navegador.
 
 ## Versão 0.6.27 — programa SEMED Porto Velho, Professor Nível II (519 a 552)
 

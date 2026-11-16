@@ -110,6 +110,22 @@ export function classify(stem,heading='',options=[]){
 export function classifyByExamDivision(q,meta,guessed){
  const n=Number(q.originalNumber),b=textNorm(meta?.banca),org=textNorm(meta?.orgao),title=textNorm(meta?.title);
 
+ // MS Concursos, Ouro Preto do Oeste/RO, Edital 08/2016.
+ // Blocos conforme os cabeçalhos impressos na prova e no gabarito.
+ if(b==='MSCONCURSOS'&&org==='PM-OURO-PRETO-DO-OESTE'&&
+   title.includes('PROFESSOR NIVEL II')&&title.includes('SERIES INICIAIS')&&
+   n>=1&&n<=40){
+  const [discipline,disciplineCode]=n<=10?['Língua Portuguesa','LP']:
+   n<=15?['Raciocínio Lógico','RL']:
+   n<=20?['Informática','IN']:
+   n<=25?['Conhecimentos Gerais','CG']:
+   ['Conhecimentos Específicos','CE'];
+  const same=guessed.disciplineCode===disciplineCode;
+  return {...guessed,discipline,disciplineCode,
+   topic:same?guessed.topic:'Geral',topicCode:same?guessed.topicCode:'G',
+   confidence:'alta'};
+ }
+
  // Caderno Instituto Consulplan, Câmara Municipal de Pouso Alto/MG:
  // cabeçalhos impressos: 1–10 Português, 11–20 Informática,
  // 21–30 Conhecimentos Gerais. A divisão original prevalece sobre
@@ -526,6 +542,7 @@ export function inferExamMetadata(examText='',examFilename='',keyText='',keyFile
   ['IDCAP',/\bIDCAP\b/],
   ['FUNDEP',/\bFUNDEP\b/],
   ['CONSULPLAN',/\bCONSULPLAN\b/],
+  ['MSCONCURSOS',/\bMS\s*CONCURSOS\b|\bMSCONCURSOS\b/],
   ['AOCP',/\bAOCP\b/],
   ['IBADE',/\bIBADE\b/],
   ['IDECAN',/\bIDECAN\b/],
@@ -541,6 +558,7 @@ export function inferExamMetadata(examText='',examFilename='',keyText='',keyFile
  const orgaos=[
   ['CRQ-V',/CONSELHO REGIONAL DE QUIMICA DA 5(?:A|ª) REGIAO|\bCRQ\s*[-–]?\s*V\b/],
   ['PM-BRUSQUE',/\bMUNICIPIO DE BRUSQUE\b|\bPREFEITURA MUNICIPAL DE BRUSQUE\b/],
+  ['PM-OURO-PRETO-DO-OESTE',/\b(?:PREFEITURA (?:DO )?)?MUNICIPIO DE OURO PRETO DO OESTE\b/],
   ['CISCOPAR',/\bCISCOPAR\b|CONSORCIO INTERMUNICIPAL DE SAUDE COSTA OESTE DO PARANA/],
   ['CIS-GRANFPOLIS',/CONSORCIO PUBLICO INTERFEDERATIVO DE SAUDE DA REGIAO DA GRANDE FLORIANOPOLIS|2026CPCISGRANFPOLIS|\bCISGRANFPOLIS\b/],
   ['PM-SOSSEGO',/\bMUNICIPIO DE SOSSEGO\b|\bPREFEITURA MUNICIPAL DE SOSSEGO\b/],
@@ -576,9 +594,17 @@ export function inferExamMetadata(examText='',examFilename='',keyText='',keyFile
   /\bTIPO\s*1\s*[-–]?\s*BRANCA\b/.test(source)&&
   /\bAUXILIAR DE SERVICOS GERAIS\b/.test(source))
    banca='CONSULPLAN';
+ // No Edital 08/2016 de Ouro Preto do Oeste (Professor Nível II,
+ // Pedagogo, Séries Iniciais), "MS Concursos" está no logotipo do PDF.
+ // O identificador suplementar vale apenas para este caderno.
+ if(banca==='NI'&&orgao==='PM-OURO-PRETO-DO-OESTE'&&year==='2016'&&
+  /\bEDITAL\b.{0,12}\b0?8\s*\/\s*2016\b/.test(textNorm(head))&&
+  /PROFESSOR NIVEL II.{0,30}PEDAGOGO.{0,30}SERIES INICIAIS/.test(textNorm(head)))
+   banca='MSCONCURSOS';
  const missing=[...(year==='0000'?['ano']:[]),...(banca==='NI'?['banca']:[]),...(orgao==='NI'?['órgão']:[])];
  const basename=filename.replace(/\.pdf$/i,'').replace(/[_-]+/g,' ').replace(/\s+/g,' ').trim().slice(0,90);
  const namedCargo=source.match(/ANALISTA (?:DE|EM) IN\s*FORMATICA(?:\s+II)?/);
+ const professor=/\bCARGO\s*:\s*PROFESSOR NIVEL II\s*[-–—]?\s*PEDAGOGO\s*[-–—]?\s*SERIES INICIAIS\b/.test(textNorm(head));
  const areaLine=String(head||'').split('\n').find(x=>/^[\s\t]*(?:[ÁA]REA DE ATUA[CÇ][AÃ]O\s*:\s*)/i.test(x));
  let area=areaLine?textNorm(areaLine.split(/:\s*/).slice(1).join(':')).slice(0,85):'';
  // Títulos centralizados atravessam as duas colunas do leitor PDF.
@@ -587,7 +613,7 @@ export function inferExamMetadata(examText='',examFilename='',keyText='',keyFile
  const fileJob=textNorm(filename.replace(/\.pdf$/i,'').replace(/[_-]+/g,' ').replace(/\s*\(\d+\)\s*$/,''));
  const fileArea=fileJob.match(/\bANALISTA DE INFORMATICA II\s+([A-Z0-9 ]{6,90})$/)?.[1]?.trim()||'';
  if(area&&fileArea.startsWith(area)&&fileArea.length>area.length)area=fileArea.slice(0,85);
- const cargo=namedCargo?(namedCargo[0].endsWith(' II')?'Analista de Informática II':/ANALISTA EM/.test(namedCargo[0])?'Analista em Informática':'Analista de Informática')+
+ const cargo=professor?'Professor Nível II — Pedagogo — Séries Iniciais':namedCargo?(namedCargo[0].endsWith(' II')?'Analista de Informática II':/ANALISTA EM/.test(namedCargo[0])?'Analista em Informática':'Analista de Informática')+
    (area?' — '+area.toLocaleLowerCase('pt-BR'):''):
    /AUXILIAR DE SERVICOS GERAIS/.test(textNorm(filename+'\n'+head))?'Auxiliar de Serviços Gerais':basename||'Prova importada';
  const title=[year==='0000'?'Ano não identificado':year,banca==='NI'?'Banca não identificada':banca,orgao==='NI'?'Órgão não identificado':orgao,cargo].join(' — ');
