@@ -97,7 +97,7 @@ test('filtro por edital oferece somente Dentro do edital e Todas',()=>{
 
 test('Dentro do edital aceita todas as pendências; fora somente em Todas',()=>{
  const uncertain=question(9,'LP','Língua Portuguesa','Assinale a alternativa que representa a opção correta.');
- const confirmed=question(10,'LP','Língua Portuguesa','Assinale o sinônimo da palavra proposta.');
+ const confirmed=question(10,'LP','Língua Portuguesa','Qual é a classe de palavras do verbo destacado?');
  const outside=question(11,'IN','Informática','O que é firmware?');
  for(const cargo of ['202','505']){
   const pending=classifyForCargo(uncertain,meta,cargo);
