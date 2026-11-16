@@ -205,7 +205,7 @@ export function spatialLines(items,pageWidth,pageHeight,{split=true}={}){
  return lines;
 }
 function contextMarker(line){
- const m=line.match(/(?:LEIA|CONSIDERE)\s+(?:O\s+)?TEXTO\s+PARA\s+RESPONDER\s+[ÀA]S?\s+QUEST[OÕ]ES?\s+(?:DE\s*)?0?(\d{1,3})\s*A\s*0?(\d{1,3})\s*:/i)||line.match(/^TEXTO\s+PARA\s+(?:AS\s+)?QUEST[OÕ]ES?\s+(?:DE\s*)?0?(\d{1,3})\s*A\s*0?(\d{1,3})\s*\.?$/i);
+ const m=line.match(/(?:LEIA|CONSIDERE)\s+(?:O\s+)?TEXTO\s+PARA\s+RESPONDER\s+[ÀA]S?\s+QUEST[OÕ]ES?\s+(?:DE\s*)?0?(\d{1,3})\s*A\s*0?(\d{1,3})\s*:/i)||line.match(/^TEXTO\s+PARA\s+(?:AS\s+)?QUEST[OÕ]ES?\s+(?:DE\s*)?0?(\d{1,3})\s*A\s*0?(\d{1,3})\s*\.?$/i)||line.match(/^PARA\s+RESPONDER\s+[ÀA]S?\s+QUEST[OÕ]ES?\s+0?(\d{1,3})\s*A\s*0?(\d{1,3})\s*,?\s*LEIA\s+O\s+TEXTO\s+ABAIXO\s*[,.:]?$/i);
  return m?{from:Number(m[1]),to:Number(m[2])}:null;
 }
 function needsImage(stem){
