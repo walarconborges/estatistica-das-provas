@@ -227,6 +227,22 @@ export function classifyForCargo(q,exam,cargoId='505'){
  if(sectionId==='legislacao')return denied('Lei não incluída nas normas municipais exigidas.');
  return pending(section.title,'Disciplina prevista, mas o subassunto exige conferência por equivalência.');
 }
+/**
+ * O filtro do edital tem apenas dois modos públicos.
+ * "Dentro" inclui tanto correspondência validada quanto classificação
+ * pendente, para que o usuário possa sinalizar enquanto resolve.
+ * Valores antigos (relevantes/pendente/fora) voltam ao modo padrão.
+ */
+export const EDITAL_SCOPE_OPTIONS=Object.freeze([
+ {value:'dentro',label:'Dentro do edital'},
+ {value:'all',label:'Todas'}
+]);
+export function normalizeEditalScope(value){
+ return String(value||'')==='all'?'all':'dentro';
+}
+export function inEditalScope(classification,scope='dentro'){
+ return normalizeEditalScope(scope)==='all'||classification?.status!=='fora';
+}
 export function subjectSummary(questions,getExam,cargoId){
  const total={dentro:0,fora:0,pendente:0},topics=new Map();
  for(const q of questions){
