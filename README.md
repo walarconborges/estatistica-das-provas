@@ -1,9 +1,21 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.11 — 16/11/2026**  
+**Versão experimental 0.6.12 — 16/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.12 — Importação Legalle / CISCOPAR com quatro alternativas
+
+- Prova do **Consórcio Intermunicipal de Saúde Costa Oeste do Paraná (CISCOPAR)**, concurso **01/2026**, cargo **Analista em Informática**, organizada pela **Legalle Concursos**: caderno com 50 questões e quatro alternativas (A–D).
+- Reconhece títulos de questões danificados pelo texto PDF, como `Questão 1 1.` (11) e `Questão 4O.` (40), sem corrigir indiscriminadamente números presentes nos enunciados.
+- Identifica o número de alternativas declarado na capa e valida corretamente cadernos de quatro **ou cinco** opções, inclusive nos recortes usados para revisão de extração.
+- Gabarito definitivo com vários cargos: seleciona **Analista em Informática — Tabela 3**, exclusivamente pela identificação do cargo. Não mistura as 50 respostas com as tabelas de Administração, Técnico de Informática ou outros cargos.
+- Reconhece Legalle e CISCOPAR nos textos efetivamente presentes nos PDFs e mantém as disciplinas de acordo com os blocos da prova.
+- Associa o texto-base **“Telemedicina: avanços e desafios...”** às questões **1 a 10**, inclusive nas páginas seguintes.
+- Testes de regressão com a numeração 11/40, as 50 respostas oficiais, as quatro alternativas e o texto-base compartilhado.
+- A validação automatizada passou. A importação completa dos PDFs reais no navegador ainda precisa ser confirmada.
+- Nenhum dado já salvo foi alterado e não é necessário reinicializar o banco.
 
 ## Versão 0.6.11 — correção da prova VUNESP/UNESP 002
 
