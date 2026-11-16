@@ -1,9 +1,18 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.24 — 16/11/2026**  
+**Versão experimental 0.6.25 — 16/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.25 — Importação Legalle/Cândido Godói
+
+- Corrigido o falso cabeçalho de questão: a Lei nº 15.474, citada no texto de Português, não será interpretada como outra questão 15. A capa com “RASCUNHO PARA GABARITO” também não será tratada como questões.
+- O importador identifica a banca Instituto Legalle e o órgão Prefeitura/Município de Cândido Godói (RS) com base nos PDFs.
+- Novo leitor genérico para gabaritos de múltiplos cargos organizados em linhas de pares “01) C ... 40) C”. A escolha exige correspondência do título do cargo; a seção de Auxiliar de Serviços Gerais contém 40 respostas e não se mistura às de outros cargos.
+- O artigo de Português que continua na segunda coluna é preservado como texto-base das questões 1 a 15.
+- Classificação original segundo o caderno: questões 1–15 Português, 16–25 Matemática/Raciocínio Lógico, 26–30 Atualidades e 31–40 Legislação.
+- Testes automatizados confirmam as 40 respostas, proteção contra gabarito de outro cargo, capa com rascunho, texto-base, identificação e classificação. Nenhum histórico ou prova cadastrada foi alterado. Importação real no navegador ainda precisa ser confirmada.
 
 ## Versão 0.6.24 — rodapé da Objetiva removido da questão 21 já importada
 
