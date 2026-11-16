@@ -1,3 +1,12 @@
+## 0.6.21 — 16/11/2026
+
+- Novo cargo “Todos — estudo geral, sem edital” em Questões e Simulados, com filtros transversais de Português, Raciocínio Lógico/Matemática, Informática, Conhecimentos Gerais, Legislação e conhecimentos específicos.
+- Questões originais de quaisquer concursos entram em Todos; conteúdos adaptados para Candeias e avaliações por edital não são misturados nesse modo.
+- Novo botão “Conferir edital” permite indicar DENTRO/FORA para um cargo específico durante a resolução e acompanhar a solicitação em Sinalizações.
+- Aprovação via GitHub registra a pertinência específica do cargo sem modificar classificação original, respostas, provas e histórico.
+- Estatísticas por edital permanecem limitadas aos cargos 202/505. Os gráficos gerais continuam independentes.
+- Testes de regressão e sintaxe aprovados. Sem migração ou reset de dados.
+
 ## 0.6.20 — 16/11/2026
 
 - Conferência automática de cargo por duas rotas independentes: nome do arquivo/título e texto espacial da primeira página do caderno.
