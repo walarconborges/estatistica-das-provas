@@ -275,7 +275,7 @@ function recoverExplicitQuestionHeadings(pages,questions,expectedAlternatives=5)
 
 export function spatialQuestions(pages){
  const questions=[],contexts=[];let heading='';
- const expectedAlternatives=declaredAlternativeCount(pages)||5;
+ const expectedAlternatives=inferredAlternativeCount(pages);
  // Questões de bancas como a FEPESE começam na margem da coluna.
  // Listas numeradas dentro do enunciado começam recuadas: "1.", "2." etc.
  // A margem é obtida do próprio caderno, sem assumir coordenadas fixas.
@@ -652,6 +652,25 @@ export function parseGridKey(section){
  return answers;
 }
 
+
+/**
+ * Se a capa não informa quatro/cinco opções, analisar a estrutura real
+ * do caderno. Exigir várias ocorrências A–D para não decidir a partir
+ * de uma única letra citada em um enunciado.
+ */
+export function inferredAlternativeCount(pages=[]){
+ const official=declaredAlternativeCount(pages);
+ if(official)return official;
+ const counts={A:0,B:0,C:0,D:0,E:0};
+ for(const page of pages)for(const row of page.lines||[]){
+  const m=String(row.text||'').trim().match(/^(?:\(([A-E])\)|([A-E])[.):\-])\s+\S/i);
+  if(m)counts[(m[1]||m[2]).toUpperCase()]++;
+ }
+ const common=['A','B','C','D'].every(k=>counts[k]>=6);
+ if(common&&counts.E>=6)return 5;
+ if(common&&counts.E<=Math.max(1,Math.floor(counts.D*0.04)))return 4;
+ return 5;
+}
 
 /** Retorna a quantidade declarada na capa (quatro ou cinco), quando inequívoca. */
 export function declaredAlternativeCount(pages=[]){
