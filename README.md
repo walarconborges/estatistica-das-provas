@@ -1,9 +1,21 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.12 — 16/11/2026**  
+**Versão experimental 0.6.13 — 16/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.13 — Objetiva / Sossêgo-PB, Auxiliar de Serviços Gerais
+
+- Prova de **40 questões** do Município de Sossêgo/PB, concurso público 01/2026, banca **Objetiva Concursos**, cargo **Auxiliar de Serviços Gerais**, com gabarito **preliminar**.
+- Reconhece Objetiva pela indicação da organizadora e domínio `objetivas.com.br`, identifica o município e mantém o nome correto do cargo.
+- Gabarito com dezenas de cargos: seleciona **exclusivamente Auxiliar de Serviços Gerais**, validando 40 letras. Cabeçalhos curtos, como **Gari**, delimitam nova seção e não contaminam as respostas de Auxiliar.
+- Reconhece automaticamente **quatro alternativas (A–D)** a partir do padrão repetido nas questões, mesmo quando a capa não declara a quantidade. Evita transformar todas as questões em imagens por presumir A–E.
+- Preserva o texto-base de Português sobre pressão arterial associado às questões que o utilizam, mesmo sem marcador explícito de intervalo.
+- Mantém as disciplinas originais da prova: **Português (1–15)**, **Matemática (16–25)** e **Conhecimentos específicos (26–40)**.
+- O catálogo personalizado do cargo 202 de Candeias do Jamari permanece como camada independente: assunto equivalente, fora do edital ou a conferir.
+- Testes automatizados verificam metadados, seleção do gabarito correto, 40 questões com A–D e texto-base. Importação completa no navegador ainda precisa ser confirmada.
+- **Nenhuma prova, resposta, gabarito, perfil, simulado ou histórico existente foi apagado ou modificado.**
 
 ## Versão 0.6.12 — Importação Legalle / CISCOPAR com quatro alternativas
 
