@@ -593,3 +593,57 @@ test('FEPESE: Texto 1 distribuído entre duas colunas acompanha a questão 1',()
  assert.match(parsed.questions[0].contextText,/Art\. 151/);
  assert.equal(parsed.contexts.length,1);
 });
+
+
+test('FEPESE: letras minúsculas e caixas de resposta não tornam questão inteira imagem',()=>{
+ const page={number:6,width:581.1,height:779.5,lines:[
+  {col:0,x:49,y:20,text:'Município de Brusque'},
+  {col:0,x:49,y:75,text:'6. O Relatório de Riscos Globais examina o cenário atual.'},
+  {col:0,x:49,y:110,text:'Assinale a alternativa correta.'},
+  ...['a','b','c','d','e'].map((letter,i)=>({
+   col:0,x:50,y:142+i*24,
+   text:letter+'. '+(i===4?'Check-square':'SQUARE')+' Alternativa textual '+letter+'.'
+  }))
+ ]};
+ const q=spatialQuestions([page]).questions[0];
+ assert.equal(q.extractionReview,false);
+ assert.equal(q.extractionFallback,undefined);
+ assert.equal(q.imageOnly,false);
+ assert.deepEqual(q.options.map(o=>o.letter),'ABCDE'.split(''));
+ assert.ok(q.options.every(o=>/^Alternativa textual/.test(o.text)));
+ assert.ok(q.options.every(o=>!/square|check/i.test(o.text)));
+ assert.equal(questionIntegrity([q],{6:'E'}).some(x=>x.includes('alternativas')),false);
+});
+test('FEPESE: imagem gráfica é recortada sozinha, alternativas permanecem em texto',()=>{
+ const page={number:4,width:581.1,height:779.5,lines:[
+  {col:0,x:49,y:20,text:'Município de Brusque'},
+  {col:0,x:49,y:70,text:'2. Analise a imagem abaixo:'},
+  {col:0,x:49,y:392,text:'Disponível em: site da tirinha.'},
+  {col:0,x:49,y:425,text:'Assinale a alternativa que apresenta o uso correto.'},
+  ...['a','b','c','d','e'].map((letter,i)=>({
+   col:0,x:50,y:465+i*15,
+   text:letter+'. '+(i===3?'Check-square':'SQUARE')+' Opção '+letter.toUpperCase()
+  }))
+ ]};
+ const q=spatialQuestions([page]).questions[0];
+ assert.equal(q.extractionReview,false);
+ assert.equal(q.imageOnly,true);
+ assert.ok(q.visualSegments);
+ assert.ok(q.visualSegments.top<120);
+ assert.ok(q.visualSegments.bottom<430);
+ assert.deepEqual(q.options.map(o=>o.text),['Opção A','Opção B','Opção C','Opção D','Opção E']);
+ assert.ok(q.stem.includes('Analise a imagem'));
+});
+test('FEPESE: tabela-verdade em texto não exige captura de enunciado inteiro',()=>{
+ const page={number:8,width:581.1,height:779.5,lines:[
+  {col:0,x:49,y:20,text:'Município de Brusque'},
+  {col:0,x:49,y:70,text:'13. Com base na tabela-verdade dessa proposição, é correto afirmar:'},
+  ...['a','b','c','d','e'].map((letter,i)=>({
+   col:0,x:50,y:125+i*18,text:letter+'. SQUARE '+(i+1)+' valores possíveis'
+  }))
+ ]};
+ const q=spatialQuestions([page]).questions[0];
+ assert.equal(q.imageOnly,false);
+ assert.equal(q.extractionReview,false);
+ assert.equal(q.options.length,5);
+});
