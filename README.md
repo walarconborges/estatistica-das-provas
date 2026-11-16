@@ -1,9 +1,25 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.0 — 15/11/2026**  
+**Versão experimental 0.6.1 — 15/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.1 — Importação Quadrix CRQ-V 2026 e referências de Candeias
+
+**Falha corrigida:** o leitor anterior exigia `1.` para reconhecer uma questão. A Quadrix usa títulos `QUESTÃO 1`, `QUESTÃO 2` etc., sem ponto. A importação do caderno de **Analista de Informática, CRQ-V, Quadrix, 2026** agora reconhece as 50 questões objetivas e mantém o texto-base comum às questões 1–15, mesmo aparecendo na outra coluna e em páginas seguintes.
+
+**Gabarito:** o PDF enviado reúne vários cargos e organiza as respostas em linhas horizontais, com números separados das letras. O importador passa a selecionar especificamente **2.7 ANALISTA DE INFORMÁTICA — CÓDIGO 401** e reconstruir as 50 correspondências. Não mistura respostas de outros cargos. O gabarito fornecido é **preliminar**, e isso fica sinalizado na lista de provas.
+
+**Integridade:** o total de questões esperado passa a ser derivado da seção de gabarito selecionada, evitando confundir a numeração de outra seção do PDF com uma quantidade declarada. A importação continua bloqueando provas incompletas ou inconsistentes. Foram registrados testes com 50 títulos de questão, opções A–E, texto compartilhado entre colunas, gabarito 401 e metadados do CRQ-V.
+
+**Disciplinas oficiais do gabarito (nível superior):** 1–15 Língua Portuguesa; 16–25 Raciocínio Lógico e Matemática; 26–50 Conhecimentos Específicos (Analista de Informática). A classificação segue essa divisão por número, sem transformar questões de Português em Informática.
+
+**Legislação de Candeias do Jamari — Edital nº 01/2026 consolidado até a Retificação nº 01:** o documento enviado menciona a Constituição Federal, a Lei Orgânica Municipal de 11/10/1993, a Lei Municipal nº 100/1997 (regime jurídico), a Lei Municipal nº 1.267/2021 (estrutura da Câmara), a Lei Municipal nº 1.268/2021 (quadro efetivo e remunerações) e a Resolução nº 173/CMCJ/2025. O item 1.5 exclui leis e alterações que entrarem em vigor após a publicação do edital. Esses atos foram registrados em `study-context.mjs` como referências; **não constituem, por si só, validação de artigos ou gabaritos adaptados**.
+
+**Atenção ao Anexo IV:** o PDF enviado contém o corpo do edital em 63 páginas e *cita* o Anexo IV — Conteúdos Programáticos, mas não traz seu conteúdo. Para vincular cada legislação a conteúdos específicos do cargo 505 (Analista de Tecnologia e Informática), será necessário o anexo correspondente. Não presumir que todo ato mencionado na introdução seja cobrado integralmente na prova.
+
+Não houve limpeza, reimportação automática nem alteração de gabaritos de provas anteriormente cadastradas. O usuário pode continuar importando normalmente. A visualização final no navegador precisa ser validada após a atualização do GitHub Pages.
 
 ## Versão 0.6.0 — Adaptação automática de legislação municipal
 
