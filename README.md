@@ -1,9 +1,19 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.17 — 16/11/2026**  
+**Versão experimental 0.6.18 — 16/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.18 — escolha do cargo no gabarito quando a identificação automática falhar
+
+- Gabaritos com várias páginas e um cargo por página (caso FCPC/Câmara Municipal de Aracati) são reconhecidos como seções verificáveis.
+- Quando o reconhecimento automático não encontra uma correspondência única, o próprio formulário abre **Identificação manual** e apresenta o campo **Cargo no PDF do gabarito**, listando as páginas e os nomes de cargo efetivamente extraídos.
+- O usuário pode escolher, por exemplo, **Página 2 — Auxiliar de Serviços Gerais**. A seleção usa apenas aquela página e exige a conferência integral das 50 respostas contra as 50 questões da prova.
+- Nenhum gabarito de outro cargo é escolhido automaticamente por aproximação sem identificação; números de página inválidos ou inexistentes são rejeitados.
+- Com o PDF de gabarito fornecido, a página 2 retorna 50 respostas (questão 1=A, questão 21=C, questão 50=D). Testes confirmam seleção automática quando a identificação está presente e escolha manual quando não está.
+- O formulário preserva os dois PDFs selecionados depois do aviso, permitindo escolher o cargo e clicar novamente em **Importar questões**.
+- Os dados existentes não foram alterados, migrados ou apagados. A extração completa no navegador ainda precisa ser validada pelo usuário.
 
 ## Versão 0.6.17 — atualização coerente dos módulos JavaScript
 
