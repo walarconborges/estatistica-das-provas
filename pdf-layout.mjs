@@ -445,6 +445,37 @@ export function identifyBookletCode(examText='',examInfo={}){
 
 export function chosenAnswerSection(text,examText='',examInfo={}){
  const source=String(text||'').replace(/\r/g,'');
+
+ // Bancas que publicam uma tabela por cargo, por exemplo:
+ // "Analista em Informática - Tabela 3" + 50 pares "01: A ... 50: D".
+ // Escolher estritamente pelo nome do cargo, nunca pelo número da tabela
+ // (Tabela 3 é compartilhada por cargos distintos neste gabarito).
+ const tableHeads=[...source.matchAll(/(?:^|\n)\s*([^\n]{6,95}?)\s*[-–]\s*TABELA\s*(\d{1,2})\s*(?=\n|$)/gim)];
+ if(tableHeads.length>=2){
+  const all=tableHeads.map((m,i)=>({
+   job:norm(m[1]).replace(/\s+/g,' ').trim(),
+   table:m[2],text:source.slice(m.index,tableHeads[i+1]?.index||source.length)
+  }));
+  const evidence=[
+   norm(String(examInfo?.examFilename||'').replace(/[_-]+/g,' ')),
+   norm(String(examInfo?.examTitle||'')),
+   norm(String(examText||'').split(/\[\[PAGE:\s*2\]\]/i)[0].slice(0,2000))
+     .replace(/\bIN\s+FORMATICA\b/g,'INFORMATICA')
+  ];
+  let match=null;
+  for(const hint of evidence){
+   if(!hint)continue;
+   const candidates=all.filter(x=>hint.includes(x.job));
+   if(candidates.length===1){match=candidates[0];break;}
+   if(candidates.length>1)
+    return {text:'',section:null,format:'pairs',
+     error:'O gabarito contém mais de um cargo correspondente à identificação da prova.'};
+  }
+  if(!match)return {text:'',section:null,format:'pairs',
+   error:'O gabarito possui tabelas de vários cargos, mas não foi possível identificar uma única seção correspondente à prova.'};
+  return {text:match.text,section:match.job+' - Tabela '+match.table,format:'pairs',error:null};
+ }
+
  // Quadrix: um PDF de gabarito pode trazer vários cargos em seções
  // "2.7 ANALISTA DE INFORMÁTICA (CÓDIGO 401)", seguidas por duas
  // linhas de números e letras. A seleção é feita por cargo, não por
