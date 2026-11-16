@@ -1,9 +1,18 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.16 — 16/11/2026**  
+**Versão experimental 0.6.17 — 16/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.17 — atualização coerente dos módulos JavaScript
+
+- Corrigido o carregamento de versões misturadas: o HTML mostrava uma versão nova (por exemplo 0.6.16), mas o navegador ainda podia executar `pdf-layout.mjs` de versão anterior, mantendo a mensagem antiga de erro.
+- O processo de publicação agora utiliza a revisão SHA do commit nas URLs do HTML, dos estilos, da configuração, do aplicativo e de **todos os imports locais de módulos ES**. Assim, o leitor de PDF e o aplicativo são carregados da mesma revisão.
+- O rodapé passa a mostrar **Leitor XXXXXXXX**, indicando a revisão do JavaScript efetivamente executado e permitindo diagnosticar cache antigo.
+- Mantida a seleção por cargo do gabarito multicargo FCPC/Aracati (Auxiliar de Serviços Gerais, página 2, 50 questões), com normalização de quebras de linha e de sufixos de arquivo.
+- Novos testes garantem que o HTML e a cadeia de módulos carreguem a mesma versão. Nenhuma prova, gabarito, tentativa, simulado, classificação ou histórico do banco foi modificado.
+- O resultado final da importação deve ser confirmado no navegador com os PDFs reais.
 
 ## Versão 0.6.16 — Seleção segura do gabarito FCPC/Aracati
 
