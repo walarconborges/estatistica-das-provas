@@ -1,3 +1,11 @@
+## 0.6.20 — 16/11/2026
+
+- Conferência automática de cargo por duas rotas independentes: nome do arquivo/título e texto espacial da primeira página do caderno.
+- Corrigido caso da FCPC/Aracati em que o gabarito isolado era identificado como Auxiliar de Serviços Gerais, mas o caderno era recusado sem correspondência.
+- Seleção manual de gabarito reservada a casos de múltiplos cargos ambíguos; não é solicitada para um único cargo identificado.
+- Testes de correspondência por capa, nome do arquivo real e recusa de cargo incompatível passaram.
+- Banco e históricos preservados. Publicação do novo leitor versionada com SHA.
+
 ## 0.6.19 — 16/11/2026
 
 - Corrigido formato de gabarito tabulado quando o PDF contém apenas a página do cargo selecionado; antes o leitor de tabelas só era habilitado para dois ou mais cargos.
