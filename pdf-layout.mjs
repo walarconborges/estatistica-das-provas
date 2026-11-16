@@ -1,6 +1,7 @@
 // Extração espacial: separa colunas e preserva a posição das questões na página.
+import {stripExamFooter} from './core.mjs';
 const norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toUpperCase();
-const noise=s=>/^(?:PCIMARKPCI\b|WWW\.PCICONCURSOS\.|CVOT\d+|CONFIDENCIAL ATE|R\s*A\s*S\s*C\s*U\s*N\s*H\s*O\s*$)/i.test(norm(s.trim()))||/MDAwM[A-Za-z0-9+/=]{35}/.test(s);
+const noise=s=>/^(?:PCIMARKPCI\b|WWW\.(?:PCICONCURSOS|OBJETIVAS)\.COM\.BR|CVOT\d+|CONFIDENCIAL ATE|R\s*A\s*S\s*C\s*U\s*N\s*H\s*O\s*$)/i.test(norm(s.trim()))||/MDAwM[A-Za-z0-9+/=]{35}/.test(s);
 const questionRx=/^(?:QUEST[AÃ]O\s+0?(\d{1,3})(?:\s*[.):\-]\s*(.*))?|(\d{1,3})\s*[.):\-]\s*(.*))$/i;
 const altRx=/^\s*(?:\(([A-E])\)|([A-E])\s*[.):\-])\s*(.*)$/i;
 
@@ -60,7 +61,7 @@ export function humanizePdfText(input){
  value=value.replace(/\b(subsí)\s+(dios)\b/giu,'$1$2')
     .replace(/\b(insti)\s+(tuições)\b/giu,'$1$2')
     .replace(/\b(merca)\s+(dos)\b/giu,'$1$2');
- return value.replace(/\s*\n\s*/g,' ').replace(/[ \t]{2,}/g,' ').replace(/\s+([,.;:!?])/g,'$1').trim();
+ return stripExamFooter(value.replace(/\s*\n\s*/g,' ').replace(/[ \t]{2,}/g,' ').replace(/\s+([,.;:!?])/g,'$1').trim());
 }
 
 /**
