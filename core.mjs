@@ -391,9 +391,9 @@ export function completeExamMetadata(inferred,manual={},currentYear=new Date().g
   if(!raw)continue;
   if(!meta.missing.includes(label))continue;
   if(prop==='year'){
-   if(!/^\\d{4}$/.test(raw)||+raw<1980||+raw>currentYear+2)
+   if(!/^\d{4}$/.test(raw)||+raw<1980||+raw>currentYear+2)
     throw Error('Ano informado inválido. Use quatro dígitos (1980 até '+(currentYear+2)+').');
-  }else if(raw.length<2||raw.length>70||!/^[\\p{L}\\d .()_\\/–-]+$/u.test(raw))
+  }else if(raw.length<2||raw.length>70||!/^[\p{L}\d .()_\/–-]+$/u.test(raw))
    throw Error('Informe um nome válido para '+label+' (2 a 70 caracteres).');
   meta[prop]=prop==='year'?raw:textNorm(raw);
   meta.missing=meta.missing.filter(x=>x!==label);
