@@ -1,3 +1,12 @@
+## 0.6.14 — 16/11/2026
+
+- “Candeias — normas verificadas” passa a “Candeias adaptadas” no filtro Legislação municipal, sem mudar seu identificador persistido.
+- Classificação pelo edital oferece apenas “Dentro do edital” e “Todas”.
+- “Dentro do edital” inclui assuntos classificados e “A conferir”; “Todas” também inclui “Fora do edital”.
+- Questões pendentes podem ser sinalizadas durante a resolução, inclusive nos simulados, sem remover gabaritos ou registros.
+- Versão original preserva sua separação de adaptações.
+- Testes automatizados e interface protegidos; nenhum dado do banco foi migrado ou reiniciado.
+
 ## 0.6.13 — 16/11/2026
 
 - Identificação da banca Objetiva Concursos e órgão PM-SOSSEGO para o caderno Auxiliar de Serviços Gerais, concurso 01/2026.
