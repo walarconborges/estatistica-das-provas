@@ -8,7 +8,8 @@ const altRx=/^\s*(?:\(([A-E])\)|([A-E])\s*[.):\-])\s*(.*)$/i;
 const stripAnswerBox=s=>String(s||'').replace(/^\s*(?:(?:Check[\s-]*square|SQUARE)\b|[☑☒☐□■])\s*/i,'').trim();
 const isHeading=s=>/^(?:L[IÍ]NGUA PORTUGUESA|MATEM[AÁ]TICA(?:\s+E\s+RACIOC[IÍ]NIO\s+L[OÓ]GICO)?|RACIOC[IÍ]NIO L[OÓ]GICO(?:\s+E\s+MATEM[AÁ]TICA)?|LEGISLA[CÇ][AÃ]O|CONHECIMENTOS ESPEC[IÍ]FICOS|INFORM[AÁ]TICA|DIREITO ADMINISTRATIVO|DIREITO CONSTITUCIONAL|CONHECIMENTOS GERAIS)(?:\s+\d{1,3}\s+QUEST[OÕ]ES)?$/i.test(s.trim());
 // Números de cadernos/cargos (ex.: "002. PROVA OBJETIVA") não são questões.
-const isExamBookletHeader=s=>/^\s*0{0,2}\d{1,3}\s*[.)]\s*(?:PROVA\s+OBJETIVA|CADERNO\s+DE\s+(?:PROVA|QUEST[OÕ]ES)|CARGO\b)/i.test(String(s||''));
+const isExamBookletHeader=(s,pageNumber=0)=>/^\s*0{0,2}\d{1,3}\s*[.)]\s*(?:PROVA\s+OBJETIVA|CADERNO\s+DE\s+(?:PROVA|QUEST[OÕ]ES)|CARGO\b)/i.test(String(s||''))||
+ (pageNumber===1&&/^\s*0{1,2}\d{1,3}\s*[.)]\s*PROVA\b/i.test(String(s||'')));
 
 
 /**
@@ -336,7 +337,7 @@ export function spatialQuestions(pages){
     if(foundContext){finish(row.y-2);storeContext();collecting={...foundContext,text:[],page:page.number,col,startY:row.y};continue;}
     if(isHeading(s)){if(!current||!current.options.length)heading=s;continue;}
     if(/^ANOTA[ÇC][ÕO]ES$/i.test(s)){finish(row.y-8);continue;}
-    if(isExamBookletHeader(s))continue;
+    if(isExamBookletHeader(s,page.number))continue;
     // Cabeçalho e rodapé do caderno Quadrix não fazem parte do texto-base.
     if(/^(?:ANALISTA DE INFORM[AÁ]TICA|CONSELHO REGIONAL DE QU[IÍ]MICA DA\s+5[ªA]\s+REGI[ÃA]O|QUADRIX\s*\|\s*20\d{2}|PROVA OBJETIVA)$/i.test(s))continue;
     const qm=s.match(questionRx);
