@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {spatialLines,spatialQuestions,chosenAnswerSection,questionIntegrity,humanizePdfText,attachSuperscriptOrdinals,formatQuestionStem} from '../pdf-layout.mjs';
-import {parseKey,inferExamMetadata} from '../core.mjs';
+import {spatialLines,spatialQuestions,chosenAnswerSection,parseGridKey,questionIntegrity,humanizePdfText,attachSuperscriptOrdinals,formatQuestionStem} from '../pdf-layout.mjs';
+import {parseKey,inferExamMetadata,classifyByExamDivision} from '../core.mjs';
 function item(str,x,y,width=40){return {str,transform:[1,0,0,1,x,842-y],width};}
 test('leitura espacial separa duas colunas e preserva a numeração original',()=>{
  const entries=[
@@ -292,4 +292,73 @@ test('sem estrutura ordinal, um artigo o legítimo não é apagado',()=>{
  const item=(str,x,y,width,height=9.5)=>({str,transform:[1,0,0,height,x,H-y],width,height});
  const rows=spatialLines([item('o',60,130,5,9.5),item('professor',72,130,50,9.5)],595.28,H);
  assert.equal(rows[0].text,'o professor');
+});
+
+
+test('Quadrix: título QUESTÃO 1 sem pontuação e texto de apoio na coluna oposta',()=>{
+ const pg={number:1,width:595.28,height:841.89,lines:[]};
+ const put=(col,y,text)=>pg.lines.push({col,y,text,x:col?320:36});
+ put(0,60,'Texto para as questões de 1 a 15.');
+ put(0,78,'A evolução das tecnologias de informação, aliada');
+ put(0,96,'à crescente capacidade de coleta e armazenamento de dados.');
+ put(1,62,'QUESTÃO 1');
+ put(1,84,'A respeito da tese e das ideias defendidas no texto, infere-se que');
+ 'ABCDE'.split('').forEach((l,i)=>put(1,112+i*22,'('+l+') Alternativa '+l+'.'));
+ put(1,284,'QUESTÃO 2');
+ put(1,310,'No que concerne às estratégias argumentativas, o texto emprega');
+ 'ABCDE'.split('').forEach((l,i)=>put(1,341+i*22,'('+l+') Alternativa '+l+'.'));
+ const result=spatialQuestions([pg]);
+ assert.deepEqual(result.questions.map(q=>q.originalNumber),[1,2]);
+ assert.equal(result.contexts.length,1);
+ assert.deepEqual(result.questions[0].contextRange,[1,15]);
+ assert.match(result.questions[0].contextText,/A evolução das tecnologias/);
+ assert.equal(result.questions[1].options.length,5);
+});
+test('Quadrix: títulos QUESTÃO N até 50 geram cinquenta enunciados e cinco alternativas',()=>{
+ const pages=[];
+ for(let p=0;p<10;p++){
+  const page={number:p+1,width:595.28,height:841.89,lines:[]};
+  for(let n=p*5+1;n<=p*5+5;n++){
+   const at=n-p*5-1,col=at<3?0:1,y=50+(at%3)*225;
+   page.lines.push({col,y,text:'QUESTÃO '+n});
+   page.lines.push({col,y:y+18,text:'Assinale a única alternativa correta.'});
+   for(let i=0;i<5;i++)page.lines.push({col,y:y+41+21*i,text:'('+String.fromCharCode(65+i)+') Resposta '+i+'.'});
+  }
+  pages.push(page);
+ }
+ const qs=spatialQuestions(pages).questions;
+ assert.equal(qs.length,50);
+ assert.deepEqual(qs.map(q=>q.originalNumber),Array.from({length:50},(_,i)=>i+1));
+ assert.ok(qs.every(q=>q.options.map(o=>o.letter).join('')==='ABCDE'));
+});
+test('gabarito Quadrix seção 2.7 código 401 usa exatamente 50 respostas do Analista',()=>{
+ const values1='B A E C B D C D A E E A B C D B D A E C B A D E C'.split(' ');
+ const values2='B D A C E C A B D E B D A C E C A B D E B D B E C'.split(' ');
+ const nums=s=>Array.from({length:25},(_,i)=>i+s).join(' ');
+ const make=(cargo,code,a,b)=>'2.'+(code===401?'7':'8')+' '+cargo+' (CÓDIGO '+code+')\n'+nums(1)+'\n'+a.join(' ')+'\n'+nums(26)+'\n'+b.join(' ')+'\n';
+ const keyPDF=make('ANALISTA DE INFORMÁTICA',401,values1,values2)+make('CONTADOR',402,Array(25).fill('E'),Array(25).fill('D'));
+ const examText='CONSELHO REGIONAL DE QUÍMICA DA 5ª REGIÃO\nQuadrix | 2026\nAnalista de Informática';
+ const chosen=chosenAnswerSection(keyPDF,examText);
+ assert.equal(chosen.section,'401');
+ assert.equal(chosen.format,'grid');
+ assert.equal(chosen.error,null);
+ const key=parseGridKey(chosen.text);
+ assert.equal(Object.keys(key).length,50);
+ assert.equal(key[1],'B');assert.equal(key[2],'A');assert.equal(key[25],'C');
+ assert.equal(key[26],'B');assert.equal(key[50],'C');
+ assert.equal(chosenAnswerSection(keyPDF,'Prova sem cargo identificável').error!==null,true);
+ assert.deepEqual(parseGridKey('1 2 3\nA B C'),{},'Gabarito incompleto deve ser recusado.');
+});
+test('Quadrix CRQ-V 2026 identifica órgão e disciplina conforme divisão do gabarito',()=>{
+ const meta=inferExamMetadata('CONSELHO REGIONAL DE QUÍMICA DA 5ª REGIÃO\nQuadrix | 2026\nAnalista de Informática',
+  'analista_de_informatica (2).pdf','','gabarito (2).pdf');
+ assert.equal(meta.orgao,'CRQ-V');assert.equal(meta.banca,'QUADRIX');assert.equal(meta.year,'2026');
+ assert.deepEqual(meta.missing,[]);
+ const wrong={discipline:'Informática',disciplineCode:'IN',topic:'Geral',topicCode:'G'};
+ const p=classifyByExamDivision({originalNumber:1},meta,wrong);
+ const m=classifyByExamDivision({originalNumber:16},meta,wrong);
+ const t=classifyByExamDivision({originalNumber:26},meta,wrong);
+ assert.equal(p.discipline,'Língua Portuguesa');
+ assert.equal(m.discipline,'Raciocínio Lógico e Matemática');
+ assert.equal(t.discipline,'Informática');
 });
