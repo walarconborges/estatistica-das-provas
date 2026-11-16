@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {spatialLines,spatialQuestions,chosenAnswerSection,parseGridKey,questionIntegrity,humanizePdfText,attachSuperscriptOrdinals,formatQuestionStem} from '../pdf-layout.mjs';
+import {spatialLines,spatialQuestions,chosenAnswerSection,parseGridKey,questionIntegrity,declaredQuestionCount,humanizePdfText,attachSuperscriptOrdinals,formatQuestionStem} from '../pdf-layout.mjs';
 import {parseKey,inferExamMetadata,classifyByExamDivision} from '../core.mjs';
 function item(str,x,y,width=40){return {str,transform:[1,0,0,1,x,842-y],width};}
 test('leitura espacial separa duas colunas e preserva a numeração original',()=>{
@@ -500,4 +500,74 @@ test('alternativas com rótulo e numeral em itens separados na mesma linha perma
  assert.ok(rows.some(r=>r.text==='(A) 24'));
  assert.ok(rows.some(r=>r.text==='(B) 36'));
  assert.ok(rows.some(r=>r.text==='(C) 48'));
+});
+
+
+test('FEPESE Brusque S01: selecionar exatamente as 40 respostas na tabela multicargo',()=>{
+ const nums=Array.from({length:40},(_,i)=>i+1).join(' ');
+ const official='b d e c b e a c e d b d a c e c a b a d e b e b c a c b e d a a d c a e b d c b';
+ assert.equal(official.split(' ').length,40);
+ const source='Cargos com exigência de curso de ensino superior\n'+
+  'S01 Analista de Informática\n'+nums+'\n'+official+'\n'+
+  'S02 Analista de Transportes\n'+nums+'\n'+Array(40).fill('A').join(' ')+'\n';
+ const chosen=chosenAnswerSection(source,
+  'Município de Brusque\nConcurso Público - FEPESE 2026\nS01 Analista de Informática',
+  {examFilename:'analista_de_informatica (3).pdf'});
+ assert.equal(chosen.error,null);
+ assert.equal(chosen.section,'S01');
+ assert.equal(chosen.format,'grid');
+ const key=parseGridKey(chosen.text);
+ assert.equal(Object.keys(key).length,40);
+ assert.deepEqual([key[1],key[12],key[13],key[16],key[20],key[40]],['B','D','A','C','D','B']);
+ assert.ok(chosenAnswerSection(source,'S99 Analista de Informática',{examFilename:'sem_nome.pdf'}).error);
+ assert.ok(chosenAnswerSection(source,'Prova sem cargo',{examFilename:'prova.pdf'}).error);
+});
+test('FEPESE: subitens numerados não são novas questões nem duplicam a questão 5',()=>{
+ const page={number:5,width:581.1,height:779.5,lines:[]};
+ const put=(col,x,y,text)=>page.lines.push({col,x,y,text});
+ put(0,49.6,70,'4. Observe as orações abaixo:');
+ for(let n=1;n<=5;n++)put(0,72,80+n*20,n+'. Texto da oração '+n+'.');
+ for(let n=0;n<5;n++)put(0,51,240+n*22,String.fromCharCode(97+n)+'. Alternativa '+(n+1));
+ put(1,303.9,70,'5. Identifique as afirmativas verdadeiras e falsas.');
+ for(let n=0;n<5;n++)put(1,304,132+n*22,String.fromCharCode(97+n)+'. Alternativa '+(n+1));
+ const parsed=spatialQuestions([page]).questions;
+ assert.deepEqual(parsed.map(q=>q.originalNumber),[4,5]);
+ assert.match(parsed[0].stem,/5\. Texto da oração 5/);
+ assert.equal(parsed[0].options.length,5);
+ assert.equal(parsed[1].options.length,5);
+ const key={4:'C',5:'B'};
+ assert.ok(!questionIntegrity(parsed,key).some(m=>/Numeração repetida/.test(m)));
+});
+test('FEPESE: cabeçalho da disciplina pode ter quantidade de questões',()=>{
+ const page={number:3,width:581.1,height:779.5,lines:[
+  {col:0,x:49,y:53,text:'Língua Portuguesa 5 questões'},
+  {col:1,x:303.9,y:448,text:'1. Assinale a alternativa correta com base no Texto 1.'},
+  ...'abcde'.split('').map((l,i)=>({col:1,x:304,y:500+i*23,text:l+'. Alternativa '+l}))
+ ]};
+ const q=spatialQuestions([page]).questions[0];
+ assert.equal(q.heading,'Língua Portuguesa 5 questões');
+});
+test('FEPESE: número declarado na capa não é quantidade incompleta de respostas',()=>{
+ const pages=[{text:'Município de Brusque\n23 de agosto 40 questões'},
+  {text:'Língua Portuguesa 5 questões\nLegislação 7 questões'}];
+ assert.equal(declaredQuestionCount(pages),40);
+ assert.equal(declaredQuestionCount([{text:'Caderno sem quantidade informada'}]),0);
+});
+test('FEPESE Brusque: reconhecer dados da capa e a divisão oficial de disciplinas',()=>{
+ const meta=inferExamMetadata(
+  'Município de Brusque\nConcurso Público Edital 001/2026\nhttps://2026cpbrusque.fepese.org.br\nS01 Analista de Informática',
+  'analista_de_informatica (3).pdf','','gabarito (3).pdf');
+ assert.equal(meta.banca,'FEPESE');
+ assert.equal(meta.orgao,'PM-BRUSQUE');
+ assert.equal(meta.year,'2026');
+ assert.deepEqual(meta.missing,[]);
+ const guessed={discipline:'Informática',disciplineCode:'IN',topic:'Geral',topicCode:'G'};
+ const expected=new Map([[1,'Língua Portuguesa'],[5,'Língua Portuguesa'],
+  [6,'Conhecimentos Gerais'],[8,'Conhecimentos Gerais'],
+  [9,'Raciocínio Lógico'],[13,'Raciocínio Lógico'],
+  [14,'Legislação'],[20,'Legislação'],
+  [21,'Informática'],[40,'Informática']]);
+ for(const [n,subject] of expected)
+  assert.equal(classifyByExamDivision({originalNumber:n},meta,guessed).discipline,subject,
+   'Questão '+n);
 });
