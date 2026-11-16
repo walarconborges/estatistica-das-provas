@@ -1,9 +1,20 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.25 — 16/11/2026**  
+**Versão experimental 0.6.26 — 16/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.26 — prova de 30 questões em gabarito multicargo de 40
+
+- **Câmara Municipal de Pouso Alto/MG (2025), Auxiliar de Serviços Gerais, tipo 1 — Branca**: corrigida a importação do caderno de **30 questões** acompanhado de PDF de gabarito com **sete cargos**.
+- Novo reconhecimento estrutural **por página e cargo**, utilizando tabelas em linhas `01 B 16 D` ou `01 A 21 B`. Em vez de ler 40 respostas de outro cargo, localiza o **Auxiliar de Serviços Gerais na página 7**, com **30 respostas**, de 1-B até 30-D.
+- Verificação do **nome do cargo na capa**, do **tipo e cor do caderno**, e da numeração completa do gabarito. Em caso de incompatibilidade, a importação continua bloqueada; gabaritos incompletos de vários cargos não caem no parser genérico que misturava respostas.
+- Reconhecimento de quantidade por extenso na capa (**“trinta questões”**). A validação é cruzada com o total de 30 respostas.
+- Identificação automática do órgão **CM-POUSO-ALTO** e da banca **CONSULPLAN**. Neste edital específico, o nome Instituto Consulplan consta como logotipo, não como texto extraível; por isso há registro verificado e restrito à combinação Câmara de Pouso Alto, edital 01/2025, cargo e prova tipo 1 — Branca. Outros editais não herdam a banca.
+- Classificação conforme o caderno: **Português 1–10; Informática 11–20; Conhecimentos Gerais 21–30**.
+- A crônica **“Um pé de milho”** segue vinculada a todas as questões 1–10, sem aparecer nas de Informática.
+- Testes automatizados verificam as 30 letras do gabarito, a distinção entre sete cargos, tipo/cor, identificação do edital, divisões e texto compartilhado. Não foram alterados dados já importados nem históricos. A validação da importação real depende de teste no navegador.
 
 ## Versão 0.6.25 — Importação Legalle/Cândido Godói
 
