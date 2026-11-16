@@ -104,3 +104,14 @@ button.alternative-cross[aria-pressed="true"]:not(.quiet):not(.plain):not(.tab-b
 .program-section h3{font-size:1rem;margin:6px 0}
 .program-section ul{padding-left:22px;margin:7px 0;line-height:1.5}
 .program-section li{margin:4px 0}
+
+
+/* Filtro inclusivo de histórico — caixas combináveis em telas pequenas. */
+.history-filter{border:0;padding:0;margin:0;min-width:0}
+.history-filter legend{font-size:.84rem;font-weight:600;color:#42556a;margin-bottom:9px;padding:0}
+.history-choices{display:flex;flex-wrap:wrap;gap:9px}
+.history-choice{display:inline-flex!important;align-items:center;gap:9px;border:1px solid #cbd7e1;border-radius:8px;background:#fff;padding:9px 12px;margin:0!important;font-size:.9rem!important;font-weight:500!important;cursor:pointer;min-height:42px;color:#243c53!important}
+.history-choice input[type="checkbox"]{width:17px!important;height:17px!important;min-height:17px!important;margin:0!important;padding:0!important;accent-color:#176995;flex:none}
+.history-choice:has(input:checked){border-color:#176995;background:#eef7fc}
+.history-filter .hint{margin-top:8px}
+@media(max-width:490px){.history-choices{display:grid;grid-template-columns:1fr 1fr}.history-choice{min-width:0}.history-choice:last-child{grid-column:1/-1}}
