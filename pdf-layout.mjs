@@ -631,12 +631,17 @@ export function chosenAnswerSection(text,examText='',examInfo={}){
   const cover=String(examText||'').split(/\[\[PAGE:\s*2\]\]/i)[0];
   const codes=[...cover.matchAll(/(?:^|\n)\s*([A-Z]{1,3}\d{1,3})\s+([^\n]{4,135})/gim)]
     .map(x=>({code:x[1].toUpperCase(),title:x[2].trim()}));
-  const coverMatches=codedTables.filter(t=>codes.some(c=>
+  const coverCodes=codes.filter(c=>codedTables.some(t=>t.code===c.code));
+  const coverMatches=codedTables.filter(t=>coverCodes.some(c=>
     c.code===t.code&&jobTitleMatches(t.title,c.title)));
   let found=null;
-  if(coverMatches.length===1)found=coverMatches[0];
-  else if(coverMatches.length>1)return {text:'',section:null,format:'grid',
-   error:'O caderno identifica mais de uma tabela correspondente ao gabarito.'};
+  if(coverCodes.length){
+   if(coverMatches.length!==1)return {text:'',section:null,format:'grid',
+    error:coverMatches.length>1
+     ?'O caderno identifica mais de uma tabela correspondente ao gabarito.'
+     :'O código do caderno foi localizado no gabarito, mas o nome do cargo é diferente.'};
+   found=coverMatches[0];
+  }
   if(!found){
    const hints=[
     String(examInfo?.examFilename||'').replace(/[_-]+/g,' ')
@@ -657,7 +662,7 @@ export function chosenAnswerSection(text,examText='',examInfo={}){
   if(Object.keys(found.answers).length!==found.count||found.count<10)
    return {text:'',section:null,format:'grid',
     error:'A tabela do cargo identificado não possui uma resposta para cada questão.'};
-  return {text:found.text,section:found.code+' — '+found.title,format:'grid',error:null};
+  return {text:found.text,section:found.code,format:'grid',error:null};
  }
 
  // Gabaritos por cargo em páginas individuais: a FCPC (Aracati/CE)
