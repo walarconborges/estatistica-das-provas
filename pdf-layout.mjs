@@ -247,6 +247,7 @@ export function spatialQuestions(pages){
  // Questões de bancas como a FEPESE começam na margem da coluna.
  // Listas numeradas dentro do enunciado começam recuadas: "1.", "2." etc.
  // A margem é obtida do próprio caderno, sem assumir coordenadas fixas.
+ const useIndentationProtection=pages.some(page=>(page.lines||[]).some(row=>/FEPESE|MUNIC[IÍ]PIO DE BRUSQUE/i.test(String(row.text||''))));
  const questionLeftMargins=new Map();
  for(const page of pages)for(const row of page.lines||[]){
   if(!Number.isFinite(row.x)||!questionRx.test(String(row.text||'').trim()))continue;
@@ -325,7 +326,7 @@ export function spatialQuestions(pages){
     const qm=s.match(questionRx);
     const explicitQuestionHeading=/^QUEST[AÃ]O\s+\d{1,3}\b/i.test(s);
     const margin=questionLeftMargins.get(col);
-    const numberedSubitem=qm&&!explicitQuestionHeading&&Number.isFinite(row.x)&&
+    const numberedSubitem=useIndentationProtection&&qm&&!explicitQuestionHeading&&Number.isFinite(row.x)&&
       Number.isFinite(margin)&&row.x>margin+12;
     if(qm&&!numberedSubitem&&Number(qm[1]||qm[3])>=1&&Number(qm[1]||qm[3])<=300){
      const qNumber=Number(qm[1]||qm[3]),qText=qm[2]||qm[4]||'';
@@ -352,6 +353,31 @@ export function spatialQuestions(pages){
   }
  }
  questions.push(...recoverExplicitQuestionHeadings(pages,questions));
+ // FEPESE: o Texto 1 da questão 1 está na coluna esquerda, mas
+ // continua na coluna direita ANTES da questão. Sem este vínculo,
+ // os artigos da lei reproduzida no caderno desaparecem da questão.
+ if(useIndentationProtection){
+  for(const page of pages){
+   const marker=(page.lines||[]).find(r=>/^TEXTO\s+\d+$/i.test(String(r.text||'').trim()));
+   if(!marker)continue;
+   const targets=questions.filter(q=>q.sourcePage===page.number&&q.sourceColumn!==marker.col);
+   const target=targets.sort((a,b)=>a.startY-b.startY)[0];
+   if(!target||target.contextText)continue;
+   const left=(page.lines||[]).filter(r=>r.col===marker.col&&r.y>=marker.y&&
+     !noise(String(r.text||''))&&!/^(?:P[AÁ]GINA\s+\d+|WWW\.)/i.test(String(r.text||'')))
+     .sort((a,b)=>a.y-b.y).map(r=>r.text);
+   const right=(page.lines||[]).filter(r=>r.col===target.sourceColumn&&r.y<target.startY-8&&
+     r.y>=marker.y-45&&!noise(String(r.text||'')))
+     .sort((a,b)=>a.y-b.y).map(r=>r.text);
+   const shared=humanizePdfText([...left,...right].join('\n'));
+   if(shared){
+    target.contextText=shared;
+    target.contextRange=[target.originalNumber,target.originalNumber];
+    contexts.push({from:target.originalNumber,to:target.originalNumber,
+      text:shared,page:page.number,col:marker.col});
+   }
+  }
+ }
  questions.sort((a,b)=>a.originalNumber-b.originalNumber);
  return {questions,contexts};
 }
