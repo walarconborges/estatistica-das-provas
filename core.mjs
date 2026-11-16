@@ -110,6 +110,22 @@ export function classify(stem,heading='',options=[]){
 export function classifyByExamDivision(q,meta,guessed){
  const n=Number(q.originalNumber),b=textNorm(meta?.banca),org=textNorm(meta?.orgao),title=textNorm(meta?.title);
 
+ // Instituto Legalle/Cândido Godói: a prova tem quatro blocos definidos
+ // pelo próprio caderno. Cabeçalhos de Matemática e Atualidades apresentam
+ // glifos corrompidos, por isso a divisão oficial prevalece.
+ if(b==='LEGALLE'&&org==='PM-CANDIDO-GODOI'&&
+   title.includes('AUXILIAR DE SERVICOS GERAIS')&&n>=1&&n<=40){
+  const [discipline,disciplineCode,defaultTopic]=n<=15?
+   ['Língua Portuguesa','LP','Geral']:n<=25?
+   ['Raciocínio Lógico e Matemática','RL','Geral']:n<=30?
+   ['Atualidades','CG','Geral']:
+   ['Legislação','LE','Legislação municipal'];
+  const same=guessed.disciplineCode===disciplineCode;
+  return {...guessed,discipline,disciplineCode,confidence:'alta',
+   topic:same?guessed.topic:defaultTopic,topicCode:same?guessed.topicCode:'G'};
+ }
+
+
  if(b==='FEPESE'&&org==='CIS-GRANFPOLIS'&&title.includes('AUXILIAR DE SERVICOS GERAIS')&&n>=1&&n<=35){
   const [discipline,disciplineCode,defaultTopic]=n<=5?['Língua Portuguesa','LP','Geral']:
     n<=10?['Conhecimentos Gerais','CG','Geral']:
