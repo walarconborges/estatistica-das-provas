@@ -43,6 +43,34 @@ export const CATALOGS=Object.freeze({
  '505':{...PROGRAM_505,id:'505',cargo:PROGRAM_505.cargo,pages:'4–5 e 7'}
 });
 export const currentCatalog=id=>CATALOGS[String(id)]||CATALOGS['505'];
+/** Modo transversal: só considera as disciplinas ORIGINAIS da prova.
+ * Não cria um edital fictício nem aplica normas locais de Candeias.
+ */
+export const STUDY_ALL='all';
+export const ALL_STUDY_DISCIPLINES=Object.freeze([
+ {id:'LP',label:'Língua Portuguesa'},
+ {id:'RLM',label:'Raciocínio Lógico e Matemática'},
+ {id:'IN',label:'Informática'},
+ {id:'CG',label:'Conhecimentos Gerais e Atualidades'},
+ {id:'LE',label:'Legislação e Direito'},
+ {id:'CE',label:'Conhecimentos Específicos'},
+ {id:'OTHER',label:'Outras disciplinas / não classificadas'}
+]);
+const normGeneral=x=>String(x||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toUpperCase();
+export function studyAllGroup(q){
+ const code=normGeneral(q?.disciplineCode),text=normGeneral(q?.discipline);
+ if(code==='LP'||/PORTUGUES/.test(text))return 'LP';
+ if(['MA','RL'].includes(code)||/MATEMATICA|RACIOCINIO LOGICO/.test(text))return 'RLM';
+ if(code==='IN'||/INFORMATICA|TECNOLOGIA DA INFORMACAO/.test(text))return 'IN';
+ if(['CG','HI','GE'].includes(code)||/CONHECIMENTOS GERAIS|ATUALIDADES|GEOGRAFIA|HISTORIA/.test(text))return 'CG';
+ if(['LE','DA','DC'].includes(code)||/LEGISLACAO|DIREITO ADMINISTRATIVO|DIREITO CONSTITUCIONAL/.test(text))return 'LE';
+ if(code==='CE'||/CONHECIMENTOS ESPECIFICOS/.test(text))return 'CE';
+ return 'OTHER';
+}
+export function filterStudyAllQuestions(questions,discipline='',topic=''){
+ return questions.filter(q=>!q.originalQuestionId&&(!discipline||studyAllGroup(q)===discipline)&&(!topic||q.topic===topic));
+}
+
 export const allTopics=id=>currentCatalog(id).sections.flatMap(section=>
  section.topics.map((title,index)=>({
   id:section.id+':'+index,sectionId:section.id,discipline:section.title,
@@ -169,7 +197,7 @@ function sectionFor(q,exam,cargo){
 const foreignLocalLaw=t=>/\bBRUSQUE\b|\bVOTORANTIM\b|\bPORTO VELHO\b|\bARIQUEMES\b|\bJI PARANA\b/.test(t);
 const candeiasLaw=t=>/\bCANDEIAS DO JAMARI\b|\bCMCJ\b/.test(t);
 const municipalLaw=t=>/LEI (?:COMPLEMENTAR )?MUNICIPAL|LEI ORGANICA|REGIMENTO INTERNO|ESTATUTO DOS SERVIDORES|PLANO DE CARGOS|RESOLUCAO [N0-9]/.test(t);
-export function classifyForCargo(q,exam,cargoId='505'){
+function inferClassificationForCargo(q,exam,cargoId='505'){
  const cargo=String(cargoId)==='202'?'202':'505',catalog=currentCatalog(cargo);
  const sectionId=sectionFor(q,exam,cargo);
  const stem=norm([q.stem,q.options?.map(o=>o.text).join(' ')||'',q.heading].join(' '));
@@ -227,6 +255,28 @@ export function classifyForCargo(q,exam,cargoId='505'){
  if(sectionId==='legislacao')return denied('Lei não incluída nas normas municipais exigidas.');
  return pending(section.title,'Disciplina prevista, mas o subassunto exige conferência por equivalência.');
 }
+/**
+ * Correções explícitas só são aplicadas após aprovação da sinalização.
+ * Cada cargo mantém sua própria revisão; o original permanece inalterado.
+ */
+export function classifyForCargo(q,exam,cargoId='505'){
+ const cargo=String(cargoId)==='202'?'202':'505';
+ const computed=inferClassificationForCargo(q,exam,cargo);
+ const reviewed=q?.editalReview?.[cargo];
+ if(!reviewed||!['dentro','fora'].includes(reviewed.status))return computed;
+ if(reviewed.status==='fora')return {
+  ...computed,status:'fora',statusLabel:'Fora do edital',
+  discipline:'Fora do edital',topic:'Fora do edital',topicId:'',
+  reason:'Classificação revisada e aprovada.'
+ };
+ return {
+  ...computed,status:'dentro',statusLabel:'Dentro do edital',
+  discipline:computed.discipline==='Fora do edital'?(q?.discipline||'Assunto revisado'):computed.discipline,
+  topic:computed.topic==='Fora do edital'||computed.topic==='A conferir'?'Enquadramento revisado':computed.topic,
+  reason:'Classificação revisada e aprovada.'
+ };
+}
+
 /**
  * O filtro do edital tem apenas dois modos públicos.
  * "Dentro" inclui tanto correspondência validada quanto classificação
