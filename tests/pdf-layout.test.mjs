@@ -802,3 +802,20 @@ test('código editorial só é inferido de capa ou de rodapé, não de um númer
  assert.equal(identifyBookletCode(exam).code,null);
  assert.deepEqual(identifyBookletCode(exam,{bookletCode:'002'}),{code:2,error:null});
 });
+
+test('VUNESP: desempate por área completa quando o número do caderno está ausente',()=>{
+ const rows=a=>a.map((letter,i)=>(i+1)+' - '+letter).join(' ');
+ const key='001. PROVA OBJETIVA\nASSISTENTE OPERACIONAL III\n'+rows(Array(40).fill('A'))+'\n'+
+  '002. PROVA OBJETIVA\nANALISTA DE INFORMÁTICA II\n'+
+  'ÁREA DE ATUAÇÃO: DESENVOLVIMENTO DE SISTEMAS INSTITUCIONAIS\n'+rows(Array(40).fill('B'))+'\n'+
+  '003. PROVA OBJETIVA\nANALISTA DE INFORMÁTICA II\n'+
+  'ÁREA DE ATUAÇÃO: REDES E INFRAESTRUTURA\n'+rows(Array(40).fill('C'));
+ const exam='[[PAGE:1]]\nAnalista de Informática II\nÁrea de atuação: Desenvolvimento de Sistemas Institucionais';
+ const result=chosenAnswerSection(key,exam,{examFilename:'analista_de_informatica_ii_desenvolvimento_de_sistemas_institucionais.pdf'});
+ assert.equal(result.error,null);
+ assert.equal(result.section,'002');
+ assert.equal(parseKey(result.text)[40],'B');
+ const wrong=chosenAnswerSection(key,'[[PAGE:1]]\nAnalista de Informática II',
+  {examFilename:'analista_de_informatica_ii.pdf'});
+ assert.ok(wrong.error);
+});
