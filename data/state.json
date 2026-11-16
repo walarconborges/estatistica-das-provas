@@ -4006,6 +4006,14 @@
       "answer": "D",
       "simulationId": "",
       "at": "2026-11-15T22:05:08.630Z"
+    },
+    {
+      "id": "9e120fd1-44c5-4316-9b45-cdbe8d73e2db",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "9daa2a90-bfeb-4b3b-84e4-0b6665174006",
+      "answer": "C",
+      "simulationId": "",
+      "at": "2026-11-16T00:21:23.075Z"
     }
   ],
   "simulations": [],
