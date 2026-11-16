@@ -282,6 +282,7 @@ export function classifyForCargo(q,exam,cargoId='505'){
   ...computed,status:'dentro',statusLabel:'Dentro do edital',
   discipline:computed.discipline==='Fora do edital'?(q?.discipline||'Assunto revisado'):computed.discipline,
   topic:computed.topic==='Fora do edital'||computed.topic==='A conferir'?'Enquadramento revisado':computed.topic,
+  topicId:computed.topicId||'revisado:'+String(q?.disciplineCode||'geral'),
   reason:'Classificação revisada e aprovada.'
  };
 }
