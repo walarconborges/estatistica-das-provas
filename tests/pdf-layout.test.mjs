@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {spatialLines,spatialQuestions,chosenAnswerSection,codedAnswerTables,pairedAnswerSections,verifiedExamJob,jobTitleMatches,identifyBookletCode,parseGridKey,questionIntegrity,isInstructionSheet,declaredQuestionCount,declaredAlternativeCount,inferredAlternativeCount,normalizeQuestionHeading,humanizePdfText,attachSuperscriptOrdinals,formatQuestionStem} from '../pdf-layout.mjs';
+import {spatialLines,spatialQuestions,chosenAnswerSection,codedAnswerTables,pairedAnswerSections,titledPageAnswerTables,verifiedExamJob,jobTitleMatches,identifyBookletCode,parseGridKey,questionIntegrity,isInstructionSheet,declaredQuestionCount,declaredAlternativeCount,inferredAlternativeCount,normalizeQuestionHeading,humanizePdfText,attachSuperscriptOrdinals,formatQuestionStem} from '../pdf-layout.mjs';
 import {parseKey,inferExamMetadata,classifyByExamDivision} from '../core.mjs';
 function item(str,x,y,width=40){return {str,transform:[1,0,0,1,x,842-y],width};}
 test('leitura espacial separa duas colunas e preserva a numeração original',()=>{
@@ -1582,4 +1582,84 @@ test('Legalle: artigo da Lei 15.474 ocupa duas colunas e permanece ligado às qu
   assert.deepEqual(q.contextRange,[1,15]);
  }
  assert.equal(result.questions.filter(q=>q.originalNumber===15).length,0);
+});
+
+
+test('Consulplan Pouso Alto 2025: seleciona a sétima página de 30 respostas, não as seis de 40',()=>{
+ const p1=['A','A','B','D','B','B','D','D','D','D','D','D','A','D','C','A','B','B','A','B'];
+ const p2=['B','A','B','C','D','D','A','A','C','D','A','C','D','A','C','C','C','A','D','B'];
+ const rightNames=['ANALISTA DE T. I.','CONTADOR','CONTROLADOR INTERNO',
+  'PROCURADOR JURÍDICO','SECRETÁRIO EXECUTIVO','AUXILIAR DE SECRETARIA'];
+ const pAux1='B C A C A A A C B B C D A A C'.split(' ');
+ const pAux2='D B B A A C B B D C C A D C D'.split(' ');
+ const page=(pageNumber,title,left,right)=>[
+  '[[PAGE:'+pageNumber+']]',
+  'Gabarito Preliminar',
+  'Concurso Público',
+  'Câmara Municipal de Pouso Alto/MG',
+  title,
+  'PROVA TIPO 1 – BRANCA',
+  ...left.map((letter,i)=>
+   String(i+1).padStart(2,'0')+' '+letter+' '+
+   String(i+left.length+1).padStart(2,'0')+' '+right[i])
+ ].join('\n');
+ const source=rightNames.map((title,i)=>page(i+1,title,p1,p2)).join('\n')+
+  '\n'+page(7,'AUXILIAR DE SERVIÇOS GERAIS',pAux1,pAux2);
+ const tables=titledPageAnswerTables(source);
+ assert.equal(tables.length,7);
+ assert.deepEqual(tables.map(t=>t.count),[40,40,40,40,40,40,30]);
+ assert.deepEqual(tables.map(t=>t.pageNumber),[1,2,3,4,5,6,7]);
+ const cover='[[PAGE:1]]\nCâmara Municipal de Pouso Alto/MG\n'+
+  'CONCURSO PÚBLICO | Edital nº 01/2025\n'+
+  'auxiliar de serviços gerais\nTipo 1 – Branca\n'+
+  'Este caderno de provas é composto por trinta questões objetivas.\n'+
+  'As questões da prova objetiva são de múltipla escolha, com quatro opções de resposta.';
+ const selected=chosenAnswerSection(source,cover,{
+  examFilename:'auxiliar_de_servicos_gerais (4).pdf',
+  examTitle:'2025 — CONSULPLAN — CM-POUSO-ALTO — Auxiliar de Serviços Gerais'
+ });
+ assert.equal(selected.error,null);
+ assert.equal(selected.format,'pairs');
+ assert.equal(selected.section,'AUXILIAR DE SERVICOS GERAIS');
+ const answers=parseKey(selected.text);
+ assert.equal(Object.keys(answers).length,30);
+ pAux1.forEach((letter,i)=>assert.equal(answers[i+1],letter,'questão '+(i+1)));
+ pAux2.forEach((letter,i)=>assert.equal(answers[i+16],letter,'questão '+(i+16)));
+ assert.equal(answers[1],'B');
+ assert.equal(answers[30],'D');
+ // A prova declara a quantidade em letras, não dígitos.
+ const pages=[{number:1,text:cover,lines:[]}];
+ assert.equal(declaredQuestionCount(pages),30);
+ const questions=Array.from({length:30},(_,i)=>({
+  originalNumber:i+1,options:'ABCD'.split('').map(letter=>({letter,text:'Resposta '+letter}))
+ }));
+ assert.deepEqual(questionIntegrity(questions,answers,30,4),[]);
+ // Papel impresso de outro cargo ou tipo não deve trazer respostas de Auxiliar.
+ const wrongRole=chosenAnswerSection(source,
+  cover.replace('auxiliar de serviços gerais','contador'),{
+   examFilename:'contador.pdf',examTitle:'Contador'
+  });
+ assert.equal(wrongRole.error,null);
+ assert.equal(Object.keys(parseKey(wrongRole.text)).length,40);
+ const mismatch=chosenAnswerSection(source,
+  cover.replace('Tipo 1 – Branca','Tipo 2 – Amarela'),{
+   examFilename:'auxiliar_de_servicos_gerais.pdf',
+   examTitle:'Auxiliar de Serviços Gerais'
+  });
+ assert.match(mismatch.error,/tipo e a cor/i);
+ const missing=chosenAnswerSection(source,
+  cover.replace('auxiliar de serviços gerais','motorista'),{
+   examFilename:'motorista.pdf',examTitle:'Motorista'
+  });
+ assert.ok(missing.error,'Cargo sem tabela correspondente não pode receber gabarito.');
+});
+test('Consulplan: se tabelas multicargo estão incompletas, nunca aplicar parseKey ao PDF inteiro',()=>{
+ const source='[[PAGE:1]]\nCONTADOR\nPROVA TIPO 1 – BRANCA\n01 A 21 B\n'+
+ '[[PAGE:2]]\nAUXILIAR DE SERVIÇOS GERAIS\nPROVA TIPO 1 – BRANCA\n01 B 16 D\n';
+ const selected=chosenAnswerSection(source,
+  '[[PAGE:1]]\nAUXILIAR DE SERVIÇOS GERAIS\nTipo 1 – Branca',{
+   examFilename:'auxiliar_de_servicos_gerais.pdf'
+  });
+ assert.ok(selected.error);
+ assert.equal(selected.text,'');
 });
