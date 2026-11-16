@@ -904,3 +904,37 @@ test('capa Legalle declara 50 questões e 4 alternativas; integridade preserva q
  assert.deepEqual(questionIntegrity(questions,key,50,4),[]);
  assert.ok(questionIntegrity(questions,key,50,5).some(x=>/contém 4 alternativas/.test(x)));
 });
+
+
+test('Legalle: texto sobre telemedicina fica disponível nas questões 1 a 10, inclusive páginas seguintes',()=>{
+ const cover={number:1,width:595.28,height:841.89,
+  lines:[{col:0,x:100,y:190,text:'50 questões'},{col:0,x:100,y:230,text:'4 alternativas'}]};
+ const page2={number:2,width:595.28,height:841.89,lines:[
+  {col:0,x:45,y:51,text:'LÍNGUA PORTUGUESA'},
+  {col:0,x:42,y:79,text:'Para responder às questões 01 a 10, leia o texto abaixo,'},
+  {col:0,x:49,y:119,text:'Telemedicina: avanços e desafios na integração da tecnologia à prática médica'},
+  {col:0,x:49,y:146,text:'A telemedicina é o uso de tecnologias da informação para fornecer cuidados à distância.'},
+  {col:0,x:49,y:172,text:'A pandemia acelerou a adoção de plataformas digitais no Brasil.'},
+  {col:1,x:329,y:51,text:'Questão 01. A compreensão do texto exige identificar seus argumentos.'},
+  ...'ABCD'.split('').map((l,i)=>({col:1,x:330,y:95+i*20,text:'('+l+') Alternativa '+l+'.'})),
+  {col:1,x:329,y:290,text:'Questão 02. No texto, os autores estabelecem nexo causal.'},
+  ...'ABCD'.split('').map((l,i)=>({col:1,x:330,y:331+i*20,text:'('+l+') Alternativa '+l+'.'}))
+ ]};
+ const page3={number:3,width:595.28,height:841.89,lines:[
+  {col:0,x:40,y:40,text:'Questão 04. No final do texto, os autores constroem uma projeção.'},
+  ...'ABCD'.split('').map((l,i)=>({col:0,x:42,y:85+i*18,text:'('+l+') Alternativa '+l+'.'})),
+  {col:1,x:330,y:45,text:'Questão 07. Considere o trecho do primeiro parágrafo.'},
+  ...'ABCD'.split('').map((l,i)=>({col:1,x:330,y:90+i*18,text:'('+l+') Alternativa '+l+'.'}))
+ ]};
+ const parsed=spatialQuestions([cover,page2,page3]);
+ assert.equal(parsed.contexts.length,1);
+ assert.deepEqual(parsed.contexts[0].from,1);
+ assert.deepEqual(parsed.contexts[0].to,10);
+ for(const n of [1,2,4,7]){
+  const q=parsed.questions.find(x=>x.originalNumber===n);
+  assert.ok(q,'questão '+n);
+  assert.match(q.contextText,/Telemedicina: avanços/);
+  assert.match(q.contextText,/pandemia acelerou/);
+  assert.equal(q.options.length,4);
+ }
+});
