@@ -339,3 +339,22 @@ test('Objetiva Sossego Q21: rodapé acidental é retirado sem perder alternativa
  assert.equal(JSON.stringify(data),backup,'normalização não altera objeto do banco original');
  assert.deepEqual(normalizeState(fixed),fixed,'reparação idempotente');
 });
+
+
+test('Legalle 2026 Cândido Godói: metadados detectados pelo gabarito e pela capa sem identificação manual',()=>{
+ const cover='[[PAGE:1]]\nAUXILIAR DE SERVIÇOS GERAIS\n'+
+  'Município de Cândido Godói/RS\nConcurso Público 01/2026\n'+
+  'PROVA TEÓRICO-OBJETIVA\n40 questões\n4 alternativas\n'+
+  'RASCUNHO PARA GABARITO';
+ const answer='[[PAGE:1]]\nPREFEITURA MUNICIPAL DE CÂNDIDO GODÓI\n'+
+  'CONCURSO PÚBLICO 01/2026\nwww.institutolegalle.org.br\n'+
+  'GABARITOS PRELIMINARES\nAuxiliar de Serviços Gerais\n'+
+  '01) C 02) B 03) A 04) C 05) B 06) C';
+ const result=inferExamMetadata(cover,'auxiliar_de_servicos_gerais (3).pdf',
+  answer,'gabarito (3)(2).pdf');
+ assert.equal(result.year,'2026');
+ assert.equal(result.banca,'LEGALLE');
+ assert.equal(result.orgao,'PM-CANDIDO-GODOI');
+ assert.deepEqual(result.missing,[]);
+ assert.equal(result.title,'2026 — LEGALLE — PM-CANDIDO-GODOI — Auxiliar de Serviços Gerais');
+});
