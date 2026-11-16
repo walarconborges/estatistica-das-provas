@@ -2,12 +2,41 @@
 export const STORAGE_KEY='estatistica-das-provas-v1';
 export const newId=()=>globalThis.crypto?.randomUUID?.() || ('id-'+Date.now()+'-'+Math.random().toString(36).slice(2));
 export const fresh=()=>({version:1,profiles:[],exams:[],questions:[],attempts:[],simulations:[],flags:[],tombstones:{exams:[],questions:[],attempts:[],simulations:[],flags:[]}});
+/**
+ * Remove SOMENTE marcas editoriais das páginas que vazaram para a última
+ * alternativa. NUNCA retirar URLs genéricas, referências ou textos do
+ * enunciado: apenas a assinatura exata do rodapé da banca, no fim do campo.
+ */
+export function stripExamFooter(value){
+ const source=String(value??'');
+ return source
+  .replace(/(?:^|[ \t\n])(?:https?:\/\/)?www\.objetivas\.com\.br[ \t]*$/iu,'')
+  .trimEnd();
+}
+/**
+ * Reparação determinística das opções extraídas. Mantém IDs, gabarito,
+ * código, autoria, histórico e todas as outras informações inalterados.
+ * É idempotente: pode ser aplicada tanto aos dados locais quanto remotos.
+ */
+export function repairImportedFooters(state){
+ if(!state||!Array.isArray(state.questions))return state;
+ for(const q of state.questions){
+  if(!q||!Array.isArray(q.options))continue;
+  for(const option of q.options){
+   if(typeof option?.text!=='string')continue;
+   const fixed=stripExamFooter(option.text);
+   if(fixed!==option.text)option.text=fixed;
+  }
+ }
+ return state;
+}
+
 export function normalizeState(data){
   const base=fresh();
   if(!data || typeof data!=='object')return base;
   for(const k of Object.keys(base))if(Array.isArray(base[k])&&Array.isArray(data[k]))base[k]=data[k];
   if(data.tombstones&&typeof data.tombstones==='object')for(const k of Object.keys(base.tombstones))if(Array.isArray(data.tombstones[k]))base.tombstones[k]=[...new Set(data.tombstones[k].filter(x=>typeof x==='string'))];
-  return base;
+  return repairImportedFooters(base);
 }
 export const textNorm=s=>String(s??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,' ').trim().toUpperCase();
 export function codePart(s,def='XX'){const v=textNorm(s).replace(/[^A-Z0-9]/g,'');return v||def}
