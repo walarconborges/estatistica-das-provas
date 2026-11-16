@@ -3,6 +3,9 @@ const norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toUp
 const noise=s=>/^(?:PCIMARKPCI\b|WWW\.PCICONCURSOS\.|CVOT\d+|CONFIDENCIAL ATE|R\s*A\s*S\s*C\s*U\s*N\s*H\s*O\s*$)/i.test(norm(s.trim()))||/MDAwM[A-Za-z0-9+/=]{35}/.test(s);
 const questionRx=/^(?:QUEST[AÃ]O\s+0?(\d{1,3})(?:\s*[.):\-]\s*(.*))?|(\d{1,3})\s*[.):\-]\s*(.*))$/i;
 const altRx=/^\s*(?:\(([A-E])\)|([A-E])\s*[.):\-])\s*(.*)$/i;
+// A FEPESE imprime marcas de quadrinhos, inclusive a opção assinalada.
+// Estes glifos não são parte das alternativas e não podem revelar o gabarito.
+const stripAnswerBox=s=>String(s||'').replace(/^\s*(?:(?:Check[\s-]*square|SQUARE)\b|[☑☒☐□■])\s*/i,'').trim();
 const isHeading=s=>/^(?:L[IÍ]NGUA PORTUGUESA|MATEM[AÁ]TICA|RACIOC[IÍ]NIO L[OÓ]GICO|LEGISLA[CÇ][AÃ]O|CONHECIMENTOS ESPEC[IÍ]FICOS|INFORM[AÁ]TICA|DIREITO ADMINISTRATIVO|DIREITO CONSTITUCIONAL|CONHECIMENTOS GERAIS)(?:\s+\d{1,3}\s+QUEST[OÕ]ES)?$/i.test(s.trim());
 
 
@@ -305,7 +308,9 @@ export function spatialQuestions(pages){
       };
     }
     current.extractionReview=!hasCompleteOptions(current.options);
-    current.imageOnly=needsImage(current.stem);
+    // Para FEPESE, não reproduzir o enunciado completo como imagem: apenas
+    // imagens genuínas com região gráfica separável por coordenadas.
+    current.imageOnly=needsImage(current.stem)&&(!useIndentationProtection||Boolean(current.visualSegments));
     if(!current.imageOnly)delete current.visualSegments;
     // Jamais descarta silenciosamente uma QUESTÃO N porque alguma alternativa
     // foi separada pelo leitor do PDF. Usa o recorte fiel e 5 controles A–E.
@@ -344,7 +349,7 @@ export function spatialQuestions(pages){
     if(collecting){collecting.text.push(s);continue;}
     if(!current)continue;
     const am=s.match(altRx);
-    if(am){if(current.options.length===0)current.optionsStartY=row.y;current.options.push({letter:am[1]||am[2],text:am[3]||''});continue;}
+    if(am){if(current.options.length===0)current.optionsStartY=row.y;current.options.push({letter:String(am[1]||am[2]).toUpperCase(),text:stripAnswerBox(am[3])});continue;}
     if(current.options.length)current.options.at(-1).text+='\n'+s;
     else{current.stem.push(s);current.stemRows.push({y:row.y,text:s})}
    }
