@@ -69,6 +69,23 @@ export function classify(stem,heading='',options=[]){
 }
 
 /** Leitura tolerante a quebras de linha, marcas d'água e numeração de banca. */
+/**
+ * O gabarito Quadrix/CRQ-V 2026 define os blocos por número:
+ * 1–15 Língua Portuguesa; 16–25 Raciocínio Lógico e Matemática;
+ * 26–50 Conhecimentos Específicos de Analista de Informática.
+ * A separação oficial prevalece sobre inferências de palavras-chave.
+ */
+export function classifyByExamDivision(q,meta,guessed){
+ const n=Number(q.originalNumber),b=textNorm(meta?.banca),org=textNorm(meta?.orgao),title=textNorm(meta?.title);
+ if(b!=='QUADRIX'||org!=='CRQ-V'||!title.includes('ANALISTA DE INFORMATICA')||n<1||n>50)return guessed;
+ if(n<=15){
+  const isGrammar=guessed.disciplineCode==='LP'&&guessed.topic==='Gramática';
+  return {discipline:'Língua Portuguesa',disciplineCode:'LP',topic:isGrammar?'Gramática':'Interpretação de texto',topicCode:isGrammar?'G':'IT',confidence:'alta'};
+ }
+ if(n<=25)return {discipline:'Raciocínio Lógico e Matemática',disciplineCode:'RL',topic:guessed.disciplineCode==='MA'?guessed.topic:'Geral',topicCode:guessed.disciplineCode==='MA'?guessed.topicCode:'G',confidence:'alta'};
+ return {...guessed,discipline:'Informática',disciplineCode:'IN',topic:guessed.disciplineCode==='IN'?guessed.topic:'Conhecimentos específicos',topicCode:guessed.disciplineCode==='IN'?guessed.topicCode:'CE',confidence:'alta'};
+}
+
 export function parseExamText(input){
   const lines=String(input||'').replace(/\r/g,'').split('\n');
   const questions=[];let current=null,heading='',sourcePage=null;
