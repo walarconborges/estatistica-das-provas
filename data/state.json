@@ -24771,7 +24771,7 @@
         },
         {
           "letter": "D",
-          "text": "Minha mãe cozinhou. www.objetivas.com.br"
+          "text": "Minha mãe cozinhou."
         }
       ],
       "optionsStartY": 616.3,
@@ -25816,7 +25816,7 @@
         },
         {
           "letter": "D",
-          "text": "E - C - C. www.objetivas.com.br"
+          "text": "E - C - C."
         }
       ],
       "optionsStartY": 669.9399999999999,
@@ -26665,7 +26665,7 @@
         },
         {
           "letter": "D",
-          "text": "Apenas nos itens II e III. www.objetivas.com.br"
+          "text": "Apenas nos itens II e III."
         }
       ],
       "optionsStartY": 737.04,
@@ -33071,6 +33071,14 @@
       "answer": "C",
       "simulationId": "",
       "at": "2026-11-16T19:07:29.389Z"
+    },
+    {
+      "id": "cfaedcad-831a-4796-a3ad-aed55023ce31",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "a30f9380-2cf7-4b09-a4cf-5c124e302944",
+      "answer": "A",
+      "simulationId": "",
+      "at": "2026-11-16T19:18:24.241Z"
     }
   ],
   "simulations": [
