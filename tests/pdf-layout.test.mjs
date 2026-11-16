@@ -525,6 +525,7 @@ test('FEPESE Brusque S01: selecionar exatamente as 40 respostas na tabela multic
 test('FEPESE: subitens numerados não são novas questões nem duplicam a questão 5',()=>{
  const page={number:5,width:581.1,height:779.5,lines:[]};
  const put=(col,x,y,text)=>page.lines.push({col,x,y,text});
+ put(0,49.6,25,'Município de Brusque');
  put(0,49.6,70,'4. Observe as orações abaixo:');
  for(let n=1;n<=5;n++)put(0,72,80+n*20,n+'. Texto da oração '+n+'.');
  for(let n=0;n<5;n++)put(0,51,240+n*22,String.fromCharCode(97+n)+'. Alternativa '+(n+1));
@@ -570,4 +571,25 @@ test('FEPESE Brusque: reconhecer dados da capa e a divisão oficial de disciplin
  for(const [n,subject] of expected)
   assert.equal(classifyByExamDivision({originalNumber:n},meta,guessed).discipline,subject,
    'Questão '+n);
+});
+
+test('FEPESE: Texto 1 distribuído entre duas colunas acompanha a questão 1',()=>{
+ const page={number:3,width:581.1,height:779.5,lines:[]};
+ const put=(col,x,y,text)=>page.lines.push({col,x,y,text});
+ put(0,49.6,20,'Município de Brusque');
+ put(0,55,100,'Texto 1');
+ put(0,49.6,127,'LEI COMPLEMENTAR Nº 147');
+ put(0,49.6,286,'Art. 144 Após cada quinquênio de exercício');
+ put(1,304,70,'Art. 149 O Município, em face de necessidade');
+ put(1,304,415,'Art. 151 A licença-prêmio será usufruída');
+ put(1,304,445,'1. Assinale a alternativa correta com base no Texto 1.');
+ for(let i=0;i<5;i++)put(1,304,500+i*22,
+  String.fromCharCode(97+i)+'. Alternativa '+String.fromCharCode(65+i));
+ const parsed=spatialQuestions([page]);
+ assert.equal(parsed.questions.length,1);
+ assert.match(parsed.questions[0].contextText,/LEI COMPLEMENTAR Nº 147/);
+ assert.match(parsed.questions[0].contextText,/Art\. 144/);
+ assert.match(parsed.questions[0].contextText,/Art\. 149/);
+ assert.match(parsed.questions[0].contextText,/Art\. 151/);
+ assert.equal(parsed.contexts.length,1);
 });
