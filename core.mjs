@@ -77,6 +77,18 @@ export function classify(stem,heading='',options=[]){
  */
 export function classifyByExamDivision(q,meta,guessed){
  const n=Number(q.originalNumber),b=textNorm(meta?.banca),org=textNorm(meta?.orgao),title=textNorm(meta?.title);
+
+ if(b==='FEPESE'&&org==='CIS-GRANFPOLIS'&&title.includes('AUXILIAR DE SERVICOS GERAIS')&&n>=1&&n<=35){
+  const [discipline,disciplineCode,defaultTopic]=n<=5?['Língua Portuguesa','LP','Geral']:
+    n<=10?['Conhecimentos Gerais','CG','Geral']:
+    n<=15?['Higiene e Segurança no Trabalho','CE','Segurança no trabalho']:
+    ['Conhecimentos específicos','CE','Serviços gerais'];
+  const same=guessed.disciplineCode===disciplineCode;
+  return {...guessed,discipline,disciplineCode,
+   topic:same?guessed.topic:defaultTopic,
+   topicCode:same?guessed.topicCode:'G',confidence:'alta'};
+ }
+
  // FCPC / Câmara de Aracati: blocos declarados expressamente na capa.
  if(b==='FCPC'&&org==='CM-ARACATI'&&title.includes('AUXILIAR DE SERVICOS GERAIS')&&n>=1&&n<=50){
   const [discipline,disciplineCode]=n<=10?['Língua Portuguesa','LP']:
@@ -465,6 +477,7 @@ export function inferExamMetadata(examText='',examFilename='',keyText='',keyFile
   ['CRQ-V',/CONSELHO REGIONAL DE QUIMICA DA 5(?:A|ª) REGIAO|\bCRQ\s*[-–]?\s*V\b/],
   ['PM-BRUSQUE',/\bMUNICIPIO DE BRUSQUE\b|\bPREFEITURA MUNICIPAL DE BRUSQUE\b/],
   ['CISCOPAR',/\bCISCOPAR\b|CONSORCIO INTERMUNICIPAL DE SAUDE COSTA OESTE DO PARANA/],
+  ['CIS-GRANFPOLIS',/CONSORCIO PUBLICO INTERFEDERATIVO DE SAUDE DA REGIAO DA GRANDE FLORIANOPOLIS|2026CPCISGRANFPOLIS|\bCISGRANFPOLIS\b/],
   ['PM-SOSSEGO',/\bMUNICIPIO DE SOSSEGO\b|\bPREFEITURA MUNICIPAL DE SOSSEGO\b/],
   ['CMVOTORANTIM',/CAMARA MUNICIPAL DE VOTORANTIM/],
   ['CM-ARACATI',/\bCAMARA MUNICIPAL DE ARACATI\b/],
