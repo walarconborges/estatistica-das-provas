@@ -489,7 +489,7 @@ export function spatialQuestions(pages){
     // explícita, todas as questões sequenciais do bloco compartilham a
     // crônica, mesmo que o enunciado não diga a palavra "texto".
     const sameSection=explicitPortuguese&&q.heading===first.heading;
-    if(q.originalNumber!==last+1||(!sameSection&&!refer&&q.originalNumber!==1))break;
+    if(q.originalNumber!==last+1||(explicitPortuguese&&!sameSection)||(!explicitPortuguese&&!refer&&q.originalNumber!==1))break;
     if(!q.contextText){q.contextText=opening;q.contextRange=[1,q.originalNumber];}
     last=q.originalNumber;
    }
