@@ -11,7 +11,9 @@ export async function pdfjs(){
 export function questionCropBounds(q,pageWidth,pageHeight,scale=1.4){
  const separator=pageWidth/2;
  const left=q.sourceColumn===0?23:separator+7;
- const right=q.sourceColumn===0?separator-5:pageWidth-23;
+ // A arte da FEPESE chega até x≈297,6 no A4 reduzido (largura 581,1),
+ // ultrapassando levemente o centro geométrico sem invadir o texto à direita.
+ const right=q.sourceColumn===0?(q.sourceLayout==='FEPESE'?separator+9:separator-5):pageWidth-23;
  const segment=q.visualSegments&&q.visualSegments.bottom-q.visualSegments.top>45?q.visualSegments:null;
  const top=Math.max(15,Math.min(segment?segment.top:q.startY-14,pageHeight-55));
  // Questões com extração incompleta precisam da questão INTEIRA,
