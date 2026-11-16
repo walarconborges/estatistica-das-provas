@@ -181,7 +181,7 @@ test('reimportação FEPESE não altera prova ambígua ou de outro gabarito',()=
 });
 
 test('VUNESP/UNESP: capa e gabarito identificam banca, instituição, ano e cargo 002',()=>{
- const cover='002. Prova Objetiva\nanalista de informática II\nárea de atuação: desenvolvimento de sistemas institucionais\n'+
+ const cover='002. Prova\nObjetiva\nanalista de informática II\nárea de atuação: desenvolvimento de\nsistemas institucionais\n'+
  '40 questões objetivas.\nVNSP2511/002-AnInfor-II-DesenvSistemasInstitucionais';
  const key='UNIVERSIDADE ESTADUAL PAULISTA “JÚLIO DE MESQUITA FILHO” – UNESP\n'+
  'EDITAL Nº 046/2026 DE DIVULGAÇÃO DO GABARITO\n';
