@@ -41,7 +41,7 @@ export function isLegislationQuestion(q){
 export function isLocalLegislation(q,e){
  if(!isLegislationQuestion(q))return false;
  const text=norm([q.stem,q.topic,q.contextText,q.heading].join(' '));
- if(/LEGISLACAO INSTITUCIONAL|CAMARA MUNICIPAL|PREFEITURA MUNICIPAL|LEI ORGANICA|REGIMENTO INTERNO|RESOLUCAO N|PROCURADORIA DA CAMARA|DIRETORIA LEGISLATIVA|LEI MUNICIPAL/.test(text))return true;
+ if(/LEGISLACAO INSTITUCIONAL|CAMARA MUNICIPAL|PREFEITURA MUNICIPAL|LEI ORGANICA|REGIMENTO INTERNO|RESOLUCAO N|PROCURADORIA DA CAMARA|DIRETORIA LEGISLATIVA|LEI (?:COMPLEMENTAR )?MUNICIPAL|PLANO DE CARGOS E CARREIRAS|REGIME JURIDICO (?:DOS )?SERVIDORES MUNICIPAIS/.test(text))return true;
  const org=norm(e?.orgao||q.orgao).replace(/[^A-Z0-9]/g,'');
  return /^CM/.test(org)&&/LEGISLACAO|SERVIDORES MUNICIPAIS|CARGOS DA CAMARA/.test(text);
 }
@@ -65,7 +65,7 @@ export function studyEligibility(q,e,mode='candeias'){
  const municipality=/CANDEIAS DO JAMARI|\bCMCJ\b/;
  const questionJurisdiction=norm([q.stem,q.contextText,q.heading].join(' '));
  const examJurisdiction=norm([e?.orgao,e?.title,q.orgao].join(' '));
- const clearlyOther=/VOTORANTIM|PORTO VELHO|ARIQUEMES|JI-PARANA/.test(questionJurisdiction);
+ const clearlyOther=/BRUSQUE|VOTORANTIM|PORTO VELHO|ARIQUEMES|JI-PARANA/.test(questionJurisdiction);
  if(!clearlyOther&&(municipality.test(questionJurisdiction)||municipality.test(examJurisdiction)))
   return {allowed:true,status:'local-original'};
 
