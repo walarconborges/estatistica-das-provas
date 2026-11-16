@@ -383,6 +383,7 @@ export function spatialQuestions(pages){
    }
   }
  }
+ if(useIndentationProtection)for(const q of questions)q.sourceLayout='FEPESE';
  questions.sort((a,b)=>a.originalNumber-b.originalNumber);
  return {questions,contexts};
 }
