@@ -1663,3 +1663,44 @@ test('Consulplan: se tabelas multicargo estão incompletas, nunca aplicar parseK
  assert.ok(selected.error);
  assert.equal(selected.text,'');
 });
+
+
+test('Pouso Alto: crônica Um pé de milho acompanha todo o bloco 1–10, mas não Informática 11',()=>{
+ const page=(number,lines)=>({number,width:595,height:842,lines:lines.map((text,i)=>({
+  text,y:40+i*12,col:0,x:40
+ }))});
+ const question=(n)=>[
+  'Questão '+String(n).padStart(2,'0'),
+  'Assinale a alternativa correta com base no trecho e no assunto apresentado.',
+  'A) alternativa um.',
+  'B) alternativa dois.',
+  'C) alternativa três.',
+  'D) alternativa quatro.'
+ ];
+ const base=[
+  'LÍNGUA PORTUGUESA',
+  'Um pé de milho',
+  'Os americanos, através do radar, entraram em contato com a Lua, o que não deixa de ser emocionante.',
+  'Aconteceu que no meu quintal, em um monte de terra trazido pelo jardineiro, nasceu alguma coisa.',
+  'Quando estava do tamanho de um palmo veio um amigo e declarou que na verdade aquilo era capim.',
+  'O pé de milho cresceu, passou do muro e em noite de luar parecia um cavalo empinado.',
+  'No final, o narrador afirma que é um rico lavrador da Rua Júlio de Castilhos.'
+ ];
+ const pages=[
+  page(3,base.concat(question(1),question(2),question(3))),
+  page(4,[...Array.from({length:7},(_,i)=>question(i+4)).flat()]),
+  page(5,['CONHECIMENTOS DE INFORMÁTICA',...question(11)])
+ ];
+ const parsed=spatialQuestions(pages);
+ assert.equal(parsed.questions.length,11);
+ const shared=parsed.questions[0].contextText;
+ assert.match(shared,/Um pé de milho/);
+ assert.match(shared,/rico lavrador/);
+ for(const q of parsed.questions.filter(q=>q.originalNumber<=10)){
+  assert.equal(q.contextText,shared,'texto-base da questão '+q.originalNumber);
+  assert.deepEqual(q.contextRange,[1,10]);
+ }
+ const q11=parsed.questions.find(q=>q.originalNumber===11);
+ assert.equal(q11.contextText,'');
+ assert.equal(q11.heading,'CONHECIMENTOS DE INFORMÁTICA');
+});
