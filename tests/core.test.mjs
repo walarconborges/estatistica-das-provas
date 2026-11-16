@@ -378,3 +378,43 @@ test('Legalle Cândido Godói: blocos originais da prova 1–15, 16–25, 26–3
  }
  assert.equal(classifyByExamDivision({originalNumber:41},meta,guessed).disciplineCode,'NC');
 });
+
+
+test('Pouso Alto/MG 2025: logotipo Consulplan sem texto é suprido pelo cadastro verificado do edital',()=>{
+ const cover='[[PAGE:1]]\nCâmara Municipal de Pouso Alto/MG\n'+
+  'CONCURSO PÚBLICO | Edital nº 01/2025\n'+
+  'auxiliar de serviços gerais\nTipo 1 – Branca\n'+
+  'Este caderno de provas é composto por trinta questões objetivas.\n'+
+  'quatro opções de resposta';
+ const key='[[PAGE:7]]\nGabarito Preliminar\nConcurso Público\n'+
+  'Câmara Municipal de Pouso Alto/MG\n'+
+  'AUXILIAR DE SERVIÇOS GERAIS\nPROVA TIPO 1 – BRANCA';
+ const result=inferExamMetadata(cover,'auxiliar_de_servicos_gerais (4).pdf',
+  key,'gabarito (4)(1).pdf');
+ assert.equal(result.year,'2025');
+ assert.equal(result.banca,'CONSULPLAN');
+ assert.equal(result.orgao,'CM-POUSO-ALTO');
+ assert.deepEqual(result.missing,[]);
+ assert.equal(result.title,'2025 — CONSULPLAN — CM-POUSO-ALTO — Auxiliar de Serviços Gerais');
+ const other=inferExamMetadata(cover.replace('01/2025','02/2025'),
+  'auxiliar_de_servicos_gerais.pdf',key,'gabarito.pdf');
+ assert.equal(other.banca,'NI','outro edital não herda banca a partir do órgão');
+ const anotherYear=inferExamMetadata(cover.replaceAll('2025','2024'),
+  'auxiliar_de_servicos_gerais.pdf',key.replaceAll('2025','2024'),'gabarito.pdf');
+ assert.equal(anotherYear.banca,'NI');
+});
+
+test('Pouso Alto: Português 1–10, Informática 11–20 e Conhecimentos Gerais 21–30',()=>{
+ const meta={year:'2025',banca:'CONSULPLAN',orgao:'CM-POUSO-ALTO',
+  title:'2025 — CONSULPLAN — CM-POUSO-ALTO — Auxiliar de Serviços Gerais'};
+ const guessed={discipline:'Não classificada',disciplineCode:'NC',topic:'Geral',topicCode:'G'};
+ for(const [number,code,name] of [
+  [1,'LP','Língua Portuguesa'],[10,'LP','Língua Portuguesa'],
+  [11,'IN','Informática'],[20,'IN','Informática'],
+  [21,'CG','Conhecimentos Gerais'],[30,'CG','Conhecimentos Gerais']]){
+  const result=classifyByExamDivision({originalNumber:number},meta,guessed);
+  assert.equal(result.disciplineCode,code,'questão '+number);
+  assert.equal(result.discipline,name,'questão '+number);
+ }
+ assert.equal(classifyByExamDivision({originalNumber:31},meta,guessed).disciplineCode,'NC');
+});
