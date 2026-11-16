@@ -1,9 +1,20 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.6 — 15/11/2026**  
+**Versão experimental 0.6.7 — 15/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.7 — FEPESE: enunciados e alternativas em texto
+
+- A importação da FEPESE agora reconhece alternativas minúsculas `a.` a `e.` e remove `SQUARE` / `Check-square`, que revelavam a resposta correta ao aparecer como imagem.
+- Quando há conteúdo gráfico, o importador preserva o texto anterior e posterior, recortando somente a área da figura. No PDF FEPESE da questão 2, a imagem fica entre o título da questão e a linha de fonte, sem incluir alternativas nem gabarito marcado.
+- Questões comuns são apresentadas como enunciado e cinco alternativas selecionáveis em texto; não são convertidas em imagem completa só por mencionarem tabelas ou planilhas.
+- Reimportar o mesmo caderno pode atualizar uma prova antiga salva com 40 imagens, preservando IDs, códigos, respostas, tentativas e simulados. Não cria uma segunda cópia quando existe uma prova correspondente; quando há dúvida, bloqueia a atualização.
+- O Worker inclui validação estrita para aceitar somente melhoria de extração; mudanças em resposta oficial, enunciado, origem, disciplina ou código não são aceitas.
+- O site confirma a atualização com a sincronização antes de informar sucesso; se o Worker ainda não tiver sido implantado, sinaliza a pendência sem anunciar uma migração bem-sucedida.
+- Testes automatizados cobrem alternativas, marcações, recorte, proteção dos registros e sincronização. **Ainda é necessário conferir o resultado real da reimportação no navegador e garantir a implantação atualizada do Worker na Cloudflare.**
+- A classificação personalizada por conteúdo programático de editais será tratada em uma etapa separada.
 
 ## Versão 0.6.6 — FEPESE Brusque S01 e extração fiel
 
