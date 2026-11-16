@@ -1,9 +1,19 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.20 — 16/11/2026**  
+**Versão experimental 0.6.21 — 16/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.21 — Cargo Todos e conferência explícita por edital
+
+- Acrescentado **Todos — estudo geral, sem edital** ao seletor de cargo em **Questões** e **Simulados**, ao lado dos cargos 202 e 505. A escolha persiste no navegador.
+- No modo **Todos**, é possível filtrar a disciplina original por **Língua Portuguesa**, **Raciocínio Lógico e Matemática** (juntos), **Informática**, **Conhecimentos Gerais e Atualidades**, **Legislação e Direito**, **Conhecimentos Específicos** ou **Outras**, além de assuntos originais. Mistura questões de diversos concursos e bancas.
+- No modo **Todos**, não se aplica pertinência ao edital de Candeias, não se exibem rótulos “A conferir” desse edital nem normas adaptadas; as questões originais, gabaritos e histórico permanecem preservados.
+- Nos cargos 202/505, as questões avulsas e as de simulados apresentam agora **Conferir edital**: o usuário informa **DENTRO** ou **FORA**, fornece uma justificativa e a solicitação aparece em **Sinalizações**.
+- A opinião do usuário é uma **sinalização pendente**, não uma alteração instantânea. Se aprovada pelo responsável no GitHub, muda apenas a pertinência daquela questão naquele cargo, sem alterar a classificação original, o gabarito ou o outro cargo; a questão mostra “Revisão aprovada”.
+- **Sinalizar problema** continua disponível para gabarito, extração, adaptação ou outros problemas.
+- Testes automatizados verificam filtros transversais, combinação de Matemática/RLM, exclusão de adaptações e revisões independentes por cargo. Nenhum banco foi zerado ou migrado.
 
 ## Versão 0.6.20 — conferência automática independente do cargo
 
