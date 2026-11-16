@@ -1,9 +1,20 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.13 — 16/11/2026**  
+**Versão experimental 0.6.14 — 16/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.14 — filtros simplificados para estudo por edital
+
+- **Legislação municipal:** a primeira opção agora aparece como **Candeias adaptadas**; **Versão original das provas** permanece disponível. Os valores internos não mudaram, preservando o comportamento e as seleções existentes.
+- **Classificação pelo edital:** somente **Dentro do edital** (padrão) e **Todas**. Não há opções separadas de “A conferir”, “Somente dentro” ou “Fora do edital”.
+- **Dentro do edital** inclui tanto as questões classificadas dentro quanto as **pendentes de conferência**, mesmo com terminologias diferentes. O aviso “A conferir” permanece na própria questão para orientar sua revisão, não como opção de filtro.
+- **Todas** inclui também as questões classificadas **Fora do edital**. Nenhuma questão foi excluída do banco.
+- **Sinalizar problema** pode ser usado enquanto se resolve uma questão avulsa **ou um simulado**.
+- A opção **Versão original das provas** continua ocultando versões adaptadas, e a classificação de legislação não comprovada não é apresentada como fundamento verificado.
+- Valores antigos dos filtros são normalizados para o novo padrão; prova, gabarito, tentativas, perfis, flags, simulados e histórico permanecem intactos. As novas importações continuam independentes.
+- Testes para os dois estados de filtro, incluindo pendências, exclusões e equivalências, aprovados.
 
 ## Versão 0.6.13 — Objetiva / Sossêgo-PB, Auxiliar de Serviços Gerais
 
