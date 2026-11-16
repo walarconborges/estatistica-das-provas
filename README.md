@@ -1,9 +1,20 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.9 — 15/11/2026**  
+**Versão experimental 0.6.10 — 16/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.10 — importação VUNESP e metadados manuais
+
+- Trata títulos numerados de caderno como “002. Prova Objetiva” (inclusive se o PDF dividir “Prova” e “Objetiva” entre duas colunas) sem contá-los como questões.
+- Identifica VUNESP pela assinatura VNSP do rodapé, preservada como metadado mesmo quando o rodapé não deve aparecer nas questões, e UNESP como órgão; recupera o nome completo de Analista de Informática II e sua área de atuação.
+- Seleciona exclusivamente o gabarito do código 002 e bloqueia seleção ambígua entre cargos homônimos (como Analista de Informática II — Desenvolvimento de Sistemas Institucionais e Redes e Infraestrutura).
+- Recupera a tirinha da primeira questão como imagem separada das cinco alternativas em texto.
+- Em “Importar prova” há uma seção recolhida opcional para preencher ano, banca, órgão e código do caderno quando o PDF não os identifica; valores identificados são protegidos e a integridade das questões/gabarito permanece obrigatória.
+- A classificação de disciplinas respeita os blocos oficiais das 40 questões, preservando a classificação personalizada por edital independente.
+- Testes automatizados cobrem os formatos de prova e gabarito, cabeçalhos divididos, identificação manual segura, a tirinha e a assinatura de impressão.
+- Os PDFs originais ainda devem ser conferidos em uma importação real no navegador; testes de regressão de layout não substituem esse controle.
 
 ## Versão 0.6.9 — Classificação personalizada por edital
 
