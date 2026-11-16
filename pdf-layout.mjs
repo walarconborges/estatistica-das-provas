@@ -515,6 +515,24 @@ export function identifyBookletCode(examText='',examInfo={}){
  return {code:codes[0]??(manually?Number(manually):null),error:null};
 }
 
+/**
+ * Compara o cargo do gabarito com evidências INDEPENDENTES do caderno.
+ * A capa pode vir com espaços artificiais, e o título inferido pode
+ * usar um nome genérico. Não associa só porque existe uma única tabela.
+ */
+export function verifiedExamJob(role,examText='',examInfo={}){
+ const clean=value=>norm(value).replace(/[^A-Z0-9]+/g,'');
+ const expected=clean(role);
+ if(expected.length<5)return false;
+ const first=String(examText||'').split(/\[\[PAGE:\s*2\]\]/i)[0];
+ const sources=[
+  String(examInfo?.examFilename||'').replace(/\.pdf$/i,'').replace(/\s*\(\d+\)\s*$/,''),
+  String(examInfo?.examTitle||''),
+  first
+ ];
+ return sources.some(x=>clean(x).includes(expected));
+}
+
 export function chosenAnswerSection(text,examText='',examInfo={}){
  const source=String(text||'').replace(/\r/g,'');
 
@@ -581,6 +599,8 @@ export function chosenAnswerSection(text,examText='',examInfo={}){
     error:'O gabarito tabulado corresponde a mais de um cargo. Selecione o cargo correto na lista de conferência.'};
    if(found.length===1){selected=found[0];break;}
   }
+  if(!selected&&pageGrids.length===1&&verifiedExamJob(pageGrids[0].role,examText,examInfo))
+   selected=pageGrids[0];
   if(!selected){
    const found=pageGrids.map(x=>x.role).join('; ').slice(0,270);
    const single=pageGrids.length===1;
