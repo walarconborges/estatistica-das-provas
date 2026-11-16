@@ -77,6 +77,15 @@ export function classify(stem,heading='',options=[]){
  */
 export function classifyByExamDivision(q,meta,guessed){
  const n=Number(q.originalNumber),b=textNorm(meta?.banca),org=textNorm(meta?.orgao),title=textNorm(meta?.title);
+ // FCPC / Câmara de Aracati: blocos declarados expressamente na capa.
+ if(b==='FCPC'&&org==='CM-ARACATI'&&title.includes('AUXILIAR DE SERVICOS GERAIS')&&n>=1&&n<=50){
+  const [discipline,disciplineCode]=n<=10?['Língua Portuguesa','LP']:
+   n<=20?['Legislação','LE']:['Conhecimentos específicos','CE'];
+  const same=guessed.disciplineCode===disciplineCode;
+  return {...guessed,discipline,disciplineCode,
+   topic:same?guessed.topic:'Geral',topicCode:same?guessed.topicCode:'G',
+   confidence:'alta'};
+ }
  if(b==='OBJETIVA'&&org==='PM-SOSSEGO'&&title.includes('AUXILIAR DE SERVICOS GERAIS')&&n>=1&&n<=40){
   const [discipline,disciplineCode]=n<=15?['Língua Portuguesa','LP']:n<=25?['Matemática','MA']:['Conhecimentos específicos','CE'];
   return {...guessed,discipline,disciplineCode,
@@ -445,6 +454,7 @@ export function inferExamMetadata(examText='',examFilename='',keyText='',keyFile
   ['IDECAN',/\bIDECAN\b/],
   ['QUADRIX',/\bQUADRIX\b/],
   ['FEPESE',/\bFEPESE\b/],
+  ['FCPC',/\bFCPC\b|FUNDACAO CEARENSE DE PESQUISA E CULTURA/],
   ['LEGALLE',/\bLEGALLE\b|ELEGGLL|LEGALLE\s+CONCURSOS/],
   ['OBJETIVA',/\bOBJETIVA\s+(?:CONCURSOS|INSTITUTO)\b|\bOBJETIVAS?\.COM\.BR\b|\bCONCURSOS\.OBJETIVAS\.COM\.BR\b/],
   ['UNOCHAPECO',/\bUNOCHAPECO\b/],
@@ -457,6 +467,7 @@ export function inferExamMetadata(examText='',examFilename='',keyText='',keyFile
   ['CISCOPAR',/\bCISCOPAR\b|CONSORCIO INTERMUNICIPAL DE SAUDE COSTA OESTE DO PARANA/],
   ['PM-SOSSEGO',/\bMUNICIPIO DE SOSSEGO\b|\bPREFEITURA MUNICIPAL DE SOSSEGO\b/],
   ['CMVOTORANTIM',/CAMARA MUNICIPAL DE VOTORANTIM/],
+  ['CM-ARACATI',/\bCAMARA MUNICIPAL DE ARACATI\b/],
   ['SEMUSA',/\bSEMUSA\b|SECRETARIA MUNICIPAL DE SAUDE/],
   ['SEMED',/\bSEMED\b|SECRETARIA MUNICIPAL DE EDUCACAO/],
   ['SEDUC',/\bSEDUC\b|SECRETARIA DE ESTADO DA EDUCACAO/],
