@@ -184,7 +184,7 @@ function needsImage(stem){
  const t=norm(stem);
  // "Tabela MAC" é uma estrutura lógica de um switch, não uma tabela desenhada no PDF.
  if(/\bTABELA\s+MAC\b/.test(t)&&!/\b(?:TABELA|QUADRO)\s+(?:A SEGUIR|ABAIXO)\b/.test(t))return false;
- return /\b(TABELA|DESENHO|FIGURA|GR[AÁ]FICO|PLANILHA|DIAGRAMA|ESQUEMA|CONTORNO DE UM TERRENO)\b/i.test(stem)
+ return /\b(TABELA|IMAGEM|DESENHO|FIGURA|GR[AÁ]FICO|PLANILHA|DIAGRAMA|ESQUEMA|CONTORNO DE UM TERRENO)\b/i.test(stem)
   ;
 }
 
