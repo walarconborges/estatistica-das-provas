@@ -2,6 +2,10 @@ name: Publicar site
 on:
   push:
     branches: [main]
+    # Commits automáticos com provas, respostas e cache de IA não
+    # alteram o site estático e não devem cancelar sua publicação.
+    paths-ignore:
+      - 'data/**'
   workflow_dispatch:
 
 permissions:
