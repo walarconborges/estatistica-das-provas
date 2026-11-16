@@ -105,3 +105,14 @@ test('Quadrix 50 questões: alternativas perdidas são recuperadas visualmente s
  const failedImage={...parsed[24],pageImage:null};
  assert.match(questionIntegrity([failedImage],{25:'A'},0).join('; '),/alternativas não reconhecidas/);
 });
+
+test('FEPESE: tirinha original de Brusque não perde os 12 pontos da borda direita',()=>{
+ const q={...question(2,4),sourceLayout:'FEPESE',sourceColumn:0,
+  visualSegments:{top:85,bottom:390,beforeText:'Analise a imagem abaixo',
+   afterText:'Assinale a alternativa correta'},
+  startY:68,endY:480};
+ const crop=questionCropBounds(q,581.1,779.53);
+ assert.ok(crop.right>=297.63,'A imagem da página 4 termina em x=297.62');
+ assert.ok(crop.right<304,'Não incluir texto da coluna direita.');
+ assert.ok(crop.top<=91.7&&crop.bottom>=384.7,'A figura completa deve estar no recorte');
+});
