@@ -1,3 +1,13 @@
+## 0.6.6 — 15/11/2026
+
+- Corrigida a seção do gabarito FEPESE para o cargo S01 Analista de Informática, Brusque, com 40 questões e 40 respostas.
+- Evitada a contagem duplicada de listas numeradas internas aos enunciados.
+- Preservado o Texto 1, que atravessa as duas colunas da questão 1.
+- Corrigida a falsa mensagem de que um PDF declara a contagem parcial obtida do gabarito.
+- Reconhecidos FEPESE, Município de Brusque e cinco blocos de disciplinas.
+- Acrescentados testes de regressão e mantidos os dados anteriores intactos.
+- Importação integral no navegador ainda não foi verificada com os PDFs originais.
+
 ## 0.6.5 — 15/11/2026
 - Traduzidas as opções de “Meu histórico”: Não respondidas, Erradas e Acertadas.
 - Substituída a lista de escolha única por três caixas de seleção independentes em Questões e Simulados.
