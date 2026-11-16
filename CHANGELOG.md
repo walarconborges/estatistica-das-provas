@@ -1,3 +1,12 @@
+## 0.6.18 — 16/11/2026
+
+- Corrigido fluxo de recuperação da importação FCPC/Aracati quando o sistema identifica todos os cargos do PDF mas falha na correspondência automática.
+- O leitor devolve lista de páginas e cargos, exibida no próprio formulário para seleção explícita do usuário.
+- Campo “Cargo no PDF do gabarito” aberto automaticamente, com opção para selecionar “Página 2 — Auxiliar de Serviços Gerais”.
+- Importador utiliza somente a página escolhida e mantém todas as validações de gabarito, numeração e quantidade de alternativas.
+- Seleções inválidas são recusadas. Provas, perfis, respostas e históricos existentes permanecem intactos.
+- Testes automatizados com 4 páginas e 50 respostas passaram; conferência do resultado no navegador ainda pendente.
+
 ## 0.6.17 — 16/11/2026
 
 - Corrigido cache de módulos ES do GitHub Pages. A versão do HTML podia avançar sem que `pdf-layout.mjs` fosse recarregado, mantendo o erro de uma versão antiga.
