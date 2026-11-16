@@ -231,6 +231,7 @@ export function normalizeOutcomeSelection(filters={}){
  return [...new Set(raw.filter(v=>allowed.has(v)))];
 }
 export function filtered(state,profileId,f={}){
+  const selectedOutcomes=normalizeOutcomeSelection(f);
   let result=state.questions.filter(q=>{
     if(f.examId&&q.examId!==f.examId)return false;
     if(f.year&&q.year!==f.year)return false;
@@ -242,7 +243,6 @@ export function filtered(state,profileId,f={}){
     if(f.topic&&!types.some(x=>x.topic===f.topic))return false;
     if(f.status&&f.status!=='all'&&q.status!==f.status)return false;
     if(!f.status&&q.status!=='active')return false;
-    const selectedOutcomes=normalizeOutcomeSelection(f);
     if(selectedOutcomes.length&&!selectedOutcomes.includes(outcome(state,profileId,q)))return false;
     return true;
   });
