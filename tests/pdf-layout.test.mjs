@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {spatialLines,spatialQuestions,chosenAnswerSection,identifyBookletCode,parseGridKey,questionIntegrity,isInstructionSheet,declaredQuestionCount,declaredAlternativeCount,inferredAlternativeCount,normalizeQuestionHeading,humanizePdfText,attachSuperscriptOrdinals,formatQuestionStem} from '../pdf-layout.mjs';
+import {spatialLines,spatialQuestions,chosenAnswerSection,verifiedExamJob,identifyBookletCode,parseGridKey,questionIntegrity,isInstructionSheet,declaredQuestionCount,declaredAlternativeCount,inferredAlternativeCount,normalizeQuestionHeading,humanizePdfText,attachSuperscriptOrdinals,formatQuestionStem} from '../pdf-layout.mjs';
 import {parseKey,inferExamMetadata,classifyByExamDivision} from '../core.mjs';
 function item(str,x,y,width=40){return {str,transform:[1,0,0,1,x,842-y],width};}
 test('leitura espacial separa duas colunas e preserva a numeração original',()=>{
@@ -1245,4 +1245,24 @@ test('FCPC Aracati: PDF isolado do gabarito de Auxiliar de Serviços Gerais é g
  });
  assert.ok(wrong.error,'Gabarito isolado de outro cargo não deve ser aceito');
  assert.equal(wrong.format,'grid');
+});
+
+
+test('FCPC: cargo da capa e nome de arquivo conferem automaticamente, mesmo após segmentação espacial',()=>{
+ const role='AUXILIAR DE SERVICOS GERAIS';
+ const filename='auxiliar_de_servicos_gerais (1).pdf';
+ const meta={examFilename:filename,examTitle:'2026 — FCPC — CM-ARACATI — Auxiliar de Serviços Gerais'};
+ const cover=[
+  'CÂMARA MUNICIPAL DE ARACATI',
+  'Auxiliar de Serviços Gerais',
+  'Instruções',
+  'Prezado(a) Candidato(a)',
+  '50 (cinquenta) questões'
+ ].join('\n');
+ assert.equal(verifiedExamJob(role,cover,meta),true);
+ assert.equal(verifiedExamJob(role,'[[PAGE:1]]\nInstruções',{examFilename:filename}),true);
+ assert.equal(verifiedExamJob(role,cover,{examFilename:'documento.pdf'}),true);
+ assert.equal(verifiedExamJob('COPEIRO',cover,meta),false);
+ assert.equal(verifiedExamJob(role,'[[PAGE:1]]\nInstruções',{examFilename:'copeiro.pdf'}),false);
+ assert.equal(verifiedExamJob(role,'[[PAGE:1]]\nAuxiliar de Serviços\nGerais',{examFilename:'documento.pdf'}),true);
 });
