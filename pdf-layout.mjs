@@ -488,10 +488,16 @@ export function chosenAnswerSection(text,examText='',examInfo={}){
  const marks=[...source.matchAll(/(?:^|\n)\s*0{0,2}(\d{1,3})\s*[.]\s*PROVA\s+OBJETIVA\b/gim)];
  if(!marks.length)return {text:source,section:'única',error:null};
  const exam=norm(examText),code=exam.match(/\b0{0,2}(\d{1,3})\s*[.]\s*PROVA\s+OBJETIVA/),cargo=exam.includes('ANALISTA DE INFORMATICA')?'ANALISTA DE INFORMATICA':null;
+ const userCode=String(examInfo?.bookletCode||'').trim();
+ if(userCode&&!/^\d{1,3}$/.test(userCode))
+  return {text:'',section:null,error:'Código do caderno inválido. Informe somente os 1 a 3 dígitos que aparecem no gabarito.'};
+ if(userCode&&code&&Number(userCode)!==Number(code[1]))
+  return {text:'',section:null,error:'O código informado manualmente diverge da identificação impressa no caderno.'};
+ const selectedCode=code?Number(code[1]):userCode?Number(userCode):null;
  const sections=marks.map((m,i)=>({code:Number(m[1]),text:source.slice(m.index,marks[i+1]?.index||source.length)}));
- if(code&&!sections.some(x=>x.code===Number(code[1])))
+ if(selectedCode!==null&&!sections.some(x=>x.code===selectedCode))
   return {text:'',section:null,error:'O código da prova não consta no gabarito enviado. Confira se os arquivos correspondem ao mesmo cargo.'};
- let found=code?sections.find(x=>x.code===Number(code[1])):null;
+ let found=selectedCode!==null?sections.find(x=>x.code===selectedCode):null;
  if(!found&&cargo){
   const matches=sections.filter(x=>norm(x.text.slice(0,190)).includes(cargo));
   if(matches.length>1)return {text:'',section:null,error:'Várias seções do gabarito possuem o mesmo cargo. É necessário o código exato do caderno.'};
