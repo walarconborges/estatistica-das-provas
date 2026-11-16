@@ -574,8 +574,91 @@ export function verifiedExamJob(role,examText='',examInfo={}){
  return sources.some(hint=>jobTitleMatches(role,hint));
 }
 
+
+/**
+ * Detecta tabelas de gabarito por estrutura, e não por banca:
+ * "F1 Auxiliar de Serviços Gerais" (ou M1, S1...)
+ * "1 2 3 ... 35"
+ * "c e b ... b"
+ *
+ * Páginas podem conter vários cargos. Exige que a linha de números e
+ * a linha de letras sejam alinhadas e constituam sequência de 1 a N.
+ * Um mesmo PDF pode ter cadernos com quantidades diferentes.
+ */
+export function codedAnswerTables(raw){
+ const source=String(raw||'').replace(/\r/g,'');
+ const lines=source.split('\n').map(x=>x.trim());
+ const entries=[];
+ const header=/^([A-Z]{1,3}\d{1,3})\s+([^\n]{4,135})$/i;
+ const isPair=(numbers,answers)=>{
+  const a=String(numbers||'').trim().split(/\s+/);
+  const b=String(answers||'').trim().split(/\s+/);
+  return a.length>=10&&a.length<=100&&a.length===b.length&&
+   a.every((x,i)=>/^\d{1,3}$/.test(x)&&Number(x)===i+1)&&
+   b.every(x=>/^[A-E]$/i.test(x));
+ };
+ for(let i=0;i<lines.length;i++){
+  const match=lines[i].match(header);
+  if(!match)continue;
+  // Exigir alinhamento numérico e alfabético imediatamente abaixo;
+  // até 2 linhas em branco/ruído entre o título e a tabela.
+  let pairAt=-1;
+  for(let j=i+1;j<=Math.min(i+3,lines.length-2);j++){
+   if(isPair(lines[j],lines[j+1])){pairAt=j;break;}
+  }
+  if(pairAt<0)continue;
+  const numbers=lines[pairAt].split(/\s+/).map(Number);
+  const letters=lines[pairAt+1].split(/\s+/).map(x=>x.toUpperCase());
+  const text=lines[i]+'\n'+lines[pairAt]+'\n'+lines[pairAt+1];
+  const answers=Object.fromEntries(numbers.map((n,k)=>[n,letters[k]]));
+  entries.push({
+   code:match[1].toUpperCase(),title:norm(match[2]).trim(),
+   text,answers,count:numbers.length
+  });
+ }
+ return entries;
+}
+
 export function chosenAnswerSection(text,examText='',examInfo={}){
  const source=String(text||'').replace(/\r/g,'');
+
+
+ // Gabarito estruturado com um código de caderno e duas linhas
+ // (questões / respostas) por cargo. Reconhece F1, M1, S1, etc. sem
+ // depender do nome da banca ou da quantidade fixa de alternativas.
+ const codedTables=codedAnswerTables(source);
+ if(codedTables.length){
+  const cover=String(examText||'').split(/\[\[PAGE:\s*2\]\]/i)[0];
+  const codes=[...cover.matchAll(/(?:^|\n)\s*([A-Z]{1,3}\d{1,3})\s+([^\n]{4,135})/gim)]
+    .map(x=>({code:x[1].toUpperCase(),title:x[2].trim()}));
+  const coverMatches=codedTables.filter(t=>codes.some(c=>
+    c.code===t.code&&jobTitleMatches(t.title,c.title)));
+  let found=null;
+  if(coverMatches.length===1)found=coverMatches[0];
+  else if(coverMatches.length>1)return {text:'',section:null,format:'grid',
+   error:'O caderno identifica mais de uma tabela correspondente ao gabarito.'};
+  if(!found){
+   const hints=[
+    String(examInfo?.examFilename||'').replace(/[_-]+/g,' ')
+      .replace(/\.pdf$/i,'').replace(/\s*\(\d+\)\s*$/,''),
+    String(examInfo?.examTitle||'').split(/\s+[—–]\s+/).at(-1)||'',
+    cover.slice(0,2400)
+   ];
+   const possible=codedTables.filter(t=>hints.some(hint=>jobTitleMatches(t.title,hint)));
+   if(possible.length===1)found=possible[0];
+   else if(possible.length>1)return {text:'',section:null,format:'grid',
+     error:'Vários cargos têm nomes compatíveis no gabarito. Não é possível escolher com segurança.'};
+  }
+  if(!found)return {text:'',section:null,format:'grid',
+    error:'O gabarito contém tabelas de vários cargos, mas nenhuma corresponde ao código e nome do caderno.'};
+  if(codes.length&&codes.some(c=>c.code===found.code&&!jobTitleMatches(found.title,c.title)))
+   return {text:'',section:null,format:'grid',
+    error:'O código do caderno corresponde a um cargo diferente no gabarito.'};
+  if(Object.keys(found.answers).length!==found.count||found.count<10)
+   return {text:'',section:null,format:'grid',
+    error:'A tabela do cargo identificado não possui uma resposta para cada questão.'};
+  return {text:found.text,section:found.code+' — '+found.title,format:'grid',error:null};
+ }
 
  // Gabaritos por cargo em páginas individuais: a FCPC (Aracati/CE)
  // imprime as 50 respostas em linhas tabuladas e usa a mesma sequência
