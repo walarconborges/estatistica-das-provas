@@ -412,6 +412,33 @@ export function spatialQuestions(pages){
  }
  questions.push(...recoverExplicitQuestionHeadings(pages,questions,expectedAlternatives));
 
+ // Textos longos podem ocupar a coluna esquerda inteira e continuar no
+ // início da direita ANTES da primeira questão. Aplicar aos blocos que
+ // declaram explicitamente o intervalo (ex.: "questões 01 a 15"),
+ // sem transportar texto de outras seções ou páginas.
+ for(const context of contexts){
+  if(context.from!==1||context.col!==0||!context.page||context.text.length<150)continue;
+  const pg=pages.find(p=>p.number===context.page);
+  const firstRight=questions.filter(q=>q.sourcePage===context.page&&q.sourceColumn===1&&
+   q.originalNumber>=context.from&&q.originalNumber<=context.to)
+   .sort((a,b)=>a.startY-b.startY)[0];
+  if(!pg||!firstRight)continue;
+  const rows=(pg.lines||[]).filter(row=>row.col===1&&
+   row.y<firstRight.startY-8&&!noise(String(row.text||''))&&
+   !/^P[AÁ]GINA\s+\d+/i.test(String(row.text||'')))
+   .sort((a,b)=>a.y-b.y);
+  const continuation=humanizePdfText(rows.map(row=>row.text).join('\n'));
+  if(continuation.length<90)continue;
+  const previous=context.text;
+  context.text=humanizePdfText(previous+'\n'+continuation);
+  for(const q of questions){
+   if(q.originalNumber>=context.from&&q.originalNumber<=context.to&&q.contextText===previous){
+    q.contextText=context.text;
+    q.contextRange=[context.from,context.to];
+   }
+  }
+ }
+
  // Algumas provas colocam o texto-base antes da questão 1, sem escrever
  // "leia o texto para responder às questões...". Preservar o preâmbulo
  // extenso de Português e vinculá-lo às questões que fazem referência
