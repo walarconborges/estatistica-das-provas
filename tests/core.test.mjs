@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {fresh,addExam,upgradeRecoveredExam,findPreviouslyImportedExam,parseExamText,parseKey,inferExamMetadata,repeatedSupportText,sameQuestion,recordAttempt,outcome,stats,createSimulation,finishSimulation,simulationResult,filtered,prioritize} from '../core.mjs';
+import {fresh,addExam,upgradeRecoveredExam,findPreviouslyImportedExam,parseExamText,parseKey,inferExamMetadata,completeExamMetadata,classifyByExamDivision,repeatedSupportText,sameQuestion,recordAttempt,outcome,stats,createSimulation,finishSimulation,simulationResult,filtered,prioritize} from '../core.mjs';
 const meta={title:'Prova IBGP 2026',year:'2026',banca:'IBGP',orgao:'SEMED'};
 const sample=()=>({stem:'Qual é o plural de cidadão?',originalNumber:1,options:[{letter:'A',text:'Cidadãos'},{letter:'B',text:'Cidadões'}],discipline:'Língua Portuguesa',disciplineCode:'LP',topic:'Gramática',topicCode:'G'});
 function data(){const s=fresh();const e=addExam(s,meta,[sample(),{...sample(),originalNumber:2,stem:'Outra questão'}],{1:'A',2:'B'});return {s,e,q:s.questions[0]}}
@@ -198,4 +198,19 @@ test('VUNESP/UNESP: capa e gabarito identificam banca, instituição, ano e carg
   const result=classifyByExamDivision({originalNumber:n},m,guess);
   assert.equal(result.disciplineCode,code,'Questão '+n);
  }
+});
+
+test('preenchimento manual resolve apenas metadados ausentes sem trocar informação reconhecida',()=>{
+ const missing=inferExamMetadata('Caderno com 40 questões','prova.pdf','','gabarito.pdf');
+ const fixed=completeExamMetadata(missing,{year:'2026',banca:'VUNESP',orgao:'UNESP'},2026);
+ assert.deepEqual(fixed.missing,[]);
+ assert.equal(fixed.title,'2026 — VUNESP — UNESP — prova');
+ assert.equal(missing.banca,'NI');
+ const known=inferExamMetadata('VNSP2511/002\nUNESP\n2026','prova.pdf','','gabarito.pdf');
+ const protectedMeta=completeExamMetadata(known,{year:'2021',banca:'OUTRA',orgao:'OUTRO'},2026);
+ assert.equal(protectedMeta.year,'2026');
+ assert.equal(protectedMeta.banca,'VUNESP');
+ assert.equal(protectedMeta.orgao,'UNESP');
+ assert.throws(()=>completeExamMetadata(missing,{year:'9999'},2026),/Ano informado inválido/);
+ assert.throws(()=>completeExamMetadata(missing,{orgao:'x'},2026),/nome válido/);
 });
