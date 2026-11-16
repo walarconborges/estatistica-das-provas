@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {spatialLines,spatialQuestions,chosenAnswerSection,identifyBookletCode,parseGridKey,questionIntegrity,declaredQuestionCount,declaredAlternativeCount,normalizeQuestionHeading,humanizePdfText,attachSuperscriptOrdinals,formatQuestionStem} from '../pdf-layout.mjs';
+import {spatialLines,spatialQuestions,chosenAnswerSection,identifyBookletCode,parseGridKey,questionIntegrity,declaredQuestionCount,declaredAlternativeCount,inferredAlternativeCount,normalizeQuestionHeading,humanizePdfText,attachSuperscriptOrdinals,formatQuestionStem} from '../pdf-layout.mjs';
 import {parseKey,inferExamMetadata,classifyByExamDivision} from '../core.mjs';
 function item(str,x,y,width=40){return {str,transform:[1,0,0,1,x,842-y],width};}
 test('leitura espacial separa duas colunas e preserva a numeração original',()=>{
@@ -937,4 +937,85 @@ test('Legalle: texto sobre telemedicina fica disponível nas questões 1 a 10, i
   assert.match(q.contextText,/pandemia acelerou/);
   assert.equal(q.options.length,4);
  }
+});
+
+
+test('Objetiva Sossêgo: o gabarito multicargo escolhe exclusivamente Auxiliar de Serviços Gerais',()=>{
+ const correct=['D','D','C','A','B','C','B','D','A','D','C','B','A','B','C','A','D','C','B','C',
+ 'A','C','A','B','C','D','C','B','C','A','B','D','A','B','D','C','A','D','B','C'];
+ const wrong=[...correct];wrong[0]='C';wrong[34]='A';
+ const rows=letters=>Array.from({length:10},(_,i)=>[i,i+10,i+20,i+30]
+   .map(index=>String(index+1).padStart(2,'0')+') '+letters[index]).join('  ')).join('\n');
+ const text='[[PAGE:1]]\nMUNICÍPIO DE SOSSÊGO/PB\nCONCURSO PÚBLICO Nº 01/2026\nGABARITO PRELIMINAR\n'+
+  'AGENTE COMUNITÁRIO DE SAÚDE\n'+rows(Array(40).fill('A'))+'\n'+
+  'AUXILIAR DE DENTISTA\n'+rows(Array(40).fill('C'))+'\n'+
+  'AUXILIAR DE SERVIÇOS GERAIS\n'+rows(correct)+'\n'+
+  'GARI\n'+rows(wrong)+'\n'+
+  'TÉCNICO EM INFORMÁTICA\n'+rows(Array(40).fill('B'));
+ const exam='[[PAGE:1]]\nMUNICÍPIO DE SOSSÊGO/PB\nAuxiliar de Serviços Gerais\n40 questões';
+ const section=chosenAnswerSection(text,exam,{
+  examFilename:'auxiliar_de_servicos_gerais.pdf',
+  examTitle:'2026 — OBJETIVA — PM-SOSSEGO — Auxiliar de Serviços Gerais'
+ });
+ assert.equal(section.error,null);
+ assert.equal(section.section,'AUXILIAR DE SERVICOS GERAIS');
+ assert.equal(section.format,'pairs');
+ const key=parseKey(section.text);
+ assert.equal(Object.keys(key).length,40);
+ for(let n=1;n<=40;n++)assert.equal(key[n],correct[n-1],'gabarito da questão '+n);
+ assert.equal(key[35],'D');
+ assert.ok(chosenAnswerSection(text,'[[PAGE:1]]\nCargo não identificado',{examFilename:'prova.pdf'}).error);
+});
+
+test('Objetiva: detectar quatro alternativas por repetição A–D quando capa não declara o total',()=>{
+ const cover={number:1,text:'Este caderno de prova contém 40 questões;',lines:[
+  {col:0,x:60,y:100,text:'Este caderno de prova contém 40 questões;'}]};
+ const pages=[cover];
+ for(let n=1;n<=40;n++){
+  const number=Math.floor((n-1)/4)+2,col=(n-1)%2,x=col?310:48,y=65+(Math.floor((n-1)%4)/2)*290;
+  let page=pages.find(p=>p.number===number);
+  if(!page){page={number,width:595,height:842,lines:[]};pages.push(page);}
+  page.lines.push({col,x,y,text:n+') Em um exercício de Língua Portuguesa, assinale a correta.'});
+  for(let j=0;j<4;j++)page.lines.push({col,x,y:y+45+j*25,text:'abcd'[j]+') Alternativa '+String.fromCharCode(65+j)});
+ }
+ assert.equal(declaredAlternativeCount(pages),0);
+ assert.equal(inferredAlternativeCount(pages),4);
+ const result=spatialQuestions(pages);
+ assert.equal(result.questions.length,40);
+ assert.ok(result.questions.every(q=>q.options.length===4&&!q.extractionReview&&!q.extractionFallback));
+ const key=Object.fromEntries(result.questions.map(q=>[q.originalNumber,'D']));
+ assert.deepEqual(questionIntegrity(result.questions,key,40,4),[]);
+ assert.equal(declaredQuestionCount(pages),40);
+});
+
+test('Objetiva: texto-base de Português antes da primeira questão não desaparece',()=>{
+ const cover={number:1,text:'40 questões',lines:[{col:0,x:60,y:200,text:'40 questões'}]};
+ const page={number:2,width:595,height:842,lines:[
+  {col:0,x:44,y:40,text:'LÍNGUA PORTUGUESA | 15 QUESTÕES'},
+  {col:0,x:45,y:69,text:'Pressão arterial com valor de 12/8 passa a ser considerada pré-hipertensão.'},
+  {col:0,x:45,y:91,text:'A leitura de 12/8 era vista como sinônimo de pressão arterial perfeita.'},
+  {col:0,x:45,y:113,text:'As novas diretrizes indicam que quem está na faixa de pré-hipertensão deve'},
+  {col:0,x:45,y:135,text:'adotar mudanças no estilo de vida, controlar o peso e praticar exercícios.'},
+  {col:0,x:45,y:157,text:'A hipertensão raramente aparece sozinha, sendo uma doença silenciosa.'},
+  {col:0,x:45,y:310,text:'1) A palavra hipertensão contém o prefixo hiper. Seu significado é:'},
+  ...'abcd'.split('').map((a,i)=>({col:0,x:55,y:348+i*20,text:a+') Significado '+a})),
+  {col:0,x:45,y:468,text:'2) De acordo com o texto, analise as afirmativas.'},
+  ...'abcd'.split('').map((a,i)=>({col:0,x:55,y:500+i*20,text:a+') Sequência '+a})),
+  {col:1,x:311,y:70,text:'3) De acordo com o texto, assinale a alternativa correta.'},
+  ...'abcd'.split('').map((a,i)=>({col:1,x:315,y:115+i*20,text:a+') Alternativa '+a})),
+  {col:1,x:311,y:263,text:'4) Quais são os antônimos de termos sublinhados no 4º parágrafo?'},
+  ...'abcd'.split('').map((a,i)=>({col:1,x:315,y:310+i*20,text:a+') Oposto '+a})),
+  {col:1,x:311,y:460,text:'5) Classifique a palavra destacada na oração.'},
+  ...'abcd'.split('').map((a,i)=>({col:1,x:315,y:510+i*20,text:a+') Classe '+a}))
+ ]};
+ const pages=[cover,page];
+ const parsed=spatialQuestions(pages);
+ for(const n of [1,2,3,4]){
+  const q=parsed.questions.find(item=>item.originalNumber===n);
+  assert.ok(q,'Questão '+n+' preservada');
+  assert.match(q.contextText,/Pressão arterial/);
+  assert.match(q.contextText,/hipertensão raramente aparece/);
+ }
+ assert.equal(parsed.questions.find(q=>q.originalNumber===5).contextText,'');
+ assert.equal(parsed.contexts.length,1);
 });
