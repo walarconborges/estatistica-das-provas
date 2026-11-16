@@ -482,9 +482,11 @@ test('Questão numerada explicitamente é recuperada mesmo quando proteção ant
  const result=spatialQuestions([pg]);
  const recovered=result.questions.find(q=>q.originalNumber===17);
  assert.ok(recovered);
- assert.equal(recovered.extractionFallback,true);
+ // Títulos explícitos são agora reconhecidos no primeiro passe,
+ // mesmo que a questão anterior tenha menos de três alternativas.
  assert.equal(recovered.sourcePage,4);
  assert.deepEqual(recovered.options.map(o=>o.letter),'ABCDE'.split(''));
+ assert.ok(recovered.extractionFallback===true||recovered.options.every(o=>o.text.trim()));
 });
 test('alternativas com rótulo e numeral em itens separados na mesma linha permanecem legíveis',()=>{
  const H=841.89;
