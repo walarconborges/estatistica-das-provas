@@ -632,6 +632,8 @@ export function chosenAnswerSection(text,examText='',examInfo={}){
   const codes=[...cover.matchAll(/(?:^|\n)\s*([A-Z]{1,3}\d{1,3})\s+([^\n]{4,135})/gim)]
     .map(x=>({code:x[1].toUpperCase(),title:x[2].trim()}));
   const coverCodes=codes.filter(c=>codedTables.some(t=>t.code===c.code));
+  if(codes.length&&coverCodes.length===0)return {text:'',section:null,format:'grid',
+   error:'O código de cargo declarado no caderno não consta no gabarito enviado.'};
   const coverMatches=codedTables.filter(t=>coverCodes.some(c=>
     c.code===t.code&&jobTitleMatches(t.title,c.title)));
   let found=null;
