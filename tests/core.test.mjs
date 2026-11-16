@@ -179,3 +179,23 @@ test('reimportação FEPESE não altera prova ambígua ou de outro gabarito',()=
  assert.equal(state.questions[0],prior);
  assert.equal(state.exams[0].id,exam.id);
 });
+
+test('VUNESP/UNESP: capa e gabarito identificam banca, instituição, ano e cargo 002',()=>{
+ const cover='002. Prova Objetiva\nanalista de informática II\nárea de atuação: desenvolvimento de sistemas institucionais\n'+
+ '40 questões objetivas.\nVNSP2511/002-AnInfor-II-DesenvSistemasInstitucionais';
+ const key='UNIVERSIDADE ESTADUAL PAULISTA “JÚLIO DE MESQUITA FILHO” – UNESP\n'+
+ 'EDITAL Nº 046/2026 DE DIVULGAÇÃO DO GABARITO\n';
+ const m=inferExamMetadata(cover,'analista_de_informatica_ii_desenvolvimento_de_sistemas_institucionais.pdf',
+  key,'gabarito (4).pdf');
+ assert.equal(m.banca,'VUNESP');
+ assert.equal(m.orgao,'UNESP');
+ assert.equal(m.year,'2026');
+ assert.ok(m.title.includes('Analista de Informática II'));
+ assert.ok(m.title.includes('desenvolvimento de sistemas institucionais'));
+ assert.deepEqual(m.missing,[]);
+ for(const [n,code] of [[1,'LP'],[10,'LP'],[11,'RL'],[15,'RL'],[16,'LE'],[20,'LE'],[21,'IN'],[40,'IN']]){
+  const guess={discipline:'Língua Portuguesa',disciplineCode:'LP',topic:'Geral',topicCode:'G'};
+  const result=classifyByExamDivision({originalNumber:n},m,guess);
+  assert.equal(result.disciplineCode,code,'Questão '+n);
+ }
+});
