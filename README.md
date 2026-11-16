@@ -1,9 +1,18 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.23 — 16/11/2026**  
+**Versão experimental 0.6.24 — 16/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.24 — rodapé da Objetiva removido da questão 21 já importada
+
+- Corrigida a questão 21 de Matemática da prova **2026 — Objetiva — PM-Sossego**: a alternativa D tinha o rodapé editorial `www.objetivas.com.br` indevidamente anexado ao texto.
+- A leitura espacial ignora o endereço quando aparece como linha de rodapé. Caso seja anexado ao fim da alternativa durante a extração, o texto é removido antes de salvar a nova questão.
+- **Questões já cadastradas são saneadas automaticamente ao carregar os dados**, inclusive depois da sincronização, sem excluir prova ou refazer importação. O reparo afeta apenas o trecho exato de rodapé na última posição do campo; endereços de outras páginas e referências no corpo das perguntas não são removidos.
+- Mantém o conteúdo `D) E - C - C.`, o gabarito oficial, os identificadores, o enunciado, as estatísticas e os históricos de respostas sem alterações.
+- Adicionados testes para a importação espacial, para o estado antigo carregado do banco, para a proteção de URLs de conteúdo e para a idempotência da limpeza.
+- Não foi necessário zerar o banco ou alterar o PDF original. Testes automatizados aprovados; a renderização final ainda deve ser confirmada no navegador.
 
 ## Versão 0.6.23 — leitor genérico de gabaritos tabulados por cargo
 
