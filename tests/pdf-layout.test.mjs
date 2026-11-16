@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {spatialLines,spatialQuestions,chosenAnswerSection,identifyBookletCode,parseGridKey,questionIntegrity,declaredQuestionCount,humanizePdfText,attachSuperscriptOrdinals,formatQuestionStem} from '../pdf-layout.mjs';
+import {spatialLines,spatialQuestions,chosenAnswerSection,identifyBookletCode,parseGridKey,questionIntegrity,declaredQuestionCount,declaredAlternativeCount,normalizeQuestionHeading,humanizePdfText,attachSuperscriptOrdinals,formatQuestionStem} from '../pdf-layout.mjs';
 import {parseKey,inferExamMetadata,classifyByExamDivision} from '../core.mjs';
 function item(str,x,y,width=40){return {str,transform:[1,0,0,1,x,842-y],width};}
 test('leitura espacial separa duas colunas e preserva a numeração original',()=>{
@@ -818,4 +818,89 @@ test('VUNESP: desempate por área completa quando o número do caderno está aus
  const wrong=chosenAnswerSection(key,'[[PAGE:1]]\nAnalista de Informática II',
   {examFilename:'analista_de_informatica_ii.pdf'});
  assert.ok(wrong.error);
+});
+
+
+test('Legalle CISCOPAR 2026: Questão 1 1 e Questão 4O são as questões 11 e 40',()=>{
+ assert.equal(normalizeQuestionHeading('Questão 1 1. A farmácia central distribuiu caixas'),
+   'Questão 11. A farmácia central distribuiu caixas');
+ assert.equal(normalizeQuestionHeading('Questão 4O.O cuté uma ferramenta de linha de comando'),
+   'Questão 40. O cuté uma ferramenta de linha de comando');
+ assert.equal(normalizeQuestionHeading('O número 4O representa um código'),'O número 4O representa um código');
+ assert.equal(normalizeQuestionHeading('1 1. Conte os números'),'1 1. Conte os números');
+ const page={number:4,width:595.28,height:841.89,lines:[
+  {col:0,x:38,y:48,text:'Questão 10. Analise a estrutura sintática.'},
+  ...'ABCD'.split('').map((letter,i)=>({col:0,x:37,y:92+i*17,text:'('+letter+') Texto da alternativa '+letter})),
+  {col:0,x:38,y:222,text:'Questão 1 1. A farmácia central do consórcio distribuiu 160 caixas.'},
+  ...'ABCD'.split('').map((letter,i)=>({col:0,x:37,y:268+i*17,text:'('+letter+') '+(80+i*10)+' caixas.'})),
+  {col:0,x:38,y:440,text:'Questão 12. A diretoria do consórcio decidiu pavimentar uma área.'},
+  ...'ABCD'.split('').map((letter,i)=>({col:0,x:37,y:482+i*17,text:'('+letter+') '+(90-i*6)+' metros.'})),
+  {col:1,x:329,y:50,text:'Questão 13. Um reservatório possui diâmetro de 4 metros.'},
+  ...'ABCD'.split('').map((letter,i)=>({col:1,x:328,y:95+i*16,text:'('+letter+') '+(48+i*12)+' metros cúbicos.'}))
+ ]};
+ const page8={number:8,width:595.28,height:841.89,lines:[
+  {col:1,x:326,y:48,text:'Questão 38. Um Analista em Informática precisa acessar servidor Linux.'},
+  ...'ABCD'.split('').map((letter,i)=>({col:1,x:326,y:91+i*18,text:'('+letter+') Protocolo '+letter})),
+  {col:1,x:326,y:246,text:'Questão 39. Um Analista em Informática configura permissões chmod.'},
+  ...'ABCD'.split('').map((letter,i)=>({col:1,x:326,y:292+i*18,text:'('+letter+') chmod '+(644+i*11)})),
+  {col:1,x:326,y:475,text:"Questão 4O.O cuté uma ferramenta de linha de comando do Linux."},
+  ...'ABCD'.split('').map((letter,i)=>({col:1,x:326,y:558+i*27,text:'('+letter+') Resultado '+letter}))
+ ]};
+ const cover={number:1,width:595.28,height:841.89,lines:[
+   {col:0,x:95,y:190,text:'50 questões'},
+   {col:0,x:95,y:227,text:'4 alternativas'}]};
+ const parsed=spatialQuestions([cover,page,page8]).questions;
+ assert.deepEqual(parsed.map(q=>q.originalNumber),[10,11,12,13,38,39,40]);
+ assert.equal(parsed.find(q=>q.originalNumber===11).options.length,4);
+ assert.match(parsed.find(q=>q.originalNumber===40).stem,/cuté uma ferramenta/);
+ assert.ok(parsed.every(q=>q.extractionReview===false));
+ const answer=Object.fromEntries(parsed.map(q=>[q.originalNumber,'A']));
+ // Completar os números entre 10 e 40 não pertence ao teste de páginas parciais;
+ // neste caso verificar somente que as opções têm quantidade declarada correta.
+ assert.ok(!questionIntegrity(parsed,answer,0,4).some(x=>/contém .* alternativas/.test(x)));
+});
+
+test('Legalle: gabarito definitivo multicargo seleciona Analista em Informática Tabela 3, não Técnico',()=>{
+ const official=[
+  'A A C D D C C C C C','D B A C A B C B A D',
+  'A B D A C A B C A D','A C B D C D D A C D',
+  'A A C B C B D D B D'
+ ].join(' ').split(/\s+/);
+ assert.equal(official.length,50);
+ const row=(letters,offset)=>letters.slice(offset,offset+10)
+    .map((letter,i)=>String(offset+i+1).padStart(2,'0')+': '+letter).join('  ');
+ const block=(name,answers)=>name+' - Tabela 3\n'+
+  [0,10,20,30,40].map(i=>row(answers,i)).join('\n')+'\n';
+ const key='CISCOPAR\nCONCURSO PÚBLICO 01/2026\n'+
+  block('Analista em Administração e Planejamento',official.map((v,i)=>i>20?'D':v))+
+  block('Analista em Informática',official)+
+  block('Assessor Jurídico',official.map((v,i)=>i>20?'B':v))+
+  block('Técnico em Informática',Array(50).fill('A'));
+ const selected=chosenAnswerSection(key,
+  '[[PAGE:1]]\nCISCOPAR\nANALISTA EM IN FORMATICA\n50 questões\n4 alternativas',
+  {examFilename:'analista_em_informatica.pdf'});
+ assert.equal(selected.error,null);
+ assert.equal(selected.format,'pairs');
+ assert.match(selected.section,/ANALISTA EM INFORMATICA - Tabela 3/);
+ const answers=parseKey(selected.text);
+ assert.equal(Object.keys(answers).length,50);
+ for(const n of [1,10,11,20,21,30,40,41,50])assert.equal(answers[n],official[n-1]);
+ assert.equal(answers[22],'B');
+ assert.equal(answers[40],'D');
+ assert.equal(answers[50],'D');
+ assert.ok(chosenAnswerSection(key,'Caderno sem cargo',{examFilename:'caderno.pdf'}).error);
+});
+
+test('capa Legalle declara 50 questões e 4 alternativas; integridade preserva quatro escolhas',()=>{
+ const cover={number:1,text:'PROVA TEÓRICO-OBJETIVA\n50 questões\n4 alternativas'};
+ assert.equal(declaredQuestionCount([cover]),50);
+ assert.equal(declaredAlternativeCount([cover]),4);
+ assert.equal(declaredAlternativeCount([{text:'50 questões\n5 alternativas'}]),5);
+ assert.equal(declaredAlternativeCount([{text:'50 questões'}]),0);
+ const questions=Array.from({length:50},(_,i)=>({originalNumber:i+1,
+  options:'ABCD'.split('').map(letter=>({letter,text:'Alternativa '+letter})),
+  extractionReview:false}));
+ const key=Object.fromEntries(questions.map(q=>[q.originalNumber,'B']));
+ assert.deepEqual(questionIntegrity(questions,key,50,4),[]);
+ assert.ok(questionIntegrity(questions,key,50,5).some(x=>/contém 4 alternativas/.test(x)));
 });
