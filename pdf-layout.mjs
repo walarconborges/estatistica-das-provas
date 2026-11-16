@@ -518,34 +518,62 @@ export function identifyBookletCode(examText='',examInfo={}){
 export function chosenAnswerSection(text,examText='',examInfo={}){
  const source=String(text||'').replace(/\r/g,'');
 
- // Gabaritos por página e cargo: a FCPC (Aracati/CE) dispõe as respostas
- // em tabelas com linhas de números e letras. Cada página pertence a
- // um cargo diferente, mesmo quando Português e Legislação coincidem.
+ // Gabaritos por cargo em páginas individuais: a FCPC (Aracati/CE)
+ // imprime as 50 respostas em linhas tabuladas e usa a mesma sequência
+ // inicial em cargos diferentes. Nunca escolher apenas pela quantidade.
  const pageSections=source.match(/\[\[PAGE:\s*\d+\]\][\s\S]*?(?=\[\[PAGE:\s*\d+\]\]|$)/g)||[];
  const pageGrids=pageSections.map((page)=>{
-  const m=page.match(/GABARITO\s+(?:PRELIMINAR|DEFINITIVO)\s*\n\s*([^\n]+?)\s*\n\s*PROVA\s*1\s*[-–]/i);
-  return m&&/PROVA\s*2\s*[-–]/i.test(page)&&/PROVA\s*3\s*[-–]/i.test(page)
-   ?{role:norm(m[1]).trim(),text:page}:null;
+  const preamble=page.match(/GABARITO\s+(?:PRELIMINAR|DEFINITIVO)([\s\S]*?)(?=PROVA\s*1\s*[-–])/i)?.[1]||'';
+  const roleLines=preamble.split('\n').map(x=>x.trim()).filter(Boolean);
+  // "Auxiliar de Serviços Gerais" pode se fragmentar em várias linhas
+  // por fonte/colunas, mas está sempre entre o título e "Prova 1".
+  const role=roleLines.join(' ').replace(/\s+/g,' ').trim();
+  return role&&/PROVA\s*2\s*[-–]/i.test(page)&&/PROVA\s*3\s*[-–]/i.test(page)
+   ?{role:norm(role).trim(),text:page}:null;
  }).filter(Boolean);
  if(pageGrids.length>=2){
-  const sources=[
-   norm(String(examInfo?.examFilename||'').replace(/[_-]+/g,' ')),
-   norm(String(examInfo?.examTitle||'')),
-   norm(String(examText||'').split(/\[\[PAGE:\s*2\]\]/i)[0])
+  const compact=value=>norm(value).replace(/[^A-Z0-9]/g,'');
+  const normWords=value=>norm(value).replace(/[^A-Z0-9]+/g,' ').trim().split(/\s+/).filter(Boolean);
+  const common=new Set(['DE','DA','DO','DAS','DOS','EM','PARA','E']);
+  const evidence=[
+   String(examInfo?.examFilename||'').replace(/[_-]+/g,' ')
+    .replace(/\.pdf$/i,'').replace(/\s*\(\d+\)\s*$/,''),
+   String(examInfo?.examTitle||'').split(/\s+[—–]\s+/).at(-1)||'',
+   String(examText||'').split(/\[\[PAGE:\s*2\]\]/i)[0].slice(0,2800)
   ];
-  let chosen=null;
-  for(const evidence of sources){
-   if(!evidence)continue;
-   const matches=pageGrids.filter(grid=>evidence.includes(grid.role));
-   if(matches.length>1)return {text:'',section:null,format:'grid',
-    error:'O gabarito tabulado corresponde a mais de um cargo. Verifique o caderno.'};
-   if(matches.length===1){chosen=matches[0];break;}
+  const matchesRole=(role,hint)=>{
+   const roleCompact=compact(role),hintCompact=compact(hint);
+   if(roleCompact.length>=8&&hintCompact.includes(roleCompact))return true;
+   // Como alguns PDFs dividem letras/palavras em linhas separadas,
+   // exigir todos os termos distintivos, na ordem. Não comparar só
+   // "Auxiliar", pois pode haver Auxiliar Administrativo e outros.
+   const tokens=normWords(role).filter(t=>!common.has(t)&&t.length>2);
+   const hintWords=normWords(hint).filter(t=>!common.has(t));
+   if(tokens.length<2||hintWords.length<2)return false;
+   let position=0;
+   for(const token of tokens){
+    const index=hintWords.findIndex((word,i)=>i>=position&&
+      (word===token||(token.length>=5&&word.startsWith(token)&&token.length>=word.length-2)));
+    if(index<0)return false;
+    position=index+1;
+   }
+   return true;
+  };
+  let selected=null;
+  for(const hint of evidence){
+   if(!hint)continue;
+   const found=pageGrids.filter(section=>matchesRole(section.role,hint));
+   if(found.length>1)return {text:'',section:null,format:'grid',
+    error:'O gabarito tabulado corresponde a mais de um cargo. Confira o nome exato do caderno.'};
+   if(found.length===1){selected=found[0];break;}
   }
-  if(!chosen)return {text:'',section:null,format:'grid',
-   error:'O gabarito possui páginas para vários cargos, mas não foi possível identificar a página do cargo solicitado.'};
-  return {text:chosen.text,section:chosen.role,format:'grid',error:null};
+  if(!selected){
+   const found=pageGrids.map(x=>x.role).join('; ').slice(0,270);
+   return {text:'',section:null,format:'grid',
+    error:'O gabarito possui páginas para vários cargos, sem correspondência única com o caderno. Cargos lidos: '+found};
+  }
+  return {text:selected.text,section:selected.role,format:'grid',error:null};
  }
-
 
 
  // Bancas que publicam uma tabela por cargo, por exemplo:
