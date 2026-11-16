@@ -3,7 +3,7 @@ const norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toUp
 const noise=s=>/^(?:PCIMARKPCI\b|WWW\.PCICONCURSOS\.|CVOT\d+|CONFIDENCIAL ATE|R\s*A\s*S\s*C\s*U\s*N\s*H\s*O\s*$)/i.test(norm(s.trim()))||/MDAwM[A-Za-z0-9+/=]{35}/.test(s);
 const questionRx=/^(?:QUEST[AÃ]O\s+0?(\d{1,3})(?:\s*[.):\-]\s*(.*))?|(\d{1,3})\s*[.):\-]\s*(.*))$/i;
 const altRx=/^\s*(?:\(([A-E])\)|([A-E])\s*[.):\-])\s*(.*)$/i;
-const isHeading=s=>/^(?:L[IÍ]NGUA PORTUGUESA|MATEM[AÁ]TICA|RACIOC[IÍ]NIO L[OÓ]GICO|LEGISLA[CÇ][AÃ]O|CONHECIMENTOS ESPEC[IÍ]FICOS|INFORM[AÁ]TICA|DIREITO ADMINISTRATIVO|DIREITO CONSTITUCIONAL|CONHECIMENTOS GERAIS)$/i.test(s.trim());
+const isHeading=s=>/^(?:L[IÍ]NGUA PORTUGUESA|MATEM[AÁ]TICA|RACIOC[IÍ]NIO L[OÓ]GICO|LEGISLA[CÇ][AÃ]O|CONHECIMENTOS ESPEC[IÍ]FICOS|INFORM[AÁ]TICA|DIREITO ADMINISTRATIVO|DIREITO CONSTITUCIONAL|CONHECIMENTOS GERAIS)(?:\s+\d{1,3}\s+QUEST[OÕ]ES)?$/i.test(s.trim());
 
 
 /**
@@ -244,6 +244,15 @@ function recoverExplicitQuestionHeadings(pages,questions){
 
 export function spatialQuestions(pages){
  const questions=[],contexts=[];let heading='';
+ // Questões de bancas como a FEPESE começam na margem da coluna.
+ // Listas numeradas dentro do enunciado começam recuadas: "1.", "2." etc.
+ // A margem é obtida do próprio caderno, sem assumir coordenadas fixas.
+ const questionLeftMargins=new Map();
+ for(const page of pages)for(const row of page.lines||[]){
+  if(!Number.isFinite(row.x)||!questionRx.test(String(row.text||'').trim()))continue;
+  const col=row.col??0,previous=questionLeftMargins.get(col);
+  if(previous===undefined||row.x<previous)questionLeftMargins.set(col,row.x);
+ }
  for(const page of pages){
   if(!page.lines?.length)continue;
   for(const col of [0,1]){
@@ -314,11 +323,14 @@ export function spatialQuestions(pages){
     // Cabeçalho e rodapé do caderno Quadrix não fazem parte do texto-base.
     if(/^(?:ANALISTA DE INFORM[AÁ]TICA|CONSELHO REGIONAL DE QU[IÍ]MICA DA\s+5[ªA]\s+REGI[ÃA]O|QUADRIX\s*\|\s*20\d{2}|PROVA OBJETIVA)$/i.test(s))continue;
     const qm=s.match(questionRx);
-    if(qm&&Number(qm[1]||qm[3])>=1&&Number(qm[1]||qm[3])<=300){
+    const explicitQuestionHeading=/^QUEST[AÃ]O\s+\d{1,3}\b/i.test(s);
+    const margin=questionLeftMargins.get(col);
+    const numberedSubitem=qm&&!explicitQuestionHeading&&Number.isFinite(row.x)&&
+      Number.isFinite(margin)&&row.x>margin+12;
+    if(qm&&!numberedSubitem&&Number(qm[1]||qm[3])>=1&&Number(qm[1]||qm[3])<=300){
      const qNumber=Number(qm[1]||qm[3]),qText=qm[2]||qm[4]||'';
      // Títulos "QUESTÃO N" são marcadores editoriais inequívocos;
      // só os falsos números "2.520" devem acionar a proteção.
-     const explicitQuestionHeading=/^QUEST[AÃ]O\s+\d{1,3}\b/i.test(s);
      if(current&&current.options.length<3&&qNumber!==current.originalNumber+1&&!explicitQuestionHeading){
       current.stem.push(s);continue; // Frações tipográficas como 2.520 não criam questões novas.
      }
@@ -397,6 +409,39 @@ export function chosenAnswerSection(text,examText='',examInfo={}){
   return {text:matches[0].text,section:code?code[1]:job,format:'grid',error:null};
  }
 
+
+ // FEPESE: o gabarito oficial reúne cargos identificados por S01, S02,
+ // M1 etc., seguidos por duas linhas horizontais de números e letras.
+ // Nunca usar respostas de outro cargo nem interpretar a tabela inteira
+ // como pares "questão-resposta" genéricos.
+ const fepeHeaders=[...source.matchAll(/(?:^|\n)\s*([SM]\d{1,2})\s+([^\n]{3,130})/gim)];
+ if(fepeHeaders.length>=2&&/CARGOS\s+COM\s+EXIGENCIA\s+DE\s+CURSO/i.test(norm(source))){
+  const sections=fepeHeaders.map((m,i)=>({
+   code:m[1].toUpperCase(),title:norm(m[2]).trim(),
+   text:source.slice(m.index,fepeHeaders[i+1]?.index||source.length)
+  }));
+  const exam=norm(examText);
+  const codeHits=[...exam.matchAll(/(?:^|\n)\s*([SM]\d{1,2})\s+[^\n]{3,130}/g)]
+   .map(m=>m[1]).filter(code=>sections.some(s=>s.code===code));
+  const codes=[...new Set(codeHits)];
+  if(codes.length>1)
+   return {text:'',section:null,format:'grid',error:'A prova apresenta mais de um código de cargo; confira o arquivo selecionado.'};
+  let match=null;
+  if(codes.length===1)match=sections.find(s=>s.code===codes[0]);
+  else{
+   const hints=[
+    norm(String(examInfo?.examFilename||'').replace(/[_-]+/g,' ')),
+    norm(examInfo?.examTitle||''),
+    exam.slice(0,2500)
+   ];
+   const candidates=sections.filter(s=>s.title.length>=5&&hints.some(h=>h.includes(s.title)));
+   if(candidates.length===1)match=candidates[0];
+  }
+  if(!match)
+   return {text:'',section:null,format:'grid',error:'Gabarito FEPESE com vários cargos: não foi possível identificar de forma única a seção do caderno.'};
+  return {text:match.text,section:match.code,format:'grid',error:null};
+ }
+
  const marks=[...source.matchAll(/(?:^|\n)\s*0{0,2}(\d{1,3})\s*[.]\s*PROVA\s+OBJETIVA\b/gim)];
  if(!marks.length)return {text:source,section:'única',error:null};
  const exam=norm(examText),code=exam.match(/\b0{0,2}(\d{1,3})\s*[.]\s*PROVA\s+OBJETIVA/),cargo=exam.includes('ANALISTA DE INFORMATICA')?'ANALISTA DE INFORMATICA':null;
@@ -429,6 +474,15 @@ export function parseGridKey(section){
  const numbers=Object.keys(answers).map(Number).sort((a,b)=>a-b);
  if(numbers[0]!==1||numbers.some((n,i)=>n!==i+1))return {};
  return answers;
+}
+
+/** Total explicitamente anunciado na capa; não confundir com respostas extraídas. */
+export function declaredQuestionCount(pages=[]){
+ const first=pages[0];
+ const cover=String(first?.text||(first?.lines||[]).map(line=>line.text).join('\n')||'');
+ const counts=[...cover.matchAll(/\b(\d{1,3})\s+QUEST[OÕ]ES\b/giu)]
+  .map(match=>Number(match[1])).filter(n=>n>=1&&n<=300);
+ return counts.length===1?counts[0]:0;
 }
 
 export function questionIntegrity(questions,answers,expected=0){
