@@ -1165,3 +1165,36 @@ test('FCPC: cargo do gabarito quebra em duas linhas e arquivo contém (1)',()=>{
  assert.match(notMatched.error,/Cargos lidos:/);
  assert.ok(notMatched.error.includes('AUXILIAR DE SERVICOS GERAIS'));
 });
+
+
+test('FCPC: seleção manual da página com cargo correto recupera todas as 50 respostas quando identificação automática falha',()=>{
+ const line=(first,n)=>Array.from({length:n},(_,i)=>String(first+i).padStart(2,'0')).join(' ');
+ const grid=(x)=>[
+  'PROVA 1 - LÍNGUA PORTUGUESA',line(1,10),'A A D D B C D C A B',
+  'PROVA 2 - LEGISLAÇÃO',line(11,10),'B A D B D C A D C A',
+  'PROVA 3 - CONHECIMENTOS ESPECÍFICOS',line(21,15),Array(15).fill(x).join(' '),
+  line(36,15),Array(15).fill(x).join(' ')
+ ].join('\n');
+ const sections=['Agente Administrativo','Auxiliar de Serviços Gerais','Copeiro','Assessor Técnico'];
+ const key=sections.map((role,i)=>
+  '[[PAGE:'+(i+1)+']]\nCÂMARA MUNICIPAL DE ARACATI\nGABARITO PRELIMINAR\n'+
+   role+'\n'+grid('ABCD'[i])).join('\n');
+ const unspecified=chosenAnswerSection(key,'[[PAGE:1]]\nCaderno sem identificação',{examFilename:'prova-sem-cargo.pdf'});
+ assert.ok(unspecified.error);
+ assert.equal(unspecified.availableSections.length,4);
+ assert.deepEqual(unspecified.availableSections.map(x=>x.role),[
+  'AGENTE ADMINISTRATIVO','AUXILIAR DE SERVICOS GERAIS','COPEIRO','ASSESSOR TECNICO']);
+ assert.deepEqual(unspecified.availableSections.map(x=>x.pageNumber),[1,2,3,4]);
+ const manual=chosenAnswerSection(key,'[[PAGE:1]]\nCaderno sem identificação',{
+  examFilename:'prova-sem-cargo.pdf',answerPage:'2'});
+ assert.equal(manual.error,null);
+ assert.equal(manual.section,'AUXILIAR DE SERVICOS GERAIS');
+ assert.equal(manual.manualSelection,true);
+ assert.equal(manual.pageNumber,2);
+ const answers=parseGridKey(manual.text);
+ assert.equal(Object.keys(answers).length,50);
+ assert.equal(answers[21],'B');
+ assert.equal(answers[50],'B');
+ assert.ok(chosenAnswerSection(key,'', {answerPage:'5'}).error);
+ assert.ok(chosenAnswerSection(key,'', {answerPage:'invalid'}).error);
+});
