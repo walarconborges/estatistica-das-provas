@@ -268,10 +268,13 @@ export function chosenAnswerSection(text,examText='',examInfo={}){
   // aparece no rodapé (linha cortada pela limpeza espacial do PDF).
   // O nome real do arquivo e o título inferido são fontes adicionais,
   // mas só se aceita uma seção única e explicitamente identificada.
+  // Prioridade: o nome do arquivo selecionado pelo usuário, depois o
+  // título inferido e, por último, o corpo da prova. Nomes de outros cargos
+  // mencionados nos enunciados não devem gerar ambiguidade artificial.
   const sources=[
-   norm(examText),
    norm(String(examInfo?.examFilename||'').replace(/[_-]+/g,' ')),
-   norm(examInfo?.examTitle||'')
+   norm(examInfo?.examTitle||''),
+   norm(examText)
   ];
   const knownJobs=[
    'ANALISTA DE INFORMATICA',
@@ -285,7 +288,12 @@ export function chosenAnswerSection(text,examText='',examInfo={}){
    'LIMPEZA',
    'MANUTENCAO'
   ];
-  const jobs=knownJobs.filter(job=>sources.some(s=>s.includes(job)));
+  let jobs=[];
+  for(const source of sources){
+   if(!source)continue;
+   const found=knownJobs.filter(job=>source.includes(job));
+   if(found.length){jobs=found;break}
+  }
   // Gabaritos de vários cargos jamais devem ser misturados, nem
   // resolvidos por ordem de aparição ou pela primeira seção.
   if(jobs.length!==1)
