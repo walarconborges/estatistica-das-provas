@@ -295,7 +295,7 @@ function eligibleSyllabusQuestions(items,filters=currentFilter){
  // como norma validada de Candeias.
  return relevant.filter(q=>{
   const classification=classifyForCargo(q,exam(q.examId),id);
-  if(classification.status==='pendente')return true;
+  if(classification.status==='pendente')return (filters.studyArea||'candeias')!=='original'||!q.originalQuestionId;
   return eligibleForList(q,exam(q.examId),filters.studyArea||'candeias');
  });
 }
