@@ -1,3 +1,13 @@
+## 0.6.7 — 15/11/2026
+
+- FEPESE: letras minúsculas das alternativas são convertidas em A–E antes da validação, evitando 40 questões reproduzidas como imagem.
+- Marcas SQUARE/Check-square são eliminadas do texto selecionável para não revelar o gabarito.
+- Figuras são recortadas separadamente; questões textuais mantêm texto e alternativas no site.
+- Reimportação pode atualizar prova anterior no mesmo ID, sem duplicar histórico, após validação de integridade.
+- Worker permite somente melhoria controlada da extração; não permite trocar gabaritos, disciplinas, enunciados ou códigos.
+- Feedback do navegador indica quando a sincronização da correção ainda não foi confirmada.
+- A implantação do Worker na Cloudflare e a verificação da importação real permanecem pendentes de confirmação.
+
 ## 0.6.6 — 15/11/2026
 
 - Corrigida a seção do gabarito FEPESE para o cargo S01 Analista de Informática, Brusque, com 40 questões e 40 respostas.
