@@ -422,7 +422,7 @@ export function chosenAnswerSection(text,examText='',examInfo={}){
   }));
   const exam=norm(examText);
   const codeHits=[...exam.matchAll(/(?:^|\n)\s*([SM]\d{1,2})\s+[^\n]{3,130}/g)]
-   .map(m=>m[1]).filter(code=>sections.some(s=>s.code===code));
+   .map(m=>m[1]);
   const codes=[...new Set(codeHits)];
   if(codes.length>1)
    return {text:'',section:null,format:'grid',error:'A prova apresenta mais de um código de cargo; confira o arquivo selecionado.'};
