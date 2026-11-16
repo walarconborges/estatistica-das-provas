@@ -532,7 +532,7 @@ export function chosenAnswerSection(text,examText='',examInfo={}){
   return role&&pageNumber>0&&/PROVA\s*2\s*[-–]/i.test(page)&&/PROVA\s*3\s*[-–]/i.test(page)
    ?{pageNumber,role:norm(role).trim(),text:page}:null;
  }).filter(Boolean);
- if(pageGrids.length>=2){
+ if(pageGrids.length>=1){
   // Opção explícita disponível só após identificar as páginas e cargos
   // diretamente no gabarito. Número não presente é sempre rejeitado.
   const selectedPage=String(examInfo?.answerPage||'').trim();
@@ -583,9 +583,12 @@ export function chosenAnswerSection(text,examText='',examInfo={}){
   }
   if(!selected){
    const found=pageGrids.map(x=>x.role).join('; ').slice(0,270);
+   const single=pageGrids.length===1;
    return {text:'',section:null,format:'grid',
     availableSections:pageGrids.map(item=>({pageNumber:item.pageNumber,role:item.role})),
-    error:'O gabarito possui páginas para vários cargos, sem correspondência única com o caderno. Selecione o cargo na lista de conferência. Cargos lidos: '+found};
+    error:single
+     ?'O único cargo do gabarito ('+found+') não corresponde de modo verificável ao cargo da prova.'
+     :'O gabarito possui páginas para vários cargos, sem correspondência única com o caderno. Selecione o cargo na lista de conferência. Cargos lidos: '+found};
   }
   return {text:selected.text,section:selected.role,format:'grid',error:null};
  }
