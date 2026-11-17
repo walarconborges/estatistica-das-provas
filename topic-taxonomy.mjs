@@ -40,7 +40,7 @@ export const TAXONOMY_SCHEMA = {
       [
         "Lógica proposicional, conectivos e tabelas-verdade",
         "LPROP",
-        "\\b(PROPOSI(C|C[AÃ])O|TABELA[ -]?VERDADE|CONECTIVOS? LOGICOS?|TAUTOLOGIA|CONTRADI(C|C[AÃ])O LOGICA|CONDICIONAL LOGIC|BICONDICIONAL)\\b"
+        "\\b(PROPOSI(C|C[AÃ])O|PROPOSICOES|TABELA[ -]?VERDADE|CONECTIVOS? LOGICOS?|TAUTOLOGIA|CONTRADI(C|C[AÃ])O LOGICA|CONDICIONAL LOGIC|BICONDICIONAL)\\b"
       ],
       [
         "Equivalências, negações e argumentos",
@@ -50,17 +50,17 @@ export const TAXONOMY_SCHEMA = {
       [
         "Análise combinatória e probabilidade",
         "PROB",
-        "\\b(PROBABILIDADE|EQUIPROVAVEIS|PERMUTACAO|ARRANJOS?|COMBINATORIA|COMBINACOES|SORTEIO|DADO[S]?|CARTAS? DE BARALHO)\\b"
+        "\\b(PROBABILIDADE|EQUIPROVAVEIS|PERMUTACAO|ARRANJOS?|COMBINATORIA|COMBINACOES|SORTEIO|URNA|BOLAS VERMELHAS|CARTAS? DE BARALHO)\\b"
       ],
       [
         "Conjuntos e diagramas lógicos",
         "CONJ",
-        "\\b(CONJUNTOS?|DIAGRAMAS? DE VENN|UNIAO E INTERSECAO|INTERSE(C|C[AÃ])O DE CONJUNTOS|TEORIA DOS CONJUNTOS)\\b"
+        "\\b(CONJUNTOS? NUMERICOS?|CONJUNTO[S]? (?:DE|LOGICOS?)|DIAGRAMAS? DE VENN|UNIAO E INTERSECAO|INTERSE(C|C[AÃ])O DE CONJUNTOS|TEORIA DOS CONJUNTOS)\\b"
       ],
       [
         "Múltiplos, divisores, primos, MDC e MMC",
         "MMCD",
-        "\\b(MINIMO MULTIPLO|MAXIMO DIVISOR|MMC|MDC|PRIMOS?|MULTIPLOS? COMUNS?|DIVISIBILIDADE|DIVISORES?|DIVIDIDOS? EM CAIXAS|MESMO NUMERO DE PASTAS)\\b"
+        "\\b(MINIMO MULTIPLO|MAXIMO DIVISOR|MMC|MDC|PRIMOS?|MULTIPLOS? COMUNS?|MULTIPLO COMUM|COINCIDENCIA.*NOVAMENTE|CICLOS? DE COLHEITA|INTERVALOS REGULARES|MAIOR NUMERO DE ALUNOS|KITS? IGUAIS|DIVISIBILIDADE|DIVISORES?|DIVIDIDOS? EM CAIXAS|MESMO NUMERO DE PASTAS)\\b"
       ],
       [
         "Progressões aritméticas e geométricas",
@@ -70,7 +70,7 @@ export const TAXONOMY_SCHEMA = {
       [
         "Sequências numéricas e padrões lógicos",
         "SEQL",
-        "\\b(SEQUENCIA|SEQUENCIAS|PADRAO LOGICO|TERMO DA SEQUENCIA|ELEMENTO DA SEQUENCIA|SERIE NUMERICA|RACIOCINIO SEQUENCIAL)\\b"
+        "\\b(SEQUENCIA NUMERICA|SEQUENCIA LOGICA|SEQUENCIA DE NUMEROS|SEQUENCIAS NUMERICAS|PADRAO LOGICO|TERMO DA SEQUENCIA|ELEMENTO DA SEQUENCIA|SERIE NUMERICA|RACIOCINIO SEQUENCIAL)\\b"
       ],
       [
         "Porcentagem, juros e descontos",
@@ -80,12 +80,12 @@ export const TAXONOMY_SCHEMA = {
       [
         "Médias e medidas de tendência central",
         "MEDI",
-        "\\b(MEDIA ARITMETICA|MEDIA PONDERADA|MEDIA MENSAL|MEDIA DOS|MEDIA DAS|MEDIANA|MODA ESTATISTICA|VELOCIDADE MEDIA)\\b"
+        "\\b(MEDIA ARITMETICA|MEDIA PONDERADA|MEDIA MENSAL|MEDIA DOS|MEDIA DAS|MEDIANA|MODA ESTATISTICA)\\b"
       ],
       [
         "Equações, inequações e sistemas",
         "EQSC",
-        "\\b(EQUACAO|EQUACOES|INEQUACAO|SISTEMA DE EQUACOES|INCOGNITA|FUNCAO DO PRIMEIRO|FUNCAO DE 1|FUNCOES DE 1|POLINOMIOS|VALOR DE X|VALOR DE Y)\\b"
+        "\\b(EQUACAO|EQUACOES|INEQUACAO|SISTEMA DE EQUACOES|INCOGNITA|FUNCAO DO PRIMEIRO|FUNCAO DE 1|FUNCOES DE 1|POLINOMIOS|VALOR DE X|VALOR DE Y|PRODUTOS NOTAVEIS|X²|Y²)\\b"
       ],
       [
         "Funções e representação gráfica",
@@ -110,17 +110,17 @@ export const TAXONOMY_SCHEMA = {
       [
         "Geometria plana, perímetros e áreas",
         "GPLA",
-        "\\b(PERIMETRO|AREA DE|AREA TOTAL|FIGURA GEOMETRICA|TRIANGULO|RETANGULO|QUADRADO|CIRCUNFERENCIA|CIRCULO|PITAGORAS|ANGULOS?|MEDIDA DOS LADOS)\\b"
+        "\\b(PERIMETRO|AREA DE (?:UM|UMA) (?:RETANGULO|QUADRADO|TERRENO|FIGURA)|AREA TOTAL|RETANGULAR|PRA[CÇ]A RETANGULAR|FIGURA GEOMETRICA|TRIANGULO|RETANGULO|QUADRADO|CIRCUNFERENCIA|CIRCULO|PITAGORAS|ANGULOS?|MEDIDA DOS LADOS)\\b"
       ],
       [
         "Razão, proporção e regra de três",
         "RAZA",
-        "\\b(RAZAO ENTRE|PROPORCIONAL|PROPORCAO|REGRA DE TRES|AUTONOMIA MEDIA|VELOCIDADE CONSTANTE|PRODUZEM|PRODUCAO.*DIAS|TRABALHANDO.*HORAS)\\b"
+        "\\b(RAZAO ENTRE|PROPORCIONAL|PROPORCAO|REGRA DE TRES|AUTONOMIA MEDIA|VELOCIDADE CONSTANTE|PRODUZEM|PEDREIROS|JORNADA DE|VELOCIDADE MEDIA|PRODUCAO.*DIAS|TRABALHANDO.*HORAS)\\b"
       ],
       [
         "Medidas, tempo e conversões de unidades",
         "MEDU",
-        "\\b(QUILOGRAMAS?|MILIGRAMAS?|GRAMAS?|TONELADAS?|CENTIMETROS?|MILIMETROS?|QUILOMETROS?|UNIDADES DE MEDIDA|CONVERSAO|EM MINUTOS|EM SEGUNDOS|HORAS E MINUTOS|TEMPO DECORRIDO|COMPRIMENTO DO CABO|LITROS?)\\b"
+        "\\b(QUILOGRAMAS?|MILIGRAMAS?|GRAMAS?|TONELADAS?|CENTIMETROS?|MILIMETROS?|QUILOMETROS?|UNIDADES DE MEDIDA|CONVERSAO|EM MINUTOS|EM SEGUNDOS|HORAS E MINUTOS|TEMPO DECORRIDO|COMPRIMENTO DO CABO|HORARIO|MESES E PERIODOS DO ANO|INTERVALO DE TEMPO|LITROS?)\\b"
       ],
       [
         "Estatística, gráficos e tabelas",
@@ -394,13 +394,20 @@ export const normalizedSubjectText = value => String(value||'').normalize('NFD')
  .replace(/[\u0300-\u036f]/g,'').toUpperCase().replace(/\s+/g,' ').trim();
 export function unifyQuestionTaxonomy(q){
  const s=TAXONOMY_SCHEMA, oldCode=String(q?.disciplineCode||'').toUpperCase();
- const d=(['MA','RL','RLM'].includes(oldCode)||/^(?:RACIOCINIO LOGICO|MATEMATICA)/.test(normalizedSubjectText(q?.discipline)))?'RLM':
+ let d=(['MA','RL','RLM'].includes(oldCode)||/^(?:RACIOCINIO LOGICO|MATEMATICA)/.test(normalizedSubjectText(q?.discipline)))?'RLM':
   ['LP','IN','CG','LE','CE'].includes(oldCode)?oldCode:
   /PORTUGUES/.test(normalizedSubjectText(q?.discipline))?'LP':
   /INFORMATICA/.test(normalizedSubjectText(q?.discipline))?'IN':
   /LEGISLACAO|DIREITO/.test(normalizedSubjectText(q?.discipline))?'LE':
   /CONHECIMENTOS GERAIS|ATUALIDADES|GEOGRAFIA|HISTORIA/.test(normalizedSubjectText(q?.discipline))?'CG':'CE';
  const stem=normalizedSubjectText(q?.stem);
+ // Evita que palavras como "função" (CME) ou números em contexto clínico
+ // transformem Saúde/SUS ou Informática em problemas matemáticos.
+ if(d==='RLM'){
+  if(/\b(LEI ORGANICA|ARTIGO DA LEI|LEGISLACAO MUNICIPAL)\b/.test(stem))d='LE';
+  else if(/\b(BACKUP|RANSOMWARE|CRIPT|PROTOCOLO TCP|SERVIDOR DE REDE|ANTIVIRUS|FIREWALL)\b/.test(stem))d='IN';
+  else if(/\b(SUS|SAUDE|PACIENTE|PACIENTES|HOSPITAL|CENTRO DE MATERIAL E ESTERILIZACAO|AUXILIAR DE SERVICO DE SAUDE|AUXILIAR DE SERVICOS DE SAUDE|VACINACAO|LAVAGEM DAS MAOS|CONFIDENCIALIDADE DAS INFORMACOES DOS PACIENTES|CONFLITOS DE INTERESSE NO AMBIENTE DE TRABALHO)\b/.test(stem))d='CE';
+ }
  let hit=s.rules[d].find(([title,code,pattern])=>new RegExp(pattern,'i').test(stem));
  if(!hit&&stem.length<90){
   const options=normalizedSubjectText((q?.options||[]).map(x=>x.text).join(' '));
