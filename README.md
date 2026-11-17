@@ -1,9 +1,18 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.30 — 16/11/2026**  
+**Versão experimental 0.6.31 — 17/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.31 — SEMUSA separada de Candeias e correção de questão
+
+- Adicionado **240 — Auxiliar de Serviços de Saúde**, da **SEMUSA/Prefeitura de Porto Velho**, Edital 25/2026, Anexo IV, Retificação nº 01. Esse cargo é distinto de **202 — Auxiliar de Serviços Gerais**, da Câmara de Candeias do Jamari. O seletor identifica a origem de cada edital.
+- O catálogo 240 usa Português, Matemática, Conhecimentos Gerais (notícias da **Prefeitura de Porto Velho**) e Conhecimentos Específicos de Saúde (atendimento ao público, limpeza/desinfecção, resíduos de saúde, primeiros socorros, EPI, SUS, atenção básica, vigilância e Leis 8.080/1990 e 8.142/1990).
+- A classificação por cargo mantém revisões e resultados independentes. Questões transversais de Português/Matemática podem aparecer nos dois catálogos; conhecimentos específicos de Saúde não são confundidos com Serviços Gerais. Adaptações jurídicas de Candeias não se aplicam à SEMUSA.
+- Corrigida a redação de **Q2026ASG01017**: o texto não afirma mais que o troco de R$ 176,00 é pago exclusivamente **em cédulas**. Permanece o gabarito **C**, sem modificar alternativas, IDs, tentativas ou estatísticas.
+- A correção editorial é aplicada na normalização do estado ao carregar os dados, inclusive quando a fonte remota ainda tiver a redação antiga; dispensada a limpeza do banco.
+- Fonte oficial SEMUSA: https://novo.ibgpconcursos.com.br/rest/concurso/download/edital/24361?file=site%2Fanexos%2F790%2F04-+ANEXO+IV+-+CONTEUDOS+PROGRAM%C3%81TICOS_Ret+1.pdf
 
 ## Versão 0.6.30 — assuntos transversais e integridade do banco
 
