@@ -1,9 +1,9 @@
-import {STORAGE_KEY,newId,fresh,normalizeState,parseExamText,parseKey,inferExamMetadata,completeExamMetadata,classify,classifyByExamDivision,repeatedSupportText,addExam,upgradeRecoveredExam,findPreviouslyImportedExam,recordAttempt,latestAnswer,outcome,stats,filtered,normalizeOutcomeSelection,prioritize,createSimulation,finishSimulation,simulationResult,expire,validAnswer} from './core.mjs?v=0.6.31';
+import {STORAGE_KEY,newId,fresh,normalizeState,parseExamText,parseKey,inferExamMetadata,completeExamMetadata,classify,classifyByExamDivision,repeatedSupportText,addExam,upgradeRecoveredExam,findPreviouslyImportedExam,recordAttempt,latestAnswer,outcome,stats,filtered,normalizeOutcomeSelection,prioritize,createSimulation,finishSimulation,simulationResult,expire,validAnswer} from './core.mjs?v=0.6.32';
 import {readPdf} from './pdf-import.mjs';
 import {chosenAnswerSection,parseGridKey,questionIntegrity,declaredQuestionCount,declaredAlternativeCount,inferredAlternativeCount} from './pdf-layout.mjs';
 import {createSyncClient} from './sync-client.mjs';
 import {STUDY_CONTEXT,eligibleForList} from './study-context.mjs';
-import {CATALOGS,currentCatalog,allTopics,classifyForCargo,subjectSummary,EDITAL_SCOPE_OPTIONS,normalizeEditalScope,inEditalScope,STUDY_ALL,ALL_STUDY_DISCIPLINES,studyAllGroup,filterStudyAllQuestions} from './edital-classification.mjs?v=0.6.31';
+import {CATALOGS,currentCatalog,allTopics,classifyForCargo,subjectSummary,EDITAL_SCOPE_OPTIONS,normalizeEditalScope,inEditalScope,STUDY_ALL,ALL_STUDY_DISCIPLINES,studyAllGroup,filterStudyAllQuestions} from './edital-classification.mjs?v=0.6.32';
 
 // A versão do rodapé pode ser nova enquanto o navegador usa módulos
 // JavaScript antigos. Exibir a revisão REAL do módulo executado para diagnóstico.
@@ -142,12 +142,43 @@ function explanationBox(qid){
  if(status==='loading')body='<p class="hint">Consultando a explicação...</p>';
  else if(status==='ready')body='<div class="explanation-text">'+h(entry.text||'')+'</div><p class="hint">'+(question(qid)?.originalQuestionId?'Fundamento normativo da questão adaptada.':'Explicação de IA para estudo, não substitui fontes oficiais.')+'</p>'+btn('flag-explanation','Sinalizar explicação incorreta','secondary','data-id="'+h(qid)+'"');
  else if(status==='pending')body='<p class="hint">'+h(entry.reason||'Explicação em geração.')+'</p>'+btn('explain-question','Consultar novamente','secondary','data-id="'+h(qid)+'"');
- else body='<p class="hint">'+h(entry.reason||'Não foi possível explicar a questão.')+'</p>';
+ else body='<p class="hint">'+h(entry.reason||'Não foi possível explicar a questão.')+'</p>'+
+   (sync.getUrl()?'<p class="hint"><a href="'+h(sync.getUrl()+'/api/health')+'" target="_blank" rel="noopener noreferrer">Consultar diagnóstico do Worker</a></p>':'');
  return '<div class="explanation-box" data-explanation-id="'+h(qid)+'">'+body+'</div>';
 }
 function refreshExplanation(qid){
  for(const el of document.querySelectorAll('[data-explanation-id]'))
   if(el.dataset.explanationId===qid)el.outerHTML=explanationBox(qid);
+}
+/** Converte falhas da API em diagnósticos legíveis sem esconder erros HTTP. */
+async function readExplanationReply(response){
+ let data;
+ try{data=await response.json();}
+ catch{throw Error('O Cloudflare Worker não devolveu JSON válido (HTTP '+response.status+'). Confira se a rota /api/explanation está publicada.');}
+ if(!data||typeof data!=='object')throw Error('O serviço retornou um formato inválido (HTTP '+response.status+').');
+ if(response.status===404&&/rota inexistente/i.test(String(data.error||'')))
+  throw Error('O Worker publicado não oferece a rota /api/explanation. Atualize a implantação do Cloudflare Worker.');
+ if(!response.ok&&!data.reason&&!data.error)
+  throw Error('O serviço de explicações retornou HTTP '+response.status+'.');
+ return data;
+}
+async function explainConnectionError(origin,error){
+ // Não confundir falha da rede com limite de uso, configuração ou erro HTTP.
+ if(!(error instanceof TypeError))return error?.message||'Falha ao explicar a questão.';
+ try{
+  const res=await fetch(origin+'/api/health',{cache:'no-store'});
+  const health=await res.json();
+  if(res.ok&&health?.status==='ok'){
+   if(health.workerVersion!=='0.6.32')
+    return 'O Worker conectado ainda está na versão '+(health.workerVersion||'antiga')+'. Publique a versão 0.6.32 na Cloudflare para ativar as correções de IA.';
+   if(health.aiConfigured===false)
+    return 'O Worker está acessível, mas o binding AI não está ativado na Cloudflare. Verifique o deploy com wrangler.toml.';
+   return 'O Worker está acessível, mas a rota de explicações falhou. Verifique a implantação e tente novamente.';
+  }
+  return 'O endereço do Cloudflare Worker respondeu com HTTP '+res.status+'. Confira Dados → Sincronização e a configuração do serviço.';
+ }catch{
+  return 'Não foi possível acessar o Cloudflare Worker. Confira o endereço em Dados → Sincronização e a conexão de rede.';
+ }
 }
 async function showExplanation(qid){
  const q=question(qid);
@@ -159,21 +190,25 @@ async function showExplanation(qid){
   refreshExplanation(qid);return;
  }
  explanationsInView.set(qid,{status:'loading'});refreshExplanation(qid);
+ const origin=sync.getUrl();
  try{
-  const origin=sync.getUrl(),query='?questionId='+encodeURIComponent(qid);
-  let r=await fetch(origin+'/api/explanation'+query,{cache:'no-store'});
-  let data=await r.json();
-  if(r.ok&&data.status==='not-generated'){
-    r=await fetch(origin+'/api/explanation',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({questionId:qid})});
-    data=await r.json();
+  const query='?questionId='+encodeURIComponent(qid);
+  let response=await fetch(origin+'/api/explanation'+query,{cache:'no-store'});
+  let data=await readExplanationReply(response);
+  if(response.ok&&data.status==='not-generated'){
+   response=await fetch(origin+'/api/explanation',{
+    method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({questionId:qid}),cache:'no-store'
+   });
+   data=await readExplanationReply(response);
   }
   explanationsInView.set(qid,{
    status:data.status==='ready'?'ready':data.status==='pending'?'pending':'error',
    text:data.explanation||'',
-   reason:data.reason||data.error||'Não foi possível obter a explicação.'
+   reason:data.reason||data.error||(response.ok?'Não foi possível obter a explicação.':'Erro HTTP '+response.status+' no serviço de IA.')
   });
  }catch(error){
-  explanationsInView.set(qid,{status:'error',reason:'Serviço de IA indisponível. Confira a conexão e tente novamente.'});
+  explanationsInView.set(qid,{status:'error',reason:await explainConnectionError(origin,error)});
   console.warn('Falha ao consultar explicação:',error);
  }
  refreshExplanation(qid);
