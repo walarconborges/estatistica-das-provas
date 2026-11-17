@@ -282,7 +282,7 @@ export default {async fetch(req,env){
  try{
   origin=originFor(req,env);const url=new URL(req.url);
   if(req.method==='OPTIONS')return reply({},200,origin);
-  if(req.method==='GET'&&url.pathname==='/api/health')return reply({status:'ok',repo:setup(env).repo,purgeGuard:1,workerVersion:'0.6.32',explanationRoute:true,aiConfigured:Boolean(env.AI&&typeof env.AI.run==='function')},200,origin);
+  if(req.method==='GET'&&url.pathname==='/api/health')return reply({status:'ok',repo:setup(env).repo,purgeGuard:1,workerVersion:'0.6.33',explanationRoute:true,aiConfigured:Boolean(env.AI&&typeof env.AI.run==='function')},200,origin);
   if(req.method==='GET'&&url.pathname==='/api/state')return reply((await loadState(env)).state,200,origin);
   if(url.pathname==='/api/explanation')return handleExplanation(req,env,origin);
   if(req.method==='POST'&&url.pathname==='/api/auto-adapt')return reply(await commitAutoAdaptations(env),200,origin);
