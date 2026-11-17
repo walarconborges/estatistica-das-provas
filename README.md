@@ -1,9 +1,19 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.32 — 17/11/2026**  
+**Versão experimental 0.6.33 — 17/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.33 — classificação textual e sinalização simples
+
+- **Q2024TI05005**: corrigida a classificação de Informática / Fundamentos para **Língua Portuguesa / Interpretação e compreensão de textos (LP/LINT)**. Trata-se de análise do texto de apoio, não de hardware. O catálogo do cargo 505 reconhece "Segundo o texto" como compreensão textual. A atualização é idempotente e mantém código público, ID, alternativa oficial e tentativas anteriores.
+- A correção usa o código permanente e a redação característica do enunciado para não reclassificar acidentalmente questões técnicas de outros concursos.
+- **Sinalizar problema** não abre mais um questionário com categoria, assunto, siglas e gabarito sugerido. Aparece apenas uma janela com um campo **Comentário (opcional)** e dois botões, **Sinalizar** ou **Cancelar**. É possível registrar sem preencher nada.
+- O registro usa o tipo genérico `problem`, fica **Pendente** e segue para a lista de **Sinalizações** do perfil. Quando a sincronização estiver conectada, o Worker também abre uma Issue no GitHub para o proprietário verificar; a sinalização não altera a questão automaticamente.
+- Um mesmo usuário não pode enviar novamente uma sinalização genérica pendente da mesma questão, evitando Issues repetidas. Após análise, é possível sinalizar novamente.
+- A Issue simples identifica o código da questão e o comentário, se houver; não exige proposta técnica para a revisão. A análise administrativa continua separada da edição efetiva do banco.
+- Novos testes cobrem a classificação e o enquadramento no edital 505, preservação de tentativas, aceitação de sinalizações sem comentários e interface sem perguntas obrigatórias.
 
 ## Versão 0.6.32 — explicações por IA e diagnóstico
 
