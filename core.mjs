@@ -47,6 +47,7 @@ export function repairPreparedQuestionWording(state){
  return state;
 }
 
+export function normalizeState(data){
   const base=fresh();
   if(!data || typeof data!=='object')return base;
   for(const k of Object.keys(base))if(Array.isArray(base[k])&&Array.isArray(data[k]))base[k]=data[k];
