@@ -39877,7 +39877,18 @@
   ],
   "attempts": [],
   "simulations": [],
-  "flags": [],
+  "flags": [
+    {
+      "id": "c848e664-b11f-4cc5-9e3b-720143c281c6",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-health-11-020",
+      "type": "extraction",
+      "note": "letra d",
+      "proposed": {},
+      "status": "pending",
+      "at": "2026-11-17T00:26:29.810Z"
+    }
+  ],
   "tombstones": {
     "exams": [
       "27f1e5d8-d8bc-43f4-aba9-254e9cddb857",
