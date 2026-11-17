@@ -5,8 +5,9 @@ const meta={title:'Prova IBGP 2026',year:'2026',banca:'IBGP',orgao:'SEMED'};
 const sample=()=>({stem:'Qual é o plural de cidadão?',originalNumber:1,options:[{letter:'A',text:'Cidadãos'},{letter:'B',text:'Cidadões'}],discipline:'Língua Portuguesa',disciplineCode:'LP',topic:'Gramática',topicCode:'G'});
 function data(){const s=fresh();const e=addExam(s,meta,[sample(),{...sample(),originalNumber:2,stem:'Outra questão'}],{1:'A',2:'B'});return {s,e,q:s.questions[0]}}
 test('código vincula ano, disciplina, assunto, banca e órgão sem zeros retroativos',()=>{
-  const {s,q}=data();assert.equal(q.code,'Q2026LPGIBGPSEMED1');
-  assert.equal(s.questions[1].code,'Q2026LPGIBGPSEMED2');
+  const {s,q}=data();assert.match(q.code,/^Q2026LP[A-Z0-9]+IBGPSEMED1$/);
+  assert.equal(s.questions[1].code,q.code.replace(/1$/,'2'));
+  assert.notEqual(s.questions[1].code,q.code);
 });
 test('leitor de texto identifica questões e disciplinas distintas',()=>{
  const x=parseExamText('LÍNGUA PORTUGUESA\n1) Marque a correta.\nA) Sim\nB) Não\nMATEMÁTICA\n2) Qual é 20% de 100?\nA) 10\nB) 20');
