@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {fresh,addExam,recordAttempt} from '../core.mjs';
+import {fresh,addExam,recordAttempt,normalizeState} from '../core.mjs';
 import {CATALOGS,CARGO_202,allTopics,classifyForCargo,subjectSummary,EDITAL_SCOPE_OPTIONS,normalizeEditalScope,inEditalScope,STUDY_ALL,ALL_STUDY_DISCIPLINES,studyAllGroup,filterStudyAllQuestions,approveEdictReview} from '../edital-classification.mjs';
 
 const meta={title:'2026 — FEPESE — PM-BRUSQUE — Analista de Informática',year:'2026',banca:'FEPESE',orgao:'PM-BRUSQUE'};
@@ -11,7 +11,7 @@ const question=(number,code,discipline,stem)=>({
 });
 
 test('Anexo IV tem os dois cargos e não atribui informática ou legislação ao cargo 202',()=>{
- assert.deepEqual(Object.keys(CATALOGS).sort(),['202','505','519-552']);
+ assert.deepEqual(Object.keys(CATALOGS).sort(),['202','240','505','519-552']);
  assert.equal(CARGO_202.cargo,'Auxiliar de Serviços Gerais');
  assert.deepEqual(CARGO_202.sections.map(x=>x.title),['Português','Matemática','Conhecimentos Gerais']);
  assert.ok(!CARGO_202.sections.some(x=>/Informática|Legislação/.test(x.title)));
@@ -169,4 +169,54 @@ test('modo Todos nunca precisa de enquadramento ou revisão por cargo',()=>{
  q.editalReview={'202':{status:'fora'},'505':{status:'fora'}};
  assert.equal(filterStudyAllQuestions([q],'LP').length,1);
  assert.equal(filterStudyAllQuestions([q],'RLM').length,0);
+});
+
+test('SEMUSA cargo 240 consta separadamente do cargo 202 de Candeias',()=>{
+ const semusa=CATALOGS['240'],candeias=CATALOGS['202'];
+ assert.equal(semusa.cargo,'Auxiliar de Serviços de Saúde');
+ assert.equal(candeias.cargo,'Auxiliar de Serviços Gerais');
+ assert.match(semusa.edital,/SEMUSA/);
+ assert.equal(semusa.sections.length,4);
+ assert.equal(candeias.sections.length,3);
+ assert.ok(semusa.sections.some(s=>s.id==='especificos'));
+ assert.ok(!candeias.sections.some(s=>s.id==='especificos'));
+});
+test('itens comuns podem ser estudados nos dois cargos, mas SUS é específico da SEMUSA',()=>{
+ const math=question(17,'RLM','Raciocínio Lógico/Matemático',
+  'Pagou com sete notas de R$ 100,00 e deseja saber o troco da compra.');
+ assert.equal(classifyForCargo(math,meta,'240').status,'dentro');
+ assert.equal(classifyForCargo(math,meta,'202').status,'dentro');
+ const sus=question(18,'CE','Conhecimentos Específicos',
+  'Sobre a Lei Federal nº 8.080/1990 e princípios do SUS, assinale a correta.');
+ const semusa=classifyForCargo(sus,meta,'240');
+ assert.equal(semusa.status,'dentro');
+ assert.equal(semusa.topicId,'especificos:11');
+ assert.equal(classifyForCargo(sus,meta,'202').status,'fora');
+ const ti=question(19,'IN','Informática','Configuração de switches e redes TCP/IP.');
+ assert.equal(classifyForCargo(ti,meta,'240').status,'fora');
+});
+test('notícias municipais e revisões não se misturam entre Candeias e SEMUSA',()=>{
+ const camara=question(20,'CG','Conhecimentos Gerais',
+  'Notícias do site da Câmara Municipal de Candeias do Jamari.');
+ assert.equal(classifyForCargo(camara,meta,'240').status,'fora');
+ const prefeitura=question(21,'CG','Conhecimentos Gerais',
+  'Notícias do site da Prefeitura de Porto Velho/RO.');
+ assert.equal(classifyForCargo(prefeitura,meta,'240').status,'dentro');
+ assert.notEqual(classifyForCargo(prefeitura,meta,'240').topic,'Notícias do site da Câmara Municipal de Candeias do Jamari');
+ const q=question(22,'CE','Conhecimentos Específicos','Conteúdo a conferir.');
+ approveEdictReview(q,{editalCargo:'240',status:'dentro'});
+ assert.equal(classifyForCargo(q,meta,'240').status,'dentro');
+ assert.equal(classifyForCargo(q,meta,'202').status,'fora');
+});
+test('corrige apenas a expressão incorreta do troco em cédulas, sem alterar gabarito',()=>{
+ const original='Qual será o valor exato do troco em cédulas que o servidor deverá receber após a transação?';
+ const prepared={id:'p1',code:'Q2026ASG01017',stem:original,answer:'C',
+  options:[{letter:'C',text:'R$ 176,00'}]};
+ const unrelated={...prepared,id:'p2',code:'QOUTRO',stem:original};
+ const state=normalizeState({...fresh(),questions:[prepared,unrelated]});
+ assert.match(state.questions[0].stem,/troco que o servidor/);
+ assert.doesNotMatch(state.questions[0].stem,/em cédulas/);
+ assert.equal(state.questions[0].answer,'C');
+ assert.deepEqual(state.questions[0].options,prepared.options);
+ assert.equal(state.questions[1].stem,original);
 });
