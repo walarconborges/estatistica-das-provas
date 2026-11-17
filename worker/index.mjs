@@ -141,11 +141,24 @@ async function commitAutoAdaptations(env){
 }
 
 async function createIssue(env,flag,state){
- const q=state.questions.find(x=>x.id===flag.questionId);if(!q)return false;
- const name=state.profiles.find(x=>x.id===flag.profileId)?.name||'Usuário';
- const body='<!-- flag-id:'+flag.id+' -->\n**Questão:** '+q.code+'\n\n**Usuário:** '+name+'\n\n**Tipo:** '+flag.type+'\n\n**Descrição:**\n'+String(flag.note||'').slice(0,1600)+'\n\n**Proposta estruturada:**\n'+JSON.stringify(flag.proposed||{},null,2)+'\n\nSomente o proprietário deve comentar **aprovar** ou **rejeitar** nesta Issue.';
- const r=await github(env,'issues',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({title:'[Sinalização] '+q.code+' · '+flag.type,body})});
- return r.ok;
+  const q=state.questions.find(x=>x.id===flag.questionId);if(!q)return false;
+  const name=state.profiles.find(x=>x.id===flag.profileId)?.name||'Usuário';
+  const simple=flag.type==='problem';
+  const note=String(flag.note||'').trim().slice(0,1600);
+  const body=simple
+   ?'<!-- flag-id:'+flag.id+' -->\n**Questão:** '+q.code+
+    '\n\n**Usuário:** '+name+
+    '\n\n**Comentário (opcional):**\n'+(note||'_Nenhum comentário informado._')+
+    '\n\n**Situação:** aguardando análise. A sinalização não altera a questão nem seu gabarito.'+
+    '\n\nApós verificar a questão, o proprietário pode comentar **aprovar** (análise concluída) ou **rejeitar** (sinalização improcedente). Correções no conteúdo devem ser feitas separadamente.'
+   :'<!-- flag-id:'+flag.id+' -->\n**Questão:** '+q.code+
+    '\n\n**Usuário:** '+name+'\n\n**Tipo:** '+flag.type+
+    '\n\n**Descrição:**\n'+note+
+    '\n\n**Proposta estruturada:**\n'+JSON.stringify(flag.proposed||{},null,2)+
+    '\n\nSomente o proprietário deve comentar **aprovar** ou **rejeitar** nesta Issue.';
+  const title=simple?'[Revisar questão] '+q.code:'[Sinalização] '+q.code+' · '+flag.type;
+  const r=await github(env,'issues',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({title,body})});
+  return r.ok;
 }
 function reply(value,status=200,origin='*'){
  return new Response(JSON.stringify(value),{status,headers:{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','Access-Control-Allow-Origin':origin,'Access-Control-Allow-Methods':'GET, POST, OPTIONS','Access-Control-Allow-Headers':'Content-Type','X-Content-Type-Options':'nosniff'}});
