@@ -2455,7 +2455,7 @@
         },
         {
           "letter": "E",
-          "text": "Fatores ambientais como poluição do ar, da terra e dos\n\nalimentos não fazem parte dos DSS.\nLEGISLAÇÃO PERTINENTE AO MUNICÍPIO DE PALMAS/TO"
+          "text": "Fatores ambientais como poluição do ar, da terra e dos\n\nalimentos não fazem parte dos DSS."
         }
       ],
       "sourcePage": 8,
@@ -8395,7 +8395,7 @@
         },
         {
           "letter": "E",
-          "text": "Elza Soares.\n\nMATEMÁTICA/RACIOCÍNIO LÓGICO"
+          "text": "Elza Soares."
         }
       ],
       "sourcePage": 50,
@@ -11301,7 +11301,7 @@
         },
         {
           "letter": "D",
-          "text": "Pó (oxítona).\n\nMATEMÁTICA."
+          "text": "Pó (oxítona)."
         }
       ],
       "sourcePage": 69,
@@ -11783,7 +11783,7 @@
         },
         {
           "letter": "E",
-          "text": "Pronome.\n\nTexto 10\nSeca nordestina\nA seca, uma das adversidades mais marcantes do Nordeste brasileiro, não se restringe apenas\naos aspectos climáticos, mas permeia todas as dimensões da vida na região. Sob o sol\ninclemente, os rios secam, os reservatórios esvaziam-se rapidamente, e a vegetação\nressequida testemunha essa dura realidade. Além disso, os impactos socioeconômicos são\ndevastadores. Devido à escassez de água, a agricultura, principal fonte de subsistência de\nmuitas comunidades, é duramente afetada, gerando desemprego e êxodo rural.\nConsequentemente, a pobreza se acentua, agravando ainda mais as condições de vida já\nprecárias.\nContudo, a resiliência nordestina não se deixa abater facilmente. Diante dos desafios impostos\npela seca, a solidariedade entre os habitantes da região torna-se um ponto de apoio\nfundamental. Comunidades se unem para buscar soluções criativas e alternativas para enfrentar\na escassez de água, promovendo ações de economia e reaproveitamento de recursos hídricos.\nAlém disso, projetos de convivência com o semiárido são implementados, visando proporcionar\nsustentabilidade e melhor qualidade de vida para as populações locais.\nAssim, a seca no Nordeste não é apenas uma questão climática, mas um desafio multifacetado\nque exige medidas integradas e sustentáveis. Diante desse cenário desafiador, é imprescindível\no engajamento de todos os setores da sociedade, bem como o apoio contínuo das esferas\ngovernamentais, para promover o desenvolvimento sustentável e garantir um futuro mais\npróspero e resiliente para o povo nordestino.\n(Texto criado por IA)\nCaderno Único - Auxiliar de Serviços de Saúde 7\nConcurso Público Prefeitura Municipal de Mineiros - 001/2024"
+          "text": "Pronome."
         }
       ],
       "sourcePage": 74,
@@ -11840,8 +11840,11 @@
       ],
       "sourcePage": 75,
       "sourceColumn": 0,
-      "contextText": "",
-      "contextRange": null,
+      "contextText": "Texto 10\nSeca nordestina\nA seca, uma das adversidades mais marcantes do Nordeste brasileiro, não se restringe apenas\naos aspectos climáticos, mas permeia todas as dimensões da vida na região. Sob o sol\ninclemente, os rios secam, os reservatórios esvaziam-se rapidamente, e a vegetação\nressequida testemunha essa dura realidade. Além disso, os impactos socioeconômicos são\ndevastadores. Devido à escassez de água, a agricultura, principal fonte de subsistência de\nmuitas comunidades, é duramente afetada, gerando desemprego e êxodo rural.\nConsequentemente, a pobreza se acentua, agravando ainda mais as condições de vida já\nprecárias.\nContudo, a resiliência nordestina não se deixa abater facilmente. Diante dos desafios impostos\npela seca, a solidariedade entre os habitantes da região torna-se um ponto de apoio\nfundamental. Comunidades se unem para buscar soluções criativas e alternativas para enfrentar\na escassez de água, promovendo ações de economia e reaproveitamento de recursos hídricos.\nAlém disso, projetos de convivência com o semiárido são implementados, visando proporcionar\nsustentabilidade e melhor qualidade de vida para as populações locais.\nAssim, a seca no Nordeste não é apenas uma questão climática, mas um desafio multifacetado\nque exige medidas integradas e sustentáveis. Diante desse cenário desafiador, é imprescindível\no engajamento de todos os setores da sociedade, bem como o apoio contínuo das esferas\ngovernamentais, para promover o desenvolvimento sustentável e garantir um futuro mais\npróspero e resiliente para o povo nordestino.\n(Texto criado por IA)\nCaderno Único - Auxiliar de Serviços de Saúde 7\nConcurso Público Prefeitura Municipal de Mineiros - 001/2024",
+      "contextRange": [
+        6,
+        8
+      ],
       "confidence": "média",
       "extractionReview": false,
       "imageOnly": false,
@@ -11889,8 +11892,11 @@
       ],
       "sourcePage": 76,
       "sourceColumn": 0,
-      "contextText": "",
-      "contextRange": null,
+      "contextText": "Texto 10\nSeca nordestina\nA seca, uma das adversidades mais marcantes do Nordeste brasileiro, não se restringe apenas\naos aspectos climáticos, mas permeia todas as dimensões da vida na região. Sob o sol\ninclemente, os rios secam, os reservatórios esvaziam-se rapidamente, e a vegetação\nressequida testemunha essa dura realidade. Além disso, os impactos socioeconômicos são\ndevastadores. Devido à escassez de água, a agricultura, principal fonte de subsistência de\nmuitas comunidades, é duramente afetada, gerando desemprego e êxodo rural.\nConsequentemente, a pobreza se acentua, agravando ainda mais as condições de vida já\nprecárias.\nContudo, a resiliência nordestina não se deixa abater facilmente. Diante dos desafios impostos\npela seca, a solidariedade entre os habitantes da região torna-se um ponto de apoio\nfundamental. Comunidades se unem para buscar soluções criativas e alternativas para enfrentar\na escassez de água, promovendo ações de economia e reaproveitamento de recursos hídricos.\nAlém disso, projetos de convivência com o semiárido são implementados, visando proporcionar\nsustentabilidade e melhor qualidade de vida para as populações locais.\nAssim, a seca no Nordeste não é apenas uma questão climática, mas um desafio multifacetado\nque exige medidas integradas e sustentáveis. Diante desse cenário desafiador, é imprescindível\no engajamento de todos os setores da sociedade, bem como o apoio contínuo das esferas\ngovernamentais, para promover o desenvolvimento sustentável e garantir um futuro mais\npróspero e resiliente para o povo nordestino.\n(Texto criado por IA)\nCaderno Único - Auxiliar de Serviços de Saúde 7\nConcurso Público Prefeitura Municipal de Mineiros - 001/2024",
+      "contextRange": [
+        6,
+        8
+      ],
       "confidence": "média",
       "extractionReview": false,
       "imageOnly": false,
@@ -11933,13 +11939,16 @@
         },
         {
           "letter": "E",
-          "text": "Consequência.\n\nTexto 14\nNa vastidão do deserto, o viajante contemplava a imensidão do céu estrelado. Ele estava\nfascinado com a beleza da noite no deserto, onde as estrelas pareciam dançar em um balé\ncósmico. O silêncio era interrompido apenas pelo sussurro do vento, que trazia consigo o\nmistério das areias milenares. O viajante sentiu-se pequeno diante da grandiosidade da\nnatureza e agradeceu pela oportunidade de testemunhar tamanha magnificência.\n(Texto gerado por IA)"
+          "text": "Consequência."
         }
       ],
       "sourcePage": 76,
       "sourceColumn": 0,
-      "contextText": "",
-      "contextRange": null,
+      "contextText": "Texto 10\nSeca nordestina\nA seca, uma das adversidades mais marcantes do Nordeste brasileiro, não se restringe apenas\naos aspectos climáticos, mas permeia todas as dimensões da vida na região. Sob o sol\ninclemente, os rios secam, os reservatórios esvaziam-se rapidamente, e a vegetação\nressequida testemunha essa dura realidade. Além disso, os impactos socioeconômicos são\ndevastadores. Devido à escassez de água, a agricultura, principal fonte de subsistência de\nmuitas comunidades, é duramente afetada, gerando desemprego e êxodo rural.\nConsequentemente, a pobreza se acentua, agravando ainda mais as condições de vida já\nprecárias.\nContudo, a resiliência nordestina não se deixa abater facilmente. Diante dos desafios impostos\npela seca, a solidariedade entre os habitantes da região torna-se um ponto de apoio\nfundamental. Comunidades se unem para buscar soluções criativas e alternativas para enfrentar\na escassez de água, promovendo ações de economia e reaproveitamento de recursos hídricos.\nAlém disso, projetos de convivência com o semiárido são implementados, visando proporcionar\nsustentabilidade e melhor qualidade de vida para as populações locais.\nAssim, a seca no Nordeste não é apenas uma questão climática, mas um desafio multifacetado\nque exige medidas integradas e sustentáveis. Diante desse cenário desafiador, é imprescindível\no engajamento de todos os setores da sociedade, bem como o apoio contínuo das esferas\ngovernamentais, para promover o desenvolvimento sustentável e garantir um futuro mais\npróspero e resiliente para o povo nordestino.\n(Texto criado por IA)\nCaderno Único - Auxiliar de Serviços de Saúde 7\nConcurso Público Prefeitura Municipal de Mineiros - 001/2024",
+      "contextRange": [
+        6,
+        8
+      ],
       "confidence": "média",
       "extractionReview": false,
       "imageOnly": false,
@@ -11987,8 +11996,11 @@
       ],
       "sourcePage": 76,
       "sourceColumn": 0,
-      "contextText": "",
-      "contextRange": null,
+      "contextText": "Texto 14\nNa vastidão do deserto, o viajante contemplava a imensidão do céu estrelado. Ele estava\nfascinado com a beleza da noite no deserto, onde as estrelas pareciam dançar em um balé\ncósmico. O silêncio era interrompido apenas pelo sussurro do vento, que trazia consigo o\nmistério das areias milenares. O viajante sentiu-se pequeno diante da grandiosidade da\nnatureza e agradeceu pela oportunidade de testemunhar tamanha magnificência.\n(Texto gerado por IA)",
+      "contextRange": [
+        9,
+        10
+      ],
       "confidence": "média",
       "extractionReview": false,
       "imageOnly": false,
@@ -12036,8 +12048,11 @@
       ],
       "sourcePage": 76,
       "sourceColumn": 0,
-      "contextText": "",
-      "contextRange": null,
+      "contextText": "Texto 14\nNa vastidão do deserto, o viajante contemplava a imensidão do céu estrelado. Ele estava\nfascinado com a beleza da noite no deserto, onde as estrelas pareciam dançar em um balé\ncósmico. O silêncio era interrompido apenas pelo sussurro do vento, que trazia consigo o\nmistério das areias milenares. O viajante sentiu-se pequeno diante da grandiosidade da\nnatureza e agradeceu pela oportunidade de testemunhar tamanha magnificência.\n(Texto gerado por IA)",
+      "contextRange": [
+        9,
+        10
+      ],
       "confidence": "média",
       "extractionReview": false,
       "imageOnly": false,
@@ -32497,7 +32512,7 @@
         },
         {
           "letter": "D",
-          "text": "Trata-se de uma declaração linguística dotada de sentido e mensagem clara e precisa.\n\nTexto para responder às questões de 06 a 10.\nSobre poesia\nNão têm sido poucas as tentativas de definir o que é poesia. Desde Platão e Aristóteles até os\nsemânticos e concretistas modernos, insistem filósofos, críticos e mesmo os próprios poetas em\ndar uma definição da arte de se exprimir em versos, velha como a humanidade. Eu mesmo, em\nartigos e críticas que já vão longe, não me pude furtar à vaidade de fazer os meus mots de finesse\nem causa própria – coisa que hoje me parece senão irresponsável, pelo menos bastante literária.\nUm operário parte de um monte de tijolos sem significação especial senão serem tijolos para – sob\na orientação de um construtor, que por sua vez segue os cálculos de um engenheiro obediente ao\nprojeto de um arquiteto – levantar uma casa. Um monte de tijolos é um monte de tijolos. Não existe\nnele beleza específica. Mas uma casa pode ser bela, se o projeto de um bom arquiteto tiver a\nestruturá-la, os cálculos de um bom engenheiro e a vigilância de um bom construtor, no sentido do\nbom acabamento, por um bom operário, do trabalho em execução. Troquem-se tijolos por\npalavras, ponha-se o poeta, subjetivamente, na quádrupla função de arquiteto, engenheiro,\n\nconstrutor e operário, e aí tendes o que é poesia. A comparação pode parecer orgulhosa, do ponto\nde vista do poeta, mas, muito pelo contrário, ela me parece colocar a poesia em sua real posição\ndiante das outras artes: a de verdadeira humildade. O material do poeta é a vida, e só a vida, com\ntudo o que ela tem de sórdido e sublime. Seu instrumento é a palavra. Sua função é a de ser\nexpressão verbal rítmica ao mundo informe de sensações, sentimentos e pressentimentos dos\noutros com relação a tudo o que existe ou é passível de existência no mundo mágico da\nimaginação. Seu único dever é fazê-lo da maneira mais bela, simples e comunicativa possível, do\ncontrário ele não será nunca um bom poeta, mas um mero lucubrador de versos. Mas para o poeta\na vida é eterna. Ele vive no vórtice dessas contradições, no eixo desses contrários. Não viva ele\nassim, e transformar-se-á, certamente, dentro de um mundo em carne viva, num jardinista, num\nfloricultor de espécimes que, por mais belos sejam, pertencem antes a estufas que ao homem que\nvive nas ruas e nas casas. Isto é: pelo menos para mim. E não é outra a razão pela qual a poesia\ntem dado à história, dentro do quadro das artes, o maior, de longe o maior número de santos e de\nmártires. Pois, individualmente, o poeta é, “ai dele”, um ser em constante busca de absoluto e,\nsocialmente, um permanente revoltado. Daí não haver por que estranhar o fato de ser a poesia,\npara efeitos domésticos, a filha pobre na família das artes, e um elemento de perturbação da\nordem dentro da sociedade tal como está constituída. (MORAES, Vinicius de. Para viver um\ngrande amor, 6. ed., Sabiá, 1962, p. 101-103. Adaptado.)"
+          "text": "Trata-se de uma declaração linguística dotada de sentido e mensagem clara e precisa."
         }
       ],
       "sourcePage": 164,
@@ -32550,8 +32565,11 @@
       ],
       "sourcePage": 165,
       "sourceColumn": 0,
-      "contextText": "",
-      "contextRange": null,
+      "contextText": "Texto para responder às questões de 06 a 10.\nSobre poesia\nNão têm sido poucas as tentativas de definir o que é poesia. Desde Platão e Aristóteles até os\nsemânticos e concretistas modernos, insistem filósofos, críticos e mesmo os próprios poetas em\ndar uma definição da arte de se exprimir em versos, velha como a humanidade. Eu mesmo, em\nartigos e críticas que já vão longe, não me pude furtar à vaidade de fazer os meus mots de finesse\nem causa própria – coisa que hoje me parece senão irresponsável, pelo menos bastante literária.\nUm operário parte de um monte de tijolos sem significação especial senão serem tijolos para – sob\na orientação de um construtor, que por sua vez segue os cálculos de um engenheiro obediente ao\nprojeto de um arquiteto – levantar uma casa. Um monte de tijolos é um monte de tijolos. Não existe\nnele beleza específica. Mas uma casa pode ser bela, se o projeto de um bom arquiteto tiver a\nestruturá-la, os cálculos de um bom engenheiro e a vigilância de um bom construtor, no sentido do\nbom acabamento, por um bom operário, do trabalho em execução. Troquem-se tijolos por\npalavras, ponha-se o poeta, subjetivamente, na quádrupla função de arquiteto, engenheiro,\n\nconstrutor e operário, e aí tendes o que é poesia. A comparação pode parecer orgulhosa, do ponto\nde vista do poeta, mas, muito pelo contrário, ela me parece colocar a poesia em sua real posição\ndiante das outras artes: a de verdadeira humildade. O material do poeta é a vida, e só a vida, com\ntudo o que ela tem de sórdido e sublime. Seu instrumento é a palavra. Sua função é a de ser\nexpressão verbal rítmica ao mundo informe de sensações, sentimentos e pressentimentos dos\noutros com relação a tudo o que existe ou é passível de existência no mundo mágico da\nimaginação. Seu único dever é fazê-lo da maneira mais bela, simples e comunicativa possível, do\ncontrário ele não será nunca um bom poeta, mas um mero lucubrador de versos. Mas para o poeta\na vida é eterna. Ele vive no vórtice dessas contradições, no eixo desses contrários. Não viva ele\nassim, e transformar-se-á, certamente, dentro de um mundo em carne viva, num jardinista, num\nfloricultor de espécimes que, por mais belos sejam, pertencem antes a estufas que ao homem que\nvive nas ruas e nas casas. Isto é: pelo menos para mim. E não é outra a razão pela qual a poesia\ntem dado à história, dentro do quadro das artes, o maior, de longe o maior número de santos e de\nmártires. Pois, individualmente, o poeta é, “ai dele”, um ser em constante busca de absoluto e,\nsocialmente, um permanente revoltado. Daí não haver por que estranhar o fato de ser a poesia,\npara efeitos domésticos, a filha pobre na família das artes, e um elemento de perturbação da\nordem dentro da sociedade tal como está constituída. (MORAES, Vinicius de. Para viver um\ngrande amor, 6. ed., Sabiá, 1962, p. 101-103. Adaptado.)",
+      "contextRange": [
+        6,
+        10
+      ],
       "confidence": "média",
       "extractionReview": false,
       "imageOnly": false,
@@ -32595,8 +32613,11 @@
       ],
       "sourcePage": 165,
       "sourceColumn": 0,
-      "contextText": "",
-      "contextRange": null,
+      "contextText": "Texto para responder às questões de 06 a 10.\nSobre poesia\nNão têm sido poucas as tentativas de definir o que é poesia. Desde Platão e Aristóteles até os\nsemânticos e concretistas modernos, insistem filósofos, críticos e mesmo os próprios poetas em\ndar uma definição da arte de se exprimir em versos, velha como a humanidade. Eu mesmo, em\nartigos e críticas que já vão longe, não me pude furtar à vaidade de fazer os meus mots de finesse\nem causa própria – coisa que hoje me parece senão irresponsável, pelo menos bastante literária.\nUm operário parte de um monte de tijolos sem significação especial senão serem tijolos para – sob\na orientação de um construtor, que por sua vez segue os cálculos de um engenheiro obediente ao\nprojeto de um arquiteto – levantar uma casa. Um monte de tijolos é um monte de tijolos. Não existe\nnele beleza específica. Mas uma casa pode ser bela, se o projeto de um bom arquiteto tiver a\nestruturá-la, os cálculos de um bom engenheiro e a vigilância de um bom construtor, no sentido do\nbom acabamento, por um bom operário, do trabalho em execução. Troquem-se tijolos por\npalavras, ponha-se o poeta, subjetivamente, na quádrupla função de arquiteto, engenheiro,\n\nconstrutor e operário, e aí tendes o que é poesia. A comparação pode parecer orgulhosa, do ponto\nde vista do poeta, mas, muito pelo contrário, ela me parece colocar a poesia em sua real posição\ndiante das outras artes: a de verdadeira humildade. O material do poeta é a vida, e só a vida, com\ntudo o que ela tem de sórdido e sublime. Seu instrumento é a palavra. Sua função é a de ser\nexpressão verbal rítmica ao mundo informe de sensações, sentimentos e pressentimentos dos\noutros com relação a tudo o que existe ou é passível de existência no mundo mágico da\nimaginação. Seu único dever é fazê-lo da maneira mais bela, simples e comunicativa possível, do\ncontrário ele não será nunca um bom poeta, mas um mero lucubrador de versos. Mas para o poeta\na vida é eterna. Ele vive no vórtice dessas contradições, no eixo desses contrários. Não viva ele\nassim, e transformar-se-á, certamente, dentro de um mundo em carne viva, num jardinista, num\nfloricultor de espécimes que, por mais belos sejam, pertencem antes a estufas que ao homem que\nvive nas ruas e nas casas. Isto é: pelo menos para mim. E não é outra a razão pela qual a poesia\ntem dado à história, dentro do quadro das artes, o maior, de longe o maior número de santos e de\nmártires. Pois, individualmente, o poeta é, “ai dele”, um ser em constante busca de absoluto e,\nsocialmente, um permanente revoltado. Daí não haver por que estranhar o fato de ser a poesia,\npara efeitos domésticos, a filha pobre na família das artes, e um elemento de perturbação da\nordem dentro da sociedade tal como está constituída. (MORAES, Vinicius de. Para viver um\ngrande amor, 6. ed., Sabiá, 1962, p. 101-103. Adaptado.)",
+      "contextRange": [
+        6,
+        10
+      ],
       "confidence": "média",
       "extractionReview": false,
       "imageOnly": false,
@@ -32640,8 +32661,11 @@
       ],
       "sourcePage": 166,
       "sourceColumn": 0,
-      "contextText": "",
-      "contextRange": null,
+      "contextText": "Texto para responder às questões de 06 a 10.\nSobre poesia\nNão têm sido poucas as tentativas de definir o que é poesia. Desde Platão e Aristóteles até os\nsemânticos e concretistas modernos, insistem filósofos, críticos e mesmo os próprios poetas em\ndar uma definição da arte de se exprimir em versos, velha como a humanidade. Eu mesmo, em\nartigos e críticas que já vão longe, não me pude furtar à vaidade de fazer os meus mots de finesse\nem causa própria – coisa que hoje me parece senão irresponsável, pelo menos bastante literária.\nUm operário parte de um monte de tijolos sem significação especial senão serem tijolos para – sob\na orientação de um construtor, que por sua vez segue os cálculos de um engenheiro obediente ao\nprojeto de um arquiteto – levantar uma casa. Um monte de tijolos é um monte de tijolos. Não existe\nnele beleza específica. Mas uma casa pode ser bela, se o projeto de um bom arquiteto tiver a\nestruturá-la, os cálculos de um bom engenheiro e a vigilância de um bom construtor, no sentido do\nbom acabamento, por um bom operário, do trabalho em execução. Troquem-se tijolos por\npalavras, ponha-se o poeta, subjetivamente, na quádrupla função de arquiteto, engenheiro,\n\nconstrutor e operário, e aí tendes o que é poesia. A comparação pode parecer orgulhosa, do ponto\nde vista do poeta, mas, muito pelo contrário, ela me parece colocar a poesia em sua real posição\ndiante das outras artes: a de verdadeira humildade. O material do poeta é a vida, e só a vida, com\ntudo o que ela tem de sórdido e sublime. Seu instrumento é a palavra. Sua função é a de ser\nexpressão verbal rítmica ao mundo informe de sensações, sentimentos e pressentimentos dos\noutros com relação a tudo o que existe ou é passível de existência no mundo mágico da\nimaginação. Seu único dever é fazê-lo da maneira mais bela, simples e comunicativa possível, do\ncontrário ele não será nunca um bom poeta, mas um mero lucubrador de versos. Mas para o poeta\na vida é eterna. Ele vive no vórtice dessas contradições, no eixo desses contrários. Não viva ele\nassim, e transformar-se-á, certamente, dentro de um mundo em carne viva, num jardinista, num\nfloricultor de espécimes que, por mais belos sejam, pertencem antes a estufas que ao homem que\nvive nas ruas e nas casas. Isto é: pelo menos para mim. E não é outra a razão pela qual a poesia\ntem dado à história, dentro do quadro das artes, o maior, de longe o maior número de santos e de\nmártires. Pois, individualmente, o poeta é, “ai dele”, um ser em constante busca de absoluto e,\nsocialmente, um permanente revoltado. Daí não haver por que estranhar o fato de ser a poesia,\npara efeitos domésticos, a filha pobre na família das artes, e um elemento de perturbação da\nordem dentro da sociedade tal como está constituída. (MORAES, Vinicius de. Para viver um\ngrande amor, 6. ed., Sabiá, 1962, p. 101-103. Adaptado.)",
+      "contextRange": [
+        6,
+        10
+      ],
       "confidence": "média",
       "extractionReview": false,
       "imageOnly": false,
@@ -32685,8 +32709,11 @@
       ],
       "sourcePage": 166,
       "sourceColumn": 0,
-      "contextText": "",
-      "contextRange": null,
+      "contextText": "Texto para responder às questões de 06 a 10.\nSobre poesia\nNão têm sido poucas as tentativas de definir o que é poesia. Desde Platão e Aristóteles até os\nsemânticos e concretistas modernos, insistem filósofos, críticos e mesmo os próprios poetas em\ndar uma definição da arte de se exprimir em versos, velha como a humanidade. Eu mesmo, em\nartigos e críticas que já vão longe, não me pude furtar à vaidade de fazer os meus mots de finesse\nem causa própria – coisa que hoje me parece senão irresponsável, pelo menos bastante literária.\nUm operário parte de um monte de tijolos sem significação especial senão serem tijolos para – sob\na orientação de um construtor, que por sua vez segue os cálculos de um engenheiro obediente ao\nprojeto de um arquiteto – levantar uma casa. Um monte de tijolos é um monte de tijolos. Não existe\nnele beleza específica. Mas uma casa pode ser bela, se o projeto de um bom arquiteto tiver a\nestruturá-la, os cálculos de um bom engenheiro e a vigilância de um bom construtor, no sentido do\nbom acabamento, por um bom operário, do trabalho em execução. Troquem-se tijolos por\npalavras, ponha-se o poeta, subjetivamente, na quádrupla função de arquiteto, engenheiro,\n\nconstrutor e operário, e aí tendes o que é poesia. A comparação pode parecer orgulhosa, do ponto\nde vista do poeta, mas, muito pelo contrário, ela me parece colocar a poesia em sua real posição\ndiante das outras artes: a de verdadeira humildade. O material do poeta é a vida, e só a vida, com\ntudo o que ela tem de sórdido e sublime. Seu instrumento é a palavra. Sua função é a de ser\nexpressão verbal rítmica ao mundo informe de sensações, sentimentos e pressentimentos dos\noutros com relação a tudo o que existe ou é passível de existência no mundo mágico da\nimaginação. Seu único dever é fazê-lo da maneira mais bela, simples e comunicativa possível, do\ncontrário ele não será nunca um bom poeta, mas um mero lucubrador de versos. Mas para o poeta\na vida é eterna. Ele vive no vórtice dessas contradições, no eixo desses contrários. Não viva ele\nassim, e transformar-se-á, certamente, dentro de um mundo em carne viva, num jardinista, num\nfloricultor de espécimes que, por mais belos sejam, pertencem antes a estufas que ao homem que\nvive nas ruas e nas casas. Isto é: pelo menos para mim. E não é outra a razão pela qual a poesia\ntem dado à história, dentro do quadro das artes, o maior, de longe o maior número de santos e de\nmártires. Pois, individualmente, o poeta é, “ai dele”, um ser em constante busca de absoluto e,\nsocialmente, um permanente revoltado. Daí não haver por que estranhar o fato de ser a poesia,\npara efeitos domésticos, a filha pobre na família das artes, e um elemento de perturbação da\nordem dentro da sociedade tal como está constituída. (MORAES, Vinicius de. Para viver um\ngrande amor, 6. ed., Sabiá, 1962, p. 101-103. Adaptado.)",
+      "contextRange": [
+        6,
+        10
+      ],
       "confidence": "média",
       "extractionReview": false,
       "imageOnly": false,
@@ -32730,8 +32757,11 @@
       ],
       "sourcePage": 166,
       "sourceColumn": 0,
-      "contextText": "",
-      "contextRange": null,
+      "contextText": "Texto para responder às questões de 06 a 10.\nSobre poesia\nNão têm sido poucas as tentativas de definir o que é poesia. Desde Platão e Aristóteles até os\nsemânticos e concretistas modernos, insistem filósofos, críticos e mesmo os próprios poetas em\ndar uma definição da arte de se exprimir em versos, velha como a humanidade. Eu mesmo, em\nartigos e críticas que já vão longe, não me pude furtar à vaidade de fazer os meus mots de finesse\nem causa própria – coisa que hoje me parece senão irresponsável, pelo menos bastante literária.\nUm operário parte de um monte de tijolos sem significação especial senão serem tijolos para – sob\na orientação de um construtor, que por sua vez segue os cálculos de um engenheiro obediente ao\nprojeto de um arquiteto – levantar uma casa. Um monte de tijolos é um monte de tijolos. Não existe\nnele beleza específica. Mas uma casa pode ser bela, se o projeto de um bom arquiteto tiver a\nestruturá-la, os cálculos de um bom engenheiro e a vigilância de um bom construtor, no sentido do\nbom acabamento, por um bom operário, do trabalho em execução. Troquem-se tijolos por\npalavras, ponha-se o poeta, subjetivamente, na quádrupla função de arquiteto, engenheiro,\n\nconstrutor e operário, e aí tendes o que é poesia. A comparação pode parecer orgulhosa, do ponto\nde vista do poeta, mas, muito pelo contrário, ela me parece colocar a poesia em sua real posição\ndiante das outras artes: a de verdadeira humildade. O material do poeta é a vida, e só a vida, com\ntudo o que ela tem de sórdido e sublime. Seu instrumento é a palavra. Sua função é a de ser\nexpressão verbal rítmica ao mundo informe de sensações, sentimentos e pressentimentos dos\noutros com relação a tudo o que existe ou é passível de existência no mundo mágico da\nimaginação. Seu único dever é fazê-lo da maneira mais bela, simples e comunicativa possível, do\ncontrário ele não será nunca um bom poeta, mas um mero lucubrador de versos. Mas para o poeta\na vida é eterna. Ele vive no vórtice dessas contradições, no eixo desses contrários. Não viva ele\nassim, e transformar-se-á, certamente, dentro de um mundo em carne viva, num jardinista, num\nfloricultor de espécimes que, por mais belos sejam, pertencem antes a estufas que ao homem que\nvive nas ruas e nas casas. Isto é: pelo menos para mim. E não é outra a razão pela qual a poesia\ntem dado à história, dentro do quadro das artes, o maior, de longe o maior número de santos e de\nmártires. Pois, individualmente, o poeta é, “ai dele”, um ser em constante busca de absoluto e,\nsocialmente, um permanente revoltado. Daí não haver por que estranhar o fato de ser a poesia,\npara efeitos domésticos, a filha pobre na família das artes, e um elemento de perturbação da\nordem dentro da sociedade tal como está constituída. (MORAES, Vinicius de. Para viver um\ngrande amor, 6. ed., Sabiá, 1962, p. 101-103. Adaptado.)",
+      "contextRange": [
+        6,
+        10
+      ],
       "confidence": "média",
       "extractionReview": false,
       "imageOnly": false,
@@ -44577,7 +44607,7 @@
         },
         {
           "letter": "D",
-          "text": "Formular uma hipótese argumentativa, exemplificando um comportamento. Leia o texto e\n  responda as questões de 06 a 10 Texto 02 Disponível em:\n  https://tirasarmandinho.tumblr.com/post/130912172179/tirinha-original. Acesso em: 20 abr.\n  2026"
+          "text": "Formular uma hipótese argumentativa, exemplificando um comportamento."
         }
       ],
       "sourcePage": 37,
@@ -44631,8 +44661,11 @@
       ],
       "sourcePage": 37,
       "sourceColumn": 0,
-      "contextText": "",
-      "contextRange": null,
+      "contextText": "Leia o texto e\n  responda as questões de 06 a 10 Texto 02 Disponível em:\n  https://tirasarmandinho.tumblr.com/post/130912172179/tirinha-original. Acesso em: 20 abr.\n  2026",
+      "contextRange": [
+        6,
+        9
+      ],
       "discipline": "Língua Portuguesa",
       "disciplineCode": "LP",
       "topic": "Classes de palavras e morfologia",
@@ -44677,8 +44710,11 @@
       ],
       "sourcePage": 37,
       "sourceColumn": 0,
-      "contextText": "",
-      "contextRange": null,
+      "contextText": "Leia o texto e\n  responda as questões de 06 a 10 Texto 02 Disponível em:\n  https://tirasarmandinho.tumblr.com/post/130912172179/tirinha-original. Acesso em: 20 abr.\n  2026",
+      "contextRange": [
+        6,
+        9
+      ],
       "discipline": "Língua Portuguesa",
       "disciplineCode": "LP",
       "topic": "Classes de palavras e morfologia",
@@ -44723,8 +44759,11 @@
       ],
       "sourcePage": 37,
       "sourceColumn": 0,
-      "contextText": "",
-      "contextRange": null,
+      "contextText": "Leia o texto e\n  responda as questões de 06 a 10 Texto 02 Disponível em:\n  https://tirasarmandinho.tumblr.com/post/130912172179/tirinha-original. Acesso em: 20 abr.\n  2026",
+      "contextRange": [
+        6,
+        9
+      ],
       "discipline": "Língua Portuguesa",
       "disciplineCode": "LP",
       "topic": "Formação e estrutura de palavras",
@@ -44769,8 +44808,11 @@
       ],
       "sourcePage": 38,
       "sourceColumn": 0,
-      "contextText": "",
-      "contextRange": null,
+      "contextText": "Leia o texto e\n  responda as questões de 06 a 10 Texto 02 Disponível em:\n  https://tirasarmandinho.tumblr.com/post/130912172179/tirinha-original. Acesso em: 20 abr.\n  2026",
+      "contextRange": [
+        6,
+        9
+      ],
       "discipline": "Língua Portuguesa",
       "disciplineCode": "LP",
       "topic": "Pontuação e sinais gráficos",
