@@ -3,7 +3,7 @@
  * O cache fica em data/explanations/, separado de data/state.json.
  */
 export const DEFAULT_AI_MODEL='@cf/meta/llama-3.1-8b-instruct-fp8-fast';
-export const EXPLANATION_REVISION=1;
+export const EXPLANATION_REVISION=2;
 const validAnswer=a=>/^[A-E]$/.test(String(a||''));
 const relevantLaw=q=>q?.disciplineCode==='LE'||/legisla[cç][aã]o|direito (?:administrativo|constitucional)/i.test(q?.discipline||'');
 const municipalLaw=q=>/c[aâ]mara municipal de |prefeitura (?:municipal )?de |lei org[aâ]nica do munic[ií]pio de |lei municipal n[ºo°.]|resolu[cç][aã]o n[ºo°.]*/i.test([q?.stem,q?.contextText].join(' '));
@@ -12,7 +12,12 @@ export function canExplain(q){
  if(q.status==='annulled'||q.status==='outdated')return {ok:false,reason:'Esta questão está anulada ou desatualizada; não há correção válida para explicar.'};
  if(!validAnswer(q.answer))return {ok:false,reason:'A questão não possui gabarito confirmado.'};
  if(q.imageOnly||q.visualSegments?.top||q.visualSegments?.bottom)return {ok:false,reason:'Esta questão contém imagem, figura ou tabela necessária à resolução. O modelo de texto ainda não consegue interpretá-la com segurança.'};
- if(!String(q.stem||'').trim()||!Array.isArray(q.options)||q.options.length!==5)return {ok:false,reason:'Enunciado ou alternativas incompletas.'};
+ if(!String(q.stem||'').trim()||!Array.isArray(q.options)||q.options.length<2||q.options.length>5)
+   return {ok:false,reason:'Enunciado ou alternativas incompletas.'};
+  const letters=q.options.map(o=>String(o?.letter||'').toUpperCase());
+  if(new Set(letters).size!==letters.length||!letters.includes(q.answer)||
+     q.options.some(o=>!validAnswer(o?.letter)||!String(o?.text||'').trim()))
+   return {ok:false,reason:'Alternativas ou gabarito inconsistentes; a explicação automática não foi gerada.'};
  if(relevantLaw(q)&&municipalLaw(q))return {ok:false,reason:'Legislação municipal exige conferência com a norma oficial vigente; explicações automáticas ainda não estão habilitadas para esse caso.'};
  return {ok:true,reason:''};
 }
