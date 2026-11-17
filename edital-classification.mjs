@@ -143,7 +143,7 @@ const rx202={
   rx('METRO','CENT[IÍ]METRO','QUIL[ÔO]METRO','LITRO','GRAMAS?','MEDIDAS','[ÁA]REA','VOLUME'),
   rx('PORCENT','PERCENT','DESCONTO','TAXA DE','%'),
   rx('CONJUNTO','UNI[ÃA]O','INTERSE[CÇ][ÃA]O','PERTIN[EÊ]NCIA'),
-  rx('REAL','CENTAVOS','MOEDAS','C[EÉ]DULAS','SISTEMA MONET[AÁ]RIO'),
+  rx('REAL','CENTAVOS','MOEDAS','C[EÉ]DULAS','SISTEMA MONET[AÁ]RIO','TROCO','NOTAS DE','VALOR DA COMPRA','MONTANTE EM ESP[EÉ]CIE'),
   rx('SEQU[EÊ]NCIA','PADR[ÃA]O L[ÓO]GICO','PR[ÓO]XIMO N[ÚU]MERO','FIGURAS?','LETRAS?')
  ],
  gerais:[
@@ -401,7 +401,7 @@ function inferSemusaClassification(q,exam){
  if(!(code==='CE'||code==='LE'||/SAUDE|SUS|CONHECIMENTOS ESPECIFICOS/.test(discipline)))
   return result('fora',null,-1,'Disciplina não prevista no edital do cargo 240.');
  const checks=[
-  [11,/8\s?080\s?\/\s?1990|8\s?142\s?\/\s?1990|LEIS? ORGANICAS? DA SAUDE/],
+  [11,/8\s?080\s*(?:\/|\s)\s*1990|8\s?142\s*(?:\/|\s)\s*1990|LEIS? ORGANICAS? DA SAUDE/],
   [7,/POLITICA NACIONAL DE ATENCAO BASICA|\bPNAB\b/],
   [9,/ORGANIZACAO DA ATENCAO BASICA/],
   [8,/VIGILANCIA EM SAUDE|VIGILANCIA EPIDEMIOLOGICA/],
