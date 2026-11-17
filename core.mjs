@@ -51,12 +51,33 @@ export function repairPreparedQuestionWording(state){
  return state;
 }
 
+
+/**
+ * Correção de classificação de uma questão de interpretação textual, vinda
+ * de uma coletânea de TI com metadados de disciplina incorretos.
+ * Não modifica código permanente, gabarito, número ou histórico.
+ */
+export function repairKnownQuestionClassifications(state){
+ if(!Array.isArray(state?.questions))return state;
+ for(const q of state.questions){
+  if(q?.code!=='Q2024TI05005')continue;
+  const stem=String(q.stem||'');
+  // Não confiar só no código: confirmar o trecho que identifica o item.
+  if(!/segundo o texto/i.test(stem)||
+     !/hist[oó]ria social da ignor[aâ]ncia/i.test(stem))continue;
+  const correct=unifyQuestionTaxonomy({...q,discipline:'Língua Portuguesa',disciplineCode:'LP'});
+  if(correct.disciplineCode==='LP'&&correct.topicCode==='LINT')
+   Object.assign(q,correct,{confidence:'alta'});
+ }
+ return state;
+}
+
 export function normalizeState(data){
   const base=fresh();
   if(!data || typeof data!=='object')return base;
   for(const k of Object.keys(base))if(Array.isArray(base[k])&&Array.isArray(data[k]))base[k]=data[k];
   if(data.tombstones&&typeof data.tombstones==='object')for(const k of Object.keys(base.tombstones))if(Array.isArray(data.tombstones[k]))base.tombstones[k]=[...new Set(data.tombstones[k].filter(x=>typeof x==='string'))];
-  return ensureUniqueQuestionCodes(repairPreparedQuestionWording(repairImportedFooters(base)));
+  return ensureUniqueQuestionCodes(repairKnownQuestionClassifications(repairPreparedQuestionWording(repairImportedFooters(base))));
 
 }
 export function ensureUniqueQuestionCodes(state){
