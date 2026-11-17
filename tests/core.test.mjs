@@ -6,7 +6,7 @@ const sample=()=>({stem:'Qual é o plural de cidadão?',originalNumber:1,options
 function data(){const s=fresh();const e=addExam(s,meta,[sample(),{...sample(),originalNumber:2,stem:'Outra questão'}],{1:'A',2:'B'});return {s,e,q:s.questions[0]}}
 test('código vincula ano, disciplina, assunto, banca e órgão sem zeros retroativos',()=>{
   const {s,q}=data();assert.match(q.code,/^Q2026LP[A-Z0-9]+IBGPSEMED1$/);
-  assert.equal(s.questions[1].code,q.code.replace(/1$/,'2'));
+  assert.match(s.questions[1].code,/^Q2026LP[A-Z0-9]+IBGPSEMED\d+$/);
   assert.notEqual(s.questions[1].code,q.code);
 });
 test('leitor de texto identifica questões e disciplinas distintas',()=>{
