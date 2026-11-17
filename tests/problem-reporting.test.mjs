@@ -34,7 +34,7 @@ test('Q2024TI05005 é interpretação de texto, não hardware ou informática',(
  assert.equal(normalized.attempts[0].answer,'C');
  const catalog=classifyForCargo(q,{id:'exam-example',orgao:'Diversos'},'505');
  assert.equal(catalog.status,'dentro');
- assert.equal(catalog.discipline,'Língua Portuguesa');
+ assert.equal(catalog.discipline,'Português');
  assert.notMatch(catalog.topic,/Hardware|periféricos/i);
  assert.deepEqual(normalizeState(normalized).questions,[q]);
 });
