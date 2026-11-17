@@ -1,9 +1,9 @@
-import {STORAGE_KEY,newId,fresh,normalizeState,parseExamText,parseKey,inferExamMetadata,completeExamMetadata,classify,classifyByExamDivision,repeatedSupportText,addExam,upgradeRecoveredExam,findPreviouslyImportedExam,recordAttempt,latestAnswer,outcome,stats,filtered,normalizeOutcomeSelection,prioritize,createSimulation,finishSimulation,simulationResult,expire,validAnswer} from './core.mjs?v=0.6.32';
+import {STORAGE_KEY,newId,fresh,normalizeState,parseExamText,parseKey,inferExamMetadata,completeExamMetadata,classify,classifyByExamDivision,repeatedSupportText,addExam,upgradeRecoveredExam,findPreviouslyImportedExam,recordAttempt,latestAnswer,outcome,stats,filtered,normalizeOutcomeSelection,prioritize,createSimulation,finishSimulation,simulationResult,expire,validAnswer} from './core.mjs?v=0.6.33';
 import {readPdf} from './pdf-import.mjs';
 import {chosenAnswerSection,parseGridKey,questionIntegrity,declaredQuestionCount,declaredAlternativeCount,inferredAlternativeCount} from './pdf-layout.mjs';
 import {createSyncClient} from './sync-client.mjs';
 import {STUDY_CONTEXT,eligibleForList} from './study-context.mjs';
-import {CATALOGS,currentCatalog,allTopics,classifyForCargo,subjectSummary,EDITAL_SCOPE_OPTIONS,normalizeEditalScope,inEditalScope,STUDY_ALL,ALL_STUDY_DISCIPLINES,studyAllGroup,filterStudyAllQuestions} from './edital-classification.mjs?v=0.6.32';
+import {CATALOGS,currentCatalog,allTopics,classifyForCargo,subjectSummary,EDITAL_SCOPE_OPTIONS,normalizeEditalScope,inEditalScope,STUDY_ALL,ALL_STUDY_DISCIPLINES,studyAllGroup,filterStudyAllQuestions} from './edital-classification.mjs?v=0.6.33';
 
 // A versão do rodapé pode ser nova enquanto o navegador usa módulos
 // JavaScript antigos. Exibir a revisão REAL do módulo executado para diagnóstico.
@@ -169,8 +169,8 @@ async function explainConnectionError(origin,error){
   const res=await fetch(origin+'/api/health',{cache:'no-store'});
   const health=await res.json();
   if(res.ok&&health?.status==='ok'){
-   if(health.workerVersion!=='0.6.32')
-    return 'O Worker conectado ainda está na versão '+(health.workerVersion||'antiga')+'. Publique a versão 0.6.32 na Cloudflare para ativar as correções de IA.';
+   if(health.workerVersion!=='0.6.33')
+    return 'O Worker conectado ainda está na versão '+(health.workerVersion||'antiga')+'. Publique a versão 0.6.33 na Cloudflare para ativar as correções de IA.';
    if(health.aiConfigured===false)
     return 'O Worker está acessível, mas o binding AI não está ativado na Cloudflare. Verifique o deploy com wrangler.toml.';
    return 'O Worker está acessível, mas a rota de explicações falhou. Verifique a implantação e tente novamente.';
