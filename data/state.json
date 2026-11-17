@@ -40917,7 +40917,7 @@
       "banca": "Instituto Legalle",
       "orgao": "Prefeitura de Cândido Godói/RS",
       "heading": "Raciocínio Lógico/Matemático",
-      "stem": "Um setor administrativo planejou a compra de novos suprimentos para otimizar o atendimento\n ao público. Foram adquiridos doze pacotes de papel por R$ 18,00 cada, sete caixas de canetas\n por R$ 24,00 cada e quatro grampeadores por R$ 35,00 cada. O responsável pelo setor pagou\n a conta com sete notas de R$ 100,00. Considerando que o valor total da compra deve ser\n subtraído do montante entregue em espécie, qual será o valor exato do troco em cedulas que o\n servidor deverá receber apos a transação?",
+      "stem": "Um setor administrativo planejou a compra de novos suprimentos para otimizar o atendimento\n ao público. Foram adquiridos doze pacotes de papel por R$ 18,00 cada, sete caixas de canetas\n por R$ 24,00 cada e quatro grampeadores por R$ 35,00 cada. O responsável pelo setor pagou\n a conta com sete notas de R$ 100,00. Considerando que o valor total da compra deve ser\n subtraído do montante entregue em espécie, qual será o valor exato do troco que o\n servidor deverá receber apos a transação?",
       "options": [
         {
           "letter": "A",
@@ -45987,7 +45987,16 @@
       "sourceFile": "2026_Bancas_Diversas_Auxiliar_de_Servicos_Gerais_Candeias_do_Jamari(2).pdf"
     }
   ],
-  "attempts": [],
+  "attempts": [
+    {
+      "id": "aca855c8-8caa-437e-9983-3666dbd697c3",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-asg-2026-01-017",
+      "answer": "D",
+      "simulationId": "",
+      "at": "2026-11-17T16:58:51.872Z"
+    }
+  ],
   "simulations": [],
   "flags": [
     {
