@@ -1,9 +1,19 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.31 — 17/11/2026**  
+**Versão experimental 0.6.32 — 17/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.32 — explicações por IA e diagnóstico
+
+- Corrigido o bloqueio de explicações para **questões com quatro alternativas** (A–D). A validação agora admite de 2 a 5 alternativas completas, com letras diferentes e gabarito correspondente.
+- O identificador da IA foi corrigido para **`@cf/meta/llama-3.1-8b-instruct-fast`**, nome documentado pela Cloudflare, substituindo o identificador anterior `@cf/meta/llama-3.1-8b-instruct-fp8-fast`, que não aparece como modelo válido nas referências atuais.
+- Ao solicitar explicação, a interface mostra erros HTTP e respostas do Worker, em vez da mensagem genérica. Falhas de rede consultam o endpoint de diagnóstico quando possível. O botão **Consultar diagnóstico do Worker** abre `/api/health`.
+- O endpoint público de diagnóstico identifica a revisão do **Worker 0.6.32**, se a rota de explicações existe e se o binding **AI** está ativo. Essas informações não revelam segredos.
+- Para a questão `Q2026ASG01017`, além do texto do troco, foi corrigida a alternativa A de **R$ 1e6,00** para **R$ 166,00**. O gabarito **C (R$ 176,00)** e as respostas armazenadas não mudaram.
+- **Atenção à implantação**: publicar arquivos no GitHub Pages não atualiza necessariamente o Cloudflare Worker. É preciso confirmar deploy pelo Git associado ou pelo comando `npx wrangler deploy`, na conta Cloudflare que hospeda `estatistica-das-provas.wilberalarcon.workers.dev`. O nome do Worker em `wrangler.toml` é **estatistica-das-provas**; não crie outro serviço com nome diferente por engano.
+- Não exponha o segredo `GITHUB_TOKEN` em arquivos, mensagens ou no frontend. A explicação depende do binding AI configurado em `wrangler.toml`.
 
 ## Versão 0.6.31 — SEMUSA separada de Candeias e correção de questão
 
