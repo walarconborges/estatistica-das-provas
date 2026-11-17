@@ -401,7 +401,7 @@ function legalBasisHtml(q){
   '<p>'+h(a.legalReason)+'</p>'+
   '<a href="'+h(a.sourceUrl)+'" target="_blank" rel="noopener noreferrer">Consultar norma oficial</a>'+
   '<p class="hint">Questão adaptada automaticamente. Encontrou um erro? Sinalize para revisão.</p>'+
-  btn('flag-question','Sinalizar erro na adaptação','secondary','data-id="'+h(q.id)+'"')+
+  problemFlagButton(q)+
   '</div>';
 }
 
@@ -452,6 +452,18 @@ function feedback(q,answer){
   if(!validAnswer(q.answer))return '<span class="badge wait">Sem gabarito confirmado</span>';
   return answer===q.answer?'<span class="badge good">Acerto</span>':'<span class="badge bad">Erro</span>';
 }
+
+function pendingProblem(qid){
+ return state.flags.some(f=>f.profileId===profileId&&f.questionId===qid&&
+  f.type==='problem'&&f.status==='pending');
+}
+function problemFlagButton(q){
+ const id='data-id="'+h(q.id)+'"';
+ return pendingProblem(q.id)
+  ?btn('flag-question','Problema sinalizado','secondary',id+' disabled aria-label="Problema já sinalizado e aguardando análise"')
+  :btn('flag-question','Sinalizar problema','secondary',id);
+}
+
 function cardQuestion(q,index,scope='single',selected='',previous=null){
   const last=latestAnswer(state,profileId,q.id);
   const label=scope==='sim'?index+1:q.originalNumber||index+1;
@@ -466,9 +478,9 @@ function cardQuestion(q,index,scope='single',selected='',previous=null){
     `<img loading="lazy" class="question-img" src="${h(q.pageImage)}" alt="Enunciado em imagem; alternativas abaixo em texto selecionável">`:
     `<div class="question-body">${h(q.stem||'[Enunciado não extraído]')}</div>${q.pageImage?`<img loading="lazy" class="question-img" src="${h(q.pageImage)}" alt="Recorte do PDF original">`:''}`}
   ${alternatives(q,scope,selected)}
-  ${scope==='single'?`<div class="actions">${btn('answer-single','Conferir resposta','primary',`data-id="${h(q.id)}"`)}${last&&!q.originalQuestionId?btn('explain-question','Explicar questão','secondary',`data-id="${h(q.id)}"`):''}${currentFilter.editalCargo===STUDY_ALL?'':btn('review-edital','Conferir edital','secondary',`data-id="${h(q.id)}"`)}${btn('flag-question','Sinalizar problema','secondary',`data-id="${h(q.id)}"`)}${btn('question-log','Histórico','secondary',`data-id="${h(q.id)}"`)}</div>
+  ${scope==='single'?`<div class="actions">${btn('answer-single','Conferir resposta','primary',`data-id="${h(q.id)}"`)}${last&&!q.originalQuestionId?btn('explain-question','Explicar questão','secondary',`data-id="${h(q.id)}"`):''}${currentFilter.editalCargo===STUDY_ALL?'':btn('review-edital','Conferir edital','secondary',`data-id="${h(q.id)}"`)}${problemFlagButton(q)}${btn('question-log','Histórico','secondary',`data-id="${h(q.id)}"`)}</div>
     <div class="question-feedback">${last?`Última resposta válida: <strong>${h(last.answer)}</strong> — ${feedback(q,last.answer)}`:''}</div><div class="legal-result">${last?legalBasisHtml(q):''}</div>${explanationBox(q.id)}`:''}
-  ${scope==='sim'?'<div class="actions">'+(currentFilter.editalCargo===STUDY_ALL?'':btn('review-edital','Conferir edital','secondary','data-id="'+h(q.id)+'"'))+btn('flag-question','Sinalizar problema','secondary','data-id="'+h(q.id)+'"')+'</div>':''}
+  ${scope==='sim'?'<div class="actions">'+(currentFilter.editalCargo===STUDY_ALL?'':btn('review-edital','Conferir edital','secondary','data-id="'+h(q.id)+'"'))+problemFlagButton(q)+'</div>':''}
   </article>`;
 }
 function questionsScreen(){
@@ -505,9 +517,9 @@ function statsScreen(){
 function flagsScreen(){
   const own=state.flags.filter(x=>x.profileId===profileId).slice().reverse();
   return `${headline('Sinalizações','Problemas e sugestões de classificação aguardam avaliação.')}
-  <section class="card"><p>Para informar se o assunto está dentro ou fora de um edital, selecione o cargo em <strong>Questões</strong> e use <strong>Conferir edital</strong> na própria questão. Para erros de gabarito ou extração, use <strong>Sinalizar problema</strong>.</p>
+  <section class="card"><p>Para informar se o assunto está dentro ou fora de um edital, selecione o cargo em <strong>Questões</strong> e use <strong>Conferir edital</strong> na própria questão. Para quaisquer erros, use <strong>Sinalizar problema</strong> e, se quiser, deixe um comentário. Não é necessário informar a categoria nem a resposta correta.</p>
   <p class="hint">Com o GitHub sincronizado, novas sinalizações são encaminhadas para Issues. A alteração só é aplicada depois da aprovação.</p>
-  ${own.length?own.map(f=>`<div class="stat-line"><div><strong>${h(question(f.questionId)?.code||'Questão')}</strong><div class="small-muted">${h(f.type==='edital-review'?'Conferência do cargo '+(f.proposed?.editalCargo||'')+' — '+(f.proposed?.status==='dentro'?'dentro do edital':'fora do edital'):f.type)} — ${h(f.note)} · ${niceDate(f.at)}</div></div><span class="badge wait">${h(f.status==='approved'?'Aprovada':f.status==='rejected'?'Rejeitada':'Pendente')}</span></div>`).join(''):empty('Nenhuma sinalização registrada neste perfil.')}</section>`;
+  ${own.length?own.map(f=>`<div class="stat-line"><div><strong>${h(question(f.questionId)?.code||'Questão')}</strong><div class="small-muted">${h(f.type==='problem'?'Problema sinalizado':f.type==='edital-review'?'Conferência do cargo '+(f.proposed?.editalCargo||'')+' — '+(f.proposed?.status==='dentro'?'dentro do edital':'fora do edital'):f.type)}${f.note?' — '+h(f.note):''} · ${niceDate(f.at)}</div></div><span class="badge wait">${h(f.status==='approved'?'Aprovada':f.status==='rejected'?'Rejeitada':'Pendente')}</span></div>`).join(''):empty('Nenhuma sinalização registrada neste perfil.')}</section>`;
 }
 function settingsScreen(){
   return `${headline('Dados e backup','Ferramentas para preservar os dados durante o período de testes.')}
@@ -532,7 +544,7 @@ function resultScreen(){
   <div class="grid four">${infoTile(r.correct,'Acertos')}${infoTile(r.wrong,'Erros')}${infoTile(r.blank,'Em branco')}${infoTile(pct(r.rate),'Aproveitamento das respondidas')}</div>
   <div class="actions" style="margin-bottom:16px">${btn('print-sim','Imprimir questões e gabarito')}${btn('go-sim','Voltar aos simulados')}</div>
   <section class="card"><h2>Correção questão por questão</h2>
-  ${s.questionIds.map((id,i)=>{const q=question(id);if(!q)return '';const ans=s.answers[id]||'';return `<div class="result-explanation"><div class="stat-line"><div><div class="question-code">${i+1}. ${h(q.code)}</div><div class="small-muted">Marcada: <strong>${h(ans||'—')}</strong> · Gabarito: <strong>${h(q.answer||'Não definido')}</strong></div></div><div>${feedback(q,ans)}</div></div>${legalBasisHtml(q)}<div class="actions">${!q.originalQuestionId?btn('explain-question','Explicar questão','secondary',`data-id="${h(q.id)}"`):''}${btn('flag-question','Sinalizar problema','secondary',`data-id="${h(q.id)}"`)}</div>${explanationBox(q.id)}</div>`}).join('')}</section>`;
+  ${s.questionIds.map((id,i)=>{const q=question(id);if(!q)return '';const ans=s.answers[id]||'';return `<div class="result-explanation"><div class="stat-line"><div><div class="question-code">${i+1}. ${h(q.code)}</div><div class="small-muted">Marcada: <strong>${h(ans||'—')}</strong> · Gabarito: <strong>${h(q.answer||'Não definido')}</strong></div></div><div>${feedback(q,ans)}</div></div>${legalBasisHtml(q)}<div class="actions">${!q.originalQuestionId?btn('explain-question','Explicar questão','secondary',`data-id="${h(q.id)}"`):''}${problemFlagButton(q)}</div>${explanationBox(q.id)}</div>`}).join('')}</section>`;
 }
 function updateQuestionFeedback(qid){
   const el=document.querySelector(`[data-question-card="${qid}"] .question-feedback`);
@@ -685,33 +697,46 @@ function reviewEdict(qid){
  save();toast('Conferência registrada em Sinalizações. A classificação só muda após aprovação.');
 }
 
+let problemQuestionId=null;
 function showFlag(qid){
- const q=question(qid);if(!q)return;
- const raw=prompt('Sinalizar '+q.code+'\nTipo: classificação, secundária, gabarito, anulada, desatualizada, extração, adaptação ou outro',q.originalQuestionId?'adaptação':'classificação');
- if(raw===null)return;
- const norm=String(raw).trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
- const type=norm.startsWith('class')?'classification':norm.startsWith('sec')?'secondary':norm.startsWith('gab')?'answer':norm.startsWith('anul')?'annulled':norm.startsWith('desat')?'outdated':norm.startsWith('extr')?'extraction':norm.startsWith('adapt')?'adaptation':'other';
- let proposed={};
- if(type==='classification'||type==='secondary'){
-  const disc=prompt('Disciplina sugerida:',q.discipline);if(disc===null)return;
-  const topic=prompt('Assunto sugerido:',q.topic);if(topic===null)return;
-  if(!disc.trim()||!topic.trim()){toast('Disciplina e assunto são obrigatórios.');return;}
-  const dc=prompt('Sigla da disciplina (ex.: LP):',q.disciplineCode||'');if(dc===null)return;
-  const tc=prompt('Sigla do assunto (ex.: G):',q.topicCode||'');if(tc===null)return;
-  proposed={discipline:disc.trim(),topic:topic.trim(),disciplineCode:dc.trim(),topicCode:tc.trim()};
+ const q=question(qid);
+ if(!q)return;
+ if(pendingProblem(qid)){
+  toast('Esta questão já está sinalizada e aguarda análise.');return;
  }
- if(type==='answer'){
-  const answer=prompt('Qual é a alternativa correta? A, B, C, D ou E',q.answer||'');
-  if(answer===null)return;
-  if(!validAnswer(answer.trim().toUpperCase())){toast('Informe uma alternativa válida.');return;}
-  proposed={answer:answer.trim().toUpperCase()};
- }
- if(type==='annulled'||type==='outdated')proposed={status:type};
- const note=prompt('Justifique a sinalização. A alteração depende de aprovação no GitHub.','');
- if(note===null||!note.trim())return;
- state.flags.push({id:newId(),profileId,questionId:qid,type,note:note.trim().slice(0,1500),proposed,status:'pending',at:new Date().toISOString()});
- save();toast('Sinalização registrada. Confira o status de sincronização no topo.');
+ problemQuestionId=qid;
+ $('#problem-question-code').textContent='Questão '+q.code;
+ $('#problem-comment').value='';
+ $('#problem-overlay').classList.remove('hidden');
+ $('#problem-comment').focus();
 }
+function closeProblemModal(){
+ problemQuestionId=null;
+ $('#problem-overlay').classList.add('hidden');
+}
+function saveProblemFlag(e){
+ e.preventDefault();
+ const qid=problemQuestionId;
+ if(!qid||!profileId||!question(qid))return;
+ if(pendingProblem(qid)){
+  closeProblemModal();
+  toast('Esta questão já está sinalizada e aguarda análise.');return;
+ }
+ const flag={id:newId(),profileId,questionId:qid,type:'problem',
+  note:$('#problem-comment').value.trim().slice(0,1000),
+  proposed:{},status:'pending',at:new Date().toISOString()};
+ state.flags.push(flag);
+ if(!save()){
+  state.flags=state.flags.filter(f=>f.id!==flag.id);
+  return;
+ }
+ closeProblemModal();
+ refresh();
+ toast(sync.isConfigured()
+  ?'Problema sinalizado. Será encaminhado para análise na sincronização.'
+  :'Problema salvo neste aparelho. Conecte a sincronização para enviá-lo.');
+}
+
 function showLog(qid){
   const q=question(qid),entries=state.attempts.filter(a=>a.questionId===qid&&a.profileId===profileId).slice().reverse();
   alert((q?.code||'Questão')+'\nHistórico de respostas:\n'+(entries.length?entries.map(a=>niceDate(a.at)+' — '+a.answer+' — '+(q?.answer===a.answer?'acerto':'erro')).join('\n'):'Nenhuma resposta registrada.'));
@@ -819,6 +844,7 @@ document.addEventListener('click',e=>{
     case 'flag-explanation':flagExplanation(id);break;
     case 'review-edital':reviewEdict(id);break;
     case 'flag-question':issueInvalid(id);break;
+    case 'cancel-problem':closeProblemModal();break;
     case 'question-log':showLog(id);break;
     case 'open-sim':case 'see-result':beginSim(id);break;
     case 'finish-sim':finishCurrent();break;
@@ -844,6 +870,8 @@ document.addEventListener('click',e=>{
 });
 $('#switch-user').addEventListener('click',()=>showProfilePicker());
 $('#profile-form').addEventListener('submit',()=>{});
+$('#problem-form').addEventListener('submit',saveProblemFlag);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('#problem-overlay').classList.contains('hidden'))closeProblemModal();});
 showProfilePicker();
 save();
 if(sync.isConfigured())sync.sync().then(ok=>{if(ok)refreshAutomaticAdaptations()});
