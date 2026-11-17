@@ -23625,13 +23625,13 @@
         1,
         5
       ],
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Interpretação e compreensão de textos",
+      "topicCode": "LINT",
       "id": "curated-ti-05-005",
       "examId": "curated-ti-05",
       "code": "Q2024TI05005",
@@ -40921,7 +40921,7 @@
       "options": [
         {
           "letter": "A",
-          "text": "R$ 1e6,00"
+          "text": "R$ 166,00"
         },
         {
           "letter": "B",
@@ -45995,6 +45995,14 @@
       "answer": "D",
       "simulationId": "",
       "at": "2026-11-17T16:58:51.872Z"
+    },
+    {
+      "id": "929eda5d-431a-455c-b5bb-acee73c17ccd",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-ti-03-036",
+      "answer": "D",
+      "simulationId": "",
+      "at": "2026-11-17T21:36:30.392Z"
     }
   ],
   "simulations": [],
