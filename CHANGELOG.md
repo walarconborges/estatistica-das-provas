@@ -1,3 +1,10 @@
+## 0.6.30 — 16/11/2026
+
+- Taxonomia compartilhada de assuntos, incluindo RLM integrado com 20 assuntos e nomenclatura sem “Geral”.
+- Tratamento de colisões de códigos e normalização dos assuntos das novas importações.
+- Filtros do banco geral atualizados para integrar questões por conteúdo entre concursos, preservando a prova de origem.
+- Preparação para inserção das provas de Auxiliar de Serviços Gerais 2026, acompanhada de limpeza das alternativas de bases existentes.
+
 ## 0.6.29 — 16/11/2026
 
 - Banco populado diretamente com 31 provas curadas: 342 questões de Saúde e 515 de TI, com gabaritos incorporados e numeração própria.

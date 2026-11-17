@@ -51,7 +51,7 @@ export const currentCatalog=id=>CATALOGS[String(id)]||CATALOGS['505'];
 export const STUDY_ALL='all';
 export const ALL_STUDY_DISCIPLINES=Object.freeze([
  {id:'LP',label:'Língua Portuguesa'},
- {id:'RLM',label:'Raciocínio Lógico e Matemática'},
+ {id:'RLM',label:'Raciocínio Lógico/Matemático'},
  {id:'IN',label:'Informática'},
  {id:'CG',label:'Conhecimentos Gerais e Atualidades'},
  {id:'LE',label:'Legislação e Direito'},
@@ -62,7 +62,7 @@ const normGeneral=x=>String(x||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'
 export function studyAllGroup(q){
  const code=normGeneral(q?.disciplineCode),text=normGeneral(q?.discipline);
  if(code==='LP'||/PORTUGUES/.test(text))return 'LP';
- if(['MA','RL'].includes(code)||/MATEMATICA|RACIOCINIO LOGICO/.test(text))return 'RLM';
+ if(['MA','RL','RLM'].includes(code)||/MATEMATICA|RACIOCINIO LOGICO|RACIOCINIO LOGICO\/MATEMATICO/.test(text))return 'RLM';
  if(code==='IN'||/INFORMATICA|TECNOLOGIA DA INFORMACAO/.test(text))return 'IN';
  if(['CG','HI','GE'].includes(code)||/CONHECIMENTOS GERAIS|ATUALIDADES|GEOGRAFIA|HISTORIA/.test(text))return 'CG';
  if(['LE','DA','DC'].includes(code)||/LEGISLACAO|DIREITO ADMINISTRATIVO|DIREITO CONSTITUCIONAL/.test(text))return 'LE';
@@ -179,11 +179,11 @@ function sectionFor(q,exam,cargo){
  // com disciplina de Legislação. Assuntos específicos só são inferidos se pertinentes.
  if(code==='LP'||/LINGUA PORTUGUESA|PORTUGUES/.test(discipline))return 'portugues';
  if(cargo==='202'){
-  if(code==='MA'||code==='RL'||/MATEMATICA|RACIOCINIO LOGICO/.test(discipline))return 'matematica';
+  if(code==='MA'||code==='RL'||code==='RLM'||/MATEMATICA|RACIOCINIO LOGICO/.test(discipline))return 'matematica';
   if(code==='CG'||/CONHECIMENTOS GERAIS|ATUALIDADES|HISTORIA|GEOGRAFIA/.test(discipline))return 'gerais';
   return null;
  }
- if(code==='RL'||code==='MA'||/RACIOCINIO LOGICO|MATEMATICA/.test(discipline))return 'raciocinio';
+ if(code==='RL'||code==='MA'||code==='RLM'||/RACIOCINIO LOGICO|MATEMATICA/.test(discipline))return 'raciocinio';
  if(/\bLGPD\b|13\.?709|LEI GERAL DE PROTECAO DE DADOS/.test(stem))return 'especificos';
  if(code==='LE'||/LEGISLACAO|DIREITO ADMINISTRATIVO|DIREITO CONSTITUCIONAL/.test(discipline))return 'legislacao';
  if(code==='CG'||/CONHECIMENTOS GERAIS|ATUALIDADES|HISTORIA|GEOGRAFIA/.test(discipline))return 'gerais';

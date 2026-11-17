@@ -1,3 +1,4 @@
+import {unifyQuestionTaxonomy} from './topic-taxonomy.mjs';
 // Núcleo de dados e regras. Não depende da interface.
 export const STORAGE_KEY='estatistica-das-provas-v1';
 export const newId=()=>globalThis.crypto?.randomUUID?.() || ('id-'+Date.now()+'-'+Math.random().toString(36).slice(2));
@@ -39,7 +40,19 @@ export function normalizeState(data){
   if(!data || typeof data!=='object')return base;
   for(const k of Object.keys(base))if(Array.isArray(base[k])&&Array.isArray(data[k]))base[k]=data[k];
   if(data.tombstones&&typeof data.tombstones==='object')for(const k of Object.keys(base.tombstones))if(Array.isArray(data.tombstones[k]))base.tombstones[k]=[...new Set(data.tombstones[k].filter(x=>typeof x==='string'))];
-  return repairImportedFooters(base);
+  return ensureUniqueQuestionCodes(repairImportedFooters(base));
+}
+export function ensureUniqueQuestionCodes(state){
+ const used=new Set();
+ for(const q of state.questions||[]){
+  const code=String(q.code||'').trim();
+  if(code&&!used.has(code)){used.add(code);continue;}
+  const prefix=code||('Q'+String(q.year||'0000')+String(q.id||'SEMID').replace(/[^a-z0-9]/gi,'').toUpperCase());
+  let n=2,unique=prefix+'-'+n;
+  while(used.has(unique)){n++;unique=prefix+'-'+n;}
+  q.code=unique;used.add(unique);
+ }
+ return state;
 }
 export const textNorm=s=>String(s??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,' ').trim().toUpperCase();
 export function codePart(s,def='XX'){const v=textNorm(s).replace(/[^A-Z0-9]/g,'');return v||def}
@@ -323,6 +336,7 @@ export function addExam(state,meta,parsed,key={}){
     const equivalent=state.questions.find(x=>sameQuestion(x,item));
     const q={...item,id:newId(),examId:exam.id,code:'',year:exam.year,banca:exam.banca,orgao:exam.orgao,answer:key[item.originalNumber]||'',status:key[item.originalNumber]==='X'?'annulled':item.extractionReview?'needs-review':'active',secondary:[],aliases:[],duplicateGroup:equivalent?.duplicateGroup||equivalent?.id||null};
     if(equivalent&&!equivalent.duplicateGroup)equivalent.duplicateGroup=equivalent.id;
+    Object.assign(q,unifyQuestionTaxonomy(q));
     q.code=makeCode(state,exam,q);
     state.questions.push(q);exam.questionIds.push(q.id);
   }

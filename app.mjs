@@ -266,11 +266,11 @@ function catalogPanelFilters(){
    '<option value="">Todas as disciplinas</option>'+
    ALL_STUDY_DISCIPLINES.map(x=>'<option value="'+h(x.id)+'" '+(discipline===x.id?'selected':'')+'>'+h(x.label)+'</option>').join('')+
    '</select></div>'+
-   '<div class="field span-all"><label>Assunto original</label><select name="generalTopic">'+
+   '<div class="field span-all"><label>Assunto integrado entre concursos</label><select name="generalTopic">'+
    '<option value="">Todos os assuntos</option>'+
    topics.map(x=>'<option value="'+h(x)+'" '+(currentFilter.generalTopic===x?'selected':'')+'>'+h(x)+'</option>').join('')+
    '</select></div></div>'+
-   '<p class="hint">Mistura questões originais de diferentes concursos. Português, Matemática e Raciocínio Lógico são agrupados por disciplina, sem exigências de um edital específico. Questões adaptadas para Candeias não entram nesse modo.</p></fieldset>';
+   '<p class="hint">Integra questões de diferentes concursos por disciplina e assunto equivalente, independentemente de banca, cargo ou edital. Matemática e Raciocínio Lógico integram RLM. Questões adaptadas para um município não entram neste modo.</p></fieldset>';
  }
  const catalog=currentCatalog(id);
  const values=allTopics(id);

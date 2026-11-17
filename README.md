@@ -1,9 +1,17 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.29 — 16/11/2026**  
+**Versão experimental 0.6.30 — 16/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.30 — assuntos transversais e integridade do banco
+
+- **Raciocínio Lógico/Matemático (RLM)** é uma disciplina unificada para Matemática e Raciocínio Lógico de quaisquer provas; 20 categorias explícitas de conteúdo, harmonizadas com os editais cadastrados.
+- Todas as disciplinas recebem assunto específico; não usar o marcador genérico “Geral” como assunto de estudo.
+- O importador grava questões com disciplina e assunto normalizados; códigos novos são verificados contra os registros existentes. Se uma importação anterior contiver códigos repetidos, a leitura de estado desambigua as colisões sem mudar IDs.
+- O filtro “Todos” organiza os assuntos por conteúdo em vez de banca, cargo ou edital. A opção de prova completa mantém a origem separada.
+- A seleção preparada de Auxiliar de Serviços Gerais de 2026 é cadastrada no banco a partir dos cadernos e gabaritos internos, excluindo itens com ambiguidades ou figuras indispensáveis indisponíveis.
 
 ## Versão 0.6.29 — banco de provas preparadas e interface sem identificação manual
 
