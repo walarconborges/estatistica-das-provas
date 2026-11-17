@@ -41,8 +41,12 @@ export function repairImportedFooters(state){
  */
 export function repairPreparedQuestionWording(state){
  for(const q of state?.questions||[]){
-  if(q?.code==='Q2026ASG01017'&&typeof q.stem==='string')
-   q.stem=q.stem.replace(/troco\s+em\s+c[eé]dulas\b/i,'troco');
+  if(q?.code==='Q2026ASG01017'){
+   if(typeof q.stem==='string')q.stem=q.stem.replace(/troco\s+em\s+c[eé]dulas\b/i,'troco');
+   const answerA=q.options?.find(option=>option.letter==='A');
+   if(answerA&&typeof answerA.text==='string')
+    answerA.text=answerA.text.replace(/\b1e6,00\b/i,'166,00');
+  }
  }
  return state;
 }
