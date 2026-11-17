@@ -35,12 +35,24 @@ export function repairImportedFooters(state){
  return state;
 }
 
-export function normalizeState(data){
+/** Correção editorial restrita à questão preparada ASG 17.
+ * O troco de R$ 176,00 não é composto exclusivamente de cédulas.
+ * Preserva o código, as alternativas, o gabarito, as tentativas e o histórico.
+ */
+export function repairPreparedQuestionWording(state){
+ for(const q of state?.questions||[]){
+  if(q?.code==='Q2026ASG01017'&&typeof q.stem==='string')
+   q.stem=q.stem.replace(/troco\s+em\s+c[eé]dulas\b/i,'troco');
+ }
+ return state;
+}
+
   const base=fresh();
   if(!data || typeof data!=='object')return base;
   for(const k of Object.keys(base))if(Array.isArray(base[k])&&Array.isArray(data[k]))base[k]=data[k];
   if(data.tombstones&&typeof data.tombstones==='object')for(const k of Object.keys(base.tombstones))if(Array.isArray(data.tombstones[k]))base.tombstones[k]=[...new Set(data.tombstones[k].filter(x=>typeof x==='string'))];
-  return ensureUniqueQuestionCodes(repairImportedFooters(base));
+  return ensureUniqueQuestionCodes(repairPreparedQuestionWording(repairImportedFooters(base)));
+
 }
 export function ensureUniqueQuestionCodes(state){
  const used=new Set();
