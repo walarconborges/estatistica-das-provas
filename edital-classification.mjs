@@ -39,8 +39,41 @@ export const CARGO_202={
   ]}
  ]
 };
+
+/** SEMUSA Porto Velho/RO, Edital 25/2026, Anexo IV, Retificação nº 01.
+ * Os assuntos comuns são compartilhados com o ensino fundamental, mas
+ * o edital e os Conhecimentos Específicos não se confundem com Candeias.
+ */
+export const CARGO_240={
+ id:'240',cargo:'Auxiliar de Serviços de Saúde',level:'Ensino fundamental completo',
+ edital:'SEMUSA — Prefeitura de Porto Velho/RO — Edital nº 25/2026, Retificação nº 01',
+ annex:'Anexo IV — Conteúdos Programáticos, Retificação nº 01',pages:'1–2',
+ sections:[
+  {...CARGO_202.sections[0],topics:[...CARGO_202.sections[0].topics]},
+  {...CARGO_202.sections[1],topics:[...CARGO_202.sections[1].topics]},
+  {id:'gerais',title:'Conhecimentos Gerais',pages:'1',topics:[
+   ...CARGO_202.sections[2].topics.slice(0,6),
+   'Notícias do site da Prefeitura de Porto Velho/RO'
+  ]},
+  {id:'especificos',title:'Conhecimentos Específicos — Saúde',pages:'2',topics:[
+   'Atendimento ao público e ética no serviço público',
+   'Higiene, limpeza, organização e desinfecção de ambientes de saúde',
+   'Manejo e descarte de resíduos de serviços de saúde',
+   'Noções básicas de primeiros socorros',
+   'Segurança e saúde no trabalho: EPIs',
+   'Sistema Único de Saúde: princípios, diretrizes, atribuições e competências',
+   'Promoção e proteção da saúde',
+   'Política Nacional de Atenção Básica',
+   'Vigilância em Saúde',
+   'Organização da Atenção Básica em Saúde',
+   'Prevenção, promoção da saúde e vigilância sanitária',
+   'Leis federais nº 8.080/1990 e nº 8.142/1990'
+  ]}
+ ]
+};
 export const CATALOGS=Object.freeze({
  '202':CARGO_202,
+ '240':CARGO_240,
  '505':{...PROGRAM_505,id:'505',cargo:PROGRAM_505.cargo,pages:'4–5 e 7'},
  [PROFESSOR_CARGO_ID]:PROGRAM_PROFESSOR
 });
@@ -335,10 +368,63 @@ function inferProfessorClassification(q,exam){
  return denied();
 }
 
+
+/** Enquadramento do cargo de Saúde, independente dos dois cargos da Câmara. */
+function inferSemusaClassification(q,exam){
+ const result=(status,sectionId,index=-1,reason='')=>{
+  const sec=CARGO_240.sections.find(x=>x.id===sectionId);
+  const topic=status==='dentro'&&sec?sec.topics[index]:null;
+  return {cargoId:'240',status,statusLabel:status==='dentro'?'Dentro do edital':status==='fora'?'Fora do edital':'A conferir',
+   discipline:topic?sec.title:status==='fora'?'Fora do edital':(sec?.title||'A conferir'),
+   topic:topic|| (status==='fora'?'Fora do edital':'A conferir'),
+   topicId:topic?sectionId+':'+index:'',
+   reason:reason||(topic?'Correspondência temática com o Anexo IV da SEMUSA.':'Assunto exige conferência.')};
+ };
+ if(q?.originalQuestionId)return result('fora',null,-1,'Adaptação de legislação de Candeias não é questão da SEMUSA.');
+ const group=studyAllGroup(q);
+ const source=norm([q?.stem,q?.heading,q?.topic,q?.options?.map(x=>x.text).join(' ')].join(' '));
+ if(['LP','RLM','CG'].includes(group)){
+  const section=group==='LP'?'portugues':group==='RLM'?'matematica':'gerais';
+  if(group==='CG'&&/NOTICIAS?\s+(?:DO|NO)\s+SITE|SITE\s+DA\s+(?:CAMARA|PREFEITURA)/.test(source)){
+   if(/PREFEITURA(?:\s+MUNICIPAL)?\s+DE\s+PORTO\s+VELHO/.test(source))
+    return result('dentro','gerais',6,'Site da Prefeitura de Porto Velho, fonte prevista no edital.');
+   if(/CAMARA|CANDEIAS/.test(source))
+    return result('fora','gerais',-1,'Notícias da Câmara de Candeias não equivalem às da Prefeitura.');
+  }
+  const reused=inferClassificationForCargo(q,exam,'202');
+  if(reused.status!=='dentro')return result(reused.status,section,-1,reused.reason);
+  const index=Number(reused.topicId.split(':')[1]);
+  if(group==='CG'&&index===6)return result('pendente','gerais',-1,'Confirmar notícia específica da Prefeitura de Porto Velho.');
+  return result('dentro',section,index,'Conteúdo equivalente em Português, Matemática ou Gerais dos dois editais.');
+ }
+ const code=norm(q?.disciplineCode),discipline=norm(q?.discipline);
+ if(!(code==='CE'||code==='LE'||/SAUDE|SUS|CONHECIMENTOS ESPECIFICOS/.test(discipline)))
+  return result('fora',null,-1,'Disciplina não prevista no edital do cargo 240.');
+ const checks=[
+  [11,/8\s?080\s?\/\s?1990|8\s?142\s?\/\s?1990|LEIS? ORGANICAS? DA SAUDE/],
+  [7,/POLITICA NACIONAL DE ATENCAO BASICA|\bPNAB\b/],
+  [9,/ORGANIZACAO DA ATENCAO BASICA/],
+  [8,/VIGILANCIA EM SAUDE|VIGILANCIA EPIDEMIOLOGICA/],
+  [10,/VIGILANCIA SANITARIA|PREVENCAO DE DOENCAS|PREVENCAO E PROMOCAO DA SAUDE/],
+  [6,/PROMOCAO E PROTECAO DA SAUDE|PROMOCAO DA SAUDE|PROTECAO DA SAUDE/],
+  [2,/RESIDUOS? (?:DE|DOS) SERVICOS? DE SAUDE|LIXO HOSPITALAR|DESCARTE DE RESIDUOS|GERENCIAMENTO DE RESIDUOS/],
+  [1,/HIGIENIZACAO|HIGIENE HOSPITALAR|LIMPEZA HOSPITALAR|DESINFECCAO|LIMPEZA DE AMBIENTES DE SAUDE/],
+  [3,/PRIMEIROS SOCORROS|RESSUSCITACAO|HEMORRAGIA|DESMAIO|QUEIMADURAS/],
+  [4,/EQUIPAMENTOS? DE PROTECAO INDIVIDUAL|\bEPIS?\b|SEGURANCA E SAUDE NO TRABALHO/],
+  [0,/ATENDIMENTO AO PUBLICO|ATENDIMENTO AOS USUARIOS|ETICA NO SERVICO PUBLICO/],
+  [5,/SISTEMA UNICO DE SAUDE|\bSUS\b|DIRETRIZES DO SISTEMA DE SAUDE/]
+ ];
+ for(const [index,rx] of checks)if(rx.test(source))return result('dentro','especificos',index);
+ const origin=norm([exam?.title,exam?.cargo].join(' '));
+ if(/ANALISTA DE (?:INFORMATICA|TECNOLOGIA)|PROFESSOR|MOTORISTA|SERVICOS GERAIS|ODONTOLOGIA|FARMACIA/.test(origin))
+  return result('fora','especificos',-1,'Conhecimentos específicos de outro cargo não são automaticamente equivalentes.');
+ return result('pendente','especificos',-1,'Conhecimento específico exige verificação com o Anexo IV da SEMUSA.');
+}
+
 /** Persistir apenas após aprovação administrativa da sinalização. */
 export function approveEdictReview(question,proposed){
  const cargo=String(proposed?.editalCargo||''),status=String(proposed?.status||'');
- if(!['202','505',PROFESSOR_CARGO_ID].includes(cargo)||!['dentro','fora'].includes(status))
+ if(!['202','240','505',PROFESSOR_CARGO_ID].includes(cargo)||!['dentro','fora'].includes(status))
   throw Error('Parecer do edital inválido (cargo e situação são obrigatórios).');
  question.editalReview={...(question.editalReview||{}),[cargo]:{status}};
  return question;
@@ -349,8 +435,8 @@ export function approveEdictReview(question,proposed){
  * Cada cargo mantém sua própria revisão; o original permanece inalterado.
  */
 export function classifyForCargo(q,exam,cargoId='505'){
- const cargo=['202','505',PROFESSOR_CARGO_ID].includes(String(cargoId))?String(cargoId):'505';
- const computed=cargo===PROFESSOR_CARGO_ID?inferProfessorClassification(q,exam):inferClassificationForCargo(q,exam,cargo);
+ const cargo=['202','240','505',PROFESSOR_CARGO_ID].includes(String(cargoId))?String(cargoId):'505';
+ const computed=cargo===PROFESSOR_CARGO_ID?inferProfessorClassification(q,exam):cargo==='240'?inferSemusaClassification(q,exam):inferClassificationForCargo(q,exam,cargo);
  const reviewed=q?.editalReview?.[cargo];
  if(!reviewed||!['dentro','fora'].includes(reviewed.status))return computed;
  if(reviewed.status==='fora')return {
