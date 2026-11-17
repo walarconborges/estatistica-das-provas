@@ -11,7 +11,7 @@ export const TAXONOMY_SCHEMA = {
   },
   "fallback": {
     "LP": [
-      "Compreensão e interpretação de textos",
+      "Interpretação e compreensão de textos",
       "LINT"
     ],
     "RLM": [
