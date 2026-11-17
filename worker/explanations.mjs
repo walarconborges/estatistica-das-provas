@@ -2,7 +2,7 @@
  * Explicações a pedido. A questão oficial e o gabarito nunca são alterados.
  * O cache fica em data/explanations/, separado de data/state.json.
  */
-export const DEFAULT_AI_MODEL='@cf/meta/llama-3.1-8b-instruct-fp8-fast';
+export const DEFAULT_AI_MODEL='@cf/meta/llama-3.1-8b-instruct-fast';
 export const EXPLANATION_REVISION=2;
 const validAnswer=a=>/^[A-E]$/.test(String(a||''));
 const relevantLaw=q=>q?.disciplineCode==='LE'||/legisla[cç][aã]o|direito (?:administrativo|constitucional)/i.test(q?.discipline||'');
