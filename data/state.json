@@ -46385,6 +46385,16 @@
       "proposed": {},
       "status": "pending",
       "at": "2026-11-18T01:48:17.911Z"
+    },
+    {
+      "id": "041ccdc3-e35e-425c-a164-942c2ac2b8ef",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-ti-08-008",
+      "type": "problem",
+      "note": "coloque cada passagem em uma linha diferente e o comando da questão em outra linha, pra facilitar a leitura",
+      "proposed": {},
+      "status": "pending",
+      "at": "2026-11-18T01:48:46.302Z"
     }
   ],
   "tombstones": {
