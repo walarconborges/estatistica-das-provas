@@ -46170,8 +46170,10 @@
       "type": "problem",
       "note": "",
       "proposed": {},
-      "status": "pending",
-      "at": "2026-11-18T00:28:26.519Z"
+      "status": "approved",
+      "at": "2026-11-18T00:28:26.519Z",
+      "resolvedAt": "2026-11-18T00:32:02.898Z",
+      "resolutionNote": "Disciplina já estava corrigida. Corrigido o vínculo incorreto com o edital 505: a questão pertence a Candeias/MG e não à Lei Orgânica de Candeias do Jamari/RO. A questão permanece em Legislação no banco geral; sem alterações no gabarito ou histórico."
     },
     {
       "id": "4287d76d-b5a1-44ac-a9b7-ca6bfbde3f6d",
