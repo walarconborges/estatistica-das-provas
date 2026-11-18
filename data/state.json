@@ -46133,6 +46133,14 @@
       "answer": "D",
       "simulationId": "",
       "at": "2026-11-18T01:51:59.116Z"
+    },
+    {
+      "id": "de1d4041-e488-47f8-84f8-7b4b841bd136",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-ti-03-007",
+      "answer": "A",
+      "simulationId": "",
+      "at": "2026-11-18T01:52:30.429Z"
     }
   ],
   "simulations": [],
