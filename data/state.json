@@ -46423,6 +46423,16 @@
       "proposed": {},
       "status": "pending",
       "at": "2026-11-18T01:49:19.631Z"
+    },
+    {
+      "id": "2dbcc0e7-41a7-48f7-9646-4b32e34aad8e",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-health-02-036",
+      "type": "problem",
+      "note": "não é TI",
+      "proposed": {},
+      "status": "pending",
+      "at": "2026-11-18T01:49:50.974Z"
     }
   ],
   "tombstones": {
