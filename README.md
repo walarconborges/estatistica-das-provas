@@ -1,9 +1,21 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.38 — 17/11/2026**  
+**Versão experimental 0.6.39 — 17/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.39 — mais quatro sinalizações analisadas
+
+- Q2025TI15018: classificada em Raciocínio Lógico/Matemático, com sistema original 1,5x − y = 9 e 3,5x + y = 21 recuperado do PDF oficial; gabarito D preservado.
+- Francisco Morato/AVANÇA SP: corrigidos ano da prova para 2026 e cargo para Técnico em Informática. Os blocos de Português (1–10) e Matemática/RLM (11–19) foram reclassificados, sem trocar os códigos permanentes.
+- Q2022TI09061: removido item 62 "ANULADA/DESATUALIZADA" anexado à afirmação sobre XML, mantendo gabarito C.
+- Q2024TI07007: reclassificada em Língua Portuguesa / Formação de palavras.
+- Q2025TI14019: reclassificada em Legislação / Ética na administração pública; a lista romana I–III e o comando final ganham separação visual; corrigido "utiliza-as".
+- Issues #35–#38 aprovadas no banco sincronizado, sem alteração de respostas e histórico.
+- Correção do teste automatizado `assert.notMatch` para `assert.doesNotMatch` permitiu reativar a publicação do GitHub Pages.
+
+Fonte oficial Francisco Morato: https://anexos.cdn.selecao.net.br/uploads/301/concursos/234/anexos/536861bc-1fb8-4609-9f0c-11eecd0cf3ca.pdf
 
 ## Versão 0.6.38 — correção de 12 novas sinalizações
 

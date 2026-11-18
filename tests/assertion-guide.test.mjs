@@ -80,3 +80,10 @@ test('interface oferece campos individuais de um caractere e não altera o gabar
  assert.match(style,/\.assertion-row/);
  assert.match(style,/@media print\{\s*\.assertion-guide/);
 });
+
+test('itens I, II e III de ética aparecem em linhas separadas com comando final',()=>{
+ const s=JSON.parse(readFileSync(new URL('../data/state.json',import.meta.url),'utf8'));
+ const q=s.questions.find(q=>q.code==='Q2025TI14019');
+ const parsed=splitAssertionItems(q.stem);
+ assert.ok(parsed);assert.equal(parsed.items.length,3);assert.match(parsed.outro,/Diante das assertivas/i);
+});
