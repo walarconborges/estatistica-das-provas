@@ -1,9 +1,16 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.40 — 18/11/2026**  
+**Versão experimental 0.6.41 — 18/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.41 — gráfico de pizza de dificuldade
+
+- A aba Estatísticas tem seletores de edital/cargo, banco geral e área/disciplina do edital, além dos gráficos já existentes.
+- Fatias representam questões respondidas por assunto. Vermelho destaca o assunto com menos acertos; laranja marca os demais assuntos abaixo de 50%; cores neutras mostram os restantes. Empates de menor número de acertos são resolvidos pelo percentual e pelo volume respondido.
+- O mouse, teclado ou toque revelam acertos, erros e aproveitamento de cada fatia. Apenas a última resposta válida conta, sem anuladas ou em branco; a classificação por edital é somente de leitura.
+- `difficulty-pie.mjs` foi adicionado ao GitHub Pages, com testes de regressão. Nenhuma alteração é necessária no Worker Cloudflare nem no banco de dados.
 
 ## Cadastro 18/11/2026 — simulado ChatGPT e sinalizações #39–#41
 

@@ -6,6 +6,7 @@ import {STUDY_CONTEXT,eligibleForList} from './study-context.mjs';
 import {CATALOGS,currentCatalog,allTopics,classifyForCargo,subjectSummary,EDITAL_SCOPE_OPTIONS,normalizeEditalScope,inEditalScope,STUDY_ALL,ALL_STUDY_DISCIPLINES,studyAllGroup,filterStudyAllQuestions} from './edital-classification.mjs?v=0.6.37';
 import {splitAssertionItems} from './assertion-guide.mjs?v=0.6.37';
 import {createAnswerDisplayCache} from './answer-display-cache.mjs?v=0.6.37';
+import {renderDifficultyPie} from './difficulty-pie.mjs';
 
 // A versão do rodapé pode ser nova enquanto o navegador usa módulos
 // JavaScript antigos. Exibir a revisão REAL do módulo executado para diagnóstico.
@@ -25,6 +26,7 @@ try{state=normalizeState(JSON.parse(localStorage.getItem(STORAGE_KEY)||'null'))}
 expire(state);
 const initialCargo=[...Object.keys(CATALOGS),STUDY_ALL].includes(localStorage.getItem('estatistica-edital-cargo'))?localStorage.getItem('estatistica-edital-cargo'):'505';
 let profileId=null,view='home',selectedSimId=null,currentFilter={studyArea:'candeias',editalCargo:initialCargo,editalScope:'dentro'},currentPool=[],limitAvulsas=10,questionSearch='';
+let chartCargo=initialCargo,chartArea='';
 let latestImportMessage='';
 let statusMessage='';
 const explanationsInView=new Map();
@@ -495,9 +497,9 @@ function syllabusBadge(q){
  return '<div class="syllabus-classification"><span class="badge '+cls+'">'+h(match.statusLabel)+'</span>'+
   '<span>Cargo '+h(id)+' · '+h(label)+(q.editalReview?.[id]?' · Revisão aprovada':match.status==='pendente'?' · Confira o conteúdo e sinalize se necessário.':'')+'</span></div>';
 }
-function syllabusStatistics(){
- if(currentFilter.editalCargo===STUDY_ALL)return '';
- const id=currentFilter.editalCargo||'505',catalog=currentCatalog(id);
+function syllabusStatistics(cargoId=currentFilter.editalCargo){
+ if(cargoId===STUDY_ALL)return '';
+ const id=cargoId||'505',catalog=currentCatalog(id);
  const summary=subjectSummary(state.questions,exam,id);
  const map=new Map();
  for(const q of state.questions){
@@ -593,7 +595,8 @@ function statsScreen(){
   const block=(title,rows)=>`<section class="card"><h2>${title}</h2>${rows.length?rows.map(r=>`<div class="stat-line"><div style="flex:1;min-width:0"><strong>${h(r.name)}</strong><div class="small-muted">${r.correct} acertos · ${r.wrong} erros · ${r.total} respondidas</div><div class="bar"><i style="width:${r.total?100*r.correct/r.total:0}%"></i></div></div><strong>${pct(r.total?100*r.correct/r.total:0)}</strong></div>`).join(''):empty('Ainda não há respostas para esta categoria.')}</section>`;
   return `${headline('Estatísticas de '+profileName(),'A última resposta válida de cada questão determina a situação atual.')}
   <div class="grid four">${infoTile(n(s.total),'Questões únicas respondidas')}${infoTile(n(s.correct),'Acertos')}${infoTile(n(s.wrong),'Erros')}${infoTile(pct(s.rate),'Aproveitamento')}</div>
-  ${syllabusStatistics()}
+  ${renderDifficultyPie(state,profileId,chartCargo,chartArea,exam)}
+  ${syllabusStatistics(chartCargo)}
   <div class="grid two" style="margin-top:14px">${block('Por disciplina original',s.byDiscipline)}${block('Por assunto original',s.byTopic)}</div>
   <div class="notice info">Questões em branco não entram em acertos nem em erros; questões anuladas também não entram. Uma classificação secundária aprovada poderá integrar outra estatística de assunto sem duplicar a contagem geral.</div>`;
 }
@@ -886,6 +889,13 @@ document.addEventListener('input',e=>{
 });
 document.addEventListener('change',e=>{
   const input=e.target;
+  if(input.matches('select[name="statsCargo"]')){
+   chartCargo=[...Object.keys(CATALOGS),STUDY_ALL].includes(input.value)?input.value:STUDY_ALL;
+   chartArea='';refresh();return;
+  }
+  if(input.matches('select[name="statsArea"]')){
+   chartArea=input.value;refresh();return;
+  }
   if(input.matches('select[name="editalCargo"]')){
     const next=[...Object.keys(CATALOGS),STUDY_ALL].includes(input.value)?input.value:'505';
     currentFilter={...currentFilter,editalCargo:next,editalDisciplina:'',editalTopic:'',generalDiscipline:'',generalTopic:''};
@@ -915,7 +925,19 @@ document.addEventListener('change',e=>{
     });
   }
 });
+document.addEventListener('pointerover',e=>{
+ const slice=e.target.closest?.('[data-pie-slice]');
+ const detail=$('#stats-pie-detail');
+ if(slice&&detail)detail.textContent=slice.dataset.description;
+});
+document.addEventListener('focusin',e=>{
+ const slice=e.target.closest?.('[data-pie-slice]');
+ const detail=$('#stats-pie-detail');
+ if(slice&&detail)detail.textContent=slice.dataset.description;
+});
 document.addEventListener('click',e=>{
+  const pieSlice=e.target.closest?.('[data-pie-slice]');
+  if(pieSlice){const detail=$('#stats-pie-detail');if(detail)detail.textContent=pieSlice.dataset.description;return;}
   const button=e.target.closest('button[data-action],button[data-view]');
   if(!button)return;
   if(button.dataset.view){navigate(button.dataset.view);return}

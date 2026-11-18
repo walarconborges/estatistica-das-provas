@@ -176,3 +176,28 @@ input.assertion-mark:focus{outline:2px solid #237aaa;outline-offset:1px}
 .passage-layout{margin:9px 0 13px;line-height:1.6}
 .passage-line{display:block;margin:10px 0;padding:0 0 0 7px}
 .passage-command{margin:16px 0 11px;font-weight:600}
+
+
+/* Pizza estatística: fatias por respostas, cores para dificuldade. */
+.stats-pie-panel{overflow:hidden}
+.stats-pie-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin-top:14px}
+.stats-pie-scope{margin:12px 0 8px}
+.stats-pie-layout{display:grid;grid-template-columns:minmax(185px,285px) minmax(0,1fr);gap:25px;align-items:center;margin-top:12px}
+.stats-pie-figure{width:100%;max-width:285px;margin:auto}
+.stats-pie-svg{display:block;width:100%;height:auto;overflow:visible}
+.stats-pie-slice{stroke:white;stroke-width:2;transition:filter .12s ease,stroke-width .12s ease;cursor:pointer;outline:none}
+.stats-pie-slice.is-hardest{stroke:#8c2730;stroke-width:4}
+.stats-pie-slice:hover,.stats-pie-slice:focus{stroke:#193e57;stroke-width:5;filter:brightness(1.06) drop-shadow(0 2px 3px #1b364655)}
+.stats-pie-priority{border-left:4px solid #ba3940;padding:7px 11px;overflow-wrap:anywhere}
+.stats-pie-priority strong{color:#802931}
+.stats-pie-priority .small-muted{font-size:.86rem}
+.stats-pie-count{margin:10px 0 15px;font-size:.9rem}
+.stats-pie-legend{display:flex;gap:10px 17px;flex-wrap:wrap;font-size:.8rem;color:#41566c;margin:12px 0}
+.stats-pie-legend span{display:inline-flex;align-items:center;gap:6px}
+.stats-pie-dot{display:inline-block;width:11px;height:11px;border-radius:50%;background:#91b3c6}
+.stats-pie-dot.hardest{background:#ba3940}
+.stats-pie-dot.below{background:#e5a34d}
+.stats-pie-detail{font-size:.89rem;color:#364d62;min-height:46px;border-top:1px solid #e5edf2;padding-top:10px;overflow-wrap:anywhere}
+@media(max-width:660px){.stats-pie-layout{grid-template-columns:1fr;gap:9px}.stats-pie-figure{max-width:235px}}
+@media(max-width:530px){.stats-pie-controls{grid-template-columns:1fr}}
+@media print{.stats-pie-controls{display:none}.stats-pie-svg{max-width:170px}.stats-pie-layout{grid-template-columns:180px 1fr}}
