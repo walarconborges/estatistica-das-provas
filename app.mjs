@@ -90,11 +90,22 @@ function renderPassageLayout(stem){
   sections.lines.map(line=>'<p class="passage-line">• '+h(line)+'</p>').join('')+
   '<p class="passage-command">'+h(sections.command)+'</p></div>';
 }
+function highlightedStem(q,fallback='[Enunciado não extraído]'){
+ let visible=h(q.stem||fallback);
+ for(const expression of q.highlightExpressions||[]){
+  const escaped=h(expression);
+  if(!escaped||escaped.length>100)continue;
+  const index=visible.toLocaleLowerCase('pt-BR').indexOf(escaped.toLocaleLowerCase('pt-BR'));
+  if(index===-1)continue;
+  visible=visible.slice(0,index)+'<mark class="stem-emphasis">'+visible.slice(index,index+escaped.length)+'</mark>'+visible.slice(index+escaped.length);
+ }
+ return visible;
+}
 function renderAssertionBody(q){
  const passageView=renderPassageLayout(q?.stem);
  if(passageView)return passageView;
  const parsed=splitAssertionItems(q?.stem);
- if(!parsed)return '<div class="question-body">'+h(q.stem||'[Enunciado não extraído]')+'</div>';
+ if(!parsed)return '<div class="question-body">'+highlightedStem(q)+'</div>';
  const marks=assertionMarks(q,parsed.items.length);
  return '<div class="question-body assertion-print-original">'+h(q.stem||'')+'</div>'+
   '<section class="assertion-guide" aria-label="Assertivas da questão">'+
@@ -749,7 +760,7 @@ function printQuestions(qs,title,options={}){
       `<p style="white-space:pre-wrap">${h(q.visualSegments.beforeText)}</p><img style="max-width:100%;max-height:600px;object-fit:contain" src="${h(q.pageImage)}"><p style="white-space:pre-wrap">${h(q.visualSegments.afterText)}</p>`:
       q.imageOnly&&q.pageImage?
       `<img style="max-width:100%;max-height:600px;object-fit:contain" src="${h(q.pageImage)}">`:
-      `<p style="white-space:pre-wrap">${h(q.stem||'Questão em imagem')}</p>`}
+      `<p style="white-space:pre-wrap">${highlightedStem(q,'Questão em imagem')}</p>`}
    ${(q.options||[]).map(o=>`<p style="margin:4px 0">${h(o.letter)}) ${h(o.text)}</p>`).join('')}
   </article>`).join('');
   const sheet=qs.map((q,i)=>`<div style="display:inline-block;width:48%;margin:7px 0">${original?q.originalNumber:i+1}. ( A ) ( B ) ( C ) ( D ) ( E )</div>`).join('');

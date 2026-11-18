@@ -1,9 +1,14 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.42 — 18/11/2026**  
+**Versão experimental 0.6.43 — 18/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.43 — duas sinalizações adicionais
+- Q2026ASG01027: corrigido "territorio" para "território" no enunciado, preservado gabarito C.
+- Q2023SAUDE08001: destacadas as expressões "como" (comparação) e "tão" (intensidade), identificadas pela redação das orações e pelo gabarito C. Destaques são armazenados separadamente do texto-fonte para preservar enunciado e impressão.
+- Total de 9 sinalizações recentes resolvidas; sem mudança em respostas, códigos ou perfis.
 
 ## Versão 0.6.42 — 10 questões HG de Candeias e sete sinalizações
 - Cadastrado o PDF autoral com 10 questões de **História e Geografia de Candeias do Jamari/RO**, prova `sim-chatgpt-candeias-hg-2026-11-18`. Estilo IBGP não implica autoria da banca: banca cadastrada **ChatGPT**. Gabarito da página 4: C, A, E, B, D, B, E, A, C, D.

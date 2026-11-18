@@ -45,3 +45,16 @@ test('sete sinalizações: cinco classificações, uma confirmação e uma forma
  assert.match(q.contextTitle,/Texto 09.*A proposta dos catadores/);
  assert.match(q.contextText,/^Catadores e catadoras/);
 });
+
+test('acentuação e destaques da oração restaurados sem alterar gabaritos',()=>{
+ const q=db.questions.find(x=>x.code==='Q2026ASG01027');
+ assert.match(q.stem,/território brasileiro/);
+ assert.equal(q.answer,'C');
+ const other=db.questions.find(x=>x.code==='Q2023SAUDE08001');
+ assert.deepEqual(other.highlightExpressions,['como','tão']);
+ assert.equal(other.answer,'C');
+ for(const code of [q.code,other.code]){
+  const question=db.questions.find(item=>item.code===code);
+  assert.ok(db.flags.filter(f=>f.questionId===question.id).every(f=>f.status!=='pending'));
+ }
+});

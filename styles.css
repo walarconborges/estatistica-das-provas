@@ -204,3 +204,7 @@ input.assertion-mark:focus{outline:2px solid #237aaa;outline-offset:1px}
 
 /* Título de texto de apoio separado do corpo para leitura. */
 .support-text .support-title{font-size:1rem;margin:12px 0 8px;color:#203c55;line-height:1.4}
+
+/* Expressões sublinhadas no original, restauradas para a leitura do exercício. */
+.stem-emphasis{background:#fff0ab;color:inherit;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:2px;font-weight:700;border-radius:2px;padding:0 2px}
+@media print{.stem-emphasis{background:transparent;text-decoration:underline;font-weight:700}}
