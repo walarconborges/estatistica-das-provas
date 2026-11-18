@@ -1596,6 +1596,32 @@
       "metadataReview": [],
       "sourceType": "simulado-autoral",
       "notes": "Questões autorais no estilo IBGP, não produzidas pela banca IBGP."
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-18",
+      "title": "2026 — ChatGPT — Candeias do Jamari/RO — Simulado: História e Geografia municipal",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "bancaCode": "CHATGPT",
+      "orgao": "Candeias do Jamari/RO",
+      "orgaoCode": "CANDEIAS-DO-JAMARI",
+      "createdAt": "2026-11-18T20:29:19.758Z",
+      "questionIds": [
+        "sim-chatgpt-candeias-hg-2026-11-18-001",
+        "sim-chatgpt-candeias-hg-2026-11-18-002",
+        "sim-chatgpt-candeias-hg-2026-11-18-003",
+        "sim-chatgpt-candeias-hg-2026-11-18-004",
+        "sim-chatgpt-candeias-hg-2026-11-18-005",
+        "sim-chatgpt-candeias-hg-2026-11-18-006",
+        "sim-chatgpt-candeias-hg-2026-11-18-007",
+        "sim-chatgpt-candeias-hg-2026-11-18-008",
+        "sim-chatgpt-candeias-hg-2026-11-18-009",
+        "sim-chatgpt-candeias-hg-2026-11-18-010"
+      ],
+      "keySection": "Gabarito do PDF original, página 4",
+      "metadataReview": [],
+      "sourceType": "simulado-autoral",
+      "notes": "Questões autorais estilo IBGP. Não aplicadas nem elaboradas pela banca IBGP. Origem: simulado_ibgp_historia_geografia_candeias_do_jamari_10_questoes(1).pdf."
     }
   ],
   "questions": [
@@ -11656,7 +11682,7 @@
       ],
       "sourcePage": 73,
       "sourceColumn": 0,
-      "contextText": "Concurso Público Prefeitura Municipal de Mineiros - 001/2024\n\nTexto 09\nA proposta dos catadores para o inferno dos plásticos\nCatadores e catadoras de materiais recicláveis têm contribuído para mantermos bons índices de\nreciclagem, como no caso do alumínio, cuja taxa atingiu quase 100% em 2021, colocando o\nBrasil como líder mundial. No entanto, a visibilidade alcançada por esses agentes ambientais\nrevelou limitações tanto na reciclagem quanto na valorização desses profissionais.\nApesar do destaque do alumínio, outros materiais como o plástico apresentam taxas de\nreciclagem abaixo dos 25% no Brasil e abaixo de 10% mundialmente. Isso reflete uma\neconomia linear que não é sustentável, na qual extraímos recursos da natureza para produtos\ndescartáveis. As cooperativas de catadores têm eficiência na coleta seletiva, mas enfrentam\nlimitações em uma economia linear.\nEstamos próximos de um acordo internacional contra a poluição plástica, que pode impulsionar\na transição para uma economia circular. Com um tratado ambicioso, os países podem\nestabelecer políticas harmonizadas, incluindo responsabilidade estendida do produtor e\nestímulos ao design para reciclagem. Isso poderia não apenas combater a poluição plástica,\nmas também valorizar o trabalho dos catadores, gerando oportunidades econômicas\nsignificativas.\n(Texto adaptado de “A proposta dos catadores para o inferno dos plásticos”. Disponível em:\nhttps://outraspalavras.net/outrasmidias/a-proposta-dos-catadores-para-o-inferno-dos-plasticos/.\nAcesso em: 29 abr. 2024.)",
+      "contextText": "Catadores e catadoras de materiais recicláveis têm contribuído para mantermos bons índices de\nreciclagem, como no caso do alumínio, cuja taxa atingiu quase 100% em 2021, colocando o\nBrasil como líder mundial. No entanto, a visibilidade alcançada por esses agentes ambientais\nrevelou limitações tanto na reciclagem quanto na valorização desses profissionais.\nApesar do destaque do alumínio, outros materiais como o plástico apresentam taxas de\nreciclagem abaixo dos 25% no Brasil e abaixo de 10% mundialmente. Isso reflete uma\neconomia linear que não é sustentável, na qual extraímos recursos da natureza para produtos\ndescartáveis. As cooperativas de catadores têm eficiência na coleta seletiva, mas enfrentam\nlimitações em uma economia linear.\nEstamos próximos de um acordo internacional contra a poluição plástica, que pode impulsionar\na transição para uma economia circular. Com um tratado ambicioso, os países podem\nestabelecer políticas harmonizadas, incluindo responsabilidade estendida do produtor e\nestímulos ao design para reciclagem. Isso poderia não apenas combater a poluição plástica,\nmas também valorizar o trabalho dos catadores, gerando oportunidades econômicas\nsignificativas.\n(Texto adaptado de “A proposta dos catadores para o inferno dos plásticos”. Disponível em:\nhttps://outraspalavras.net/outrasmidias/a-proposta-dos-catadores-para-o-inferno-dos-plasticos/.\nAcesso em: 29 abr. 2024.)",
       "contextRange": [
         1,
         5
@@ -11678,7 +11704,8 @@
       "status": "active",
       "secondary": [],
       "aliases": [],
-      "duplicateGroup": null
+      "duplicateGroup": null,
+      "contextTitle": "Texto 09 — A proposta dos catadores para o inferno dos plásticos"
     },
     {
       "originalNumber": 3,
@@ -20947,13 +20974,13 @@
       "sourceColumn": 0,
       "contextText": "",
       "contextRange": null,
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Colocação pronominal",
+      "topicCode": "LCPR",
       "id": "curated-ti-03-008",
       "examId": "curated-ti-03",
       "code": "Q2024TI03008",
@@ -21415,13 +21442,13 @@
       "sourceColumn": 0,
       "contextText": "",
       "contextRange": null,
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Internet, navegadores e correio eletrônico",
-      "topicCode": "INET",
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Saúde pública e qualidade de vida",
+      "topicCode": "CSAU",
       "id": "curated-ti-03-021",
       "examId": "curated-ti-03",
       "code": "Q2024TI03021",
@@ -25033,13 +25060,13 @@
         1,
         8
       ],
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Classes de palavras e morfologia",
+      "topicCode": "LMOR",
       "id": "curated-ti-06-001",
       "examId": "curated-ti-06",
       "code": "Q2025TI06001",
@@ -26732,13 +26759,13 @@
       "sourceColumn": 0,
       "contextText": "",
       "contextRange": null,
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geografia do Brasil e organização territorial",
+      "topicCode": "CGEO",
       "id": "curated-ti-07-027",
       "examId": "curated-ti-07",
       "code": "Q2024TI07027",
@@ -30771,13 +30798,13 @@
         1,
         3
       ],
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Interpretação e compreensão de textos",
+      "topicCode": "LINT",
       "id": "curated-ti-11-003",
       "examId": "curated-ti-11",
       "code": "Q2025TI11003",
@@ -46479,6 +46506,516 @@
       "sourceType": "chatgpt-cmcj-news-simulado",
       "newsSource": "cmcj-ro",
       "newsSubject": "Cultura e prestação de contas"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-18-001",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-18",
+      "code": "Q2026CGCDJHISTCHATGPT001",
+      "originalNumber": 1,
+      "heading": "Conhecimentos Gerais — História e Geografia de Candeias do Jamari/RO",
+      "stem": "A formação da povoação que deu origem ao município de Candeias do Jamari está relacionada às vias de circulação e aos cursos d’água existentes na região. Assinale a alternativa que identifica CORRETAMENTE o local associado ao surgimento da antiga Vila Candeias.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "O encontro do rio Madeira com a Estrada de Ferro Madeira-Mamoré."
+        },
+        {
+          "letter": "B",
+          "text": "O cruzamento da BR-319 com o rio Guaporé."
+        },
+        {
+          "letter": "C",
+          "text": "O cruzamento da antiga BR-29, atual BR-364, com o rio Candeias."
+        },
+        {
+          "letter": "D",
+          "text": "A margem do rio Mamoré, junto à fronteira com a Bolívia."
+        },
+        {
+          "letter": "E",
+          "text": "O entroncamento da BR-425 com o rio Machado."
+        }
+      ],
+      "sourcePage": 1,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "História de Candeias do Jamari",
+      "topicCode": "CHCDJ",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-candeias-hg-simulado",
+      "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-18-002",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-18",
+      "code": "Q2026CGCDJHISTCHATGPT002",
+      "originalNumber": 2,
+      "heading": "Conhecimentos Gerais — História e Geografia de Candeias do Jamari/RO",
+      "stem": "A trajetória histórica de Candeias do Jamari antecede sua emancipação político-administrativa. Em 14 de novembro de 1939, o Ato nº 2.213 representou um marco de sua ocupação institucional. Esse ato correspondeu à:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "criação de um distrito policial pelo governo do Estado de Mato Grosso."
+        },
+        {
+          "letter": "B",
+          "text": "instalação da primeira prefeitura municipal de Candeias do Jamari."
+        },
+        {
+          "letter": "C",
+          "text": "elevação de Vila Candeias à condição de capital de território federal."
+        },
+        {
+          "letter": "D",
+          "text": "construção da barragem da Usina Hidrelétrica de Samuel."
+        },
+        {
+          "letter": "E",
+          "text": "instituição do município autônomo de Candeias do Jamari."
+        }
+      ],
+      "sourcePage": 1,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "História de Candeias do Jamari",
+      "topicCode": "CHCDJ",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-candeias-hg-simulado",
+      "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-18-003",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-18",
+      "code": "Q2026CGCDJHISTCHATGPT003",
+      "originalNumber": 3,
+      "heading": "Conhecimentos Gerais — História e Geografia de Candeias do Jamari/RO",
+      "stem": "A emancipação de Candeias do Jamari integra o processo de reorganização territorial de Rondônia no início da década de 1990. A respeito da criação do município, assinale a alternativa CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "O município foi criado em 1981, por decreto federal, a partir de Ariquemes."
+        },
+        {
+          "letter": "B",
+          "text": "A autonomia municipal ocorreu em 1970, mediante desmembramento de Guajará-Mirim."
+        },
+        {
+          "letter": "C",
+          "text": "A Lei Municipal nº 12/1993 criou o município mediante separação de Itapuã do Oeste."
+        },
+        {
+          "letter": "D",
+          "text": "O município surgiu em 2000, com a divisão territorial de Porto Velho e Alto Paraíso."
+        },
+        {
+          "letter": "E",
+          "text": "A Lei Estadual nº 363, de 13 de fevereiro de 1992, criou o município, desmembrado de Porto Velho."
+        }
+      ],
+      "sourcePage": 1,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "História de Candeias do Jamari",
+      "topicCode": "CHCDJ",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "E",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-candeias-hg-simulado",
+      "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-18-004",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-18",
+      "code": "Q2026CGCDJHISTCHATGPT004",
+      "originalNumber": 4,
+      "heading": "Conhecimentos Gerais — História e Geografia de Candeias do Jamari/RO",
+      "stem": "A formação administrativa de Candeias do Jamari passou por etapas posteriores à lei de criação do município. Segundo o histórico territorial do IBGE, é CORRETO afirmar que:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "o município foi instalado em 1939, e o distrito de Rio Preto do Candeias foi criado em 1940."
+        },
+        {
+          "letter": "B",
+          "text": "o município foi instalado em 1º de janeiro de 1993, e o distrito de Rio Preto do Candeias foi criado pela Lei Municipal nº 12, de 1º de setembro de 1993."
+        },
+        {
+          "letter": "C",
+          "text": "o município foi instalado em 1988, e sua sede permaneceu vinculada a Alto-Madeira."
+        },
+        {
+          "letter": "D",
+          "text": "a sede municipal foi instituída em 2007, quando surgiu o distrito de Itapuã do Oeste."
+        },
+        {
+          "letter": "E",
+          "text": "a instalação do município ocorreu em 1995, após a criação de cinco distritos."
+        }
+      ],
+      "sourcePage": 1,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "História de Candeias do Jamari",
+      "topicCode": "CHCDJ",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-candeias-hg-simulado",
+      "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-18-005",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-18",
+      "code": "Q2026CGCDJHISTCHATGPT005",
+      "originalNumber": 5,
+      "heading": "Conhecimentos Gerais — História e Geografia de Candeias do Jamari/RO",
+      "stem": "A respeito das atividades e funções desempenhadas pelo povoado de Candeias em sua fase inicial, analise as afirmativas a seguir.\nI. O local servia de ponto de parada para pessoas que se dirigiam aos seringais do alto rio Candeias.\nII. O povoado funcionava como depósito da borracha transportada pelo rio Candeias.\nIII. O núcleo urbano surgiu como um centro de produção automobilística instalado na década de 1930.\n\nEstá CORRETO o que se afirma em:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "I, apenas."
+        },
+        {
+          "letter": "B",
+          "text": "II, apenas."
+        },
+        {
+          "letter": "C",
+          "text": "III, apenas."
+        },
+        {
+          "letter": "D",
+          "text": "I e II, apenas."
+        },
+        {
+          "letter": "E",
+          "text": "I, II e III."
+        }
+      ],
+      "sourcePage": 2,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "História de Candeias do Jamari",
+      "topicCode": "CHCDJ",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-candeias-hg-simulado",
+      "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-18-006",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-18",
+      "code": "Q2026CGCDJGEOCHATGPT006",
+      "originalNumber": 6,
+      "heading": "Conhecimentos Gerais — História e Geografia de Candeias do Jamari/RO",
+      "stem": "A localização de Candeias do Jamari em Rondônia pode ser descrita por seus limites com municípios vizinhos. Assinale a alternativa que indica CORRETAMENTE a distribuição desses limites.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Norte: Guajará-Mirim; oeste: Porto Velho; leste: Ariquemes; sul: Jaru."
+        },
+        {
+          "letter": "B",
+          "text": "Norte e oeste: Porto Velho; leste: Itapuã do Oeste; sul: Alto Paraíso."
+        },
+        {
+          "letter": "C",
+          "text": "Norte: Alto Paraíso; oeste: Itapuã do Oeste; leste e sul: Porto Velho."
+        },
+        {
+          "letter": "D",
+          "text": "Norte: Cujubim; oeste: Ariquemes; leste: Porto Velho; sul: Itapuã do Oeste."
+        },
+        {
+          "letter": "E",
+          "text": "Norte e oeste: Alto Paraíso; leste: Guajará-Mirim; sul: Porto Velho."
+        }
+      ],
+      "sourcePage": 2,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geografia de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-candeias-hg-simulado",
+      "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-18-007",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-18",
+      "code": "Q2026CGCDJGEOCHATGPT007",
+      "originalNumber": 7,
+      "heading": "Conhecimentos Gerais — História e Geografia de Candeias do Jamari/RO",
+      "stem": "Considerando as informações geográficas do município, assinale a alternativa que associa CORRETAMENTE a dimensão aproximada de seu território e a região intermediária em que se situa.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "1.200 km²; Região Intermediária de Ji-Paraná."
+        },
+        {
+          "letter": "B",
+          "text": "3.500 km²; Região Intermediária de Vilhena."
+        },
+        {
+          "letter": "C",
+          "text": "9.800 km²; Região Intermediária de Cacoal."
+        },
+        {
+          "letter": "D",
+          "text": "12.400 km²; Região Intermediária de Guajará-Mirim."
+        },
+        {
+          "letter": "E",
+          "text": "6.844 km²; Região Intermediária de Porto Velho."
+        }
+      ],
+      "sourcePage": 2,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geografia de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "E",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-candeias-hg-simulado",
+      "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-18-008",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-18",
+      "code": "Q2026CGCDJGEOCHATGPT008",
+      "originalNumber": 8,
+      "heading": "Conhecimentos Gerais — História e Geografia de Candeias do Jamari/RO",
+      "stem": "A Usina Hidrelétrica de Samuel está associada a transformações na paisagem e no uso do território de Candeias do Jamari. Sobre essa relação, assinale a alternativa CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "A formação do reservatório provocou o alagamento de parte do território municipal e o lago passou a integrar a paisagem regional."
+        },
+        {
+          "letter": "B",
+          "text": "O empreendimento foi instalado no rio Madeira e não alterou áreas do município."
+        },
+        {
+          "letter": "C",
+          "text": "A superfície do lago corresponde integralmente a uma área naturalmente inundada, anterior à construção da barragem."
+        },
+        {
+          "letter": "D",
+          "text": "O principal efeito da obra foi o desaparecimento do lago de Samuel, substituído por áreas agrícolas."
+        },
+        {
+          "letter": "E",
+          "text": "A construção do reservatório impediu a manutenção dos rios e igarapés que compõem a drenagem regional."
+        }
+      ],
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geografia de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-candeias-hg-simulado",
+      "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-18-009",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-18",
+      "code": "Q2026CGCDJGEOCHATGPT009",
+      "originalNumber": 9,
+      "heading": "Conhecimentos Gerais — História e Geografia de Candeias do Jamari/RO",
+      "stem": "O relevo influencia o uso e a ocupação dos espaços urbanos e rurais. Conforme diagnóstico geográfico divulgado pelo Governo de Rondônia, o relevo predominante em Candeias do Jamari está associado à:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Planaltos de altitude elevada, com predominância de escarpas na sede urbana."
+        },
+        {
+          "letter": "B",
+          "text": "Planície do rio Madeira, com topografia inteiramente plana em todo o território."
+        },
+        {
+          "letter": "C",
+          "text": "Depressão do Roosevelt de Porto Velho, com sede urbana em área de relevo plano a suavemente ondulado."
+        },
+        {
+          "letter": "D",
+          "text": "Planaltos do Parecis, caracterizados pela predominância de chapadas em toda a área urbana."
+        },
+        {
+          "letter": "E",
+          "text": "Depressão do rio Guaporé, com relevo montanhoso e altas declividades na sede do município."
+        }
+      ],
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geografia de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-candeias-hg-simulado",
+      "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-18-010",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-18",
+      "code": "Q2026CGCDJGEOCHATGPT010",
+      "originalNumber": 10,
+      "heading": "Conhecimentos Gerais — História e Geografia de Candeias do Jamari/RO",
+      "stem": "A estrutura econômica de Candeias do Jamari também reflete características de seu espaço rural. Com base no histórico municipal, assinale a alternativa CORRETA sobre as atividades produtivas e sua articulação territorial.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "A atividade predominante é a indústria metalúrgica pesada, e a agricultura ocupa papel irrelevante."
+        },
+        {
+          "letter": "B",
+          "text": "A economia é baseada principalmente na fabricação de veículos, sem participação expressiva do setor primário."
+        },
+        {
+          "letter": "C",
+          "text": "O setor produtivo rural atende apenas ao consumo doméstico e dispensa o transporte por estradas vicinais."
+        },
+        {
+          "letter": "D",
+          "text": "Extrativismo vegetal, agricultura, pecuária, produção leiteira e hortaliças integram a economia, enquanto as estradas vicinais auxiliam o escoamento rural."
+        },
+        {
+          "letter": "E",
+          "text": "O extrativismo vegetal foi substituído integralmente pela exploração de petróleo e gás natural."
+        }
+      ],
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geografia de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-candeias-hg-simulado",
+      "municipalSource": "candeias-do-jamari-ro"
     }
   ],
   "attempts": [
@@ -47353,8 +47890,9 @@
       "type": "problem",
       "note": "LP",
       "proposed": {},
-      "status": "pending",
-      "at": "2026-11-18T19:17:25.548Z"
+      "status": "approved",
+      "at": "2026-11-18T19:17:25.548Z",
+      "resolvedAt": "2026-11-18T20:29:19.758Z"
     },
     {
       "id": "8ef1645e-56f9-45d6-a667-05ac85304d5f",
@@ -47363,8 +47901,9 @@
       "type": "problem",
       "note": "não é TI",
       "proposed": {},
-      "status": "pending",
-      "at": "2026-11-18T19:17:37.700Z"
+      "status": "approved",
+      "at": "2026-11-18T19:17:37.700Z",
+      "resolvedAt": "2026-11-18T20:29:19.758Z"
     },
     {
       "id": "545d2361-7f81-4322-833a-cdd408191051",
@@ -47373,8 +47912,9 @@
       "type": "problem",
       "note": "não é TI",
       "proposed": {},
-      "status": "pending",
-      "at": "2026-11-18T19:17:44.092Z"
+      "status": "approved",
+      "at": "2026-11-18T19:17:44.092Z",
+      "resolvedAt": "2026-11-18T20:29:19.758Z"
     },
     {
       "id": "db021572-ed37-403f-a8a7-3a28151eec12",
@@ -47383,8 +47923,9 @@
       "type": "problem",
       "note": "não é Ti",
       "proposed": {},
-      "status": "pending",
-      "at": "2026-11-18T19:20:55.556Z"
+      "status": "approved",
+      "at": "2026-11-18T19:20:55.556Z",
+      "resolvedAt": "2026-11-18T20:29:19.758Z"
     },
     {
       "id": "5098f0c6-e082-4dee-85a8-188954df9307",
@@ -47393,8 +47934,9 @@
       "type": "problem",
       "note": "RLM",
       "proposed": {},
-      "status": "pending",
-      "at": "2026-11-18T19:51:17.614Z"
+      "status": "approved",
+      "at": "2026-11-18T19:51:17.614Z",
+      "resolvedAt": "2026-11-18T20:29:19.758Z"
     },
     {
       "id": "ee6056de-9d0c-411b-be32-92bd7a407816",
@@ -47403,8 +47945,9 @@
       "type": "problem",
       "note": "não é TI",
       "proposed": {},
-      "status": "pending",
-      "at": "2026-11-18T19:55:24.574Z"
+      "status": "approved",
+      "at": "2026-11-18T19:55:24.574Z",
+      "resolvedAt": "2026-11-18T20:29:19.758Z"
     },
     {
       "id": "1c48dc8f-1a13-4a94-91fc-28510f39ed82",
@@ -47413,8 +47956,9 @@
       "type": "problem",
       "note": "Separe o título do texto do texto propriamente dito. Fica melhor para ler.",
       "proposed": {},
-      "status": "pending",
-      "at": "2026-11-18T20:19:53.159Z"
+      "status": "approved",
+      "at": "2026-11-18T20:19:53.159Z",
+      "resolvedAt": "2026-11-18T20:29:19.758Z"
     },
     {
       "id": "a32a076f-bf9e-4798-bdfc-bebacb38c848",
