@@ -30338,13 +30338,13 @@
       "sourceColumn": 0,
       "contextText": "",
       "contextRange": null,
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Regência e crase",
+      "topicCode": "LREG",
       "id": "curated-ti-10-009",
       "examId": "curated-ti-10",
       "code": "Q2021TI10009",
@@ -46182,8 +46182,10 @@
       "type": "problem",
       "note": "LP",
       "proposed": {},
-      "status": "pending",
-      "at": "2026-11-18T00:29:12.778Z"
+      "status": "approved",
+      "at": "2026-11-18T00:29:12.778Z",
+      "resolvedAt": "2026-11-18T00:32:54.387Z",
+      "resolutionNote": "Reclassificada para Língua Portuguesa — Regência e crase (LP/LREG). Alternativa C preservada. Histórico e código sem alteração."
     }
   ],
   "tombstones": {
