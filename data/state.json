@@ -46194,6 +46194,16 @@
       "at": "2026-11-18T00:29:12.778Z",
       "resolvedAt": "2026-11-18T00:32:54.387Z",
       "resolutionNote": "Reclassificada para Língua Portuguesa — Regência e crase (LP/LREG). Alternativa C preservada. Histórico e código sem alteração."
+    },
+    {
+      "id": "d4d133cf-030f-4b6a-a0ad-7fae7ad93836",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-ti-02-037",
+      "type": "problem",
+      "note": "\"usuá rios\"",
+      "proposed": {},
+      "status": "pending",
+      "at": "2026-11-18T00:38:39.610Z"
     }
   ],
   "tombstones": {
