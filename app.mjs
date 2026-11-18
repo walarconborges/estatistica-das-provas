@@ -556,7 +556,7 @@ function cardQuestion(q,index,scope='single',selected='',previous=null){
   return `<article class="question" data-question-card="${h(q.id)}">
   <div class="question-head"><div><div class="question-code">${h(q.code)}</div><div class="question-context">Questão ${label} · ${h(q.discipline)} / ${h(q.topic)}</div><details class="question-origin"><summary>Ver origem da questão</summary><div>${h(examTitle)}</div></details></div><div class="chips">${q.status==='annulled'?'<span class="badge wait">Anulada</span>':''}${q.status==='needs-review'?'<span class="badge wait">Revisão da extração</span>':''}${q.status==='outdated'?'<span class="badge wait">Desatualizada</span>':''}${q.originalQuestionId?'<span class="badge good">Adaptada para Candeias</span>':''}${q.confidence==='baixa'?'<span class="badge wait">Classificação incerta</span>':''}</div></div>
   ${syllabusBadge(q)}
-  ${q.contextText?`<details class="support-text" ${repeatedSupportText(previous,q)?'':'open'}><summary>${repeatedSupportText(previous,q)?'Ver texto de apoio novamente (já exibido na questão anterior)':'Texto de apoio — questões '+h(q.contextRange?.join(' a ')||'')}</summary><div class="question-body">${h(q.contextText)}</div></details>`:''}
+  ${q.contextText?`<details class="support-text" ${repeatedSupportText(previous,q)?'':'open'}><summary>${repeatedSupportText(previous,q)?'Ver texto de apoio novamente (já exibido na questão anterior)':'Texto de apoio — questões '+h(q.contextRange?.join(' a ')||'')}</summary>${q.contextTitle?`<h3 class="support-title">${h(q.contextTitle)}</h3>`:""}<div class="question-body">${h(q.contextText)}</div></details>`:''}
   ${q.visualSegments&&q.pageImage?
     `<div class="question-body">${h(q.visualSegments.beforeText)}</div><img loading="lazy" class="question-img question-figure" src="${h(q.pageImage)}" alt="Figura ou tabela do enunciado"><div class="question-body">${h(q.visualSegments.afterText)}</div>`:
     q.imageOnly&&q.pageImage?
@@ -744,7 +744,7 @@ function printQuestions(qs,title,options={}){
   const original=!!options.original,answered=options.answers||{},includeKey=options.includeKey!==false;
   const content=qs.map((q,i)=>`<article class="question">
    <div><strong>${original?q.originalNumber:i+1}. ${h(q.code)}</strong></div>
-   ${q.contextText&&!repeatedSupportText(qs[i-1],q)?`<p style="white-space:pre-wrap;font-size:9pt">Texto de apoio:\n${h(q.contextText)}</p>`:''}
+   ${q.contextText&&!repeatedSupportText(qs[i-1],q)?`<p style="white-space:pre-wrap;font-size:9pt">Texto de apoio:\n${q.contextTitle?h(q.contextTitle)+"\n\n":""}${h(q.contextText)}</p>`:''}
    ${q.visualSegments&&q.pageImage?
       `<p style="white-space:pre-wrap">${h(q.visualSegments.beforeText)}</p><img style="max-width:100%;max-height:600px;object-fit:contain" src="${h(q.pageImage)}"><p style="white-space:pre-wrap">${h(q.visualSegments.afterText)}</p>`:
       q.imageOnly&&q.pageImage?

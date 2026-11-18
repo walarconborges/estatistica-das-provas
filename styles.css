@@ -201,3 +201,6 @@ input.assertion-mark:focus{outline:2px solid #237aaa;outline-offset:1px}
 @media(max-width:660px){.stats-pie-layout{grid-template-columns:1fr;gap:9px}.stats-pie-figure{max-width:235px}}
 @media(max-width:530px){.stats-pie-controls{grid-template-columns:1fr}}
 @media print{.stats-pie-controls{display:none}.stats-pie-svg{max-width:170px}.stats-pie-layout{grid-template-columns:180px 1fr}}
+
+/* Título de texto de apoio separado do corpo para leitura. */
+.support-text .support-title{font-size:1rem;margin:12px 0 8px;color:#203c55;line-height:1.4}

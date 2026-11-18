@@ -1,9 +1,15 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.41 — 18/11/2026**  
+**Versão experimental 0.6.42 — 18/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.42 — 10 questões HG de Candeias e sete sinalizações
+- Cadastrado o PDF autoral com 10 questões de **História e Geografia de Candeias do Jamari/RO**, prova `sim-chatgpt-candeias-hg-2026-11-18`. Estilo IBGP não implica autoria da banca: banca cadastrada **ChatGPT**. Gabarito da página 4: C, A, E, B, D, B, E, A, C, D.
+- Questões 1–5 classificadas em História municipal; questões 6–10 em Geografia municipal, ambas em Conhecimentos Gerais. O enquadramento por edital vale para os cargos 202 e 505 da Câmara; editais independentes de Porto Velho permanecem distintos.
+- Sete sinalizações aprovadas: cinco classificações corrigidas (Q2024TI03008, Q2024TI03021, Q2025TI11003, Q2024TI07027, Q2025TI06001), confirmação de RLM correta (Q2026ASG09011) e apresentação do título do Texto 09 (Q2024SAUDE10002).
+- Gabaritos, históricos e códigos públicos antigos mantidos. Teste de regressão em `tests/candeias-hg-2026.test.mjs`.
 
 ## Versão 0.6.41 — gráfico de pizza de dificuldade
 

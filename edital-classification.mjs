@@ -265,6 +265,11 @@ function inferClassificationForCargo(q,exam,cargoId='505'){
    reason:'Simulado autoral do tópico de notícias do site da Câmara de Candeias do Jamari.'};
  }
 
+ if(sectionId==='gerais'&&q?.sourceType==='chatgpt-candeias-hg-simulado'){
+  return {cargoId:cargo,status:'dentro',statusLabel:'Dentro do edital',
+   discipline:section.title,topic:section.topics[1],topicId:'gerais:1',
+   reason:'História e Geografia de Candeias do Jamari: assunto do Anexo IV.'};
+ }
  if(cargo==='505'&&sectionId==='legislacao'){
   if(q.originalQuestionId){
    const a=q.adaptation||{};
@@ -463,6 +468,10 @@ export function classifyForCargo(q,exam,cargoId='505'){
    topic:'Fora do edital',topicId:'',
    reason:'Notícias específicas da Câmara de Candeias do Jamari não pertencem ao edital deste cargo.'
  };
+ if(q?.sourceType==='chatgpt-candeias-hg-simulado'&&cargo!=='202'&&cargo!=='505')
+  return {cargoId:cargo,status:'fora',statusLabel:'Fora do edital',
+   discipline:'Fora do edital',topic:'Fora do edital',topicId:'',
+   reason:'Simulado específico de História e Geografia de Candeias do Jamari, não do município deste edital.'};
  const computed=cargo===PROFESSOR_CARGO_ID?inferProfessorClassification(q,exam):cargo==='240'?inferSemusaClassification(q,exam):inferClassificationForCargo(q,exam,cargo);
  const reviewed=q?.editalReview?.[cargo];
  if(!reviewed||!['dentro','fora'].includes(reviewed.status))return computed;
