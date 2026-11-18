@@ -803,8 +803,7 @@
         "curated-ti-05-102",
         "curated-ti-05-106",
         "curated-ti-05-111",
-        "curated-ti-05-115",
-        "curated-ti-05-116"
+        "curated-ti-05-115"
       ],
       "keySection": "Gabarito interno — seleção preparada",
       "metadataReview": [],
@@ -878,7 +877,7 @@
     },
     {
       "id": "curated-ti-08",
-      "title": "2025 — VUNESP — Câmara Municipal de Marília/SP — Analista de Tecnologia e Informática",
+      "title": "2025 — VUNESP — Câmara Municipal de Marília/SP — Auxiliar de Informática",
       "year": "2025",
       "banca": "VUNESP",
       "bancaCode": "VUNESP",
@@ -4261,7 +4260,7 @@
     },
     {
       "originalNumber": 33,
-      "heading": "Conhecimentos Específicos",
+      "heading": "Conhecimentos Específicos — Saúde",
       "stem": "Telefones de emergência são aqueles números disponibilizados gratuitamente aos quais\n\nrecorremos em casos de enchentes, acidentes, incêndios, entre outros. Suponha que em seu\nambiente de trabalho esteja ocorrendo um vazamento de gás, sua atitude deve ser a de ligar\npara:",
       "options": [
         {
@@ -4289,12 +4288,12 @@
       "sourceColumn": 0,
       "contextText": "",
       "contextRange": null,
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Conhecimentos Específicos",
+      "discipline": "Conhecimentos Específicos — Saúde",
       "disciplineCode": "CE",
-      "topic": "Segurança do trabalho e equipamentos de proteção",
+      "topic": "Segurança do trabalho e situações de emergência",
       "topicCode": "ESEG",
       "id": "curated-health-02-033",
       "examId": "curated-health-02",
@@ -4408,7 +4407,7 @@
     },
     {
       "originalNumber": 36,
-      "heading": "Conhecimentos Específicos",
+      "heading": "Conhecimentos Específicos — Saúde",
       "stem": "Leia o conceito: “Refere-se às condições de saúde pública relacionadas a água potável a\n\nao tratamento de esgotos e excrementos humanos, objetivando a prevenção a doenças e\nmanutenção da saúde da população.” A descrição refere-se a:",
       "options": [
         {
@@ -4436,13 +4435,13 @@
       "sourceColumn": 0,
       "contextText": "",
       "contextRange": null,
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Conhecimentos Específicos",
+      "discipline": "Conhecimentos Específicos — Saúde",
       "disciplineCode": "CE",
-      "topic": "Rotinas profissionais e organização do trabalho",
-      "topicCode": "EROT",
+      "topic": "Saneamento básico e saúde pública",
+      "topicCode": "ESAN",
       "id": "curated-health-02-036",
       "examId": "curated-health-02",
       "code": "Q2020SAUDE02036",
@@ -20853,7 +20852,7 @@
     },
     {
       "originalNumber": 7,
-      "heading": "Informática",
+      "heading": "Língua Portuguesa",
       "stem": "Sentou na minha frente e pôs-se ______ ler um livro ______ luz do abajur. Já está preparada\n\npara dormir: o macio roupão azul sobre a camisola, a chinela de rosinhas azuis, o frouxo laçarote\nde fita prendendo os cabelos alourados, a pele tão limpa, tão brilhante, cheirando ______\nsabonete provavelmente azul, tudo tão vago, tão imaterial. Celestial.\nTELLES, Lygia Fagundes. Eu era mudo e só. Disponível em:\nhttps://contobrasileiro.com.br/eu-era-mudo-e-so-conto-de-lygia-fagundes-telles/. Acesso em: 23\njan. 2024. [Fragmento]\nAssinale a alternativa que completa correta e respectivamente os espaços do texto.",
       "options": [
         {
@@ -20877,13 +20876,13 @@
       "sourceColumn": 0,
       "contextText": "",
       "contextRange": null,
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Internet, navegadores e correio eletrônico",
-      "topicCode": "INET",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Regência e crase",
+      "topicCode": "LREG",
       "id": "curated-ti-03-007",
       "examId": "curated-ti-03",
       "code": "Q2024TI03007",
@@ -22612,7 +22611,7 @@
     },
     {
       "originalNumber": 21,
-      "heading": "Informática",
+      "heading": "Conhecimentos Gerais",
       "stem": "O estado de Rondônia apresenta uma economia fortemente vinculada às atividades do setor\n\nprimário, com destaque para a agropecuária, o extrativismo e a piscicultura. Nos últimos anos, o\nestado tem se consolidado nacionalmente por sua expressiva participação em cadeias produtivas\nestratégicas, impulsionadas por condições naturais favoráveis, como abundância hídrica e clima\nadequado. Nesse contexto, é CORRETO afirmar que o estado de Rondônia se destaca\nnacionalmente pela maior produção de:",
       "options": [
         {
@@ -22640,13 +22639,13 @@
       "sourceColumn": 0,
       "contextText": "",
       "contextRange": null,
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "História e Geografia de Rondônia",
+      "topicCode": "HGRO",
       "id": "curated-ti-04-021",
       "examId": "curated-ti-04",
       "code": "Q2026TI04021",
@@ -24238,7 +24237,7 @@
     {
       "originalNumber": 81,
       "heading": "Informática",
-      "stem": "A camada de Internet entrega pacotes IP onde eles são necessários e lida com o roteamento\n\ndos pacotes.\nA respeito do protocolo SNMP, julgue os próximos itens.",
+      "stem": "A camada de Internet entrega pacotes IP onde eles são necessários e lida com o roteamento\n\ndos pacotes.",
       "options": [
         {
           "letter": "C",
@@ -24275,7 +24274,7 @@
     {
       "originalNumber": 82,
       "heading": "Informática",
-      "stem": "O SNMP utiliza o protocolo TCP para transportar mensagens e garantir as entregas das\n\ncoletas de informações obtidas em dispositivos de rede como switches.",
+      "stem": "A respeito do protocolo SNMP, julgue os próximos itens.\n\nO SNMP utiliza o protocolo TCP para transportar mensagens e garantir as entregas das\n\ncoletas de informações obtidas em dispositivos de rede como switches.",
       "options": [
         {
           "letter": "C",
@@ -24349,7 +24348,7 @@
     {
       "originalNumber": 84,
       "heading": "Informática",
-      "stem": "O SNMP tem uma arquitetura fundamentada em agentes e gerentes, em que os agentes\n\nresidem nos dispositivos de rede e os gerentes executam em estações de gerenciamento,\ncoletando e processando informações dos agentes.\n\nNo que se refere a EAP (extensible authentication protocol), julgue os itens subsecutivos.",
+      "stem": "O SNMP tem uma arquitetura fundamentada em agentes e gerentes, em que os agentes\n\nresidem nos dispositivos de rede e os gerentes executam em estações de gerenciamento,\ncoletando e processando informações dos agentes.",
       "options": [
         {
           "letter": "C",
@@ -24364,13 +24363,13 @@
       "sourceColumn": 0,
       "contextText": "",
       "contextRange": null,
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
       "discipline": "Informática",
       "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "topic": "Redes, protocolos e comunicação de dados",
+      "topicCode": "IRED",
       "id": "curated-ti-05-084",
       "examId": "curated-ti-05",
       "code": "Q2024TI05084",
@@ -24386,7 +24385,7 @@
     {
       "originalNumber": 85,
       "heading": "Informática",
-      "stem": "O EAP protege a autenticação com elevada capacidade de segurança. Em seguida, os dados\n\nsão transmitidos em texto plano após a autenticação, sendo obrigatório o uso de VPN para\nproteger os dados em relação à integridade e à confidencialidade.",
+      "stem": "No que se refere a EAP (extensible authentication protocol), julgue os itens subsecutivos.\n\nO EAP protege a autenticação com elevada capacidade de segurança. Em seguida, os dados\n\nsão transmitidos em texto plano após a autenticação, sendo obrigatório o uso de VPN para\nproteger os dados em relação à integridade e à confidencialidade.",
       "options": [
         {
           "letter": "C",
@@ -24423,7 +24422,7 @@
     {
       "originalNumber": 86,
       "heading": "Informática",
-      "stem": "O EAP suporta diferentes métodos de autenticação, entre eles o EAP-TLS (EAP-transport layer\n\nsecurity).\n\nCom relação a dispositivos de segurança, julgue os itens subsequentes.",
+      "stem": "O EAP suporta diferentes métodos de autenticação, entre eles o EAP-TLS (EAP-transport layer\n\nsecurity).",
       "options": [
         {
           "letter": "C",
@@ -24460,7 +24459,7 @@
     {
       "originalNumber": 87,
       "heading": "Informática",
-      "stem": "VPN (virtual private network) pode utilizar protocolos como IPSEC e PPTP.",
+      "stem": "Com relação a dispositivos de segurança, julgue os itens subsequentes.\n\nVPN (virtual private network) pode utilizar protocolos como IPSEC e PPTP.",
       "options": [
         {
           "letter": "C",
@@ -24534,7 +24533,7 @@
     {
       "originalNumber": 89,
       "heading": "Informática",
-      "stem": "Considere uma aplicação executada em um host A que responde por requisições a partir de\n\num host B, que, por sua vez, funciona como intermediário entre o usuário final e o host A e executa\na aplicação. Nessa hipótese, o host intermediário atua como um proxy.\nNo que concerne aos tipos de ataque, julgue os seguintes itens.",
+      "stem": "Considere uma aplicação executada em um host A que responde por requisições a partir de\n\num host B, que, por sua vez, funciona como intermediário entre o usuário final e o host A e executa\na aplicação. Nessa hipótese, o host intermediário atua como um proxy.",
       "options": [
         {
           "letter": "C",
@@ -24571,7 +24570,7 @@
     {
       "originalNumber": 90,
       "heading": "Informática",
-      "stem": "O cavalo de troia (trojan) é um programa que monitora as atividades de um usuário e as envia\n\npara outra pessoa, de forma maliciosa, sem o conhecimento deste.",
+      "stem": "No que concerne aos tipos de ataque, julgue os seguintes itens.\n\nO cavalo de troia (trojan) é um programa que monitora as atividades de um usuário e as envia\n\npara outra pessoa, de forma maliciosa, sem o conhecimento deste.",
       "options": [
         {
           "letter": "C",
@@ -24645,7 +24644,7 @@
     {
       "originalNumber": 92,
       "heading": "Informática",
-      "stem": "Considere que um email malicioso tenha sido recebido por uma pessoa, que identificou\n\nalterações no cabeçalho do email e, portanto, percebeu que o email havia sido enviado a partir de\numa origem diferente daquela que supostamente o teria enviado. Nesse caso, a situação descrita\nconfigura um ataque de spoofing.\n\nAcerca de criptografia, julgue os itens que se seguem.",
+      "stem": "Considere que um email malicioso tenha sido recebido por uma pessoa, que identificou\n\nalterações no cabeçalho do email e, portanto, percebeu que o email havia sido enviado a partir de\numa origem diferente daquela que supostamente o teria enviado. Nesse caso, a situação descrita\nconfigura um ataque de spoofing.",
       "options": [
         {
           "letter": "C",
@@ -24682,7 +24681,7 @@
     {
       "originalNumber": 93,
       "heading": "Informática",
-      "stem": "A autoridade certificadora (AC) publica informações e informa se um certificado é confiável ou\n\nestá revogado.",
+      "stem": "Acerca de criptografia, julgue os itens que se seguem.\n\nA autoridade certificadora (AC) publica informações e informa se um certificado é confiável ou\n\nestá revogado.",
       "options": [
         {
           "letter": "C",
@@ -24719,7 +24718,7 @@
     {
       "originalNumber": 94,
       "heading": "Informática",
-      "stem": "A criptografia assimétrica utiliza uma única chave para criptografar e descriptografar.\n\nA respeito de sistemas operacionais, julgue os próximos itens.",
+      "stem": "A criptografia assimétrica utiliza uma única chave para criptografar e descriptografar.",
       "options": [
         {
           "letter": "C",
@@ -24756,7 +24755,7 @@
     {
       "originalNumber": 95,
       "heading": "Informática",
-      "stem": "O sistema operacional pode usar DMA (direct access memory), independentemente da\n\nexistência de um controlador DMA no hardware.",
+      "stem": "A respeito de sistemas operacionais, julgue os próximos itens.\n\nO sistema operacional pode usar DMA (direct access memory), independentemente da\n\nexistência de um controlador DMA no hardware.",
       "options": [
         {
           "letter": "C",
@@ -24793,7 +24792,7 @@
     {
       "originalNumber": 96,
       "heading": "Informática",
-      "stem": "Um processo corresponde a um programa em execução, ao qual está associado um espaço de\n\nendereçamento, que é uma lista de posições de memória.\n\n97 - ANULADA/DESATUALIZADA\n\n98 - ANULADA/DESATUALIZADA\n\n99 - ANULADA/DESATUALIZADA\n\n100 - ANULADA/DESATUALIZADA\n\n101 - ANULADA/DESATUALIZADA",
+      "stem": "Um processo corresponde a um programa em execução, ao qual está associado um espaço de\n\nendereçamento, que é uma lista de posições de memória.",
       "options": [
         {
           "letter": "C",
@@ -24830,7 +24829,7 @@
     {
       "originalNumber": 102,
       "heading": "Informática",
-      "stem": "Suítes de escritório, como o Microsoft 365, são exemplos do modelo SaaS (software as a\n\nservice), pois o usuário utiliza um software fornecido pelo provedor do serviço.\n\n103 - ANULADA/DESATUALIZADA\n\n104 - ANULADA/DESATUALIZADA\n\n105 - ANULADA/DESATUALIZADA",
+      "stem": "Suítes de escritório, como o Microsoft 365, são exemplos do modelo SaaS (software as a\n\nservice), pois o usuário utiliza um software fornecido pelo provedor do serviço.",
       "options": [
         {
           "letter": "C",
@@ -24867,7 +24866,7 @@
     {
       "originalNumber": 106,
       "heading": "Informática",
-      "stem": "A redundância em datacenters, com a duplicação de diversos componentes, tem como\n\nobjetivo aumentar o poder de processamento das máquinas neles instaladas.\n\n107 - ANULADA/DESATUALIZADA\n\n108 - ANULADA/DESATUALIZADA\n\n109 - ANULADA/DESATUALIZADA\n\n110 - ANULADA/DESATUALIZADA\n\nA respeito de conteinerização e DevOps, julgue os itens que se seguem.",
+      "stem": "A redundância em datacenters, com a duplicação de diversos componentes, tem como\n\nobjetivo aumentar o poder de processamento das máquinas neles instaladas.",
       "options": [
         {
           "letter": "C",
@@ -24882,13 +24881,13 @@
       "sourceColumn": 0,
       "contextText": "",
       "contextRange": null,
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
       "discipline": "Informática",
       "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "topic": "Computação em nuvem e serviços digitais",
+      "topicCode": "ICLO",
       "id": "curated-ti-05-106",
       "examId": "curated-ti-05",
       "code": "Q2024TI05106",
@@ -24904,7 +24903,7 @@
     {
       "originalNumber": 111,
       "heading": "Informática",
-      "stem": "O build de uma aplicação engloba o resultado das tarefas de compilação e empacotamento\n\nem um único arquivo binário.\n\n112 - ANULADA/DESATUALIZADA\n\n113 - ANULADA/DESATUALIZADA\n\n114 - ANULADA/DESATUALIZADA",
+      "stem": "A respeito de conteinerização e DevOps, julgue os itens que se seguem.\n\nO build de uma aplicação engloba o resultado das tarefas de compilação e empacotamento\n\nem um único arquivo binário.",
       "options": [
         {
           "letter": "C",
@@ -24966,43 +24965,6 @@
       "id": "curated-ti-05-115",
       "examId": "curated-ti-05",
       "code": "Q2024TI05115",
-      "year": "2024",
-      "banca": "CEBRASPE",
-      "orgao": "CAPES",
-      "answer": "C",
-      "status": "active",
-      "secondary": [],
-      "aliases": [],
-      "duplicateGroup": null
-    },
-    {
-      "originalNumber": 116,
-      "heading": "Informática",
-      "stem": "A existência de uma identidade digital e segura é fundamental para o governo digital, pois\n\ngarante a autenticação confiável nas plataformas digitais, públicas e privadas.\n\n117 - ANULADA/DESATUALIZADA\n\n118 - ANULADA/DESATUALIZADA\n\n119 - ANULADA/DESATUALIZADA\n\n120 - ANULADA/DESATUALIZADA",
-      "options": [
-        {
-          "letter": "C",
-          "text": "Certo"
-        },
-        {
-          "letter": "E",
-          "text": "Errado"
-        }
-      ],
-      "sourcePage": 82,
-      "sourceColumn": 0,
-      "contextText": "",
-      "contextRange": null,
-      "confidence": "média",
-      "extractionReview": false,
-      "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Segurança da informação e privacidade",
-      "topicCode": "ISEG",
-      "id": "curated-ti-05-116",
-      "examId": "curated-ti-05",
-      "code": "Q2024TI05116",
       "year": "2024",
       "banca": "CEBRASPE",
       "orgao": "CAPES",
@@ -25675,7 +25637,7 @@
     },
     {
       "originalNumber": 2,
-      "heading": "Informática",
+      "heading": "Língua Portuguesa",
       "stem": "O termo em destaque na oração abaixo não pode ser substituído, sem prejuízo de valor por: “No\n\nentanto, esses fatores diferiram de manhã para a tarde e noite. ”",
       "options": [
         {
@@ -25706,13 +25668,13 @@
         1,
         5
       ],
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Coesão, coerência e relações textuais",
+      "topicCode": "LCOE",
       "id": "curated-ti-07-002",
       "examId": "curated-ti-07",
       "code": "Q2024TI07002",
@@ -26814,7 +26776,7 @@
     },
     {
       "originalNumber": 1,
-      "heading": "Informática",
+      "heading": "Língua Portuguesa",
       "stem": "Ao falar sobre a recusa de Xico de ir à quinta, a narradora deixou claro que",
       "options": [
         {
@@ -26845,13 +26807,13 @@
         1,
         5
       ],
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Interpretação e compreensão de textos",
+      "topicCode": "LINT",
       "id": "curated-ti-08-001",
       "examId": "curated-ti-08",
       "code": "Q2025TI08001",
@@ -26897,7 +26859,7 @@
         1,
         5
       ],
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
       "discipline": "Língua Portuguesa",
@@ -26918,7 +26880,7 @@
     },
     {
       "originalNumber": 3,
-      "heading": "Informática",
+      "heading": "Língua Portuguesa",
       "stem": "Eu concordo pai quanto à beleza da buganvília. Até é uma planta bonita. Por isso, entendo o\n\nzelo .\nEm conformidade com a norma-padrão, as lacunas da frase devem ser preenchidas,\nrespectivamente, com:",
       "options": [
         {
@@ -26949,13 +26911,13 @@
         1,
         5
       ],
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Regência e crase",
+      "topicCode": "LREG",
       "id": "curated-ti-08-003",
       "examId": "curated-ti-08",
       "code": "Q2025TI08003",
@@ -26970,7 +26932,7 @@
     },
     {
       "originalNumber": 4,
-      "heading": "Informática",
+      "heading": "Língua Portuguesa",
       "stem": "A colocação pronominal atende à norma-padrão em:",
       "options": [
         {
@@ -27001,13 +26963,13 @@
         1,
         5
       ],
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Classes de palavras e morfologia",
+      "topicCode": "LMOR",
       "id": "curated-ti-08-004",
       "examId": "curated-ti-08",
       "code": "Q2025TI08004",
@@ -27022,7 +26984,7 @@
     },
     {
       "originalNumber": 5,
-      "heading": "Informática",
+      "heading": "Língua Portuguesa",
       "stem": "Na passagem do 2o parágrafo – É bom mesmo que fique em Luanda, a dançar com as suas\n\namigas, para não nos estragar as férias. Assim estamos bem, só os três, mais os trabalhadores\nbailundos. –, os termos destacados expressam, correta e respectivamente, sentidos de:",
       "options": [
         {
@@ -27053,13 +27015,13 @@
         1,
         5
       ],
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Semântica: sinônimos, antônimos e sentidos",
+      "topicCode": "LSEM",
       "id": "curated-ti-08-005",
       "examId": "curated-ti-08",
       "code": "Q2025TI08005",
@@ -27074,7 +27036,7 @@
     },
     {
       "originalNumber": 6,
-      "heading": "Informática",
+      "heading": "Língua Portuguesa",
       "stem": "O objetivo do editorial é analisar",
       "options": [
         {
@@ -27102,13 +27064,13 @@
       "sourceColumn": 0,
       "contextText": "",
       "contextRange": null,
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Interpretação e compreensão de textos",
+      "topicCode": "LINT",
       "id": "curated-ti-08-006",
       "examId": "curated-ti-08",
       "code": "Q2025TI08006",
@@ -27123,7 +27085,7 @@
     },
     {
       "originalNumber": 7,
-      "heading": "Informática",
+      "heading": "Língua Portuguesa",
       "stem": "A expressão destacada está empregada em sentido figurado em:",
       "options": [
         {
@@ -27151,13 +27113,13 @@
       "sourceColumn": 0,
       "contextText": "",
       "contextRange": null,
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Figuras de linguagem e recursos expressivos",
+      "topicCode": "LFIG",
       "id": "curated-ti-08-007",
       "examId": "curated-ti-08",
       "code": "Q2025TI08007",
@@ -27172,8 +27134,8 @@
     },
     {
       "originalNumber": 8,
-      "heading": "Informática",
-      "stem": "Considere as passagens:\n\n• O interesse aumentou tanto que rendeu uma data comemorativa... (1o parágrafo)\n• ... mas diversas questões barram o avanço da prática. (1o parágrafo)\n• No caso do transporte em duas rodas, o restrito inves timento em ciclovias e ciclofaixas agrava o\nquadro... (4o parágrafo)\nOs termos destacados significam, correta e respectivamente:",
+      "heading": "Língua Portuguesa",
+      "stem": "Considere as passagens:\n\n• O interesse aumentou tanto que rendeu uma data comemorativa... (1o parágrafo)\n• ... mas diversas questões barram o avanço da prática. (1o parágrafo)\n• No caso do transporte em duas rodas, o restrito investimento em ciclovias e ciclofaixas agrava o\nquadro... (4o parágrafo)\n\nOs termos destacados significam, correta e respectivamente:",
       "options": [
         {
           "letter": "A",
@@ -27200,13 +27162,13 @@
       "sourceColumn": 0,
       "contextText": "",
       "contextRange": null,
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Semântica: sinônimos, antônimos e sentidos",
+      "topicCode": "LSEM",
       "id": "curated-ti-08-008",
       "examId": "curated-ti-08",
       "code": "Q2025TI08008",
@@ -27249,7 +27211,7 @@
       "sourceColumn": 0,
       "contextText": "",
       "contextRange": null,
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
       "discipline": "Língua Portuguesa",
@@ -27270,7 +27232,7 @@
     },
     {
       "originalNumber": 10,
-      "heading": "Informática",
+      "heading": "Língua Portuguesa",
       "stem": "Nas passagens – O interesse aumentou tanto que rendeu uma data comemorativa... (1o\n\nparágrafo) – e – ... o restrito investimento em ciclovias e ciclofaixas agrava o quadro uma vez que,\ncomo não há espaços ideais, os ciclistas se arriscam em asfaltos irregulares e esburacados... (4o\nparágrafo) –, as expressões destacadas exprimem, correta e respectivamente, sentidos de:",
       "options": [
         {
@@ -27298,13 +27260,13 @@
       "sourceColumn": 0,
       "contextText": "",
       "contextRange": null,
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Coesão, coerência e relações textuais",
+      "topicCode": "LCOE",
       "id": "curated-ti-08-010",
       "examId": "curated-ti-08",
       "code": "Q2025TI08010",
@@ -27319,7 +27281,7 @@
     },
     {
       "originalNumber": 11,
-      "heading": "Informática",
+      "heading": "Raciocínio Lógico/Matemático",
       "stem": "A cada 15 dias, André realiza um serviço voluntário, enquanto Ana realiza o mesmo serviço, a\n\ncada 25 dias, independentemente de os dias serem uteis ou não.\nNa segunda-feira da semana passada, eles se encontraram no local do serviço comunitário. Isso\nsignifica que a próxima vez em que Ana e André se encontrarão no local desse serviço será em",
       "options": [
         {
@@ -27347,13 +27309,13 @@
       "sourceColumn": 0,
       "contextText": "",
       "contextRange": null,
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Raciocínio Lógico/Matemático",
+      "disciplineCode": "RLM",
+      "topic": "Múltiplos, divisores, primos, MDC e MMC",
+      "topicCode": "MMCD",
       "id": "curated-ti-08-011",
       "examId": "curated-ti-08",
       "code": "Q2025TI08011",
@@ -27368,8 +27330,8 @@
     },
     {
       "originalNumber": 12,
-      "heading": "Informática",
-      "stem": "Um entregador saiu para entregar algumas encomendas. Nas duas primeiras horas de entrega,\n\nele entregou a terça parte das encomendas. Nas duas horas seguintes, ele\nentregou das encomendas ainda não entregues. Nas\núltimas duas horas de trabalho, ele entregou as 12 encomendas que restavam.\nA quantidade de encomendas entregues nas duas primeiras horas de trabalho foi igual a",
+      "heading": "Raciocínio Lógico/Matemático",
+      "stem": "Um entregador saiu para entregar algumas encomendas. Nas duas primeiras horas de entrega, ele entregou a terça parte das encomendas. Nas duas horas seguintes, ele entregou 3/4 das encomendas ainda não entregues. Nas últimas duas horas de trabalho, ele entregou as 12 encomendas que restavam.\nA quantidade de encomendas entregues nas duas primeiras horas de trabalho foi igual a",
       "options": [
         {
           "letter": "A",
@@ -27396,13 +27358,13 @@
       "sourceColumn": 0,
       "contextText": "",
       "contextRange": null,
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Raciocínio Lógico/Matemático",
+      "disciplineCode": "RLM",
+      "topic": "Frações, decimais e dízimas",
+      "topicCode": "FRAC",
       "id": "curated-ti-08-012",
       "examId": "curated-ti-08",
       "code": "Q2025TI08012",
@@ -27417,8 +27379,8 @@
     },
     {
       "originalNumber": 13,
-      "heading": "Informática",
-      "stem": "A razão entre o número de candidatos inscritos para realizarem a prova para um cago A e o\n\nnúmero de candidatos inscritos para realizarem a prova para um cargo B, em\num concurso, pode ser representada pela fração .\nSe cada candidato pode se inscrever somente para um desses cargos e o número de candidatos\ninscritos para o cargo B supera em 4.000 unidades o número de candidatos inscritos para o cargo\nA, então é verdade que o número total de candidatos inscritos, nesse concurso, para realizarem a\nprova para o cargo A ou para o cargo B, é igual a",
+      "heading": "Raciocínio Lógico/Matemático",
+      "stem": "A razão entre o número de candidatos inscritos para realizarem a prova para um cargo A e o\n\nnúmero de candidatos inscritos para realizarem a prova para um cargo B, em\num concurso, pode ser representada pela fração 4/5.\nSe cada candidato pode se inscrever somente para um desses cargos e o número de candidatos\ninscritos para o cargo B supera em 4.000 unidades o número de candidatos inscritos para o cargo\nA, então é verdade que o número total de candidatos inscritos, nesse concurso, para realizarem a\nprova para o cargo A ou para o cargo B, é igual a",
       "options": [
         {
           "letter": "A",
@@ -27445,13 +27407,13 @@
       "sourceColumn": 0,
       "contextText": "",
       "contextRange": null,
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Raciocínio Lógico/Matemático",
+      "disciplineCode": "RLM",
+      "topic": "Razão, proporção e regra de três",
+      "topicCode": "RAZA",
       "id": "curated-ti-08-013",
       "examId": "curated-ti-08",
       "code": "Q2025TI08013",
@@ -27466,7 +27428,7 @@
     },
     {
       "originalNumber": 14,
-      "heading": "Informática",
+      "heading": "Raciocínio Lógico/Matemático",
       "stem": "De acordo com informações que constam no site do Instituto Brasileiro de Geografia e\n\nEstatística (IBGE), em 2024, no município de Marília, em se tratando de veículos registrados na\ncidade, um total de 109.199 veículos era obtido ao serem adicionados os números de automóveis\ne caminhões. Subtraindo-se do número de automóveis o número de caminhões, tinha-se 101.867\nveículos.\nSe, em relação ao número de automóveis, o número de motocicletas registradas no município era\nmenor em 64.360 unidades, então, é correto afirmar que, em 2024, o número de motocicletas\nregistradas em Marilia era igual a",
       "options": [
         {
@@ -27494,13 +27456,13 @@
       "sourceColumn": 0,
       "contextText": "",
       "contextRange": null,
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Raciocínio Lógico/Matemático",
+      "disciplineCode": "RLM",
+      "topic": "Equações, inequações e sistemas",
+      "topicCode": "EQSC",
       "id": "curated-ti-08-014",
       "examId": "curated-ti-08",
       "code": "Q2025TI08014",
@@ -27515,7 +27477,7 @@
     },
     {
       "originalNumber": 15,
-      "heading": "Informática",
+      "heading": "Raciocínio Lógico/Matemático",
       "stem": "Um grupo A, composto por 45 pessoas, e um grupo B, composto por 75 pessoas, farão uma\n\nvisita a um museu. Para melhor aproveitamento dessa visita, serão formados subgrupos a partir\ndos integrantes dos grupos A e B, todos mistos, ou seja, somente com pessoas do grupo A e do\ngrupo B, cada subgrupo ficando sob a responsabilidade de um monitor. Em todos os subgrupos,\ndeverá haver o mesmo número de pessoas do grupo A e o mesmo número de pessoas do grupo\nB, sendo que cada pessoa fará parte de apenas um subgrupo.\nSupondo que será formada a maior quantidade possível de subgrupos, é correto afirmar que, em\ncada subgrupo, o número de pessoas do grupo B deverá exceder o número de pessoas do grupo\nA em",
       "options": [
         {
@@ -27543,13 +27505,13 @@
       "sourceColumn": 0,
       "contextText": "",
       "contextRange": null,
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Raciocínio Lógico/Matemático",
+      "disciplineCode": "RLM",
+      "topic": "Múltiplos, divisores, primos, MDC e MMC",
+      "topicCode": "MMCD",
       "id": "curated-ti-08-015",
       "examId": "curated-ti-08",
       "code": "Q2025TI08015",
@@ -27564,7 +27526,7 @@
     },
     {
       "originalNumber": 17,
-      "heading": "Informática",
+      "heading": "Raciocínio Lógico/Matemático",
       "stem": "Um total de 5 prensas, trabalhando juntas e sem interrupções, durante 8 horas por dia,\n\nexecutam determinado trabalho em exatos 20 dias.\nPara a execução desse mesmo trabalho em exatos 15 dias, pelas mesmas prensas, novamente\ntrabalhando juntas e sem interrupções, o período de horas diárias que elas devem trabalhar tem\nque aumentar em",
       "options": [
         {
@@ -27592,13 +27554,13 @@
       "sourceColumn": 0,
       "contextText": "",
       "contextRange": null,
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Raciocínio Lógico/Matemático",
+      "disciplineCode": "RLM",
+      "topic": "Razão, proporção e regra de três",
+      "topicCode": "RAZA",
       "id": "curated-ti-08-017",
       "examId": "curated-ti-08",
       "code": "Q2025TI08017",
@@ -27613,7 +27575,7 @@
     },
     {
       "originalNumber": 19,
-      "heading": "Informática",
+      "heading": "Raciocínio Lógico/Matemático",
       "stem": "Considere a seguinte informação publicada no site agência gov, em 09.05.2025:\n\nA produção de petróleo e gás natural no pré-sal brasileiro registrou crescimento em março deste\nano, com 3,716 milhões de barris de óleo equivalente por dia [...]. Em comparação com março do\nano passado, a produção [...] foi 15% maior. (https://agenciagov.ebc.com.br/noticias/202505/produ\ncao-de-petroleo-e-gas-natural-no-pre-sal-alcanca-3-7-milhoes-de-barris-e-bate-recorde-no-1o-trim\nestre-de-2025. Adaptado)\nCom base nas informações apresentadas, pode-se concluir, corretamente, que a produção de\npetróleo e gás natural no pré-sal brasileiro, em março do ano passado, em milhões de barris de\nóleo equivalente por dia, correspondeu a um valor compreendido entre",
       "options": [
         {
@@ -27641,13 +27603,13 @@
       "sourceColumn": 0,
       "contextText": "",
       "contextRange": null,
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Internet, navegadores e correio eletrônico",
-      "topicCode": "INET",
+      "discipline": "Raciocínio Lógico/Matemático",
+      "disciplineCode": "RLM",
+      "topic": "Porcentagem, juros e descontos",
+      "topicCode": "PERC",
       "id": "curated-ti-08-019",
       "examId": "curated-ti-08",
       "code": "Q2025TI08019",
@@ -28593,7 +28555,7 @@
     },
     {
       "originalNumber": 1,
-      "heading": "Informática",
+      "heading": "Língua Portuguesa",
       "stem": "O texto desenvolve um diálogo em que um dos personagens dá orientações ao outro,\n\nempregando, para isso, verbos no modo imperativo, como ocorre em “Imagine-se” (primeiro\nparágrafo), ‘Entende’ (décimo terceiro parágrafo) e ‘Escuta’ (penúltimo parágrafo).",
       "options": [
         {
@@ -28612,13 +28574,13 @@
         1,
         5
       ],
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Classes de palavras e morfologia",
+      "topicCode": "LMOR",
       "id": "curated-ti-09-001",
       "examId": "curated-ti-09",
       "code": "Q2022TI09001",
@@ -28633,7 +28595,7 @@
     },
     {
       "originalNumber": 2,
-      "heading": "Informática",
+      "heading": "Língua Portuguesa",
       "stem": "No período ‘Posso ajudá-lo, cavalheiro?’ (segundo parágrafo), o personagem emprega uma\n\nforma pronominal de terceira pessoa para se dirigir diretamente ao seu interlocutor.",
       "options": [
         {
@@ -28652,13 +28614,13 @@
         1,
         5
       ],
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Classes de palavras e morfologia",
+      "topicCode": "LMOR",
       "id": "curated-ti-09-002",
       "examId": "curated-ti-09",
       "code": "Q2022TI09002",
@@ -28673,7 +28635,7 @@
     },
     {
       "originalNumber": 3,
-      "heading": "Informática",
+      "heading": "Língua Portuguesa",
       "stem": "A expressão ‘Pomba!’ (sétimo parágrafo) demonstra a impaciência do enunciador consigo\n\nmesmo.",
       "options": [
         {
@@ -28692,13 +28654,13 @@
         1,
         5
       ],
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Semântica: sinônimos, antônimos e sentidos",
+      "topicCode": "LSEM",
       "id": "curated-ti-09-003",
       "examId": "curated-ti-09",
       "code": "Q2022TI09003",
@@ -28713,7 +28675,7 @@
     },
     {
       "originalNumber": 4,
-      "heading": "Informática",
+      "heading": "Língua Portuguesa",
       "stem": "Os adjetivos ‘conhecidíssima’ (sétimo parágrafo) e ‘pontuda’ (décimo primeiro parágrafo)\n\nqualificam o mesmo termo no texto, mas do emprego do primeiro se depreende mais intensidade\nque do segundo.",
       "options": [
         {
@@ -28753,7 +28715,7 @@
     },
     {
       "originalNumber": 5,
-      "heading": "Informática",
+      "heading": "Língua Portuguesa",
       "stem": "Assim como o termo ‘cavalheiro’ em ‘Posso ajudá-lo, cavalheiro?’ (segundo parágrafo), o termo\n\n‘senhor’, em ‘O senhor vai dar risada quando souber’ (nono parágrafo), exerce função de vocativo\nno texto, dado que é empregado para chamar, de forma cordial, o interlocutor.",
       "options": [
         {
@@ -28772,13 +28734,13 @@
         1,
         5
       ],
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Sintaxe: termos da oração e períodos",
+      "topicCode": "LSIN",
       "id": "curated-ti-09-005",
       "examId": "curated-ti-09",
       "code": "Q2022TI09005",
@@ -28793,7 +28755,7 @@
     },
     {
       "originalNumber": 6,
-      "heading": "Informática",
+      "heading": "Língua Portuguesa",
       "stem": "Em ‘Olha, é pontuda, certo?’ (décimo primeiro parágrafo), o emprego da forma verbal ‘Olha’ tem\n\na finalidade de atrair a atenção do interlocutor, sem designar necessariamente o ato de olhar.",
       "options": [
         {
@@ -28809,13 +28771,13 @@
       "sourceColumn": 0,
       "contextText": "",
       "contextRange": null,
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Semântica: sinônimos, antônimos e sentidos",
+      "topicCode": "LSEM",
       "id": "curated-ti-09-006",
       "examId": "curated-ti-09",
       "code": "Q2022TI09006",
@@ -28830,8 +28792,8 @@
     },
     {
       "originalNumber": 7,
-      "heading": "Informática",
-      "stem": "Em ‘Depois vem assim, assim, faz uma volta, aí vem reto de novo’ (décimo terceiro parágrafo), a\n\npalavra ‘aí’ expressa ideia de lugar.\n\nNo mundo de hoje, as telecomunicações representam muito mais do que um serviço básico; são\num meio de promover o desenvolvimento, melhorar a sociedade e salvar vidas. Isso será ainda\nmais verdade no mundo de amanhã.\nA importância das telecomunicações ficou evidente nos dias que se seguiram ao terremoto que\ndevastou o Haiti, em janeiro de 2010. As tecnologias da comunicação foram utilizadas para\ncoordenar a ajuda, otimizar os recursos e fornecer informações sobre as vítimas, das quais se\nprecisava desesperadamente. A União Internacional das Telecomunicações (UIT) e os seus\nparceiros comerciais forneceram inúmeros terminais satélites e colaboraram no fornecimento de\nsistemas de comunicação sem fio, facilitando as operações de socorro e limpeza. Saúdo essas\niniciativas e, de um modo geral, o trabalho da UIT e de outras entidades que promoveram o acesso\nà banda larga em zonas rurais e remotas de todo o mundo. Um maior acesso pode significar mais\nprogressos no domínio da realização dos Objetivos de Desenvolvimento do Milênio. A Internet\nimpulsiona a atividade econômica, o comércio e até a educação. A telemedicina está melhorando\nos cuidados com a saúde, os satélites de observação terrestre são usados para combater as\nalterações climáticas e as tecnologias ecológicas contribuem para a existência de cidades mais\nlimpas. Ao passo que essas inovações se tornam mais importantes, a necessidade de atenuar o\nfosso tecnológico é mais urgente.\nBan Ki-moon (secretário-geral das Nações Unidas). Pronunciamento acerca do Dia Mundial das\nTelecomunicações e da Sociedade de Informação. 17 de maio de 2010. Internet: <unicrio.org.br>\n(com adaptações).\nCom relação às ideias, aos sentidos e aos aspectos linguísticos do texto anterior, julgue os itens a\nseguir.",
+      "heading": "Língua Portuguesa",
+      "stem": "Em ‘Depois vem assim, assim, faz uma volta, aí vem reto de novo’ (décimo terceiro parágrafo), a\n\npalavra ‘aí’ expressa ideia de lugar.",
       "options": [
         {
           "letter": "C",
@@ -28846,13 +28808,13 @@
       "sourceColumn": 0,
       "contextText": "",
       "contextRange": null,
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Internet, navegadores e correio eletrônico",
-      "topicCode": "INET",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Semântica: sinônimos, antônimos e sentidos",
+      "topicCode": "LSEM",
       "id": "curated-ti-09-007",
       "examId": "curated-ti-09",
       "code": "Q2022TI09007",
@@ -28867,7 +28829,7 @@
     },
     {
       "originalNumber": 8,
-      "heading": "Informática",
+      "heading": "Língua Portuguesa",
       "stem": "Quanto à tipologia, o texto é essencialmente expositivo.",
       "options": [
         {
@@ -28881,15 +28843,18 @@
       ],
       "sourcePage": 124,
       "sourceColumn": 0,
-      "contextText": "",
-      "contextRange": null,
-      "confidence": "média",
+      "contextText": "No mundo de hoje, as telecomunicações representam muito mais do que um serviço básico; são\num meio de promover o desenvolvimento, melhorar a sociedade e salvar vidas. Isso será ainda\nmais verdade no mundo de amanhã.\nA importância das telecomunicações ficou evidente nos dias que se seguiram ao terremoto que\ndevastou o Haiti, em janeiro de 2010. As tecnologias da comunicação foram utilizadas para\ncoordenar a ajuda, otimizar os recursos e fornecer informações sobre as vítimas, das quais se\nprecisava desesperadamente. A União Internacional das Telecomunicações (UIT) e os seus\nparceiros comerciais forneceram inúmeros terminais satélites e colaboraram no fornecimento de\nsistemas de comunicação sem fio, facilitando as operações de socorro e limpeza. Saúdo essas\niniciativas e, de um modo geral, o trabalho da UIT e de outras entidades que promoveram o acesso\nà banda larga em zonas rurais e remotas de todo o mundo. Um maior acesso pode significar mais\nprogressos no domínio da realização dos Objetivos de Desenvolvimento do Milênio. A Internet\nimpulsiona a atividade econômica, o comércio e até a educação. A telemedicina está melhorando\nos cuidados com a saúde, os satélites de observação terrestre são usados para combater as\nalterações climáticas e as tecnologias ecológicas contribuem para a existência de cidades mais\nlimpas. Ao passo que essas inovações se tornam mais importantes, a necessidade de atenuar o\nfosso tecnológico é mais urgente.\nBan Ki-moon (secretário-geral das Nações Unidas). Pronunciamento acerca do Dia Mundial das\nTelecomunicações e da Sociedade de Informação. 17 de maio de 2010. Internet: <unicrio.org.br>\n(com adaptações).",
+      "contextRange": [
+        8,
+        15
+      ],
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Gêneros, tipologias e funções da linguagem",
+      "topicCode": "LGEN",
       "id": "curated-ti-09-008",
       "examId": "curated-ti-09",
       "code": "Q2022TI09008",
@@ -28904,7 +28869,7 @@
     },
     {
       "originalNumber": 9,
-      "heading": "Informática",
+      "heading": "Língua Portuguesa",
       "stem": "Em “muito mais do que um serviço básico” (primeiro parágrafo), a retirada do vocábulo “do” não\n\ncomprometeria a correção gramatical do texto.",
       "options": [
         {
@@ -28918,15 +28883,18 @@
       ],
       "sourcePage": 124,
       "sourceColumn": 0,
-      "contextText": "",
-      "contextRange": null,
-      "confidence": "média",
+      "contextText": "No mundo de hoje, as telecomunicações representam muito mais do que um serviço básico; são\num meio de promover o desenvolvimento, melhorar a sociedade e salvar vidas. Isso será ainda\nmais verdade no mundo de amanhã.\nA importância das telecomunicações ficou evidente nos dias que se seguiram ao terremoto que\ndevastou o Haiti, em janeiro de 2010. As tecnologias da comunicação foram utilizadas para\ncoordenar a ajuda, otimizar os recursos e fornecer informações sobre as vítimas, das quais se\nprecisava desesperadamente. A União Internacional das Telecomunicações (UIT) e os seus\nparceiros comerciais forneceram inúmeros terminais satélites e colaboraram no fornecimento de\nsistemas de comunicação sem fio, facilitando as operações de socorro e limpeza. Saúdo essas\niniciativas e, de um modo geral, o trabalho da UIT e de outras entidades que promoveram o acesso\nà banda larga em zonas rurais e remotas de todo o mundo. Um maior acesso pode significar mais\nprogressos no domínio da realização dos Objetivos de Desenvolvimento do Milênio. A Internet\nimpulsiona a atividade econômica, o comércio e até a educação. A telemedicina está melhorando\nos cuidados com a saúde, os satélites de observação terrestre são usados para combater as\nalterações climáticas e as tecnologias ecológicas contribuem para a existência de cidades mais\nlimpas. Ao passo que essas inovações se tornam mais importantes, a necessidade de atenuar o\nfosso tecnológico é mais urgente.\nBan Ki-moon (secretário-geral das Nações Unidas). Pronunciamento acerca do Dia Mundial das\nTelecomunicações e da Sociedade de Informação. 17 de maio de 2010. Internet: <unicrio.org.br>\n(com adaptações).",
+      "contextRange": [
+        8,
+        15
+      ],
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Regência e crase",
+      "topicCode": "LREG",
       "id": "curated-ti-09-009",
       "examId": "curated-ti-09",
       "code": "Q2022TI09009",
@@ -28941,7 +28909,7 @@
     },
     {
       "originalNumber": 10,
-      "heading": "Informática",
+      "heading": "Língua Portuguesa",
       "stem": "Em “nos dias que se seguiram ao terremoto que devastou o Haiti” (segundo parágrafo), a\n\ncolocação do pronome “se” antes da forma verbal justifica-se para reforçar a indeterminação do\nsujeito oracional.",
       "options": [
         {
@@ -28955,15 +28923,18 @@
       ],
       "sourcePage": 124,
       "sourceColumn": 0,
-      "contextText": "",
-      "contextRange": null,
-      "confidence": "média",
+      "contextText": "No mundo de hoje, as telecomunicações representam muito mais do que um serviço básico; são\num meio de promover o desenvolvimento, melhorar a sociedade e salvar vidas. Isso será ainda\nmais verdade no mundo de amanhã.\nA importância das telecomunicações ficou evidente nos dias que se seguiram ao terremoto que\ndevastou o Haiti, em janeiro de 2010. As tecnologias da comunicação foram utilizadas para\ncoordenar a ajuda, otimizar os recursos e fornecer informações sobre as vítimas, das quais se\nprecisava desesperadamente. A União Internacional das Telecomunicações (UIT) e os seus\nparceiros comerciais forneceram inúmeros terminais satélites e colaboraram no fornecimento de\nsistemas de comunicação sem fio, facilitando as operações de socorro e limpeza. Saúdo essas\niniciativas e, de um modo geral, o trabalho da UIT e de outras entidades que promoveram o acesso\nà banda larga em zonas rurais e remotas de todo o mundo. Um maior acesso pode significar mais\nprogressos no domínio da realização dos Objetivos de Desenvolvimento do Milênio. A Internet\nimpulsiona a atividade econômica, o comércio e até a educação. A telemedicina está melhorando\nos cuidados com a saúde, os satélites de observação terrestre são usados para combater as\nalterações climáticas e as tecnologias ecológicas contribuem para a existência de cidades mais\nlimpas. Ao passo que essas inovações se tornam mais importantes, a necessidade de atenuar o\nfosso tecnológico é mais urgente.\nBan Ki-moon (secretário-geral das Nações Unidas). Pronunciamento acerca do Dia Mundial das\nTelecomunicações e da Sociedade de Informação. 17 de maio de 2010. Internet: <unicrio.org.br>\n(com adaptações).",
+      "contextRange": [
+        8,
+        15
+      ],
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Classes de palavras e morfologia",
+      "topicCode": "LMOR",
       "id": "curated-ti-09-010",
       "examId": "curated-ti-09",
       "code": "Q2022TI09010",
@@ -28978,7 +28949,7 @@
     },
     {
       "originalNumber": 11,
-      "heading": "Informática",
+      "heading": "Língua Portuguesa",
       "stem": "Mantendo-se a correção gramatical e os sentidos originais do texto, o trecho “As tecnologias da\n\ncomunicação foram utilizadas para coordenar a ajuda” (segundo parágrafo) poderia ser reescrito\nda seguinte forma: Usaram-se as tecnologias da comunicação afim de coordenar a ajuda.",
       "options": [
         {
@@ -28992,15 +28963,18 @@
       ],
       "sourcePage": 125,
       "sourceColumn": 0,
-      "contextText": "",
-      "contextRange": null,
-      "confidence": "média",
+      "contextText": "No mundo de hoje, as telecomunicações representam muito mais do que um serviço básico; são\num meio de promover o desenvolvimento, melhorar a sociedade e salvar vidas. Isso será ainda\nmais verdade no mundo de amanhã.\nA importância das telecomunicações ficou evidente nos dias que se seguiram ao terremoto que\ndevastou o Haiti, em janeiro de 2010. As tecnologias da comunicação foram utilizadas para\ncoordenar a ajuda, otimizar os recursos e fornecer informações sobre as vítimas, das quais se\nprecisava desesperadamente. A União Internacional das Telecomunicações (UIT) e os seus\nparceiros comerciais forneceram inúmeros terminais satélites e colaboraram no fornecimento de\nsistemas de comunicação sem fio, facilitando as operações de socorro e limpeza. Saúdo essas\niniciativas e, de um modo geral, o trabalho da UIT e de outras entidades que promoveram o acesso\nà banda larga em zonas rurais e remotas de todo o mundo. Um maior acesso pode significar mais\nprogressos no domínio da realização dos Objetivos de Desenvolvimento do Milênio. A Internet\nimpulsiona a atividade econômica, o comércio e até a educação. A telemedicina está melhorando\nos cuidados com a saúde, os satélites de observação terrestre são usados para combater as\nalterações climáticas e as tecnologias ecológicas contribuem para a existência de cidades mais\nlimpas. Ao passo que essas inovações se tornam mais importantes, a necessidade de atenuar o\nfosso tecnológico é mais urgente.\nBan Ki-moon (secretário-geral das Nações Unidas). Pronunciamento acerca do Dia Mundial das\nTelecomunicações e da Sociedade de Informação. 17 de maio de 2010. Internet: <unicrio.org.br>\n(com adaptações).",
+      "contextRange": [
+        8,
+        15
+      ],
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Ortografia, acentuação e emprego de letras",
+      "topicCode": "LORT",
       "id": "curated-ti-09-011",
       "examId": "curated-ti-09",
       "code": "Q2022TI09011",
@@ -29015,7 +28989,7 @@
     },
     {
       "originalNumber": 12,
-      "heading": "Informática",
+      "heading": "Língua Portuguesa",
       "stem": "Depreende-se do primeiro parágrafo que somente no futuro ficará provado que as\n\ntelecomunicações são muito mais do que um serviço básico.",
       "options": [
         {
@@ -29029,15 +29003,18 @@
       ],
       "sourcePage": 125,
       "sourceColumn": 0,
-      "contextText": "",
-      "contextRange": null,
-      "confidence": "média",
+      "contextText": "No mundo de hoje, as telecomunicações representam muito mais do que um serviço básico; são\num meio de promover o desenvolvimento, melhorar a sociedade e salvar vidas. Isso será ainda\nmais verdade no mundo de amanhã.\nA importância das telecomunicações ficou evidente nos dias que se seguiram ao terremoto que\ndevastou o Haiti, em janeiro de 2010. As tecnologias da comunicação foram utilizadas para\ncoordenar a ajuda, otimizar os recursos e fornecer informações sobre as vítimas, das quais se\nprecisava desesperadamente. A União Internacional das Telecomunicações (UIT) e os seus\nparceiros comerciais forneceram inúmeros terminais satélites e colaboraram no fornecimento de\nsistemas de comunicação sem fio, facilitando as operações de socorro e limpeza. Saúdo essas\niniciativas e, de um modo geral, o trabalho da UIT e de outras entidades que promoveram o acesso\nà banda larga em zonas rurais e remotas de todo o mundo. Um maior acesso pode significar mais\nprogressos no domínio da realização dos Objetivos de Desenvolvimento do Milênio. A Internet\nimpulsiona a atividade econômica, o comércio e até a educação. A telemedicina está melhorando\nos cuidados com a saúde, os satélites de observação terrestre são usados para combater as\nalterações climáticas e as tecnologias ecológicas contribuem para a existência de cidades mais\nlimpas. Ao passo que essas inovações se tornam mais importantes, a necessidade de atenuar o\nfosso tecnológico é mais urgente.\nBan Ki-moon (secretário-geral das Nações Unidas). Pronunciamento acerca do Dia Mundial das\nTelecomunicações e da Sociedade de Informação. 17 de maio de 2010. Internet: <unicrio.org.br>\n(com adaptações).",
+      "contextRange": [
+        8,
+        15
+      ],
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Interpretação e compreensão de textos",
+      "topicCode": "LINT",
       "id": "curated-ti-09-012",
       "examId": "curated-ti-09",
       "code": "Q2022TI09012",
@@ -29052,7 +29029,7 @@
     },
     {
       "originalNumber": 13,
-      "heading": "Informática",
+      "heading": "Língua Portuguesa",
       "stem": "No último parágrafo, a expressão “Ao passo que” estabelece uma relação de proporcionalidade\n\nentre as orações que formam o período.",
       "options": [
         {
@@ -29066,15 +29043,18 @@
       ],
       "sourcePage": 125,
       "sourceColumn": 0,
-      "contextText": "",
-      "contextRange": null,
-      "confidence": "média",
+      "contextText": "No mundo de hoje, as telecomunicações representam muito mais do que um serviço básico; são\num meio de promover o desenvolvimento, melhorar a sociedade e salvar vidas. Isso será ainda\nmais verdade no mundo de amanhã.\nA importância das telecomunicações ficou evidente nos dias que se seguiram ao terremoto que\ndevastou o Haiti, em janeiro de 2010. As tecnologias da comunicação foram utilizadas para\ncoordenar a ajuda, otimizar os recursos e fornecer informações sobre as vítimas, das quais se\nprecisava desesperadamente. A União Internacional das Telecomunicações (UIT) e os seus\nparceiros comerciais forneceram inúmeros terminais satélites e colaboraram no fornecimento de\nsistemas de comunicação sem fio, facilitando as operações de socorro e limpeza. Saúdo essas\niniciativas e, de um modo geral, o trabalho da UIT e de outras entidades que promoveram o acesso\nà banda larga em zonas rurais e remotas de todo o mundo. Um maior acesso pode significar mais\nprogressos no domínio da realização dos Objetivos de Desenvolvimento do Milênio. A Internet\nimpulsiona a atividade econômica, o comércio e até a educação. A telemedicina está melhorando\nos cuidados com a saúde, os satélites de observação terrestre são usados para combater as\nalterações climáticas e as tecnologias ecológicas contribuem para a existência de cidades mais\nlimpas. Ao passo que essas inovações se tornam mais importantes, a necessidade de atenuar o\nfosso tecnológico é mais urgente.\nBan Ki-moon (secretário-geral das Nações Unidas). Pronunciamento acerca do Dia Mundial das\nTelecomunicações e da Sociedade de Informação. 17 de maio de 2010. Internet: <unicrio.org.br>\n(com adaptações).",
+      "contextRange": [
+        8,
+        15
+      ],
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Coesão, coerência e relações textuais",
+      "topicCode": "LCOE",
       "id": "curated-ti-09-013",
       "examId": "curated-ti-09",
       "code": "Q2022TI09013",
@@ -29089,7 +29069,7 @@
     },
     {
       "originalNumber": 14,
-      "heading": "Informática",
+      "heading": "Língua Portuguesa",
       "stem": "Depreende-se do texto que o crescimento dos benefícios da Internet, da telemedicina e das\n\ntecnologias ecológicas garantirá a todos acesso a essas facilidades.",
       "options": [
         {
@@ -29103,15 +29083,18 @@
       ],
       "sourcePage": 125,
       "sourceColumn": 0,
-      "contextText": "",
-      "contextRange": null,
-      "confidence": "média",
+      "contextText": "No mundo de hoje, as telecomunicações representam muito mais do que um serviço básico; são\num meio de promover o desenvolvimento, melhorar a sociedade e salvar vidas. Isso será ainda\nmais verdade no mundo de amanhã.\nA importância das telecomunicações ficou evidente nos dias que se seguiram ao terremoto que\ndevastou o Haiti, em janeiro de 2010. As tecnologias da comunicação foram utilizadas para\ncoordenar a ajuda, otimizar os recursos e fornecer informações sobre as vítimas, das quais se\nprecisava desesperadamente. A União Internacional das Telecomunicações (UIT) e os seus\nparceiros comerciais forneceram inúmeros terminais satélites e colaboraram no fornecimento de\nsistemas de comunicação sem fio, facilitando as operações de socorro e limpeza. Saúdo essas\niniciativas e, de um modo geral, o trabalho da UIT e de outras entidades que promoveram o acesso\nà banda larga em zonas rurais e remotas de todo o mundo. Um maior acesso pode significar mais\nprogressos no domínio da realização dos Objetivos de Desenvolvimento do Milênio. A Internet\nimpulsiona a atividade econômica, o comércio e até a educação. A telemedicina está melhorando\nos cuidados com a saúde, os satélites de observação terrestre são usados para combater as\nalterações climáticas e as tecnologias ecológicas contribuem para a existência de cidades mais\nlimpas. Ao passo que essas inovações se tornam mais importantes, a necessidade de atenuar o\nfosso tecnológico é mais urgente.\nBan Ki-moon (secretário-geral das Nações Unidas). Pronunciamento acerca do Dia Mundial das\nTelecomunicações e da Sociedade de Informação. 17 de maio de 2010. Internet: <unicrio.org.br>\n(com adaptações).",
+      "contextRange": [
+        8,
+        15
+      ],
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Internet, navegadores e correio eletrônico",
-      "topicCode": "INET",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Interpretação e compreensão de textos",
+      "topicCode": "LINT",
       "id": "curated-ti-09-014",
       "examId": "curated-ti-09",
       "code": "Q2022TI09014",
@@ -29126,8 +29109,8 @@
     },
     {
       "originalNumber": 15,
-      "heading": "Informática",
-      "stem": "Com a expressão “fosso tecnológico” (último parágrafo), o autor se refere às desigualdades de\n\nacesso à tecnologia.\n\n16 - ANULADA/DESATUALIZADA\n\n17 - ANULADA/DESATUALIZADA\n\n18 - ANULADA/DESATUALIZADA\n\n19 - ANULADA/DESATUALIZADA\n\n20 - ANULADA/DESATUALIZADA\n\n21 - ANULADA/DESATUALIZADA\n\n22 - ANULADA/DESATUALIZADA\n\n23 - ANULADA/DESATUALIZADA\n\n24 - ANULADA/DESATUALIZADA\n\n25 - ANULADA/DESATUALIZADA\n\n26 - ANULADA/DESATUALIZADA\n\n27 - ANULADA/DESATUALIZADA\n\n28 - ANULADA/DESATUALIZADA\n\n29 - ANULADA/DESATUALIZADA\n\n30 - ANULADA/DESATUALIZADA\n\n31 - ANULADA/DESATUALIZADA\n\n32 - ANULADA/DESATUALIZADA\n\n33 - ANULADA/DESATUALIZADA\n\n34 - ANULADA/DESATUALIZADA\n\n35 - ANULADA/DESATUALIZADA\n\n36 - ANULADA/DESATUALIZADA\n\n37 - ANULADA/DESATUALIZADA\n\n38 - ANULADA/DESATUALIZADA\n\n39 - ANULADA/DESATUALIZADA\n\n40 - ANULADA/DESATUALIZADA\n\n41 - ANULADA/DESATUALIZADA\n\n42 - ANULADA/DESATUALIZADA\n\nConsiderando as disposições da Lei Geral de Proteção de Dados Pessoais (LGPD), julgue os itens\nque se seguem.",
+      "heading": "Língua Portuguesa",
+      "stem": "Com a expressão “fosso tecnológico” (último parágrafo), o autor se refere às desigualdades de\n\nacesso à tecnologia.",
       "options": [
         {
           "letter": "C",
@@ -29140,15 +29123,18 @@
       ],
       "sourcePage": 125,
       "sourceColumn": 0,
-      "contextText": "",
-      "contextRange": null,
-      "confidence": "média",
+      "contextText": "No mundo de hoje, as telecomunicações representam muito mais do que um serviço básico; são\num meio de promover o desenvolvimento, melhorar a sociedade e salvar vidas. Isso será ainda\nmais verdade no mundo de amanhã.\nA importância das telecomunicações ficou evidente nos dias que se seguiram ao terremoto que\ndevastou o Haiti, em janeiro de 2010. As tecnologias da comunicação foram utilizadas para\ncoordenar a ajuda, otimizar os recursos e fornecer informações sobre as vítimas, das quais se\nprecisava desesperadamente. A União Internacional das Telecomunicações (UIT) e os seus\nparceiros comerciais forneceram inúmeros terminais satélites e colaboraram no fornecimento de\nsistemas de comunicação sem fio, facilitando as operações de socorro e limpeza. Saúdo essas\niniciativas e, de um modo geral, o trabalho da UIT e de outras entidades que promoveram o acesso\nà banda larga em zonas rurais e remotas de todo o mundo. Um maior acesso pode significar mais\nprogressos no domínio da realização dos Objetivos de Desenvolvimento do Milênio. A Internet\nimpulsiona a atividade econômica, o comércio e até a educação. A telemedicina está melhorando\nos cuidados com a saúde, os satélites de observação terrestre são usados para combater as\nalterações climáticas e as tecnologias ecológicas contribuem para a existência de cidades mais\nlimpas. Ao passo que essas inovações se tornam mais importantes, a necessidade de atenuar o\nfosso tecnológico é mais urgente.\nBan Ki-moon (secretário-geral das Nações Unidas). Pronunciamento acerca do Dia Mundial das\nTelecomunicações e da Sociedade de Informação. 17 de maio de 2010. Internet: <unicrio.org.br>\n(com adaptações).",
+      "contextRange": [
+        8,
+        15
+      ],
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Segurança da informação e privacidade",
-      "topicCode": "ISEG",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Semântica: sinônimos, antônimos e sentidos",
+      "topicCode": "LSEM",
       "id": "curated-ti-09-015",
       "examId": "curated-ti-09",
       "code": "Q2022TI09015",
@@ -38698,8 +38684,8 @@
     },
     {
       "originalNumber": 7,
-      "heading": "Informática",
-      "stem": "Considere as passagens:\n\n• … para tentar tornar mais ambiciosos os compromissos em negociação durante a COP-30, em\nBelém. (2o parágrafo)\n• A constatação reforça uma verdade incômoda… (3o parágrafo)\n• O relatório mostra a África Subsaariana e o sul da Ásia como regiões especialmente críticas. (3o\nparágrafo)\nOs termos destacados significam, correta e respectivamente:",
+      "heading": "Língua Portuguesa",
+      "stem": "Considere as passagens:\n\n• … para tentar tornar mais ambiciosos os compromissos em negociação durante a COP-30, em\nBelém. (2o parágrafo)\n• A constatação reforça uma verdade incômoda… (3o parágrafo)\n• O relatório mostra a África Subsaariana e o sul da Ásia como regiões especialmente críticas. (3o\nparágrafo)\n\nOs termos destacados significam, correta e respectivamente:",
       "options": [
         {
           "letter": "A",
@@ -38729,13 +38715,13 @@
         6,
         10
       ],
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Semântica: sinônimos, antônimos e sentidos",
+      "topicCode": "LSEM",
       "id": "curated-ti-16-007",
       "examId": "curated-ti-16",
       "code": "Q2026TI16007",
@@ -46445,7 +46431,7 @@
       "type": "problem",
       "note": "HGRO (história e geografia de rondônia)",
       "proposed": {},
-      "status": "pending",
+      "status": "approved",
       "at": "2026-11-18T01:47:52.505Z"
     },
     {
@@ -46455,7 +46441,7 @@
       "type": "problem",
       "note": "Os itens estão no meio do texto?",
       "proposed": {},
-      "status": "pending",
+      "status": "approved",
       "at": "2026-11-18T01:48:17.911Z"
     },
     {
@@ -46465,7 +46451,7 @@
       "type": "problem",
       "note": "coloque cada passagem em uma linha diferente e o comando da questão em outra linha, pra facilitar a leitura",
       "proposed": {},
-      "status": "pending",
+      "status": "approved",
       "at": "2026-11-18T01:48:46.302Z"
     },
     {
@@ -46475,7 +46461,7 @@
       "type": "problem",
       "note": "não é TI",
       "proposed": {},
-      "status": "pending",
+      "status": "approved",
       "at": "2026-11-18T01:49:12.726Z"
     },
     {
@@ -46485,7 +46471,7 @@
       "type": "problem",
       "note": "excluir questão",
       "proposed": {},
-      "status": "pending",
+      "status": "approved",
       "at": "2026-11-18T01:49:19.631Z"
     },
     {
@@ -46495,7 +46481,7 @@
       "type": "problem",
       "note": "não é TI",
       "proposed": {},
-      "status": "pending",
+      "status": "approved",
       "at": "2026-11-18T01:49:50.974Z"
     },
     {
@@ -46505,7 +46491,7 @@
       "type": "problem",
       "note": "acredito que tenha questão misturada aqui",
       "proposed": {},
-      "status": "pending",
+      "status": "approved",
       "at": "2026-11-18T01:50:08.367Z"
     },
     {
@@ -46515,7 +46501,7 @@
       "type": "problem",
       "note": "a ordem do comando da questão está errada",
       "proposed": {},
-      "status": "pending",
+      "status": "approved",
       "at": "2026-11-18T01:50:54.222Z"
     },
     {
@@ -46525,7 +46511,7 @@
       "type": "problem",
       "note": "LP",
       "proposed": {},
-      "status": "pending",
+      "status": "approved",
       "at": "2026-11-18T01:51:47.949Z"
     },
     {
@@ -46535,7 +46521,7 @@
       "type": "problem",
       "note": "é RLM",
       "proposed": {},
-      "status": "pending",
+      "status": "approved",
       "at": "2026-11-18T01:52:06.670Z"
     },
     {
@@ -46545,7 +46531,7 @@
       "type": "problem",
       "note": "é LP",
       "proposed": {},
-      "status": "pending",
+      "status": "approved",
       "at": "2026-11-18T01:52:37.365Z"
     },
     {
@@ -46555,7 +46541,7 @@
       "type": "problem",
       "note": "cada passagem em uma linha diferente e isso é LP, não TI",
       "proposed": {},
-      "status": "pending",
+      "status": "approved",
       "at": "2026-11-18T01:52:56.549Z"
     },
     {
@@ -47358,7 +47344,8 @@
       "curated-asg-2026-10-003",
       "curated-asg-2026-10-008",
       "curated-asg-2026-10-010",
-      "curated-ti-09-106"
+      "curated-ti-09-106",
+      "curated-ti-05-116"
     ],
     "attempts": [
       "46ff85b1-b228-4291-9488-951040fb35aa",

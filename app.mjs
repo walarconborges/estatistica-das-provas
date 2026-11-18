@@ -69,7 +69,28 @@ function assertionMarks(q,count){
  return entry?.signature===assertionSignature(q.stem)&&Array.isArray(entry.marks)?
   entry.marks.slice(0,count):[];
 }
+function splitPassageLayout(stem){
+ const source=String(stem||'').replace(/\r\n/g,'\n').trim();
+ const intro=/^Considere as passagens:\s*/i.exec(source);
+ if(!intro)return null;
+ const match=/\n\s*(Os termos destacados significam,[\s\S]+)$/i.exec(source);
+ if(!match)return null;
+ const passagePart=source.slice(intro[0].length,match.index);
+ const lines=passagePart.split(/(?:^|\n)\s*•\s*/u).map(x=>x.replace(/\s*\n\s*/g,' ').trim()).filter(Boolean);
+ if(lines.length<2||lines.length>8)return null;
+ return {lines,command:match[1].replace(/\s+/g,' ').trim()};
+}
+function renderPassageLayout(stem){
+ const sections=splitPassageLayout(stem);
+ if(!sections)return '';
+ return '<div class="passage-layout">'+
+  '<p>Considere as passagens:</p>'+
+  sections.lines.map(line=>'<p class="passage-line">• '+h(line)+'</p>').join('')+
+  '<p class="passage-command">'+h(sections.command)+'</p></div>';
+}
 function renderAssertionBody(q){
+ const passageView=renderPassageLayout(q?.stem);
+ if(passageView)return passageView;
  const parsed=splitAssertionItems(q?.stem);
  if(!parsed)return '<div class="question-body">'+h(q.stem||'[Enunciado não extraído]')+'</div>';
  const marks=assertionMarks(q,parsed.items.length);

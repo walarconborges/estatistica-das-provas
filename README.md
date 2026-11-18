@@ -1,9 +1,22 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.37 — 17/11/2026**  
+**Versão experimental 0.6.38 — 17/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.38 — correção de 12 novas sinalizações
+
+- Reclassificada a Q2026TI04021 em Conhecimentos Gerais / História e Geografia de Rondônia (HGRO).
+- Na prova Telebras/CEBRASPE 2022, a Q2022TI09007 foi separada do texto de apoio; esse texto agora acompanha os itens 8 a 15. O bloco 1–15 foi corretamente classificado em Língua Portuguesa.
+- Na prova VUNESP/Marília 2025, reclassificados os blocos originais de Português (1–10) e Matemática (11–20), identificado corretamente o cargo Auxiliar de Informática e recuperadas as frações 3/4 (Q12) e 4/5 (Q13) do PDF original.
+- As passagens citadas de Q2025TI08008 e Q2026TI16007 agora aparecem em parágrafos separados, com o comando abaixo; corrigido também o texto "investimento". Ambas são questões de Português.
+- As questões Q2020SAUDE02033 e Q2020SAUDE02036 mantêm classificação de Conhecimentos Específicos de Saúde, sem se confundir com TI; refinados os temas de emergência e saneamento.
+- Na prova CAPES/CEBRASPE 2024, instruções de grupos foram deslocadas para o início do bloco correto, e marcadores de itens inexistentes foram eliminados das questões 96, 102, 106 e 111. Q2024TI05116 foi excluída conforme solicitação, sem tentativas ou simulados associados, com tombstone.
+- Classificadas corretamente Q2024TI07002 e Q2024TI03007 em Língua Portuguesa.
+- Os gabaritos, códigos públicos (exceto o código da questão excluída, preservado na sinalização) e histórico de respostas foram mantidos. As 12 sinalizações foram encerradas no estado sincronizado.
+
+Fonte pública para conferir a prova Marília: https://arquivos.qconcursos.com/prova/arquivo_prova/136913/vunesp-2025-camara-de-marilia-sp-auxiliar-de-informatica-prova.pdf
 
 ## Versão 0.6.37 — análise das sinalizações e separação Saúde × TI
 
