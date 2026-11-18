@@ -136,3 +136,38 @@ button.alternative-cross[aria-pressed="true"]:not(.quiet):not(.plain):not(.tab-b
  .syllabus-panel .form-grid{grid-template-columns:1fr}
  .syllabus-panel{padding:12px}
 }
+
+
+/* Leitura de questões com assertivas: rascunhos de um caractere, não respostas. */
+.assertion-print-original{display:none!important}
+.assertion-guide{min-width:0;margin:8px 0 14px}
+.assertion-intro{margin:0 0 12px!important}
+.assertion-list{display:grid;gap:10px}
+.assertion-row{
+ display:grid;grid-template-columns:42px max-content minmax(0,1fr);
+ align-items:start;column-gap:9px;min-width:0;
+ border:1px solid #dce6ed;border-radius:8px;background:#f9fbfd;
+ padding:10px 11px
+}
+input.assertion-mark{
+ display:block;width:40px!important;min-width:40px;max-width:40px;
+ height:40px;min-height:40px!important;padding:0!important;
+ border:1px solid #9db8c8;border-radius:6px;
+ font-size:1.1rem;font-weight:700;text-align:center;line-height:40px;
+ background:white;color:#163f64
+}
+input.assertion-mark:focus{outline:2px solid #237aaa;outline-offset:1px}
+.assertion-item-number{font-weight:600;color:#244f6b;white-space:nowrap;padding-top:8px}
+.assertion-item-text{min-width:0;overflow-wrap:break-word;white-space:normal;line-height:1.6;padding-top:6px}
+.assertion-outro{margin:13px 0 0!important}
+.assertion-hint{margin:9px 0 0;font-size:.8rem}
+@media(max-width:540px){
+ .assertion-row{grid-template-columns:36px max-content minmax(0,1fr);column-gap:7px;padding:8px}
+ input.assertion-mark{width:36px!important;min-width:36px;height:36px;min-height:36px!important}
+ .assertion-item-number{padding-top:7px}
+ .assertion-item-text{padding-top:4px}
+}
+@media print{
+ .assertion-guide{display:none!important}
+ .assertion-print-original{display:block!important;white-space:pre-wrap!important}
+}
