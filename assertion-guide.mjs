@@ -84,9 +84,14 @@ export function splitAssertionItems(raw){
   insert(m,m[3],m.index+m[2].length,m.index+m[1].length);
  }
  candidates.sort((a,b)=>a.start-b.start);
+ // Lookahead com quebras de linha pode encontrar o mesmo rótulo duas vezes.
+ // Remover duplicações antes de procurar sequências I, II, III etc.
+ const unique=candidates.filter((token,i)=>i===0||!
+  (token.start===candidates[i-1].start&&token.end===candidates[i-1].end&&
+   token.label===candidates[i-1].label));
  const runs=[];
  for(const kind of ['roman','letter','number']){
-  const tokens=candidates.map(c=>({...c,value:tokenNumber(c.label,kind)})).filter(c=>c.value!==null);
+  const tokens=unique.map(c=>({...c,value:tokenNumber(c.label,kind)})).filter(c=>c.value!==null);
   for(let i=0;i<tokens.length-1;i++){
    const sequence=[tokens[i]];
    for(let j=i+1;j<tokens.length;j++){
