@@ -975,8 +975,7 @@
         "curated-ti-09-101",
         "curated-ti-09-102",
         "curated-ti-09-103",
-        "curated-ti-09-104",
-        "curated-ti-09-106"
+        "curated-ti-09-104"
       ],
       "keySection": "Gabarito interno — seleção preparada",
       "metadataReview": [],
@@ -4388,13 +4387,13 @@
       "sourceColumn": 0,
       "contextText": "",
       "contextRange": null,
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
       "discipline": "Conhecimentos Específicos",
       "disciplineCode": "CE",
-      "topic": "Rotinas profissionais e organização do trabalho",
-      "topicCode": "EROT",
+      "topic": "Higienização, limpeza e conservação",
+      "topicCode": "ELIM",
       "id": "curated-health-02-035",
       "examId": "curated-health-02",
       "code": "Q2020SAUDE02035",
@@ -9566,7 +9565,7 @@
     {
       "originalNumber": 23,
       "heading": "Conhecimentos Específicos",
-      "stem": "A execução das ações de Vigilância Sanitária no\n\nâmbito do município de Paraíso do Tocantins com- preende a inspeção, monitoramento e\nlicenciamentos dos estabelecimentos/serviços relacionados à(ao):",
+      "stem": "A execução das ações de Vigilância Sanitária no\n\nâmbito do município de Paraíso do Tocantins compreende a inspeção, monitoramento e\nlicenciamentos dos estabelecimentos/serviços relacionados à(ao):",
       "options": [
         {
           "letter": "A",
@@ -20080,7 +20079,7 @@
     {
       "originalNumber": 37,
       "heading": "Informática",
-      "stem": "Um determinado sistema corporativo armazena senhas de usuários em um arquivo em que os\n\nnomes dos usuá rios estão armazenados em texto claro e suas respectivas senhas estão\narmazenadas na forma de hashes criptográficos. Cada par usuário/senha está armazenado em\numa linha do arquivo. O seguinte trecho do arquivo foi obtido por um usuário malicioso.\nalice 3102125cae72c19f215480ddf2d0d5c3 bob e10adc3949ba59abbe56e057f20f883e jason\n3102125cae72c19f215480ddf2d0d5c3 mike 688c5070d220ad89af28a7b7eb999352\nConsiderando as informações apresentadas, assinale a alternativa que apresenta uma conclusão\ncorreta, possível de ser obtida pelo usuário malicioso, sem que nenhuma ferramenta seja utilizada.",
+      "stem": "Um determinado sistema corporativo armazena senhas de usuários em um arquivo em que os\n\nnomes dos usuários estão armazenados em texto claro e suas respectivas senhas estão\narmazenadas na forma de hashes criptográficos. Cada par usuário/senha está armazenado em\numa linha do arquivo. O seguinte trecho do arquivo foi obtido por um usuário malicioso.\nalice 3102125cae72c19f215480ddf2d0d5c3 bob e10adc3949ba59abbe56e057f20f883e jason\n3102125cae72c19f215480ddf2d0d5c3 mike 688c5070d220ad89af28a7b7eb999352\nConsiderando as informações apresentadas, assinale a alternativa que apresenta uma conclusão\ncorreta, possível de ser obtida pelo usuário malicioso, sem que nenhuma ferramenta seja utilizada.",
       "options": [
         {
           "letter": "A",
@@ -23831,7 +23830,7 @@
     },
     {
       "originalNumber": 12,
-      "heading": "Informática",
+      "heading": "Língua Portuguesa",
       "stem": "Ao empregar o vocábulo “se” em “não se poderiam resolver todas as questões pela força”\n\n(primeiro período do texto), o autor, ao mesmo tempo, indetermina o sujeito gramatical da oração e\nomite o agente responsável pela ação expressa pelo verbo “resolver”.",
       "options": [
         {
@@ -23847,13 +23846,13 @@
       "sourceColumn": 0,
       "contextText": "",
       "contextRange": null,
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Sintaxe: termos da oração e períodos",
+      "topicCode": "LSIN",
       "id": "curated-ti-05-012",
       "examId": "curated-ti-05",
       "code": "Q2024TI05012",
@@ -25171,7 +25170,7 @@
     },
     {
       "originalNumber": 5,
-      "heading": "Informática",
+      "heading": "Língua Portuguesa",
       "stem": "\"Um relatório produzido no comitê responsável pelo inquérito concluiu que os benefícios da\n\nnimesulida continuam a superar os riscos. No entanto, a EMA decidiu restringir o uso dela a alguns\ncasos específicos.\"\nA expressão 'no entanto' exprime a ideia de:",
       "options": [
         {
@@ -25202,13 +25201,13 @@
         1,
         8
       ],
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Coesão, coerência e relações textuais",
+      "topicCode": "LCOE",
       "id": "curated-ti-06-005",
       "examId": "curated-ti-06",
       "code": "Q2025TI06005",
@@ -29646,7 +29645,7 @@
     {
       "originalNumber": 91,
       "heading": "Informática",
-      "stem": "Capaz de analisar qual a parcela de risco de uma intrusão e bloqueá-la antes que ela ocorra,\n\num IPS permite criar regras com o objetivo de monitorar aumentos anormais de tráfego de rede;\nalém dessa funcionalidade, ele ainda pode alertar o responsável pela segurança, caso ocorram\ntais anomalias.\n\nAcerca de aspectos diversos pertinentes a objetos de avaliação associados à análise de sistemas,\njulgue os itens que se seguem.",
+      "stem": "Julgue a afirmativa a seguir:\n\nCapaz de analisar qual a parcela de risco de uma intrusão e bloqueá-la antes que ela ocorra,\n\num IPS permite criar regras com o objetivo de monitorar aumentos anormais de tráfego de rede;\nalém dessa funcionalidade, ele ainda pode alertar o responsável pela segurança, caso ocorram\ntais anomalias.",
       "options": [
         {
           "letter": "C",
@@ -29661,13 +29660,13 @@
       "sourceColumn": 0,
       "contextText": "",
       "contextRange": null,
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
       "discipline": "Informática",
       "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "topic": "Segurança da informação e privacidade",
+      "topicCode": "ISEG",
       "id": "curated-ti-09-091",
       "examId": "curated-ti-09",
       "code": "Q2022TI09091",
@@ -30045,43 +30044,6 @@
       "banca": "CEBRASPE",
       "orgao": "Telecomunicações Brasileiras S.A. - Telebras",
       "answer": "E",
-      "status": "active",
-      "secondary": [],
-      "aliases": [],
-      "duplicateGroup": null
-    },
-    {
-      "originalNumber": 106,
-      "heading": "Informática",
-      "stem": "Uma nuvem privada permite que a organização controle o seu próprio ambiente, incluindo\n\nseus dados.\n\n107 - ANULADA/DESATUALIZADA\n\n108 - ANULADA/DESATUALIZADA\n\n109 - ANULADA/DESATUALIZADA\n\n110 - ANULADA/DESATUALIZADA\n\n111 - ANULADA/DESATUALIZADA\n\n112 - ANULADA/DESATUALIZADA\n\n113 - ANULADA/DESATUALIZADA\n\n114 - ANULADA/DESATUALIZADA\n\n115 - ANULADA/DESATUALIZADA\n\n116 - ANULADA/DESATUALIZADA\n\n117 - ANULADA/DESATUALIZADA\n\n118 - ANULADA/DESATUALIZADA\n\n119 - ANULADA/DESATUALIZADA\n\n120 - ANULADA/DESATUALIZADA",
-      "options": [
-        {
-          "letter": "C",
-          "text": "Certo"
-        },
-        {
-          "letter": "E",
-          "text": "Errado"
-        }
-      ],
-      "sourcePage": 132,
-      "sourceColumn": 0,
-      "contextText": "",
-      "contextRange": null,
-      "confidence": "média",
-      "extractionReview": false,
-      "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Computação em nuvem e serviços digitais",
-      "topicCode": "ICLO",
-      "id": "curated-ti-09-106",
-      "examId": "curated-ti-09",
-      "code": "Q2022TI09106",
-      "year": "2022",
-      "banca": "CEBRASPE",
-      "orgao": "Telecomunicações Brasileiras S.A. - Telebras",
-      "answer": "C",
       "status": "active",
       "secondary": [],
       "aliases": [],
@@ -32447,7 +32409,7 @@
     },
     {
       "originalNumber": 4,
-      "heading": "Informática",
+      "heading": "Língua Portuguesa",
       "stem": "Em relação ao texto, só há uma alternativa correta; assinale-a.",
       "options": [
         {
@@ -32474,13 +32436,13 @@
         1,
         5
       ],
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Interpretação e compreensão de textos",
+      "topicCode": "LINT",
       "id": "curated-ti-12-004",
       "examId": "curated-ti-12",
       "code": "Q2025TI12004",
@@ -46290,8 +46252,10 @@
       "type": "problem",
       "note": "\"usuá rios\"",
       "proposed": {},
-      "status": "pending",
-      "at": "2026-11-18T00:38:39.610Z"
+      "status": "approved",
+      "at": "2026-11-18T00:38:39.610Z",
+      "resolvedAt": "2026-11-18T01:30:37.783Z",
+      "resolutionNote": "Corrigido erro de extração 'usuá rios' para 'usuários'; sem alterações no gabarito ou histórico."
     },
     {
       "id": "f1b3dd67-bcf9-47c6-977d-992e15691c0a",
@@ -46300,8 +46264,10 @@
       "type": "problem",
       "note": "LP",
       "proposed": {},
-      "status": "pending",
-      "at": "2026-11-18T00:45:41.114Z"
+      "status": "approved",
+      "at": "2026-11-18T00:45:41.114Z",
+      "resolvedAt": "2026-11-18T01:30:37.785Z",
+      "resolutionNote": "Reclassificada para Língua Portuguesa — Sintaxe (LP/LSIN); gabarito E mantido."
     },
     {
       "id": "6a150809-b0b6-4ff6-88d1-d65c158f037e",
@@ -46310,8 +46276,10 @@
       "type": "problem",
       "note": "LP",
       "proposed": {},
-      "status": "pending",
-      "at": "2026-11-18T01:20:42.097Z"
+      "status": "approved",
+      "at": "2026-11-18T01:20:42.097Z",
+      "resolvedAt": "2026-11-18T01:30:37.785Z",
+      "resolutionNote": "Reclassificada para Língua Portuguesa — Coesão e relações textuais (LP/LCOE), expressão adversativa 'no entanto'; gabarito A mantido."
     },
     {
       "id": "a0258e2d-8232-40d4-8d4e-95f1d875693f",
@@ -46320,8 +46288,10 @@
       "type": "problem",
       "note": "excluir essa questão",
       "proposed": {},
-      "status": "pending",
-      "at": "2026-11-18T01:20:54.967Z"
+      "status": "approved",
+      "at": "2026-11-18T01:20:54.967Z",
+      "resolvedAt": "2026-11-18T01:30:37.785Z",
+      "resolutionNote": "Excluída a pedido do usuário; havia itens 107–120 de outra questão anexados. Sem respostas nem simulados vinculados, exclusão sincronizada por tombstone."
     },
     {
       "id": "e4587430-e72c-4714-aba1-79325092cd88",
@@ -46330,8 +46300,10 @@
       "type": "problem",
       "note": "LP",
       "proposed": {},
-      "status": "pending",
-      "at": "2026-11-18T01:21:05.609Z"
+      "status": "approved",
+      "at": "2026-11-18T01:21:05.609Z",
+      "resolvedAt": "2026-11-18T01:30:37.785Z",
+      "resolutionNote": "Reclassificada para Língua Portuguesa — Interpretação e compreensão de textos (LP/LINT), gabarito D mantido."
     },
     {
       "id": "cd2ce58a-2916-4b0e-a216-cda5cca32a7f",
@@ -46340,8 +46312,10 @@
       "type": "problem",
       "note": "ajuste essa questão para o padrão visual de cada assertiva numa linha diferente",
       "proposed": {},
-      "status": "pending",
-      "at": "2026-11-18T01:23:16.753Z"
+      "status": "approved",
+      "at": "2026-11-18T01:23:16.753Z",
+      "resolvedAt": "2026-11-18T01:30:37.785Z",
+      "resolutionNote": "O leitor de assertivas da versão 0.6.35+ já reconhece as duas afirmações C/E; nenhuma mudança no gabarito ou texto foi necessária."
     },
     {
       "id": "954c6d67-756f-4942-bbbb-d8b05fde8338",
@@ -46350,8 +46324,10 @@
       "type": "problem",
       "note": "não é específico de TI",
       "proposed": {},
-      "status": "pending",
-      "at": "2026-11-18T01:23:45.731Z"
+      "status": "approved",
+      "at": "2026-11-18T01:23:45.731Z",
+      "resolvedAt": "2026-11-18T01:30:37.785Z",
+      "resolutionNote": "Assunto ajustado para Higienização, limpeza e conservação (CE/ELIM); regra do edital TI 505 corrigida para excluir específicos de Saúde."
     },
     {
       "id": "d53b40b9-3038-432c-ad36-1ac1094e7e82",
@@ -46360,8 +46336,10 @@
       "type": "problem",
       "note": "não é específico de TI",
       "proposed": {},
-      "status": "pending",
-      "at": "2026-11-18T01:23:56.316Z"
+      "status": "approved",
+      "at": "2026-11-18T01:23:56.316Z",
+      "resolvedAt": "2026-11-18T01:30:37.785Z",
+      "resolutionNote": "É questão específica de Saúde/primeiros socorros; regra corrigida para ficar fora do edital de TI 505 e dentro do contexto da Saúde 240."
     },
     {
       "id": "a6fae97a-ff7c-402a-b90c-618b42564bf9",
@@ -46370,8 +46348,10 @@
       "type": "problem",
       "note": "cadê os itens? é o próprio enunciado?",
       "proposed": {},
-      "status": "pending",
-      "at": "2026-11-18T01:24:31.420Z"
+      "status": "approved",
+      "at": "2026-11-18T01:24:31.420Z",
+      "resolvedAt": "2026-11-18T01:30:37.785Z",
+      "resolutionNote": "Item único C/E sobre IPS. Corrigida a instrução mal posicionada e o assunto para Segurança da informação e privacidade (IN/ISEG), gabarito E preservado."
     },
     {
       "id": "f574fee1-942a-4a4d-8da4-d3ca25b6e276",
@@ -46380,8 +46360,10 @@
       "type": "problem",
       "note": "\"com- preende\" e não é específico de TI",
       "proposed": {},
-      "status": "pending",
-      "at": "2026-11-18T01:25:12.691Z"
+      "status": "approved",
+      "at": "2026-11-18T01:25:12.691Z",
+      "resolvedAt": "2026-11-18T01:30:37.785Z",
+      "resolutionNote": "Corrigida a palavra 'com- preende' para 'compreende'; questão permanece de Saúde e fora do edital de TI 505."
     }
   ],
   "tombstones": {
@@ -47162,7 +47144,8 @@
       "curated-asg-2026-09-020",
       "curated-asg-2026-10-003",
       "curated-asg-2026-10-008",
-      "curated-asg-2026-10-010"
+      "curated-asg-2026-10-010",
+      "curated-ti-09-106"
     ],
     "attempts": [
       "46ff85b1-b228-4291-9488-951040fb35aa",
