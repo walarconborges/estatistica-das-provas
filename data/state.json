@@ -46354,6 +46354,16 @@
       "proposed": {},
       "status": "pending",
       "at": "2026-11-18T01:23:56.316Z"
+    },
+    {
+      "id": "a6fae97a-ff7c-402a-b90c-618b42564bf9",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-ti-09-091",
+      "type": "problem",
+      "note": "cadê os itens? é o próprio enunciado?",
+      "proposed": {},
+      "status": "pending",
+      "at": "2026-11-18T01:24:31.420Z"
     }
   ],
   "tombstones": {
