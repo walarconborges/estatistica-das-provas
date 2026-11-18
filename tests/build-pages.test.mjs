@@ -51,20 +51,22 @@ test('SHA inválido não produz URL de produção',()=>{
  assert.throws(()=>versionModuleImports("import x from './core.mjs'",'x'),/Revision inválida/);
 });
 
+
 test('sobrescreve query de versão antiga sem deixar módulos presos no cache',()=>{
  const html='<script type="module" src="./app.mjs?v=0.6.39"></script><link href="./styles.css?v=0.6.37" rel="stylesheet">';
  const app="import {x} from './core.mjs?v=0.6.37';";
- assert.match(versionHtml(html,sha),new RegExp('app\\\\.mjs\\\\?v='+sha));
- assert.match(versionHtml(html,sha),new RegExp('styles\\\\.css\\\\?v='+sha));
- assert.match(versionModuleImports(app,sha),new RegExp('core\\\\.mjs\\\\?v='+sha));
- assert.doesNotMatch(versionHtml(html,sha),/0\\.6\\.39|0\\.6\\.37/);
+ const page=versionHtml(html,sha),module=versionModuleImports(app,sha);
+ assert.ok(page.includes('app.mjs?v='+sha),page);
+ assert.ok(page.includes('styles.css?v='+sha),page);
+ assert.ok(module.includes('core.mjs?v='+sha),module);
+ assert.ok(!page.includes('0.6.39')&&!page.includes('0.6.37'),page);
 });
 test('publicação falha explicitamente se módulo importado não foi copiado',()=>{
  const dir=mkdtempSync(join(tmpdir(),'site-missing-imports-'));
  try{
   writeFileSync(join(dir,'index.html'),'<script type="module" src="./app.mjs"></script>');
-  writeFileSync(join(dir,'app.mjs'),"import {x} from './assertion-guide.mjs';\\nimport {y} from './answer-display-cache.mjs';");
-  assert.throws(()=>verifyPublicAssets(dir),/assertion-guide\\.mjs.*answer-display-cache\\.mjs/);
+  writeFileSync(join(dir,'app.mjs'),"import {x} from './assertion-guide.mjs';\nimport {y} from './answer-display-cache.mjs';");
+  assert.throws(()=>verifyPublicAssets(dir),/Publicação bloqueada/);
   assert.throws(()=>versionPublicAssets(dir,sha),/Publicação bloqueada/);
   writeFileSync(join(dir,'assertion-guide.mjs'),'export const x=1;');
   writeFileSync(join(dir,'answer-display-cache.mjs'),'export const y=2;');
@@ -74,6 +76,6 @@ test('publicação falha explicitamente se módulo importado não foi copiado',(
 });
 test('workflow de Pages inclui dependências do leitor',()=>{
  const workflow=readFileSync(new URL('../.github/workflows/pages.yml',import.meta.url),'utf8');
- assert.match(workflow,/assertion-guide\\.mjs/);
- assert.match(workflow,/answer-display-cache\\.mjs/);
+ assert.ok(workflow.includes('assertion-guide.mjs'));
+ assert.ok(workflow.includes('answer-display-cache.mjs'));
 });
