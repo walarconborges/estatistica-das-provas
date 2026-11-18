@@ -46091,6 +46091,22 @@
       "answer": "B",
       "simulationId": "",
       "at": "2026-11-18T00:47:39.800Z"
+    },
+    {
+      "id": "7c594188-03d7-4cae-9ee6-6dae6b0c2888",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-ti-01-008",
+      "answer": "B",
+      "simulationId": "",
+      "at": "2026-11-18T00:48:18.574Z"
+    },
+    {
+      "id": "4e249e59-e143-4459-a75f-da62ab4b0176",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-ti-01-008",
+      "answer": "A",
+      "simulationId": "",
+      "at": "2026-11-18T00:48:21.064Z"
     }
   ],
   "simulations": [],
