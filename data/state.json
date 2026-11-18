@@ -9953,7 +9953,11 @@
       "status": "active",
       "secondary": [],
       "aliases": [],
-      "duplicateGroup": null
+      "duplicateGroup": null,
+      "highlightExpressions": [
+        "como",
+        "tão"
+      ]
     },
     {
       "originalNumber": 2,
@@ -41332,7 +41336,7 @@
       "banca": "Instituto Legalle",
       "orgao": "Prefeitura de Cândido Godói/RS",
       "heading": "Conhecimentos Gerais",
-      "stem": "Os portugueses iniciaram a exploração do territorio brasileiro a partir do ano de 1500. Qual foi o\n primeiro produto natural retirado e comercializado por eles na fase colonial?",
+      "stem": "Os portugueses iniciaram a exploração do território brasileiro a partir do ano de 1500. Qual foi o\n primeiro produto natural retirado e comercializado por eles na fase colonial?",
       "options": [
         {
           "letter": "A",
@@ -47967,8 +47971,9 @@
       "type": "problem",
       "note": "Conferir acentuação",
       "proposed": {},
-      "status": "pending",
-      "at": "2026-11-18T20:20:25.015Z"
+      "status": "approved",
+      "at": "2026-11-18T20:20:25.015Z",
+      "resolvedAt": "2026-11-18T20:31:53.570Z"
     },
     {
       "id": "34771476-b270-4f10-af5f-8b1dd237dcd4",
@@ -47977,8 +47982,9 @@
       "type": "problem",
       "note": "vixi faltou destacar as expressões. identifique quais são e destaque-as. se não tiver mais o contexto original, identifique com base no contexto da questão e das respostas quais devem ser as epxressões destacadas.",
       "proposed": {},
-      "status": "pending",
-      "at": "2026-11-18T20:21:26.135Z"
+      "status": "approved",
+      "at": "2026-11-18T20:21:26.135Z",
+      "resolvedAt": "2026-11-18T20:31:53.570Z"
     }
   ],
   "tombstones": {
