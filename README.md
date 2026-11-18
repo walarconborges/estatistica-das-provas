@@ -1,9 +1,19 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.34 — 17/11/2026**  
+**Versão experimental 0.6.35 — 17/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.35 — anotação de assertivas para estudo
+
+- Questões que contêm itens para julgamento (V/F, C/E, `(__)`, números, algarismos romanos `I, II, III...` ou letras `a), b), c)...`) recebem uma **visualização de estudo** em que cada assertiva fica em uma linha independente.
+- Há um **campo de um caractere** ao lado de cada item: o estudante pode escrever `V`, `F`, `C`, `E`, `?`, outro sinal ou deixá-lo em branco. O recurso não seleciona alternativas nem interfere na correção.
+- As anotações ficam **somente no navegador**, separadas por **perfil e questão**, e permanecem ao alternar filtros, atualizar a página ou abrir novamente a questão. Não entram no GitHub, na sincronização, nos gabaritos, nas tentativas nem nas estatísticas. Se o texto da questão mudar, as anotações antigas não são reaplicadas.
+- Reconhecimento conservador: somente duas ou mais lacunas de julgamento ou uma sequência inequívoca de rótulos enumerados. Questões comuns, fórmulas e exercícios de associação de colunas mantêm a exibição original.
+- O texto original permanece no banco, íntegro, e reaparece na **impressão**; a alteração é apenas visual no modo de resolução (questões avulsas e simulados).
+- Exemplo testado: **Q2025TI11021** (Limpeza de Disco do Windows), com quatro assertivas `(__)`, sem mudança em alternativas ou gabarito.
+- Novo módulo `assertion-guide.mjs`; testes em `tests/assertion-guide.test.mjs`. Arquivos HTML, CSS e JS atualizados na versão 0.6.35. Não há necessidade de atualização do Cloudflare Worker.
 
 ## Versão 0.6.34 — verificar município da norma e sinalizações
 
