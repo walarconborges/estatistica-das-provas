@@ -25,7 +25,7 @@ test('12 novas sinalizações resolvidas, sem alterar gabaritos nem histórico',
   const q=question(code);assert.ok(q,code);assert.equal(q.answer,gabarito,code);
   assert.ok(!state.flags.some(f=>f.questionId===q.id&&f.status==='pending'),code);
  }
- assert.equal(state.questions.length,944);
+ assert.ok(state.questions.length>=944,'não excluir questões antigas ao adicionar novos simulados');
  assert.equal(state.attempts.length>=22,true);
 });
 test('Rondônia é Conhecimentos Gerais / HGRO, e os itens LP deixam Informática',()=>{
@@ -75,4 +75,11 @@ test('Q116 excluída sem resíduos, saúde não é TI e pertence ao banco geral'
   assert.match(q.discipline,/Saúde/);
   assert.equal(classifyForCargo(q,health,'505').status,'fora');
  }
+});
+
+test('sinalização #42 corrige pontuação sem mexer no gabarito',()=>{
+ const q=question('Q2026TI13001');
+ assert.equal(q.disciplineCode,'LP');assert.equal(q.topicCode,'LPON');
+ assert.equal(q.answer,'C');
+ assert.equal(state.flags.some(f=>f.questionId===q.id&&f.status==='pending'),false);
 });

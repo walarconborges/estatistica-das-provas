@@ -33702,8 +33702,8 @@
     },
     {
       "originalNumber": 1,
-      "heading": "Informática",
-      "stem": "No trecho O presidente do Inep, Manuel Palacios, estima que..., a presença das vírgulas\n\njustificase pela seguinte regra sintática de pontuação:",
+      "heading": "Língua Portuguesa",
+      "stem": "No trecho O presidente do Inep, Manuel Palacios, estima que..., a presença das vírgulas\n\njustifica-se pela seguinte regra sintática de pontuação:",
       "options": [
         {
           "letter": "A",
@@ -33729,13 +33729,13 @@
         1,
         8
       ],
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Pontuação e sinais gráficos",
+      "topicCode": "LPON",
       "id": "curated-ti-13-001",
       "examId": "curated-ti-13",
       "code": "Q2026TI13001",
@@ -47295,7 +47295,7 @@
       "type": "problem",
       "note": "LP",
       "proposed": {},
-      "status": "pending",
+      "status": "approved",
       "at": "2026-11-18T18:33:14.168Z"
     }
   ],
