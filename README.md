@@ -5,6 +5,15 @@
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
 
+## Cadastro 18/11/2026 — simulado ChatGPT e sinalizações #39–#41
+
+- Importadas **10 questões inéditas de autoria ChatGPT**, elaboradas em 18/11/2026 e fundamentadas no material apresentado pelo usuário sobre as notícias da Câmara Municipal de Candeias do Jamari/RO. Estilo IBGP não significa autoria da IBGP.
+- Prova: `sim-chatgpt-cmcj-noticias-2026-11-18`, banca `ChatGPT`, ano `2026`, códigos `Q2026CGCMCJCHATGPT001` até `010`.
+- Os dez itens pertencem a Conhecimentos Gerais, exclusivamente ao tópico do Anexo IV de notícias da CMCJ-RO, nas consultas aos cargos 505 e 202. Ficam fora dos editais independentes.
+- Mantido o gabarito completo do PDF: B, C, D, A, E, C, B, D, A, E.
+- Resolvidas as sinalizações de Q2025TI14040 (Legislação/Regimento Interno de Angra dos Reis), Q2026TI04009 (Português/Pontuação) e Q2025TI01033 (Português/Pontuação), sem modificar gabaritos ou tentativas.
+- Banco original, perfis e histórico preservados; teste de regressão em `tests/chatgpt-cmcj-news-2026.test.mjs`.
+
 ## Versão 0.6.40 — recuperação dos perfis na tela inicial
 
 - Corrigida a publicação no GitHub Pages: o pacote estático não incluía `assertion-guide.mjs` nem `answer-display-cache.mjs`, ambos exigidos diretamente por `app.mjs`. Sem esses módulos, a inicialização inteira falhava e a lista de perfis não aparecia.

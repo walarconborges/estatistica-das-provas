@@ -256,6 +256,15 @@ function inferClassificationForCargo(q,exam,cargoId='505'){
  if(!sectionId)return denied('Disciplina ou conteúdo não consta do programa do cargo '+cargo+'.');
  const section=catalog.sections.find(s=>s.id===sectionId);
  if(!section)return denied();
+ // Simulado autoral dedicado exclusivamente ao tópico de notícias da Câmara
+ // de Candeias do Jamari. A menção à cidade não equivale a geografia geral.
+ if(sectionId==='gerais'&&q?.sourceType==='chatgpt-cmcj-news-simulado'&&q?.newsSource==='cmcj-ro'){
+  const index=section.topics.length-1;
+  return {cargoId:cargo,status:'dentro',statusLabel:'Dentro do edital',
+   discipline:section.title,topic:section.topics[index],topicId:'gerais:'+index,
+   reason:'Simulado autoral do tópico de notícias do site da Câmara de Candeias do Jamari.'};
+ }
+
  if(cargo==='505'&&sectionId==='legislacao'){
   if(q.originalQuestionId){
    const a=q.adaptation||{};
@@ -448,6 +457,12 @@ export function approveEdictReview(question,proposed){
  */
 export function classifyForCargo(q,exam,cargoId='505'){
  const cargo=['202','240','505',PROFESSOR_CARGO_ID].includes(String(cargoId))?String(cargoId):'505';
+ if(q?.sourceType==='chatgpt-cmcj-news-simulado'&&q?.newsSource==='cmcj-ro'&&
+    cargo!=='202'&&cargo!=='505')return {
+   cargoId:cargo,status:'fora',statusLabel:'Fora do edital',discipline:'Fora do edital',
+   topic:'Fora do edital',topicId:'',
+   reason:'Notícias específicas da Câmara de Candeias do Jamari não pertencem ao edital deste cargo.'
+ };
  const computed=cargo===PROFESSOR_CARGO_ID?inferProfessorClassification(q,exam):cargo==='240'?inferSemusaClassification(q,exam):inferClassificationForCargo(q,exam,cargo);
  const reviewed=q?.editalReview?.[cargo];
  if(!reviewed||!['dentro','fora'].includes(reviewed.status))return computed;

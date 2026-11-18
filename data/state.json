@@ -1570,6 +1570,32 @@
       "keySection": "Gabarito interno do PDF preparado",
       "metadataReview": [],
       "pdfPath": ""
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-18",
+      "title": "2026 — ChatGPT — Câmara Municipal de Candeias do Jamari/RO — Simulado: Notícias do site da Câmara",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "bancaCode": "CHATGPT",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "orgaoCode": "CM-CANDEIAS-DO-JAMARI",
+      "createdAt": "2026-11-18T18:32:20.550Z",
+      "questionIds": [
+        "sim-chatgpt-cmcj-noticias-2026-11-18-001",
+        "sim-chatgpt-cmcj-noticias-2026-11-18-002",
+        "sim-chatgpt-cmcj-noticias-2026-11-18-003",
+        "sim-chatgpt-cmcj-noticias-2026-11-18-004",
+        "sim-chatgpt-cmcj-noticias-2026-11-18-005",
+        "sim-chatgpt-cmcj-noticias-2026-11-18-006",
+        "sim-chatgpt-cmcj-noticias-2026-11-18-007",
+        "sim-chatgpt-cmcj-noticias-2026-11-18-008",
+        "sim-chatgpt-cmcj-noticias-2026-11-18-009",
+        "sim-chatgpt-cmcj-noticias-2026-11-18-010"
+      ],
+      "keySection": "Gabarito original do PDF: 10 questões, 18/11/2026",
+      "metadataReview": [],
+      "sourceType": "simulado-autoral",
+      "notes": "Questões autorais no estilo IBGP, não produzidas pela banca IBGP."
     }
   ],
   "questions": [
@@ -18418,7 +18444,7 @@
     },
     {
       "originalNumber": 33,
-      "heading": "Informática",
+      "heading": "Língua Portuguesa",
       "stem": "Considerando o trecho \"Eu e minha melhor amiga, Carla, super fãs de literatura e de bandas,\n\nencontramos na internet várias comunidades de fãs que escreviam suas próprias histórias: as\nfanfics\", analise a função das vírgulas e dos dois-pontos segundo a norma culta e os efeitos de\nsentido no enunciado. Assinale a alternativa que apresenta a interpretação adequada.",
       "options": [
         {
@@ -18445,13 +18471,13 @@
         26,
         33
       ],
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Internet, navegadores e correio eletrônico",
-      "topicCode": "INET",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Pontuação e sinais gráficos",
+      "topicCode": "LPON",
       "id": "curated-ti-01-033",
       "examId": "curated-ti-01",
       "code": "Q2025TI01033",
@@ -22262,7 +22288,7 @@
     },
     {
       "originalNumber": 9,
-      "heading": "Informática",
+      "heading": "Língua Portuguesa",
       "stem": "No que se refere aos sinais de pontuação em “Da arte de falar mal”, assinale a alternativa\n\nCORRETA:",
       "options": [
         {
@@ -22293,13 +22319,13 @@
         1,
         10
       ],
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Língua Portuguesa",
+      "disciplineCode": "LP",
+      "topic": "Pontuação e sinais gráficos",
+      "topicCode": "LPON",
       "id": "curated-ti-04-009",
       "examId": "curated-ti-04",
       "code": "Q2026TI04009",
@@ -36505,7 +36531,7 @@
     },
     {
       "originalNumber": 40,
-      "heading": "Informática",
+      "heading": "Legislação",
       "stem": "No que se refere às sessões da Câmara Municipal de Angra dos Reis, é direito de qualquer\n\ncidadão as assistir na parte do recinto reservado ao público, com exceção daquele que",
       "options": [
         {
@@ -36529,13 +36555,13 @@
       "sourceColumn": 0,
       "contextText": "",
       "contextRange": null,
-      "confidence": "média",
+      "confidence": "alta",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Informática",
-      "disciplineCode": "IN",
-      "topic": "Fundamentos de informática",
-      "topicCode": "IFUN",
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Regimento interno e funcionamento do Legislativo municipal",
+      "topicCode": "LREGI",
       "id": "curated-ti-14-040",
       "examId": "curated-ti-14",
       "code": "Q2025TI14040",
@@ -45933,6 +45959,526 @@
       "aliases": [],
       "duplicateGroup": null,
       "sourceFile": "2026_Bancas_Diversas_Auxiliar_de_Servicos_Gerais_Candeias_do_Jamari(2).pdf"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-18-001",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-18",
+      "code": "Q2026CGCMCJCHATGPT001",
+      "originalNumber": 1,
+      "heading": "Conhecimentos Gerais — Notícias da CMCJ/RO",
+      "stem": "Em janeiro de 2025, a Câmara Municipal de Candeias do Jamari divulgou a convocação de sessão extraordinária que contemplava os Projetos de Lei nº 2.034/2025 e nº 2.035/2025, relacionados ao planejamento orçamentário municipal. Considerando os instrumentos de planejamento e orçamento público envolvidos, assinale a alternativa CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "O Plano Plurianual estabelece exclusivamente as despesas a serem executadas no exercício financeiro seguinte."
+        },
+        {
+          "letter": "B",
+          "text": "A Lei de Diretrizes Orçamentárias orienta a elaboração da Lei Orçamentária Anual, que prevê receitas e fixa despesas."
+        },
+        {
+          "letter": "C",
+          "text": "A Lei Orçamentária Anual autoriza automaticamente toda despesa pública, independentemente de dotação e dos requisitos legais."
+        },
+        {
+          "letter": "D",
+          "text": "A Lei de Diretrizes Orçamentárias substitui a Lei Orçamentária Anual quando esta não é aprovada até o início do exercício financeiro."
+        },
+        {
+          "letter": "E",
+          "text": "A Câmara Municipal é responsável pela elaboração exclusiva das propostas orçamentárias do Poder Executivo."
+        }
+      ],
+      "sourcePage": 1,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Notícias do site da Câmara Municipal de Candeias do Jamari",
+      "topicCode": "CNOT",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-cmcj-news-simulado",
+      "newsSource": "cmcj-ro",
+      "newsSubject": "Orçamento municipal"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-18-002",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-18",
+      "code": "Q2026CGCMCJCHATGPT002",
+      "originalNumber": 2,
+      "heading": "Conhecimentos Gerais — Notícias da CMCJ/RO",
+      "stem": "Em janeiro de 2025, a Câmara Municipal de Candeias do Jamari publicou convocação de Jailton Viana de Almeida para manifestação relacionada a uma Tomada de Contas Especial, com referência ao Processo nº 03548/2017 do Tribunal de Contas do Estado de Rondônia. A respeito desse acontecimento, assinale a alternativa CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "A convocação representou a aplicação definitiva de penalidade administrativa ao interessado."
+        },
+        {
+          "letter": "B",
+          "text": "A Câmara determinou, por meio da convocação, a absolvição do interessado no processo de contas."
+        },
+        {
+          "letter": "C",
+          "text": "A convocação constituiu uma etapa de instrução destinada a obter esclarecimentos, sem representar, por si só, julgamento definitivo de responsabilidade."
+        },
+        {
+          "letter": "D",
+          "text": "O procedimento tinha como objetivo exclusivo examinar o resultado das eleições municipais de 2024."
+        },
+        {
+          "letter": "E",
+          "text": "A Tomada de Contas Especial substituiu automaticamente qualquer procedimento judicial sobre os mesmos fatos."
+        }
+      ],
+      "sourcePage": 1,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Notícias do site da Câmara Municipal de Candeias do Jamari",
+      "topicCode": "CNOT",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-cmcj-news-simulado",
+      "newsSource": "cmcj-ro",
+      "newsSubject": "Fiscalização e contas públicas"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-18-003",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-18",
+      "code": "Q2026CGCMCJCHATGPT003",
+      "originalNumber": 3,
+      "heading": "Conhecimentos Gerais — Notícias da CMCJ/RO",
+      "stem": "Durante a 17ª sessão ordinária, em junho de 2026, a Câmara Municipal de Candeias do Jamari incluiu em sua pauta o Projeto de Lei nº 2.286/2026. Conforme a publicação institucional, o referido projeto tratava da:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Criação de uma universidade pública municipal com oferta de cursos presenciais."
+        },
+        {
+          "letter": "B",
+          "text": "Extinção do Sistema de Avaliação Educacional de Rondônia (SAERO)."
+        },
+        {
+          "letter": "C",
+          "text": "Instituição de um novo programa de alimentação escolar em substituição ao PNAE."
+        },
+        {
+          "letter": "D",
+          "text": "Prorrogação do Plano Municipal de Educação, instituído pela Lei Municipal nº 763/2015."
+        },
+        {
+          "letter": "E",
+          "text": "Transferência da gestão das escolas municipais para a Secretaria de Estado da Educação."
+        }
+      ],
+      "sourcePage": 1,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Notícias do site da Câmara Municipal de Candeias do Jamari",
+      "topicCode": "CNOT",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-cmcj-news-simulado",
+      "newsSource": "cmcj-ro",
+      "newsSubject": "Educação municipal"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-18-004",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-18",
+      "code": "Q2026CGCMCJCHATGPT004",
+      "originalNumber": 4,
+      "heading": "Conhecimentos Gerais — Notícias da CMCJ/RO",
+      "stem": "O Projeto de Lei nº 2.279/2026 apareceu nas pautas das sessões ordinárias da Câmara Municipal de Candeias do Jamari de 25 de maio e 1º de junho de 2026. Com relação ao objeto do projeto e às informações divulgadas, assinale a alternativa CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "O projeto tratava da alienação de bens móveis considerados inservíveis ou ociosos, mediante leilão, havendo divergência nas publicações quanto à autoria."
+        },
+        {
+          "letter": "B",
+          "text": "O projeto determinou a doação de todos os veículos municipais às associações comunitárias, sem necessidade de procedimento administrativo."
+        },
+        {
+          "letter": "C",
+          "text": "O projeto regulamentava exclusivamente a cobrança do Imposto sobre a Propriedade Predial e Territorial Urbana (IPTU)."
+        },
+        {
+          "letter": "D",
+          "text": "O projeto estabeleceu a desapropriação de imóveis destinados à construção de unidades escolares."
+        },
+        {
+          "letter": "E",
+          "text": "A publicação comprovou a conclusão do leilão e o recebimento integral dos valores provenientes das vendas."
+        }
+      ],
+      "sourcePage": 2,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Notícias do site da Câmara Municipal de Candeias do Jamari",
+      "topicCode": "CNOT",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-cmcj-news-simulado",
+      "newsSource": "cmcj-ro",
+      "newsSubject": "Patrimônio público"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-18-005",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-18",
+      "code": "Q2026CGCMCJCHATGPT005",
+      "originalNumber": 5,
+      "heading": "Conhecimentos Gerais — Notícias da CMCJ/RO",
+      "stem": "Entre as proposições apresentadas na pauta legislativa de 22 de junho de 2026, destacou-se o Projeto de Lei nº 2.289/2026, relacionado à regularização de imóveis e ao tratamento tributário aplicável a determinadas transferências. Assinale a alternativa que apresenta CORRETAMENTE o objeto dessa proposição.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Instituição de imposto municipal sobre propriedades rurais cadastradas pelo INCRA."
+        },
+        {
+          "letter": "B",
+          "text": "Isenção universal de todos os tributos municipais incidentes sobre imóveis urbanos e rurais."
+        },
+        {
+          "letter": "C",
+          "text": "Transferência da competência de arrecadação do ITBI para o Governo do Estado de Rondônia."
+        },
+        {
+          "letter": "D",
+          "text": "Criação de taxa obrigatória para a emissão de títulos de domínio pelo INCRA."
+        },
+        {
+          "letter": "E",
+          "text": "Dispensa do ITBI na primeira transferência de títulos vinculados ao INCRA, conforme as condições estabelecidas na proposta."
+        }
+      ],
+      "sourcePage": 2,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Notícias do site da Câmara Municipal de Candeias do Jamari",
+      "topicCode": "CNOT",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "E",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-cmcj-news-simulado",
+      "newsSource": "cmcj-ro",
+      "newsSubject": "Regularização fundiária"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-18-006",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-18",
+      "code": "Q2026CGCMCJCHATGPT006",
+      "originalNumber": 6,
+      "heading": "Conhecimentos Gerais — Notícias da CMCJ/RO",
+      "stem": "Em novembro de 2025, foi inaugurada a Procuradoria Especial da Mulher no âmbito da Câmara Municipal de Candeias do Jamari. Posteriormente, em outubro de 2026, foi divulgada a ação denominada \"Laços de Cuidado\". Considerando a relação entre esses acontecimentos, analise as afirmativas a seguir.\n\nI. A Procuradoria Especial da Mulher constitui uma iniciativa institucional voltada à orientação e à promoção de direitos.\n\nII. A ação \"Laços de Cuidado\" foi divulgada em associação à campanha Outubro Rosa.\n\nIII. A ação \"Laços de Cuidado\" foi anunciada para outubro de 2026, antes da inauguração da Procuradoria Especial da Mulher.\n\nEstá CORRETO o que se afirma em:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "I, II e III."
+        },
+        {
+          "letter": "B",
+          "text": "II e III, apenas."
+        },
+        {
+          "letter": "C",
+          "text": "I e II, apenas."
+        },
+        {
+          "letter": "D",
+          "text": "I e III, apenas."
+        },
+        {
+          "letter": "E",
+          "text": "III, apenas."
+        }
+      ],
+      "sourcePage": 2,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Notícias do site da Câmara Municipal de Candeias do Jamari",
+      "topicCode": "CNOT",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-cmcj-news-simulado",
+      "newsSource": "cmcj-ro",
+      "newsSubject": "Políticas públicas para mulheres"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-18-007",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-18",
+      "code": "Q2026CGCMCJCHATGPT007",
+      "originalNumber": 7,
+      "heading": "Conhecimentos Gerais — Notícias da CMCJ/RO",
+      "stem": "Em setembro de 2026, a composição da Câmara Municipal de Candeias do Jamari sofreu alteração após procedimentos relacionados à eleição proporcional de 2024. Considerando as informações divulgadas sobre a retotalização dos votos e a subsequente posse parlamentar, assinale a alternativa CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "A retotalização resultou na posse de um novo prefeito municipal, substituindo automaticamente o chefe do Executivo."
+        },
+        {
+          "letter": "B",
+          "text": "Euzébio Lopes Novais, do AGIR, tomou posse como vereador em 15 de setembro de 2026, após retotalização relacionada a processo envolvendo o PRTB."
+        },
+        {
+          "letter": "C",
+          "text": "O procedimento foi realizado exclusivamente para definir a composição da Mesa Diretora de 2027–2028."
+        },
+        {
+          "letter": "D",
+          "text": "A retotalização anulou todas as eleições municipais realizadas em Rondônia em 2024."
+        },
+        {
+          "letter": "E",
+          "text": "A posse ocorreu em razão de decisão administrativa da Mesa Diretora, sem relação com a Justiça Eleitoral."
+        }
+      ],
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Notícias do site da Câmara Municipal de Candeias do Jamari",
+      "topicCode": "CNOT",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-cmcj-news-simulado",
+      "newsSource": "cmcj-ro",
+      "newsSubject": "Composição do Legislativo municipal"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-18-008",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-18",
+      "code": "Q2026CGCMCJCHATGPT008",
+      "originalNumber": 8,
+      "heading": "Conhecimentos Gerais — Notícias da CMCJ/RO",
+      "stem": "A Câmara Municipal de Candeias do Jamari realizou, em 5 de outubro de 2026, nova eleição para a Mesa Diretora do biênio 2027–2028, após questionamento judicial acerca de uma escolha anterior. Com base no resultado registrado na ata publicada em outubro de 2026, assinale a alternativa que apresenta CORRETAMENTE o presidente e a vice-presidente eleitos, respectivamente.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Jucilene Marques Moraes e Luciana de Souza Saraiva Saldanha."
+        },
+        {
+          "letter": "B",
+          "text": "Roberto Oliveira Franceschetto e Marcos Almeida da Hora."
+        },
+        {
+          "letter": "C",
+          "text": "Fábio da Silva Costa e Jucilene Marques Moraes."
+        },
+        {
+          "letter": "D",
+          "text": "Euclides José de Andrade e Zilmar Lima Domingos Batista."
+        },
+        {
+          "letter": "E",
+          "text": "Leandro da Silva Soares e Claudiomar Lemos de Souza."
+        }
+      ],
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Notícias do site da Câmara Municipal de Candeias do Jamari",
+      "topicCode": "CNOT",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-cmcj-news-simulado",
+      "newsSource": "cmcj-ro",
+      "newsSubject": "Mesa Diretora"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-18-009",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-18",
+      "code": "Q2026CGCMCJCHATGPT009",
+      "originalNumber": 9,
+      "heading": "Conhecimentos Gerais — Notícias da CMCJ/RO",
+      "stem": "Em outubro de 2026, a Câmara Municipal de Candeias do Jamari divulgou convocação extraordinária que incluía projetos relacionados ao financiamento de políticas educacionais, entre eles os Projetos de Lei nº 2.350/2026 e nº 2.356/2026. Considerando os assuntos tratados nessas proposições, assinale a alternativa CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "O Projeto de Lei nº 2.350/2026 relacionava-se ao Salário-Educação, enquanto o nº 2.356/2026 tratava de recursos vinculados à alimentação escolar e ao PNAE."
+        },
+        {
+          "letter": "B",
+          "text": "Ambos os projetos tratavam exclusivamente da criação de universidades estaduais."
+        },
+        {
+          "letter": "C",
+          "text": "O Projeto de Lei nº 2.350/2026 estabelecia a extinção do Salário-Educação, enquanto o nº 2.356/2026 encerrava o PNAE no município."
+        },
+        {
+          "letter": "D",
+          "text": "Os dois projetos tinham por finalidade exclusiva regulamentar o funcionamento de escolas particulares."
+        },
+        {
+          "letter": "E",
+          "text": "As proposições determinavam a substituição integral do orçamento da educação por recursos provenientes de doações privadas."
+        }
+      ],
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Notícias do site da Câmara Municipal de Candeias do Jamari",
+      "topicCode": "CNOT",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-cmcj-news-simulado",
+      "newsSource": "cmcj-ro",
+      "newsSubject": "Financiamento da educação"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-18-010",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-18",
+      "code": "Q2026CGCMCJCHATGPT010",
+      "originalNumber": 10,
+      "heading": "Conhecimentos Gerais — Notícias da CMCJ/RO",
+      "stem": "A pauta da 29ª sessão ordinária da Câmara Municipal de Candeias do Jamari, realizada em novembro de 2026, contemplou matérias relacionadas à prestação de contas e à organização de políticas culturais. Sobre os assuntos anunciados, analise as afirmativas a seguir e atribua V para verdadeira ou F para falsa.\n\nI. O Projeto de Decreto Legislativo nº 06/2026 estava relacionado à análise das contas municipais referentes ao exercício de 2023.\n\nII. O Projeto de Lei nº 2.359/2026 abordava a organização do Sistema Municipal de Cultura, incluindo conselho e fundo municipal.\n\nIII. A simples inclusão dessas matérias na pauta comprova que ambas foram definitivamente aprovadas na sessão.\n\nAssinale a alternativa que apresenta a sequência CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "V – F – V."
+        },
+        {
+          "letter": "B",
+          "text": "F – V – F."
+        },
+        {
+          "letter": "C",
+          "text": "V – V – V."
+        },
+        {
+          "letter": "D",
+          "text": "F – F – V."
+        },
+        {
+          "letter": "E",
+          "text": "V – V – F."
+        }
+      ],
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Notícias do site da Câmara Municipal de Candeias do Jamari",
+      "topicCode": "CNOT",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "E",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-cmcj-news-simulado",
+      "newsSource": "cmcj-ro",
+      "newsSubject": "Cultura e prestação de contas"
     }
   ],
   "attempts": [
@@ -46703,7 +47249,7 @@
       "type": "problem",
       "note": "não é TI",
       "proposed": {},
-      "status": "pending",
+      "status": "approved",
       "at": "2026-11-18T18:16:58.328Z"
     },
     {
@@ -46713,7 +47259,7 @@
       "type": "problem",
       "note": "LP",
       "proposed": {},
-      "status": "pending",
+      "status": "approved",
       "at": "2026-11-18T18:18:12.895Z"
     },
     {
@@ -46723,7 +47269,7 @@
       "type": "problem",
       "note": "LP",
       "proposed": {},
-      "status": "pending",
+      "status": "approved",
       "at": "2026-11-18T18:18:19.287Z"
     }
   ],
