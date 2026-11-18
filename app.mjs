@@ -1,11 +1,11 @@
-import {STORAGE_KEY,newId,fresh,normalizeState,parseExamText,parseKey,inferExamMetadata,completeExamMetadata,classify,classifyByExamDivision,repeatedSupportText,addExam,upgradeRecoveredExam,findPreviouslyImportedExam,recordAttempt,latestAnswer,outcome,stats,filtered,normalizeOutcomeSelection,prioritize,createSimulation,finishSimulation,simulationResult,expire,validAnswer} from './core.mjs?v=0.6.36';
+import {STORAGE_KEY,newId,fresh,normalizeState,parseExamText,parseKey,inferExamMetadata,completeExamMetadata,classify,classifyByExamDivision,repeatedSupportText,addExam,upgradeRecoveredExam,findPreviouslyImportedExam,recordAttempt,latestAnswer,outcome,stats,filtered,normalizeOutcomeSelection,prioritize,createSimulation,finishSimulation,simulationResult,expire,validAnswer} from './core.mjs?v=0.6.37';
 import {readPdf} from './pdf-import.mjs';
 import {chosenAnswerSection,parseGridKey,questionIntegrity,declaredQuestionCount,declaredAlternativeCount,inferredAlternativeCount} from './pdf-layout.mjs';
 import {createSyncClient} from './sync-client.mjs';
 import {STUDY_CONTEXT,eligibleForList} from './study-context.mjs';
-import {CATALOGS,currentCatalog,allTopics,classifyForCargo,subjectSummary,EDITAL_SCOPE_OPTIONS,normalizeEditalScope,inEditalScope,STUDY_ALL,ALL_STUDY_DISCIPLINES,studyAllGroup,filterStudyAllQuestions} from './edital-classification.mjs?v=0.6.36';
-import {splitAssertionItems} from './assertion-guide.mjs?v=0.6.36';
-import {createAnswerDisplayCache} from './answer-display-cache.mjs?v=0.6.36';
+import {CATALOGS,currentCatalog,allTopics,classifyForCargo,subjectSummary,EDITAL_SCOPE_OPTIONS,normalizeEditalScope,inEditalScope,STUDY_ALL,ALL_STUDY_DISCIPLINES,studyAllGroup,filterStudyAllQuestions} from './edital-classification.mjs?v=0.6.37';
+import {splitAssertionItems} from './assertion-guide.mjs?v=0.6.37';
+import {createAnswerDisplayCache} from './answer-display-cache.mjs?v=0.6.37';
 
 // A versão do rodapé pode ser nova enquanto o navegador usa módulos
 // JavaScript antigos. Exibir a revisão REAL do módulo executado para diagnóstico.
@@ -581,7 +581,7 @@ function flagsScreen(){
   return `${headline('Sinalizações','Problemas e sugestões de classificação aguardam avaliação.')}
   <section class="card"><p>Para informar se o assunto está dentro ou fora de um edital, selecione o cargo em <strong>Questões</strong> e use <strong>Conferir edital</strong> na própria questão. Para quaisquer erros, use <strong>Sinalizar problema</strong> e, se quiser, deixe um comentário. Não é necessário informar a categoria nem a resposta correta.</p>
   <p class="hint">Com o GitHub sincronizado, novas sinalizações são encaminhadas para Issues. A alteração só é aplicada depois da aprovação.</p>
-  ${own.length?own.map(f=>`<div class="stat-line"><div><strong>${h(question(f.questionId)?.code||'Questão')}</strong><div class="small-muted">${h(f.type==='problem'?'Problema sinalizado':f.type==='edital-review'?'Conferência do cargo '+(f.proposed?.editalCargo||'')+' — '+(f.proposed?.status==='dentro'?'dentro do edital':'fora do edital'):f.type)}${f.note?' — '+h(f.note):''} · ${niceDate(f.at)}</div></div><span class="badge wait">${h(f.status==='approved'?'Aprovada':f.status==='rejected'?'Rejeitada':'Pendente')}</span></div>`).join(''):empty('Nenhuma sinalização registrada neste perfil.')}</section>`;
+  ${own.length?own.map(f=>`<div class="stat-line"><div><strong>${h(question(f.questionId)?.code||f.questionCode||'Questão')}</strong><div class="small-muted">${h(f.type==='problem'?'Problema sinalizado':f.type==='edital-review'?'Conferência do cargo '+(f.proposed?.editalCargo||'')+' — '+(f.proposed?.status==='dentro'?'dentro do edital':'fora do edital'):f.type)}${f.note?' — '+h(f.note):''} · ${niceDate(f.at)}</div></div><span class="badge wait">${h(f.status==='approved'?'Aprovada':f.status==='rejected'?'Rejeitada':'Pendente')}</span></div>`).join(''):empty('Nenhuma sinalização registrada neste perfil.')}</section>`;
 }
 function settingsScreen(){
   return `${headline('Dados e backup','Ferramentas para preservar os dados durante o período de testes.')}
