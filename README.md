@@ -1,9 +1,22 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.36 — 17/11/2026**  
+**Versão experimental 0.6.37 — 17/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.37 — análise das sinalizações e separação Saúde × TI
+
+- Revisadas **10 sinalizações**: Q2026TI02037, Q2024TI05012, Q2025TI06005, Q2022TI09106, Q2025TI12004, Q2023SAUDE08041, Q2020SAUDE02035, Q2020SAUDE02038, Q2022TI09091 e Q2023SAUDE07023.
+- Três questões originalmente rotuladas de Informática foram reclassificadas corretamente em Língua Portuguesa, preservando alternativas e gabaritos: sintaxe (LP/LSIN), coesão e relações textuais (LP/LCOE), interpretação de texto (LP/LINT).
+- Corrigidos os artefatos de extração `usuá rios` e `com- preende`, sem alterar os gabaritos.
+- Q2022TI09091 é um único item para julgamento C/E. A instrução genérica inserida após a afirmação foi corrigida para uma chamada inicial, e o tópico foi atualizado para Segurança da informação (IN/ISEG).
+- **Excluída Q2022TI09106**, conforme sinalização. O enunciado trazia itens 107–120 anexados. Não existiam tentativas nem simulados vinculados. O identificador foi registrado nos tombstones, a referência foi retirada do exame e o código da questão foi mantido no registro da sinalização.
+- Q2023SAUDE08041: confirmado o reconhecimento das duas assertivas C/E pelo leitor, sem alteração no enunciado. Recurso usa módulo `assertion-guide.mjs` e estilo com cache atualizado da versão 0.6.37.
+- A classificação de **Conhecimentos Específicos de Saúde** não entra mais como **Conhecimentos Específicos de Analista de TI** (cargo 505), evitando correspondências falsas por palavras genéricas. Conteúdo de saúde permanece acessível no modo de estudo geral e em cargos de Saúde, inclusive 240 quando pertinente.
+- Q2020SAUDE02035 teve o assunto refinado para Higienização, limpeza e conservação (CE/ELIM). A Q2020SAUDE02038 permaneceu em Segurança/primeiros socorros.
+- Criado teste de regressão `tests/flag-review-nov2026.test.mjs`. Todos os gabaritos e as tentativas dos demais itens foram preservados. As Issues #13–#22 foram comentadas e encerradas.
+- As alterações em `data/state.json` são consumidas pelo próximo ciclo de sincronização; o JavaScript dos filtros foi atualizado no GitHub Pages. O Worker Cloudflare não exige novo deploy para essas mudanças.
 
 ## Versão 0.6.36 — manter o resultado até recarregar a página
 
