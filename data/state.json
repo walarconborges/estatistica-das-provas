@@ -46117,6 +46117,14 @@
       "answer": "D",
       "simulationId": "",
       "at": "2026-11-18T01:49:39.093Z"
+    },
+    {
+      "id": "bf67c80d-aef8-45b7-b2a6-48be34ac93b0",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-ti-05-084",
+      "answer": "C",
+      "simulationId": "",
+      "at": "2026-11-18T01:50:43.818Z"
     }
   ],
   "simulations": [],
