@@ -65,13 +65,15 @@ export function splitAssertionItems(raw){
   candidates.push({start,end,label});
  };
  const token='([IVXLCDM]{2,9}|[A-Za-z]|\\d{1,3})';
- const direct=new RegExp('(^|[\\s:;])'+token+'\\s*(?:[.)]|[-–—])\\s+(?=\\S)','gim');
+ // Lookahead evita consumir o espaço que precede o item seguinte
+ // ("Coluna I. A- ... B- ..." e "I. ... II. ...").
+ const direct=new RegExp('(?=((^|[\\s:;])'+token+'\\s*(?:[.)]|[-–—])\\s+(?=\\S)))','gim');
  for(const m of text.matchAll(direct)){
-  insert(m,m[2],m.index+m[1].length,m.index+m[0].length);
+  insert(m,m[3],m.index+m[2].length,m.index+m[1].length);
  }
- const wrapped=new RegExp('(^|[\\s:;])\\(\\s*'+token+'\\s*\\)\\s*(?=\\S)','gim');
+ const wrapped=new RegExp('(?=((^|[\\s:;])\\(\\s*'+token+'\\s*\\)\\s*(?=\\S)))','gim');
  for(const m of text.matchAll(wrapped)){
-  insert(m,m[2],m.index+m[1].length,m.index+m[0].length);
+  insert(m,m[3],m.index+m[2].length,m.index+m[1].length);
  }
  candidates.sort((a,b)=>a.start-b.start);
  const runs=[];
@@ -83,6 +85,11 @@ export function splitAssertionItems(raw){
     if(tokens[j].value!==sequence[sequence.length-1].value+1)break;
     sequence.push(tokens[j]);
    }
+   // Letras isoladas de fórmulas (ex.: Q. R. / x. y.) não são itens.
+   if(kind==='letter'&&sequence.length<3)continue;
+   // Uma sequência de questões 14..41 em PDF mal importado não é uma
+   // enumeração de assertivas de uma única questão.
+   if(kind==='number'&&(sequence[0].value>10||sequence.length>20))continue;
    if(sequence.length>=2)runs.push({kind,markers:sequence});
   }
  }
