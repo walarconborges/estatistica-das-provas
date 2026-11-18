@@ -51,6 +51,9 @@ function splitAtMarkers(text,markers,kind){
 export function splitAssertionItems(raw){
  const text=String(raw||'').trim();
  if(text.length<30)return null;
+ // Exercícios de associação de colunas e tabelas não são listas de
+ // assertivas para julgar. Mantém a diagramação original nesses casos.
+ if(/\b(?:coluna\s+(?:I|II|[12])|relacione\s+(?:as|a|corretamente)|computador\s+1\s+computador\s+2)\b/i.test(text))return null;
  // ( ), (__), (___), inclusive (___)_ em alguns PDFs.
  const blanks=[...text.matchAll(/\(\s*(?:_{1,12}|\s+)\s*\)/g)]
   .map(m=>({start:m.index,end:m.index+m[0].length,label:''}));
@@ -73,6 +76,11 @@ export function splitAssertionItems(raw){
  }
  const wrapped=new RegExp('(?=((^|[\\s:;])\\(\\s*'+token+'\\s*\\)\\s*(?=\\S)))','gim');
  for(const m of text.matchAll(wrapped)){
+  insert(m,m[3],m.index+m[2].length,m.index+m[1].length);
+ }
+ // Alguns PDFs unem rótulo e item: "I.No...", "II.A...", "III.A...".
+ const joined=/(?=((^|[\s:;])([IVXLCDM]{1,9})[.)](?=[A-ZÁÉÍÓÚÇ])))/gm;
+ for(const m of text.matchAll(joined)){
   insert(m,m[3],m.index+m[2].length,m.index+m[1].length);
  }
  candidates.sort((a,b)=>a.start-b.start);
