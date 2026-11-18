@@ -1,9 +1,18 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.35 — 17/11/2026**  
+**Versão experimental 0.6.36 — 17/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.36 — manter o resultado até recarregar a página
+
+- Corrigida a perda visual da alternativa marcada depois que o Cloudflare Worker sincroniza e a tela de questões avulsas é reconstruída.
+- A seleção e o resultado "Acerto"/"Erro" recém-conferidos ficam disponíveis durante toda a vida da aba (inclusive após sincronizações automáticas, atualização dos filtros e redesenhos da interface).
+- O recurso usa memória temporária independente por **perfil e questão**, sem reescrever gabarito, respostas ou histórico e sem incluir campos novos no estado sincronizado.
+- Ao recarregar a página, essa memória temporária é reiniciada. As tentativas já registradas continuam disponíveis no histórico normalmente.
+- Incluídos testes automatizados em `tests/answer-display-cache.test.mjs`, incluindo simulação de substituição do estado por uma versão remota e isolamento entre perfis.
+- Atualização somente do GitHub Pages (JS/HTML). Não há necessidade de implantar novamente o Cloudflare Worker.
 
 ## Versão 0.6.35 — anotação de assertivas para estudo
 
