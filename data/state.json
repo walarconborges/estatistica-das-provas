@@ -46074,6 +46074,16 @@
       "proposed": {},
       "status": "pending",
       "at": "2026-11-18T00:02:51.784Z"
+    },
+    {
+      "id": "6eb767fc-667d-4bf9-b5cd-152456efe69e",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-ti-15-005",
+      "type": "problem",
+      "note": "",
+      "proposed": {},
+      "status": "pending",
+      "at": "2026-11-18T00:03:02.816Z"
     }
   ],
   "tombstones": {
