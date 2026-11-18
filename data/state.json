@@ -46344,6 +46344,16 @@
       "proposed": {},
       "status": "pending",
       "at": "2026-11-18T01:23:45.731Z"
+    },
+    {
+      "id": "d53b40b9-3038-432c-ad36-1ac1094e7e82",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-health-02-038",
+      "type": "problem",
+      "note": "não é específico de TI",
+      "proposed": {},
+      "status": "pending",
+      "at": "2026-11-18T01:23:56.316Z"
     }
   ],
   "tombstones": {
