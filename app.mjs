@@ -1,9 +1,10 @@
-import {STORAGE_KEY,newId,fresh,normalizeState,parseExamText,parseKey,inferExamMetadata,completeExamMetadata,classify,classifyByExamDivision,repeatedSupportText,addExam,upgradeRecoveredExam,findPreviouslyImportedExam,recordAttempt,latestAnswer,outcome,stats,filtered,normalizeOutcomeSelection,prioritize,createSimulation,finishSimulation,simulationResult,expire,validAnswer} from './core.mjs?v=0.6.34';
+import {STORAGE_KEY,newId,fresh,normalizeState,parseExamText,parseKey,inferExamMetadata,completeExamMetadata,classify,classifyByExamDivision,repeatedSupportText,addExam,upgradeRecoveredExam,findPreviouslyImportedExam,recordAttempt,latestAnswer,outcome,stats,filtered,normalizeOutcomeSelection,prioritize,createSimulation,finishSimulation,simulationResult,expire,validAnswer} from './core.mjs?v=0.6.35';
 import {readPdf} from './pdf-import.mjs';
 import {chosenAnswerSection,parseGridKey,questionIntegrity,declaredQuestionCount,declaredAlternativeCount,inferredAlternativeCount} from './pdf-layout.mjs';
 import {createSyncClient} from './sync-client.mjs';
 import {STUDY_CONTEXT,eligibleForList} from './study-context.mjs';
-import {CATALOGS,currentCatalog,allTopics,classifyForCargo,subjectSummary,EDITAL_SCOPE_OPTIONS,normalizeEditalScope,inEditalScope,STUDY_ALL,ALL_STUDY_DISCIPLINES,studyAllGroup,filterStudyAllQuestions} from './edital-classification.mjs?v=0.6.34';
+import {CATALOGS,currentCatalog,allTopics,classifyForCargo,subjectSummary,EDITAL_SCOPE_OPTIONS,normalizeEditalScope,inEditalScope,STUDY_ALL,ALL_STUDY_DISCIPLINES,studyAllGroup,filterStudyAllQuestions} from './edital-classification.mjs?v=0.6.35';
+import {splitAssertionItems} from './assertion-guide.mjs?v=0.6.35';
 
 // A versão do rodapé pode ser nova enquanto o navegador usa módulos
 // JavaScript antigos. Exibir a revisão REAL do módulo executado para diagnóstico.
@@ -43,6 +44,62 @@ const sync=createSyncClient({
  storage:localStorage,
  endpoint:window.APP_CONFIG?.apiBase||''
 });
+
+
+// Marcações de leitura, individuais por perfil e questão.
+// Rascunhos locais: não alteram o banco, gabarito ou histórico.
+const ASSERTION_STORE='estatistica-provas-assertivas-v1';
+let assertionNotes={};
+try{
+ const stored=JSON.parse(localStorage.getItem(ASSERTION_STORE)||'{}');
+ if(stored&&typeof stored==='object'&&!Array.isArray(stored))assertionNotes=stored;
+}catch{}
+function assertionKey(qid){return [profileId||'',qid].join(':')}
+function assertionSignature(stem){
+ const text=String(stem||'');let hash=2166136261;
+ for(let i=0;i<text.length;i++)hash=Math.imul(hash^text.charCodeAt(i),16777619);
+ return text.length+':'+(hash>>>0).toString(36);
+}
+function assertionMarks(q,count){
+ const entry=assertionNotes[assertionKey(q.id)];
+ return entry?.signature===assertionSignature(q.stem)&&Array.isArray(entry.marks)?
+  entry.marks.slice(0,count):[];
+}
+function renderAssertionBody(q){
+ const parsed=splitAssertionItems(q?.stem);
+ if(!parsed)return '<div class="question-body">'+h(q.stem||'[Enunciado não extraído]')+'</div>';
+ const marks=assertionMarks(q,parsed.items.length);
+ return '<div class="question-body assertion-print-original">'+h(q.stem||'')+'</div>'+
+  '<section class="assertion-guide" aria-label="Assertivas da questão">'+
+  (parsed.intro?'<p class="question-body assertion-intro">'+h(parsed.intro)+'</p>':'')+
+  '<div class="assertion-list">'+parsed.items.map((item,i)=>
+   '<div class="assertion-row">'+
+    '<input type="text" class="assertion-mark" data-assertion-note data-id="'+h(q.id)+
+    '" data-index="'+i+'" maxlength="1" autocomplete="off" autocapitalize="characters" spellcheck="false"'+
+    ' aria-label="Anotação da assertiva '+(i+1)+', um caractere" value="'+h(marks[i]||'')+'">'+
+    '<span class="assertion-item-number">'+h(item.label)+'.</span>'+
+    '<span class="assertion-item-text">'+h(item.text)+'</span>'+
+   '</div>').join('')+'</div>'+
+  (parsed.outro?'<p class="question-body assertion-outro">'+h(parsed.outro)+'</p>':'')+
+  '<p class="hint assertion-hint">Anote V, F, C, E ou outro caractere. Rascunhos salvos neste navegador, sem alterar a resposta.</p>'+
+  '</section>';
+}
+function recordAssertionMark(field){
+ if(!profileId||!field?.dataset.id)return;
+ const q=question(field.dataset.id),parsed=splitAssertionItems(q?.stem);
+ const index=Number(field.dataset.index);
+ if(!q||!parsed||!Number.isInteger(index)||index<0||index>=parsed.items.length)return;
+ const value=Array.from(field.value||'').slice(0,1).join('');
+ field.value=value;
+ const key=assertionKey(q.id),old=assertionNotes[key];
+ const marks=old?.signature===assertionSignature(q.stem)&&Array.isArray(old.marks)?
+  old.marks.slice(0,parsed.items.length):[];
+ marks[index]=value;
+ if(marks.some(Boolean))assertionNotes[key]={signature:assertionSignature(q.stem),marks};
+ else delete assertionNotes[key];
+ try{localStorage.setItem(ASSERTION_STORE,JSON.stringify(assertionNotes))}
+ catch{toast('Não foi possível guardar esta anotação no navegador.')}
+}
 
 // Anotações de estudo individuais, sem mudar o gabarito oficial.
 const ELIMINATION_STORE='estatistica-provas-eliminadas-v1';
@@ -476,7 +533,7 @@ function cardQuestion(q,index,scope='single',selected='',previous=null){
     `<div class="question-body">${h(q.visualSegments.beforeText)}</div><img loading="lazy" class="question-img question-figure" src="${h(q.pageImage)}" alt="Figura ou tabela do enunciado"><div class="question-body">${h(q.visualSegments.afterText)}</div>`:
     q.imageOnly&&q.pageImage?
     `<img loading="lazy" class="question-img" src="${h(q.pageImage)}" alt="Enunciado em imagem; alternativas abaixo em texto selecionável">`:
-    `<div class="question-body">${h(q.stem||'[Enunciado não extraído]')}</div>${q.pageImage?`<img loading="lazy" class="question-img" src="${h(q.pageImage)}" alt="Recorte do PDF original">`:''}`}
+    `${renderAssertionBody(q)}${q.pageImage?`<img loading="lazy" class="question-img" src="${h(q.pageImage)}" alt="Recorte do PDF original">`:''}`}
   ${alternatives(q,scope,selected)}
   ${scope==='single'?`<div class="actions">${btn('answer-single','Conferir resposta','primary',`data-id="${h(q.id)}"`)}${last&&!q.originalQuestionId?btn('explain-question','Explicar questão','secondary',`data-id="${h(q.id)}"`):''}${currentFilter.editalCargo===STUDY_ALL?'':btn('review-edital','Conferir edital','secondary',`data-id="${h(q.id)}"`)}${problemFlagButton(q)}${btn('question-log','Histórico','secondary',`data-id="${h(q.id)}"`)}</div>
     <div class="question-feedback">${last?`Última resposta válida: <strong>${h(last.answer)}</strong> — ${feedback(q,last.answer)}`:''}</div><div class="legal-result">${last?legalBasisHtml(q):''}</div>${explanationBox(q.id)}`:''}
@@ -795,6 +852,9 @@ document.addEventListener('submit',async e=>{
     if(picked.length>=count)break;
   }
   const s=createSimulation(state,profileId,picked,{kind:'random'});save();beginSim(s.id);
+});
+document.addEventListener('input',e=>{
+ if(e.target.matches('input[data-assertion-note]'))recordAssertionMark(e.target);
 });
 document.addEventListener('change',e=>{
   const input=e.target;
