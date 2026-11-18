@@ -1,5 +1,6 @@
 {
-  "status": "pending",
+  "status": "error",
   "fingerprint": "ad59940916c55d23e8cbe586eac59262",
-  "retryAt": "2026-11-18T02:00:37.464Z"
+  "reason": "Não foi possível gerar uma explicação agora. Tente novamente mais tarde.",
+  "retryAt": "2026-11-18T02:00:41.891Z"
 }
