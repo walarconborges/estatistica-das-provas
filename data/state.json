@@ -46138,6 +46138,16 @@
       "at": "2026-11-18T00:06:21.421Z",
       "resolvedAt": "2026-11-18T00:08:18.598Z",
       "resolutionNote": "Disciplina e assunto conferidos com o conteúdo da questão e atualizados no banco. Histórico e gabarito preservados."
+    },
+    {
+      "id": "a58465da-ecfe-4e94-bd8f-c792b13cc900",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-ti-10-015",
+      "type": "problem",
+      "note": "",
+      "proposed": {},
+      "status": "pending",
+      "at": "2026-11-18T00:28:26.519Z"
     }
   ],
   "tombstones": {
