@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {mkdtempSync,writeFileSync,readFileSync,rmSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
-import {versionHtml,versionModuleImports,versionPublicAssets} from '../build-pages.mjs';
+import {versionHtml,versionModuleImports,versionPublicAssets,verifyPublicAssets} from '../build-pages.mjs';
 
 const sha='0123456789abcdef0123456789abcdef01234567';
 test('HTML carrega a versão atual do leitor e do CSS, não só o rodapé',()=>{
@@ -49,4 +49,31 @@ test('publicação versiona toda a cadeia de módulos sem alterar os originais',
 test('SHA inválido não produz URL de produção',()=>{
  assert.throws(()=>versionHtml('<script src="./app.mjs"></script>','0.6.17'),/Revision inválida/);
  assert.throws(()=>versionModuleImports("import x from './core.mjs'",'x'),/Revision inválida/);
+});
+
+test('sobrescreve query de versão antiga sem deixar módulos presos no cache',()=>{
+ const html='<script type="module" src="./app.mjs?v=0.6.39"></script><link href="./styles.css?v=0.6.37" rel="stylesheet">';
+ const app="import {x} from './core.mjs?v=0.6.37';";
+ assert.match(versionHtml(html,sha),new RegExp('app\\\\.mjs\\\\?v='+sha));
+ assert.match(versionHtml(html,sha),new RegExp('styles\\\\.css\\\\?v='+sha));
+ assert.match(versionModuleImports(app,sha),new RegExp('core\\\\.mjs\\\\?v='+sha));
+ assert.doesNotMatch(versionHtml(html,sha),/0\\.6\\.39|0\\.6\\.37/);
+});
+test('publicação falha explicitamente se módulo importado não foi copiado',()=>{
+ const dir=mkdtempSync(join(tmpdir(),'site-missing-imports-'));
+ try{
+  writeFileSync(join(dir,'index.html'),'<script type="module" src="./app.mjs"></script>');
+  writeFileSync(join(dir,'app.mjs'),"import {x} from './assertion-guide.mjs';\\nimport {y} from './answer-display-cache.mjs';");
+  assert.throws(()=>verifyPublicAssets(dir),/assertion-guide\\.mjs.*answer-display-cache\\.mjs/);
+  assert.throws(()=>versionPublicAssets(dir,sha),/Publicação bloqueada/);
+  writeFileSync(join(dir,'assertion-guide.mjs'),'export const x=1;');
+  writeFileSync(join(dir,'answer-display-cache.mjs'),'export const y=2;');
+  assert.equal(verifyPublicAssets(dir),true);
+  assert.doesNotThrow(()=>versionPublicAssets(dir,sha));
+ }finally{rmSync(dir,{recursive:true,force:true});}
+});
+test('workflow de Pages inclui dependências do leitor',()=>{
+ const workflow=readFileSync(new URL('../.github/workflows/pages.yml',import.meta.url),'utf8');
+ assert.match(workflow,/assertion-guide\\.mjs/);
+ assert.match(workflow,/answer-display-cache\\.mjs/);
 });

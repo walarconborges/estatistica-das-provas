@@ -1,9 +1,18 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.39 — 17/11/2026**  
+**Versão experimental 0.6.40 — 18/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.40 — recuperação dos perfis na tela inicial
+
+- Corrigida a publicação no GitHub Pages: o pacote estático não incluía `assertion-guide.mjs` nem `answer-display-cache.mjs`, ambos exigidos diretamente por `app.mjs`. Sem esses módulos, a inicialização inteira falhava e a lista de perfis não aparecia.
+- Os arquivos ausentes foram incluídos na rotina de publicação `.github/workflows/pages.yml`.
+- O empacotador `build-pages.mjs` agora verifica se todos os arquivos importados existem na pasta `public/`, bloqueando deploys incompletos.
+- Corrigida a atualização do cache para imports e assets que já possuem `?v=...`: a publicação substitui a versão antiga pelo SHA atual.
+- Testes de regressão garantem que módulos essenciais não sejam omitidos e que uma versão de cache antiga não continue ativa.
+- Os perfis e registros sincronizados no GitHub não foram alterados por esta correção.
 
 ## Versão 0.6.39 — mais quatro sinalizações analisadas
 
