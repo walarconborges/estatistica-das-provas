@@ -1,9 +1,18 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.33 — 17/11/2026**  
+**Versão experimental 0.6.34 — 17/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.34 — verificar município da norma e sinalizações
+
+- Corrigido o filtro por edital do cargo 505 para não confundir legislação municipal de **Candeias/MG** com a Lei Orgânica de **Candeias do Jamari/RO**. A Q2021TI10015 foi identificada como Legislação corretamente, mas estava indevidamente indicada como "Dentro do edital 505"; agora fica fora do edital específico e continua disponível no banco geral.
+- A verificação também cobre a Q2021TI10011, referente à Lei Municipal 004/2001 de Candeias/MG. Não altera a classificação principal, o gabarito nem a origem das questões.
+- Corrigida diretamente no banco sincronizado a Q2021TI10009 para **Língua Portuguesa — Regência e crase (LP/LREG)**, preservando gabarito C, código e histórico.
+- As sinalizações correspondentes foram analisadas e finalizadas nas Issues #11 e #12.
+- Adicionados testes de regressão para impedir que questões municipais de outra cidade apareçam como sendo da legislação de Candeias do Jamari.
+- Apenas o frontend/catálogo precisa da nova revisão 0.6.34; o serviço Cloudflare Worker não recebeu mudanças de execução nesta atualização.
 
 ## Versão 0.6.33 — classificação textual e sinalização simples
 
