@@ -1,5 +1,8 @@
 {
-  "status": "pending",
+  "status": "ready",
   "fingerprint": "4c089df94c896c6a07d95245092a482c",
-  "retryAt": "2026-11-18T01:29:37.415Z"
+  "model": "@cf/meta/llama-3.1-8b-instruct-fast",
+  "generatedAt": "2026-11-18T01:27:40.656Z",
+  "text": "A lógica desta questão é relacionada à utilização do PowerShell para consultar o Active Directory e verificar se um usuário está bloqueado.\n\nO código fornecido utiliza o módulo ActiveDirectory para importar as funções necessárias. Em seguida, define um loop infinito que tenta consultar o usuário \"CRM\" no Active Directory a cada 60 segundos.\n\nA parte importante da questão é identificar o comando que consulta o usuário no Active Directory. O comando `Get-ADUser` é utilizado para consultar usuários no Active Directory, e é o comando correto para preencher a lacuna do código.\n\nJá o ponto do código que deve ser adicionado comandos para dar um tratamento caso o usuário esteja bloqueado é a alternativa B. Isso ocorre porque, quando o usuário está bloqueado, o código deve executar a ação correspondente (neste caso, a alternativa B).\n\nPortanto, a resposta correta é a alternativa D) Get-ADUser, B.",
+  "revision": 1
 }
