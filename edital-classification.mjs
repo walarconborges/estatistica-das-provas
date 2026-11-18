@@ -245,6 +245,13 @@ function inferClassificationForCargo(q,exam,cargoId='505'){
   cargoId:cargo,status:'pendente',statusLabel:'A conferir',discipline:name,
   topic:'A conferir',topicId:'',reason
  });
+ // A disciplina de conhecimentos específicos de cargos da área da saúde
+ // não corresponde à de Analista de Tecnologia e Informática.
+ const examOrigin=norm([exam?.title,exam?.cargo].join(' '));
+ if(cargo==='505'&&norm(q?.disciplineCode)==='CE'&&
+    /\b(?:SAUDE|ENFERMAGEM|HOSPITALAR|VIGILANCIA SANITARIA)\b/.test(examOrigin)&&
+    !/\bANALISTA DE (?:TECNOLOGIA|INFORMATICA)\b/.test(examOrigin))
+  return denied('Conhecimentos específicos de cargo da área da saúde não pertencem ao programa de Analista de Tecnologia e Informática.');
  if(cargo==='202'&&q.originalQuestionId)return denied('Adaptação de legislação não integra o cargo 202.');
  if(!sectionId)return denied('Disciplina ou conteúdo não consta do programa do cargo '+cargo+'.');
  const section=catalog.sections.find(s=>s.id===sectionId);
