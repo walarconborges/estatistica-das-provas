@@ -46833,6 +46833,14 @@
       "answer": "C",
       "simulationId": "",
       "at": "2026-11-18T18:32:58.382Z"
+    },
+    {
+      "id": "7a9419ae-508b-40dd-87b3-608ad9097362",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-ti-16-027",
+      "answer": "B",
+      "simulationId": "",
+      "at": "2026-11-18T18:33:05.162Z"
     }
   ],
   "simulations": [],
