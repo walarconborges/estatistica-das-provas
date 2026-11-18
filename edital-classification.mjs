@@ -262,8 +262,13 @@ function inferClassificationForCargo(q,exam,cargoId='505'){
   }
   if(foreignLocalLaw(lawText))return denied('Regra municipal de outro ente não equivale automaticamente à de Candeias.');
   const origin=norm([exam?.orgao,exam?.title].join(' '));
-  if(municipalLaw(lawText)&&/BRUSQUE|VOTORANTIM|PORTO VELHO|ARIQUEMES|JI PARANA/.test(origin)&&!candeiasLaw(lawText))
-   return denied('Norma municipal do concurso de origem, sem correspondência verificada em Candeias.');
+  // Candeias/MG é município distinto de Candeias do Jamari/RO.
+  // Não basta encontrar "Lei Orgânica" para enquadrar uma norma local alheia.
+  const foreignMunicipalOrigin=/\b(?:BRUSQUE|VOTORANTIM|PORTO VELHO|ARIQUEMES|JI PARANA|CANDEIAS MG|CANDEIAS BA)\b/.test(origin);
+  const sourceMunicipalMatter=municipalLaw(lawText)||
+   /\b(?:PROCESSO LEGISLATIVO MUNICIPAL|RECRUTAMENTO DE CARGOS EM COMISSAO|REGIME JURIDICO MUNICIPAL|LEI [0-9]{1,4} [0-9]{4})\b/.test(lawText);
+  if(foreignMunicipalOrigin&&sourceMunicipalMatter&&!candeiasLaw(lawText))
+   return denied('Questão de legislação municipal de outro município: não equivale à legislação de Candeias do Jamari/RO.');
   if(municipalLaw(lawText)&&!candeiasLaw(lawText)&&
     !/LEI ORGANICA DO MUNICIPIO/.test(lawText))return pending(section.title,
      'Sem identificação inequívoca da norma municipal exigida pelo edital.');
