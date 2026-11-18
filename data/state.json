@@ -46291,7 +46291,8 @@
       "status": "approved",
       "at": "2026-11-18T01:20:54.967Z",
       "resolvedAt": "2026-11-18T01:30:37.785Z",
-      "resolutionNote": "Excluída a pedido do usuário; havia itens 107–120 de outra questão anexados. Sem respostas nem simulados vinculados, exclusão sincronizada por tombstone."
+      "resolutionNote": "Excluída a pedido do usuário; havia itens 107–120 de outra questão anexados. Sem respostas nem simulados vinculados, exclusão sincronizada por tombstone.",
+      "questionCode": "Q2022TI09106"
     },
     {
       "id": "e4587430-e72c-4714-aba1-79325092cd88",
