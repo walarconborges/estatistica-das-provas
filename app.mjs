@@ -1,10 +1,11 @@
-import {STORAGE_KEY,newId,fresh,normalizeState,parseExamText,parseKey,inferExamMetadata,completeExamMetadata,classify,classifyByExamDivision,repeatedSupportText,addExam,upgradeRecoveredExam,findPreviouslyImportedExam,recordAttempt,latestAnswer,outcome,stats,filtered,normalizeOutcomeSelection,prioritize,createSimulation,finishSimulation,simulationResult,expire,validAnswer} from './core.mjs?v=0.6.35';
+import {STORAGE_KEY,newId,fresh,normalizeState,parseExamText,parseKey,inferExamMetadata,completeExamMetadata,classify,classifyByExamDivision,repeatedSupportText,addExam,upgradeRecoveredExam,findPreviouslyImportedExam,recordAttempt,latestAnswer,outcome,stats,filtered,normalizeOutcomeSelection,prioritize,createSimulation,finishSimulation,simulationResult,expire,validAnswer} from './core.mjs?v=0.6.36';
 import {readPdf} from './pdf-import.mjs';
 import {chosenAnswerSection,parseGridKey,questionIntegrity,declaredQuestionCount,declaredAlternativeCount,inferredAlternativeCount} from './pdf-layout.mjs';
 import {createSyncClient} from './sync-client.mjs';
 import {STUDY_CONTEXT,eligibleForList} from './study-context.mjs';
-import {CATALOGS,currentCatalog,allTopics,classifyForCargo,subjectSummary,EDITAL_SCOPE_OPTIONS,normalizeEditalScope,inEditalScope,STUDY_ALL,ALL_STUDY_DISCIPLINES,studyAllGroup,filterStudyAllQuestions} from './edital-classification.mjs?v=0.6.35';
-import {splitAssertionItems} from './assertion-guide.mjs?v=0.6.35';
+import {CATALOGS,currentCatalog,allTopics,classifyForCargo,subjectSummary,EDITAL_SCOPE_OPTIONS,normalizeEditalScope,inEditalScope,STUDY_ALL,ALL_STUDY_DISCIPLINES,studyAllGroup,filterStudyAllQuestions} from './edital-classification.mjs?v=0.6.36';
+import {splitAssertionItems} from './assertion-guide.mjs?v=0.6.36';
+import {createAnswerDisplayCache} from './answer-display-cache.mjs?v=0.6.36';
 
 // A versão do rodapé pode ser nova enquanto o navegador usa módulos
 // JavaScript antigos. Exibir a revisão REAL do módulo executado para diagnóstico.
@@ -27,6 +28,9 @@ let profileId=null,view='home',selectedSimId=null,currentFilter={studyArea:'cand
 let latestImportMessage='';
 let statusMessage='';
 const explanationsInView=new Map();
+// A correção exibida continua na aba mesmo quando a sincronização refaz a tela.
+const pageAnswers=createAnswerDisplayCache();
+const visibleAnswer=qid=>pageAnswers.displayed(profileId,qid,latestAnswer(state,profileId,qid));
 const sync=createSyncClient({
  getState:()=>state,
  setState:remote=>{
@@ -522,7 +526,8 @@ function problemFlagButton(q){
 }
 
 function cardQuestion(q,index,scope='single',selected='',previous=null){
-  const last=latestAnswer(state,profileId,q.id);
+  const last=visibleAnswer(q.id);
+  const selectedInView=scope==='single'?(pageAnswers.selected(profileId,q.id)||selected):selected;
   const label=scope==='sim'?index+1:q.originalNumber||index+1;
   const examTitle=exam(q.examId)?.title||'';
   return `<article class="question" data-question-card="${h(q.id)}">
@@ -534,7 +539,7 @@ function cardQuestion(q,index,scope='single',selected='',previous=null){
     q.imageOnly&&q.pageImage?
     `<img loading="lazy" class="question-img" src="${h(q.pageImage)}" alt="Enunciado em imagem; alternativas abaixo em texto selecionável">`:
     `${renderAssertionBody(q)}${q.pageImage?`<img loading="lazy" class="question-img" src="${h(q.pageImage)}" alt="Recorte do PDF original">`:''}`}
-  ${alternatives(q,scope,selected)}
+  ${alternatives(q,scope,selectedInView)}
   ${scope==='single'?`<div class="actions">${btn('answer-single','Conferir resposta','primary',`data-id="${h(q.id)}"`)}${last&&!q.originalQuestionId?btn('explain-question','Explicar questão','secondary',`data-id="${h(q.id)}"`):''}${currentFilter.editalCargo===STUDY_ALL?'':btn('review-edital','Conferir edital','secondary',`data-id="${h(q.id)}"`)}${problemFlagButton(q)}${btn('question-log','Histórico','secondary',`data-id="${h(q.id)}"`)}</div>
     <div class="question-feedback">${last?`Última resposta válida: <strong>${h(last.answer)}</strong> — ${feedback(q,last.answer)}`:''}</div><div class="legal-result">${last?legalBasisHtml(q):''}</div>${explanationBox(q.id)}`:''}
   ${scope==='sim'?'<div class="actions">'+(currentFilter.editalCargo===STUDY_ALL?'':btn('review-edital','Conferir edital','secondary','data-id="'+h(q.id)+'"'))+problemFlagButton(q)+'</div>':''}
@@ -605,7 +610,7 @@ function resultScreen(){
 }
 function updateQuestionFeedback(qid){
   const el=document.querySelector(`[data-question-card="${qid}"] .question-feedback`);
-  const q=question(qid),last=latestAnswer(state,profileId,qid);
+  const q=question(qid),last=visibleAnswer(qid);
   if(el&&q&&last){
    el.innerHTML=`Última resposta válida: <strong>${h(last.answer)}</strong> — ${feedback(q,last.answer)}`;
    const basis=el.closest('[data-question-card]')?.querySelector('.legal-result');
@@ -810,7 +815,9 @@ function markPrinted(simId){
 function answerSingle(qid){
   const q=question(qid);const input=document.querySelector(`[data-question-card="${qid}"] input[type=radio]:checked`);
   if(!q||!input){toast('Marque uma alternativa ou deixe a questão sem responder.');return}
-  recordAttempt(state,profileId,qid,input.value);
+  if(!recordAttempt(state,profileId,qid,input.value))return;
+  // Mantém a alternativa marcada e o feedback no redesenho automático.
+  pageAnswers.remember(profileId,qid,input.value);
   save();updateQuestionFeedback(qid);
 }
 function beginSim(id){const s=sim(id);if(!s||s.profileId!==profileId)return;selectedSimId=id;view=s.status==='finished'?'result':'session';refresh();window.scrollTo(0,0)}
