@@ -26,7 +26,7 @@ function tokenNumber(label,kind){
 }
 function splitOutro(value){
  const text=String(value||'').trim();
- const pattern=/[.!?]\s+(?=(?:Ap[oó]s (?:a )?an[aá]lise\b|Assinale (?:a|a alternativa)\b|A sequ[eê]ncia (?:correta|que)\b|Quais (?:est[aã]o|s[aã]o) corret[ao]s?\b|[EÉ] correto afirmar\b|Diante do exposto\b|Marque a alternativa\b|Escolha a alternativa\b|Agora,?\s+assinale\b|Indique a alternativa\b)[\s\S]{0,320}$)/gi;
+ const pattern=/[.!?]\s+(?=(?:Ap[oó]s (?:a )?an[aá]lise\b|Assinale (?:a|a alternativa)\b|A sequ[eê]ncia (?:correta|que)\b|Quais (?:est[aã]o|s[aã]o) corret[ao]s?\b|Est[aã]o corretas as afirmativas\b|[EÉ] correto afirmar\b|Diante do exposto\b|Marque a alternativa\b|Escolha a alternativa\b|Agora,?\s+assinale\b|Indique a alternativa\b)[\s\S]{0,320}$)/gi;
  let match,last=-1;
  while((match=pattern.exec(text)))last=pattern.lastIndex;
  return last<0?{text,outro:''}:{text:text.slice(0,last).trim(),outro:text.slice(last).trim()};
