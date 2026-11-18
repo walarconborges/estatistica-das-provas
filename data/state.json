@@ -46849,6 +46849,14 @@
       "answer": "A",
       "simulationId": "",
       "at": "2026-11-18T19:17:17.876Z"
+    },
+    {
+      "id": "b886d978-57d0-4a63-afd5-b472ba3eb82d",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-ti-09-061",
+      "answer": "C",
+      "simulationId": "",
+      "at": "2026-11-18T19:17:51.412Z"
     }
   ],
   "simulations": [],
@@ -47325,6 +47333,16 @@
       "proposed": {},
       "status": "pending",
       "at": "2026-11-18T19:17:37.700Z"
+    },
+    {
+      "id": "545d2361-7f81-4322-833a-cdd408191051",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-ti-11-003",
+      "type": "problem",
+      "note": "não é TI",
+      "proposed": {},
+      "status": "pending",
+      "at": "2026-11-18T19:17:44.092Z"
     }
   ],
   "tombstones": {
