@@ -265,6 +265,11 @@ function inferClassificationForCargo(q,exam,cargoId='505'){
    reason:'Simulado autoral do tópico de notícias do site da Câmara de Candeias do Jamari.'};
  }
 
+ if(sectionId==='gerais'&&q?.sourceType==='chatgpt-cmcj-news-simulado'&&q?.newsSource==='sintero-ro'){
+  return {cargoId:cargo,status:'dentro',statusLabel:'Dentro do edital',
+   discipline:section.title,topic:section.topics[0],topicId:'gerais:0',
+   reason:'Notícia de atualidades locais publicada pelo SINTERO, não pelo site da Câmara.'};
+ }
  if(sectionId==='gerais'&&q?.sourceType==='chatgpt-candeias-hg-simulado'){
   return {cargoId:cargo,status:'dentro',statusLabel:'Dentro do edital',
    discipline:section.title,topic:section.topics[1],topicId:'gerais:1',
@@ -462,7 +467,7 @@ export function approveEdictReview(question,proposed){
  */
 export function classifyForCargo(q,exam,cargoId='505'){
  const cargo=['202','240','505',PROFESSOR_CARGO_ID].includes(String(cargoId))?String(cargoId):'505';
- if(q?.sourceType==='chatgpt-cmcj-news-simulado'&&q?.newsSource==='cmcj-ro'&&
+ if(q?.sourceType==='chatgpt-cmcj-news-simulado'&&['cmcj-ro','sintero-ro'].includes(q?.newsSource)&&
     cargo!=='202'&&cargo!=='505')return {
    cargoId:cargo,status:'fora',statusLabel:'Fora do edital',discipline:'Fora do edital',
    topic:'Fora do edital',topicId:'',

@@ -1,9 +1,16 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.43 — 18/11/2026**  
+**Versão experimental 0.6.44 — 20/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.44 — 20 questões de História, Geografia e notícias
+- Dois simulados autorais no estilo IBGP, questões 11–20, inseridos sem duplicação: `sim-chatgpt-candeias-hg-2026-11-20-caderno2` e `sim-chatgpt-cmcj-noticias-2026-11-20-bateria2`.
+- Gabaritos do PDF: HG **B, D, A, E, C, B, D, A, E, C**; notícias **C, B, D, A, E, B, D, C, A, E**. O banco cadastra como banca **ChatGPT**, sem atribuição de autoria à IBGP.
+- HG: 11–13 História municipal e 14–20 Geografia municipal. Notícias: 11–19 publicações da Câmara; a questão 20 cita o SINTERO e é classificada como atualidades/fatos sociais, não como publicação do site da CMCJ.
+- Abrangência: Conhecimentos Gerais dos cargos 202 e 505. Perfis, tentativas e sinalizações preservados, sem reescrever provas anteriores.
+- Testes: `tests/candeias-second-batch-2026.test.mjs`.
 
 ## Versão 0.6.43 — duas sinalizações adicionais
 - Q2026ASG01027: corrigido "territorio" para "território" no enunciado, preservado gabarito C.
