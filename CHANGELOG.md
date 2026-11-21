@@ -1,3 +1,9 @@
+## 0.6.47 — 21/11/2026
+
+- Sinalizações #56–#61: parser de assertivas, revisão de origens e classificações SEMUSA, limpeza de artefatos de extração e confirmação contra o PDF autoral.
+- Cinco sinalizações aprovadas e uma rejeitada por ausência de erro; gabaritos, identificadores e histórico preservados.
+- Regressões em `tests/flags-56-61.test.mjs`.
+
 ## 0.6.30 — 16/11/2026
 
 - Taxonomia compartilhada de assuntos, incluindo RLM integrado com 20 assuntos e nomenclatura sem “Geral”.

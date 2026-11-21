@@ -15299,10 +15299,10 @@
       "confidence": "média",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Conhecimentos Gerais",
-      "disciplineCode": "CG",
-      "topic": "Atualidades, sociedade e cidadania",
-      "topicCode": "CATU",
+      "discipline": "Conhecimentos Específicos",
+      "disciplineCode": "CE",
+      "topic": "Saúde coletiva, atenção básica e SUS",
+      "topicCode": "ESUS",
       "id": "curated-health-12-026",
       "examId": "curated-health-12",
       "code": "Q2023SAUDE12026",
@@ -15614,10 +15614,10 @@
       "confidence": "média",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Conhecimentos Gerais",
-      "disciplineCode": "CG",
-      "topic": "Atualidades, sociedade e cidadania",
-      "topicCode": "CATU",
+      "discipline": "Conhecimentos Específicos",
+      "disciplineCode": "CE",
+      "topic": "Rotinas profissionais e organização do trabalho",
+      "topicCode": "EROT",
       "id": "curated-health-12-034",
       "examId": "curated-health-12",
       "code": "Q2023SAUDE12034",
@@ -41862,7 +41862,7 @@
       "banca": "FEPESE",
       "orgao": "Consórcio Interfederativo de Saúde da Grande Florianópolis/SC",
       "heading": "Conhecimentos Gerais",
-      "stem": "O território brasileiro é organizado em unidades federativas e apresenta grande diversidade\n regional. De acordo com o tema, é correto afirmar:",
+      "stem": "O território brasileiro é organizado em unidades federativas e apresenta grande diversidade regional. De acordo com o tema, é correto afirmar:",
       "options": [
         {
           "letter": "A",
@@ -41870,7 +41870,7 @@
         },
         {
           "letter": "B",
-          "text": "O Brasil é organizado apenas por regiões natu- rais, sem governos estaduais próprios."
+          "text": "O Brasil é organizado apenas por regiões naturais, sem governos estaduais próprios."
         },
         {
           "letter": "C",
@@ -50308,8 +50308,9 @@
       "type": "problem",
       "note": "\" Está CORRETO o que se afirma em:\" está junto com a assertiva III",
       "proposed": {},
-      "status": "pending",
-      "at": "2026-11-21T18:19:10.330Z"
+      "status": "approved",
+      "at": "2026-11-21T18:19:10.330Z",
+      "resolvedAt": "2026-11-21T19:00:00.000Z"
     },
     {
       "id": "6595a65d-4e8e-4233-a047-e11e03921c63",
@@ -50318,8 +50319,9 @@
       "type": "problem",
       "note": "não encontrei esse PL na internet O Projeto de Lei nº 2.279/2026 Câmara Municipal de Candeias do Jamari",
       "proposed": {},
-      "status": "pending",
-      "at": "2026-11-21T18:23:38.294Z"
+      "status": "approved",
+      "at": "2026-11-21T18:23:38.294Z",
+      "resolvedAt": "2026-11-21T19:00:00.000Z"
     },
     {
       "id": "671844a5-1d0f-43f7-8032-272b50d82431",
@@ -50328,8 +50330,9 @@
       "type": "problem",
       "note": "é da SEMUSA",
       "proposed": {},
-      "status": "pending",
-      "at": "2026-11-21T18:24:16.302Z"
+      "status": "approved",
+      "at": "2026-11-21T18:24:16.302Z",
+      "resolvedAt": "2026-11-21T19:00:00.000Z"
     },
     {
       "id": "4a2f648e-1a84-46d5-a901-24e72bc3376c",
@@ -50338,8 +50341,9 @@
       "type": "problem",
       "note": "erro de separação devido à extração",
       "proposed": {},
-      "status": "pending",
-      "at": "2026-11-21T18:24:49.094Z"
+      "status": "approved",
+      "at": "2026-11-21T18:24:49.094Z",
+      "resolvedAt": "2026-11-21T19:00:00.000Z"
     },
     {
       "id": "dd32b9f2-7bf4-4dcb-a407-3ad23d0651cc",
@@ -50348,8 +50352,9 @@
       "type": "problem",
       "note": "erro na extração do enunciado",
       "proposed": {},
-      "status": "pending",
-      "at": "2026-11-21T18:25:47.430Z"
+      "status": "rejected",
+      "at": "2026-11-21T18:25:47.430Z",
+      "resolvedAt": "2026-11-21T19:00:00.000Z"
     },
     {
       "id": "70c22bcc-0a1f-4808-b4ef-483cda5acd80",
@@ -50358,8 +50363,9 @@
       "type": "problem",
       "note": "esse é da SEMUSA",
       "proposed": {},
-      "status": "pending",
-      "at": "2026-11-21T18:30:26.557Z"
+      "status": "approved",
+      "at": "2026-11-21T18:30:26.557Z",
+      "resolvedAt": "2026-11-21T19:00:00.000Z"
     }
   ],
   "tombstones": {

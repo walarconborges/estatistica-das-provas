@@ -26,6 +26,12 @@ function tokenNumber(label,kind){
 }
 function splitOutro(value){
  const text=String(value||'').trim();
+ // Retira o comando final que aparece após a última assertiva.
+ const finalCommand=/(?:\n\s*|[.!?]\s+)(?=Est[aá]\s+CORRET[OA]\s+o\s+que\s+se\s+afirma\s+em\s*:)/i.exec(text);
+ if(finalCommand){
+  const start=finalCommand.index+finalCommand[0].length;
+  return {text:text.slice(0,start).trim(),outro:text.slice(start).trim()};
+ }
  const pattern=/[.!?]\s+(?=(?:Ap[oó]s (?:a )?an[aá]lise\b|Assinale (?:a|a alternativa)\b|A sequ[eê]ncia (?:correta|que)\b|Quais (?:est[aã]o|s[aã]o) corret[ao]s?\b|Est[aã]o corretas as afirmativas\b|[EÉ] correto afirmar\b|Diante do exposto\b|Diante das assertivas\b|Marque a alternativa\b|Escolha a alternativa\b|Agora,?\s+assinale\b|Indique a alternativa\b)[\s\S]{0,320}$)/gi;
  let match,last=-1;
  while((match=pattern.exec(text)))last=pattern.lastIndex;

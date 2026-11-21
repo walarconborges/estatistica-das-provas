@@ -1,9 +1,17 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.46 — 21/11/2026**  
+**Versão experimental 0.6.47 — 21/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.47 — análise das sinalizações #56–#61
+- **#56:** separação do comando "Está CORRETO o que se afirma em:" da assertiva III nas questões de julgamento, preservados enunciado e resposta A.
+- **#57:** confirmada existência do Projeto de Lei nº 2.279/CMCJ/2026 nas pautas oficiais de 25/05 e 01/06/2026, assim como a divergência de autoria indicada na alternativa A. Fontes: https://candeiasdojamari.ro.leg.br/noticias/veja-o-que-sera-deliberado-na-sessao-ordinaria-de-segunda-feira-25-05-2026 e https://camara.candeiasdojamari.ro.gov.br/noticias/veja-o-que-sera-deliberado-na-sessao-ordinaria-de-segunda-feira-01-06-2026.
+- **#58 e #61:** Resolução CNS nº 453/2012 e organização de fichas odontológicas reclassificadas para Conhecimentos Específicos da Saúde, com enquadramento em SEMUSA/Porto Velho (cargo 240) e exclusão dos editais da Câmara de Candeias (202/505).
+- **#59:** corrigida a quebra de linha em "diversidade regional" e hifenização artificial "natu- rais" → "naturais".
+- **#60:** confrontada com a página 3 do PDF do simulado 11–20: o enunciado e as alternativas da questão 19 foram extraídos corretamente. Sinalização considerada improcedente; texto e gabarito preservados.
+- Cinco sinalizações aprovadas e uma rejeitada. Códigos, respostas, perfis e tentativas intactos; testes em `tests/flags-56-61.test.mjs`.
 
 ## Versão 0.6.46 — terceira bateria de notícias e História/Geografia
 - Importadas **20 questões autorais** do usuário, organizadas em **dois simulados**, sem duplicação de códigos ou conteúdo: notícias e acontecimentos da Câmara Municipal de Candeias do Jamari/RO (21–30) e História e Geografia do município (21–30).
