@@ -853,13 +853,10 @@ function reviewEdict(qid){
  if(!['DENTRO','FORA'].includes(proposed)){
   toast('Informe apenas DENTRO ou FORA.');return;
  }
- const reason=prompt('Indique o assunto do edital ou justifique por que está fora. A revisão ficará pendente de aprovação.','');
- if(reason===null||!reason.trim()){
-  toast('É necessária uma justificativa para conferir a pertinência ao edital.');return;
- }
  const status=proposed==='DENTRO'?'dentro':'fora';
  state.flags.push({id:newId(),profileId,questionId:qid,type:'edital-review',
-  proposed:{editalCargo:cargo,status},note:reason.trim().slice(0,1500),
+  proposed:{editalCargo:cargo,status},
+  note:'Classificação indicada pelo usuário sem justificativa; conferir posteriormente.',
   status:'pending',at:new Date().toISOString()});
  save();toast('Conferência registrada em Sinalizações. A classificação só muda após aprovação.');
 }
