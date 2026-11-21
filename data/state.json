@@ -48530,6 +48530,14 @@
       "answer": "E",
       "simulationId": "",
       "at": "2026-11-21T15:42:16.147Z"
+    },
+    {
+      "id": "e776c7ef-d552-470e-b469-b9cf4e19c361",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-ti-09-011",
+      "answer": "C",
+      "simulationId": "",
+      "at": "2026-11-21T15:46:14.101Z"
     }
   ],
   "simulations": [],
