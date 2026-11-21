@@ -56018,6 +56018,16 @@
       "proposed": {},
       "status": "pending",
       "at": "2026-11-21T22:00:27.649Z"
+    },
+    {
+      "id": "db1d3820-12b2-48e4-843b-c91ae1a9db47",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-asg-2026-06-027",
+      "type": "problem",
+      "note": "conferir se tem relação com o edital do candeias",
+      "proposed": {},
+      "status": "pending",
+      "at": "2026-11-21T22:01:04.809Z"
     }
   ],
   "tombstones": {
