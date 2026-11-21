@@ -102,6 +102,18 @@ function highlightedStem(q,fallback='[Enunciado não extraído]'){
  }
  return visible;
 }
+function highlightedAlternative(q,o){
+ let visible=h(o.text||'');
+ for(const expression of q.optionHighlights?.[o.letter]||[]){
+  const escaped=h(expression);
+  if(!escaped||escaped.length>100)continue;
+  const at=visible.toLocaleLowerCase('pt-BR').indexOf(escaped.toLocaleLowerCase('pt-BR'));
+  if(at<0)continue;
+  visible=visible.slice(0,at)+'<mark class="stem-emphasis">'+
+   visible.slice(at,at+escaped.length)+'</mark>'+visible.slice(at+escaped.length);
+ }
+ return visible;
+}
 function renderAssertionBody(q){
  const passageView=renderPassageLayout(q?.stem);
  if(passageView)return passageView;
@@ -563,7 +575,7 @@ function alternatives(q,scope,chosen=''){
   return `<div class="alternative-row${crossed?' is-eliminated':''}" data-letter="${h(o.letter)}">
    <label class="alternative">
     <input type="radio" name="resp-${h(q.id)}" data-scope="${scope}" data-qid="${h(q.id)}" value="${h(o.letter)}" ${chosen===o.letter&&!crossed?'checked':''} ${crossed?'disabled':''}>
-    <span class="alternative-copy"><strong>${h(o.letter)})</strong> ${h(o.text)}</span>
+    <span class="alternative-copy"><strong>${h(o.letter)})</strong> ${highlightedAlternative(q,o)}</span>
    </label>
    <button type="button" class="alternative-cross" data-action="toggle-eliminate" data-id="${h(q.id)}" data-letter="${h(o.letter)}" data-scope="${scope}" aria-pressed="${crossed}" aria-label="${crossed?'Restaurar':'Eliminar'} alternativa ${h(o.letter)}" title="${crossed?'Restaurar alternativa':'Eliminar alternativa'}">×</button>
   </div>`;
@@ -854,7 +866,7 @@ function printQuestions(qs,title,options={}){
       q.imageOnly&&q.pageImage?
       `<img style="max-width:100%;max-height:600px;object-fit:contain" src="${h(q.pageImage)}">`:
       `<p style="white-space:pre-wrap">${highlightedStem(q,'Questão em imagem')}</p>`}
-   ${(q.options||[]).map(o=>`<p style="margin:4px 0">${h(o.letter)}) ${h(o.text)}</p>`).join('')}
+   ${(q.options||[]).map(o=>`<p style="margin:4px 0">${h(o.letter)}) ${highlightedAlternative(q,o)}</p>`).join('')}
   </article>`).join('');
   const sheet=qs.map((q,i)=>`<div style="display:inline-block;width:48%;margin:7px 0">${original?q.originalNumber:i+1}. ( A ) ( B ) ( C ) ( D ) ( E )</div>`).join('');
   const key=qs.map((q,i)=>`<div style="display:inline-block;width:33%;margin:4px 0">${original?q.originalNumber:i+1}. ${h(q.answer||'—')} &nbsp; ${h(q.code)}</div>`).join('');
