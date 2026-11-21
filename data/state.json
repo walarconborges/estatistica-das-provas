@@ -50252,6 +50252,16 @@
       "status": "approved",
       "at": "2026-11-21T15:55:55.319Z",
       "resolvedAt": "2026-11-21T16:04:47.549Z"
+    },
+    {
+      "id": "be30b9d4-b5c9-4103-a124-d8cc6314cf95",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-023",
+      "type": "problem",
+      "note": "\" Está CORRETO o que se afirma em:\" está junto com a assertiva III",
+      "proposed": {},
+      "status": "pending",
+      "at": "2026-11-21T18:19:10.330Z"
     }
   ],
   "tombstones": {
