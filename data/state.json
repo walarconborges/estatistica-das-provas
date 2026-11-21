@@ -55898,6 +55898,16 @@
       "proposed": {},
       "status": "pending",
       "at": "2026-11-21T21:38:17.413Z"
+    },
+    {
+      "id": "d2877df8-71df-4715-839b-b6217e77e292",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-ti-06-006",
+      "type": "problem",
+      "note": "ajuste  o texto no enunciado para facilitar a leitura. e faltou o termo destacado para resolver a questão",
+      "proposed": {},
+      "status": "pending",
+      "at": "2026-11-21T21:42:32.325Z"
     }
   ],
   "tombstones": {
