@@ -56176,6 +56176,16 @@
       "proposed": {},
       "status": "pending",
       "at": "2026-11-21T22:52:10.150Z"
+    },
+    {
+      "id": "84771e2b-a4e2-4a09-9f2c-0f4c2db3fec6",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-health-06-001",
+      "type": "problem",
+      "note": "aqui cada linha tem uma numeração. ajuste o texto e o enunciado para facilitar a leitura.",
+      "proposed": {},
+      "status": "pending",
+      "at": "2026-11-21T22:59:03.852Z"
     }
   ],
   "tombstones": {
