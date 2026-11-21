@@ -6558,7 +6558,8 @@
       "status": "active",
       "secondary": [],
       "aliases": [],
-      "duplicateGroup": null
+      "duplicateGroup": null,
+      "readabilityReviewed": true
     },
     {
       "originalNumber": 18,
@@ -10421,7 +10422,8 @@
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
-      "contextTitle": "Estudo sugere que a poluição está causando a formação de rochas feitas de material plástico"
+      "contextTitle": "Estudo sugere que a poluição está causando a formação de rochas feitas de material plástico",
+      "readabilityReviewed": true
     },
     {
       "originalNumber": 4,
@@ -15700,7 +15702,8 @@
       "status": "active",
       "secondary": [],
       "aliases": [],
-      "duplicateGroup": null
+      "duplicateGroup": null,
+      "readabilityReviewed": true
     },
     {
       "originalNumber": 30,
@@ -18889,7 +18892,8 @@
       "status": "active",
       "secondary": [],
       "aliases": [],
-      "duplicateGroup": null
+      "duplicateGroup": null,
+      "readabilityReviewed": true
     },
     {
       "originalNumber": 35,
@@ -21834,7 +21838,8 @@
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
-      "contextTitle": "Transmissão oral da doença de Chagas (2023)"
+      "contextTitle": "Transmissão oral da doença de Chagas (2023)",
+      "readabilityReviewed": true
     },
     {
       "originalNumber": 22,
@@ -25673,7 +25678,8 @@
         "B": [
           "excelentes"
         ]
-      }
+      },
+      "readabilityReviewed": true
     },
     {
       "originalNumber": 7,
@@ -27369,7 +27375,8 @@
       "status": "active",
       "secondary": [],
       "aliases": [],
-      "duplicateGroup": null
+      "duplicateGroup": null,
+      "readabilityReviewed": true
     },
     {
       "originalNumber": 4,
@@ -29697,7 +29704,8 @@
       "status": "active",
       "secondary": [],
       "aliases": [],
-      "duplicateGroup": null
+      "duplicateGroup": null,
+      "readabilityReviewed": true
     },
     {
       "originalNumber": 56,
@@ -35741,7 +35749,8 @@
         "D": [
           "inevitável"
         ]
-      }
+      },
+      "readabilityReviewed": true
     },
     {
       "originalNumber": 7,
@@ -37160,7 +37169,8 @@
       "duplicateGroup": null,
       "highlightExpressions": [
         "cuja"
-      ]
+      ],
+      "readabilityReviewed": true
     },
     {
       "originalNumber": 4,
@@ -40830,7 +40840,8 @@
       "aliases": [],
       "duplicateGroup": null,
       "sourceFile": "2026_Bancas_Diversas_Auxiliar_de_Servicos_Gerais_Candeias_do_Jamari(2).pdf",
-      "contextTitle": "Mulheres podem comprar e usar spray de pimenta para defesa pessoal"
+      "contextTitle": "Mulheres podem comprar e usar spray de pimenta para defesa pessoal",
+      "readabilityReviewed": true
     },
     {
       "id": "curated-asg-2026-01-006",
@@ -41080,7 +41091,8 @@
       "aliases": [],
       "duplicateGroup": null,
       "sourceFile": "2026_Bancas_Diversas_Auxiliar_de_Servicos_Gerais_Candeias_do_Jamari(2).pdf",
-      "contextTitle": "Mulheres podem comprar e usar spray de pimenta para defesa pessoal"
+      "contextTitle": "Mulheres podem comprar e usar spray de pimenta para defesa pessoal",
+      "readabilityReviewed": true
     },
     {
       "id": "curated-asg-2026-01-012",
@@ -43433,7 +43445,8 @@
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
-      "sourceFile": "2026_Bancas_Diversas_Auxiliar_de_Servicos_Gerais_Candeias_do_Jamari(2).pdf"
+      "sourceFile": "2026_Bancas_Diversas_Auxiliar_de_Servicos_Gerais_Candeias_do_Jamari(2).pdf",
+      "readabilityReviewed": true
     },
     {
       "id": "curated-asg-2026-06-029",
@@ -44469,7 +44482,8 @@
           "cantará"
         ]
       },
-      "contextTitle": "Pressão arterial com valor de 12/8 passa a ser considerada pré-hipertensão"
+      "contextTitle": "Pressão arterial com valor de 12/8 passa a ser considerada pré-hipertensão",
+      "readabilityReviewed": true
     },
     {
       "id": "curated-asg-2026-08-016",
@@ -48083,7 +48097,8 @@
       "sourceType": "chatgpt-cmcj-news-simulado",
       "newsSource": "cmcj-ro",
       "newsSubject": "Iluminação pública - pedidos de 2025",
-      "contextTitle": "Iluminação pública — pedidos de 2025"
+      "contextTitle": "Iluminação pública — pedidos de 2025",
+      "readabilityReviewed": true
     },
     {
       "id": "sim-chatgpt-cmcj-noticias-2026-11-20-bateria2-013",
