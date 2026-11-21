@@ -208,3 +208,18 @@ input.assertion-mark:focus{outline:2px solid #237aaa;outline-offset:1px}
 /* Expressões sublinhadas no original, restauradas para a leitura do exercício. */
 .stem-emphasis{background:#fff0ab;color:inherit;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:2px;font-weight:700;border-radius:2px;padding:0 2px}
 @media print{.stem-emphasis{background:transparent;text-decoration:underline;font-weight:700}}
+
+/* Seleção de várias disciplinas e assuntos, compatível com toque e teclado. */
+.filter-multi{border:1px solid #bccbd8;border-radius:8px;background:#fff;min-width:0}
+.filter-multi>summary{display:flex;align-items:center;justify-content:space-between;list-style:none;min-height:40px;gap:12px;padding:9px 12px;cursor:pointer}
+.filter-multi>summary::-webkit-details-marker{display:none}
+.filter-multi>summary::after{content:'▾';flex-shrink:0;color:#526d81}
+.filter-multi[open]>summary{border-bottom:1px solid #e1e9ef}
+.multi-summary{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.multi-menu{padding:7px 9px 9px}
+.multi-options{max-height:235px;overflow:auto;display:grid;gap:3px;overscroll-behavior:contain}
+.filter-multi .multi-choice{display:flex!important;align-items:flex-start;gap:10px;padding:7px!important;margin:0!important;border-radius:6px;font-weight:500!important;font-size:.9rem!important;line-height:1.45;color:#263b4f!important;cursor:pointer}
+.filter-multi .multi-choice:hover,.filter-multi .multi-choice:has(input:checked){background:#eef6fc}
+.filter-multi input[type=checkbox]{width:17px!important;height:17px!important;min-height:17px!important;margin:2px 0 0!important;padding:0!important;flex-shrink:0}
+.multi-clear{font-size:.83rem!important;margin-top:6px}
+.filter-multi:focus-within{outline:2px solid #c0deef;outline-offset:1px}
