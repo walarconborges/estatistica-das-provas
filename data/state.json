@@ -55010,6 +55010,14 @@
       "answer": "C",
       "simulationId": "",
       "at": "2026-11-21T21:16:15.784Z"
+    },
+    {
+      "id": "c7383415-0fb5-4720-b5e4-79a69c01960b",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-health-08-006",
+      "answer": "A",
+      "simulationId": "",
+      "at": "2026-11-21T21:17:34.615Z"
     }
   ],
   "simulations": [],
