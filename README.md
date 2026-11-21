@@ -5,6 +5,19 @@
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
 
+## Importação de 21/11/2026 — 40 questões de Legislação de Candeias
+Quatro simulados **autorais no estilo IBGP**, não oficiais, foram incorporados ao banco com gabarito comentado da última página de cada PDF.
+
+- `sim-autoral-candeias-res173-2026-11-21` — 10 questões, gabarito **CBDEACADCE**, res173.
+- `sim-autoral-candeias-lei-organica-2026-11-21` — 10 questões, gabarito **ACEBDAECBD**, organica.
+- `sim-autoral-candeias-regimento-interno-2026-11-21` — 10 questões, gabarito **CADBECBAED**, regimento.
+- `sim-autoral-candeias-legislacao-mista-2026-11-21` — 10 questões, gabarito **DBEACEBDAC**, organica, regimento, res173.
+
+- As questões são classificadas individualmente em Lei Orgânica Municipal, Regimento Interno e Resolução nº 173/CMCJ/2025. O caderno misto também permite selecionar cada norma separadamente.
+- No filtro Candeias, os itens estão associados ao cargo 505 (Legislação), não ao 202.
+- Preservados o texto, os gabaritos, os comentários, os perfis, as tentativas, os dados anteriores e as sinalizações. A vigência jurídica atual das normas não foi verificada nesta importação.
+- Testes: `tests/four-candeias-law-simulations-2026.test.mjs`.
+
 ## Importação de 21/11/2026 — quatro simulados de clima e História/Geografia
 Foram cadastradas **40 questões autorais no estilo IBGP** com cinco alternativas e gabaritos verificados diretamente na última página de cada PDF. Elas não são questões oficiais da banca.
 

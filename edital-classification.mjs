@@ -501,6 +501,18 @@ export function classifyForCargo(q,exam,cargoId='505'){
   return {cargoId:cargo,status:'fora',statusLabel:'Fora do edital',
    discipline:'Fora do edital',topic:'Fora do edital',topicId:'',
    reason:'Simulado específico de História e Geografia de Candeias do Jamari, não do município deste edital.'};
+ // Classificação por norma dos simulados autorais de legislação de Candeias.
+ if(q?.sourceType==='simulado-autoral-candeias-legislacao'){
+  if(cargo!=='505')return {cargoId:cargo,status:'fora',statusLabel:'Fora do edital',
+   discipline:'Fora do edital',topic:'Fora do edital',topicId:'',
+   reason:'Legislação municipal específica de Candeias não prevista neste cargo.'};
+  const index={organica:0,regimento:1,res173:2}[q.municipalLawTag];
+  if(index===undefined)throw Error('Norma municipal desconhecida: '+q.code);
+  const section=currentCatalog('505').sections.find(x=>x.id==='legislacao');
+  return {cargoId:cargo,status:'dentro',statusLabel:'Dentro do edital',
+   discipline:section.title,topic:section.topics[index],topicId:'legislacao:'+index,
+   reason:'Norma municipal correspondente ao Anexo IV, identificada no PDF autoral.'};
+ }
  const computed=cargo===PROFESSOR_CARGO_ID?inferProfessorClassification(q,exam):cargo==='240'?inferSemusaClassification(q,exam):inferClassificationForCargo(q,exam,cargo);
  const reviewed=q?.editalReview?.[cargo];
  if(!reviewed||!['dentro','fora'].includes(reviewed.status))return computed;
@@ -529,7 +541,8 @@ export function candeiasMatches(q,exam){
  const content=norm([q.stem,q.heading,q.contextText,q.topic].join(' '));
  const origin=norm([exam?.orgao,exam?.title,q.orgao].join(' '));
  const tagged=(q.sourceType==='chatgpt-cmcj-news-simulado'&&['cmcj-ro','sintero-ro'].includes(q.newsSource))||
-  ['chatgpt-candeias-hg-simulado','simulado-autoral-candeias-hg'].includes(q.sourceType);
+  ['chatgpt-candeias-hg-simulado','simulado-autoral-candeias-hg'].includes(q.sourceType)||
+   q.sourceType==='simulado-autoral-candeias-legislacao';
  const foreign=/\b(?:BRUSQUE|VOTORANTIM|PORTO VELHO|ARIQUEMES|JI PARANA|ANGRA DOS REIS|FRANCISCO MORATO|MARILIA|CANDEIAS MG|CANDEIAS BA)\b/.test(content);
  const local=adapted||tagged||(!foreign&&(/\bCANDEIAS DO JAMARI\b|\bCMCJ\b/.test(content)||
   /\bCANDEIAS DO JAMARI\b/.test(origin)));

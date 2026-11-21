@@ -1,3 +1,8 @@
+## 21/11/2026 — legislação de Candeias: 40 questões
+- Quatro cadernos autorais da Lei Orgânica, Regimento Interno, Resolução 173/2025 e legislação mista.
+- Gabaritos e justificativas integrados; classificação normativa específica para Candeias, cargo 505.
+- Respostas e perfis anteriores preservados.
+
 ## 21/11/2026 — quatro simulados de atualidades e história regional
 - Importadas 40 questões em quatro cadernos autorais, gabaritos `ACEBDACDEB`, `DAEBCAEDCB`, `CADBEBADCE` e `CAEBDBAECD`.
 - Novo tipo autoral de História/Geografia reconhecido pelo filtro exclusivo de Candeias (cargos 202/505), sem contaminar SEMUSA/SEMED.

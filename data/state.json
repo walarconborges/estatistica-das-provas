@@ -1870,6 +1870,114 @@
       "sourceType": "simulado-autoral",
       "sourceFile": "simulado_ibgp_seringais_borracha_candeias_questoes_51_a_60(2).pdf",
       "notes": "Caderno de 10 questões autorais inspirado no estilo IBGP; não é prova oficial da banca. Enunciados e alternativas extraídos do PDF enviado. Comentários do gabarito mantidos."
+    },
+    {
+      "id": "sim-autoral-candeias-res173-2026-11-21",
+      "title": "2026 — Simulado autoral (estilo IBGP) — Candeias do Jamari — Resolução nº 173/CMCJ/2025",
+      "year": "2026",
+      "banca": "Autoral",
+      "bancaCode": "AUTORAL",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "orgaoCode": "CMCJ-RO",
+      "createdAt": "2026-11-21T20:39:28.283Z",
+      "questionIds": [
+        "sim-autoral-candeias-res173-2026-11-21-001",
+        "sim-autoral-candeias-res173-2026-11-21-002",
+        "sim-autoral-candeias-res173-2026-11-21-003",
+        "sim-autoral-candeias-res173-2026-11-21-004",
+        "sim-autoral-candeias-res173-2026-11-21-005",
+        "sim-autoral-candeias-res173-2026-11-21-006",
+        "sim-autoral-candeias-res173-2026-11-21-007",
+        "sim-autoral-candeias-res173-2026-11-21-008",
+        "sim-autoral-candeias-res173-2026-11-21-009",
+        "sim-autoral-candeias-res173-2026-11-21-010"
+      ],
+      "keySection": "Gabarito comentado — página 6 (1–10)",
+      "metadataReview": [],
+      "sourceType": "simulado-autoral",
+      "sourceFile": "simulado_ibgp_resolucao_173_candeias_10_questoes(1).pdf",
+      "notes": "Questões autorais no estilo IBGP; não oficiais da banca. Enunciados, alternativas e justificativas importados do PDF original. A vigência/consolidação das normas não foi verificada independentemente."
+    },
+    {
+      "id": "sim-autoral-candeias-lei-organica-2026-11-21",
+      "title": "2026 — Simulado autoral (estilo IBGP) — Candeias do Jamari — Lei Orgânica Municipal",
+      "year": "2026",
+      "banca": "Autoral",
+      "bancaCode": "AUTORAL",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "orgaoCode": "CMCJ-RO",
+      "createdAt": "2026-11-21T20:39:28.283Z",
+      "questionIds": [
+        "sim-autoral-candeias-lei-organica-2026-11-21-001",
+        "sim-autoral-candeias-lei-organica-2026-11-21-002",
+        "sim-autoral-candeias-lei-organica-2026-11-21-003",
+        "sim-autoral-candeias-lei-organica-2026-11-21-004",
+        "sim-autoral-candeias-lei-organica-2026-11-21-005",
+        "sim-autoral-candeias-lei-organica-2026-11-21-006",
+        "sim-autoral-candeias-lei-organica-2026-11-21-007",
+        "sim-autoral-candeias-lei-organica-2026-11-21-008",
+        "sim-autoral-candeias-lei-organica-2026-11-21-009",
+        "sim-autoral-candeias-lei-organica-2026-11-21-010"
+      ],
+      "keySection": "Gabarito comentado — página 6 (1–10)",
+      "metadataReview": [],
+      "sourceType": "simulado-autoral",
+      "sourceFile": "simulado_ibgp_lei_organica_candeias_10_questoes(1).pdf",
+      "notes": "Questões autorais no estilo IBGP; não oficiais da banca. Enunciados, alternativas e justificativas importados do PDF original. A vigência/consolidação das normas não foi verificada independentemente."
+    },
+    {
+      "id": "sim-autoral-candeias-regimento-interno-2026-11-21",
+      "title": "2026 — Simulado autoral (estilo IBGP) — Candeias do Jamari — Regimento Interno da Câmara",
+      "year": "2026",
+      "banca": "Autoral",
+      "bancaCode": "AUTORAL",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "orgaoCode": "CMCJ-RO",
+      "createdAt": "2026-11-21T20:39:28.284Z",
+      "questionIds": [
+        "sim-autoral-candeias-regimento-interno-2026-11-21-001",
+        "sim-autoral-candeias-regimento-interno-2026-11-21-002",
+        "sim-autoral-candeias-regimento-interno-2026-11-21-003",
+        "sim-autoral-candeias-regimento-interno-2026-11-21-004",
+        "sim-autoral-candeias-regimento-interno-2026-11-21-005",
+        "sim-autoral-candeias-regimento-interno-2026-11-21-006",
+        "sim-autoral-candeias-regimento-interno-2026-11-21-007",
+        "sim-autoral-candeias-regimento-interno-2026-11-21-008",
+        "sim-autoral-candeias-regimento-interno-2026-11-21-009",
+        "sim-autoral-candeias-regimento-interno-2026-11-21-010"
+      ],
+      "keySection": "Gabarito comentado — página 6 (1–10)",
+      "metadataReview": [],
+      "sourceType": "simulado-autoral",
+      "sourceFile": "simulado_ibgp_regimento_interno_candeias_10_questoes(1).pdf",
+      "notes": "Questões autorais no estilo IBGP; não oficiais da banca. Enunciados, alternativas e justificativas importados do PDF original. A vigência/consolidação das normas não foi verificada independentemente."
+    },
+    {
+      "id": "sim-autoral-candeias-legislacao-mista-2026-11-21",
+      "title": "2026 — Simulado autoral (estilo IBGP) — Candeias do Jamari — Legislação Municipal — Lei Orgânica, Regimento e Res. 173",
+      "year": "2026",
+      "banca": "Autoral",
+      "bancaCode": "AUTORAL",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "orgaoCode": "CMCJ-RO",
+      "createdAt": "2026-11-21T20:39:28.285Z",
+      "questionIds": [
+        "sim-autoral-candeias-legislacao-mista-2026-11-21-001",
+        "sim-autoral-candeias-legislacao-mista-2026-11-21-002",
+        "sim-autoral-candeias-legislacao-mista-2026-11-21-003",
+        "sim-autoral-candeias-legislacao-mista-2026-11-21-004",
+        "sim-autoral-candeias-legislacao-mista-2026-11-21-005",
+        "sim-autoral-candeias-legislacao-mista-2026-11-21-006",
+        "sim-autoral-candeias-legislacao-mista-2026-11-21-007",
+        "sim-autoral-candeias-legislacao-mista-2026-11-21-008",
+        "sim-autoral-candeias-legislacao-mista-2026-11-21-009",
+        "sim-autoral-candeias-legislacao-mista-2026-11-21-010"
+      ],
+      "keySection": "Gabarito comentado — página 6 (1–10)",
+      "metadataReview": [],
+      "sourceType": "simulado-autoral",
+      "sourceFile": "simulado_ibgp_legislacao_candeias_10_questoes(1).pdf",
+      "notes": "Questões autorais no estilo IBGP; não oficiais da banca. Enunciados, alternativas e justificativas importados do PDF original. A vigência/consolidação das normas não foi verificada independentemente."
     }
   ],
   "questions": [
@@ -51908,6 +52016,2126 @@
       "sourceType": "simulado-autoral-candeias-hg",
       "municipalSource": "candeias-do-jamari-ro",
       "answerComment": "Uma localidade pode ter atividades produtivas, circulação e população muito antes de tornar-se município autônomo. As fontes registram etapas diferentes da trajetória regional."
+    },
+    {
+      "id": "sim-autoral-candeias-res173-2026-11-21-001",
+      "examId": "sim-autoral-candeias-res173-2026-11-21",
+      "code": "Q2026LECDJR173AUTORAL001",
+      "originalNumber": 1,
+      "heading": "Legislação Municipal — Resolução nº 173/CMCJ/2025 — Quadro de pessoal",
+      "stem": "O quadro de pessoal da Câmara Municipal de Candeias do Jamari, conforme a Resolução nº 173/CMCJ/2025, apresenta distinções entre cargos efetivos e cargos em comissão. A respeito dessa organização, assinale a alternativa CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Os cargos de provimento efetivo e as funções gratificadas integram quadro único e são todos preenchidos por livre nomeação."
+        },
+        {
+          "letter": "B",
+          "text": "A Resolução determina que os cargos em comissão sejam extintos imediatamente, ainda que não tenha ocorrido posse de servidores efetivos equivalentes."
+        },
+        {
+          "letter": "C",
+          "text": "O quadro é integrado por cargos de provimento efetivo e por cargos em comissão e funções gratificadas, sendo estes últimos disciplinados por lei específica."
+        },
+        {
+          "letter": "D",
+          "text": "A definição dos cargos em comissão e das funções gratificadas é de competência exclusiva de comissão organizadora de concurso."
+        },
+        {
+          "letter": "E",
+          "text": "A norma proíbe a substituição gradual de cargos temporários por cargos efetivos criados com fundamento na própria resolução."
+        }
+      ],
+      "sourcePage": 1,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Resolução nº 173/CMCJ/2025 — Quadro de pessoal",
+      "topicCode": "L173",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "C",
+      "answerComment": "Art. 2º, incisos I e II e §§ 1º e 2º. A resolução diferencia os quadros e remete cargos em comissão e funções gratificadas a lei específica, além de prever substituição gradual de temporários por efetivos.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "res173"
+    },
+    {
+      "id": "sim-autoral-candeias-res173-2026-11-21-002",
+      "examId": "sim-autoral-candeias-res173-2026-11-21",
+      "code": "Q2026LECDJR173AUTORAL002",
+      "originalNumber": 2,
+      "heading": "Legislação Municipal — Resolução nº 173/CMCJ/2025 — Quadro de pessoal",
+      "stem": "Uma pessoa aprovada em concurso para cargo efetivo da Câmara pretende saber quais condições devem ser observadas antes de sua entrada no serviço público. Analise as afirmativas, segundo a Resolução nº 173/CMCJ/2025.\nI. A idade mínima para investidura é de 18 anos.\nII. A investidura em cargo público ocorre com a posse.\nIII. A aptidão física e mental integra os requisitos básicos.\nIV. A conclusão de mestrado é requisito geral para todos os cargos efetivos.\nEstá CORRETO o que se afirma em:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "I e IV, apenas."
+        },
+        {
+          "letter": "B",
+          "text": "I, II e III, apenas."
+        },
+        {
+          "letter": "C",
+          "text": "II e IV, apenas."
+        },
+        {
+          "letter": "D",
+          "text": "III e IV, apenas."
+        },
+        {
+          "letter": "E",
+          "text": "I, II, III e IV."
+        }
+      ],
+      "sourcePage": 1,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Resolução nº 173/CMCJ/2025 — Quadro de pessoal",
+      "topicCode": "L173",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "B",
+      "answerComment": "Arts. 3º, incisos V e VI, e 4º. A idade mínima é 18 anos, exige-se aptidão física e mental, e a investidura ocorre com a posse. Não existe mestrado como requisito geral.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "res173"
+    },
+    {
+      "id": "sim-autoral-candeias-res173-2026-11-21-003",
+      "examId": "sim-autoral-candeias-res173-2026-11-21",
+      "code": "Q2026LECDJR173AUTORAL003",
+      "originalNumber": 3,
+      "heading": "Legislação Municipal — Resolução nº 173/CMCJ/2025 — Quadro de pessoal",
+      "stem": "Quanto às formas de provimento de cargo público expressamente enumeradas na Resolução nº 173/CMCJ/2025, assinale a alternativa que apresenta APENAS modalidades previstas no texto.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Exoneração, reversão e redistribuição."
+        },
+        {
+          "letter": "B",
+          "text": "Nomeação, demissão e progressão funcional."
+        },
+        {
+          "letter": "C",
+          "text": "Remoção, disponibilidade e aposentadoria."
+        },
+        {
+          "letter": "D",
+          "text": "Readaptação, reintegração e recondução."
+        },
+        {
+          "letter": "E",
+          "text": "Nomeação, cessão e vacância."
+        }
+      ],
+      "sourcePage": 2,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Resolução nº 173/CMCJ/2025 — Quadro de pessoal",
+      "topicCode": "L173",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "D",
+      "answerComment": "Art. 5º, incisos I a VII. Readaptação, reintegração e recondução figuram expressamente entre as formas de provimento; os demais conjuntos incluem institutos não listados como formas de provimento.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "res173"
+    },
+    {
+      "id": "sim-autoral-candeias-res173-2026-11-21-004",
+      "examId": "sim-autoral-candeias-res173-2026-11-21",
+      "code": "Q2026LECDJR173AUTORAL004",
+      "originalNumber": 4,
+      "heading": "Legislação Municipal — Resolução nº 173/CMCJ/2025 — Quadro de pessoal",
+      "stem": "Para o provimento de vagas, determinada unidade administrativa encaminhou solicitação fundamentada de admissão de pessoal. A respeito da organização do concurso público na Câmara, assinale a alternativa CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "A comissão de concurso deve ser composta necessariamente por cinco vereadores e presidida pelo Prefeito."
+        },
+        {
+          "letter": "B",
+          "text": "A resolução impede a participação de pessoas externas à Câmara na elaboração e correção das provas."
+        },
+        {
+          "letter": "C",
+          "text": "O concurso poderá ser delegado a entidade privada sem acompanhamento institucional, desde que haja autorização verbal da Presidência."
+        },
+        {
+          "letter": "D",
+          "text": "A chefia da unidade interessada pode solicitar a admissão sem indicar o cargo a preencher ou justificar a necessidade."
+        },
+        {
+          "letter": "E",
+          "text": "Havendo vagas e aprovação do processo, será constituída comissão de três membros, coordenada pela área de recursos humanos, podendo a Câmara delegar a realização do certame a entidade idônea, sob acompanhamento dessa comissão."
+        }
+      ],
+      "sourcePage": 2,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Resolução nº 173/CMCJ/2025 — Quadro de pessoal",
+      "topicCode": "L173",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "E",
+      "answerComment": "Art. 6º, §§ 1º a 4º. A unidade deve indicar e justificar o cargo; há comissão de três membros sob coordenação de recursos humanos, e a execução pode ser delegada a entidade pública ou privada competente, com acompanhamento.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "res173"
+    },
+    {
+      "id": "sim-autoral-candeias-res173-2026-11-21-005",
+      "examId": "sim-autoral-candeias-res173-2026-11-21",
+      "code": "Q2026LECDJR173AUTORAL005",
+      "originalNumber": 5,
+      "heading": "Legislação Municipal — Resolução nº 173/CMCJ/2025 — Quadro de pessoal",
+      "stem": "O candidato aprovado em concurso da Câmara Municipal questiona a natureza das etapas adicionais para assumir o cargo, previstas na Resolução nº 173/CMCJ/2025. Assinale a alternativa CORRETA, segundo o texto da norma.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "A investigação social e a investigação psicológica têm caráter eliminatório, enquanto a avaliação de títulos, quando necessária, tem caráter classificatório."
+        },
+        {
+          "letter": "B",
+          "text": "As três etapas têm caráter exclusivamente classificatório, sem possibilidade de eliminação de candidatos."
+        },
+        {
+          "letter": "C",
+          "text": "A investigação social é facultativa e tem caráter classificatório; a avaliação psicológica é apenas informativa."
+        },
+        {
+          "letter": "D",
+          "text": "A avaliação de títulos é obrigatória para todos os cargos e substitui a investigação social."
+        },
+        {
+          "letter": "E",
+          "text": "A investigação psicológica é eliminatória apenas para cargos de direção e assessoramento, conforme determinação expressa da resolução."
+        }
+      ],
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Resolução nº 173/CMCJ/2025 — Quadro de pessoal",
+      "topicCode": "L173",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "A",
+      "answerComment": "Art. 7º, § 3º, alíneas a, b e c. O texto prevê investigações social e psicológica eliminatórias e títulos, quando necessários, com caráter classificatório.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "res173"
+    },
+    {
+      "id": "sim-autoral-candeias-res173-2026-11-21-006",
+      "examId": "sim-autoral-candeias-res173-2026-11-21",
+      "code": "Q2026LECDJR173AUTORAL006",
+      "originalNumber": 6,
+      "heading": "Legislação Municipal — Resolução nº 173/CMCJ/2025 — Quadro de pessoal",
+      "stem": "A Resolução nº 173/CMCJ/2025 distribui os cargos efetivos em grupos ocupacionais e prevê regras de extinção. Assinale a alternativa CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "O cargo de Agente de Segurança e Vigilância integra o grupo de Consultoria e Representação Judicial."
+        },
+        {
+          "letter": "B",
+          "text": "O cargo de Técnico Legislativo pertence ao grupo de Apoio Operacional e Serviços Diversos."
+        },
+        {
+          "letter": "C",
+          "text": "Os cargos de Técnico em Contabilidade e Zeladora/Copeira são considerados em extinção e serão extintos quando declarados vagos."
+        },
+        {
+          "letter": "D",
+          "text": "Os cargos de Analista Jurídico e Controlador Interno são classificados no grupo de Apoio Técnico Administrativo."
+        },
+        {
+          "letter": "E",
+          "text": "Todos os cargos integrantes do grupo de Apoio Técnico Administrativo são extintos automaticamente na data de publicação da resolução."
+        }
+      ],
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Resolução nº 173/CMCJ/2025 — Quadro de pessoal",
+      "topicCode": "L173",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "C",
+      "answerComment": "Arts. 10 e 11. Técnico em Contabilidade e Zeladora/Copeira aparecem como cargos em extinção, que se extinguem quando declarados vagos.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "res173"
+    },
+    {
+      "id": "sim-autoral-candeias-res173-2026-11-21-007",
+      "examId": "sim-autoral-candeias-res173-2026-11-21",
+      "code": "Q2026LECDJR173AUTORAL007",
+      "originalNumber": 7,
+      "heading": "Legislação Municipal — Resolução nº 173/CMCJ/2025 — Quadro de pessoal",
+      "stem": "A respeito da estruturação da carreira dos servidores efetivos da Câmara, analise as afirmativas.\nI. A Resolução prevê instituição do Plano de Cargos, Carreiras e Salários (PCCS) por ato normativo específico, no prazo máximo de 180 dias após a publicação.\nII. A estruturação da carreira, da progressão e de novos níveis funcionais é remetida a projeto de lei próprio, também no prazo de 180 dias.\nIII. A própria resolução declara dispensável qualquer ato posterior para regulamentação das progressões funcionais.\nEstá CORRETO o que se afirma em:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "I e II, apenas."
+        },
+        {
+          "letter": "B",
+          "text": "I e III, apenas."
+        },
+        {
+          "letter": "C",
+          "text": "II e III, apenas."
+        },
+        {
+          "letter": "D",
+          "text": "III, apenas."
+        },
+        {
+          "letter": "E",
+          "text": "I, II e III."
+        }
+      ],
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Resolução nº 173/CMCJ/2025 — Quadro de pessoal",
+      "topicCode": "L173",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "A",
+      "answerComment": "Art. 13, parágrafo único, e art. 20. Há previsão de ato normativo específico para o PCCS e de projeto de lei próprio para carreira, progressões e níveis funcionais, ambos com prazo de 180 dias.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "res173"
+    },
+    {
+      "id": "sim-autoral-candeias-res173-2026-11-21-008",
+      "examId": "sim-autoral-candeias-res173-2026-11-21",
+      "code": "Q2026LECDJR173AUTORAL008",
+      "originalNumber": 8,
+      "heading": "Legislação Municipal — Resolução nº 173/CMCJ/2025 — Quadro de pessoal",
+      "stem": "Em reunião sobre a remuneração dos servidores efetivos, foi discutida a composição remuneratória e a competência para alterar os valores dos auxílios previstos na Resolução nº 173/CMCJ/2025. Assinale a alternativa CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "A remuneração dos cargos efetivos compõe-se exclusivamente de diárias e indenização de transporte."
+        },
+        {
+          "letter": "B",
+          "text": "Os valores dos auxílios-saúde indireto, alimentação e transporte podem ser modificados por decisão individual de cada servidor."
+        },
+        {
+          "letter": "C",
+          "text": "A gratificação de qualificação é proibida em qualquer hipótese para servidores efetivos da Câmara."
+        },
+        {
+          "letter": "D",
+          "text": "A remuneração compreende vencimento básico e gratificação de qualificação, e os valores dos auxílios previstos no art. 15, inciso II, serão alterados por resolução da Mesa Diretora."
+        },
+        {
+          "letter": "E",
+          "text": "A resolução subordina qualquer atualização dos auxílios à aprovação de lei federal específica."
+        }
+      ],
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Resolução nº 173/CMCJ/2025 — Quadro de pessoal",
+      "topicCode": "L173",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "D",
+      "answerComment": "Art. 14, incisos I e II, e art. 15, inciso II e § 2º. A remuneração é descrita com vencimento básico e gratificação de qualificação; os valores dos auxílios são alterados por resolução da Mesa Diretora.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "res173"
+    },
+    {
+      "id": "sim-autoral-candeias-res173-2026-11-21-009",
+      "examId": "sim-autoral-candeias-res173-2026-11-21",
+      "code": "Q2026LECDJR173AUTORAL009",
+      "originalNumber": 9,
+      "heading": "Legislação Municipal — Resolução nº 173/CMCJ/2025 — Quadro de pessoal",
+      "stem": "Em razão de afastamento temporário de servidor que exerce função estratégica, a Mesa Diretora necessita assegurar a continuidade das atividades. A Câmara também analisa a cedência de servidor a outro órgão. Considerando a resolução, assinale a alternativa CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "A substituição temporária é vedada, ainda que o serviço público fique interrompido."
+        },
+        {
+          "letter": "B",
+          "text": "A designação do substituto depende de eleição em sessão plenária, sem qualquer remuneração adicional."
+        },
+        {
+          "letter": "C",
+          "text": "O substituto designado faz jus a remuneração adicional proporcional à nova função; na cedência com ônus, as despesas remuneratórias são do órgão ou entidade cessionários."
+        },
+        {
+          "letter": "D",
+          "text": "A remuneração do substituto deverá ser sempre triplicada, independentemente da nova função."
+        },
+        {
+          "letter": "E",
+          "text": "A cedência necessariamente transfere ao servidor todas as atribuições de um cargo comissionado da Câmara."
+        }
+      ],
+      "sourcePage": 5,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Resolução nº 173/CMCJ/2025 — Quadro de pessoal",
+      "topicCode": "L173",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "C",
+      "answerComment": "Arts. 18 e 19. A Mesa pode designar substituto para cargo estratégico e há adicional proporcional à nova função; no caso de cedência descrito, o ônus remuneratório fica com o órgão ou entidade cessionários.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "res173"
+    },
+    {
+      "id": "sim-autoral-candeias-res173-2026-11-21-010",
+      "examId": "sim-autoral-candeias-res173-2026-11-21",
+      "code": "Q2026LECDJR173AUTORAL010",
+      "originalNumber": 10,
+      "heading": "Legislação Municipal — Resolução nº 173/CMCJ/2025 — Quadro de pessoal",
+      "stem": "Sobre as disposições finais e transitórias da Resolução nº 173/CMCJ/2025, analise as afirmativas.\nI. A remuneração mensal dos servidores da Câmara deverá ser paga até o último dia útil do mês trabalhado.\nII. A tabela remuneratória da Resolução nº 159/2024 permanece mantida até a aprovação de novo plano de cargos e salários que abranja o quadro funcional.\nIII. Embora entre em vigor na data de publicação, a Resolução nº 173/2025 estabelece efeitos administrativos e financeiros a partir de 1º de abril de 2025.\nEstá CORRETO o que se afirma em:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "I, apenas."
+        },
+        {
+          "letter": "B",
+          "text": "II, apenas."
+        },
+        {
+          "letter": "C",
+          "text": "I e III, apenas."
+        },
+        {
+          "letter": "D",
+          "text": "II e III, apenas."
+        },
+        {
+          "letter": "E",
+          "text": "I, II e III."
+        }
+      ],
+      "sourcePage": 5,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Resolução nº 173/CMCJ/2025 — Quadro de pessoal",
+      "topicCode": "L173",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "E",
+      "answerComment": "Arts. 26, 29 e 30. O pagamento é devido até o último dia útil do mês; mantém-se a tabela da Resolução nº 159/2024 até novo plano; os efeitos administrativos e financeiros são fixados em 1º/04/2025.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "res173"
+    },
+    {
+      "id": "sim-autoral-candeias-lei-organica-2026-11-21-001",
+      "examId": "sim-autoral-candeias-lei-organica-2026-11-21",
+      "code": "Q2026LECDJLOMAUTORAL001",
+      "originalNumber": 1,
+      "heading": "Legislação Municipal — Lei Orgânica Municipal de Candeias do Jamari — Patrimônio municipal e política de desenvolvimento",
+      "stem": "O Município de Candeias do Jamari pretende disponibilizar uma área de seu patrimônio para a implantação de indústrias, com a finalidade de estimular a atividade econômica local. Conforme a Lei Orgânica Municipal, essa transferência de uso poderá ocorrer:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "com prévia autorização legislativa e mediante concessão de direito de uso."
+        },
+        {
+          "letter": "B",
+          "text": "mediante decreto do Prefeito, independentemente de autorização do Poder Legislativo."
+        },
+        {
+          "letter": "C",
+          "text": "somente por doação definitiva da propriedade, sem possibilidade de concessão de uso."
+        },
+        {
+          "letter": "D",
+          "text": "apenas depois de autorização judicial, sendo dispensada a participação da Câmara."
+        },
+        {
+          "letter": "E",
+          "text": "mediante acordo verbal com a empresa interessada, desde que demonstrada a finalidade industrial."
+        }
+      ],
+      "sourcePage": 1,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Lei Orgânica Municipal de Candeias do Jamari",
+      "topicCode": "LORG",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "A",
+      "answerComment": "Art. 5º, parágrafo único. A transferência de áreas do patrimônio municipal para implantação de indústrias ou formação de distritos industriais exige prévia autorização legislativa e concessão de direito de uso.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "organica"
+    },
+    {
+      "id": "sim-autoral-candeias-lei-organica-2026-11-21-002",
+      "examId": "sim-autoral-candeias-lei-organica-2026-11-21",
+      "code": "Q2026LECDJLOMAUTORAL002",
+      "originalNumber": 2,
+      "heading": "Legislação Municipal — Lei Orgânica Municipal de Candeias do Jamari — Criação e organização dos distritos",
+      "stem": "Um projeto pretende criar um novo distrito no território de Candeias do Jamari. Sobre o procedimento previsto na Lei Orgânica Municipal, assinale a alternativa CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "A criação de distrito depende apenas da decisão do Prefeito, sem necessidade de lei municipal."
+        },
+        {
+          "letter": "B",
+          "text": "A consulta plebiscitária é realizada exclusivamente entre os membros da Câmara Municipal."
+        },
+        {
+          "letter": "C",
+          "text": "A criação depende de lei e de consulta plebiscitária à população diretamente interessada, respeitados os requisitos legais."
+        },
+        {
+          "letter": "D",
+          "text": "A criação exige necessariamente a transformação do novo distrito em município autônomo."
+        },
+        {
+          "letter": "E",
+          "text": "O distrito somente pode ser criado por lei estadual, sem participação dos eleitores da área."
+        }
+      ],
+      "sourcePage": 1,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Lei Orgânica Municipal de Candeias do Jamari",
+      "topicCode": "LORG",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "C",
+      "answerComment": "Art. 42, caput. Distritos podem ser criados, organizados, suprimidos ou fundidos por lei, após consulta plebiscitária à população diretamente interessada, observada a legislação estadual.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "organica"
+    },
+    {
+      "id": "sim-autoral-candeias-lei-organica-2026-11-21-003",
+      "examId": "sim-autoral-candeias-lei-organica-2026-11-21",
+      "code": "Q2026LECDJLOMAUTORAL003",
+      "originalNumber": 3,
+      "heading": "Legislação Municipal — Lei Orgânica Municipal de Candeias do Jamari — Requisitos para criação de distrito",
+      "stem": "Ao analisar a criação de um distrito, uma comissão da Câmara verificou a infraestrutura da povoação que seria sua sede. Nos termos do art. 43 da Lei Orgânica, constitui requisito expressamente previsto:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "a existência de pelo menos 20 moradias, um posto bancário e um hospital regional."
+        },
+        {
+          "letter": "B",
+          "text": "a existência de 100 moradias e de uma unidade de ensino superior."
+        },
+        {
+          "letter": "C",
+          "text": "a presença obrigatória de fórum judicial e quartel do Corpo de Bombeiros."
+        },
+        {
+          "letter": "D",
+          "text": "a existência de pelo menos 30 moradias, além de aeroporto e cartório eleitoral."
+        },
+        {
+          "letter": "E",
+          "text": "a existência de pelo menos 50 moradias, escola pública, posto de saúde e posto policial."
+        }
+      ],
+      "sourcePage": 2,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Lei Orgânica Municipal de Candeias do Jamari",
+      "topicCode": "LORG",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "E",
+      "answerComment": "Art. 43, II. A povoação-sede deve contar com, no mínimo, cinquenta moradias, escola pública, posto de saúde e posto policial, além dos demais requisitos do artigo.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "organica"
+    },
+    {
+      "id": "sim-autoral-candeias-lei-organica-2026-11-21-004",
+      "examId": "sim-autoral-candeias-lei-organica-2026-11-21",
+      "code": "Q2026LECDJLOMAUTORAL004",
+      "originalNumber": 4,
+      "heading": "Legislação Municipal — Lei Orgânica Municipal de Candeias do Jamari — Regra geral de deliberação",
+      "stem": "Em uma deliberação ordinária da Câmara Municipal de Candeias do Jamari, não há disposição especial impondo quórum diferente. Segundo a regra geral da Lei Orgânica, a deliberação será tomada:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "por unanimidade dos vereadores presentes, mesmo que não haja quórum mínimo."
+        },
+        {
+          "letter": "B",
+          "text": "pela maioria dos votos, estando presente a maioria absoluta dos membros."
+        },
+        {
+          "letter": "C",
+          "text": "por dois terços dos votos dos vereadores que comparecerem, qualquer que seja o número de presentes."
+        },
+        {
+          "letter": "D",
+          "text": "por maioria absoluta dos eleitores do município, em consulta popular obrigatória."
+        },
+        {
+          "letter": "E",
+          "text": "por decisão exclusiva do Presidente da Câmara, sem votação no Plenário."
+        }
+      ],
+      "sourcePage": 2,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Lei Orgânica Municipal de Candeias do Jamari",
+      "topicCode": "LORG",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "B",
+      "answerComment": "Art. 46. Salvo disposição em contrário, as deliberações da Câmara e de suas comissões são tomadas pela maioria dos votos, presente a maioria absoluta de seus membros.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "organica"
+    },
+    {
+      "id": "sim-autoral-candeias-lei-organica-2026-11-21-005",
+      "examId": "sim-autoral-candeias-lei-organica-2026-11-21",
+      "code": "Q2026LECDJLOMAUTORAL005",
+      "originalNumber": 5,
+      "heading": "Legislação Municipal — Lei Orgânica Municipal de Candeias do Jamari — Convocação de autoridades municipais",
+      "stem": "A Câmara Municipal deseja convocar um Secretário Municipal para prestar, pessoalmente, informações sobre assunto previamente determinado. Segundo a Lei Orgânica, é CORRETO afirmar que:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "a convocação exige unanimidade da Câmara e concede prazo de 30 dias para comparecimento."
+        },
+        {
+          "letter": "B",
+          "text": "o Secretário poderá recusar o comparecimento sem justificativa, por se tratar de autoridade do Executivo."
+        },
+        {
+          "letter": "C",
+          "text": "a convocação independe de deliberação parlamentar e deve ser cumprida em até 24 horas."
+        },
+        {
+          "letter": "D",
+          "text": "a convocação pode ser promovida por dois terços dos membros da Câmara, para prestação pessoal de informações no prazo de oito dias."
+        },
+        {
+          "letter": "E",
+          "text": "a Câmara somente poderá solicitar informações por escrito, sendo vedado o comparecimento pessoal de Secretários."
+        }
+      ],
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Lei Orgânica Municipal de Candeias do Jamari",
+      "topicCode": "LORG",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "D",
+      "answerComment": "Art. 49, caput. A convocação exige dois terços dos membros da Câmara, com prazo de oito dias para prestação pessoal das informações previamente determinadas.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "organica"
+    },
+    {
+      "id": "sim-autoral-candeias-lei-organica-2026-11-21-006",
+      "examId": "sim-autoral-candeias-lei-organica-2026-11-21",
+      "code": "Q2026LECDJLOMAUTORAL006",
+      "originalNumber": 6,
+      "heading": "Legislação Municipal — Lei Orgânica Municipal de Candeias do Jamari — Incompatibilidades dos vereadores",
+      "stem": "Um candidato eleito vereador recebeu seu diploma, mas ainda não tomou posse. Ele pretende firmar contrato com uma empresa pública. Considerando as proibições do art. 51 da Lei Orgânica Municipal, assinale a alternativa CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Desde a expedição do diploma, a contratação com as entidades indicadas na norma é vedada, salvo quando o contrato obedecer a cláusulas uniformes."
+        },
+        {
+          "letter": "B",
+          "text": "A proibição somente se inicia após o segundo ano de exercício do mandato."
+        },
+        {
+          "letter": "C",
+          "text": "A vedação não alcança contratos com empresas públicas em qualquer circunstância."
+        },
+        {
+          "letter": "D",
+          "text": "O vereador fica impedido exclusivamente de contratar com a Câmara Municipal, mas não com outras entidades públicas."
+        },
+        {
+          "letter": "E",
+          "text": "A contratação é sempre permitida, desde que seja comunicada ao Prefeito em até 30 dias."
+        }
+      ],
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Lei Orgânica Municipal de Candeias do Jamari",
+      "topicCode": "LORG",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "A",
+      "answerComment": "Art. 51, I, a. A vedação é aplicável desde a expedição do diploma e alcança as entidades mencionadas no dispositivo, com ressalva dos contratos de cláusulas uniformes.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "organica"
+    },
+    {
+      "id": "sim-autoral-candeias-lei-organica-2026-11-21-007",
+      "examId": "sim-autoral-candeias-lei-organica-2026-11-21",
+      "code": "Q2026LECDJLOMAUTORAL007",
+      "originalNumber": 7,
+      "heading": "Legislação Municipal — Lei Orgânica Municipal de Candeias do Jamari — Matérias reservadas a lei complementar",
+      "stem": "A Mesa Diretora discute o tipo normativo adequado para aprovar o Plano Diretor do Município. De acordo com a Lei Orgânica, assinale a alternativa CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "O Plano Diretor é aprovado por decreto do Prefeito, independentemente da Câmara."
+        },
+        {
+          "letter": "B",
+          "text": "O Plano Diretor é necessariamente disciplinado por resolução interna da Mesa Diretora."
+        },
+        {
+          "letter": "C",
+          "text": "O Plano Diretor pode ser aprovado por simples portaria de Secretário Municipal."
+        },
+        {
+          "letter": "D",
+          "text": "As leis complementares previstas na Lei Orgânica dependem de aprovação por dois terços dos eleitores do município."
+        },
+        {
+          "letter": "E",
+          "text": "O Plano Diretor é matéria de lei complementar, cuja aprovação exige maioria absoluta dos membros da Câmara."
+        }
+      ],
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Lei Orgânica Municipal de Candeias do Jamari",
+      "topicCode": "LORG",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "E",
+      "answerComment": "Art. 67, II e parágrafo único. O Plano Diretor é objeto de lei complementar, aprovada por maioria absoluta dos membros da Câmara.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "organica"
+    },
+    {
+      "id": "sim-autoral-candeias-lei-organica-2026-11-21-008",
+      "examId": "sim-autoral-candeias-lei-organica-2026-11-21",
+      "code": "Q2026LECDJLOMAUTORAL008",
+      "originalNumber": 8,
+      "heading": "Legislação Municipal — Lei Orgânica Municipal de Candeias do Jamari — Veto do Poder Executivo",
+      "stem": "Após a aprovação de um projeto de lei pela Câmara, o texto é encaminhado ao Prefeito. O chefe do Executivo considera parte da proposição contrária ao interesse público. Nos termos da Lei Orgânica, poderá vetá-la:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "em até cinco dias corridos, comunicando a decisão à Câmara em até dez dias."
+        },
+        {
+          "letter": "B",
+          "text": "em até trinta dias úteis, dispensada a comunicação dos motivos do veto."
+        },
+        {
+          "letter": "C",
+          "text": "em até quinze dias úteis do recebimento, comunicando os motivos ao Presidente da Câmara no prazo de quarenta e oito horas."
+        },
+        {
+          "letter": "D",
+          "text": "somente em sua totalidade, sendo vedado o veto parcial."
+        },
+        {
+          "letter": "E",
+          "text": "a qualquer tempo, mesmo após a promulgação, sem observância de prazo."
+        }
+      ],
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Lei Orgânica Municipal de Candeias do Jamari",
+      "topicCode": "LORG",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "C",
+      "answerComment": "Art. 72, § 1º. O prazo do veto total ou parcial é de quinze dias úteis do recebimento do projeto, com comunicação dos motivos em quarenta e oito horas.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "organica"
+    },
+    {
+      "id": "sim-autoral-candeias-lei-organica-2026-11-21-009",
+      "examId": "sim-autoral-candeias-lei-organica-2026-11-21",
+      "code": "Q2026LECDJLOMAUTORAL009",
+      "originalNumber": 9,
+      "heading": "Legislação Municipal — Lei Orgânica Municipal de Candeias do Jamari — Transparência das contas municipais",
+      "stem": "Após a apresentação das contas do Município, um contribuinte deseja examiná-las e questionar sua legitimidade. De acordo com a Lei Orgânica, as contas devem ficar à disposição de qualquer contribuinte, para exame e apreciação, pelo prazo de:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "quinze dias, a partir da homologação pelo Prefeito."
+        },
+        {
+          "letter": "B",
+          "text": "sessenta dias, mediante disponibilização pelo Presidente da Câmara."
+        },
+        {
+          "letter": "C",
+          "text": "noventa dias, exclusivamente na sede do Tribunal de Contas."
+        },
+        {
+          "letter": "D",
+          "text": "trinta dias, mediante autorização judicial específica."
+        },
+        {
+          "letter": "E",
+          "text": "cento e vinte dias, reservados apenas aos vereadores e aos servidores efetivos."
+        }
+      ],
+      "sourcePage": 5,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Lei Orgânica Municipal de Candeias do Jamari",
+      "topicCode": "LORG",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "B",
+      "answerComment": "Art. 75, caput. Apresentadas as contas, o Presidente da Câmara deve colocá-las à disposição de qualquer contribuinte durante sessenta dias, para exame e apreciação.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "organica"
+    },
+    {
+      "id": "sim-autoral-candeias-lei-organica-2026-11-21-010",
+      "examId": "sim-autoral-candeias-lei-organica-2026-11-21",
+      "code": "Q2026LECDJLOMAUTORAL010",
+      "originalNumber": 10,
+      "heading": "Legislação Municipal — Lei Orgânica Municipal de Candeias do Jamari — Substituição no Poder Executivo",
+      "stem": "O Prefeito e o Vice-Prefeito de Candeias do Jamari ficam simultaneamente impedidos de exercer suas funções. Nos termos da linha sucessória expressamente estabelecida na Lei Orgânica Municipal, serão chamados, sucessivamente, ao exercício do Poder Executivo:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "o Procurador-Geral do Município e o Secretário Municipal de Administração."
+        },
+        {
+          "letter": "B",
+          "text": "o vereador mais votado e, em seguida, o Secretário de Governo."
+        },
+        {
+          "letter": "C",
+          "text": "o Presidente do Tribunal de Contas e, em seguida, o juiz eleitoral."
+        },
+        {
+          "letter": "D",
+          "text": "o Presidente e o Vice-Presidente da Câmara Municipal."
+        },
+        {
+          "letter": "E",
+          "text": "o Presidente da Câmara e, em seguida, o Secretário Municipal de Finanças."
+        }
+      ],
+      "sourcePage": 5,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Lei Orgânica Municipal de Candeias do Jamari",
+      "topicCode": "LORG",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "D",
+      "answerComment": "Art. 82, caput. Nos impedimentos ou vacâncias simultâneos dos cargos de Prefeito e Vice-Prefeito, a Lei Orgânica chama, sucessivamente, o Presidente e o Vice-Presidente da Câmara ao exercício do Executivo.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "organica"
+    },
+    {
+      "id": "sim-autoral-candeias-regimento-interno-2026-11-21-001",
+      "examId": "sim-autoral-candeias-regimento-interno-2026-11-21",
+      "code": "Q2026LECDJREGAUTORAL001",
+      "originalNumber": 1,
+      "heading": "Legislação Municipal — Regimento Interno — Resolução nº 001/CMCJ-93 — Eleição da Mesa Diretora",
+      "stem": "Na eleição da Mesa Diretora da Câmara Municipal de Candeias do Jamari, três vereadores concorrem ao cargo de Presidente. Após a primeira votação, torna-se necessário observar o procedimento regimental de escolha do eleito. Conforme a Resolução nº 001/CMCJ-93, assinale a alternativa CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "A eleição será obrigatoriamente secreta e, havendo três candidatos, o Presidente em exercício escolherá os dois que disputarão a etapa final."
+        },
+        {
+          "letter": "B",
+          "text": "O candidato mais votado será eleito apenas se alcançar dois terços dos votos dos membros da Câmara, vedada nova votação."
+        },
+        {
+          "letter": "C",
+          "text": "Havendo mais de dois candidatos, ocorrerá nova eleição entre os dois mais votados; em caso de empate, prevalecerá o critério da maior idade."
+        },
+        {
+          "letter": "D",
+          "text": "A votação será realizada por chapas fechadas, com resultado definido por maioria absoluta, cabendo ao Prefeito desempatar eventual igualdade."
+        },
+        {
+          "letter": "E",
+          "text": "Todos os candidatos participarão de votações sucessivas até que um deles alcance unanimidade."
+        }
+      ],
+      "sourcePage": 1,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Regimento Interno — Resolução nº 001/CMCJ-93",
+      "topicCode": "LREG",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "C",
+      "answerComment": "Art. 13, incisos VI a VIII: havendo mais de dois candidatos para um cargo da Mesa, há nova eleição entre os dois mais votados; o desempate observa a maior idade.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "regimento"
+    },
+    {
+      "id": "sim-autoral-candeias-regimento-interno-2026-11-21-002",
+      "examId": "sim-autoral-candeias-regimento-interno-2026-11-21",
+      "code": "Q2026LECDJREGAUTORAL002",
+      "originalNumber": 2,
+      "heading": "Legislação Municipal — Regimento Interno — Resolução nº 001/CMCJ-93 — Elaboração da Ordem do Dia",
+      "stem": "A Mesa Diretora precisa definir as proposições que integrarão a Ordem do Dia de determinada sessão. Um de seus integrantes defende que a pauta pode ser fixada exclusivamente pelo Presidente, sem participação dos demais membros. De acordo com o Regimento Interno, assinale a alternativa CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "A Ordem do Dia será elaborada e decidida pela maioria simples dos membros da Mesa, um dia antes de cada sessão."
+        },
+        {
+          "letter": "B",
+          "text": "A pauta será definida pelo Prefeito Municipal, mediante comunicação obrigatória ao Legislativo com antecedência de cinco dias."
+        },
+        {
+          "letter": "C",
+          "text": "A definição da pauta compete exclusivamente às comissões permanentes, que deliberam por maioria de dois terços."
+        },
+        {
+          "letter": "D",
+          "text": "A Ordem do Dia deverá ser aprovada pela unanimidade dos vereadores em plenário, após a abertura da sessão."
+        },
+        {
+          "letter": "E",
+          "text": "O Regimento permite que apenas o 1º Secretário estabeleça a pauta, dispensada a manifestação da Mesa."
+        }
+      ],
+      "sourcePage": 1,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Regimento Interno — Resolução nº 001/CMCJ-93",
+      "topicCode": "LREG",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "A",
+      "answerComment": "Art. 23, inciso I, alínea e: a Ordem do Dia é elaborada e decidida por maioria simples dos membros da Mesa, um dia antes da sessão.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "regimento"
+    },
+    {
+      "id": "sim-autoral-candeias-regimento-interno-2026-11-21-003",
+      "examId": "sim-autoral-candeias-regimento-interno-2026-11-21",
+      "code": "Q2026LECDJREGAUTORAL003",
+      "originalNumber": 3,
+      "heading": "Legislação Municipal — Regimento Interno — Resolução nº 001/CMCJ-93 — Impedimento e interesse pessoal",
+      "stem": "Em uma votação plenária, determinado vereador percebe que a proposição envolve diretamente seu cônjuge. Apesar disso, participa da deliberação e seu voto acaba sendo decisivo para o resultado. Considerando as regras sobre deveres e impedimentos previstas no Regimento Interno, assinale a alternativa CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "A participação é regular porque somente o interesse patrimonial direto do próprio vereador caracteriza impedimento."
+        },
+        {
+          "letter": "B",
+          "text": "O voto deverá ser mantido, pois eventual impedimento somente existe quando houver condenação judicial do cônjuge."
+        },
+        {
+          "letter": "C",
+          "text": "O vereador fica impedido de apresentar projetos durante toda a legislatura, mas pode votar normalmente na matéria concreta."
+        },
+        {
+          "letter": "D",
+          "text": "O interesse pessoal abrange hipóteses envolvendo o cônjuge, e o voto decisivo do vereador interessado sujeita a votação à nulidade."
+        },
+        {
+          "letter": "E",
+          "text": "A decisão sobre a existência de impedimento pertence exclusivamente ao Tribunal de Contas, sem consequências regimentais para a votação."
+        }
+      ],
+      "sourcePage": 2,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Regimento Interno — Resolução nº 001/CMCJ-93",
+      "topicCode": "LREG",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "D",
+      "answerComment": "Art. 43, alínea e, e § 1º, inciso I: o vereador deve abster-se quando houver interesse pessoal, inclusive envolvendo cônjuge; seu voto decisivo acarreta nulidade da votação.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "regimento"
+    },
+    {
+      "id": "sim-autoral-candeias-regimento-interno-2026-11-21-004",
+      "examId": "sim-autoral-candeias-regimento-interno-2026-11-21",
+      "code": "Q2026LECDJREGAUTORAL004",
+      "originalNumber": 4,
+      "heading": "Legislação Municipal — Regimento Interno — Resolução nº 001/CMCJ-93 — Licença de vereador",
+      "stem": "Um vereador requer licença por 90 dias para tratar de interesse particular. O requerimento é regularmente comunicado, e surge a dúvida sobre remuneração, reassunção antecipada e convocação do suplente. Considerando o art. 45 do Regimento Interno, assinale a alternativa CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "A licença por interesse particular é remunerada, e o suplente deve ser convocado em qualquer afastamento superior a 30 dias."
+        },
+        {
+          "letter": "B",
+          "text": "A licença por interesse particular não assegura a manutenção da remuneração, o vereador não pode reassumir antes do término da licença e a convocação do suplente, na hipótese regimental, ocorre quando a licença é superior a 120 dias."
+        },
+        {
+          "letter": "C",
+          "text": "O vereador poderá reassumir a qualquer momento mediante comunicação verbal, mesmo que o período de licença ainda esteja em curso."
+        },
+        {
+          "letter": "D",
+          "text": "O Regimento somente admite licença para tratamento de saúde, não prevendo afastamento por interesse particular."
+        },
+        {
+          "letter": "E",
+          "text": "A licença para interesse particular só pode ser concedida por período inferior a 60 dias, sendo vedado afastamento de 90 dias."
+        }
+      ],
+      "sourcePage": 2,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Regimento Interno — Resolução nº 001/CMCJ-93",
+      "topicCode": "LREG",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "B",
+      "answerComment": "Art. 45, inciso I, alínea b, §§ 1º, 2º e 8º: licença por interesse particular de 60 dias ou mais; sem remuneração prevista para essa modalidade, sem reassunção antecipada; suplente convocado quando a licença superar 120 dias.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "regimento"
+    },
+    {
+      "id": "sim-autoral-candeias-regimento-interno-2026-11-21-005",
+      "examId": "sim-autoral-candeias-regimento-interno-2026-11-21",
+      "code": "Q2026LECDJREGAUTORAL005",
+      "originalNumber": 5,
+      "heading": "Legislação Municipal — Regimento Interno — Resolução nº 001/CMCJ-93 — Instalação e duração das sessões",
+      "stem": "Na hora prevista para a abertura de uma sessão da Câmara Municipal, não se verifica a presença do número mínimo de vereadores estabelecido pelo Regimento Interno. Sobre o procedimento cabível, assinale a alternativa CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "A sessão deve começar independentemente de quórum, pois a verificação é obrigatória apenas na votação de projetos de lei."
+        },
+        {
+          "letter": "B",
+          "text": "A sessão será automaticamente cancelada, sem possibilidade de nova chamada na mesma data."
+        },
+        {
+          "letter": "C",
+          "text": "A primeira chamada exige maioria simples, e a segunda poderá ocorrer somente depois de uma hora."
+        },
+        {
+          "letter": "D",
+          "text": "O Presidente poderá substituir os vereadores ausentes por suplentes convocados verbalmente para viabilizar a abertura imediata."
+        },
+        {
+          "letter": "E",
+          "text": "Exige-se a presença de dois terços dos membros para a abertura; inexistindo o número legal na primeira chamada, deverá ocorrer segunda chamada dentro de 15 minutos, período não computado na duração da sessão."
+        }
+      ],
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Regimento Interno — Resolução nº 001/CMCJ-93",
+      "topicCode": "LREG",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "E",
+      "answerComment": "Arts. 53 e 54, caput e § 1º: sessões públicas; abertura com presença de dois terços; segunda chamada em até 15 minutos, sem contar esse intervalo na duração da sessão.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "regimento"
+    },
+    {
+      "id": "sim-autoral-candeias-regimento-interno-2026-11-21-006",
+      "examId": "sim-autoral-candeias-regimento-interno-2026-11-21",
+      "code": "Q2026LECDJREGAUTORAL006",
+      "originalNumber": 6,
+      "heading": "Legislação Municipal — Regimento Interno — Resolução nº 001/CMCJ-93 — Comissões permanentes",
+      "stem": "Um vereador pretende participar simultaneamente de três comissões permanentes da Câmara de Candeias do Jamari. Ao analisar a composição e a duração do mandato desses órgãos, o setor legislativo deve observar as normas regimentais. Assinale a alternativa CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Cada comissão permanente terá cinco membros, eleitos para mandato de quatro anos, sendo ilimitada a participação de um mesmo vereador."
+        },
+        {
+          "letter": "B",
+          "text": "As comissões permanentes são instituídas apenas quando houver requerimento do Prefeito, e todos os vereadores podem integrar quantas desejarem."
+        },
+        {
+          "letter": "C",
+          "text": "O Regimento prevê cinco comissões permanentes, com três membros cada, ressalvada a Comissão Executiva; são eleitas por dois anos, e um vereador não pode ser eleito para mais de duas comissões."
+        },
+        {
+          "letter": "D",
+          "text": "O Regimento permite somente duas comissões permanentes, ambas presididas obrigatoriamente pelo Presidente da Câmara."
+        },
+        {
+          "letter": "E",
+          "text": "As comissões permanentes possuem duração de seis meses, sendo vedada a representação proporcional de partidos."
+        }
+      ],
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Regimento Interno — Resolução nº 001/CMCJ-93",
+      "topicCode": "LREG",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "C",
+      "answerComment": "Art. 83, §§ 1º, 2º e 5º: cinco comissões permanentes, três membros cada, ressalvada a Executiva, mandato de dois anos, vedada eleição do vereador para mais de duas comissões.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "regimento"
+    },
+    {
+      "id": "sim-autoral-candeias-regimento-interno-2026-11-21-007",
+      "examId": "sim-autoral-candeias-regimento-interno-2026-11-21",
+      "code": "Q2026LECDJREGAUTORAL007",
+      "originalNumber": 7,
+      "heading": "Legislação Municipal — Regimento Interno — Resolução nº 001/CMCJ-93 — Comissão Parlamentar de Inquérito",
+      "stem": "Um grupo de vereadores pretende criar Comissão Parlamentar de Inquérito (CPI) para apurar fato determinado de competência municipal. Entretanto, uma CPI já está em funcionamento na Casa. À luz do Regimento Interno, assinale a alternativa CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "A CPI depende de requerimento de dois terços dos vereadores, sendo permitidas até três comissões simultâneas."
+        },
+        {
+          "letter": "B",
+          "text": "A CPI pode ser criada mediante requerimento de um terço dos vereadores para apurar fato determinado, mas o Regimento veda o funcionamento de mais de uma CPI simultaneamente."
+        },
+        {
+          "letter": "C",
+          "text": "A criação de CPI é competência exclusiva do Prefeito e depende de aprovação prévia do Ministério Público."
+        },
+        {
+          "letter": "D",
+          "text": "A CPI poderá apurar indistintamente fatos de competência estadual ou federal, sem delimitação do objeto da investigação."
+        },
+        {
+          "letter": "E",
+          "text": "O Regimento proíbe comissões parlamentares de inquérito e admite apenas comissões de representação."
+        }
+      ],
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Regimento Interno — Resolução nº 001/CMCJ-93",
+      "topicCode": "LREG",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "B",
+      "answerComment": "Art. 100, caput e §§ 1º e 2º: CPI por requerimento de um terço dos vereadores, fato determinado de competência municipal e limite de uma CPI em funcionamento.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "regimento"
+    },
+    {
+      "id": "sim-autoral-candeias-regimento-interno-2026-11-21-008",
+      "examId": "sim-autoral-candeias-regimento-interno-2026-11-21",
+      "code": "Q2026LECDJREGAUTORAL008",
+      "originalNumber": 8,
+      "heading": "Legislação Municipal — Regimento Interno — Resolução nº 001/CMCJ-93 — Indicações parlamentares",
+      "stem": "Um vereador apresenta, até o término do Prolongamento do Expediente, uma proposição sugerindo ao órgão competente a instalação de sinalização viária em determinada comunidade. Segundo a classificação das proposições e o procedimento previstos no Regimento Interno, assinale a alternativa CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Trata-se de indicação, que sugere medida de interesse público e será despachada pelo Presidente independentemente de deliberação plenária, nas condições regimentais."
+        },
+        {
+          "letter": "B",
+          "text": "Trata-se de projeto de decreto legislativo, que exige aprovação por dois terços dos vereadores e posterior sanção do Prefeito."
+        },
+        {
+          "letter": "C",
+          "text": "Trata-se de moção, cujo objetivo é exclusivamente criar obrigações administrativas diretamente exigíveis."
+        },
+        {
+          "letter": "D",
+          "text": "Trata-se de requerimento de convocação, que deverá ser discutido em duas sessões antes de sua tramitação."
+        },
+        {
+          "letter": "E",
+          "text": "Trata-se de emenda à Lei Orgânica, pois qualquer sugestão referente a serviços municipais altera necessariamente a estrutura administrativa."
+        }
+      ],
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Regimento Interno — Resolução nº 001/CMCJ-93",
+      "topicCode": "LREG",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "A",
+      "answerComment": "Art. 114 e parágrafo único: indicação sugere medida de interesse público aos poderes competentes; apresentada até o fim do Prolongamento do Expediente, é despachada sem deliberação plenária.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "regimento"
+    },
+    {
+      "id": "sim-autoral-candeias-regimento-interno-2026-11-21-009",
+      "examId": "sim-autoral-candeias-regimento-interno-2026-11-21",
+      "code": "Q2026LECDJREGAUTORAL009",
+      "originalNumber": 9,
+      "heading": "Legislação Municipal — Regimento Interno — Resolução nº 001/CMCJ-93 — Tramitação de moções",
+      "stem": "Vereadores apresentam moção de aplauso e desejam saber quais exigências regimentais devem ser atendidas para sua apreciação. Considerando o art. 120 do Regimento Interno, assinale a alternativa CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "A moção depende de parecer obrigatório de todas as comissões permanentes e é votada em três turnos."
+        },
+        {
+          "letter": "B",
+          "text": "A moção pode ser apresentada por um único vereador e produz efeito normativo equivalente ao de lei ordinária."
+        },
+        {
+          "letter": "C",
+          "text": "A moção deve ser aprovada antes pela Mesa Diretora, sendo vedada sua submissão ao Plenário."
+        },
+        {
+          "letter": "D",
+          "text": "A moção admite emendas livremente, mas não permite substitutivos em nenhuma circunstância."
+        },
+        {
+          "letter": "E",
+          "text": "Subscrita por um terço dos vereadores, a moção é encaminhada à Ordem do Dia da sessão ordinária seguinte, sem exigência de parecer de comissão, para discussão e votação únicas; não se admitem emendas, mas podem ser apresentados substitutivos."
+        }
+      ],
+      "sourcePage": 5,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Regimento Interno — Resolução nº 001/CMCJ-93",
+      "topicCode": "LREG",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "E",
+      "answerComment": "Art. 120, §§ 1º e 3º: moção subscrita por um terço; discussão e votação únicas na sessão ordinária seguinte, dispensado parecer; vedadas emendas, admitidos substitutivos.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "regimento"
+    },
+    {
+      "id": "sim-autoral-candeias-regimento-interno-2026-11-21-010",
+      "examId": "sim-autoral-candeias-regimento-interno-2026-11-21",
+      "code": "Q2026LECDJREGAUTORAL010",
+      "originalNumber": 10,
+      "heading": "Legislação Municipal — Regimento Interno — Resolução nº 001/CMCJ-93 — Pedido de vista",
+      "stem": "Durante a apreciação de uma proposição, um vereador formula pedido de vista para melhor examinar o conteúdo. Considerando as regras regimentais e a hipótese especial de proposição que deva ser votada na primeira sessão após seu recebimento, assinale a alternativa CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "O pedido de vista exige assinatura de um terço dos vereadores e somente pode ser concedido pelo prazo fixo de 30 dias."
+        },
+        {
+          "letter": "B",
+          "text": "A vista é decidida exclusivamente pelo Plenário, sem possibilidade de requerimento verbal."
+        },
+        {
+          "letter": "C",
+          "text": "A vista pode ser concedida por prazo ilimitado, inclusive quando houver obrigação de votação na primeira sessão após o recebimento."
+        },
+        {
+          "letter": "D",
+          "text": "O pedido pode ser formulado por escrito ou verbalmente e é apreciado pelo Presidente, que poderá conceder vista por até 15 dias ou três sessões; na hipótese especial indicada, o prazo de vista é de uma única sessão."
+        },
+        {
+          "letter": "E",
+          "text": "O Regimento veda qualquer pedido de vista sobre proposições em tramitação na Câmara."
+        }
+      ],
+      "sourcePage": 5,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Regimento Interno — Resolução nº 001/CMCJ-93",
+      "topicCode": "LREG",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "D",
+      "answerComment": "Art. 149, caput e parágrafo único: pedido de vista verbal ou escrito, decisão do Presidente, máximo de 15 dias ou três sessões, com exceção de uma sessão para proposição de votação imediata.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "regimento"
+    },
+    {
+      "id": "sim-autoral-candeias-legislacao-mista-2026-11-21-001",
+      "examId": "sim-autoral-candeias-legislacao-mista-2026-11-21",
+      "code": "Q2026LECDJMIXAUTORAL001",
+      "originalNumber": 1,
+      "heading": "Legislação Municipal — Lei Orgânica Municipal de Candeias do Jamari — Lei Orgânica Municipal",
+      "stem": "A Lei Orgânica do Município de Candeias do Jamari estabelece regras específicas para sua alteração, incluindo legitimidade para apresentação de propostas, procedimento de votação e promulgação. Considerando essas disposições, assinale a alternativa CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "A proposta de emenda poderá ser apresentada por um terço dos vereadores, dependendo de aprovação por maioria absoluta em dois turnos."
+        },
+        {
+          "letter": "B",
+          "text": "O Prefeito poderá alterar diretamente a Lei Orgânica por decreto, desde que posteriormente comunique a Câmara Municipal."
+        },
+        {
+          "letter": "C",
+          "text": "A proposta de emenda será apreciada em turno único, exigindo aprovação de dois terços dos vereadores presentes."
+        },
+        {
+          "letter": "D",
+          "text": "A proposta será discutida e votada em dois turnos, com intervalo mínimo de dez dias, exigindo o voto favorável de dois terços dos membros da Câmara em ambas as votações."
+        },
+        {
+          "letter": "E",
+          "text": "A emenda aprovada pela Câmara dependerá de sanção do Prefeito para entrar em vigor."
+        }
+      ],
+      "sourcePage": 1,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Lei Orgânica Municipal de Candeias do Jamari",
+      "topicCode": "LORG",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "D",
+      "answerComment": "Arts. 62 a 64 da Lei Orgânica. Dois turnos, intervalo mínimo de dez dias e aprovação por dois terços dos membros em ambos.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "organica"
+    },
+    {
+      "id": "sim-autoral-candeias-legislacao-mista-2026-11-21-002",
+      "examId": "sim-autoral-candeias-legislacao-mista-2026-11-21",
+      "code": "Q2026LECDJMIXAUTORAL002",
+      "originalNumber": 2,
+      "heading": "Legislação Municipal — Lei Orgânica Municipal de Candeias do Jamari — Lei Orgânica Municipal",
+      "stem": "Um grupo de moradores pretende apresentar um projeto de lei de iniciativa popular sobre matéria de interesse municipal. Para isso, organiza uma campanha de coleta de assinaturas e consulta as exigências da Lei Orgânica. Sobre os requisitos para apresentação da proposta, assinale a alternativa CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "A iniciativa popular depende de assinatura de, no mínimo, 10% dos habitantes do município, independentemente de inscrição eleitoral."
+        },
+        {
+          "letter": "B",
+          "text": "A proposta deverá ser subscrita por, no mínimo, 5% dos eleitores inscritos no âmbito municipal, observadas as exigências de identificação dos assinantes e certificação eleitoral."
+        },
+        {
+          "letter": "C",
+          "text": "A iniciativa popular somente poderá tratar de matéria tributária e dependerá de autorização prévia do Prefeito."
+        },
+        {
+          "letter": "D",
+          "text": "A apresentação do projeto exige a assinatura de um terço dos vereadores e de representantes de associações comunitárias."
+        },
+        {
+          "letter": "E",
+          "text": "A proposta poderá ser apresentada por qualquer cidadão individualmente, dispensada a demonstração de representatividade eleitoral."
+        }
+      ],
+      "sourcePage": 1,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Lei Orgânica Municipal de Candeias do Jamari",
+      "topicCode": "LORG",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "B",
+      "answerComment": "Art. 65, §§ 2º e 3º, da Lei Orgânica. Exige, no mínimo, 5% dos eleitores, identificação dos subscritores e certidão eleitoral.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "organica"
+    },
+    {
+      "id": "sim-autoral-candeias-legislacao-mista-2026-11-21-003",
+      "examId": "sim-autoral-candeias-legislacao-mista-2026-11-21",
+      "code": "Q2026LECDJMIXAUTORAL003",
+      "originalNumber": 3,
+      "heading": "Legislação Municipal — Lei Orgânica Municipal de Candeias do Jamari — Lei Orgânica Municipal",
+      "stem": "A respeito do funcionamento da Câmara Municipal de Candeias do Jamari, analise as afirmativas.\nI. A sessão legislativa anual compreende os períodos de 15 de fevereiro a 30 de junho e de 1º de agosto a 15 de dezembro.\nII. Quando as datas previstas para as reuniões recaírem em sábados, domingos ou feriados, serão transferidas para o primeiro dia útil subsequente.\nIII. A sessão legislativa não poderá ser interrompida sem a aprovação do projeto de lei de diretrizes orçamentárias.\nEstá CORRETO o que se afirma em:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "I, apenas."
+        },
+        {
+          "letter": "B",
+          "text": "II, apenas."
+        },
+        {
+          "letter": "C",
+          "text": "I e II, apenas."
+        },
+        {
+          "letter": "D",
+          "text": "II e III, apenas."
+        },
+        {
+          "letter": "E",
+          "text": "I, II e III."
+        }
+      ],
+      "sourcePage": 2,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Lei Orgânica Municipal de Candeias do Jamari",
+      "topicCode": "LORG",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "E",
+      "answerComment": "Art. 56, §§ 1º e 2º, da Lei Orgânica. As três afirmativas reproduzem as regras de funcionamento.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "organica"
+    },
+    {
+      "id": "sim-autoral-candeias-legislacao-mista-2026-11-21-004",
+      "examId": "sim-autoral-candeias-legislacao-mista-2026-11-21",
+      "code": "Q2026LECDJMIXAUTORAL004",
+      "originalNumber": 4,
+      "heading": "Legislação Municipal — Lei Orgânica Municipal de Candeias do Jamari — Lei Orgânica Municipal",
+      "stem": "O Prefeito encaminhou à Câmara Municipal um projeto de lei de sua iniciativa e solicitou tramitação em regime de urgência. Decorridos 45 dias, a Câmara ainda não havia se manifestado. Considerando as disposições da Lei Orgânica, assinale a alternativa CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "O projeto será incluído na Ordem do Dia, com sobrestamento da deliberação dos demais assuntos, observadas as exceções relativas ao recesso parlamentar e aos projetos de código."
+        },
+        {
+          "letter": "B",
+          "text": "O projeto será considerado automaticamente aprovado, independentemente de votação, devendo ser imediatamente sancionado."
+        },
+        {
+          "letter": "C",
+          "text": "O Prefeito deverá retirar o projeto e reapresentá-lo na sessão legislativa seguinte."
+        },
+        {
+          "letter": "D",
+          "text": "O prazo para manifestação será de 60 dias, computando-se normalmente os períodos de recesso parlamentar."
+        },
+        {
+          "letter": "E",
+          "text": "A ausência de manifestação implicará rejeição tácita da proposição, impedindo sua reapresentação durante a mesma legislatura."
+        }
+      ],
+      "sourcePage": 2,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Lei Orgânica Municipal de Candeias do Jamari",
+      "topicCode": "LORG",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "A",
+      "answerComment": "Art. 66, §§ 1º e 2º, da Lei Orgânica. Prazo de 45 dias, com ressalvas para recesso e projetos de código.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "organica"
+    },
+    {
+      "id": "sim-autoral-candeias-legislacao-mista-2026-11-21-005",
+      "examId": "sim-autoral-candeias-legislacao-mista-2026-11-21",
+      "code": "Q2026LECDJMIXAUTORAL005",
+      "originalNumber": 5,
+      "heading": "Legislação Municipal — Regimento Interno — Resolução nº 001/CMCJ-93 — Resolução nº 001/CMCJ-93 — Regimento Interno",
+      "stem": "Um vereador eleito não conseguiu comparecer à sessão de instalação da legislatura por motivo de enfermidade devidamente comprovado. Posteriormente, solicitou providências para regularizar sua posse. Com base no Regimento Interno da Câmara Municipal, assinale a alternativa CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "A posse deverá ocorrer obrigatoriamente em até 15 dias, sendo vedada qualquer prorrogação."
+        },
+        {
+          "letter": "B",
+          "text": "O vereador poderá tomar posse por intermédio de procurador com poderes específicos, desde que apresente justificativa médica."
+        },
+        {
+          "letter": "C",
+          "text": "Ressalvadas as hipóteses regimentais de força maior ou enfermidade comprovada, a posse deverá ocorrer no prazo de 30 dias, admitida prorrogação por igual período mediante requerimento do interessado."
+        },
+        {
+          "letter": "D",
+          "text": "A ausência à sessão de instalação implica perda automática e definitiva do mandato, independentemente de justificativa."
+        },
+        {
+          "letter": "E",
+          "text": "O vereador poderá assumir suas funções antes de prestar o compromisso regimental, desde que apresente o diploma expedido pela Justiça Eleitoral."
+        }
+      ],
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Regimento Interno — Resolução nº 001/CMCJ-93",
+      "topicCode": "LREG",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "C",
+      "answerComment": "Arts. 8º e 9º do Regimento Interno. Prazo de 30 dias, prorrogável por igual período, e exigência de compromisso pessoal.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "regimento"
+    },
+    {
+      "id": "sim-autoral-candeias-legislacao-mista-2026-11-21-006",
+      "examId": "sim-autoral-candeias-legislacao-mista-2026-11-21",
+      "code": "Q2026LECDJMIXAUTORAL006",
+      "originalNumber": 6,
+      "heading": "Legislação Municipal — Regimento Interno — Resolução nº 001/CMCJ-93 — Resolução nº 001/CMCJ-93 — Regimento Interno",
+      "stem": "Em decorrência de supostas irregularidades praticadas por integrante da Mesa Diretora, vereadores pretendem instaurar procedimento de destituição. Considerando os requisitos estabelecidos pelo Regimento Interno, assinale a alternativa CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "A destituição poderá ocorrer por decisão unilateral do Presidente da Câmara, após manifestação da Procuradoria Jurídica."
+        },
+        {
+          "letter": "B",
+          "text": "A representação inicial deverá contar com a assinatura de dois terços dos membros da Câmara, sendo suficiente maioria simples para aprovar a destituição."
+        },
+        {
+          "letter": "C",
+          "text": "A destituição dependerá exclusivamente de decisão judicial transitada em julgado, independentemente de deliberação parlamentar."
+        },
+        {
+          "letter": "D",
+          "text": "O procedimento poderá ser iniciado por qualquer cidadão, dispensada a participação dos vereadores e a apresentação de fundamentação."
+        },
+        {
+          "letter": "E",
+          "text": "O processo poderá ser iniciado por representação subscrita por um terço dos membros da Câmara, enquanto a destituição dependerá de resolução aprovada por, no mínimo, dois terços dos vereadores, assegurada ampla defesa."
+        }
+      ],
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Regimento Interno — Resolução nº 001/CMCJ-93",
+      "topicCode": "LREG",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "E",
+      "answerComment": "Arts. 21 e 22 do Regimento Interno. Representação de um terço, destituição por dois terços e ampla defesa.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "regimento"
+    },
+    {
+      "id": "sim-autoral-candeias-legislacao-mista-2026-11-21-007",
+      "examId": "sim-autoral-candeias-legislacao-mista-2026-11-21",
+      "code": "Q2026LECDJMIXAUTORAL007",
+      "originalNumber": 7,
+      "heading": "Legislação Municipal — Regimento Interno — Resolução nº 001/CMCJ-93 — Resolução nº 001/CMCJ-93 — Regimento Interno",
+      "stem": "Durante sessão plenária, o Presidente da Câmara Municipal deseja participar da discussão e proferir voto sobre determinada proposição. Na ocasião, o Vice-Presidente encontra-se presente. À luz do Regimento Interno, assinale a alternativa CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "O Presidente poderá participar da discussão e votar normalmente, permanecendo na condução dos trabalhos."
+        },
+        {
+          "letter": "B",
+          "text": "O Presidente deverá afastar-se temporariamente da Presidência, transferindo-a ao Vice-Presidente para participar da discussão ou proferir seu voto."
+        },
+        {
+          "letter": "C",
+          "text": "O Presidente poderá participar apenas da votação, sendo-lhe proibido discutir proposições durante toda a legislatura."
+        },
+        {
+          "letter": "D",
+          "text": "O Presidente deverá transferir definitivamente a Presidência ao Primeiro Secretário, ainda que o Vice-Presidente esteja presente."
+        },
+        {
+          "letter": "E",
+          "text": "O Presidente não poderá apresentar proposições à Câmara nem exercer o direito de voto em qualquer circunstância."
+        }
+      ],
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Regimento Interno — Resolução nº 001/CMCJ-93",
+      "topicCode": "LREG",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "B",
+      "answerComment": "Arts. 30 a 32 e 35 do Regimento Interno. O Presidente deixa temporariamente a condução da sessão para discutir ou votar.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "regimento"
+    },
+    {
+      "id": "sim-autoral-candeias-legislacao-mista-2026-11-21-008",
+      "examId": "sim-autoral-candeias-legislacao-mista-2026-11-21",
+      "code": "Q2026LECDJMIXAUTORAL008",
+      "originalNumber": 8,
+      "heading": "Legislação Municipal — Resolução nº 173/CMCJ/2025 — Quadro de pessoal — Resolução nº 173/CMCJ/2025",
+      "stem": "A Câmara Municipal de Candeias do Jamari pretende organizar novo concurso público para provimento de cargos efetivos. Entretanto, existe concurso anterior ainda dentro do prazo de validade, com candidatos aprovados. Considerando especificamente as regras da Resolução nº 173/CMCJ/2025, assinale a alternativa CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "O concurso terá validade de um ano, permitidas sucessivas prorrogações enquanto houver candidatos classificados."
+        },
+        {
+          "letter": "B",
+          "text": "A validade será de quatro anos, sendo obrigatória sua prorrogação por mais quatro anos."
+        },
+        {
+          "letter": "C",
+          "text": "A existência de candidatos aprovados em concurso anterior não interfere na abertura de outro certame, desde que os cargos sejam semelhantes."
+        },
+        {
+          "letter": "D",
+          "text": "O concurso terá validade de dois anos, prorrogável uma única vez por igual período, e a resolução veda a abertura de novo concurso enquanto houver candidato aprovado em certame anterior com prazo de validade não expirado."
+        },
+        {
+          "letter": "E",
+          "text": "A validade será determinada exclusivamente pela comissão organizadora, sem necessidade de previsão no edital."
+        }
+      ],
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Resolução nº 173/CMCJ/2025 — Quadro de pessoal",
+      "topicCode": "L173",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "D",
+      "answerComment": "Art. 7º, caput e § 2º, da Resolução nº 173/2025. Prazo de dois anos, uma prorrogação e restrição expressa à abertura de novo concurso.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "res173"
+    },
+    {
+      "id": "sim-autoral-candeias-legislacao-mista-2026-11-21-009",
+      "examId": "sim-autoral-candeias-legislacao-mista-2026-11-21",
+      "code": "Q2026LECDJMIXAUTORAL009",
+      "originalNumber": 9,
+      "heading": "Legislação Municipal — Resolução nº 173/CMCJ/2025 — Quadro de pessoal — Resolução nº 173/CMCJ/2025",
+      "stem": "Um servidor efetivo da Câmara Municipal de Candeias do Jamari possui formação em nível superior e concluiu um mestrado que não constitui requisito para investidura em seu cargo. Considerando a gratificação prevista no art. 15, § 4º, da Resolução nº 173/CMCJ/2025, assinale a alternativa CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "O mestrado corresponde ao percentual de 20% sobre o vencimento básico, observada a regra de não cumulatividade e os requisitos previstos na norma."
+        },
+        {
+          "letter": "B",
+          "text": "A gratificação pelo mestrado equivale a 25% sobre a remuneração total, podendo ser acumulada com os percentuais de graduação e especialização."
+        },
+        {
+          "letter": "C",
+          "text": "O mestrado assegura automaticamente adicional de 15% sobre o vencimento básico, mesmo quando exigido para ingresso no cargo."
+        },
+        {
+          "letter": "D",
+          "text": "O benefício somente será concedido ao servidor que possuir doutorado, independentemente de outras titulações."
+        },
+        {
+          "letter": "E",
+          "text": "A conclusão do mestrado assegura adicional de 10% sobre a remuneração total, acumulável com os demais títulos acadêmicos."
+        }
+      ],
+      "sourcePage": 5,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Resolução nº 173/CMCJ/2025 — Quadro de pessoal",
+      "topicCode": "L173",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "A",
+      "answerComment": "Art. 15, § 4º, alínea d, da Resolução nº 173/2025. Mestrado: 20% do vencimento básico, sem cumulação.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "res173"
+    },
+    {
+      "id": "sim-autoral-candeias-legislacao-mista-2026-11-21-010",
+      "examId": "sim-autoral-candeias-legislacao-mista-2026-11-21",
+      "code": "Q2026LECDJMIXAUTORAL010",
+      "originalNumber": 10,
+      "heading": "Legislação Municipal — Resolução nº 173/CMCJ/2025 — Quadro de pessoal — Resolução nº 173/CMCJ/2025",
+      "stem": "Em razão de uma reorganização administrativa, a Mesa Diretora da Câmara Municipal decidiu realocar um servidor efetivo para outro setor, mantendo atividades compatíveis com seu cargo. Considerando as regras de lotação e remanejamento previstas na Resolução nº 173/CMCJ/2025, assinale a alternativa CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "A realocação poderá ser realizada verbalmente, com efeitos imediatos, independentemente de comunicação formal."
+        },
+        {
+          "letter": "B",
+          "text": "O remanejamento autoriza a alteração unilateral das atribuições do cargo para funções de qualquer natureza, inclusive com redução de vencimentos."
+        },
+        {
+          "letter": "C",
+          "text": "A realocação deverá ser formalizada por ato administrativo e comunicada ao servidor com antecedência mínima de 15 dias, preservados seus direitos e vencimentos quando remanejado para função compatível."
+        },
+        {
+          "letter": "D",
+          "text": "A decisão de lotação pertence exclusivamente ao Prefeito Municipal, por exercer a chefia da administração pública local."
+        },
+        {
+          "letter": "E",
+          "text": "O servidor somente poderá ser remanejado após autorização judicial e aprovação da maioria absoluta dos vereadores."
+        }
+      ],
+      "sourcePage": 5,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Legislação",
+      "disciplineCode": "LE",
+      "topic": "Resolução nº 173/CMCJ/2025 — Quadro de pessoal",
+      "topicCode": "L173",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "C",
+      "answerComment": "Art. 17, §§ 1º e 2º, da Resolução nº 173/2025. Função compatível, preservação de direitos e aviso mínimo de 15 dias.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-legislacao",
+      "municipalSource": "candeias-do-jamari-ro",
+      "municipalLawTag": "res173"
     }
   ],
   "attempts": [
