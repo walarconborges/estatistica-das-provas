@@ -50374,6 +50374,16 @@
       "status": "approved",
       "at": "2026-11-21T18:30:26.557Z",
       "resolvedAt": "2026-11-21T18:43:42.213Z"
+    },
+    {
+      "id": "de187f89-97d8-48df-9091-91ed5d5b0ecd",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-health-04-017",
+      "type": "problem",
+      "note": "verificar separação de silabas devido à extração",
+      "proposed": {},
+      "status": "pending",
+      "at": "2026-11-21T18:48:56.129Z"
     }
   ],
   "tombstones": {
