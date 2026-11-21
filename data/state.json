@@ -52518,6 +52518,14 @@
       "answer": "A",
       "simulationId": "",
       "at": "2026-11-21T19:58:16.000Z"
+    },
+    {
+      "id": "6a6d8c32-5e63-4b39-afef-36f725b14f45",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-ti-08-019",
+      "answer": "C",
+      "simulationId": "",
+      "at": "2026-11-21T20:02:44.971Z"
     }
   ],
   "simulations": [],
