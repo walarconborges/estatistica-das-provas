@@ -55880,6 +55880,16 @@
       "proposed": {},
       "status": "pending",
       "at": "2026-11-21T21:37:53.446Z"
+    },
+    {
+      "id": "046e696c-c03b-4d07-9b59-83aaeb896a37",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-health-08-003",
+      "type": "problem",
+      "note": "falta ajustar o texto para facilitar a leitur ae em paragrafos para resolver a questão",
+      "proposed": {},
+      "status": "pending",
+      "at": "2026-11-21T21:38:17.413Z"
     }
   ],
   "tombstones": {
