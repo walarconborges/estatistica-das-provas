@@ -56150,6 +56150,16 @@
       "proposed": {},
       "status": "pending",
       "at": "2026-11-21T22:36:40.649Z"
+    },
+    {
+      "id": "fb1050af-b0a7-4210-ade5-fe175a1a46ab",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-ti-03-021",
+      "type": "problem",
+      "note": "ajustar texto e enunciado para facilitar leitura",
+      "proposed": {},
+      "status": "pending",
+      "at": "2026-11-21T22:52:10.150Z"
     }
   ],
   "tombstones": {
