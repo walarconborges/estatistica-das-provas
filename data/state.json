@@ -55186,6 +55186,14 @@
       "answer": "C",
       "simulationId": "",
       "at": "2026-11-21T22:36:13.906Z"
+    },
+    {
+      "id": "5f787581-7a3b-4304-aeb9-625131163546",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "sim-autoral-candeias-legislacao-mista-2026-11-21-001",
+      "answer": "A",
+      "simulationId": "",
+      "at": "2026-11-21T22:37:19.710Z"
     }
   ],
   "simulations": [],
