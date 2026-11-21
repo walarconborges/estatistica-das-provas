@@ -49113,6 +49113,16 @@
       "proposed": {},
       "status": "pending",
       "at": "2026-11-21T15:43:58.001Z"
+    },
+    {
+      "id": "867c1a96-45b5-46a1-a0bb-c582383e4b03",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-health-02-001",
+      "type": "problem",
+      "note": "Separar título do texto do texto do enunciado da pergunta e cada item assertiva separada do modelo que a gente estabeleceu",
+      "proposed": {},
+      "status": "pending",
+      "at": "2026-11-21T15:54:42.687Z"
     }
   ],
   "tombstones": {
