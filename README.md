@@ -1,9 +1,16 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.44 — 20/11/2026**  
+**Versão experimental 0.6.45 — 21/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.45 — sinalizações #52–#55
+- **Q2025TI08028:** restauradas três lacunas no enunciado de memória física/virtual do Windows 10, conferidas com a questão 28 do PDF da prova VUNESP 2025 — Câmara de Marília/SP — Auxiliar de Informática. Gabarito E preservado.
+- **Q2024SAUDE01017:** corrigida a classificação de Língua Portuguesa para Conhecimentos Específicos / Saúde coletiva, atenção básica e SUS (portas de entrada do SUS), sem alteração do gabarito C.
+- **Q2020SAUDE02001:** título "O CARIOCA E A ROUPA" separado do corpo do texto em todas as cinco questões relacionadas; as quatro assertivas numeradas agora são apresentadas uma por linha e podem receber marcações de um caractere. Gabarito E preservado.
+- **Q2026ASG02001:** conferido que o texto responde à pergunta sobre Beatriz e Thereza: ambas gostam de **pintar quadros** (gabarito C). Título e autoria reorganizados para leitura nas cinco questões que usam o texto de apoio, sem trocar a resposta.
+- Sinalizações #52–#55 analisadas; códigos públicos, alternativas, perfis, respostas, tentativas e demais dados preservados. Regressões em `tests/flags-52-55.test.mjs`.
 
 ## Versão 0.6.44 — 20 questões de História, Geografia e notícias
 - Dois simulados autorais no estilo IBGP, questões 11–20, inseridos sem duplicação: `sim-chatgpt-candeias-hg-2026-11-20-caderno2` e `sim-chatgpt-cmcj-noticias-2026-11-20-bateria2`.
