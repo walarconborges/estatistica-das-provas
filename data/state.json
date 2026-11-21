@@ -55098,6 +55098,14 @@
       "answer": "A",
       "simulationId": "",
       "at": "2026-11-21T21:47:32.172Z"
+    },
+    {
+      "id": "3d3fad8e-46e7-47cb-9406-21f0095f916d",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-ti-05-063",
+      "answer": "C",
+      "simulationId": "",
+      "at": "2026-11-21T21:48:11.554Z"
     }
   ],
   "simulations": [],
