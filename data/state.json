@@ -55950,6 +55950,16 @@
       "proposed": {},
       "status": "pending",
       "at": "2026-11-21T21:48:19.132Z"
+    },
+    {
+      "id": "5a03032c-ef9a-4f68-92a8-c442c3b0a129",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-health-12-029",
+      "type": "problem",
+      "note": "é da SEMUSA",
+      "proposed": {},
+      "status": "pending",
+      "at": "2026-11-21T21:48:32.123Z"
     }
   ],
   "tombstones": {
