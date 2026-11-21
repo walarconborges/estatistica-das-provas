@@ -1762,6 +1762,114 @@
       "sourceType": "simulado-autoral",
       "sourceFile": "simulado_ibgp_cop26_a_cop30_10_questoes (1).pdf",
       "notes": "Dez questões autorais de atualidades sobre COP26–COP30, no estilo IBGP. Não constituem prova oficial da banca IBGP. Gabarito extraído da última página do PDF."
+    },
+    {
+      "id": "sim-autoral-clima-amazonia-2026-11-21",
+      "title": "2026 — Simulado autoral — Clima amazônico, rios voadores, El Niño e estiagem (1–10)",
+      "year": "2026",
+      "banca": "Autoral",
+      "bancaCode": "AUTORAL",
+      "orgao": "Simulado de Conhecimentos Gerais — Clima e Amazônia",
+      "orgaoCode": "SIMULADO-CLIMA-AMAZONIA",
+      "createdAt": "2026-11-21T19:22:03.093Z",
+      "questionIds": [
+        "sim-autoral-clima-amazonia-2026-11-21-001",
+        "sim-autoral-clima-amazonia-2026-11-21-002",
+        "sim-autoral-clima-amazonia-2026-11-21-003",
+        "sim-autoral-clima-amazonia-2026-11-21-004",
+        "sim-autoral-clima-amazonia-2026-11-21-005",
+        "sim-autoral-clima-amazonia-2026-11-21-006",
+        "sim-autoral-clima-amazonia-2026-11-21-007",
+        "sim-autoral-clima-amazonia-2026-11-21-008",
+        "sim-autoral-clima-amazonia-2026-11-21-009",
+        "sim-autoral-clima-amazonia-2026-11-21-010"
+      ],
+      "keySection": "Gabarito 1–10 — última página do PDF",
+      "metadataReview": [],
+      "sourceType": "simulado-autoral",
+      "sourceFile": "simulado_ibgp_clima_amazonia_rios_voadores_el_nino_estiagem_10_questoes(1).pdf",
+      "notes": "Caderno de 10 questões autorais inspirado no estilo IBGP; não é prova oficial da banca. Enunciados e alternativas extraídos do PDF enviado. Comentários do gabarito mantidos."
+    },
+    {
+      "id": "sim-autoral-candeias-br364-2026-11-21",
+      "title": "2026 — Simulado autoral — Candeias do Jamari — BR-364 — Caderno 4 (31–40)",
+      "year": "2026",
+      "banca": "Autoral",
+      "bancaCode": "AUTORAL",
+      "orgao": "Candeias do Jamari/RO",
+      "orgaoCode": "CANDEIAS-DO-JAMARI",
+      "createdAt": "2026-11-21T19:22:03.093Z",
+      "questionIds": [
+        "sim-autoral-candeias-br364-2026-11-21-031",
+        "sim-autoral-candeias-br364-2026-11-21-032",
+        "sim-autoral-candeias-br364-2026-11-21-033",
+        "sim-autoral-candeias-br364-2026-11-21-034",
+        "sim-autoral-candeias-br364-2026-11-21-035",
+        "sim-autoral-candeias-br364-2026-11-21-036",
+        "sim-autoral-candeias-br364-2026-11-21-037",
+        "sim-autoral-candeias-br364-2026-11-21-038",
+        "sim-autoral-candeias-br364-2026-11-21-039",
+        "sim-autoral-candeias-br364-2026-11-21-040"
+      ],
+      "keySection": "Gabarito 31–40 — última página do PDF",
+      "metadataReview": [],
+      "sourceType": "simulado-autoral",
+      "sourceFile": "simulado_ibgp_br364_candeias_do_jamari_10_questoes(1).pdf",
+      "notes": "Caderno de 10 questões autorais inspirado no estilo IBGP; não é prova oficial da banca. Enunciados e alternativas extraídos do PDF enviado. O PDF apresenta gabarito simples, sem comentários."
+    },
+    {
+      "id": "sim-autoral-candeias-incra-2026-11-21",
+      "title": "2026 — Simulado autoral — Candeias do Jamari — INCRA e migração — Caderno 5 (41–50)",
+      "year": "2026",
+      "banca": "Autoral",
+      "bancaCode": "AUTORAL",
+      "orgao": "Candeias do Jamari/RO",
+      "orgaoCode": "CANDEIAS-DO-JAMARI",
+      "createdAt": "2026-11-21T19:22:03.093Z",
+      "questionIds": [
+        "sim-autoral-candeias-incra-2026-11-21-041",
+        "sim-autoral-candeias-incra-2026-11-21-042",
+        "sim-autoral-candeias-incra-2026-11-21-043",
+        "sim-autoral-candeias-incra-2026-11-21-044",
+        "sim-autoral-candeias-incra-2026-11-21-045",
+        "sim-autoral-candeias-incra-2026-11-21-046",
+        "sim-autoral-candeias-incra-2026-11-21-047",
+        "sim-autoral-candeias-incra-2026-11-21-048",
+        "sim-autoral-candeias-incra-2026-11-21-049",
+        "sim-autoral-candeias-incra-2026-11-21-050"
+      ],
+      "keySection": "Gabarito 41–50 — última página do PDF",
+      "metadataReview": [],
+      "sourceType": "simulado-autoral",
+      "sourceFile": "simulado_ibgp_incra_migracao_sul_candeias_questoes_41_a_50(1).pdf",
+      "notes": "Caderno de 10 questões autorais inspirado no estilo IBGP; não é prova oficial da banca. Enunciados e alternativas extraídos do PDF enviado. O PDF apresenta gabarito simples, sem comentários."
+    },
+    {
+      "id": "sim-autoral-candeias-seringais-2026-11-21",
+      "title": "2026 — Simulado autoral — Candeias do Jamari — Seringais e borracha — Caderno 6 (51–60)",
+      "year": "2026",
+      "banca": "Autoral",
+      "bancaCode": "AUTORAL",
+      "orgao": "Candeias do Jamari/RO",
+      "orgaoCode": "CANDEIAS-DO-JAMARI",
+      "createdAt": "2026-11-21T19:22:03.093Z",
+      "questionIds": [
+        "sim-autoral-candeias-seringais-2026-11-21-051",
+        "sim-autoral-candeias-seringais-2026-11-21-052",
+        "sim-autoral-candeias-seringais-2026-11-21-053",
+        "sim-autoral-candeias-seringais-2026-11-21-054",
+        "sim-autoral-candeias-seringais-2026-11-21-055",
+        "sim-autoral-candeias-seringais-2026-11-21-056",
+        "sim-autoral-candeias-seringais-2026-11-21-057",
+        "sim-autoral-candeias-seringais-2026-11-21-058",
+        "sim-autoral-candeias-seringais-2026-11-21-059",
+        "sim-autoral-candeias-seringais-2026-11-21-060"
+      ],
+      "keySection": "Gabarito 51–60 — última página do PDF",
+      "metadataReview": [],
+      "sourceType": "simulado-autoral",
+      "sourceFile": "simulado_ibgp_seringais_borracha_candeias_questoes_51_a_60(2).pdf",
+      "notes": "Caderno de 10 questões autorais inspirado no estilo IBGP; não é prova oficial da banca. Enunciados e alternativas extraídos do PDF enviado. Comentários do gabarito mantidos."
     }
   ],
   "questions": [
@@ -49750,6 +49858,2056 @@
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-cop",
       "conference": "COP30"
+    },
+    {
+      "id": "sim-autoral-clima-amazonia-2026-11-21-001",
+      "examId": "sim-autoral-clima-amazonia-2026-11-21",
+      "code": "Q2026CGCLIMAAUTORAL001",
+      "originalNumber": 1,
+      "heading": "Conhecimentos Gerais — Clima amazônico, rios voadores, El Niño e estiagem",
+      "stem": "Uma equipe de meteorologia identifica correntes de ar úmido que atravessam a Amazônia antes de influenciar as chuvas sobre áreas agrícolas do Centro-Oeste. A contribuição da floresta para esse transporte de umidade ocorre, principalmente, porque",
+      "options": [
+        {
+          "letter": "A",
+          "text": "a vegetação devolve parte da água à atmosfera pela evapotranspiração, e os ventos transportam essa umidade para outras regiões."
+        },
+        {
+          "letter": "B",
+          "text": "a cobertura florestal retém toda a precipitação nas copas, impedindo a circulação da umidade em direção ao interior do continente."
+        },
+        {
+          "letter": "C",
+          "text": "as árvores transformam o vapor de água em oxigênio, que passa a atuar como principal componente das nuvens de chuva."
+        },
+        {
+          "letter": "D",
+          "text": "o transporte atmosférico depende exclusivamente da evaporação dos rios amazônicos, sem participação relevante das plantas."
+        },
+        {
+          "letter": "E",
+          "text": "as massas de ar úmido deslocam-se apenas quando ocorre o transbordamento dos rios da região."
+        }
+      ],
+      "sourcePage": 1,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Meio ambiente e sustentabilidade",
+      "topicCode": "CAMB",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Simulado de Conhecimentos Gerais — Clima e Amazônia",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-clima-amazonia",
+      "answerComment": "A vegetação recicla umidade por evapotranspiração, e os ventos a transportam a longas distâncias."
+    },
+    {
+      "id": "sim-autoral-clima-amazonia-2026-11-21-002",
+      "examId": "sim-autoral-clima-amazonia-2026-11-21",
+      "code": "Q2026CGCLIMAAUTORAL002",
+      "originalNumber": 2,
+      "heading": "Conhecimentos Gerais — Clima amazônico, rios voadores, El Niño e estiagem",
+      "stem": "Em um mapa da circulação atmosférica sul-americana, observa-se que parte da umidade que avança da Amazônia em direção ao oeste é desviada ao alcançar uma extensa cadeia de montanhas. Esse comportamento ajuda a explicar o transporte de umidade rumo ao centro-sul do continente. A interpretação geográfica correta é que",
+      "options": [
+        {
+          "letter": "A",
+          "text": "a Cordilheira dos Andes elimina a umidade transportada pela atmosfera e impede a formação de chuvas fora da Amazônia."
+        },
+        {
+          "letter": "B",
+          "text": "o desvio resulta do predomínio permanente de ventos que sopram do Oceano Pacífico para o interior do Brasil."
+        },
+        {
+          "letter": "C",
+          "text": "a Cordilheira dos Andes funciona como barreira ao escoamento, favorecendo o redirecionamento de parte do ar úmido por correntes de baixos níveis."
+        },
+        {
+          "letter": "D",
+          "text": "a altitude dos Andes produz a maior parte do vapor transportado, por meio do derretimento das geleiras."
+        },
+        {
+          "letter": "E",
+          "text": "o relevo não interfere na circulação atmosférica, pois os ventos conservam direção fixa em escala continental."
+        }
+      ],
+      "sourcePage": 1,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Meio ambiente e sustentabilidade",
+      "topicCode": "CAMB",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Simulado de Conhecimentos Gerais — Clima e Amazônia",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-clima-amazonia",
+      "answerComment": "Os Andes funcionam como barreira orográfica; parte do fluxo úmido é desviada para o sul."
+    },
+    {
+      "id": "sim-autoral-clima-amazonia-2026-11-21-003",
+      "examId": "sim-autoral-clima-amazonia-2026-11-21",
+      "code": "Q2026CGCLIMAAUTORAL003",
+      "originalNumber": 3,
+      "heading": "Conhecimentos Gerais — Clima amazônico, rios voadores, El Niño e estiagem",
+      "stem": "Duas áreas próximas, submetidas a condições meteorológicas semelhantes, apresentam comportamentos diferentes: numa delas predomina floresta conservada; na outra, parte da cobertura vegetal foi substituída por pastagens. Na segunda área, são registradas tardes mais quentes e menor umidade próxima à superfície. Um mecanismo compatível com essa diferença é",
+      "options": [
+        {
+          "letter": "A",
+          "text": "o aumento obrigatório da precipitação, pois a retirada de árvores expõe o solo diretamente à atmosfera."
+        },
+        {
+          "letter": "B",
+          "text": "a substituição da vegetação eliminar a absorção de energia solar, reduzindo o aquecimento superficial."
+        },
+        {
+          "letter": "C",
+          "text": "a presença de pastagens impedir completamente a evaporação da água armazenada no solo."
+        },
+        {
+          "letter": "D",
+          "text": "a retirada de árvores intensificar a formação de nuvens em todas as estações, independentemente da circulação atmosférica."
+        },
+        {
+          "letter": "E",
+          "text": "a perda de sombreamento e de transpiração da vegetação alterar os fluxos de energia e de água, favorecendo o aquecimento da superfície."
+        }
+      ],
+      "sourcePage": 2,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Meio ambiente e sustentabilidade",
+      "topicCode": "CAMB",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Simulado de Conhecimentos Gerais — Clima e Amazônia",
+      "answer": "E",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-clima-amazonia",
+      "answerComment": "A redução da cobertura florestal modifica o balanço de energia e diminui a evapotranspiração."
+    },
+    {
+      "id": "sim-autoral-clima-amazonia-2026-11-21-004",
+      "examId": "sim-autoral-clima-amazonia-2026-11-21",
+      "code": "Q2026CGCLIMAAUTORAL004",
+      "originalNumber": 4,
+      "heading": "Conhecimentos Gerais — Clima amazônico, rios voadores, El Niño e estiagem",
+      "stem": "Ao ouvir que o “verão amazônico” em Rondônia costuma coincidir com meses que pertencem ao inverno astronômico do Hemisfério Sul, uma pessoa afirma que a expressão é necessariamente incorreta. A avaliação adequada dessa afirmação é",
+      "options": [
+        {
+          "letter": "A",
+          "text": "correta, pois todas as regiões brasileiras definem o verão exclusivamente pela ocorrência de altas temperaturas em dezembro e janeiro."
+        },
+        {
+          "letter": "B",
+          "text": "incorreta, pois “verão amazônico” é uma denominação regional associada à época menos chuvosa, que não precisa coincidir com o verão astronômico."
+        },
+        {
+          "letter": "C",
+          "text": "correta, pois o verão amazônico é um evento provocado apenas pelo fenômeno El Niño, sem regularidade sazonal."
+        },
+        {
+          "letter": "D",
+          "text": "incorreta, pois o termo designa a estação de cheias dos rios, quando a precipitação atinge seu máximo anual."
+        },
+        {
+          "letter": "E",
+          "text": "correta, pois a Amazônia não apresenta diferenças sazonais de chuva em nenhuma de suas áreas."
+        }
+      ],
+      "sourcePage": 2,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Meio ambiente e sustentabilidade",
+      "topicCode": "CAMB",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Simulado de Conhecimentos Gerais — Clima e Amazônia",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-clima-amazonia",
+      "answerComment": "O termo regional indica a época de menos chuvas; não equivale à estação astronômica."
+    },
+    {
+      "id": "sim-autoral-clima-amazonia-2026-11-21-005",
+      "examId": "sim-autoral-clima-amazonia-2026-11-21",
+      "code": "Q2026CGCLIMAAUTORAL005",
+      "originalNumber": 5,
+      "heading": "Conhecimentos Gerais — Clima amazônico, rios voadores, El Niño e estiagem",
+      "stem": "Um boletim climático alerta que um episódio de El Niño pode favorecer chuvas acima da média em parte do Sul do Brasil e reduzir a probabilidade de chuvas em setores da Amazônia. Essa previsão é coerente com a compreensão de que o El Niño",
+      "options": [
+        {
+          "letter": "A",
+          "text": "corresponde ao resfriamento persistente da superfície do Atlântico Sul e produz, obrigatoriamente, estiagem em todas as regiões brasileiras."
+        },
+        {
+          "letter": "B",
+          "text": "é uma elevação local da temperatura do solo amazônico, sem relação com a circulação atmosférica em escala global."
+        },
+        {
+          "letter": "C",
+          "text": "provoca distribuição uniforme de chuvas no território brasileiro, tornando desnecessárias previsões regionais."
+        },
+        {
+          "letter": "D",
+          "text": "envolve o aquecimento anômalo do Pacífico equatorial e alterações na circulação atmosférica, com efeitos regionais distintos sobre as chuvas."
+        },
+        {
+          "letter": "E",
+          "text": "é sinônimo de mudança climática causada pelo ser humano, tendo início e duração idênticos aos do aquecimento global."
+        }
+      ],
+      "sourcePage": 2,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Meio ambiente e sustentabilidade",
+      "topicCode": "CAMB",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Simulado de Conhecimentos Gerais — Clima e Amazônia",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-clima-amazonia",
+      "answerComment": "O El Niño está ligado ao aquecimento do Pacífico equatorial e produz impactos regionais diferentes."
+    },
+    {
+      "id": "sim-autoral-clima-amazonia-2026-11-21-006",
+      "examId": "sim-autoral-clima-amazonia-2026-11-21",
+      "code": "Q2026CGCLIMAAUTORAL006",
+      "originalNumber": 6,
+      "heading": "Conhecimentos Gerais — Clima amazônico, rios voadores, El Niño e estiagem",
+      "stem": "Em determinado município amazônico, a ausência de chuva durante parte da estação menos chuvosa não provocou interrupções no abastecimento. Em outro ano, a precipitação permaneceu muito abaixo do esperado por meses, acompanhada de redução persistente das vazões e de restrições de uso da água. A segunda situação evidencia",
+      "options": [
+        {
+          "letter": "A",
+          "text": "que um déficit prolongado de precipitação pode evoluir para seca hidrológica, quando rios e reservas de água também são afetados."
+        },
+        {
+          "letter": "B",
+          "text": "que o retorno de uma chuva isolada é suficiente para recompor imediatamente os volumes de todos os rios da bacia."
+        },
+        {
+          "letter": "C",
+          "text": "que estiagem e seca hidrológica são processos sem qualquer relação com a chuva acumulada no território."
+        },
+        {
+          "letter": "D",
+          "text": "que a redução das vazões depende apenas da quantidade de água consumida nas cidades, mesmo quando ocorre déficit de precipitação."
+        },
+        {
+          "letter": "E",
+          "text": "que qualquer intervalo de poucos dias sem chuva deve ser classificado como seca hidrológica extrema."
+        }
+      ],
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Meio ambiente e sustentabilidade",
+      "topicCode": "CAMB",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Simulado de Conhecimentos Gerais — Clima e Amazônia",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-clima-amazonia",
+      "answerComment": "A persistência do déficit hídrico pode atingir rios e reservatórios, caracterizando seca hidrológica."
+    },
+    {
+      "id": "sim-autoral-clima-amazonia-2026-11-21-007",
+      "examId": "sim-autoral-clima-amazonia-2026-11-21",
+      "code": "Q2026CGCLIMAAUTORAL007",
+      "originalNumber": 7,
+      "heading": "Conhecimentos Gerais — Clima amazônico, rios voadores, El Niño e estiagem",
+      "stem": "Após alguns dias de chuva em Porto Velho, o nível do rio Madeira permanece muito baixo. Um morador conclui que, se choveu na cidade, o rio já deveria ter recuperado imediatamente sua vazão. O principal problema dessa conclusão é desconsiderar que",
+      "options": [
+        {
+          "letter": "A",
+          "text": "a altura de um rio depende exclusivamente da chuva registrada no município em que se encontra a estação de medição."
+        },
+        {
+          "letter": "B",
+          "text": "os cursos d’água amazônicos não possuem ligação com afluentes, recebendo água apenas da chuva direta sobre seu leito."
+        },
+        {
+          "letter": "C",
+          "text": "a resposta de um rio depende das chuvas em toda a bacia, do escoamento e dos diferentes tempos de propagação da água até o ponto monitorado."
+        },
+        {
+          "letter": "D",
+          "text": "o aumento do nível de um rio só pode ocorrer quando a precipitação termina em todos os países da América do Sul."
+        },
+        {
+          "letter": "E",
+          "text": "a recuperação do rio é determinada unicamente pela temperatura da água, independentemente dos aportes de seus afluentes."
+        }
+      ],
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Meio ambiente e sustentabilidade",
+      "topicCode": "CAMB",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Simulado de Conhecimentos Gerais — Clima e Amazônia",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-clima-amazonia",
+      "answerComment": "A vazão integra contribuições de toda a bacia hidrográfica, com resposta que não é instantânea."
+    },
+    {
+      "id": "sim-autoral-clima-amazonia-2026-11-21-008",
+      "examId": "sim-autoral-clima-amazonia-2026-11-21",
+      "code": "Q2026CGCLIMAAUTORAL008",
+      "originalNumber": 8,
+      "heading": "Conhecimentos Gerais — Clima amazônico, rios voadores, El Niño e estiagem",
+      "stem": "Ao avaliar o risco de estiagem no norte da Amazônia, um pesquisador examina não apenas as condições do Pacífico equatorial, mas também a temperatura da superfície do Atlântico Tropical Norte. Essa decisão se justifica porque",
+      "options": [
+        {
+          "letter": "A",
+          "text": "o Atlântico tropical é a única variável capaz de explicar as chuvas amazônicas, tornando irrelevantes a vegetação e o Pacífico."
+        },
+        {
+          "letter": "B",
+          "text": "as condições do Atlântico modificam diretamente a duração do dia e da noite, que determinam sozinhas a intensidade das chuvas."
+        },
+        {
+          "letter": "C",
+          "text": "as águas do Atlântico só influenciam localidades litorâneas e não têm relação com a circulação atmosférica no interior amazônico."
+        },
+        {
+          "letter": "D",
+          "text": "as temperaturas do Atlântico Tropical podem influenciar o posicionamento da faixa de convergência de ventos e chuvas, alterando o regime de precipitação na região."
+        },
+        {
+          "letter": "E",
+          "text": "o aquecimento do Atlântico impede a ocorrência de El Niño no Pacífico e elimina a possibilidade de eventos simultâneos."
+        }
+      ],
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Meio ambiente e sustentabilidade",
+      "topicCode": "CAMB",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Simulado de Conhecimentos Gerais — Clima e Amazônia",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-clima-amazonia",
+      "answerComment": "O Atlântico Tropical interfere na circulação de umidade e no posicionamento da zona de convergência."
+    },
+    {
+      "id": "sim-autoral-clima-amazonia-2026-11-21-009",
+      "examId": "sim-autoral-clima-amazonia-2026-11-21",
+      "code": "Q2026CGCLIMAAUTORAL009",
+      "originalNumber": 9,
+      "heading": "Conhecimentos Gerais — Clima amazônico, rios voadores, El Niño e estiagem",
+      "stem": "Durante uma estiagem intensa, aumenta a preocupação com incêndios florestais na Amazônia. Em uma reunião, afirma-se que o El Niño acende diretamente a vegetação, dispensando qualquer outra causa. A interpretação cientificamente mais adequada é",
+      "options": [
+        {
+          "letter": "A",
+          "text": "que o fenômeno climático determina, sozinho, todos os focos de fogo, independentemente do uso da terra."
+        },
+        {
+          "letter": "B",
+          "text": "que altas temperaturas e baixa umidade impedem a propagação do fogo por reduzirem a disponibilidade de combustível vegetal."
+        },
+        {
+          "letter": "C",
+          "text": "que as queimadas representam necessariamente um processo natural, impossível de ser prevenido por ações humanas."
+        },
+        {
+          "letter": "D",
+          "text": "que o risco de incêndio desaparece nas áreas desmatadas, pois o solo exposto não pode receber material combustível."
+        },
+        {
+          "letter": "E",
+          "text": "que o tempo seco pode facilitar a propagação do fogo, mas a ignição e o uso humano do fogo são fatores fundamentais no contexto amazônico."
+        }
+      ],
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Meio ambiente e sustentabilidade",
+      "topicCode": "CAMB",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Simulado de Conhecimentos Gerais — Clima e Amazônia",
+      "answer": "E",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-clima-amazonia",
+      "answerComment": "Secura e calor aumentam a propagação, mas a origem do fogo é frequentemente humana."
+    },
+    {
+      "id": "sim-autoral-clima-amazonia-2026-11-21-010",
+      "examId": "sim-autoral-clima-amazonia-2026-11-21",
+      "code": "Q2026CGCLIMAAUTORAL010",
+      "originalNumber": 10,
+      "heading": "Conhecimentos Gerais — Clima amazônico, rios voadores, El Niño e estiagem",
+      "stem": "Uma prefeitura amazônica recebe alerta de chuvas abaixo da média, redução da navegabilidade dos rios e maior risco de queimadas. Para comunidades que dependem do transporte fluvial, qual conjunto de medidas responde melhor à natureza desses riscos?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Concentrar toda a resposta na divulgação de temperaturas máximas, porque a navegação e o abastecimento não dependem da situação hidrológica."
+        },
+        {
+          "letter": "B",
+          "text": "Integrar monitoramento de chuva e vazão, planejamento de rotas e suprimentos, proteção do acesso à água e prevenção de incêndios."
+        },
+        {
+          "letter": "C",
+          "text": "Suspender permanentemente o transporte fluvial, mesmo nas localidades e períodos em que a navegação continue segura."
+        },
+        {
+          "letter": "D",
+          "text": "Adiar as ações até a confirmação de um desastre, pois alertas climáticos não podem orientar medidas preventivas."
+        },
+        {
+          "letter": "E",
+          "text": "Priorizar exclusivamente o combate ao fogo, uma vez que a diminuição do nível dos rios não tem efeitos sobre os serviços públicos."
+        }
+      ],
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Meio ambiente e sustentabilidade",
+      "topicCode": "CAMB",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Simulado de Conhecimentos Gerais — Clima e Amazônia",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-clima-amazonia",
+      "answerComment": "A adaptação requer monitoramento, prevenção e preparação de serviços, água e logística."
+    },
+    {
+      "id": "sim-autoral-candeias-br364-2026-11-21-031",
+      "examId": "sim-autoral-candeias-br364-2026-11-21",
+      "code": "Q2026CGCDJGEOAUTORAL031",
+      "originalNumber": 31,
+      "heading": "Conhecimentos Gerais — Geografia de Candeias do Jamari — BR-364",
+      "stem": "A antiga Vila Candeias articulava circulação terrestre e fluvial, em uma área vinculada ao rio Candeias e ao traçado da atual BR-364. Considerando os efeitos da consolidação desse corredor, assinale a interpretação CORRETA sobre a organização regional dos transportes.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "A rodovia tornou o rio Candeias irrelevante para toda forma de circulação local, inclusive para usos cotidianos."
+        },
+        {
+          "letter": "B",
+          "text": "O novo eixo terrestre provocou o deslocamento obrigatório da sede de Candeias para Porto Velho."
+        },
+        {
+          "letter": "C",
+          "text": "O transporte rodoviário passou a operar isoladamente, sem conexão possível com outras rotas regionais."
+        },
+        {
+          "letter": "D",
+          "text": "A articulação entre vias terrestres e percursos fluviais ampliou as possibilidades de circulação de pessoas e mercadorias."
+        },
+        {
+          "letter": "E",
+          "text": "A existência da BR-364 tornou dispensável qualquer ligação entre a produção rural e os centros consumidores."
+        }
+      ],
+      "sourcePage": 1,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geografia de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-hg",
+      "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-autoral-candeias-br364-2026-11-21-032",
+      "examId": "sim-autoral-candeias-br364-2026-11-21",
+      "code": "Q2026CGCDJHISTAUTORAL032",
+      "originalNumber": 32,
+      "heading": "Conhecimentos Gerais — História de Candeias do Jamari — BR-364",
+      "stem": "Ao analisar a BR-364, um estudante afirmou que sua abertura, na década de 1960, e a pavimentação do trecho Cuiabá-Porto Velho, concluída nos anos 1980, representam etapas diferentes da integração regional. Essa distinção se justifica porque:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "a abertura criou uma ligação terrestre, mas a pavimentação posterior contribuiu para melhorar a regularidade do tráfego, especialmente no período chuvoso."
+        },
+        {
+          "letter": "B",
+          "text": "o asfaltamento antecedeu a abertura do caminho e, por isso, não alterou a circulação de veículos."
+        },
+        {
+          "letter": "C",
+          "text": "a rodovia não podia transportar mercadorias antes de sua pavimentação, mesmo em períodos secos."
+        },
+        {
+          "letter": "D",
+          "text": "a conclusão do asfalto eliminou a necessidade de manutenção e de cuidados com pontes e drenagem."
+        },
+        {
+          "letter": "E",
+          "text": "a abertura da estrada e sua pavimentação foram o mesmo evento, realizado integralmente em 1992."
+        }
+      ],
+      "sourcePage": 1,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "História de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-hg",
+      "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-autoral-candeias-br364-2026-11-21-033",
+      "examId": "sim-autoral-candeias-br364-2026-11-21",
+      "code": "Q2026CGCDJGEOAUTORAL033",
+      "originalNumber": 33,
+      "heading": "Conhecimentos Gerais — Geografia de Candeias do Jamari — BR-364",
+      "stem": "O aumento do fluxo de veículos e de pessoas ao longo da BR-364 favoreceu atividades comerciais e a expansão de núcleos urbanos em Rondônia. Em Candeias do Jamari, esse processo também permite compreender a necessidade de ampliar a oferta de serviços públicos. Qual relação causal está CORRETA?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "O crescimento do comércio implica, necessariamente, redução da população residente no entorno da rodovia."
+        },
+        {
+          "letter": "B",
+          "text": "Uma via federal, por si só, garante o atendimento integral das demandas de saúde, educação e saneamento."
+        },
+        {
+          "letter": "C",
+          "text": "A ampliação do acesso ao território impede o surgimento de novos bairros e estabelecimentos comerciais."
+        },
+        {
+          "letter": "D",
+          "text": "A presença da rodovia substitui o planejamento urbano, pois a ocupação tende a se distribuir uniformemente."
+        },
+        {
+          "letter": "E",
+          "text": "A maior acessibilidade pode atrair moradores e atividades econômicas, elevando também a demanda por infraestrutura urbana."
+        }
+      ],
+      "sourcePage": 2,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geografia de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "E",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-hg",
+      "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-autoral-candeias-br364-2026-11-21-034",
+      "examId": "sim-autoral-candeias-br364-2026-11-21",
+      "code": "Q2026CGCDJHISTAUTORAL034",
+      "originalNumber": 34,
+      "heading": "Conhecimentos Gerais — História de Candeias do Jamari — BR-364",
+      "stem": "A colonização de Rondônia, especialmente a partir da década de 1970, teve forte relação com o eixo da BR-364 e com políticas públicas de ocupação territorial. Analise as afirmativas.\nI. A rodovia ajudou a estruturar a circulação em direção a áreas de assentamento e expansão agropecuária.\nII. A migração para a região relacionou-se tanto à melhoria do acesso quanto à oferta de terras e a políticas de colonização.\nIII. A abertura da rodovia garantiu, automaticamente, a regularização de todas as propriedades e o fim dos conflitos fundiários.\nEstá CORRETO o que se afirma em:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "I, apenas."
+        },
+        {
+          "letter": "B",
+          "text": "I e II, apenas."
+        },
+        {
+          "letter": "C",
+          "text": "II e III, apenas."
+        },
+        {
+          "letter": "D",
+          "text": "I e III, apenas."
+        },
+        {
+          "letter": "E",
+          "text": "I, II e III."
+        }
+      ],
+      "sourcePage": 2,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "História de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-hg",
+      "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-autoral-candeias-br364-2026-11-21-035",
+      "examId": "sim-autoral-candeias-br364-2026-11-21",
+      "code": "Q2026CGCDJGEOAUTORAL035",
+      "originalNumber": 35,
+      "heading": "Conhecimentos Gerais — Geografia de Candeias do Jamari — BR-364",
+      "stem": "Uma cooperativa de Candeias do Jamari transporta leite e hortaliças por estradas vicinais até alcançar a BR-364. Em períodos de chuvas intensas, o trecho rural de acesso fica parcialmente interditado, apesar de a rodovia federal estar em boas condições. Qual medida tende a produzir o benefício econômico mais direto para esses produtores?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Priorizar apenas o aumento do limite de velocidade na BR-364, sem intervenções nos acessos rurais."
+        },
+        {
+          "letter": "B",
+          "text": "Concentrar o armazenamento da produção nas propriedades, sem qualquer solução para seu transporte."
+        },
+        {
+          "letter": "C",
+          "text": "Manter a trafegabilidade das vias vicinais, com drenagem e conservação, para conectar a produção ao eixo rodoviário principal."
+        },
+        {
+          "letter": "D",
+          "text": "Suspender o comércio com Porto Velho até que seja construído um terminal ferroviário na região."
+        },
+        {
+          "letter": "E",
+          "text": "Substituir integralmente a produção de perecíveis por culturas destinadas apenas ao autoconsumo."
+        }
+      ],
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geografia de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-hg",
+      "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-autoral-candeias-br364-2026-11-21-036",
+      "examId": "sim-autoral-candeias-br364-2026-11-21",
+      "code": "Q2026CGCDJHISTAUTORAL036",
+      "originalNumber": 36,
+      "heading": "Conhecimentos Gerais — História de Candeias do Jamari — BR-364",
+      "stem": "No contexto das políticas de integração nacional do século XX, a ligação terrestre entre Cuiabá e Porto Velho tornou-se estratégica para Rondônia. Para municípios próximos a esse eixo, como Candeias do Jamari, o principal benefício territorial associado à BR-364 foi:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "ampliar a conexão com mercados e redes de abastecimento de outras regiões, reduzindo parte do isolamento terrestre."
+        },
+        {
+          "letter": "B",
+          "text": "transformar a região em área independente do sistema de transportes do restante do país."
+        },
+        {
+          "letter": "C",
+          "text": "substituir integralmente a produção agropecuária por atividades industriais de grande porte."
+        },
+        {
+          "letter": "D",
+          "text": "extinguir as relações comerciais com a capital, favorecendo apenas o transporte entre estados distantes."
+        },
+        {
+          "letter": "E",
+          "text": "alterar automaticamente os limites político-administrativos de Candeias do Jamari e de Porto Velho."
+        }
+      ],
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "História de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-hg",
+      "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-autoral-candeias-br364-2026-11-21-037",
+      "examId": "sim-autoral-candeias-br364-2026-11-21",
+      "code": "Q2026CGCDJGEOAUTORAL037",
+      "originalNumber": 37,
+      "heading": "Conhecimentos Gerais — Geografia de Candeias do Jamari — BR-364",
+      "stem": "A abertura de acessos viários na Amazônia pode favorecer a circulação econômica, mas também modificar o uso da terra. Considerando a experiência de ocupação territorial associada à BR-364 em Rondônia, assinale a análise ambiental mais adequada.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "A expansão de uma rodovia provoca, em todos os locais, recuperação imediata da vegetação nativa."
+        },
+        {
+          "letter": "B",
+          "text": "A conversão florestal decorre exclusivamente de variações climáticas, sem relação com acessibilidade e uso econômico do território."
+        },
+        {
+          "letter": "C",
+          "text": "A circulação rodoviária impede a instalação de empreendimentos rurais em áreas próximas à estrada."
+        },
+        {
+          "letter": "D",
+          "text": "O aumento de acessibilidade elimina a necessidade de fiscalização e de planejamento do uso da terra."
+        },
+        {
+          "letter": "E",
+          "text": "Novos acessos podem intensificar pressões sobre a floresta; ordenamento territorial e fiscalização são importantes para reduzir impactos."
+        }
+      ],
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geografia de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "E",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-hg",
+      "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-autoral-candeias-br364-2026-11-21-038",
+      "examId": "sim-autoral-candeias-br364-2026-11-21",
+      "code": "Q2026CGCDJGEOAUTORAL038",
+      "originalNumber": 38,
+      "heading": "Conhecimentos Gerais — Geografia de Candeias do Jamari — BR-364",
+      "stem": "Em 2025, o DNIT informou intervenções estruturais nas pontes sobre o rio Candeias, na BR-364, com restrições e reorganização do tráfego. Sob o ponto de vista geográfico e econômico, avalie as afirmativas.\nI. Pontes são pontos estratégicos da rede, pois sua condição estrutural interfere na continuidade do deslocamento.\nII. Uma interdição em rodovia federal não produz efeitos locais sobre moradores e comércio dos municípios atravessados.\nIII. Restrições à circulação de veículos podem elevar o tempo de viagem e os custos de transporte.\nEstá CORRETO o que se afirma em:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "I, apenas."
+        },
+        {
+          "letter": "B",
+          "text": "II, apenas."
+        },
+        {
+          "letter": "C",
+          "text": "II e III, apenas."
+        },
+        {
+          "letter": "D",
+          "text": "I e III, apenas."
+        },
+        {
+          "letter": "E",
+          "text": "I, II e III."
+        }
+      ],
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geografia de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-hg",
+      "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-autoral-candeias-br364-2026-11-21-039",
+      "examId": "sim-autoral-candeias-br364-2026-11-21",
+      "code": "Q2026CGCDJHISTAUTORAL039",
+      "originalNumber": 39,
+      "heading": "Conhecimentos Gerais — História de Candeias do Jamari — BR-364",
+      "stem": "O POLONOROESTE, instituído pelo Governo Federal em 1981, incluiu a reconstrução e a pavimentação da ligação Cuiabá-Porto Velho, além de ações voltadas ao desenvolvimento regional. A relação entre a BR-364 e esse programa evidencia que:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "a política de transporte se limitava ao deslocamento de turistas, sem conexão com o uso do território."
+        },
+        {
+          "letter": "B",
+          "text": "o planejamento federal buscava interromper a ocupação produtiva e retirar a circulação rodoviária da região."
+        },
+        {
+          "letter": "C",
+          "text": "a infraestrutura viária integrava uma estratégia mais ampla de ocupação e desenvolvimento, que também exigia atenção a efeitos sociais e ambientais."
+        },
+        {
+          "letter": "D",
+          "text": "o programa tinha como objetivo exclusivo substituir o transporte rodoviário pela Estrada de Ferro Madeira-Mamoré."
+        },
+        {
+          "letter": "E",
+          "text": "a pavimentação da estrada, isoladamente, resolveria todos os problemas fundiários e ambientais de Rondônia."
+        }
+      ],
+      "sourcePage": 5,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "História de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-hg",
+      "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-autoral-candeias-br364-2026-11-21-040",
+      "examId": "sim-autoral-candeias-br364-2026-11-21",
+      "code": "Q2026CGCDJGEOAUTORAL040",
+      "originalNumber": 40,
+      "heading": "Conhecimentos Gerais — Geografia de Candeias do Jamari — BR-364",
+      "stem": "A redução do tempo de viagem entre Candeias do Jamari e Porto Velho, favorecida pela BR-364, pode criar oportunidades para produtores e comerciantes locais. Entretanto, os moradores também passam a ter maior facilidade para comprar produtos e contratar serviços na capital. Esse exemplo demonstra que a integração rodoviária:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "gera benefícios econômicos locais apenas quando o comércio com municípios vizinhos é proibido."
+        },
+        {
+          "letter": "B",
+          "text": "amplia fluxos em diferentes sentidos, oferecendo oportunidades de mercado, mas também intensificando a concorrência entre localidades."
+        },
+        {
+          "letter": "C",
+          "text": "impede que consumidores se desloquem entre municípios, pois sua função é exclusivamente o transporte de cargas."
+        },
+        {
+          "letter": "D",
+          "text": "assegura a mesma distribuição de renda para todos os estabelecimentos situados próximos à rodovia."
+        },
+        {
+          "letter": "E",
+          "text": "produz efeitos comerciais apenas na capital e não pode alterar o cotidiano econômico de Candeias do Jamari."
+        }
+      ],
+      "sourcePage": 5,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geografia de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-hg",
+      "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-autoral-candeias-incra-2026-11-21-041",
+      "examId": "sim-autoral-candeias-incra-2026-11-21",
+      "code": "Q2026CGCDJHISTAUTORAL041",
+      "originalNumber": 41,
+      "heading": "Conhecimentos Gerais — História de Candeias do Jamari — INCRA e migração",
+      "stem": "A intensificação da migração para Rondônia, a partir da década de 1970, envolveu agricultores que deixaram estados da região Sul. Considerando as transformações da estrutura agrária brasileira no período, qual combinação de fatores melhor explica essa corrente migratória?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "A industrialização de Rondônia, que oferecia empregos urbanos em massa, e a proibição do trabalho agrícola no Sul."
+        },
+        {
+          "letter": "B",
+          "text": "A existência de terras sem qualquer ocupação anterior na Amazônia e o encerramento da agricultura familiar nas demais regiões."
+        },
+        {
+          "letter": "C",
+          "text": "A dificuldade de acesso à terra em áreas de origem, associada à modernização agrícola, e a expectativa de obter lotes nos projetos de colonização."
+        },
+        {
+          "letter": "D",
+          "text": "A substituição completa do transporte terrestre pelo fluvial e a implantação de grandes lavouras de trigo no vale do Jamari."
+        },
+        {
+          "letter": "E",
+          "text": "A obrigação legal de transferência dos agricultores sulistas para Rondônia, independentemente de sua situação econômica."
+        }
+      ],
+      "sourcePage": 1,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "História de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-hg",
+      "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-autoral-candeias-incra-2026-11-21-042",
+      "examId": "sim-autoral-candeias-incra-2026-11-21",
+      "code": "Q2026CGCDJHISTAUTORAL042",
+      "originalNumber": 42,
+      "heading": "Conhecimentos Gerais — História de Candeias do Jamari — INCRA e migração",
+      "stem": "Um grupo de famílias chega a Rondônia na expectativa de trabalhar em terras incluídas em um projeto público de colonização. Para distinguir a atuação do INCRA de uma simples ocupação particular de terras, é CORRETO afirmar que o órgão podia:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "planejar e demarcar parcelas, organizar a seleção de beneficiários e acompanhar a implantação de projetos de colonização, de acordo com as regras aplicáveis."
+        },
+        {
+          "letter": "B",
+          "text": "conceder a propriedade definitiva de qualquer imóvel ocupado, sem análise dominial ou cumprimento de requisitos."
+        },
+        {
+          "letter": "C",
+          "text": "extinguir automaticamente terras indígenas e unidades de conservação por meio da distribuição de lotes agrícolas."
+        },
+        {
+          "letter": "D",
+          "text": "substituir todas as prefeituras locais e exercer sozinho as competências de educação, saúde e segurança pública."
+        },
+        {
+          "letter": "E",
+          "text": "impedir toda forma de produção não agrícola, inclusive as atividades extrativistas já existentes na região."
+        }
+      ],
+      "sourcePage": 1,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "História de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-hg",
+      "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-autoral-candeias-incra-2026-11-21-043",
+      "examId": "sim-autoral-candeias-incra-2026-11-21",
+      "code": "Q2026CGCDJHISTAUTORAL043",
+      "originalNumber": 43,
+      "heading": "Conhecimentos Gerais — História de Candeias do Jamari — INCRA e migração",
+      "stem": "Os Projetos Integrados de Colonização (PICs) e os Projetos de Assentamento Dirigido (PADs) integraram as políticas fundiárias aplicadas em Rondônia. Conforme análises históricas sobre a colonização estadual, assinale a comparação CORRETA entre esses instrumentos.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Os PICs tinham finalidade exclusivamente urbana, enquanto os PADs se destinavam somente à pesca artesanal."
+        },
+        {
+          "letter": "B",
+          "text": "Os dois modelos dispensavam critérios de acesso à terra e garantiam o mesmo nível de assistência a todos os beneficiários."
+        },
+        {
+          "letter": "C",
+          "text": "Os PADs eram voltados apenas a pequenas hortas escolares, enquanto os PICs se destinavam exclusivamente a grandes indústrias."
+        },
+        {
+          "letter": "D",
+          "text": "Os PICs priorizavam o assentamento de famílias agricultoras com maior previsão de apoio público; os PADs também contemplavam projetos de maior porte, exigindo maior capacidade técnica e financeira."
+        },
+        {
+          "letter": "E",
+          "text": "Os PADs foram criados somente após a emancipação de Candeias do Jamari, em 1992, sem relação com a colonização do território federal."
+        }
+      ],
+      "sourcePage": 2,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "História de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-hg",
+      "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-autoral-candeias-incra-2026-11-21-044",
+      "examId": "sim-autoral-candeias-incra-2026-11-21",
+      "code": "Q2026CGCDJGEOAUTORAL044",
+      "originalNumber": 44,
+      "heading": "Conhecimentos Gerais — Geografia de Candeias do Jamari — INCRA e migração",
+      "stem": "Um levantamento histórico registra migrantes vindos do Paraná, do Espírito Santo e de Minas Gerais para projetos de colonização em Rondônia. Ao interpretar esses registros e a divisão regional oficial do Brasil, um pesquisador conclui que:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "o Paraná e o Espírito Santo pertencem à região Sul, enquanto Minas Gerais integra a região Norte."
+        },
+        {
+          "letter": "B",
+          "text": "o Paraná pertence ao Sul; Espírito Santo e Minas Gerais, ao Sudeste, demonstrando que a corrente migratória não foi exclusivamente sulista."
+        },
+        {
+          "letter": "C",
+          "text": "os três estados integram a região Centro-Oeste e migraram por contiguidade territorial com Rondônia."
+        },
+        {
+          "letter": "D",
+          "text": "a origem dos migrantes comprova que Rondônia não recebeu agricultores de outras partes do território brasileiro."
+        },
+        {
+          "letter": "E",
+          "text": "a migração de agricultores sulistas só ocorreu após 2000, pois antes desse período não havia política pública de colonização."
+        }
+      ],
+      "sourcePage": 2,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geografia de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-hg",
+      "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-autoral-candeias-incra-2026-11-21-045",
+      "examId": "sim-autoral-candeias-incra-2026-11-21",
+      "code": "Q2026CGCDJGEOAUTORAL045",
+      "originalNumber": 45,
+      "heading": "Conhecimentos Gerais — Geografia de Candeias do Jamari — INCRA e migração",
+      "stem": "Uma análise da estrutura fundiária rondoniense, baseada no Censo Agropecuário de 2006, informa que estabelecimentos com até 100 hectares representavam cerca de 81% do total, mas ocupavam apenas 27% da área. Já os estabelecimentos com mais de 1.000 hectares correspondiam a aproximadamente 1% das unidades e ocupavam 35% da área. Qual conclusão decorre desses dados?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "A maior parte das propriedades de pequeno porte controlava praticamente toda a superfície agropecuária de Rondônia."
+        },
+        {
+          "letter": "B",
+          "text": "A existência de muitos estabelecimentos pequenos demonstra que a distribuição de terras era perfeitamente igualitária."
+        },
+        {
+          "letter": "C",
+          "text": "Os grandes estabelecimentos eram numericamente predominantes, embora representassem uma parcela mínima da área."
+        },
+        {
+          "letter": "D",
+          "text": "Os números provam que não existiam propriedades rurais entre 100 e 1.000 hectares."
+        },
+        {
+          "letter": "E",
+          "text": "A elevada proporção de unidades pequenas não impedia a concentração de uma parcela expressiva da área em poucos estabelecimentos grandes."
+        }
+      ],
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geografia de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "E",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-hg",
+      "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-autoral-candeias-incra-2026-11-21-046",
+      "examId": "sim-autoral-candeias-incra-2026-11-21",
+      "code": "Q2026CGCDJGEOAUTORAL046",
+      "originalNumber": 46,
+      "heading": "Conhecimentos Gerais — Geografia de Candeias do Jamari — INCRA e migração",
+      "stem": "Uma família oriunda do Sul passa a cultivar uma parcela rural em Rondônia e pretende reproduzir integralmente as práticas agrícolas usadas em sua região de origem. Considerando a diversidade das condições ambientais do Brasil, a orientação técnica mais adequada seria:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "desconsiderar a conservação do solo, pois solos amazônicos mantêm fertilidade ilimitada após a retirada da vegetação."
+        },
+        {
+          "letter": "B",
+          "text": "adaptar o manejo às características locais de solo, chuva e temperatura, buscando evitar erosão e perda de nutrientes."
+        },
+        {
+          "letter": "C",
+          "text": "substituir todo cultivo por trigo de inverno, já que as condições climáticas de Rondônia são iguais às do Sul."
+        },
+        {
+          "letter": "D",
+          "text": "concluir que a região amazônica não permite atividade agropecuária de nenhuma natureza."
+        },
+        {
+          "letter": "E",
+          "text": "realizar o desmatamento de toda a propriedade, porque a cobertura vegetal sempre impede a infiltração da água."
+        }
+      ],
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geografia de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-hg",
+      "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-autoral-candeias-incra-2026-11-21-047",
+      "examId": "sim-autoral-candeias-incra-2026-11-21",
+      "code": "Q2026CGCDJHISTAUTORAL047",
+      "originalNumber": 47,
+      "heading": "Conhecimentos Gerais — História de Candeias do Jamari — INCRA e migração",
+      "stem": "Em 2021, a Prefeitura de Candeias do Jamari registrou a entrega de 21 títulos definitivos a famílias do assentamento Flor do Amazonas I. No âmbito da política de reforma agrária, esse fato deve ser interpretado como:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "uma etapa de titulação fundiária, distinta da simples seleção para um lote ou da concessão provisória de uso, sujeita aos requisitos legais."
+        },
+        {
+          "letter": "B",
+          "text": "a comprovação de que todos os beneficiários do INCRA, em qualquer época, recebem propriedade plena automaticamente no primeiro dia."
+        },
+        {
+          "letter": "C",
+          "text": "a criação do município de Candeias do Jamari, que passou a existir juridicamente apenas após a entrega dos títulos."
+        },
+        {
+          "letter": "D",
+          "text": "a conversão de todos os imóveis rurais de Rondônia em propriedades urbanas da União."
+        },
+        {
+          "letter": "E",
+          "text": "a extinção das regras de regularização e de permanência em todos os assentamentos do país."
+        }
+      ],
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "História de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-hg",
+      "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-autoral-candeias-incra-2026-11-21-048",
+      "examId": "sim-autoral-candeias-incra-2026-11-21",
+      "code": "Q2026CGCDJHISTAUTORAL048",
+      "originalNumber": 48,
+      "heading": "Conhecimentos Gerais — História de Candeias do Jamari — INCRA e migração",
+      "stem": "Parte da propaganda de ocupação da Amazônia, no século XX, utilizava a ideia de terras desabitadas. A historiografia sobre Rondônia, porém, registra conflitos fundiários associados aos projetos de colonização. Qual avaliação histórica é a mais adequada?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "A instalação de projetos públicos demonstra que não havia povos indígenas, seringueiros ou outras comunidades na região."
+        },
+        {
+          "letter": "B",
+          "text": "As disputas por terra só poderiam surgir depois que todos os lotes tivessem recebido títulos definitivos."
+        },
+        {
+          "letter": "C",
+          "text": "A existência de migração torna irrelevantes as formas tradicionais de uso do território anteriores aos projetos."
+        },
+        {
+          "letter": "D",
+          "text": "A expansão dos assentamentos ocorreu em territórios que já possuíam diferentes formas de ocupação e uso, exigindo considerar direitos preexistentes e possíveis conflitos."
+        },
+        {
+          "letter": "E",
+          "text": "O registro de conflitos prova que nenhuma família migrante pôde desenvolver atividades produtivas em Rondônia."
+        }
+      ],
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "História de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-hg",
+      "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-autoral-candeias-incra-2026-11-21-049",
+      "examId": "sim-autoral-candeias-incra-2026-11-21",
+      "code": "Q2026CGCDJGEOAUTORAL049",
+      "originalNumber": 49,
+      "heading": "Conhecimentos Gerais — Geografia de Candeias do Jamari — INCRA e migração",
+      "stem": "Um assentamento rural dispõe de lotes demarcados, mas seus agricultores têm dificuldades para adquirir sementes, escolher técnicas apropriadas, armazenar a colheita e negociar sua produção. Diante desse quadro, qual política pública melhor complementaria a distribuição de terras?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Apenas ampliar a área dos lotes, sem considerar a capacidade produtiva das famílias."
+        },
+        {
+          "letter": "B",
+          "text": "Impedir as famílias de organizar cooperativas e de acessar financiamento rural."
+        },
+        {
+          "letter": "C",
+          "text": "Oferecer assistência técnica, acesso orientado ao crédito e apoio à organização e à comercialização da produção."
+        },
+        {
+          "letter": "D",
+          "text": "Concentrar os investimentos apenas em propaganda de novos projetos, sem atendimento aos assentamentos existentes."
+        },
+        {
+          "letter": "E",
+          "text": "Substituir a orientação produtiva por ações restritas à mudança dos nomes das parcelas."
+        }
+      ],
+      "sourcePage": 5,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geografia de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-hg",
+      "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-autoral-candeias-incra-2026-11-21-050",
+      "examId": "sim-autoral-candeias-incra-2026-11-21",
+      "code": "Q2026CGCDJHISTAUTORAL050",
+      "originalNumber": 50,
+      "heading": "Conhecimentos Gerais — História de Candeias do Jamari — INCRA e migração",
+      "stem": "Os projetos de colonização do INCRA ganharam força em Rondônia nos anos 1970, enquanto Candeias do Jamari foi criado como município em 1992. Ao relacionar esses acontecimentos, assinale a interpretação historicamente CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "A criação do município em 1992 foi a condição necessária para que existissem os projetos de colonização realizados na década de 1970."
+        },
+        {
+          "letter": "B",
+          "text": "Todos os assentamentos de Rondônia surgiram obrigatoriamente dentro de Candeias do Jamari, sem alcançar outros municípios."
+        },
+        {
+          "letter": "C",
+          "text": "A autonomia municipal eliminou a possibilidade de continuidade de políticas fundiárias federais em seu território."
+        },
+        {
+          "letter": "D",
+          "text": "A presença de políticas de colonização significa que a região só passou a ser habitada após a década de 1970."
+        },
+        {
+          "letter": "E",
+          "text": "A colonização agrícola integrou transformações regionais anteriores à emancipação de Candeias; a criação do município foi uma etapa político-administrativa posterior."
+        }
+      ],
+      "sourcePage": 5,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "História de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "E",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-hg",
+      "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-autoral-candeias-seringais-2026-11-21-051",
+      "examId": "sim-autoral-candeias-seringais-2026-11-21",
+      "code": "Q2026CGCDJHISTAUTORAL051",
+      "originalNumber": 51,
+      "heading": "Conhecimentos Gerais — História de Candeias do Jamari — Seringais e borracha",
+      "stem": "Em documentos sobre a antiga povoação de Candeias, há referências ao deslocamento de trabalhadores para os seringais do alto rio Candeias e ao movimento de borracha em sentido contrário. Qual interpretação melhor explica a função econômica desse núcleo no período?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "O povoado concentrava a fabricação industrial de pneus e dispensava a extração da matéria-prima na floresta."
+        },
+        {
+          "letter": "B",
+          "text": "Os seringais produziam bens manufaturados destinados exclusivamente ao consumo dos habitantes da vila."
+        },
+        {
+          "letter": "C",
+          "text": "A localidade integrava a circulação de pessoas, suprimentos e borracha entre áreas extrativistas e outros pontos de comercialização."
+        },
+        {
+          "letter": "D",
+          "text": "A atividade era essencialmente ferroviária, pois todos os seringais possuíam ligação direta à Estrada de Ferro Madeira-Mamoré."
+        },
+        {
+          "letter": "E",
+          "text": "A produção não dependia de vias de transporte, pois o látex era comercializado apenas dentro de cada colocação."
+        }
+      ],
+      "sourcePage": 1,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "História de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-hg",
+      "municipalSource": "candeias-do-jamari-ro",
+      "answerComment": "O núcleo participava de uma rede de circulação: trabalhadores e suprimentos podiam seguir para as áreas de extração, enquanto a borracha era encaminhada aos mercados."
+    },
+    {
+      "id": "sim-autoral-candeias-seringais-2026-11-21-052",
+      "examId": "sim-autoral-candeias-seringais-2026-11-21",
+      "code": "Q2026CGCDJGEOAUTORAL052",
+      "originalNumber": 52,
+      "heading": "Conhecimentos Gerais — Geografia de Candeias do Jamari — Seringais e borracha",
+      "stem": "Antes da predominância das estradas, os rios amazônicos eram vias centrais de circulação. Um comerciante precisava transportar borracha de um seringal no vale do Candeias até compradores ligados ao sistema do Madeira. Considerando a geografia regional, assinale a explicação CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "O uso dos rios Candeias e Jamari, integrados à bacia do Madeira, permitia conectar áreas interiores a redes fluviais mais amplas, embora houvesse limites impostos à navegação."
+        },
+        {
+          "letter": "B",
+          "text": "Os rios amazônicos eram inadequados a qualquer transporte, tornando obrigatório o uso de aviões para escoar borracha."
+        },
+        {
+          "letter": "C",
+          "text": "O rio Candeias pertence à bacia do Paraná; por isso, toda a produção seguia primeiro para o Sul do Brasil."
+        },
+        {
+          "letter": "D",
+          "text": "Por se tratar de um produto florestal, a borracha não precisava alcançar entrepostos comerciais para chegar ao mercado."
+        },
+        {
+          "letter": "E",
+          "text": "A navegação fluvial só começou depois da emancipação política de Candeias do Jamari, em 1992."
+        }
+      ],
+      "sourcePage": 1,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geografia de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-hg",
+      "municipalSource": "candeias-do-jamari-ro",
+      "answerComment": "Candeias integra a rede de drenagem do Jamari, afluente do Madeira. Os rios funcionavam como corredores de acesso e comercialização, com obstáculos e sazonalidade."
+    },
+    {
+      "id": "sim-autoral-candeias-seringais-2026-11-21-053",
+      "examId": "sim-autoral-candeias-seringais-2026-11-21",
+      "code": "Q2026CGCDJHISTAUTORAL053",
+      "originalNumber": 53,
+      "heading": "Conhecimentos Gerais — História de Candeias do Jamari — Seringais e borracha",
+      "stem": "Uma pesquisa compara duas correntes migratórias importantes para a formação de Rondônia: a vinculada aos seringais, entre os séculos XIX e XX, e a que ganhou força com a colonização agrícola do século XX. Qual conclusão evita confundir os dois processos?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Os dois movimentos foram conduzidos exclusivamente pelo INCRA, com distribuição de lotes desde o século XIX."
+        },
+        {
+          "letter": "B",
+          "text": "A migração ligada à borracha partiu principalmente de países europeus, enquanto a colonização agrícola trouxe apenas trabalhadores da Bolívia."
+        },
+        {
+          "letter": "C",
+          "text": "Os seringais surgiram em consequência direta dos projetos fundiários implantados após a emancipação de Candeias."
+        },
+        {
+          "letter": "D",
+          "text": "A principal diferença é que os seringueiros recebiam sempre a propriedade plena das terras, ao contrário dos agricultores."
+        },
+        {
+          "letter": "E",
+          "text": "A exploração da borracha atraiu muitos trabalhadores nordestinos; décadas depois, projetos agrícolas também receberam famílias vindas do Sul e de outras regiões brasileiras."
+        }
+      ],
+      "sourcePage": 2,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "História de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "E",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-hg",
+      "municipalSource": "candeias-do-jamari-ro",
+      "answerComment": "As migrações ocorreram em contextos econômicos e históricos distintos. A mobilização para os seringais antecede a colonização agrícola federal da segunda metade do século XX."
+    },
+    {
+      "id": "sim-autoral-candeias-seringais-2026-11-21-054",
+      "examId": "sim-autoral-candeias-seringais-2026-11-21",
+      "code": "Q2026CGCDJHISTAUTORAL054",
+      "originalNumber": 54,
+      "heading": "Conhecimentos Gerais — História de Candeias do Jamari — Seringais e borracha",
+      "stem": "Em um seringal, o trabalhador recebia alimentos, ferramentas e outros produtos do barracão, com os valores lançados em uma conta. Sua borracha era entregue ao mesmo intermediário, que descontava os débitos. A estrutura descrita caracteriza, principalmente:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "uma cooperativa de produtores com preços definidos de modo igualitário por todos os participantes."
+        },
+        {
+          "letter": "B",
+          "text": "o sistema de aviamento, que vinculava o fornecimento de mercadorias à produção e podia manter o seringueiro endividado e dependente."
+        },
+        {
+          "letter": "C",
+          "text": "uma relação salarial urbana regulada pelo pagamento obrigatório de décimo terceiro salário."
+        },
+        {
+          "letter": "D",
+          "text": "um mercado sem intermediários, no qual cada trabalhador exportava sua própria borracha para outros continentes."
+        },
+        {
+          "letter": "E",
+          "text": "um sistema de concessão de lotes rurais do INCRA, aplicado de modo uniforme no século XIX."
+        }
+      ],
+      "sourcePage": 2,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "História de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-hg",
+      "municipalSource": "candeias-do-jamari-ro",
+      "answerComment": "O aviamento envolvia adiantamento de bens e cobrança sobre a produção, frequentemente produzindo dependência econômica e relações desiguais."
+    },
+    {
+      "id": "sim-autoral-candeias-seringais-2026-11-21-055",
+      "examId": "sim-autoral-candeias-seringais-2026-11-21",
+      "code": "Q2026CGCDJHISTAUTORAL055",
+      "originalNumber": 55,
+      "heading": "Conhecimentos Gerais — História de Candeias do Jamari — Seringais e borracha",
+      "stem": "No século XIX, inovações industriais ampliaram o uso da borracha e estimularam a extração de látex na Amazônia. Um estudante concluiu que a expansão dos seringais ocorreu apenas por decisões políticas locais. Por que essa explicação é insuficiente?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Porque toda a borracha comercializada na Amazônia era destinada exclusivamente à fabricação de materiais escolares."
+        },
+        {
+          "letter": "B",
+          "text": "Porque a extração do látex só começou depois de 1970, quando a BR-364 já estava pavimentada."
+        },
+        {
+          "letter": "C",
+          "text": "Porque a economia extrativista era isolada do comércio internacional e não respondia a mudanças de demanda."
+        },
+        {
+          "letter": "D",
+          "text": "Porque o crescimento da demanda industrial, associado a inovações como a vulcanização, conectou os seringais amazônicos a mercados consumidores externos."
+        },
+        {
+          "letter": "E",
+          "text": "Porque a tecnologia industrial substituiu imediatamente todas as árvores produtoras de látex por petróleo sintético."
+        }
+      ],
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "História de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-hg",
+      "municipalSource": "candeias-do-jamari-ro",
+      "answerComment": "A expansão da exploração de borracha se relaciona a transformações da indústria e do comércio mundial, não apenas a fatores internos da região."
+    },
+    {
+      "id": "sim-autoral-candeias-seringais-2026-11-21-056",
+      "examId": "sim-autoral-candeias-seringais-2026-11-21",
+      "code": "Q2026CGCDJHISTAUTORAL056",
+      "originalNumber": 56,
+      "heading": "Conhecimentos Gerais — História de Candeias do Jamari — Seringais e borracha",
+      "stem": "Na primeira parte do século XX, a borracha amazônica perdeu competitividade para a produzida em plantações asiáticas. Qual alternativa apresenta um mecanismo econômico coerente com essa mudança?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "O preço da borracha silvestre aumentou inevitavelmente porque a concorrência externa deixou de existir."
+        },
+        {
+          "letter": "B",
+          "text": "Plantações organizadas em larga escala, com maior produtividade e custos competitivos, passaram a disputar os mercados antes atendidos em grande parte pela borracha amazônica."
+        },
+        {
+          "letter": "C",
+          "text": "A produção asiática não podia competir com a brasileira porque ambas eram vendidas exclusivamente no mercado local de Rondônia."
+        },
+        {
+          "letter": "D",
+          "text": "Os rios da Amazônia deixaram de existir, impossibilitando por completo o escoamento da produção extrativista."
+        },
+        {
+          "letter": "E",
+          "text": "A demanda industrial mundial por borracha se tornou nula, encerrando definitivamente qualquer extração do látex."
+        }
+      ],
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "História de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-hg",
+      "municipalSource": "candeias-do-jamari-ro",
+      "answerComment": "A expansão de seringais cultivados no Sudeste Asiático alterou a oferta e os preços internacionais, contribuindo para o declínio do primeiro ciclo da borracha."
+    },
+    {
+      "id": "sim-autoral-candeias-seringais-2026-11-21-057",
+      "examId": "sim-autoral-candeias-seringais-2026-11-21",
+      "code": "Q2026CGCDJHISTAUTORAL057",
+      "originalNumber": 57,
+      "heading": "Conhecimentos Gerais — História de Candeias do Jamari — Seringais e borracha",
+      "stem": "Durante a Segunda Guerra Mundial, a ocupação japonesa de áreas produtoras de borracha no Sudeste Asiático dificultou o abastecimento dos Aliados. Qual consequência desse cenário ajuda a compreender a história dos seringais amazônicos?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Houve uma nova mobilização de trabalhadores, conhecidos como soldados da borracha, para ampliar a oferta do produto considerado estratégico ao esforço de guerra."
+        },
+        {
+          "letter": "B",
+          "text": "A borracha deixou de ser utilizada na indústria militar, e os seringais amazônicos foram proibidos de produzir."
+        },
+        {
+          "letter": "C",
+          "text": "O governo brasileiro transferiu todos os seringais para o continente europeu, encerrando o extrativismo regional."
+        },
+        {
+          "letter": "D",
+          "text": "A migração para a Amazônia foi substituída exclusivamente pela construção da BR-364, já inteiramente pavimentada na década de 1940."
+        },
+        {
+          "letter": "E",
+          "text": "A economia da borracha passou a depender apenas do turismo de praias fluviais da região de Candeias."
+        }
+      ],
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "História de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-hg",
+      "municipalSource": "candeias-do-jamari-ro",
+      "answerComment": "A dificuldade de obter borracha asiática incentivou a chamada Batalha da Borracha, com recrutamento para a Amazônia."
+    },
+    {
+      "id": "sim-autoral-candeias-seringais-2026-11-21-058",
+      "examId": "sim-autoral-candeias-seringais-2026-11-21",
+      "code": "Q2026CGCDJHISTAUTORAL058",
+      "originalNumber": 58,
+      "heading": "Conhecimentos Gerais — História de Candeias do Jamari — Seringais e borracha",
+      "stem": "Um material didático afirma: \"A presença humana no vale do Jamari começou quando os seringueiros chegaram à região\". À luz da história da ocupação amazônica, como essa afirmação deve ser avaliada?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "É adequada, pois a floresta amazônica permaneceu completamente desabitada até a expansão comercial da borracha."
+        },
+        {
+          "letter": "B",
+          "text": "É adequada, pois apenas a formação de municípios caracteriza a existência de população em determinado território."
+        },
+        {
+          "letter": "C",
+          "text": "É inadequada apenas porque o primeiro povoamento regional ocorreu com agricultores sulistas nos anos 1970."
+        },
+        {
+          "letter": "D",
+          "text": "É adequada, pois a exploração de recursos florestais elimina qualquer possibilidade de ocupação anterior."
+        },
+        {
+          "letter": "E",
+          "text": "É inadequada, pois povos indígenas já habitavam a região antes da expansão dos seringais, que alterou relações territoriais e formas de uso da floresta."
+        }
+      ],
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "História de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "E",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-hg",
+      "municipalSource": "candeias-do-jamari-ro",
+      "answerComment": "A expansão da economia da borracha ocorreu em territórios com ocupação indígena anterior, e não em espaços historicamente vazios."
+    },
+    {
+      "id": "sim-autoral-candeias-seringais-2026-11-21-059",
+      "examId": "sim-autoral-candeias-seringais-2026-11-21",
+      "code": "Q2026CGCDJHISTAUTORAL059",
+      "originalNumber": 59,
+      "heading": "Conhecimentos Gerais — História de Candeias do Jamari — Seringais e borracha",
+      "stem": "A antiga região da Cachoeira de Samuel, no rio Jamari, reúne marcas de diferentes fases da história regional. Registros apontam um núcleo ligado à economia da borracha, que perdeu importância com o declínio do extrativismo, e transformações posteriores decorrentes do aproveitamento hidrelétrico. Esse exemplo evidencia:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "uma continuidade ininterrupta da economia seringalista, sem alterações na ocupação nem na paisagem."
+        },
+        {
+          "letter": "B",
+          "text": "que a construção de hidrelétricas é a causa original da procura mundial por látex no século XIX."
+        },
+        {
+          "letter": "C",
+          "text": "a sobreposição de processos históricos distintos sobre um mesmo espaço: extrativismo, mudanças populacionais e transformação da paisagem pela barragem."
+        },
+        {
+          "letter": "D",
+          "text": "que o surgimento de Samuel ocorreu obrigatoriamente após a instalação do município de Candeias do Jamari."
+        },
+        {
+          "letter": "E",
+          "text": "a ausência de relação entre o rio Jamari e a formação de comunidades que nele se estabeleceram."
+        }
+      ],
+      "sourcePage": 5,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "História de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-hg",
+      "municipalSource": "candeias-do-jamari-ro",
+      "answerComment": "O espaço do antigo núcleo de Samuel pode ser interpretado por diferentes tempos históricos, desde a economia da borracha até a instalação da usina."
+    },
+    {
+      "id": "sim-autoral-candeias-seringais-2026-11-21-060",
+      "examId": "sim-autoral-candeias-seringais-2026-11-21",
+      "code": "Q2026CGCDJHISTAUTORAL060",
+      "originalNumber": 60,
+      "heading": "Conhecimentos Gerais — História de Candeias do Jamari — Seringais e borracha",
+      "stem": "Em um estudo sobre Candeias do Jamari, foram encontradas três fontes: (I) registro do comércio de borracha pelos rios; (II) relatos de expansão agrícola e urbana a partir da década de 1970; e (III) documentação sobre a criação do município em 1992. A interpretação histórica mais adequada é:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "considerar as três fontes incompatíveis, porque um território só pode ter uma atividade econômica ao longo de sua história."
+        },
+        {
+          "letter": "B",
+          "text": "concluir que a atividade seringalista se iniciou exclusivamente depois da criação legal do município."
+        },
+        {
+          "letter": "C",
+          "text": "admitir que a emancipação de 1992 provocou retrospectivamente as atividades dos seringais e a migração anterior."
+        },
+        {
+          "letter": "D",
+          "text": "reconhecer diferentes etapas de ocupação e organização territorial, sem confundir a história econômica do lugar com a data de sua autonomia político-administrativa."
+        },
+        {
+          "letter": "E",
+          "text": "afirmar que os registros de extração da borracha comprovam que a agricultura e o comércio nunca existiram na região."
+        }
+      ],
+      "sourcePage": 5,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "História de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-candeias-hg",
+      "municipalSource": "candeias-do-jamari-ro",
+      "answerComment": "Uma localidade pode ter atividades produtivas, circulação e população muito antes de tornar-se município autônomo. As fontes registram etapas diferentes da trajetória regional."
     }
   ],
   "attempts": [

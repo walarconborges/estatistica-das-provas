@@ -5,6 +5,19 @@
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
 
+## Importação de 21/11/2026 — quatro simulados de clima e História/Geografia
+Foram cadastradas **40 questões autorais no estilo IBGP** com cinco alternativas e gabaritos verificados diretamente na última página de cada PDF. Elas não são questões oficiais da banca.
+
+- `simulado_ibgp_clima_amazonia_rios_voadores_el_nino_estiagem_10_questoes(1).pdf`: questões 1–10, gabarito `ACEBDACDEB`, ID `sim-autoral-clima-amazonia-2026-11-21`.
+- `simulado_ibgp_br364_candeias_do_jamari_10_questoes(1).pdf`: questões 31–40, gabarito `DAEBCAEDCB`, ID `sim-autoral-candeias-br364-2026-11-21`.
+- `simulado_ibgp_incra_migracao_sul_candeias_questoes_41_a_50(1).pdf`: questões 41–50, gabarito `CADBEBADCE`, ID `sim-autoral-candeias-incra-2026-11-21`.
+- `simulado_ibgp_seringais_borracha_candeias_questoes_51_a_60(2).pdf`: questões 51–60, gabarito `CAEBDBAECD`, ID `sim-autoral-candeias-seringais-2026-11-21`.
+
+- Clima amazônico: disciplina Conhecimentos Gerais, assunto Meio ambiente e sustentabilidade, disponível no banco geral.
+- BR-364, INCRA e seringais: História/Geografia de Candeias do Jamari, reconhecidos pelo estudo municipal dos cargos 202 e 505; fora do cargo 240 e da SEMED.
+- Mantidas as linhas de assertivas I–III nos itens 34 e 38 e preservados os comentários dos gabaritos onde existem (clima amazônico e seringais).
+- O banco anterior, IDs, gabaritos, perfis, histórico e sinalizações foram preservados. Testes: `tests/four-simulations-2026-11-21.test.mjs`.
+
 ## Importação de 21/11/2026 — COP26 a COP30
 - Cadastrado o arquivo `simulado_ibgp_cop26_a_cop30_10_questoes (1).pdf` com dez questões **autorais no estilo IBGP**, sem atribuir a autoria à banca.
 - Gabarito da página 6: **C, E, B, D, A, C, E, B, D, A**. Duas questões por conferência (COP26, COP27, COP28, COP29 e COP30), com cinco alternativas e comentários do gabarito preservados no registro.

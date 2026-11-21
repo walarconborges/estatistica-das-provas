@@ -294,7 +294,7 @@ function inferClassificationForCargo(q,exam,cargoId='505'){
    discipline:section.title,topic:section.topics[0],topicId:'gerais:0',
    reason:'Notícia de atualidades locais publicada pelo SINTERO, não pelo site da Câmara.'};
  }
- if(sectionId==='gerais'&&q?.sourceType==='chatgpt-candeias-hg-simulado'){
+ if(sectionId==='gerais'&&['chatgpt-candeias-hg-simulado','simulado-autoral-candeias-hg'].includes(q?.sourceType)){
   return {cargoId:cargo,status:'dentro',statusLabel:'Dentro do edital',
    discipline:section.title,topic:section.topics[1],topicId:'gerais:1',
    reason:'História e Geografia de Candeias do Jamari: assunto do Anexo IV.'};
@@ -497,7 +497,7 @@ export function classifyForCargo(q,exam,cargoId='505'){
    topic:'Fora do edital',topicId:'',
    reason:'Notícias específicas da Câmara de Candeias do Jamari não pertencem ao edital deste cargo.'
  };
- if(q?.sourceType==='chatgpt-candeias-hg-simulado'&&cargo!=='202'&&cargo!=='505')
+ if(['chatgpt-candeias-hg-simulado','simulado-autoral-candeias-hg'].includes(q?.sourceType)&&cargo!=='202'&&cargo!=='505')
   return {cargoId:cargo,status:'fora',statusLabel:'Fora do edital',
    discipline:'Fora do edital',topic:'Fora do edital',topicId:'',
    reason:'Simulado específico de História e Geografia de Candeias do Jamari, não do município deste edital.'};
@@ -529,7 +529,7 @@ export function candeiasMatches(q,exam){
  const content=norm([q.stem,q.heading,q.contextText,q.topic].join(' '));
  const origin=norm([exam?.orgao,exam?.title,q.orgao].join(' '));
  const tagged=(q.sourceType==='chatgpt-cmcj-news-simulado'&&['cmcj-ro','sintero-ro'].includes(q.newsSource))||
-  q.sourceType==='chatgpt-candeias-hg-simulado';
+  ['chatgpt-candeias-hg-simulado','simulado-autoral-candeias-hg'].includes(q.sourceType);
  const foreign=/\b(?:BRUSQUE|VOTORANTIM|PORTO VELHO|ARIQUEMES|JI PARANA|ANGRA DOS REIS|FRANCISCO MORATO|MARILIA|CANDEIAS MG|CANDEIAS BA)\b/.test(content);
  const local=adapted||tagged||(!foreign&&(/\bCANDEIAS DO JAMARI\b|\bCMCJ\b/.test(content)||
   /\bCANDEIAS DO JAMARI\b/.test(origin)));

@@ -1,3 +1,8 @@
+## 21/11/2026 — quatro simulados de atualidades e história regional
+- Importadas 40 questões em quatro cadernos autorais, gabaritos `ACEBDACDEB`, `DAEBCAEDCB`, `CADBEBADCE` e `CAEBDBAECD`.
+- Novo tipo autoral de História/Geografia reconhecido pelo filtro exclusivo de Candeias (cargos 202/505), sem contaminar SEMUSA/SEMED.
+- Sem alteração de questões anteriores, gabaritos, tentativas ou perfis.
+
 ## 0.6.48 — 21/11/2026
 
 - Filtros combináveis para várias disciplinas e assuntos, tanto na busca de questões quanto na geração de simulados.
