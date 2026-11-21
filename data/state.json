@@ -49677,6 +49677,14 @@
       "answer": "D",
       "simulationId": "",
       "at": "2026-11-21T18:25:14.592Z"
+    },
+    {
+      "id": "528de41c-61c0-42a0-ab21-9181e5a2f152",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "sim-chatgpt-cmcj-noticias-2026-11-20-bateria2-019",
+      "answer": "A",
+      "simulationId": "",
+      "at": "2026-11-21T18:25:40.016Z"
     }
   ],
   "simulations": [],
