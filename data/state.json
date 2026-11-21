@@ -55226,6 +55226,14 @@
       "answer": "C",
       "simulationId": "",
       "at": "2026-11-21T22:52:00.946Z"
+    },
+    {
+      "id": "621491a9-178b-45f8-bc85-b45b9c900c10",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "sim-autoral-candeias-lei-organica-2026-11-21-002",
+      "answer": "C",
+      "simulationId": "",
+      "at": "2026-11-21T22:53:28.500Z"
     }
   ],
   "simulations": [],
