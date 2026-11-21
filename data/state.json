@@ -54930,6 +54930,14 @@
       "answer": "E",
       "simulationId": "",
       "at": "2026-11-21T21:10:37.319Z"
+    },
+    {
+      "id": "40dfa396-7372-4f5a-91bd-33a64f30737d",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-asg-2026-06-028",
+      "answer": "D",
+      "simulationId": "",
+      "at": "2026-11-21T21:12:58.791Z"
     }
   ],
   "simulations": [],
