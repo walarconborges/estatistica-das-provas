@@ -7,6 +7,7 @@ import {CATALOGS,currentCatalog,allTopics,classifyForCargo,subjectSummary,EDITAL
 import {splitAssertionItems} from './assertion-guide.mjs?v=0.6.37';
 import {createAnswerDisplayCache} from './answer-display-cache.mjs?v=0.6.37';
 import {renderDifficultyPie} from './difficulty-pie.mjs';
+import {lawIdForQuestion,selectLegalEvidence} from './worker/legal-knowledge.mjs';
 
 // A versão do rodapé pode ser nova enquanto o navegador usa módulos
 // JavaScript antigos. Exibir a revisão REAL do módulo executado para diagnóstico.
@@ -235,7 +236,7 @@ function explanationBox(qid){
  const status=entry.status||'';
  let body='';
  if(status==='loading')body='<p class="hint">Consultando a explicação...</p>';
- else if(status==='ready')body='<div class="explanation-text">'+h(entry.text||'')+'</div><p class="hint">'+(question(qid)?.originalQuestionId?'Fundamento normativo da questão adaptada.':'Explicação de IA para estudo, não substitui fontes oficiais.')+'</p>'+btn('flag-explanation','Sinalizar explicação incorreta','secondary','data-id="'+h(qid)+'"');
+ else if(status==='ready')body='<div class="explanation-text">'+h(entry.text||'')+'</div><p class="hint">'+(entry.source==='documental'?'Trecho documental e comentário do gabarito; não são explicação gerada por IA. Confira a vigência.':question(qid)?.originalQuestionId?'Fundamento normativo da questão adaptada.':'Explicação de IA para estudo, não substitui fontes oficiais.')+'</p>'+(entry.sourceUrl?'<p class="hint"><a href="'+h(entry.sourceUrl)+'" target="_blank" rel="noopener noreferrer">Consultar documento legal de origem</a></p>':'')+btn('flag-explanation','Sinalizar explicação incorreta','secondary','data-id="'+h(qid)+'"');
  else if(status==='pending')body='<p class="hint">'+h(entry.reason||'Explicação em geração.')+'</p>'+btn('explain-question','Consultar novamente','secondary','data-id="'+h(qid)+'"');
  else body='<p class="hint">'+h(entry.reason||'Não foi possível explicar a questão.')+'</p>'+
    (sync.getUrl()?'<p class="hint"><a href="'+h(sync.getUrl()+'/api/health')+'" target="_blank" rel="noopener noreferrer">Consultar diagnóstico do Worker</a></p>':'');
@@ -275,13 +276,39 @@ async function explainConnectionError(origin,error){
   return 'Não foi possível acessar o Cloudflare Worker. Confira o endereço em Dados → Sincronização e a conexão de rede.';
  }
 }
+/**
+ * Consulta documental disponível no GitHub Pages mesmo sem novo deploy do Worker.
+ * Não se apresenta como resposta gerada por IA, nem altera gabaritos.
+ */
+async function localLegalReference(q){
+ const id=lawIdForQuestion(q,exam(q.examId));
+ if(!id)return null;
+ try{
+  const response=await fetch('./data/laws/'+encodeURIComponent(id)+'.json',{cache:'no-store'});
+  if(!response.ok)return null;
+  const doc=await response.json();
+  if(doc.readable!==true)return {status:'error',
+   reason:'O '+doc.title+' foi catalogado, mas contém digitalização histórica e não tem transcrição completa conferida. Consulte a versão atualizada no portal oficial.'};
+  const ev=selectLegalEvidence(q,doc,{maxPages:1,maxChars:2700});
+  if(!ev)return {status:'error',reason:'Documento cadastrado, porém não foi localizado um trecho suficientemente relacionado à pergunta. A explicação foi bloqueada para evitar referências inventadas.'};
+  const passage=ev.passages[0];
+  const comment=String(q.answerComment||'').trim();
+  const lines=[
+   comment?'Comentário do gabarito do simulado:\n'+comment:'Gabarito informado no simulado: '+String(q.answer||'a conferir')+'.',
+   'Trecho do documento fornecido — '+doc.title+', página '+passage.page+':\n'+passage.text,
+   'Atenção: o PDF pode não refletir emendas posteriores. Esta consulta documental não comprova vigência.'
+  ];
+  return {status:'ready',source:'documental',text:lines.join('\n\n'),sourceUrl:ev.url};
+ }catch(error){console.warn('Falha ao consultar documento jurídico local:',error);return null;}
+}
 async function showExplanation(qid){
  const q=question(qid);
  if(!q)return;
  const answered=state.attempts.some(a=>a.profileId===profileId&&a.questionId===qid);
  if(!answered){toast('Confira ou finalize a questão antes de pedir a explicação.');return}
  if(!sync.getUrl()){
-  explanationsInView.set(qid,{status:'error',reason:'As explicações precisam da conexão Cloudflare. Verifique Dados → Sincronização.'});
+  const local=await localLegalReference(q);
+  explanationsInView.set(qid,local||{status:'error',reason:'As explicações precisam da conexão Cloudflare. Verifique Dados → Sincronização.'});
   refreshExplanation(qid);return;
  }
  explanationsInView.set(qid,{status:'loading'});refreshExplanation(qid);
@@ -297,13 +324,18 @@ async function showExplanation(qid){
    });
    data=await readExplanationReply(response);
   }
-  explanationsInView.set(qid,{
+  const local=data.status==='unavailable'||data.status==='not-configured'||data.status==='limited'
+   ?await localLegalReference(q):null;
+  explanationsInView.set(qid,local||{
    status:data.status==='ready'?'ready':data.status==='pending'?'pending':'error',
+   source:data.model==='fundamento-legal'?'documental':'ia',
+   sourceUrl:data.legalBasis?.url||'',
    text:data.explanation||'',
    reason:data.reason||data.error||(response.ok?'Não foi possível obter a explicação.':'Erro HTTP '+response.status+' no serviço de IA.')
   });
  }catch(error){
-  explanationsInView.set(qid,{status:'error',reason:await explainConnectionError(origin,error)});
+  const local=await localLegalReference(q);
+  explanationsInView.set(qid,local||{status:'error',reason:await explainConnectionError(origin,error)});
   console.warn('Falha ao consultar explicação:',error);
  }
  refreshExplanation(qid);
