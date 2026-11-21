@@ -55082,6 +55082,14 @@
       "answer": "B",
       "simulationId": "",
       "at": "2026-11-21T21:46:45.140Z"
+    },
+    {
+      "id": "5fb9e717-eab4-4a4c-a923-6ee8ab2662ff",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "sim-autoral-clima-amazonia-2026-11-21-010",
+      "answer": "B",
+      "simulationId": "",
+      "at": "2026-11-21T21:47:19.159Z"
     }
   ],
   "simulations": [],
