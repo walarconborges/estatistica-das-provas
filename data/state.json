@@ -50298,6 +50298,16 @@
       "proposed": {},
       "status": "pending",
       "at": "2026-11-21T18:24:16.302Z"
+    },
+    {
+      "id": "4a2f648e-1a84-46d5-a901-24e72bc3376c",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-asg-2026-02-006",
+      "type": "problem",
+      "note": "erro de separação devido à extração",
+      "proposed": {},
+      "status": "pending",
+      "at": "2026-11-21T18:24:49.094Z"
     }
   ],
   "tombstones": {
