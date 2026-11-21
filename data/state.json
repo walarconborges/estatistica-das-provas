@@ -55686,6 +55686,16 @@
       "proposed": {},
       "status": "pending",
       "at": "2026-11-21T21:12:09.828Z"
+    },
+    {
+      "id": "cacc4b7b-d9bc-487a-b0ea-438c3f361464",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-asg-2026-06-028",
+      "type": "problem",
+      "note": "revisar a estrutura do enunciado. parece que está embaralhado.",
+      "proposed": {},
+      "status": "pending",
+      "at": "2026-11-21T21:13:14.811Z"
     }
   ],
   "tombstones": {
