@@ -5,6 +5,12 @@
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
 
+## Importação de 21/11/2026 — COP26 a COP30
+- Cadastrado o arquivo `simulado_ibgp_cop26_a_cop30_10_questoes (1).pdf` com dez questões **autorais no estilo IBGP**, sem atribuir a autoria à banca.
+- Gabarito da página 6: **C, E, B, D, A, C, E, B, D, A**. Duas questões por conferência (COP26, COP27, COP28, COP29 e COP30), com cinco alternativas e comentários do gabarito preservados no registro.
+- Classificadas em `Conhecimentos Gerais > Meio ambiente e sustentabilidade`, sem duplicações, IDs ou gabaritos anteriores alterados.
+- Identificador da prova: `sim-autoral-cop26-cop30-2026-11-21`. Testes em `tests/cop26-cop30-import.test.mjs`.
+
 ## Versão 0.6.48 — estudo Candeias e filtros de múltipla seleção
 - Substituídos os seletores únicos de disciplina e assunto por caixas de seleção múltipla no **Banco geral**, nos **editais específicos** e na nova modalidade **Candeias**. É possível combinar categorias tanto para consultar questões quanto para criar simulados. Dentro de um grupo, as opções são inclusivas (OU); entre os grupos, são aplicadas em conjunto (E).
 - Criado modo **Candeias do Jamari — cargos 202 e 505**. Ele agrega disciplinas dos dois cargos; em Conhecimentos Gerais e Legislação Municipal, restringe os resultados às questões locais de Candeias e a adaptações jurídicas verificadas. Não mistura questões de normas municipais de outras cidades.

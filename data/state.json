@@ -1735,6 +1735,33 @@
       "sourceType": "simulado-autoral",
       "sourceFile": "simulado_ibgp_hg_candeias_do_jamari_questoes_21_a_30(1).pdf",
       "notes": "Questões autorais no estilo IBGP. Não constituem questões oficiais da banca IBGP."
+    },
+    {
+      "id": "sim-autoral-cop26-cop30-2026-11-21",
+      "title": "2026 — Simulado autoral (estilo IBGP) — COP26 a COP30 — Atualidades climáticas",
+      "year": "2026",
+      "banca": "Autoral",
+      "bancaCode": "AUTORAL",
+      "orgao": "Simulado de Atualidades — COP26 a COP30",
+      "orgaoCode": "SIMULADO-COP26-COP30",
+      "createdAt": "2026-11-21T19:07:11.385Z",
+      "questionIds": [
+        "sim-autoral-cop26-cop30-2026-11-21-001",
+        "sim-autoral-cop26-cop30-2026-11-21-002",
+        "sim-autoral-cop26-cop30-2026-11-21-003",
+        "sim-autoral-cop26-cop30-2026-11-21-004",
+        "sim-autoral-cop26-cop30-2026-11-21-005",
+        "sim-autoral-cop26-cop30-2026-11-21-006",
+        "sim-autoral-cop26-cop30-2026-11-21-007",
+        "sim-autoral-cop26-cop30-2026-11-21-008",
+        "sim-autoral-cop26-cop30-2026-11-21-009",
+        "sim-autoral-cop26-cop30-2026-11-21-010"
+      ],
+      "keySection": "Gabarito comentado — página 6 (questões 1–10)",
+      "metadataReview": [],
+      "sourceType": "simulado-autoral",
+      "sourceFile": "simulado_ibgp_cop26_a_cop30_10_questoes (1).pdf",
+      "notes": "Dez questões autorais de atualidades sobre COP26–COP30, no estilo IBGP. Não constituem prova oficial da banca IBGP. Gabarito extraído da última página do PDF."
     }
   ],
   "questions": [
@@ -49203,6 +49230,526 @@
       "duplicateGroup": null,
       "sourceType": "chatgpt-candeias-hg-simulado",
       "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-autoral-cop26-cop30-2026-11-21-001",
+      "examId": "sim-autoral-cop26-cop30-2026-11-21",
+      "code": "Q2026CGCOPAUTORAL001",
+      "originalNumber": 1,
+      "heading": "COP26 | Glasgow, 2021",
+      "stem": "A COP26 reforçou a necessidade de reduzir a geração de eletricidade a partir do carvão sem abatimento de emissões. Um país depende de termelétricas a carvão, possui potencial eólico e solar, mas enfrenta limitações na rede elétrica e tem trabalhadores empregados na mineração. Qual política concilia de modo mais consistente a descarbonização e a segurança energética?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Desativar simultaneamente todas as usinas, sem ampliar a rede ou prever fornecimento substituto."
+        },
+        {
+          "letter": "B",
+          "text": "Manter indefinidamente as usinas a carvão e limitar a expansão de renováveis para proteger os postos de trabalho."
+        },
+        {
+          "letter": "C",
+          "text": "Reduzir progressivamente a geração a carvão, ampliar redes e armazenamento e qualificar trabalhadores para novas atividades."
+        },
+        {
+          "letter": "D",
+          "text": "Priorizar apenas a redução da poluição do ar local, pois ela equivale à eliminação das emissões de gases de efeito estufa."
+        },
+        {
+          "letter": "E",
+          "text": "Substituir o carvão por derivados de petróleo sem avaliar emissões e considerar, por isso, concluída a transição energética."
+        }
+      ],
+      "sourcePage": 1,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Meio ambiente e sustentabilidade",
+      "topicCode": "CAMB",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Simulado de Atualidades — COP26 a COP30",
+      "answer": "C",
+      "answerComment": "Transição energética exige cortes nas emissões, confiabilidade do sistema e",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-cop",
+      "conference": "COP26"
+    },
+    {
+      "id": "sim-autoral-cop26-cop30-2026-11-21-002",
+      "examId": "sim-autoral-cop26-cop30-2026-11-21",
+      "code": "Q2026CGCOPAUTORAL002",
+      "originalNumber": 2,
+      "heading": "COP26 | Glasgow, 2021",
+      "stem": "No debate sobre metas de redução de emissões, um governo anuncia que diminuirá em 30% a quantidade de CO₂ emitida por unidade de produto interno bruto (PIB). Entretanto, no período considerado, o PIB do país dobra. Suponha que não ocorram outras mudanças. Em comparação com o início do período, qual será a variação das emissões totais de CO₂?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Redução de 60%, pois a economia passou a ser mais eficiente."
+        },
+        {
+          "letter": "B",
+          "text": "Redução de 30%, exatamente igual à queda da intensidade de carbono."
+        },
+        {
+          "letter": "C",
+          "text": "Aumento de 30%, independentemente da expansão da economia."
+        },
+        {
+          "letter": "D",
+          "text": "Manutenção do mesmo total, pois crescimento econômico neutraliza ganhos de eficiência."
+        },
+        {
+          "letter": "E",
+          "text": "Aumento de 40%, porque a intensidade cai para 70% enquanto a produção passa a 200%."
+        }
+      ],
+      "sourcePage": 1,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Meio ambiente e sustentabilidade",
+      "topicCode": "CAMB",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Simulado de Atualidades — COP26 a COP30",
+      "answer": "E",
+      "answerComment": "Emissões totais = intensidade × PIB: 0,70 × 2,00 = 1,40 do valor inicial.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-cop",
+      "conference": "COP26"
+    },
+    {
+      "id": "sim-autoral-cop26-cop30-2026-11-21-003",
+      "examId": "sim-autoral-cop26-cop30-2026-11-21",
+      "code": "Q2026CGCOPAUTORAL003",
+      "originalNumber": 3,
+      "heading": "COP27 | Sharm el-Sheikh, 2022",
+      "stem": "Um pequeno país insular emite pouco CO₂, mas sofre perdas de moradias, áreas agrícolas e patrimônios culturais devido a impactos climáticos, inclusive à elevação do nível do mar. Mesmo com obras de proteção e planos preventivos, parte dos danos não pode ser evitada. Qual mecanismo discutido na COP27 é o mais diretamente relacionado a essa situação?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Financiamento exclusivo da adaptação, partindo do pressuposto de que toda perda pode ser evitada."
+        },
+        {
+          "letter": "B",
+          "text": "Apoio para perdas e danos, voltado aos impactos climáticos que ultrapassam a capacidade de prevenção e adaptação."
+        },
+        {
+          "letter": "C",
+          "text": "Compra obrigatória de créditos de carbono pelo país atingido, para compensar os danos econômicos."
+        },
+        {
+          "letter": "D",
+          "text": "Suspensão das políticas de mitigação, pois a redução futura das emissões não se relaciona ao problema."
+        },
+        {
+          "letter": "E",
+          "text": "Substituição das ações de resposta a desastres por metas de emissões sem financiamento."
+        }
+      ],
+      "sourcePage": 2,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Meio ambiente e sustentabilidade",
+      "topicCode": "CAMB",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Simulado de Atualidades — COP26 a COP30",
+      "answer": "B",
+      "answerComment": "Perdas e danos tratam de impactos residuais, distintos das ações de mitigação e",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-cop",
+      "conference": "COP27"
+    },
+    {
+      "id": "sim-autoral-cop26-cop30-2026-11-21-004",
+      "examId": "sim-autoral-cop26-cop30-2026-11-21",
+      "code": "Q2026CGCOPAUTORAL004",
+      "originalNumber": 4,
+      "heading": "COP27 | Sharm el-Sheikh, 2022",
+      "stem": "As negociações sobre justiça climática evidenciam que os países apresentam diferentes contribuições históricas para o aquecimento global, capacidades econômicas e níveis de vulnerabilidade. Considerando o princípio das responsabilidades comuns, porém diferenciadas, qual interpretação é mais adequada?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Cada país deve assumir idêntica quantidade absoluta de cortes e o mesmo custo financeiro, sem considerar suas condições."
+        },
+        {
+          "letter": "B",
+          "text": "Somente os países de baixa renda precisam reduzir emissões, pois são os mais vulneráveis."
+        },
+        {
+          "letter": "C",
+          "text": "A responsabilidade de agir pode ser transferida integralmente a um único grupo de países."
+        },
+        {
+          "letter": "D",
+          "text": "Todos devem participar da ação climática, com encargos e apoios que considerem responsabilidades históricas e capacidades."
+        },
+        {
+          "letter": "E",
+          "text": "O financiamento internacional deve ocorrer apenas quando for possível atribuir cada desastre a um país emissor específico."
+        }
+      ],
+      "sourcePage": 2,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Meio ambiente e sustentabilidade",
+      "topicCode": "CAMB",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Simulado de Atualidades — COP26 a COP30",
+      "answer": "D",
+      "answerComment": "A responsabilidade é compartilhada, mas a distribuição dos esforços considera",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-cop",
+      "conference": "COP27"
+    },
+    {
+      "id": "sim-autoral-cop26-cop30-2026-11-21-005",
+      "examId": "sim-autoral-cop26-cop30-2026-11-21",
+      "code": "Q2026CGCOPAUTORAL005",
+      "originalNumber": 5,
+      "heading": "COP28 | Dubai, 2023",
+      "stem": "A COP28 concluiu o primeiro balanço global do Acordo de Paris, que avaliou o progresso coletivo diante das metas climáticas. Um ministério pretende usar as conclusões desse processo para rever sua contribuição nacionalmente determinada (NDC). Qual procedimento é mais coerente com a finalidade do balanço?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Identificar as lacunas entre as metas e a trajetória real de emissões, revisar políticas e definir objetivos verificáveis mais ambiciosos."
+        },
+        {
+          "letter": "B",
+          "text": "Substituir metas nacionais por uma única média mundial, deixando de monitorar os resultados de cada país."
+        },
+        {
+          "letter": "C",
+          "text": "Considerar o balanço uma auditoria destinada apenas a atribuir sanções automáticas às economias com mais habitantes."
+        },
+        {
+          "letter": "D",
+          "text": "Avaliar exclusivamente o número de conferências realizadas, pois decisões políticas representam reduções efetivas."
+        },
+        {
+          "letter": "E",
+          "text": "Manter metas inalteradas até que todas as fontes de energia fóssil sejam eliminadas simultaneamente no planeta."
+        }
+      ],
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Meio ambiente e sustentabilidade",
+      "topicCode": "CAMB",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Simulado de Atualidades — COP26 a COP30",
+      "answer": "A",
+      "answerComment": "O balanço global examina o avanço coletivo e informa a revisão das NDCs.",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-cop",
+      "conference": "COP28"
+    },
+    {
+      "id": "sim-autoral-cop26-cop30-2026-11-21-006",
+      "examId": "sim-autoral-cop26-cop30-2026-11-21",
+      "code": "Q2026CGCOPAUTORAL006",
+      "originalNumber": 6,
+      "heading": "COP28 | Dubai, 2023",
+      "stem": "No contexto da transição para longe dos combustíveis fósseis, uma cidade decide eletrificar parte da frota de ônibus. Um gestor afirma: “Todo ônibus elétrico produz zero emissão climática, independentemente da fonte da eletricidade utilizada”. Qual análise técnica corrige melhor essa afirmação?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "A eletrificação eleva necessariamente as emissões, mesmo com rede baseada em fontes renováveis."
+        },
+        {
+          "letter": "B",
+          "text": "A geração de eletricidade não integra o cálculo climático do transporte urbano."
+        },
+        {
+          "letter": "C",
+          "text": "A avaliação deve incluir a matriz elétrica e o ciclo de vida dos veículos; eletrificação e descarbonização da rede são complementares."
+        },
+        {
+          "letter": "D",
+          "text": "A ausência de escapamento elimina automaticamente toda emissão relacionada à produção do veículo e à geração elétrica."
+        },
+        {
+          "letter": "E",
+          "text": "A troca de combustível é irrelevante porque somente o desmatamento influencia o aquecimento global."
+        }
+      ],
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Meio ambiente e sustentabilidade",
+      "topicCode": "CAMB",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Simulado de Atualidades — COP26 a COP30",
+      "answer": "C",
+      "answerComment": "Veículos elétricos não emitem pelo escapamento, mas eletricidade e fabricação",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-cop",
+      "conference": "COP28"
+    },
+    {
+      "id": "sim-autoral-cop26-cop30-2026-11-21-007",
+      "examId": "sim-autoral-cop26-cop30-2026-11-21",
+      "code": "Q2026CGCOPAUTORAL007",
+      "originalNumber": 7,
+      "heading": "COP29 | Baku, 2024",
+      "stem": "A COP29 aprovou nova meta de financiamento climático para países em desenvolvimento. Imagine que uma nação vulnerável receba ofertas para construir infraestrutura contra inundações: uma doação, um empréstimo de longo prazo com juros baixos e um empréstimo comercial caro. Qual critério permite avaliar a qualidade do apoio além do valor anunciado?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Considerar apenas a soma nominal de recursos prometidos, mesmo que não sejam desembolsados."
+        },
+        {
+          "letter": "B",
+          "text": "Preferir sempre o crédito mais oneroso, já que juros altos garantem projetos ambientalmente eficientes."
+        },
+        {
+          "letter": "C",
+          "text": "Ignorar o endividamento público, pois financiamento climático não interfere no orçamento nacional."
+        },
+        {
+          "letter": "D",
+          "text": "Classificar toda promessa de investimento privado como transferência efetiva de recursos públicos."
+        },
+        {
+          "letter": "E",
+          "text": "Analisar acesso real, previsibilidade, custo financeiro e adequação dos recursos às necessidades de adaptação."
+        }
+      ],
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Meio ambiente e sustentabilidade",
+      "topicCode": "CAMB",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Simulado de Atualidades — COP26 a COP30",
+      "answer": "E",
+      "answerComment": "A efetividade depende das condições de acesso, do desembolso e dos efeitos",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-cop",
+      "conference": "COP29"
+    },
+    {
+      "id": "sim-autoral-cop26-cop30-2026-11-21-008",
+      "examId": "sim-autoral-cop26-cop30-2026-11-21",
+      "code": "Q2026CGCOPAUTORAL008",
+      "originalNumber": 8,
+      "heading": "COP29 | Baku, 2024",
+      "stem": "Nas regras de cooperação internacional previstas no artigo 6º do Acordo de Paris, o país X autoriza a transferência de um resultado de redução de emissões ao país Y para utilização em sua meta climática. Se ambos contabilizarem integralmente a mesma redução, que problema ocorrerá e como deve ser evitado?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Não haverá problema, porque o resultado pode ser integralmente contado por todo país participante."
+        },
+        {
+          "letter": "B",
+          "text": "Haverá dupla contagem; são necessários ajustes correspondentes e registros transparentes da transferência."
+        },
+        {
+          "letter": "C",
+          "text": "Haverá apenas mudança cambial; basta converter o preço do crédito para a moeda do comprador."
+        },
+        {
+          "letter": "D",
+          "text": "A redução se transformará automaticamente em remoção permanente de carbono da atmosfera."
+        },
+        {
+          "letter": "E",
+          "text": "O cálculo se torna dispensável, desde que o crédito tenha alcançado alto valor de mercado."
+        }
+      ],
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Meio ambiente e sustentabilidade",
+      "topicCode": "CAMB",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Simulado de Atualidades — COP26 a COP30",
+      "answer": "B",
+      "answerComment": "A mesma redução não pode sustentar simultaneamente duas metas nacionais",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-cop",
+      "conference": "COP29"
+    },
+    {
+      "id": "sim-autoral-cop26-cop30-2026-11-21-009",
+      "examId": "sim-autoral-cop26-cop30-2026-11-21",
+      "code": "Q2026CGCOPAUTORAL009",
+      "originalNumber": 9,
+      "heading": "COP30 | Belém, 2025",
+      "stem": "A escolha de uma cidade amazônica para a COP30 destacou a relação entre florestas, clima e uso do solo. Em uma região de floresta tropical, o desmatamento em grande escala pode alterar o regime de chuvas e o balanço de carbono. Qual explicação associa corretamente esses processos?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "A retirada de árvores eleva necessariamente a evapotranspiração e aumenta as chuvas em todas as estações."
+        },
+        {
+          "letter": "B",
+          "text": "A conversão da floresta em pastagens preserva de forma integral a biodiversidade e o estoque de carbono."
+        },
+        {
+          "letter": "C",
+          "text": "O efeito climático do desmatamento é somente local, sem possíveis repercussões nos fluxos atmosféricos."
+        },
+        {
+          "letter": "D",
+          "text": "A perda florestal reduz estoques de carbono e pode diminuir a reciclagem de umidade; conservar e restaurar a vegetação ajuda a enfrentar ambos os riscos."
+        },
+        {
+          "letter": "E",
+          "text": "O aumento mundial da geração solar elimina a necessidade de políticas de uso da terra."
+        }
+      ],
+      "sourcePage": 5,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Meio ambiente e sustentabilidade",
+      "topicCode": "CAMB",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Simulado de Atualidades — COP26 a COP30",
+      "answer": "D",
+      "answerComment": "Florestas armazenam carbono e participam do ciclo da água por",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-cop",
+      "conference": "COP30"
+    },
+    {
+      "id": "sim-autoral-cop26-cop30-2026-11-21-010",
+      "examId": "sim-autoral-cop26-cop30-2026-11-21",
+      "code": "Q2026CGCOPAUTORAL010",
+      "originalNumber": 10,
+      "heading": "COP30 | Belém, 2025",
+      "stem": "Na COP30, a ampliação do financiamento para adaptação ganhou destaque. Uma capital amazônica enfrenta calor extremo, enchentes urbanas e ocupações em áreas de risco. Qual conjunto de medidas traduz melhor a adaptação climática em políticas públicas mensuráveis, sem confundi-la com mitigação?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Mapear vulnerabilidades, ampliar alertas, drenagem e infraestrutura verde e monitorar a redução da exposição da população."
+        },
+        {
+          "letter": "B",
+          "text": "Comprar créditos de carbono e dispensar a revisão da ocupação de várzeas e das áreas sujeitas a alagamento."
+        },
+        {
+          "letter": "C",
+          "text": "Concentrar todos os investimentos na redução de emissões de veículos, sem ações de proteção contra desastres."
+        },
+        {
+          "letter": "D",
+          "text": "Reocupar áreas inundáveis após cada cheia, mantendo a mesma exposição ao risco."
+        },
+        {
+          "letter": "E",
+          "text": "Substituir planos municipais de contingência por declarações genéricas sobre neutralidade de carbono futura."
+        }
+      ],
+      "sourcePage": 5,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Meio ambiente e sustentabilidade",
+      "topicCode": "CAMB",
+      "year": "2026",
+      "banca": "Autoral",
+      "orgao": "Simulado de Atualidades — COP26 a COP30",
+      "answer": "A",
+      "answerComment": "Adaptação reduz exposição e vulnerabilidade a efeitos climáticos; mitigação reduz",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "simulado-autoral-cop",
+      "conference": "COP30"
     }
   ],
   "attempts": [
