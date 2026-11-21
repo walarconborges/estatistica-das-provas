@@ -49709,6 +49709,14 @@
       "answer": "B",
       "simulationId": "",
       "at": "2026-11-21T18:48:40.590Z"
+    },
+    {
+      "id": "d826e20e-0a2c-44a9-8996-c29c29e672b3",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "sim-chatgpt-candeias-hg-2026-11-21-caderno3-023",
+      "answer": "C",
+      "simulationId": "",
+      "at": "2026-11-21T18:52:07.715Z"
     }
   ],
   "simulations": [],
