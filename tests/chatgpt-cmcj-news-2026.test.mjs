@@ -35,7 +35,7 @@ test('três novas sinalizações de matéria resolvidas sem alterar gabaritos',(
  for(const [code,[subject,answer]] of Object.entries(cases)){
   const q=s.questions.find(q=>q.code===code);assert.ok(q);assert.equal(q.disciplineCode,subject);
   assert.equal(q.answer,answer);
-  assert.equal(s.flags.some(f=>f.questionId===q.id&&f.status==='pending'),false);
+  assert.ok(s.flags.some(f=>f.questionId===q.id&&f.status==='approved')); // revisões antigas continuam aprovadas, ainda que haja nova sinalização
  }
  assert.ok(s.profiles.length>=2);
 });
