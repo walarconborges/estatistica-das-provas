@@ -1,9 +1,16 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.48 — 21/11/2026**  
+**Versão experimental 0.6.49 — 21/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.49 — largura fluida e conforto visual
+- O conteúdo e a barra superior ocupam a largura disponível da janela, com margem lateral pequena (10–24 px); o limite fixo anterior de 1.190 px foi removido apenas para telas.
+- Seletor **Cores** no topo com cinco alternativas: Claro original, Cinza suave, Areia clara, Sépia e Escuro (preto).
+- O padrão inicial é **Cinza suave**. A escolha fica guardada somente neste navegador, independente dos dados, perfis, gabaritos e da sincronização do banco.
+- Cores dos cartões, alternativas, campos, filtros, textos de apoio e caixas de diálogo seguem o tema, incluindo estados de foco e seleção; a interface de impressão não foi alterada.
+- Regressões automatizadas em `tests/appearance-responsive.test.mjs`.
 
 ## Importação de 21/11/2026 — 40 questões de Legislação de Candeias
 Quatro simulados **autorais no estilo IBGP**, não oficiais, foram incorporados ao banco com gabarito comentado da última página de cada PDF.
