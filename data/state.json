@@ -52558,6 +52558,14 @@
       "answer": "C",
       "simulationId": "",
       "at": "2026-11-21T20:11:05.772Z"
+    },
+    {
+      "id": "cc82281a-ccad-42ba-be27-8eff1734068e",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-health-10-016",
+      "answer": "D",
+      "simulationId": "",
+      "at": "2026-11-21T20:16:53.697Z"
     }
   ],
   "simulations": [],
