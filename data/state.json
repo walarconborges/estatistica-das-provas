@@ -50288,6 +50288,14 @@
       "answer": "D",
       "simulationId": "",
       "at": "2026-11-21T19:05:38.374Z"
+    },
+    {
+      "id": "58f1673d-7ee9-4d04-b5a4-64ea9e168dc9",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-health-10-017",
+      "answer": "A",
+      "simulationId": "",
+      "at": "2026-11-21T19:10:04.875Z"
     }
   ],
   "simulations": [],
