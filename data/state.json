@@ -54946,6 +54946,38 @@
       "answer": "C",
       "simulationId": "",
       "at": "2026-11-21T21:14:12.215Z"
+    },
+    {
+      "id": "3037a512-0a00-4050-a71f-6e957c2fdf93",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "sim-autoral-candeias-regimento-interno-2026-11-21-004",
+      "answer": "E",
+      "simulationId": "",
+      "at": "2026-11-21T21:14:16.475Z"
+    },
+    {
+      "id": "32d885f5-c065-4deb-9779-14e9f28a2bf4",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "sim-autoral-candeias-regimento-interno-2026-11-21-004",
+      "answer": "E",
+      "simulationId": "",
+      "at": "2026-11-21T21:14:19.977Z"
+    },
+    {
+      "id": "63469e4b-1aa6-4d09-86e2-a3a3c836143f",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "sim-autoral-candeias-regimento-interno-2026-11-21-004",
+      "answer": "E",
+      "simulationId": "",
+      "at": "2026-11-21T21:14:20.906Z"
+    },
+    {
+      "id": "76c58abd-826d-4c80-b07d-d1b9d40ad3ff",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "sim-autoral-candeias-regimento-interno-2026-11-21-004",
+      "answer": "D",
+      "simulationId": "",
+      "at": "2026-11-21T21:14:22.842Z"
     }
   ],
   "simulations": [],
