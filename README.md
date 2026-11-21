@@ -1,9 +1,15 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.47 — 21/11/2026**  
+**Versão experimental 0.6.48 — 21/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.48 — estudo Candeias e filtros de múltipla seleção
+- Substituídos os seletores únicos de disciplina e assunto por caixas de seleção múltipla no **Banco geral**, nos **editais específicos** e na nova modalidade **Candeias**. É possível combinar categorias tanto para consultar questões quanto para criar simulados. Dentro de um grupo, as opções são inclusivas (OU); entre os grupos, são aplicadas em conjunto (E).
+- Criado modo **Candeias do Jamari — cargos 202 e 505**. Ele agrega disciplinas dos dois cargos; em Conhecimentos Gerais e Legislação Municipal, restringe os resultados às questões locais de Candeias e a adaptações jurídicas verificadas. Não mistura questões de normas municipais de outras cidades.
+- As listas de assuntos acompanham as disciplinas marcadas, com opção de limpar a seleção; quando não há marcações, todos os assuntos são aceitos.
+- O banco, os gabaritos, os perfis e o histórico de tentativas não foram alterados. Teste: `tests/study-multiselect-candeias.test.mjs`.
 
 ## Versão 0.6.47 — análise das sinalizações #56–#61
 - **#56:** separação do comando "Está CORRETO o que se afirma em:" da assertiva III nas questões de julgamento, preservados enunciado e resposta A.

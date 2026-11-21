@@ -1,3 +1,9 @@
+## 0.6.48 — 21/11/2026
+
+- Filtros combináveis para várias disciplinas e assuntos, tanto na busca de questões quanto na geração de simulados.
+- Modo Candeias do Jamari agrupa cargos 202 e 505; Conhecimentos Gerais e legislação local são limitados a conteúdos do próprio município.
+- Interface com checkboxes acessíveis via toque e teclado. Banco de dados e históricos sem alterações.
+
 ## 0.6.47 — 21/11/2026
 
 - Sinalizações #56–#61: parser de assertivas, revisão de origens e classificações SEMUSA, limpeza de artefatos de extração e confirmação contra o PDF autoral.
