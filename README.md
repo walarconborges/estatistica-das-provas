@@ -1,9 +1,17 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.45 — 21/11/2026**  
+**Versão experimental 0.6.46 — 21/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.46 — terceira bateria de notícias e História/Geografia
+- Importadas **20 questões autorais** do usuário, organizadas em **dois simulados**, sem duplicação de códigos ou conteúdo: notícias e acontecimentos da Câmara Municipal de Candeias do Jamari/RO (21–30) e História e Geografia do município (21–30).
+- Novos IDs: `sim-chatgpt-cmcj-noticias-2026-11-21-bateria3` e `sim-chatgpt-candeias-hg-2026-11-21-caderno3`. Gabaritos conferidos com a última página dos PDFs: **B, D, A, E, C, B, D, A, E, C** (notícias) e **D, B, E, A, C, A, D, B, E, C** (HG).
+- Notas de assunto extraídas do enunciado; as questões 23 e 25 do HG foram enquadradas como História do município e as demais como Geografia e indicadores municipais. Todas em Conhecimentos Gerais para os cargos 202 e 505.
+- Os textos de afirmações I–III são apresentados em linhas próprias, com o sistema de anotações já existente.
+- Não são questões oficiais da banca IBGP: autoria do simulado registrada como **ChatGPT**. Mantidos todos os perfis, gabaritos anteriores, tentativas, sinalizações e códigos públicos.
+- Novos testes de regressão em `tests/candeias-third-batch-2026.test.mjs`. Corrigido teste antigo que fixava os números totais de questões/provas e impedia futuras importações.
 
 ## Versão 0.6.45 — sinalizações #52–#55
 - **Q2025TI08028:** restauradas três lacunas no enunciado de memória física/virtual do Windows 10, conferidas com a questão 28 do PDF da prova VUNESP 2025 — Câmara de Marília/SP — Auxiliar de Informática. Gabarito E preservado.

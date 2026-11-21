@@ -1676,6 +1676,60 @@
       "sourceType": "simulado-autoral",
       "sourceFile": "simulado_camara_candeias_ibgp_questoes_11_a_20(1).pdf",
       "notes": "Questões autorais no estilo IBGP; não constituem prova oficial da IBGP."
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3",
+      "title": "2026 — ChatGPT — Câmara Municipal de Candeias do Jamari/RO — Notícias — 3ª bateria (21–30)",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "bancaCode": "CHATGPT",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "orgaoCode": "CM-CANDEIAS-DO-JAMARI",
+      "createdAt": "2026-11-21T17:41:00.000Z",
+      "questionIds": [
+        "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-021",
+        "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-022",
+        "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-023",
+        "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-024",
+        "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-025",
+        "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-026",
+        "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-027",
+        "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-028",
+        "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-029",
+        "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-030"
+      ],
+      "keySection": "Gabarito original do PDF — questões 21 a 30",
+      "metadataReview": [],
+      "sourceType": "simulado-autoral",
+      "sourceFile": "simulado_camara_candeias_ibgp_questoes_21_a_30(1).pdf",
+      "notes": "Questões autorais no estilo IBGP. Não constituem questões oficiais da banca IBGP."
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-21-caderno3",
+      "title": "2026 — ChatGPT — Candeias do Jamari/RO — História e Geografia — Caderno 3 (21–30)",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "bancaCode": "CHATGPT",
+      "orgao": "Candeias do Jamari/RO",
+      "orgaoCode": "CANDEIAS-DO-JAMARI",
+      "createdAt": "2026-11-21T17:41:00.000Z",
+      "questionIds": [
+        "sim-chatgpt-candeias-hg-2026-11-21-caderno3-021",
+        "sim-chatgpt-candeias-hg-2026-11-21-caderno3-022",
+        "sim-chatgpt-candeias-hg-2026-11-21-caderno3-023",
+        "sim-chatgpt-candeias-hg-2026-11-21-caderno3-024",
+        "sim-chatgpt-candeias-hg-2026-11-21-caderno3-025",
+        "sim-chatgpt-candeias-hg-2026-11-21-caderno3-026",
+        "sim-chatgpt-candeias-hg-2026-11-21-caderno3-027",
+        "sim-chatgpt-candeias-hg-2026-11-21-caderno3-028",
+        "sim-chatgpt-candeias-hg-2026-11-21-caderno3-029",
+        "sim-chatgpt-candeias-hg-2026-11-21-caderno3-030"
+      ],
+      "keySection": "Gabarito original do PDF — questões 21 a 30",
+      "metadataReview": [],
+      "sourceType": "simulado-autoral",
+      "sourceFile": "simulado_ibgp_hg_candeias_do_jamari_questoes_21_a_30(1).pdf",
+      "notes": "Questões autorais no estilo IBGP. Não constituem questões oficiais da banca IBGP."
     }
   ],
   "questions": [
@@ -48114,6 +48168,1036 @@
       "sourceType": "chatgpt-cmcj-news-simulado",
       "newsSource": "sintero-ro",
       "newsSubject": "Acontecimento recente - 19 de novembro de 2026"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-021",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3",
+      "code": "Q2026CGCMCJCHATGPT021",
+      "originalNumber": 21,
+      "heading": "Conhecimentos Gerais — Notícias de Candeias do Jamari/RO",
+      "stem": "Sessões legislativas — novembro de 2026\n\nNo dia 13 de novembro de 2026, o portal da Câmara Municipal de Candeias do Jamari anunciou uma pauta de sessão a ser realizada em 16 de novembro. De acordo com a identificação apresentada na notícia, tratava-se da:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "27ª sessão ordinária, do primeiro período legislativo de 2026."
+        },
+        {
+          "letter": "B",
+          "text": "30ª sessão ordinária, do segundo período legislativo de 2026."
+        },
+        {
+          "letter": "C",
+          "text": "8ª sessão extraordinária, do segundo período legislativo de 2026."
+        },
+        {
+          "letter": "D",
+          "text": "29ª sessão ordinária, do primeiro período legislativo de 2026."
+        },
+        {
+          "letter": "E",
+          "text": "1ª sessão solene, do segundo período legislativo de 2026."
+        }
+      ],
+      "sourcePage": 1,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Notícias do site da Câmara Municipal de Candeias do Jamari",
+      "topicCode": "CNOT",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-cmcj-news-simulado",
+      "newsSource": "cmcj-ro",
+      "newsSubject": "Sessões legislativas - novembro de 2026"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-022",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3",
+      "code": "Q2026CGCMCJCHATGPT022",
+      "originalNumber": 22,
+      "heading": "Conhecimentos Gerais — Notícias de Candeias do Jamari/RO",
+      "stem": "Homenagem à educação — outubro de 2026\n\nNa pauta da 28ª sessão ordinária, prevista para 26 de outubro de 2026, constou a leitura da Moção de Aplausos nº 06/CMCJ/2026. Segundo a publicação daquela data, quem era a autora da moção e a quem se destinava o reconhecimento?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Roberto Oliveira Franceschetto; aos trabalhadores da agricultura familiar."
+        },
+        {
+          "letter": "B",
+          "text": "Zilmar Lima Domingos Batista; aos profissionais da segurança pública estadual."
+        },
+        {
+          "letter": "C",
+          "text": "Marcos Almeida da Hora; aos representantes de associações esportivas."
+        },
+        {
+          "letter": "D",
+          "text": "Jucilene Marques Moraes; aos diretores das escolas municipais."
+        },
+        {
+          "letter": "E",
+          "text": "Leandro da Silva Soares; aos servidores do Tribunal de Contas."
+        }
+      ],
+      "sourcePage": 1,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Notícias do site da Câmara Municipal de Candeias do Jamari",
+      "topicCode": "CNOT",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-cmcj-news-simulado",
+      "newsSource": "cmcj-ro",
+      "newsSubject": "Homenagem à educação - outubro de 2026"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-023",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3",
+      "code": "Q2026CGCMCJCHATGPT023",
+      "originalNumber": 23,
+      "heading": "Conhecimentos Gerais — Notícias de Candeias do Jamari/RO",
+      "stem": "Indicações parlamentares — outubro de 2026\n\nA pauta da sessão ordinária de 19 de outubro de 2026 apresentou as Indicações nº 103/2026 e nº 104/2026. Considere as afirmativas.\nI. A Indicação nº 103/2026 foi apresentada por Zilmar Lima Domingos Batista.\nII. A Indicação nº 104/2026 foi apresentada por Leandro da Silva Soares.\nIII. A pauta informava que não havia matéria a deliberar na Ordem do Dia.\n\nEstá CORRETO o que se afirma em:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "I, II e III."
+        },
+        {
+          "letter": "B",
+          "text": "I e II, apenas."
+        },
+        {
+          "letter": "C",
+          "text": "II e III, apenas."
+        },
+        {
+          "letter": "D",
+          "text": "I e III, apenas."
+        },
+        {
+          "letter": "E",
+          "text": "III, apenas."
+        }
+      ],
+      "sourcePage": 1,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Notícias do site da Câmara Municipal de Candeias do Jamari",
+      "topicCode": "CNOT",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-cmcj-news-simulado",
+      "newsSource": "cmcj-ro",
+      "newsSubject": "Indicações parlamentares - outubro de 2026"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-024",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3",
+      "code": "Q2026CGCMCJCHATGPT024",
+      "originalNumber": 24,
+      "heading": "Conhecimentos Gerais — Notícias de Candeias do Jamari/RO",
+      "stem": "Saúde municipal — setembro de 2026\n\nNa notícia relativa à 24ª sessão ordinária, marcada para 14 de setembro de 2026, constou a leitura do Projeto de Lei nº 2.342/CMCJ/2026. A respeito do objeto e dos recursos mencionados, assinale a alternativa CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "A proposta destinava R$ 427.618,99 exclusivamente à Secretaria Municipal de Cultura."
+        },
+        {
+          "letter": "B",
+          "text": "O projeto tratava da aquisição de equipamentos para a Câmara, sem impacto no orçamento da Prefeitura."
+        },
+        {
+          "letter": "C",
+          "text": "A notícia confirmou a sanção de lei de crédito orçamentário em favor da Secretaria Municipal de Obras."
+        },
+        {
+          "letter": "D",
+          "text": "O projeto abria crédito de R$ 50.000,00 em favor do Fundo Municipal de Turismo."
+        },
+        {
+          "letter": "E",
+          "text": "O projeto previa crédito adicional especial de R$ 427.618,99, por superávit financeiro e excesso de arrecadação, para a Secretaria Municipal de Saúde (SEMUSA)."
+        }
+      ],
+      "sourcePage": 2,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Notícias do site da Câmara Municipal de Candeias do Jamari",
+      "topicCode": "CNOT",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "E",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-cmcj-news-simulado",
+      "newsSource": "cmcj-ro",
+      "newsSubject": "Saúde municipal - setembro de 2026"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-025",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3",
+      "code": "Q2026CGCMCJCHATGPT025",
+      "originalNumber": 25,
+      "heading": "Conhecimentos Gerais — Notícias de Candeias do Jamari/RO",
+      "stem": "Estrutura de cargos — julho de 2026\n\nNa 6ª sessão extraordinária convocada para 30 de julho de 2026, o Projeto de Lei nº 2.313/CMCJ/2026 figurou na pauta. Conforme o edital de convocação, qual era o objeto central dessa matéria?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "A criação de novas regras eleitorais para o cargo de vereador."
+        },
+        {
+          "letter": "B",
+          "text": "A transferência de todos os cargos da Prefeitura para a Câmara Municipal."
+        },
+        {
+          "letter": "C",
+          "text": "A inclusão e atualização dos anexos de atribuições e escolaridade de cargos previstos na Lei Complementar nº 1.840/2026."
+        },
+        {
+          "letter": "D",
+          "text": "A instituição de um benefício de aposentadoria específico para os servidores da educação."
+        },
+        {
+          "letter": "E",
+          "text": "A extinção da exigência de escolaridade para ingresso em cargos públicos municipais."
+        }
+      ],
+      "sourcePage": 2,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Notícias do site da Câmara Municipal de Candeias do Jamari",
+      "topicCode": "CNOT",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-cmcj-news-simulado",
+      "newsSource": "cmcj-ro",
+      "newsSubject": "Estrutura de cargos - julho de 2026"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-026",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3",
+      "code": "Q2026CGCMCJCHATGPT026",
+      "originalNumber": 26,
+      "heading": "Conhecimentos Gerais — Notícias de Candeias do Jamari/RO",
+      "stem": "Infraestrutura e serviços públicos — julho de 2026\n\nDurante a convocação da 5ª sessão extraordinária, realizada em 15 de julho de 2026, o Projeto de Lei nº 2.311/CMCJ/2026 foi apresentado com uma finalidade institucional específica. Qual era essa finalidade?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Instituir o Fundo Municipal de Previdência dos servidores da Câmara."
+        },
+        {
+          "letter": "B",
+          "text": "Instituir o Fundo Municipal de Infraestrutura, Obras, Serviços Públicos e Transporte (FMIOST)."
+        },
+        {
+          "letter": "C",
+          "text": "Criar o Fundo Municipal de Defesa dos Direitos da Criança e do Adolescente."
+        },
+        {
+          "letter": "D",
+          "text": "Unificar o orçamento da Câmara com o orçamento da Assembleia Legislativa de Rondônia."
+        },
+        {
+          "letter": "E",
+          "text": "Extinguir a Secretaria Municipal de Obras e transferir suas atividades ao Governo Federal."
+        }
+      ],
+      "sourcePage": 2,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Notícias do site da Câmara Municipal de Candeias do Jamari",
+      "topicCode": "CNOT",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-cmcj-news-simulado",
+      "newsSource": "cmcj-ro",
+      "newsSubject": "Infraestrutura e serviços públicos - julho de 2026"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-027",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3",
+      "code": "Q2026CGCMCJCHATGPT027",
+      "originalNumber": 27,
+      "heading": "Conhecimentos Gerais — Notícias de Candeias do Jamari/RO",
+      "stem": "Funcionamento da Câmara — julho de 2026\n\nO Decreto nº 15/CMCJ/2026 estabeleceu recesso administrativo no Poder Legislativo Municipal. Considerando a publicação, analise as afirmativas.\nI. O período do recesso administrativo foi de 15 a 31 de julho de 2026.\nII. O decreto dispensou o comparecimento regular dos servidores, ressalvadas convocações por necessidade do serviço.\nIII. A publicação determinou que os serviços essenciais fossem definitivamente extintos durante o recesso.\n\nEstá CORRETO o que se afirma em:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "I, apenas."
+        },
+        {
+          "letter": "B",
+          "text": "II e III, apenas."
+        },
+        {
+          "letter": "C",
+          "text": "I e III, apenas."
+        },
+        {
+          "letter": "D",
+          "text": "I e II, apenas."
+        },
+        {
+          "letter": "E",
+          "text": "I, II e III."
+        }
+      ],
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Notícias do site da Câmara Municipal de Candeias do Jamari",
+      "topicCode": "CNOT",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-cmcj-news-simulado",
+      "newsSource": "cmcj-ro",
+      "newsSubject": "Funcionamento da Câmara - julho de 2026"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-028",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3",
+      "code": "Q2026CGCMCJCHATGPT028",
+      "originalNumber": 28,
+      "heading": "Conhecimentos Gerais — Notícias de Candeias do Jamari/RO",
+      "stem": "Organização administrativa — abril de 2026\n\nA pauta da 9ª sessão ordinária, de 27 de abril de 2026, incluiu o Projeto de Lei nº 2.263/CMCJ/2026. De acordo com a descrição publicada, a proposição tratava da:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Criação da Secretaria Municipal da Mulher, Família, Emprego, Trabalho, Desenvolvimento Social, Indústria e Comércio (SEMFIC)."
+        },
+        {
+          "letter": "B",
+          "text": "Criação do Conselho Municipal de Segurança Pública e Trânsito, desvinculado da Prefeitura."
+        },
+        {
+          "letter": "C",
+          "text": "Substituição da Secretaria Municipal de Saúde por uma fundação estadual."
+        },
+        {
+          "letter": "D",
+          "text": "Incorporação das secretarias municipais ao quadro administrativo da Câmara."
+        },
+        {
+          "letter": "E",
+          "text": "Extinção dos programas de desenvolvimento social financiados pelo município."
+        }
+      ],
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Notícias do site da Câmara Municipal de Candeias do Jamari",
+      "topicCode": "CNOT",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-cmcj-news-simulado",
+      "newsSource": "cmcj-ro",
+      "newsSubject": "Organização administrativa - abril de 2026"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-029",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3",
+      "code": "Q2026CGCMCJCHATGPT029",
+      "originalNumber": 29,
+      "heading": "Conhecimentos Gerais — Notícias de Candeias do Jamari/RO",
+      "stem": "Parcerias com entidades civis — abril de 2026\n\nEntre os projetos mencionados na pauta da sessão ordinária de 27 de abril de 2026 estava o Projeto de Lei nº 2.272/CMCJ/2026. A proposta estava relacionada a qual medida?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Autorizar a venda direta de bens públicos a qualquer entidade, independentemente de procedimento."
+        },
+        {
+          "letter": "B",
+          "text": "Instituir convênio obrigatório com todos os sindicatos estaduais, com repasse automático de recursos."
+        },
+        {
+          "letter": "C",
+          "text": "Transformar as organizações da sociedade civil em órgãos integrantes da estrutura da Câmara."
+        },
+        {
+          "letter": "D",
+          "text": "Proibir a celebração de parcerias com entidades privadas sem fins lucrativos."
+        },
+        {
+          "letter": "E",
+          "text": "Autorizar o Poder Executivo a realizar chamamento público para parcerias com organizações da sociedade civil sem fins lucrativos, nos termos da Lei Federal nº 13.019/2014."
+        }
+      ],
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Notícias do site da Câmara Municipal de Candeias do Jamari",
+      "topicCode": "CNOT",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "E",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-cmcj-news-simulado",
+      "newsSource": "cmcj-ro",
+      "newsSubject": "Parcerias com entidades civis - abril de 2026"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-030",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3",
+      "code": "Q2026CGCMCJCHATGPT030",
+      "originalNumber": 30,
+      "heading": "Conhecimentos Gerais — Notícias de Candeias do Jamari/RO",
+      "stem": "Infraestrutura rural e transporte escolar — abril de 2026\n\nNa pauta da 8ª sessão ordinária, de 13 de abril de 2026, foi registrada a Indicação nº 47/CMCJ/2026, de autoria de Roberto Oliveira Franceschetto. Qual providência foi solicitada nessa indicação?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "A construção de um terminal rodoviário na sede do município e de um aeroporto no distrito de Triunfo."
+        },
+        {
+          "letter": "B",
+          "text": "A implantação de ciclovia nas margens da BR-364, com transferência da rodovia ao município."
+        },
+        {
+          "letter": "C",
+          "text": "Serviços de patrolamento e cascalhamento na Linha 659, especialmente no retorno do transporte escolar, e reparo na ponte da Taboca."
+        },
+        {
+          "letter": "D",
+          "text": "A substituição da iluminação pública nas ruas Pardal e Pica-Pau, no bairro Santa Letícia II."
+        },
+        {
+          "letter": "E",
+          "text": "O asfaltamento da Rua Rondônia, no bairro Santa Letícia II, sem outras providências."
+        }
+      ],
+      "sourcePage": 4,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Notícias do site da Câmara Municipal de Candeias do Jamari",
+      "topicCode": "CNOT",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Câmara Municipal de Candeias do Jamari/RO",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-cmcj-news-simulado",
+      "newsSource": "cmcj-ro",
+      "newsSubject": "Infraestrutura rural e transporte escolar - abril de 2026"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-21-caderno3-021",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-21-caderno3",
+      "code": "Q2026CGCDJGEOCHATGPT021",
+      "originalNumber": 21,
+      "heading": "Conhecimentos Gerais — História e Geografia de Candeias do Jamari/RO",
+      "stem": "O IBGE e a Prefeitura de Candeias do Jamari registram um gentílico oficial para identificar os naturais do município. Assinale a alternativa que apresenta CORRETAMENTE essa denominação.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Jamariense."
+        },
+        {
+          "letter": "B",
+          "text": "Candeiasense."
+        },
+        {
+          "letter": "C",
+          "text": "Candeiano."
+        },
+        {
+          "letter": "D",
+          "text": "Candeiense."
+        },
+        {
+          "letter": "E",
+          "text": "Candeirense."
+        }
+      ],
+      "sourcePage": 1,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geografia de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-candeias-hg-simulado",
+      "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-21-caderno3-022",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-21-caderno3",
+      "code": "Q2026CGCDJGEOCHATGPT022",
+      "originalNumber": 22,
+      "heading": "Conhecimentos Gerais — História e Geografia de Candeias do Jamari/RO",
+      "stem": "O município apresentou mudanças demográficas relevantes na primeira década do século XXI. Segundo dados censitários, sua população passou de aproximadamente 13,1 mil habitantes, em 2000, para 19,8 mil, em 2010. O comportamento populacional desse período é descrito CORRETAMENTE em:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Redução populacional superior a 30%."
+        },
+        {
+          "letter": "B",
+          "text": "Crescimento da população próximo de 50%."
+        },
+        {
+          "letter": "C",
+          "text": "Estabilidade, com variação inferior a 2%."
+        },
+        {
+          "letter": "D",
+          "text": "Duplicação exata da população."
+        },
+        {
+          "letter": "E",
+          "text": "Triplicação da população residente."
+        }
+      ],
+      "sourcePage": 1,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geografia de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-candeias-hg-simulado",
+      "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-21-caderno3-023",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-21-caderno3",
+      "code": "Q2026CGCDJHISTCHATGPT023",
+      "originalNumber": 23,
+      "heading": "Conhecimentos Gerais — História e Geografia de Candeias do Jamari/RO",
+      "stem": "O histórico municipal do IBGE menciona a Cachoeira de Samuel como ponto importante nas antigas rotas de circulação de mercadorias. Nesse contexto, a localidade se destacava porque:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Concentrava uma estação de trens que ligava diretamente o município a Manaus."
+        },
+        {
+          "letter": "B",
+          "text": "Abrigava um porto oceânico para exportação de produtos agrícolas."
+        },
+        {
+          "letter": "C",
+          "text": "Era o terminal da rodovia que seguia exclusivamente para o Acre."
+        },
+        {
+          "letter": "D",
+          "text": "Impedia toda circulação de pessoas e mercadorias pela região."
+        },
+        {
+          "letter": "E",
+          "text": "Recebia embarcações procedentes de Manaus, integrando as rotas fluviais da região."
+        }
+      ],
+      "sourcePage": 1,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "História de Candeias do Jamari",
+      "topicCode": "CHCDJ",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "E",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-candeias-hg-simulado",
+      "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-21-caderno3-024",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-21-caderno3",
+      "code": "Q2026CGCDJGEOCHATGPT024",
+      "originalNumber": 24,
+      "heading": "Conhecimentos Gerais — História e Geografia de Candeias do Jamari/RO",
+      "stem": "A organização territorial de Candeias do Jamari compreende núcleos de povoamento além da sede municipal. Conforme informações da Prefeitura, constituem exemplos dessas localidades:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Triunfo e Vila Nova Samuel."
+        },
+        {
+          "letter": "B",
+          "text": "Nova Mamoré e Jaci-Paraná."
+        },
+        {
+          "letter": "C",
+          "text": "Guajará-Mirim e Extrema."
+        },
+        {
+          "letter": "D",
+          "text": "Cujubim e Machadinho d’Oeste."
+        },
+        {
+          "letter": "E",
+          "text": "São Carlos e Calama."
+        }
+      ],
+      "sourcePage": 1,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geografia de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-candeias-hg-simulado",
+      "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-21-caderno3-025",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-21-caderno3",
+      "code": "Q2026CGCDJHISTCHATGPT025",
+      "originalNumber": 25,
+      "heading": "Conhecimentos Gerais — História e Geografia de Candeias do Jamari/RO",
+      "stem": "Em 9 de junho de 2024, Candeias do Jamari vivenciou um fato relevante de sua história política recente, registrado pelo Tribunal Regional Eleitoral de Rondônia (TRE-RO). Nessa data, ocorreu:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Consulta popular para transferir a sede do município para Triunfo."
+        },
+        {
+          "letter": "B",
+          "text": "Eleição ordinária para os cargos de governador e senador."
+        },
+        {
+          "letter": "C",
+          "text": "Eleição suplementar para os cargos de prefeito e vice-prefeito."
+        },
+        {
+          "letter": "D",
+          "text": "Referendo estadual sobre a extinção do município."
+        },
+        {
+          "letter": "E",
+          "text": "Segunda votação para escolha de deputados federais."
+        }
+      ],
+      "sourcePage": 2,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "História de Candeias do Jamari",
+      "topicCode": "CHCDJ",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-candeias-hg-simulado",
+      "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-21-caderno3-026",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-21-caderno3",
+      "code": "Q2026CGCDJGEOCHATGPT026",
+      "originalNumber": 26,
+      "heading": "Conhecimentos Gerais — História e Geografia de Candeias do Jamari/RO",
+      "stem": "O Índice de Desenvolvimento Humano Municipal (IDHM) considera renda, educação e longevidade. De acordo com o indicador de 2010 divulgado pelo IBGE para Candeias do Jamari, assinale a alternativa CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "O município registrou IDHM de 0,649, na faixa de desenvolvimento humano médio."
+        },
+        {
+          "letter": "B",
+          "text": "O município registrou IDHM de 0,949, na faixa de desenvolvimento humano muito alto."
+        },
+        {
+          "letter": "C",
+          "text": "O município registrou IDHM de 0,249, na faixa de desenvolvimento humano baixo."
+        },
+        {
+          "letter": "D",
+          "text": "O município registrou IDHM igual a 1,000, o valor máximo da escala."
+        },
+        {
+          "letter": "E",
+          "text": "O município registrou IDHM negativo, o que indica retração econômica."
+        }
+      ],
+      "sourcePage": 2,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geografia de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "A",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-candeias-hg-simulado",
+      "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-21-caderno3-027",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-21-caderno3",
+      "code": "Q2026CGCDJGEOCHATGPT027",
+      "originalNumber": 27,
+      "heading": "Conhecimentos Gerais — História e Geografia de Candeias do Jamari/RO",
+      "stem": "O clima da região do Jamari apresenta sazonalidade, ainda que predominem temperaturas elevadas ao longo do ano. De acordo com a climatologia registrada para a região, o período de estiagem mais acentuada ocorre, em geral:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Entre dezembro e fevereiro, quando as chuvas praticamente cessam."
+        },
+        {
+          "letter": "B",
+          "text": "Entre janeiro e março, durante o pico da estação chuvosa."
+        },
+        {
+          "letter": "C",
+          "text": "Durante todo o ano, sem qualquer alternância sazonal."
+        },
+        {
+          "letter": "D",
+          "text": "Entre junho e agosto, com maio e setembro como meses de transição."
+        },
+        {
+          "letter": "E",
+          "text": "Exclusivamente em novembro, seguido por seca até abril."
+        }
+      ],
+      "sourcePage": 2,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geografia de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "D",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-candeias-hg-simulado",
+      "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-21-caderno3-028",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-21-caderno3",
+      "code": "Q2026CGCDJGEOCHATGPT028",
+      "originalNumber": 28,
+      "heading": "Conhecimentos Gerais — História e Geografia de Candeias do Jamari/RO",
+      "stem": "Os dados do Censo 2022 permitem examinar as condições de destinação de resíduos sólidos em Candeias do Jamari. Considerando as formas de destino do lixo utilizadas pela população, assinale a alternativa CORRETA.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Toda a população possui coleta de resíduos, sem uso de outras práticas."
+        },
+        {
+          "letter": "B",
+          "text": "Cerca de 70% tinham lixo coletado, enquanto aproximadamente um quarto o queimava na propriedade."
+        },
+        {
+          "letter": "C",
+          "text": "Mais de 70% da população destinava seus resíduos exclusivamente ao enterramento."
+        },
+        {
+          "letter": "D",
+          "text": "A queima de resíduos alcançava mais de 90% dos habitantes."
+        },
+        {
+          "letter": "E",
+          "text": "O Censo constatou ausência total de coleta no município."
+        }
+      ],
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geografia de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "B",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-candeias-hg-simulado",
+      "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-21-caderno3-029",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-21-caderno3",
+      "code": "Q2026CGCDJGEOCHATGPT029",
+      "originalNumber": 29,
+      "heading": "Conhecimentos Gerais — História e Geografia de Candeias do Jamari/RO",
+      "stem": "Dados de cobertura e uso da terra do projeto MapBiomas indicam que a vegetação nativa representava aproximadamente 97% do território municipal em 1985 e cerca de 55% em 2025. A interpretação CORRETA dessa série histórica é:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "A área de vegetação nativa aumentou cerca de 42 pontos percentuais."
+        },
+        {
+          "letter": "B",
+          "text": "A cobertura de vegetação nativa permaneceu praticamente inalterada."
+        },
+        {
+          "letter": "C",
+          "text": "O município tornou-se integralmente urbano no período."
+        },
+        {
+          "letter": "D",
+          "text": "A vegetação nativa desapareceu completamente até 2025."
+        },
+        {
+          "letter": "E",
+          "text": "A proporção de vegetação nativa diminuiu aproximadamente 42 pontos percentuais."
+        }
+      ],
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geografia de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "E",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-candeias-hg-simulado",
+      "municipalSource": "candeias-do-jamari-ro"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-21-caderno3-030",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-21-caderno3",
+      "code": "Q2026CGCDJGEOCHATGPT030",
+      "originalNumber": 30,
+      "heading": "Conhecimentos Gerais — História e Geografia de Candeias do Jamari/RO",
+      "stem": "O IBGE informou, para 2022, taxa de escolarização de 97,1% na faixa de 6 a 14 anos em Candeias do Jamari. Esse indicador significa que:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "97,1% de todos os adultos do município concluíram o ensino superior."
+        },
+        {
+          "letter": "B",
+          "text": "Existiam 97 escolas públicas para cada 100 crianças residentes."
+        },
+        {
+          "letter": "C",
+          "text": "Aproximadamente 97 de cada 100 moradores de 6 a 14 anos estavam matriculados no ensino regular."
+        },
+        {
+          "letter": "D",
+          "text": "Apenas 2,9% dos estudantes do município frequentavam escolas públicas."
+        },
+        {
+          "letter": "E",
+          "text": "97,1% da população total possuía diploma do ensino médio."
+        }
+      ],
+      "sourcePage": 3,
+      "sourceColumn": 0,
+      "contextText": "",
+      "contextRange": null,
+      "confidence": "alta",
+      "extractionReview": false,
+      "imageOnly": false,
+      "discipline": "Conhecimentos Gerais",
+      "disciplineCode": "CG",
+      "topic": "Geografia de Candeias do Jamari",
+      "topicCode": "CGCDJ",
+      "year": "2026",
+      "banca": "ChatGPT",
+      "orgao": "Candeias do Jamari/RO",
+      "answer": "C",
+      "status": "active",
+      "secondary": [],
+      "aliases": [],
+      "duplicateGroup": null,
+      "sourceType": "chatgpt-candeias-hg-simulado",
+      "municipalSource": "candeias-do-jamari-ro"
     }
   ],
   "attempts": [

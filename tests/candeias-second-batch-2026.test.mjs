@@ -40,8 +40,8 @@ test('classificação de HG e notícias respeita origem, edital e fonte externa 
  }
 });
 test('não duplicou códigos nem alterou baterias anteriores',()=>{
- assert.equal(state.questions.length,984);assert.equal(state.exams.length,45);
- assert.equal(new Set(state.questions.map(q=>q.code)).size,984);
+ assert.ok(state.questions.length>=984);assert.ok(state.exams.length>=45);
+ assert.equal(new Set(state.questions.map(q=>q.code)).size,state.questions.length);
  const originalHG=exam('sim-chatgpt-candeias-hg-2026-11-18')[1];
  const originalNews=exam('sim-chatgpt-cmcj-noticias-2026-11-18')[1];
  assert.equal(originalHG.map(q=>q.answer).join(''),'CAEBDBEACD');
