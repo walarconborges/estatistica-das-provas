@@ -2,6 +2,7 @@
 import {fresh,normalizeState,makeCode} from '../core.mjs';
 import {canExplain,contentFingerprint,explanationPath,promptFor,modelResponseText,isDailyLimitError,DEFAULT_AI_MODEL} from './explanations.mjs';
 import {appendAutomaticAdaptations} from '../legal-adapt.mjs';
+import {lawIdForQuestion,selectLegalEvidence} from './legal-knowledge.mjs';
 const HOST='https://api.github.com';
 const LISTS=['profiles','exams','questions','attempts','simulations','flags'];
 const HEAD={'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28','User-Agent':'estatistica-provas-sync'};
@@ -203,8 +204,32 @@ async function explanationCache(env,path){
  try{return {sha:r.body.sha,record:JSON.parse(decodeText(raw))}}
  catch{return {sha:r.body.sha,record:null}};
 }
+async function legalEvidenceForQuestion(env,q,exam){
+ const lawId=lawIdForQuestion(q,exam);
+ if(!lawId)return {evidence:null,reason:''};
+ const path='data/laws/'+lawId+'.json';
+ const response=await github(env,'contents/'+path+'?ref='+encodeURIComponent(setup(env).branch));
+ if(response.status===404)return {evidence:null,reason:'Documento jurídico ainda não cadastrado: '+lawId+'.'};
+ if(!response.ok)throw Error('Não foi possível consultar a base de legislação ('+response.status+').');
+ let raw=response.body.content;
+ if(!raw){
+  const blob=await github(env,'git/blobs/'+response.body.sha);
+  if(!blob.ok)throw Error('Falha na leitura do texto jurídico.');
+  raw=blob.body.content;
+ }
+ let doc;
+ try{doc=JSON.parse(decodeText(raw))}
+ catch{throw Error('Documento normativo cadastrado com estrutura inválida.')}
+ if(doc.id!==lawId)throw Error('Identificador de norma incompatível com o documento.');
+ if(doc.readable!==true)return {evidence:null,
+  reason:'O documento '+doc.title+' foi catalogado, mas o texto disponível é uma digitalização histórica sem transcrição completa conferida. Consulte o regimento atualizado no portal oficial antes de fundamentar esta questão.'};
+ const evidence=selectLegalEvidence(q,doc);
+ if(!evidence)return {evidence:null,
+  reason:'O documento '+doc.title+' está cadastrado, mas não foi localizado dispositivo suficientemente relacionado à questão. A explicação automática foi bloqueada para evitar fundamentação inventada.'};
+ return {evidence,reason:''};
+}
 function explanationReply(record,origin,cached=true){
- return reply({status:record.status||'ready',cached,explanation:record.text||'',model:record.model||'',generatedAt:record.generatedAt||''},200,origin);
+ return reply({status:record.status||'ready',cached,explanation:record.text||'',model:record.model||'',generatedAt:record.generatedAt||'',legalBasis:record.legalBasis||null},200,origin);
 }
 async function handleExplanation(req,env,origin){
  if(req.method!=='GET'&&req.method!=='POST')return reply({error:'Método não permitido.'},405,origin);
@@ -223,9 +248,11 @@ async function handleExplanation(req,env,origin){
    explanation:q.adaptation.legalReason+'\nFundamento: '+q.adaptation.law+', '+q.adaptation.sourceArticle+'.\nFonte: '+q.adaptation.sourceUrl,
    legalBasis:{law:q.adaptation.law,article:q.adaptation.sourceArticle,url:q.adaptation.sourceUrl}},200,origin);
 
- const eligibility=canExplain(q);
+ const legal=await legalEvidenceForQuestion(env,q,state.exams.find(e=>e.id===q.examId));
+ if(legal.reason)return reply({status:'unavailable',reason:legal.reason},200,origin);
+ const eligibility=canExplain(q,legal.evidence);
  if(!eligibility.ok)return reply({status:'unavailable',reason:eligibility.reason},200,origin);
- const hash=await contentFingerprint(q,x=>crypto.subtle.digest('SHA-256',x));
+ const hash=await contentFingerprint(q,x=>crypto.subtle.digest('SHA-256',x),legal.evidence);
  const path=explanationPath(q);
  const existing=await explanationCache(env,path);
  const record=existing.record?.fingerprint===hash?existing.record:null;
@@ -243,12 +270,16 @@ async function handleExplanation(req,env,origin){
  const lock=await explanationCache(env,path);
  try{
   const response=await env.AI.run(DEFAULT_AI_MODEL,{
-    messages:promptFor(q),max_tokens:430,temperature:0.15
+    messages:promptFor(q,legal.evidence),max_tokens:540,temperature:0.1
   });
   const text=modelResponseText(response);
   if(text.length<45)throw Error('A IA retornou uma explicação incompleta.');
   const complete={status:'ready',fingerprint:hash,model:DEFAULT_AI_MODEL,
-    generatedAt:new Date().toISOString(),text,revision:1};
+    generatedAt:new Date().toISOString(),text,revision:2,
+    legalBasis:legal.evidence?{
+      law:legal.evidence.law,article:'Dispositivos consultados: '+legal.evidence.passages.map(p=>'p. '+p.page).join(', '),
+      url:legal.evidence.url,documentStatus:legal.evidence.documentStatus
+    }:null};
   if(!await writeFile(env,path,JSON.stringify(complete,null,2)+'\n',lock.sha,'ai: explicação para '+q.code)){
    const renewed=await explanationCache(env,path);
    if(renewed.record?.status==='ready'&&renewed.record.fingerprint===hash)return explanationReply(renewed.record,origin,true);
