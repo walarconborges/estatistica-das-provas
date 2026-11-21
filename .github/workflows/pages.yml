@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
   pages: write
   id-token: write
 
@@ -46,6 +47,25 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: public
+      # O upload pode estar concluído antes de o pacote aparecer na API.
+      # Evita a falha intermitente "No artifacts named github-pages".
+      - name: Aguardar reconhecimento do pacote no GitHub
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          for tentativa in {1..18}; do
+            quantidade=$(gh api "repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts" \
+              --jq '[.artifacts[] | select(.name == "github-pages")] | length' 2>/dev/null || echo "0")
+            if [ "$quantidade" = "1" ]; then
+              echo "Pacote github-pages registrado e disponível."
+              exit 0
+            fi
+            echo "Pacote ainda não disponível (encontrados: $quantidade)."
+            sleep 5
+          done
+          echo "::error::Não foi possível confirmar um único pacote github-pages."
+          exit 1
       - name: Publicar
         id: deployment
         uses: actions/deploy-pages@v4
