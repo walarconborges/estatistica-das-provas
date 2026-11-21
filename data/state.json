@@ -49685,6 +49685,14 @@
       "answer": "A",
       "simulationId": "",
       "at": "2026-11-21T18:25:40.016Z"
+    },
+    {
+      "id": "d3c7ded8-9201-4447-90c6-e1034173fe92",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-health-06-020",
+      "answer": "A",
+      "simulationId": "",
+      "at": "2026-11-21T18:30:49.352Z"
     }
   ],
   "simulations": [],
