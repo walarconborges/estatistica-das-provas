@@ -53177,6 +53177,16 @@
       "proposed": {},
       "status": "pending",
       "at": "2026-11-21T18:48:56.129Z"
+    },
+    {
+      "id": "612e7610-4940-47d2-a6ed-dfeb9c2d94c2",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "sim-chatgpt-cmcj-noticias-2026-11-20-bateria2-012",
+      "type": "problem",
+      "note": "Aqui há erro de extração. o Item III está junto com o II. o \"II.\" aparece 2 vezes. O título aparece junto com o enunciado.",
+      "proposed": {},
+      "status": "pending",
+      "at": "2026-11-21T19:42:35.582Z"
     }
   ],
   "tombstones": {
