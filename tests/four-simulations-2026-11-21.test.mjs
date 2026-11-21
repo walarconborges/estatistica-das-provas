@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {classifyForCargo,candeiasMatches,filterCandeiasQuestions} from '../edital-classification.mjs';
+import {PROFESSOR_CARGO_ID} from '../programa-semed-professor.mjs';
 
 const s=JSON.parse(readFileSync(new URL('../data/state.json',import.meta.url),'utf8'));
 const exams=[{"id":"sim-autoral-clima-amazonia-2026-11-21","answers":"ACEBDACDEB","min":1,"max":10,"local":false},{"id":"sim-autoral-candeias-br364-2026-11-21","answers":"DAEBCAEDCB","min":31,"max":40,"local":true},{"id":"sim-autoral-candeias-incra-2026-11-21","answers":"CADBEBADCE","min":41,"max":50,"local":true},{"id":"sim-autoral-candeias-seringais-2026-11-21","answers":"CAEBDBAECD","min":51,"max":60,"local":true}];
@@ -35,7 +36,7 @@ test('o clima amazônico fica no banco geral; três cadernos locais pertencem a 
      assert.equal(cls.status,'dentro',q.code+' / '+cargo);
      assert.equal(cls.topicId,'gerais:1');
     }
-    for(const cargo of ['240','professor'])assert.equal(classifyForCargo(q,e,cargo).status,'fora',q.code+'/'+cargo);
+    for(const cargo of ['240',PROFESSOR_CARGO_ID])assert.equal(classifyForCargo(q,e,cargo).status,'fora',q.code+'/'+cargo);
     assert.ok(candeiasMatches(q,e).length>=1);
    }else{
     assert.equal(q.topic,'Meio ambiente e sustentabilidade');
