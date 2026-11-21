@@ -55591,6 +55591,19 @@
       "proposed": {},
       "status": "pending",
       "at": "2026-11-21T20:51:12.136Z"
+    },
+    {
+      "id": "85d5b179-ccb9-422e-9803-17f4e7a187a5",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-ti-14-030",
+      "type": "edital-review",
+      "proposed": {
+        "editalCargo": "505",
+        "status": "dentro"
+      },
+      "note": "Classificação indicada pelo usuário sem justificativa; conferir posteriormente.",
+      "status": "pending",
+      "at": "2026-11-21T21:08:39.772Z"
     }
   ],
   "tombstones": {
