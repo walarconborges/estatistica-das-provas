@@ -55668,6 +55668,16 @@
       "note": "Classificação indicada pelo usuário sem justificativa; conferir posteriormente.",
       "status": "pending",
       "at": "2026-11-21T21:08:39.772Z"
+    },
+    {
+      "id": "f0d75600-a0b7-4f7f-b132-d5557f2285c8",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-ti-01-033",
+      "type": "problem",
+      "note": "ajuste o texto para facilitar a leitura",
+      "proposed": {},
+      "status": "pending",
+      "at": "2026-11-21T21:12:09.828Z"
     }
   ],
   "tombstones": {
