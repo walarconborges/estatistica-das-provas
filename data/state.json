@@ -56008,6 +56008,16 @@
       "proposed": {},
       "status": "pending",
       "at": "2026-11-21T21:48:32.123Z"
+    },
+    {
+      "id": "870fc3d5-496d-4bde-8c56-c5d56d3ddaab",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "sim-chatgpt-candeias-hg-2026-11-18-009",
+      "type": "problem",
+      "note": "geograficamente incorreta. corrija para ser aproveitável",
+      "proposed": {},
+      "status": "pending",
+      "at": "2026-11-21T22:00:27.649Z"
     }
   ],
   "tombstones": {
