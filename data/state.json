@@ -48522,6 +48522,14 @@
       "answer": "B",
       "simulationId": "",
       "at": "2026-11-19T19:11:48.951Z"
+    },
+    {
+      "id": "4b7ef10c-0ec9-418b-9cd2-e287218fde75",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-asg-2026-02-002",
+      "answer": "E",
+      "simulationId": "",
+      "at": "2026-11-21T15:42:16.147Z"
     }
   ],
   "simulations": [],
