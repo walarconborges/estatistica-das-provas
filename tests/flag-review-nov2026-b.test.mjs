@@ -23,7 +23,7 @@ test('12 novas sinalizações resolvidas, sem alterar gabaritos nem histórico',
 };
  for(const [code,gabarito] of Object.entries(codes)){
   const q=question(code);assert.ok(q,code);assert.equal(q.answer,gabarito,code);
-  assert.ok(!state.flags.some(f=>f.questionId===q.id&&f.status==='pending'),code);
+  assert.ok(state.flags.some(f=>f.questionId===q.id&&f.status==='approved'),code); // nova sinalização não desfaz revisão anterior
  }
  assert.ok(state.questions.length>=944,'não excluir questões antigas ao adicionar novos simulados');
  assert.equal(state.attempts.length>=22,true);
