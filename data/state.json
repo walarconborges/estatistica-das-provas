@@ -54938,6 +54938,14 @@
       "answer": "D",
       "simulationId": "",
       "at": "2026-11-21T21:12:58.791Z"
+    },
+    {
+      "id": "9d199929-2d36-4f71-8b4c-b2f6c08a2e80",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "sim-autoral-candeias-regimento-interno-2026-11-21-004",
+      "answer": "C",
+      "simulationId": "",
+      "at": "2026-11-21T21:14:12.215Z"
     }
   ],
   "simulations": [],
