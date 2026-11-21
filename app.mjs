@@ -471,14 +471,16 @@ function catalogPanelFilters(){
 }
 function syllabusFiltered(items,filters=currentFilter){
  const id=filters.editalCargo||'505';
- if(id===STUDY_ALL)return filterStudyAllQuestions(items,filters.generalDiscipline,filters.generalTopic);
+ if(id===STUDY_ALL)return filterStudyAllQuestions(items,filters.generalDisciplines||filters.generalDiscipline,filters.generalTopics||filters.generalTopic);
+ if(id===STUDY_CANDEIAS)return filterCandeiasQuestions(items,exam,filters);
+ const ds=selectedValues(filters.editalDisciplines||filters.editalDisciplina);
+ const ts=selectedValues(filters.editalTopics||filters.editalTopic);
  const scope=normalizeEditalScope(filters.editalScope);
  return items.filter(q=>{
   const match=classifyForCargo(q,exam(q.examId),id);
   if(!inEditalScope(match,scope))return false;
-  if(filters.editalDisciplina&&match.discipline!==filters.editalDisciplina)return false;
-  if(filters.editalTopic&&match.topicId!==filters.editalTopic)return false;
-  // Adaptações de legislação feitas para Candeias nunca são reutilizadas em outro edital.
+  if(ds.length&&!ds.includes(match.discipline))return false;
+  if(ts.length&&!ts.includes(match.topicId))return false;
   if(id!=='505'&&q.originalQuestionId)return false;
   return true;
  });
@@ -486,12 +488,11 @@ function syllabusFiltered(items,filters=currentFilter){
 function eligibleSyllabusQuestions(items,filters=currentFilter){
  const id=filters.editalCargo||'505';
  if(id===STUDY_ALL)return syllabusFiltered(items,filters);
+ if(id===STUDY_CANDEIAS)return syllabusFiltered(items,filters)
+  .filter(q=>eligibleForList(q,exam(q.examId),'candeias'));
  const scope=normalizeEditalScope(filters.editalScope);
  const relevant=syllabusFiltered(items,filters);
  if(id!=='505'||scope==='all')return relevant;
- // "Dentro do edital" inclui a classificação pendente. A pessoa poderá
- // conferi-la e sinalizar diretamente ao resolver; ela não é apresentada
- // como norma validada de Candeias.
  return relevant.filter(q=>{
   const classification=classifyForCargo(q,exam(q.examId),id);
   if(classification.status==='pendente')return (filters.studyArea||'candeias')!=='original'||!q.originalQuestionId;
@@ -518,7 +519,7 @@ function filterForm(kind='questions'){
    '<div class="field"><label>Mostrar quantas questões?</label><input type="number" name="count" min="1" max="1000" value="'+limitAvulsas+'" required></div>'+
    '<div class="field span-all"><label>Buscar código permanente</label><input class="code-search" name="code" placeholder="Q2026LPGIBGPSEMED1" value="'+h(currentFilter.code||'')+'"></div>')+
   '</div><div class="actions"><button type="submit">'+(mode?'Criar simulado':'Buscar questões')+'</button></div>'+
-  '<p class="hint">'+(id===STUDY_ALL?'No modo Todos, a disciplina reúne questões de diferentes concursos sem aplicar um edital.':'Dentro do edital inclui também os casos a conferir. Na questão, use Conferir edital para informar se o conteúdo está dentro ou fora; a revisão depende de aprovação.')+' Gabaritos e históricos permanecem inalterados.</p>'+
+  '<p class="hint">'+(id===STUDY_ALL?'No modo Todos, a disciplina reúne questões de diferentes concursos sem aplicar um edital.':id===STUDY_CANDEIAS?'Candeias: temas municipais ficam restritos ao município.':'Dentro do edital inclui também os casos a conferir. Na questão, use Conferir edital para informar se o conteúdo está dentro ou fora; a revisão depende de aprovação.')+' Gabaritos e históricos permanecem inalterados.</p>'+
   '</form>'+targetProgramPanel();
 }
 function alternatives(q,scope,chosen=''){
@@ -550,6 +551,13 @@ function legalBasisHtml(q){
 
 function syllabusBadge(q){
  if(currentFilter.editalCargo===STUDY_ALL)return '';
+ if(currentFilter.editalCargo===STUDY_CANDEIAS){
+  const matches=candeiasMatches(q,exam(q.examId));
+  if(!matches.length)return '';
+  const roles=matches.map(x=>x.cargo).join(' e '),item=matches[0].classification;
+  return '<div class="syllabus-classification"><span class="badge good">Candeias</span>'+
+   '<span>Cargo(s) '+h(roles)+' · '+h(item.discipline)+' / '+h(item.topic)+'</span></div>';
+ }
  const id=currentFilter.editalCargo||'505',match=classifyForCargo(q,exam(q.examId),id);
  const cls=match.status==='dentro'?'good':match.status==='fora'?'bad':'wait';
  const label=match.status==='dentro'?match.discipline+' / '+match.topic:match.statusLabel;
@@ -557,7 +565,7 @@ function syllabusBadge(q){
   '<span>Cargo '+h(id)+' · '+h(label)+(q.editalReview?.[id]?' · Revisão aprovada':match.status==='pendente'?' · Confira o conteúdo e sinalize se necessário.':'')+'</span></div>';
 }
 function syllabusStatistics(cargoId=currentFilter.editalCargo){
- if(cargoId===STUDY_ALL)return '';
+ if(cargoId===STUDY_ALL||cargoId===STUDY_CANDEIAS)return '';
  const id=cargoId||'505',catalog=currentCatalog(id);
  const summary=subjectSummary(state.questions,exam,id);
  const map=new Map();
@@ -704,9 +712,14 @@ function updateQuestionFeedback(qid){
   }
 }
 function formsFilter(form){
-  const f=new FormData(form);
-  const fields=Object.fromEntries(['discipline','topic','banca','year','orgao','status','code','studyArea','editalCargo','editalScope','editalDisciplina','editalTopic','generalDiscipline','generalTopic'].map(k=>[k,String(f.get(k)||'')]));
-  return {...fields,editalCargo:fields.editalCargo||currentFilter.editalCargo||'505',editalScope:normalizeEditalScope(fields.editalScope),studyArea:fields.studyArea||currentFilter.studyArea||'candeias',outcomes:f.getAll('outcome').map(String)};
+ const f=new FormData(form);
+ const fields=Object.fromEntries(['discipline','topic','banca','year','orgao','status','code','studyArea','editalCargo','editalScope'].map(k=>[k,String(f.get(k)||'')]));
+ const cargo=fields.editalCargo||currentFilter.editalCargo||'505';
+ const multi=Object.fromEntries(['generalDisciplines','generalTopics','editalDisciplines','editalTopics','candeiasDisciplines','candeiasTopics']
+  .map(name=>[name,f.getAll(name).map(String)]));
+ return {...fields,...multi,editalCargo:cargo,editalScope:normalizeEditalScope(fields.editalScope),
+  studyArea:cargo===STUDY_CANDEIAS?'candeias':fields.studyArea||currentFilter.studyArea||'candeias',
+  outcomes:f.getAll('outcome').map(String)};
 }
 async function importData(form){
   const fd=new FormData(form),pdf=fd.get('examPdf'),keyPdf=fd.get('keyPdf');
@@ -819,7 +832,16 @@ function printQuestions(qs,title,options={}){
 }
 function reviewEdict(qid){
  const q=question(qid);
- const cargo=currentFilter.editalCargo;
+ let cargo=currentFilter.editalCargo;
+ if(cargo===STUDY_CANDEIAS&&q){
+   const candidates=candeiasMatches(q,exam(q.examId)).map(x=>x.cargo);
+   if(candidates.length===1)cargo=candidates[0];
+   else{
+     const chosen=prompt('Qual cargo de Candeias deseja conferir? Digite 202 ou 505.',candidates[0]||'505');
+     if(chosen===null)return;
+     cargo=String(chosen).trim();
+   }
+ }
  if(!q||!Object.hasOwn(CATALOGS,cargo)){
   toast('Selecione um cargo com edital para conferir a questão.');return;
  }
@@ -925,7 +947,7 @@ document.addEventListener('submit',async e=>{
   if(form.id==='import-form'){await importData(form);return}
   currentFilter=formsFilter(form);
   localStorage.setItem('estatistica-edital-cargo',currentFilter.editalCargo);
-  if(currentFilter.editalCargo==='505'&&currentFilter.editalScope==='dentro'&&currentFilter.studyArea!=='original'&&!automaticAdaptationChecked)
+  if(['505',STUDY_CANDEIAS].includes(currentFilter.editalCargo)&&currentFilter.editalScope==='dentro'&&currentFilter.studyArea!=='original'&&!automaticAdaptationChecked)
    await refreshAutomaticAdaptations();
   const beforeTerritory=filtered(state,profileId,currentFilter);
   const candidates=eligibleSyllabusQuestions(beforeTerritory,currentFilter);
@@ -933,7 +955,7 @@ document.addEventListener('submit',async e=>{
   if(form.id==='filter-form'){
     limitAvulsas=count;currentPool=prioritize(state,profileId,candidates).slice(0,count);refresh();return;
   }
-  if(!candidates.length){toast(beforeTerritory.length&&currentFilter.editalCargo==='505'?'Legislação municipal sem adaptação validada para Candeias. Selecione Prova original para consultá-la.':'Não há questões que correspondam aos filtros.');return}
+  if(!candidates.length){toast('Não há questões que correspondam aos filtros.');return}
   const seen=new Set(),picked=[];
   for(const q of prioritize(state,profileId,candidates)){
     const group=q.duplicateGroup||q.id;
@@ -956,17 +978,25 @@ document.addEventListener('change',e=>{
    chartArea=input.value;refresh();return;
   }
   if(input.matches('select[name="editalCargo"]')){
-    const next=[...Object.keys(CATALOGS),STUDY_ALL].includes(input.value)?input.value:'505';
-    currentFilter={...currentFilter,editalCargo:next,editalDisciplina:'',editalTopic:'',generalDiscipline:'',generalTopic:''};
+    const next=[...Object.keys(CATALOGS),STUDY_ALL,STUDY_CANDEIAS].includes(input.value)?input.value:'505';
+    currentFilter={...currentFilter,editalCargo:next,studyArea:'candeias',
+     editalDisciplines:[],editalTopics:[],generalDisciplines:[],generalTopics:[],
+     candeiasDisciplines:[],candeiasTopics:[],editalDisciplina:'',editalTopic:'',
+     generalDiscipline:'',generalTopic:''};
     currentPool=[];
     localStorage.setItem('estatistica-edital-cargo',next);
     refresh();return;
   }
-  if(input.matches('select[name="generalDiscipline"]')){
-    currentFilter={...currentFilter,generalDiscipline:input.value,generalTopic:''};
-    currentPool=[];refresh();return;
+  if(input.matches('.filter-multi input[type="checkbox"]')){
+    const form=input.closest('form');
+    if(form){
+     currentFilter={...currentFilter,[input.name]:checkedMultiValues(form,input.name)};
+     refreshMultiSummary(input.closest('.filter-multi'));
+     updateTopicChoices(form,input.name);
+    }
+    return;
   }
-    if(input.matches('#import-form input[type="file"]')){
+  if(input.matches('#import-form input[type="file"]')){
     const label=document.getElementById(input.name==='examPdf'?'exam-pdf-info':'key-pdf-info');
     if(label)label.textContent=input.files?.[0]?'Selecionado: '+input.files[0].name:'Nenhum PDF selecionado';
     return;
@@ -1001,6 +1031,16 @@ document.addEventListener('click',e=>{
   if(!button)return;
   if(button.dataset.view){navigate(button.dataset.view);return}
   const action=button.dataset.action,id=button.dataset.id;
+  if(action==='clear-multi'){
+   const detail=button.closest('.filter-multi'),form=button.closest('form');
+   if(detail&&form){
+    detail.querySelectorAll('input[type="checkbox"]').forEach(x=>x.checked=false);
+    refreshMultiSummary(detail);
+    currentFilter={...currentFilter,[button.dataset.name]:[]};
+    updateTopicChoices(form,button.dataset.name);
+   }
+   return;
+  }
   switch(action){
     case 'choose-profile':chooseProfile(id);break;
     case 'go-questions':navigate('questions');break;
