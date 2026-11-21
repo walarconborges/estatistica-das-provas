@@ -431,3 +431,22 @@ input.assertion-mark:focus{outline:2px solid #237aaa;outline-offset:1px}
     html[data-theme] .appearance-menu > summary {padding:7px 9px}
   }
 }
+
+
+/* Revisões editoriais preservam os parágrafos sem reintroduzir quebras do PDF nas outras questões. */
+.question-body.readability-reviewed,
+.support-text.reviewed-context .question-body {
+  white-space:pre-line!important;
+  overflow-wrap:anywhere;
+  line-height:1.7;
+}
+.support-text.reviewed-context .support-title {
+  margin-top:2px;
+  margin-bottom:12px;
+}
+@media print {
+  .question-body.readability-reviewed,
+  .support-text.reviewed-context .question-body {
+    white-space:pre-line!important;
+  }
+}
