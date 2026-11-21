@@ -56054,6 +56054,16 @@
       "proposed": {},
       "status": "pending",
       "at": "2026-11-21T22:05:31.431Z"
+    },
+    {
+      "id": "7c4b5da5-47f7-4ab3-a815-13e3cca7c9c7",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-ti-08-003",
+      "type": "problem",
+      "note": "ajuste o texto do enunciado e identifique os espaços em branco com ____",
+      "proposed": {},
+      "status": "pending",
+      "at": "2026-11-21T22:33:59.681Z"
     }
   ],
   "tombstones": {
