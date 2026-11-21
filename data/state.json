@@ -55058,6 +55058,14 @@
       "answer": "E",
       "simulationId": "",
       "at": "2026-11-21T21:36:22.307Z"
+    },
+    {
+      "id": "b2566b23-64c8-4be4-b96c-66f1648f0cff",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-asg-2026-08-001",
+      "answer": "D",
+      "simulationId": "",
+      "at": "2026-11-21T21:37:46.374Z"
     }
   ],
   "simulations": [],
