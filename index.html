@@ -7,13 +7,72 @@
   <meta name="description" content="Banco de questões, estatísticas por perfil e simulados de concursos.">
   <title>Estatística das Provas</title>
   <link rel="stylesheet" href="./styles.css?v=0.6.46">
+  <script id="appearance-controller">
+    (() => {
+      const KEY = 'estatistica-aparencia-v1';
+      const OPTIONS = ['claro', 'suave', 'areia', 'sepia', 'escuro'];
+      let selected = 'suave';
+      try {
+        const saved = localStorage.getItem(KEY);
+        if (OPTIONS.includes(saved)) selected = saved;
+      } catch {}
+      document.documentElement.setAttribute('data-theme', selected);
+
+      function initAppearance() {
+        const menu = document.getElementById('appearance-menu');
+        if (!menu) return;
+        const buttons = menu.querySelectorAll('[data-theme-option]');
+        function reflect() {
+          for (const button of buttons) {
+            button.setAttribute('aria-pressed', String(button.dataset.themeOption === selected));
+          }
+        }
+        for (const button of buttons) {
+          button.addEventListener('click', () => {
+            const choice = button.dataset.themeOption;
+            if (!OPTIONS.includes(choice)) return;
+            selected = choice;
+            document.documentElement.setAttribute('data-theme', selected);
+            try { localStorage.setItem(KEY, selected); } catch {}
+            reflect();
+            menu.open = false;
+          });
+        }
+        document.addEventListener('click', event => {
+          if (menu.open && !menu.contains(event.target)) menu.open = false;
+        });
+        document.addEventListener('keydown', event => {
+          if (event.key === 'Escape') menu.open = false;
+        });
+        reflect();
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initAppearance, {once: true});
+      } else {
+        initAppearance();
+      }
+    })();
+  </script>
 </head>
 <body>
 <div id="app">
   <header class="topbar">
     <div class="topbar-content">
       <div class="brand"><span class="brand-icon">Q</span><div><strong>Estatística das Provas</strong><small>Banco de questões e simulados</small></div></div>
-      <div class="top-actions"><span id="storage-status" class="small-muted">Modo local</span><button id="switch-user" class="quiet" type="button">Escolher usuário</button></div>
+      <div class="top-actions">
+        <span id="storage-status" class="small-muted">Modo local</span>
+        <details class="appearance-menu" id="appearance-menu">
+          <summary aria-label="Alterar esquema de cores" title="Alterar esquema de cores">◐ <span>Cores</span></summary>
+          <div class="appearance-options" role="group" aria-label="Escolha o esquema de cores">
+            <button type="button" class="appearance-choice quiet" data-theme-option="claro" aria-pressed="false">Claro original (branco)</button>
+            <button type="button" class="appearance-choice quiet" data-theme-option="suave" aria-pressed="false">Cinza suave</button>
+            <button type="button" class="appearance-choice quiet" data-theme-option="areia" aria-pressed="false">Areia clara</button>
+            <button type="button" class="appearance-choice quiet" data-theme-option="sepia" aria-pressed="false">Sépia</button>
+            <button type="button" class="appearance-choice quiet" data-theme-option="escuro" aria-pressed="false">Escuro (preto)</button>
+          </div>
+        </details>
+        <button id="switch-user" class="quiet" type="button">Escolher usuário</button>
+      </div>
     </div>
   </header>
   <main class="layout">
