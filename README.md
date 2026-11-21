@@ -1,9 +1,18 @@
 # Estatística das Provas
 
-**Versão experimental 0.6.49 — 21/11/2026**  
+**Versão experimental 0.6.50 — 21/11/2026**  
 **Site:** https://walarconborges.github.io/estatistica-das-provas/
 
 Plataforma pública para importar provas de concursos, corrigir respostas, gerar simulados e imprimir questões, com histórico de desempenho por perfil.
+
+## Versão 0.6.50 — base normativa para explicações de legislação de Candeias
+- Criado `data/laws/` com documentos identificados por norma e página, extraídos dos PDFs fornecidos: Lei Orgânica (45 páginas de texto, a partir da página 4 do arquivo), Resolução nº 173/CMCJ/2025 (6 páginas normativas), Lei municipal nº 1.459/2023 (2 páginas). O último documento é **lei de crédito adicional**, não Lei Orgânica, apesar do nome do PDF.
+- A Resolução nº 001/CMCJ/1993 foi cadastrada como **documento histórico digitalizado**, com transcrição parcial identificada como tal. Não é utilizada para afirmar o teor atual do Regimento; o portal oficial lista uma versão atualizada em setembro de 2026.
+- Novo `worker/legal-knowledge.mjs`: associa questões do município à norma pertinente, compara enunciado e alternativas com páginas do documento, fornece trechos e procedência ao Worker e impede respostas locais sem fonte correspondente.
+- O Workers AI recebe os trechos localizados e deve citar artigos e páginas. Cache de explicações varia quando muda o documento, sem modificar gabaritos, tentativas ou sinalizações.
+- O GitHub Pages agora oferece consulta documental de apoio no botão **Explicar questão**, mesmo antes do redeploy do Worker. O comentário do simulado e os trechos normativos são identificados como material documental, não como explicação de IA.
+- **Implantação:** GitHub Pages é publicado automaticamente. A mudança da geração por IA depende de implantar a nova versão do Cloudflare Worker (`npx wrangler deploy` com credenciais da conta); fazer commit no GitHub não atualiza automaticamente o Worker já publicado.
+- As fontes disponíveis são documentos enviados pelo usuário, não certificação de legislação consolidada; conferir alterações e vigência em fonte oficial.
 
 ## Versão 0.6.49 — largura fluida e conforto visual
 - O conteúdo e a barra superior ocupam a largura disponível da janela, com margem lateral pequena (10–24 px); o limite fixo anterior de 1.190 px foi removido apenas para telas.
