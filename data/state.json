@@ -55066,6 +55066,14 @@
       "answer": "D",
       "simulationId": "",
       "at": "2026-11-21T21:37:46.374Z"
+    },
+    {
+      "id": "38e9b371-d94e-4fcf-ae3a-8727d9d9234b",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-health-11-016",
+      "answer": "D",
+      "simulationId": "",
+      "at": "2026-11-21T21:41:49.230Z"
     }
   ],
   "simulations": [],
