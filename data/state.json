@@ -54898,6 +54898,38 @@
       "answer": "B",
       "simulationId": "",
       "at": "2026-11-21T21:10:04.822Z"
+    },
+    {
+      "id": "272e9d4f-5799-478e-9335-2532fb6de6a6",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-ti-08-034",
+      "answer": "B",
+      "simulationId": "",
+      "at": "2026-11-21T21:10:30.861Z"
+    },
+    {
+      "id": "b9cc1f39-d9d5-4a52-b887-157e831931d3",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-ti-08-034",
+      "answer": "D",
+      "simulationId": "",
+      "at": "2026-11-21T21:10:33.982Z"
+    },
+    {
+      "id": "d3a606d4-0ca3-4b95-b42f-a32e94e90025",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-ti-08-034",
+      "answer": "C",
+      "simulationId": "",
+      "at": "2026-11-21T21:10:35.684Z"
+    },
+    {
+      "id": "31da0cba-3ca3-4225-a8c7-53bd251d0b5f",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-ti-08-034",
+      "answer": "E",
+      "simulationId": "",
+      "at": "2026-11-21T21:10:37.319Z"
     }
   ],
   "simulations": [],
