@@ -42,6 +42,9 @@ jobs:
         run: |
           mkdir public
           cp index.html styles.css app.mjs core.mjs pdf-import.mjs pdf-layout.mjs study-context.mjs topic-taxonomy.mjs programa-candeias-505.mjs programa-semed-professor.mjs edital-classification.mjs sync-client.mjs assertion-guide.mjs answer-display-cache.mjs difficulty-pie.mjs config.js public/
+          mkdir -p public/data/laws public/worker
+          cp data/laws/*.json public/data/laws/
+          cp worker/legal-knowledge.mjs public/worker/
           node build-pages.mjs public '${{ github.sha }}'
       - name: Enviar conteúdo
         uses: actions/upload-pages-artifact@v3
