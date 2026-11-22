@@ -1,5 +1,14 @@
 {
-  "status": "pending",
+  "status": "ready",
   "fingerprint": "edd2a887bdef42561109ca8444615cd7",
-  "retryAt": "2026-11-22T00:08:28.357Z"
+  "model": "@cf/meta/llama-3.1-8b-instruct-fast",
+  "generatedAt": "2026-11-22T00:06:31.564Z",
+  "text": "A lógica desta questão é identificar as formas de provimento de cargo público expressamente enumeradas na Resolução nº 173/CMCJ/2025. Para isso, é necessário analisar o texto da resolução e identificar as modalidades de provimento de cargo público mencionadas.\n\nA resposta correta é a que apresenta apenas as modalidades previstas no texto da resolução. Nesse caso, a alternativa correta é a que lista as seguintes modalidades: nomeação, promoção, readaptação, reversão, aproveitamento, reintegração e recondução.\n\nA alternativa D) Readaptação, reintegração e recondução é a resposta correta, pois essas são as modalidades de provimento de cargo público expressamente enumeradas na Resolução nº 173/CMCJ/2025, no Art. 5º.\n\nAs outras alternativas apresentam modalidades de provimento de cargo público que não estão expressamente enumeradas na resolução. Por exemplo, a exoneração, demissão e progressão funcional não são mencionadas no texto da resolução.",
+  "revision": 2,
+  "legalBasis": {
+    "law": "Resolução nº 173/CMCJ/2025",
+    "article": "Dispositivos consultados: p. 1, p. 2",
+    "url": "https://www.diariomunicipal.com.br/arom/materia/AE11F9FA",
+    "documentStatus": "texto-do-documento"
+  }
 }
