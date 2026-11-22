@@ -55458,6 +55458,14 @@
       "answer": "C",
       "simulationId": "",
       "at": "2026-11-22T00:11:49.673Z"
+    },
+    {
+      "id": "0ce120fc-99e0-48fa-bd28-f689a3cb66a0",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "sim-autoral-candeias-incra-2026-11-21-045",
+      "answer": "E",
+      "simulationId": "",
+      "at": "2026-11-22T00:11:55.381Z"
     }
   ],
   "simulations": [],
