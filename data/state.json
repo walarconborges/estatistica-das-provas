@@ -56493,6 +56493,16 @@
       "status": "approved",
       "at": "2026-11-22T00:12:07.436Z",
       "resolvedAt": "2026-11-22T00:14:06.797Z"
+    },
+    {
+      "id": "51bbab09-aebb-4c9a-809e-c3e9fe22fbab",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-ti-01-050",
+      "type": "problem",
+      "note": "Erro de extração na assertiva iii",
+      "proposed": {},
+      "status": "pending",
+      "at": "2026-11-22T12:20:27.572Z"
     }
   ],
   "tombstones": {
