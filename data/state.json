@@ -55563,6 +55563,38 @@
       "answer": "A",
       "simulationId": "",
       "at": "2026-11-22T12:37:59.811Z"
+    },
+    {
+      "id": "58bd4c29-cf86-4661-9200-982cac72979f",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-health-15-013",
+      "answer": "D",
+      "simulationId": "",
+      "at": "2026-11-22T12:38:11.456Z"
+    },
+    {
+      "id": "c76f6243-0de3-44f5-8403-4d630cb8d070",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-health-15-013",
+      "answer": "B",
+      "simulationId": "",
+      "at": "2026-11-22T12:38:14.020Z"
+    },
+    {
+      "id": "f9a4831f-b7df-4f1e-b3aa-d438257c484a",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-health-15-013",
+      "answer": "B",
+      "simulationId": "",
+      "at": "2026-11-22T12:38:14.991Z"
+    },
+    {
+      "id": "c9523005-ac40-4860-9f3f-e5a453aa7d3a",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-health-15-013",
+      "answer": "C",
+      "simulationId": "",
+      "at": "2026-11-22T12:38:16.239Z"
     }
   ],
   "simulations": [],
