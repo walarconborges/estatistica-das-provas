@@ -56635,6 +56635,16 @@
       "proposed": {},
       "status": "pending",
       "at": "2026-11-22T12:36:00.357Z"
+    },
+    {
+      "id": "67859e61-9277-47c3-ad57-7990e66577c7",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-ti-12-002",
+      "type": "problem",
+      "note": "Faltou sublinhar",
+      "proposed": {},
+      "status": "pending",
+      "at": "2026-11-22T12:37:21.782Z"
     }
   ],
   "tombstones": {
