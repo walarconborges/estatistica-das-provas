@@ -56545,6 +56545,16 @@
       "proposed": {},
       "status": "pending",
       "at": "2026-11-22T12:29:36.471Z"
+    },
+    {
+      "id": "46856b0f-a9b5-4539-8f03-87259d1c06d8",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "curated-ti-13-012",
+      "type": "problem",
+      "note": "Isso é RLM",
+      "proposed": {},
+      "status": "pending",
+      "at": "2026-11-22T12:30:29.049Z"
     }
   ],
   "tombstones": {
