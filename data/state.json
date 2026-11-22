@@ -8742,7 +8742,7 @@
     {
       "originalNumber": 18,
       "heading": "Conhecimentos Gerais",
-      "stem": "As diferentes modalidades de transporte de cargas são chamadas de modais.\n\nCada\nmodal tem vantagens próprias, as quais devem ser observadas para transportar diferentes tipos\nde cargas em situações também diversas. Analise as cargas e situações e o modal mais\nindicado para realizar o transporte, em seguida, relacione a Coluna 1 à Coluna 2.\nColuna 1\n1. Transporte de um órgão humano para transplante com máxima urgência e agilidade entre\ndois\nestados brasileiros.\n2. Transporte de bovinos vivos com flexibilidade no planejamento das rotas entre duas cidades\ngaúchas.\n3. Transporte de toneladas de minério de ferro entre o Brasil e a China.\nColuna 2 ( ) Aéreo. ( ) Aquaviário. ( ) Rodoviário.\nA ordem correta de preenchimento dos parênteses, de cima para baixo, é:",
+      "stem": "As diferentes modalidades de transporte de cargas são chamadas de modais. Cada modal tem vantagens próprias, que devem ser consideradas conforme o tipo de carga e as condições do transporte.\n\nRelacione cada situação da Coluna 1 ao modal correspondente da Coluna 2.\n\nColuna 1 — Cargas e situações\n\n1. Transporte de um órgão humano para transplante, com máxima urgência e agilidade, entre dois estados brasileiros.\n\n2. Transporte de bovinos vivos entre duas cidades gaúchas, com flexibilidade no planejamento das rotas.\n\n3. Transporte de toneladas de minério de ferro entre o Brasil e a China.\n\nColuna 2 — Modais de transporte\n\n(   ) Aéreo.\n\n(   ) Aquaviário.\n\n(   ) Rodoviário.\n\nA ordem correta de preenchimento dos parênteses, de cima para baixo, é:",
       "options": [
         {
           "letter": "A",
@@ -8786,7 +8786,8 @@
       "status": "active",
       "secondary": [],
       "aliases": [],
-      "duplicateGroup": null
+      "duplicateGroup": null,
+      "readabilityReviewed": true
     },
     {
       "originalNumber": 20,
@@ -15392,11 +15393,11 @@
     {
       "originalNumber": 23,
       "heading": "Conhecimentos Gerais",
-      "stem": "Qual evento é considerado um marco na história da saúde\n\npública no Brasil e contribuiu significativamente para a criação do Sistema Único de Saúde\n(SUS)?",
+      "stem": "Qual evento é considerado um marco na história da saúde pública no Brasil e contribuiu significativamente para a criação do Sistema Único de Saúde (SUS)?",
       "options": [
         {
           "letter": "A",
-          "text": "A implementação do Plano de Metas, no governo Juscelino\n\nKubitschek."
+          "text": "A implementação do Plano de Metas, no governo Juscelino Kubitschek."
         },
         {
           "letter": "B",
@@ -15404,11 +15405,11 @@
         },
         {
           "letter": "C",
-          "text": "A Reforma Sanitária Brasileira, culminando com a 8ª\n\nConferência Nacional de Saúde, em 1986."
+          "text": "A Reforma Sanitária Brasileira, culminando com a 8ª Conferência Nacional de Saúde, em 1986."
         },
         {
           "letter": "D",
-          "text": "A fundação da primeira escola de medicina do Brasil, no\n\nséculo XIX."
+          "text": "A fundação da primeira escola de medicina do Brasil, no século XIX."
         }
       ],
       "sourcePage": 99,
@@ -15418,10 +15419,10 @@
       "confidence": "média",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Conhecimentos Gerais",
-      "disciplineCode": "CG",
-      "topic": "Saúde pública e qualidade de vida",
-      "topicCode": "CSAU",
+      "discipline": "Conhecimentos Específicos — Saúde",
+      "disciplineCode": "CE",
+      "topic": "SUS — Reforma Sanitária e história da saúde pública",
+      "topicCode": "SUS",
       "id": "curated-health-12-023",
       "examId": "curated-health-12",
       "code": "Q2023SAUDE12023",
@@ -15708,23 +15709,23 @@
     {
       "originalNumber": 30,
       "heading": "Conhecimentos Gerais",
-      "stem": "Conforme a Lei nº 8.080/1990, a participação\n\ncomplementar dos serviços privados no Sistema Único de Saúde (SUS) deve seguir certas\ndiretrizes. Qual das opções abaixo NÃO está de acordo com essas diretrizes?",
+      "stem": "Conforme a Lei nº 8.080/1990, a participação complementar dos serviços privados no Sistema Único de Saúde (SUS) deve seguir certas diretrizes. Qual das opções a seguir NÃO está de acordo com essas diretrizes?",
       "options": [
         {
           "letter": "A",
-          "text": "Os serviços privados participam do SUS em caráter\n\ncomplementar, e sua contratação deve seguir princípios de publicidade, transparência e\neficiência."
+          "text": "Os serviços privados participam do SUS em caráter complementar, e sua contratação deve seguir princípios de publicidade, transparência e eficiência."
         },
         {
           "letter": "B",
-          "text": "A contratação de serviços privados será prioritária sobre os\n\nserviços públicos disponíveis."
+          "text": "A contratação de serviços privados será prioritária sobre os serviços públicos disponíveis."
         },
         {
           "letter": "C",
-          "text": "Os serviços privados contratados devem obedecer aos\n\nmesmos princípios éticos e técnicos que regem a administração pública."
+          "text": "Os serviços privados contratados devem obedecer aos mesmos princípios éticos e técnicos que regem a administração pública."
         },
         {
           "letter": "D",
-          "text": "A integração dos serviços privados ao SUS ocorre mediante\n\ncontrato de direito público ou convênio, respeitando a direção única em cada esfera de governo."
+          "text": "A integração dos serviços privados ao SUS ocorre mediante contrato de direito público ou convênio, respeitando a direção única em cada esfera de governo."
         }
       ],
       "sourcePage": 100,
@@ -15734,10 +15735,10 @@
       "confidence": "média",
       "extractionReview": false,
       "imageOnly": false,
-      "discipline": "Conhecimentos Gerais",
-      "disciplineCode": "CG",
-      "topic": "Atualidades, sociedade e cidadania",
-      "topicCode": "CATU",
+      "discipline": "Conhecimentos Específicos — Saúde",
+      "disciplineCode": "CE",
+      "topic": "SUS — participação complementar da iniciativa privada",
+      "topicCode": "SUS",
       "id": "curated-health-12-030",
       "examId": "curated-health-12",
       "code": "Q2023SAUDE12030",
@@ -56459,8 +56460,9 @@
       "type": "problem",
       "note": "ajuste os itens e o enunciado",
       "proposed": {},
-      "status": "pending",
-      "at": "2026-11-22T00:10:10.847Z"
+      "status": "approved",
+      "at": "2026-11-22T00:10:10.847Z",
+      "resolvedAt": "2026-11-22T00:14:06.792Z"
     },
     {
       "id": "adb12c6d-6847-4244-93dd-f7bde32ac7be",
@@ -56469,8 +56471,9 @@
       "type": "problem",
       "note": "é da SEMUSA",
       "proposed": {},
-      "status": "pending",
-      "at": "2026-11-22T00:10:58.525Z"
+      "status": "approved",
+      "at": "2026-11-22T00:10:58.525Z",
+      "resolvedAt": "2026-11-22T00:14:06.797Z"
     },
     {
       "id": "5895f72d-983b-41ce-9d12-2723832726be",
@@ -56479,8 +56482,9 @@
       "type": "problem",
       "note": "é da SEMUSA",
       "proposed": {},
-      "status": "pending",
-      "at": "2026-11-22T00:12:07.436Z"
+      "status": "approved",
+      "at": "2026-11-22T00:12:07.436Z",
+      "resolvedAt": "2026-11-22T00:14:06.797Z"
     }
   ],
   "tombstones": {
