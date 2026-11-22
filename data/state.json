@@ -55394,6 +55394,14 @@
       "answer": "C",
       "simulationId": "",
       "at": "2026-11-22T00:04:20.414Z"
+    },
+    {
+      "id": "d2db26b5-37e2-4b79-b94e-d866fc7f6966",
+      "profileId": "c3ce4a04-2b74-4056-a1c8-cbbcbb34683f",
+      "questionId": "sim-autoral-candeias-res173-2026-11-21-003",
+      "answer": "E",
+      "simulationId": "",
+      "at": "2026-11-22T00:06:05.135Z"
     }
   ],
   "simulations": [],
