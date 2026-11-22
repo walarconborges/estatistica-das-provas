@@ -45818,7 +45818,7 @@
       "banca": "Instituto Verbena/UFG",
       "orgao": "Câmara Municipal de Ipameri/GO",
       "heading": "Língua Portuguesa",
-      "stem": "Leia o texto a seguir. Quantas espécies estão ameaçadas de extinção no Brasil? De todos os\n biomas brasileiros, os animais e as plantas de um bioma são os que mais sofrem risco de\n extinção. Saiba qual. O Brasil está no topo entre os países considerados megadiversos,\n segundo o Programa das Nações Unidas para o Meio Ambiente (Pnuma), abrigando entre 15%\n a 20% da diversidade biológica do mundo. Um relatório recente do Instituto Brasileiro de\n Geografia e Estatística (IBGE) lista 50.313 espécies de plantas e 125.251 espécies de animais\n reconhecidos no Brasil. Entretanto, segundo o Pnuma, uma média de 700 novas espécies são\n descobertas por ano em território brasileiro. Mas, também segundo o IBGE, cerca de 3% do\n total de espécies estão ameaçadas de extinção no Brasil. A constatação é do relatório “Contas\n de ecossistemas: espécies ameaçadas de extinção no Brasil”, divulgado em maio de 2023 e\n que       considera     dados       até     o    fim      de     2022.     Disponível     em:\n https://www.nationalgeographicbrasil.com/meio-\n ambiente/2023/06/quantas-especies-estao-ameacadas-de-extincao-no-brasil?. Acesso em: 03\n jul. 2026. [Adaptado]. No contexto em que aparece, a palavra “megadiversos” tem a função\n gramatical de caracterizar os países que abrigam grande parte da biodiversidade mundial. Essa\n função especificadora é concebida como",
+      "stem": "No contexto do texto, a palavra “megadiversos” caracteriza os países que abrigam grande parte da biodiversidade mundial.\n\nEssa função especificadora corresponde a qual classe gramatical?",
       "options": [
         {
           "letter": "A",
@@ -45834,12 +45834,12 @@
         },
         {
           "letter": "D",
-          "text": "pronome, porque substitui a expressão “países” na oração. CÂMARA MUNICIPAL DE\n  IPAMERI/GO-2026 CONCURSO PÚBLICO"
+          "text": "pronome, porque substitui a expressão “países” na oração."
         }
       ],
       "sourcePage": 47,
       "sourceColumn": 0,
-      "contextText": "",
+      "contextText": "De todos os biomas brasileiros, os animais e as plantas de um bioma são os que mais sofrem risco de extinção. Saiba qual.\n\nO Brasil está no topo entre os países considerados megadiversos, segundo o Programa das Nações Unidas para o Meio Ambiente (Pnuma), abrigando entre 15% a 20% da diversidade biológica do mundo.\n\nUm relatório recente do Instituto Brasileiro de Geografia e Estatística (IBGE) lista 50.313 espécies de plantas e 125.251 espécies de animais reconhecidos no Brasil. Entretanto, segundo o Pnuma, uma média de 700 novas espécies são descobertas por ano em território brasileiro.\n\nMas, também segundo o IBGE, cerca de 3% do total de espécies estão ameaçadas de extinção no Brasil. A constatação é do relatório “Contas de ecossistemas: espécies ameaçadas de extinção no Brasil”, divulgado em maio de 2023 e que considera dados até o fim de 2022.\n\nFonte: National Geographic Brasil. https://www.nationalgeographicbrasil.com/meio-ambiente/2023/06/quantas-especies-estao-ameacadas-de-extincao-no-brasil. Acesso em: 03 jul. 2026. (Adaptado.)",
       "contextRange": null,
       "discipline": "Língua Portuguesa",
       "disciplineCode": "LP",
@@ -45853,7 +45853,12 @@
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
-      "sourceFile": "2026_Bancas_Diversas_Auxiliar_de_Servicos_Gerais_Candeias_do_Jamari(2).pdf"
+      "sourceFile": "2026_Bancas_Diversas_Auxiliar_de_Servicos_Gerais_Candeias_do_Jamari(2).pdf",
+      "contextTitle": "Quantas espécies estão ameaçadas de extinção no Brasil?",
+      "highlightExpressions": [
+        "megadiversos"
+      ],
+      "readabilityReviewed": true
     },
     {
       "id": "curated-asg-2026-10-011",
@@ -56355,8 +56360,9 @@
       "type": "problem",
       "note": "ajustar extração de questões",
       "proposed": {},
-      "status": "pending",
-      "at": "2026-11-21T23:57:21.175Z"
+      "status": "approved",
+      "at": "2026-11-21T23:57:21.175Z",
+      "resolvedAt": "2026-11-22T00:00:53.203Z"
     }
   ],
   "tombstones": {
