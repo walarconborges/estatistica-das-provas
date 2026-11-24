@@ -20,7 +20,7 @@ test('terceiras baterias contêm dez questões cada, 21–30, alternativas compl
   assert.equal(qs.length,10);
   assert.deepEqual(qs.map(q=>q.originalNumber),[21,22,23,24,25,26,27,28,29,30]);
   assert.equal(qs.map(q=>q.answer).join(''),key);
-  assert.ok(qs.every(q=>q.status==='active'&&q.options.map(o=>o.letter).join('')==='ABCDE'&&q.options.every(o=>o.text.length>0)));
+  assert.ok(qs.every(q=>['active','archived'].includes(q.status)&&q.options.map(o=>o.letter).join('')==='ABCDE'&&q.options.every(o=>o.text.length>0)));
  }
 });
 test('notícias correspondem ao site da Câmara, apenas nos editais de Candeias',()=>{

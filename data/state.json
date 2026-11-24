@@ -40577,7 +40577,7 @@
       "aliases": [],
       "imageOnly": false,
       "pageImage": null,
-      "status": "active",
+      "status": "archived",
       "confidence": "alta",
       "duplicateGroup": "candeias-iniciativa-popular",
       "adaptation": {
@@ -40591,6 +40591,12 @@
         "legalReason": "A Lei Orgânica prevê projeto de iniciativa popular subscrito por pelo menos cinco por cento dos eleitores inscritos no município.",
         "verifiedAnswer": "A",
         "factId": "iniciativa-popular"
+      },
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Adaptação jurídica exclusiva da Lei Orgânica de Candeias do Jamari"
       }
     },
     {
@@ -46503,13 +46509,19 @@
       "banca": "ChatGPT",
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "B",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-cmcj-news-simulado",
       "newsSource": "cmcj-ro",
-      "newsSubject": "Orçamento municipal"
+      "newsSubject": "Orçamento municipal",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Notícias, sessões, proposições e acontecimentos exclusivos da Câmara de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-cmcj-noticias-2026-11-18-002",
@@ -46555,13 +46567,19 @@
       "banca": "ChatGPT",
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "C",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-cmcj-news-simulado",
       "newsSource": "cmcj-ro",
-      "newsSubject": "Fiscalização e contas públicas"
+      "newsSubject": "Fiscalização e contas públicas",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Notícias, sessões, proposições e acontecimentos exclusivos da Câmara de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-cmcj-noticias-2026-11-18-003",
@@ -46607,13 +46625,19 @@
       "banca": "ChatGPT",
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "D",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-cmcj-news-simulado",
       "newsSource": "cmcj-ro",
-      "newsSubject": "Educação municipal"
+      "newsSubject": "Educação municipal",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Notícias, sessões, proposições e acontecimentos exclusivos da Câmara de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-cmcj-noticias-2026-11-18-004",
@@ -46659,13 +46683,19 @@
       "banca": "ChatGPT",
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "A",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-cmcj-news-simulado",
       "newsSource": "cmcj-ro",
-      "newsSubject": "Patrimônio público"
+      "newsSubject": "Patrimônio público",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Notícias, sessões, proposições e acontecimentos exclusivos da Câmara de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-cmcj-noticias-2026-11-18-005",
@@ -46711,13 +46741,19 @@
       "banca": "ChatGPT",
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "E",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-cmcj-news-simulado",
       "newsSource": "cmcj-ro",
-      "newsSubject": "Regularização fundiária"
+      "newsSubject": "Regularização fundiária",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Notícias, sessões, proposições e acontecimentos exclusivos da Câmara de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-cmcj-noticias-2026-11-18-006",
@@ -46763,13 +46799,19 @@
       "banca": "ChatGPT",
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "C",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-cmcj-news-simulado",
       "newsSource": "cmcj-ro",
-      "newsSubject": "Políticas públicas para mulheres"
+      "newsSubject": "Políticas públicas para mulheres",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Notícias, sessões, proposições e acontecimentos exclusivos da Câmara de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-cmcj-noticias-2026-11-18-007",
@@ -46815,13 +46857,19 @@
       "banca": "ChatGPT",
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "B",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-cmcj-news-simulado",
       "newsSource": "cmcj-ro",
-      "newsSubject": "Composição do Legislativo municipal"
+      "newsSubject": "Composição do Legislativo municipal",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Notícias, sessões, proposições e acontecimentos exclusivos da Câmara de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-cmcj-noticias-2026-11-18-008",
@@ -46867,13 +46915,19 @@
       "banca": "ChatGPT",
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "D",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-cmcj-news-simulado",
       "newsSource": "cmcj-ro",
-      "newsSubject": "Mesa Diretora"
+      "newsSubject": "Mesa Diretora",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Notícias, sessões, proposições e acontecimentos exclusivos da Câmara de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-cmcj-noticias-2026-11-18-009",
@@ -46919,13 +46973,19 @@
       "banca": "ChatGPT",
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "A",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-cmcj-news-simulado",
       "newsSource": "cmcj-ro",
-      "newsSubject": "Financiamento da educação"
+      "newsSubject": "Financiamento da educação",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Notícias, sessões, proposições e acontecimentos exclusivos da Câmara de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-cmcj-noticias-2026-11-18-010",
@@ -46971,13 +47031,19 @@
       "banca": "ChatGPT",
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "E",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-cmcj-news-simulado",
       "newsSource": "cmcj-ro",
-      "newsSubject": "Cultura e prestação de contas"
+      "newsSubject": "Cultura e prestação de contas",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Notícias, sessões, proposições e acontecimentos exclusivos da Câmara de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-candeias-hg-2026-11-18-001",
@@ -47023,12 +47089,18 @@
       "banca": "ChatGPT",
       "orgao": "Candeias do Jamari/RO",
       "answer": "C",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-candeias-hg-simulado",
-      "municipalSource": "candeias-do-jamari-ro"
+      "municipalSource": "candeias-do-jamari-ro",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "História, geografia e indicadores específicos do município de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-candeias-hg-2026-11-18-002",
@@ -47074,12 +47146,18 @@
       "banca": "ChatGPT",
       "orgao": "Candeias do Jamari/RO",
       "answer": "A",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-candeias-hg-simulado",
-      "municipalSource": "candeias-do-jamari-ro"
+      "municipalSource": "candeias-do-jamari-ro",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "História, geografia e indicadores específicos do município de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-candeias-hg-2026-11-18-003",
@@ -47125,12 +47203,18 @@
       "banca": "ChatGPT",
       "orgao": "Candeias do Jamari/RO",
       "answer": "E",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-candeias-hg-simulado",
-      "municipalSource": "candeias-do-jamari-ro"
+      "municipalSource": "candeias-do-jamari-ro",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "História, geografia e indicadores específicos do município de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-candeias-hg-2026-11-18-004",
@@ -47176,12 +47260,18 @@
       "banca": "ChatGPT",
       "orgao": "Candeias do Jamari/RO",
       "answer": "B",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-candeias-hg-simulado",
-      "municipalSource": "candeias-do-jamari-ro"
+      "municipalSource": "candeias-do-jamari-ro",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "História, geografia e indicadores específicos do município de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-candeias-hg-2026-11-18-005",
@@ -47227,12 +47317,18 @@
       "banca": "ChatGPT",
       "orgao": "Candeias do Jamari/RO",
       "answer": "D",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-candeias-hg-simulado",
-      "municipalSource": "candeias-do-jamari-ro"
+      "municipalSource": "candeias-do-jamari-ro",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "História, geografia e indicadores específicos do município de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-candeias-hg-2026-11-18-006",
@@ -47278,12 +47374,18 @@
       "banca": "ChatGPT",
       "orgao": "Candeias do Jamari/RO",
       "answer": "B",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-candeias-hg-simulado",
-      "municipalSource": "candeias-do-jamari-ro"
+      "municipalSource": "candeias-do-jamari-ro",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "História, geografia e indicadores específicos do município de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-candeias-hg-2026-11-18-007",
@@ -47329,12 +47431,18 @@
       "banca": "ChatGPT",
       "orgao": "Candeias do Jamari/RO",
       "answer": "E",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-candeias-hg-simulado",
-      "municipalSource": "candeias-do-jamari-ro"
+      "municipalSource": "candeias-do-jamari-ro",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "História, geografia e indicadores específicos do município de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-candeias-hg-2026-11-18-008",
@@ -47380,12 +47488,18 @@
       "banca": "ChatGPT",
       "orgao": "Candeias do Jamari/RO",
       "answer": "A",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-candeias-hg-simulado",
-      "municipalSource": "candeias-do-jamari-ro"
+      "municipalSource": "candeias-do-jamari-ro",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "História, geografia e indicadores específicos do município de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-candeias-hg-2026-11-18-009",
@@ -47431,13 +47545,19 @@
       "banca": "ChatGPT",
       "orgao": "Candeias do Jamari/RO",
       "answer": "C",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-candeias-hg-simulado",
       "municipalSource": "https://rondonia.ro.gov.br/wp-content/uploads/2025/03/CAN-Ficha-Croqui.pdf",
-      "answerComment": "A ficha do Governo de Rondônia, seção 1.2, p. 3, denomina 'Depressão do Roosevelt de Porto Velho' a unidade predominante no território do município. A nomenclatura é reproduzida da fonte utilizada. https://rondonia.ro.gov.br/wp-content/uploads/2025/03/CAN-Ficha-Croqui.pdf"
+      "answerComment": "A ficha do Governo de Rondônia, seção 1.2, p. 3, denomina 'Depressão do Roosevelt de Porto Velho' a unidade predominante no território do município. A nomenclatura é reproduzida da fonte utilizada. https://rondonia.ro.gov.br/wp-content/uploads/2025/03/CAN-Ficha-Croqui.pdf",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "História, geografia e indicadores específicos do município de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-candeias-hg-2026-11-18-010",
@@ -47483,12 +47603,18 @@
       "banca": "ChatGPT",
       "orgao": "Candeias do Jamari/RO",
       "answer": "D",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-candeias-hg-simulado",
-      "municipalSource": "candeias-do-jamari-ro"
+      "municipalSource": "candeias-do-jamari-ro",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "História, geografia e indicadores específicos do município de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-candeias-hg-2026-11-20-caderno2-011",
@@ -47534,12 +47660,18 @@
       "banca": "ChatGPT",
       "orgao": "Candeias do Jamari/RO",
       "answer": "B",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-candeias-hg-simulado",
-      "municipalSource": "candeias-do-jamari-ro"
+      "municipalSource": "candeias-do-jamari-ro",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "História, geografia e indicadores específicos do município de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-candeias-hg-2026-11-20-caderno2-012",
@@ -47585,12 +47717,18 @@
       "banca": "ChatGPT",
       "orgao": "Candeias do Jamari/RO",
       "answer": "D",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-candeias-hg-simulado",
-      "municipalSource": "candeias-do-jamari-ro"
+      "municipalSource": "candeias-do-jamari-ro",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "História, geografia e indicadores específicos do município de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-candeias-hg-2026-11-20-caderno2-013",
@@ -47636,12 +47774,18 @@
       "banca": "ChatGPT",
       "orgao": "Candeias do Jamari/RO",
       "answer": "A",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-candeias-hg-simulado",
-      "municipalSource": "candeias-do-jamari-ro"
+      "municipalSource": "candeias-do-jamari-ro",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "História, geografia e indicadores específicos do município de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-candeias-hg-2026-11-20-caderno2-014",
@@ -47687,12 +47831,18 @@
       "banca": "ChatGPT",
       "orgao": "Candeias do Jamari/RO",
       "answer": "E",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-candeias-hg-simulado",
-      "municipalSource": "candeias-do-jamari-ro"
+      "municipalSource": "candeias-do-jamari-ro",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "História, geografia e indicadores específicos do município de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-candeias-hg-2026-11-20-caderno2-015",
@@ -47738,12 +47888,18 @@
       "banca": "ChatGPT",
       "orgao": "Candeias do Jamari/RO",
       "answer": "C",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-candeias-hg-simulado",
-      "municipalSource": "candeias-do-jamari-ro"
+      "municipalSource": "candeias-do-jamari-ro",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "História, geografia e indicadores específicos do município de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-candeias-hg-2026-11-20-caderno2-016",
@@ -47789,12 +47945,18 @@
       "banca": "ChatGPT",
       "orgao": "Candeias do Jamari/RO",
       "answer": "B",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-candeias-hg-simulado",
-      "municipalSource": "candeias-do-jamari-ro"
+      "municipalSource": "candeias-do-jamari-ro",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "História, geografia e indicadores específicos do município de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-candeias-hg-2026-11-20-caderno2-017",
@@ -47840,12 +48002,18 @@
       "banca": "ChatGPT",
       "orgao": "Candeias do Jamari/RO",
       "answer": "D",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-candeias-hg-simulado",
-      "municipalSource": "candeias-do-jamari-ro"
+      "municipalSource": "candeias-do-jamari-ro",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "História, geografia e indicadores específicos do município de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-candeias-hg-2026-11-20-caderno2-018",
@@ -47891,12 +48059,18 @@
       "banca": "ChatGPT",
       "orgao": "Candeias do Jamari/RO",
       "answer": "A",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-candeias-hg-simulado",
-      "municipalSource": "candeias-do-jamari-ro"
+      "municipalSource": "candeias-do-jamari-ro",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "História, geografia e indicadores específicos do município de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-candeias-hg-2026-11-20-caderno2-019",
@@ -48044,13 +48218,19 @@
       "banca": "ChatGPT",
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "C",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-cmcj-news-simulado",
       "newsSource": "cmcj-ro",
-      "newsSubject": "Obras e infraestrutura - janeiro de 2025"
+      "newsSubject": "Obras e infraestrutura - janeiro de 2025",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Notícias, sessões, proposições e acontecimentos exclusivos da Câmara de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-cmcj-noticias-2026-11-20-bateria2-012",
@@ -48096,7 +48276,7 @@
       "banca": "ChatGPT",
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "B",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
@@ -48104,7 +48284,13 @@
       "newsSource": "cmcj-ro",
       "newsSubject": "Iluminação pública - pedidos de 2025",
       "contextTitle": "Iluminação pública — pedidos de 2025",
-      "readabilityReviewed": true
+      "readabilityReviewed": true,
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Notícias, sessões, proposições e acontecimentos exclusivos da Câmara de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-cmcj-noticias-2026-11-20-bateria2-013",
@@ -48150,13 +48336,19 @@
       "banca": "ChatGPT",
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "D",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-cmcj-news-simulado",
       "newsSource": "cmcj-ro",
-      "newsSubject": "Saneamento e cooperação intermunicipal - março de 2026"
+      "newsSubject": "Saneamento e cooperação intermunicipal - março de 2026",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Notícias, sessões, proposições e acontecimentos exclusivos da Câmara de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-cmcj-noticias-2026-11-20-bateria2-014",
@@ -48202,13 +48394,19 @@
       "banca": "ChatGPT",
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "A",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-cmcj-news-simulado",
       "newsSource": "cmcj-ro",
-      "newsSubject": "Assistência social - abril de 2026"
+      "newsSubject": "Assistência social - abril de 2026",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Notícias, sessões, proposições e acontecimentos exclusivos da Câmara de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-cmcj-noticias-2026-11-20-bateria2-015",
@@ -48254,13 +48452,19 @@
       "banca": "ChatGPT",
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "E",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-cmcj-news-simulado",
       "newsSource": "cmcj-ro",
-      "newsSubject": "Agroindústria familiar - abril de 2026"
+      "newsSubject": "Agroindústria familiar - abril de 2026",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Notícias, sessões, proposições e acontecimentos exclusivos da Câmara de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-cmcj-noticias-2026-11-20-bateria2-016",
@@ -48306,13 +48510,19 @@
       "banca": "ChatGPT",
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "B",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-cmcj-news-simulado",
       "newsSource": "cmcj-ro",
-      "newsSubject": "Entidades da sociedade civil - maio de 2026"
+      "newsSubject": "Entidades da sociedade civil - maio de 2026",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Notícias, sessões, proposições e acontecimentos exclusivos da Câmara de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-cmcj-noticias-2026-11-20-bateria2-017",
@@ -48358,13 +48568,19 @@
       "banca": "ChatGPT",
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "D",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-cmcj-news-simulado",
       "newsSource": "cmcj-ro",
-      "newsSubject": "Homenagens institucionais - junho de 2026"
+      "newsSubject": "Homenagens institucionais - junho de 2026",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Notícias, sessões, proposições e acontecimentos exclusivos da Câmara de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-cmcj-noticias-2026-11-20-bateria2-018",
@@ -48410,13 +48626,19 @@
       "banca": "ChatGPT",
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "C",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-cmcj-news-simulado",
       "newsSource": "cmcj-ro",
-      "newsSubject": "Transmissão de sessões e contratação - agosto de 2026"
+      "newsSubject": "Transmissão de sessões e contratação - agosto de 2026",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Notícias, sessões, proposições e acontecimentos exclusivos da Câmara de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-cmcj-noticias-2026-11-20-bateria2-019",
@@ -48462,13 +48684,19 @@
       "banca": "ChatGPT",
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "A",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-cmcj-news-simulado",
       "newsSource": "cmcj-ro",
-      "newsSubject": "Concurso público da Câmara - setembro de 2026"
+      "newsSubject": "Concurso público da Câmara - setembro de 2026",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Notícias, sessões, proposições e acontecimentos exclusivos da Câmara de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-cmcj-noticias-2026-11-20-bateria2-020",
@@ -48514,13 +48742,19 @@
       "banca": "ChatGPT",
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "E",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-cmcj-news-simulado",
       "newsSource": "sintero-ro",
-      "newsSubject": "Acontecimento recente - 19 de novembro de 2026"
+      "newsSubject": "Acontecimento recente - 19 de novembro de 2026",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Notícias, sessões, proposições e acontecimentos exclusivos da Câmara de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-021",
@@ -48566,13 +48800,19 @@
       "banca": "ChatGPT",
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "B",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-cmcj-news-simulado",
       "newsSource": "cmcj-ro",
-      "newsSubject": "Sessões legislativas - novembro de 2026"
+      "newsSubject": "Sessões legislativas - novembro de 2026",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Notícias, sessões, proposições e acontecimentos exclusivos da Câmara de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-022",
@@ -48618,13 +48858,19 @@
       "banca": "ChatGPT",
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "D",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-cmcj-news-simulado",
       "newsSource": "cmcj-ro",
-      "newsSubject": "Homenagem à educação - outubro de 2026"
+      "newsSubject": "Homenagem à educação - outubro de 2026",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Notícias, sessões, proposições e acontecimentos exclusivos da Câmara de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-023",
@@ -48670,13 +48916,19 @@
       "banca": "ChatGPT",
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "A",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-cmcj-news-simulado",
       "newsSource": "cmcj-ro",
-      "newsSubject": "Indicações parlamentares - outubro de 2026"
+      "newsSubject": "Indicações parlamentares - outubro de 2026",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Notícias, sessões, proposições e acontecimentos exclusivos da Câmara de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-024",
@@ -48722,13 +48974,19 @@
       "banca": "ChatGPT",
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "E",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-cmcj-news-simulado",
       "newsSource": "cmcj-ro",
-      "newsSubject": "Saúde municipal - setembro de 2026"
+      "newsSubject": "Saúde municipal - setembro de 2026",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Notícias, sessões, proposições e acontecimentos exclusivos da Câmara de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-025",
@@ -48774,13 +49032,19 @@
       "banca": "ChatGPT",
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "C",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-cmcj-news-simulado",
       "newsSource": "cmcj-ro",
-      "newsSubject": "Estrutura de cargos - julho de 2026"
+      "newsSubject": "Estrutura de cargos - julho de 2026",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Notícias, sessões, proposições e acontecimentos exclusivos da Câmara de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-026",
@@ -48826,13 +49090,19 @@
       "banca": "ChatGPT",
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "B",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-cmcj-news-simulado",
       "newsSource": "cmcj-ro",
-      "newsSubject": "Infraestrutura e serviços públicos - julho de 2026"
+      "newsSubject": "Infraestrutura e serviços públicos - julho de 2026",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Notícias, sessões, proposições e acontecimentos exclusivos da Câmara de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-027",
@@ -48878,13 +49148,19 @@
       "banca": "ChatGPT",
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "D",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-cmcj-news-simulado",
       "newsSource": "cmcj-ro",
-      "newsSubject": "Funcionamento da Câmara - julho de 2026"
+      "newsSubject": "Funcionamento da Câmara - julho de 2026",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Notícias, sessões, proposições e acontecimentos exclusivos da Câmara de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-028",
@@ -48930,13 +49206,19 @@
       "banca": "ChatGPT",
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "A",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-cmcj-news-simulado",
       "newsSource": "cmcj-ro",
-      "newsSubject": "Organização administrativa - abril de 2026"
+      "newsSubject": "Organização administrativa - abril de 2026",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Notícias, sessões, proposições e acontecimentos exclusivos da Câmara de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-029",
@@ -48982,13 +49264,19 @@
       "banca": "ChatGPT",
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "E",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-cmcj-news-simulado",
       "newsSource": "cmcj-ro",
-      "newsSubject": "Parcerias com entidades civis - abril de 2026"
+      "newsSubject": "Parcerias com entidades civis - abril de 2026",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Notícias, sessões, proposições e acontecimentos exclusivos da Câmara de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-030",
@@ -49034,13 +49322,19 @@
       "banca": "ChatGPT",
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "C",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-cmcj-news-simulado",
       "newsSource": "cmcj-ro",
-      "newsSubject": "Infraestrutura rural e transporte escolar - abril de 2026"
+      "newsSubject": "Infraestrutura rural e transporte escolar - abril de 2026",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Notícias, sessões, proposições e acontecimentos exclusivos da Câmara de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-candeias-hg-2026-11-21-caderno3-021",
@@ -49086,12 +49380,18 @@
       "banca": "ChatGPT",
       "orgao": "Candeias do Jamari/RO",
       "answer": "D",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-candeias-hg-simulado",
-      "municipalSource": "candeias-do-jamari-ro"
+      "municipalSource": "candeias-do-jamari-ro",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "História, geografia e indicadores específicos do município de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-candeias-hg-2026-11-21-caderno3-022",
@@ -49137,12 +49437,18 @@
       "banca": "ChatGPT",
       "orgao": "Candeias do Jamari/RO",
       "answer": "B",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-candeias-hg-simulado",
-      "municipalSource": "candeias-do-jamari-ro"
+      "municipalSource": "candeias-do-jamari-ro",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "História, geografia e indicadores específicos do município de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-candeias-hg-2026-11-21-caderno3-023",
@@ -49188,12 +49494,18 @@
       "banca": "ChatGPT",
       "orgao": "Candeias do Jamari/RO",
       "answer": "E",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-candeias-hg-simulado",
-      "municipalSource": "candeias-do-jamari-ro"
+      "municipalSource": "candeias-do-jamari-ro",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "História, geografia e indicadores específicos do município de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-candeias-hg-2026-11-21-caderno3-024",
@@ -49239,12 +49551,18 @@
       "banca": "ChatGPT",
       "orgao": "Candeias do Jamari/RO",
       "answer": "A",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-candeias-hg-simulado",
-      "municipalSource": "candeias-do-jamari-ro"
+      "municipalSource": "candeias-do-jamari-ro",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "História, geografia e indicadores específicos do município de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-candeias-hg-2026-11-21-caderno3-025",
@@ -49290,12 +49608,18 @@
       "banca": "ChatGPT",
       "orgao": "Candeias do Jamari/RO",
       "answer": "C",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-candeias-hg-simulado",
-      "municipalSource": "candeias-do-jamari-ro"
+      "municipalSource": "candeias-do-jamari-ro",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "História, geografia e indicadores específicos do município de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-candeias-hg-2026-11-21-caderno3-026",
@@ -49341,12 +49665,18 @@
       "banca": "ChatGPT",
       "orgao": "Candeias do Jamari/RO",
       "answer": "A",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-candeias-hg-simulado",
-      "municipalSource": "candeias-do-jamari-ro"
+      "municipalSource": "candeias-do-jamari-ro",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "História, geografia e indicadores específicos do município de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-candeias-hg-2026-11-21-caderno3-027",
@@ -49443,12 +49773,18 @@
       "banca": "ChatGPT",
       "orgao": "Candeias do Jamari/RO",
       "answer": "B",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-candeias-hg-simulado",
-      "municipalSource": "candeias-do-jamari-ro"
+      "municipalSource": "candeias-do-jamari-ro",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "História, geografia e indicadores específicos do município de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-candeias-hg-2026-11-21-caderno3-029",
@@ -49494,12 +49830,18 @@
       "banca": "ChatGPT",
       "orgao": "Candeias do Jamari/RO",
       "answer": "E",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-candeias-hg-simulado",
-      "municipalSource": "candeias-do-jamari-ro"
+      "municipalSource": "candeias-do-jamari-ro",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "História, geografia e indicadores específicos do município de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-chatgpt-candeias-hg-2026-11-21-caderno3-030",
@@ -49545,12 +49887,18 @@
       "banca": "ChatGPT",
       "orgao": "Candeias do Jamari/RO",
       "answer": "C",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "chatgpt-candeias-hg-simulado",
-      "municipalSource": "candeias-do-jamari-ro"
+      "municipalSource": "candeias-do-jamari-ro",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "História, geografia e indicadores específicos do município de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-cop26-cop30-2026-11-21-001",
@@ -50626,12 +50974,18 @@
       "banca": "Autoral",
       "orgao": "Candeias do Jamari/RO",
       "answer": "D",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-hg",
-      "municipalSource": "candeias-do-jamari-ro"
+      "municipalSource": "candeias-do-jamari-ro",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Questão ancorada em fato, localidade ou ato específico de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-br364-2026-11-21-032",
@@ -50983,12 +51337,18 @@
       "banca": "Autoral",
       "orgao": "Candeias do Jamari/RO",
       "answer": "D",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-hg",
-      "municipalSource": "candeias-do-jamari-ro"
+      "municipalSource": "candeias-do-jamari-ro",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Questão ancorada em fato, localidade ou ato específico de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-br364-2026-11-21-039",
@@ -51595,12 +51955,18 @@
       "banca": "Autoral",
       "orgao": "Candeias do Jamari/RO",
       "answer": "E",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-hg",
-      "municipalSource": "candeias-do-jamari-ro"
+      "municipalSource": "candeias-do-jamari-ro",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Questão ancorada em fato, localidade ou ato específico de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-seringais-2026-11-21-051",
@@ -51646,13 +52012,19 @@
       "banca": "Autoral",
       "orgao": "Candeias do Jamari/RO",
       "answer": "C",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-hg",
       "municipalSource": "candeias-do-jamari-ro",
-      "answerComment": "O núcleo participava de uma rede de circulação: trabalhadores e suprimentos podiam seguir para as áreas de extração, enquanto a borracha era encaminhada aos mercados."
+      "answerComment": "O núcleo participava de uma rede de circulação: trabalhadores e suprimentos podiam seguir para as áreas de extração, enquanto a borracha era encaminhada aos mercados.",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Questão ancorada em fato, localidade ou ato específico de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-seringais-2026-11-21-052",
@@ -52114,13 +52486,19 @@
       "banca": "Autoral",
       "orgao": "Candeias do Jamari/RO",
       "answer": "D",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-hg",
       "municipalSource": "candeias-do-jamari-ro",
-      "answerComment": "Uma localidade pode ter atividades produtivas, circulação e população muito antes de tornar-se município autônomo. As fontes registram etapas diferentes da trajetória regional."
+      "answerComment": "Uma localidade pode ter atividades produtivas, circulação e população muito antes de tornar-se município autônomo. As fontes registram etapas diferentes da trajetória regional.",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Questão ancorada em fato, localidade ou ato específico de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-res173-2026-11-21-001",
@@ -52167,13 +52545,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "C",
       "answerComment": "Art. 2º, incisos I e II e §§ 1º e 2º. A resolução diferencia os quadros e remete cargos em comissão e funções gratificadas a lei específica, além de prever substituição gradual de temporários por efetivos.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "res173"
+      "municipalLawTag": "res173",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-res173-2026-11-21-002",
@@ -52220,13 +52604,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "B",
       "answerComment": "Arts. 3º, incisos V e VI, e 4º. A idade mínima é 18 anos, exige-se aptidão física e mental, e a investidura ocorre com a posse. Não existe mestrado como requisito geral.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "res173"
+      "municipalLawTag": "res173",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-res173-2026-11-21-003",
@@ -52273,13 +52663,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "D",
       "answerComment": "Art. 5º, incisos I a VII. Readaptação, reintegração e recondução figuram expressamente entre as formas de provimento; os demais conjuntos incluem institutos não listados como formas de provimento.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "res173"
+      "municipalLawTag": "res173",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-res173-2026-11-21-004",
@@ -52326,13 +52722,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "E",
       "answerComment": "Art. 6º, §§ 1º a 4º. A unidade deve indicar e justificar o cargo; há comissão de três membros sob coordenação de recursos humanos, e a execução pode ser delegada a entidade pública ou privada competente, com acompanhamento.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "res173"
+      "municipalLawTag": "res173",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-res173-2026-11-21-005",
@@ -52379,13 +52781,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "A",
       "answerComment": "Art. 7º, § 3º, alíneas a, b e c. O texto prevê investigações social e psicológica eliminatórias e títulos, quando necessários, com caráter classificatório.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "res173"
+      "municipalLawTag": "res173",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-res173-2026-11-21-006",
@@ -52432,13 +52840,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "C",
       "answerComment": "Arts. 10 e 11. Técnico em Contabilidade e Zeladora/Copeira aparecem como cargos em extinção, que se extinguem quando declarados vagos.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "res173"
+      "municipalLawTag": "res173",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-res173-2026-11-21-007",
@@ -52485,13 +52899,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "A",
       "answerComment": "Art. 13, parágrafo único, e art. 20. Há previsão de ato normativo específico para o PCCS e de projeto de lei próprio para carreira, progressões e níveis funcionais, ambos com prazo de 180 dias.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "res173"
+      "municipalLawTag": "res173",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-res173-2026-11-21-008",
@@ -52538,13 +52958,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "D",
       "answerComment": "Art. 14, incisos I e II, e art. 15, inciso II e § 2º. A remuneração é descrita com vencimento básico e gratificação de qualificação; os valores dos auxílios são alterados por resolução da Mesa Diretora.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "res173"
+      "municipalLawTag": "res173",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-res173-2026-11-21-009",
@@ -52591,13 +53017,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "C",
       "answerComment": "Arts. 18 e 19. A Mesa pode designar substituto para cargo estratégico e há adicional proporcional à nova função; no caso de cedência descrito, o ônus remuneratório fica com o órgão ou entidade cessionários.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "res173"
+      "municipalLawTag": "res173",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-res173-2026-11-21-010",
@@ -52644,13 +53076,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "E",
       "answerComment": "Arts. 26, 29 e 30. O pagamento é devido até o último dia útil do mês; mantém-se a tabela da Resolução nº 159/2024 até novo plano; os efeitos administrativos e financeiros são fixados em 1º/04/2025.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "res173"
+      "municipalLawTag": "res173",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-lei-organica-2026-11-21-001",
@@ -52697,13 +53135,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "A",
       "answerComment": "Art. 5º, parágrafo único. A transferência de áreas do patrimônio municipal para implantação de indústrias ou formação de distritos industriais exige prévia autorização legislativa e concessão de direito de uso.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "organica"
+      "municipalLawTag": "organica",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-lei-organica-2026-11-21-002",
@@ -52750,13 +53194,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "C",
       "answerComment": "Art. 42, caput. Distritos podem ser criados, organizados, suprimidos ou fundidos por lei, após consulta plebiscitária à população diretamente interessada, observada a legislação estadual.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "organica"
+      "municipalLawTag": "organica",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-lei-organica-2026-11-21-003",
@@ -52803,13 +53253,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "E",
       "answerComment": "Art. 43, II. A povoação-sede deve contar com, no mínimo, cinquenta moradias, escola pública, posto de saúde e posto policial, além dos demais requisitos do artigo.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "organica"
+      "municipalLawTag": "organica",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-lei-organica-2026-11-21-004",
@@ -52856,13 +53312,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "B",
       "answerComment": "Art. 46. Salvo disposição em contrário, as deliberações da Câmara e de suas comissões são tomadas pela maioria dos votos, presente a maioria absoluta de seus membros.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "organica"
+      "municipalLawTag": "organica",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-lei-organica-2026-11-21-005",
@@ -52909,13 +53371,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "D",
       "answerComment": "Art. 49, caput. A convocação exige dois terços dos membros da Câmara, com prazo de oito dias para prestação pessoal das informações previamente determinadas.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "organica"
+      "municipalLawTag": "organica",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-lei-organica-2026-11-21-006",
@@ -52962,13 +53430,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "A",
       "answerComment": "Art. 51, I, a. A vedação é aplicável desde a expedição do diploma e alcança as entidades mencionadas no dispositivo, com ressalva dos contratos de cláusulas uniformes.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "organica"
+      "municipalLawTag": "organica",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-lei-organica-2026-11-21-007",
@@ -53015,13 +53489,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "E",
       "answerComment": "Art. 67, II e parágrafo único. O Plano Diretor é objeto de lei complementar, aprovada por maioria absoluta dos membros da Câmara.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "organica"
+      "municipalLawTag": "organica",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-lei-organica-2026-11-21-008",
@@ -53068,13 +53548,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "C",
       "answerComment": "Art. 72, § 1º. O prazo do veto total ou parcial é de quinze dias úteis do recebimento do projeto, com comunicação dos motivos em quarenta e oito horas.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "organica"
+      "municipalLawTag": "organica",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-lei-organica-2026-11-21-009",
@@ -53121,13 +53607,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "B",
       "answerComment": "Art. 75, caput. Apresentadas as contas, o Presidente da Câmara deve colocá-las à disposição de qualquer contribuinte durante sessenta dias, para exame e apreciação.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "organica"
+      "municipalLawTag": "organica",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-lei-organica-2026-11-21-010",
@@ -53174,13 +53666,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "D",
       "answerComment": "Art. 82, caput. Nos impedimentos ou vacâncias simultâneos dos cargos de Prefeito e Vice-Prefeito, a Lei Orgânica chama, sucessivamente, o Presidente e o Vice-Presidente da Câmara ao exercício do Executivo.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "organica"
+      "municipalLawTag": "organica",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-regimento-interno-2026-11-21-001",
@@ -53227,13 +53725,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "C",
       "answerComment": "Art. 13, incisos VI a VIII: havendo mais de dois candidatos para um cargo da Mesa, há nova eleição entre os dois mais votados; o desempate observa a maior idade.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "regimento"
+      "municipalLawTag": "regimento",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-regimento-interno-2026-11-21-002",
@@ -53280,13 +53784,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "A",
       "answerComment": "Art. 23, inciso I, alínea e: a Ordem do Dia é elaborada e decidida por maioria simples dos membros da Mesa, um dia antes da sessão.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "regimento"
+      "municipalLawTag": "regimento",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-regimento-interno-2026-11-21-003",
@@ -53333,13 +53843,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "D",
       "answerComment": "Art. 43, alínea e, e § 1º, inciso I: o vereador deve abster-se quando houver interesse pessoal, inclusive envolvendo cônjuge; seu voto decisivo acarreta nulidade da votação.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "regimento"
+      "municipalLawTag": "regimento",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-regimento-interno-2026-11-21-004",
@@ -53386,13 +53902,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "B",
       "answerComment": "Art. 45, inciso I, alínea b, §§ 1º, 2º e 8º: licença por interesse particular de 60 dias ou mais; sem remuneração prevista para essa modalidade, sem reassunção antecipada; suplente convocado quando a licença superar 120 dias.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "regimento"
+      "municipalLawTag": "regimento",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-regimento-interno-2026-11-21-005",
@@ -53439,13 +53961,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "E",
       "answerComment": "Arts. 53 e 54, caput e § 1º: sessões públicas; abertura com presença de dois terços; segunda chamada em até 15 minutos, sem contar esse intervalo na duração da sessão.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "regimento"
+      "municipalLawTag": "regimento",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-regimento-interno-2026-11-21-006",
@@ -53492,13 +54020,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "C",
       "answerComment": "Art. 83, §§ 1º, 2º e 5º: cinco comissões permanentes, três membros cada, ressalvada a Executiva, mandato de dois anos, vedada eleição do vereador para mais de duas comissões.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "regimento"
+      "municipalLawTag": "regimento",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-regimento-interno-2026-11-21-007",
@@ -53545,13 +54079,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "B",
       "answerComment": "Art. 100, caput e §§ 1º e 2º: CPI por requerimento de um terço dos vereadores, fato determinado de competência municipal e limite de uma CPI em funcionamento.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "regimento"
+      "municipalLawTag": "regimento",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-regimento-interno-2026-11-21-008",
@@ -53598,13 +54138,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "A",
       "answerComment": "Art. 114 e parágrafo único: indicação sugere medida de interesse público aos poderes competentes; apresentada até o fim do Prolongamento do Expediente, é despachada sem deliberação plenária.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "regimento"
+      "municipalLawTag": "regimento",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-regimento-interno-2026-11-21-009",
@@ -53651,13 +54197,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "E",
       "answerComment": "Art. 120, §§ 1º e 3º: moção subscrita por um terço; discussão e votação únicas na sessão ordinária seguinte, dispensado parecer; vedadas emendas, admitidos substitutivos.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "regimento"
+      "municipalLawTag": "regimento",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-regimento-interno-2026-11-21-010",
@@ -53704,13 +54256,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "D",
       "answerComment": "Art. 149, caput e parágrafo único: pedido de vista verbal ou escrito, decisão do Presidente, máximo de 15 dias ou três sessões, com exceção de uma sessão para proposição de votação imediata.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "regimento"
+      "municipalLawTag": "regimento",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-legislacao-mista-2026-11-21-001",
@@ -53757,13 +54315,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "D",
       "answerComment": "Arts. 62 a 64 da Lei Orgânica. Dois turnos, intervalo mínimo de dez dias e aprovação por dois terços dos membros em ambos.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "organica"
+      "municipalLawTag": "organica",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-legislacao-mista-2026-11-21-002",
@@ -53810,13 +54374,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "B",
       "answerComment": "Art. 65, §§ 2º e 3º, da Lei Orgânica. Exige, no mínimo, 5% dos eleitores, identificação dos subscritores e certidão eleitoral.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "organica"
+      "municipalLawTag": "organica",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-legislacao-mista-2026-11-21-003",
@@ -53863,13 +54433,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "E",
       "answerComment": "Art. 56, §§ 1º e 2º, da Lei Orgânica. As três afirmativas reproduzem as regras de funcionamento.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "organica"
+      "municipalLawTag": "organica",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-legislacao-mista-2026-11-21-004",
@@ -53916,13 +54492,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "A",
       "answerComment": "Art. 66, §§ 1º e 2º, da Lei Orgânica. Prazo de 45 dias, com ressalvas para recesso e projetos de código.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "organica"
+      "municipalLawTag": "organica",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-legislacao-mista-2026-11-21-005",
@@ -53969,13 +54551,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "C",
       "answerComment": "Arts. 8º e 9º do Regimento Interno. Prazo de 30 dias, prorrogável por igual período, e exigência de compromisso pessoal.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "regimento"
+      "municipalLawTag": "regimento",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-legislacao-mista-2026-11-21-006",
@@ -54022,13 +54610,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "E",
       "answerComment": "Arts. 21 e 22 do Regimento Interno. Representação de um terço, destituição por dois terços e ampla defesa.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "regimento"
+      "municipalLawTag": "regimento",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-legislacao-mista-2026-11-21-007",
@@ -54075,13 +54669,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "B",
       "answerComment": "Arts. 30 a 32 e 35 do Regimento Interno. O Presidente deixa temporariamente a condução da sessão para discutir ou votar.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "regimento"
+      "municipalLawTag": "regimento",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-legislacao-mista-2026-11-21-008",
@@ -54128,13 +54728,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "D",
       "answerComment": "Art. 7º, caput e § 2º, da Resolução nº 173/2025. Prazo de dois anos, uma prorrogação e restrição expressa à abertura de novo concurso.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "res173"
+      "municipalLawTag": "res173",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-legislacao-mista-2026-11-21-009",
@@ -54181,13 +54787,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "A",
       "answerComment": "Art. 15, § 4º, alínea d, da Resolução nº 173/2025. Mestrado: 20% do vencimento básico, sem cumulação.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "res173"
+      "municipalLawTag": "res173",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     },
     {
       "id": "sim-autoral-candeias-legislacao-mista-2026-11-21-010",
@@ -54234,13 +54846,19 @@
       "orgao": "Câmara Municipal de Candeias do Jamari/RO",
       "answer": "C",
       "answerComment": "Art. 17, §§ 1º e 2º, da Resolução nº 173/2025. Função compatível, preservação de direitos e aviso mínimo de 15 dias.",
-      "status": "active",
+      "status": "archived",
       "secondary": [],
       "aliases": [],
       "duplicateGroup": null,
       "sourceType": "simulado-autoral-candeias-legislacao",
       "municipalSource": "candeias-do-jamari-ro",
-      "municipalLawTag": "res173"
+      "municipalLawTag": "res173",
+      "archive": {
+        "scope": "candeias-do-jamari-ro",
+        "date": "2026-11-23",
+        "previousStatus": "active",
+        "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari"
+      }
     }
   ],
   "attempts": [

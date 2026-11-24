@@ -14,7 +14,7 @@ test('4 novos simulados, 40 itens, gabaritos e comentários preservados',()=>{
   assert.equal(qs.map(q=>q.answer).join(''),v.answers);
   assert.ok(qs.every(q=>q.options.map(o=>o.letter).join('')==='ABCDE'));
   assert.ok(qs.every(q=>q.options.every(o=>o.text.length>=5)&&q.stem.length>=35));
-  assert.ok(qs.every(q=>q.answerComment?.length>=30&&q.status==='active'&&q.disciplineCode==='LE'));
+  assert.ok(qs.every(q=>q.answerComment?.length>=30&&q.status==='archived'&&q.disciplineCode==='LE'));
  }
  assert.equal(new Set(db.questions.map(q=>q.code)).size,db.questions.length);
  assert.equal(new Set(db.questions.map(q=>q.id)).size,db.questions.length);

@@ -18,7 +18,7 @@ test('quatro cadernos importados com 40 questões e alternativas completas, sem 
   assert.deepEqual(qs.map(q=>q.originalNumber),Array.from({length:10},(_,i)=>info.min+i));
   assert.equal(qs.map(q=>q.answer).join(''),info.answers);
   assert.ok(qs.every(q=>q.options.map(o=>o.letter).join('')==='ABCDE'));
-  assert.ok(qs.every(q=>q.options.every(o=>o.text.length>=5)&&q.stem.length>45&&q.status==='active'));
+  assert.ok(qs.every(q=>q.options.every(o=>o.text.length>=5)&&q.stem.length>45&&['active','archived'].includes(q.status)));
   assert.ok(qs.every(q=>q.disciplineCode==='CG'));
  }
  assert.equal(new Set(s.questions.map(q=>q.code)).size,s.questions.length);

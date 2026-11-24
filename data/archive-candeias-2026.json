@@ -1,0 +1,876 @@
+{
+  "schemaVersion": 1,
+  "scope": "candeias-do-jamari-ro",
+  "archivedOn": "2026-11-23",
+  "selection": "Revisão do conteúdo de cada questão: arquivar somente o que é exclusivo de Candeias do Jamari, independentemente do título do caderno.",
+  "sourceStateSha": "7ea48c5bde7d10dcb6c1bcc96c5e20d15edeea07",
+  "totalArchived": 103,
+  "groups": [
+    {
+      "key": "municipal-news",
+      "reason": "Notícias, sessões, proposições e acontecimentos exclusivos da Câmara de Candeias do Jamari",
+      "count": 30
+    },
+    {
+      "key": "municipal-history-geography",
+      "reason": "História, geografia e indicadores específicos do município de Candeias do Jamari",
+      "count": 27
+    },
+    {
+      "key": "municipal-legislation",
+      "reason": "Lei Orgânica, Regimento Interno e Resolução 173/CMCJ/2025 exclusivos de Candeias do Jamari",
+      "count": 40
+    },
+    {
+      "key": "specific-municipal-facts",
+      "reason": "Questão ancorada em fato, localidade ou ato específico de Candeias do Jamari",
+      "count": 5
+    },
+    {
+      "key": "municipal-legal-adaptation",
+      "reason": "Adaptação jurídica exclusiva da Lei Orgânica de Candeias do Jamari",
+      "count": 1
+    }
+  ],
+  "preservedFromCandeiasCadernos": [
+    {
+      "code": "Q2026CGCDJGEOCHATGPT019",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-20-caderno2"
+    },
+    {
+      "code": "Q2026CGCDJGEOCHATGPT020",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-20-caderno2"
+    },
+    {
+      "code": "Q2026CGCDJGEOCHATGPT027",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-21-caderno3"
+    },
+    {
+      "code": "Q2026CGCDJHISTAUTORAL032",
+      "examId": "sim-autoral-candeias-br364-2026-11-21"
+    },
+    {
+      "code": "Q2026CGCDJGEOAUTORAL033",
+      "examId": "sim-autoral-candeias-br364-2026-11-21"
+    },
+    {
+      "code": "Q2026CGCDJHISTAUTORAL034",
+      "examId": "sim-autoral-candeias-br364-2026-11-21"
+    },
+    {
+      "code": "Q2026CGCDJGEOAUTORAL035",
+      "examId": "sim-autoral-candeias-br364-2026-11-21"
+    },
+    {
+      "code": "Q2026CGCDJHISTAUTORAL036",
+      "examId": "sim-autoral-candeias-br364-2026-11-21"
+    },
+    {
+      "code": "Q2026CGCDJGEOAUTORAL037",
+      "examId": "sim-autoral-candeias-br364-2026-11-21"
+    },
+    {
+      "code": "Q2026CGCDJHISTAUTORAL039",
+      "examId": "sim-autoral-candeias-br364-2026-11-21"
+    },
+    {
+      "code": "Q2026CGCDJGEOAUTORAL040",
+      "examId": "sim-autoral-candeias-br364-2026-11-21"
+    },
+    {
+      "code": "Q2026CGCDJHISTAUTORAL041",
+      "examId": "sim-autoral-candeias-incra-2026-11-21"
+    },
+    {
+      "code": "Q2026CGCDJHISTAUTORAL042",
+      "examId": "sim-autoral-candeias-incra-2026-11-21"
+    },
+    {
+      "code": "Q2026CGCDJHISTAUTORAL043",
+      "examId": "sim-autoral-candeias-incra-2026-11-21"
+    },
+    {
+      "code": "Q2026CGCDJGEOAUTORAL044",
+      "examId": "sim-autoral-candeias-incra-2026-11-21"
+    },
+    {
+      "code": "Q2026CGCDJGEOAUTORAL045",
+      "examId": "sim-autoral-candeias-incra-2026-11-21"
+    },
+    {
+      "code": "Q2026CGCDJGEOAUTORAL046",
+      "examId": "sim-autoral-candeias-incra-2026-11-21"
+    },
+    {
+      "code": "Q2026CGCDJHISTAUTORAL047",
+      "examId": "sim-autoral-candeias-incra-2026-11-21"
+    },
+    {
+      "code": "Q2026CGCDJHISTAUTORAL048",
+      "examId": "sim-autoral-candeias-incra-2026-11-21"
+    },
+    {
+      "code": "Q2026CGCDJGEOAUTORAL049",
+      "examId": "sim-autoral-candeias-incra-2026-11-21"
+    },
+    {
+      "code": "Q2026CGCDJGEOAUTORAL052",
+      "examId": "sim-autoral-candeias-seringais-2026-11-21"
+    },
+    {
+      "code": "Q2026CGCDJHISTAUTORAL053",
+      "examId": "sim-autoral-candeias-seringais-2026-11-21"
+    },
+    {
+      "code": "Q2026CGCDJHISTAUTORAL054",
+      "examId": "sim-autoral-candeias-seringais-2026-11-21"
+    },
+    {
+      "code": "Q2026CGCDJHISTAUTORAL055",
+      "examId": "sim-autoral-candeias-seringais-2026-11-21"
+    },
+    {
+      "code": "Q2026CGCDJHISTAUTORAL056",
+      "examId": "sim-autoral-candeias-seringais-2026-11-21"
+    },
+    {
+      "code": "Q2026CGCDJHISTAUTORAL057",
+      "examId": "sim-autoral-candeias-seringais-2026-11-21"
+    },
+    {
+      "code": "Q2026CGCDJHISTAUTORAL058",
+      "examId": "sim-autoral-candeias-seringais-2026-11-21"
+    },
+    {
+      "code": "Q2026CGCDJHISTAUTORAL059",
+      "examId": "sim-autoral-candeias-seringais-2026-11-21"
+    }
+  ],
+  "preservedOtherMunicipalities": [
+    "curated-ti-07 (Candeias/BA)",
+    "curated-ti-10 (Candeias/MG)"
+  ],
+  "entries": [
+    {
+      "id": "cj-curated-ti-14-038",
+      "code": "Q2025LEGINSTITUTOSELETICMCJ2251516040",
+      "examId": "curated-ti-14",
+      "group": "municipal-legal-adaptation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-18-001",
+      "code": "Q2026CGCMCJCHATGPT001",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-18",
+      "group": "municipal-news",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-18-002",
+      "code": "Q2026CGCMCJCHATGPT002",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-18",
+      "group": "municipal-news",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-18-003",
+      "code": "Q2026CGCMCJCHATGPT003",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-18",
+      "group": "municipal-news",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-18-004",
+      "code": "Q2026CGCMCJCHATGPT004",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-18",
+      "group": "municipal-news",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-18-005",
+      "code": "Q2026CGCMCJCHATGPT005",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-18",
+      "group": "municipal-news",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-18-006",
+      "code": "Q2026CGCMCJCHATGPT006",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-18",
+      "group": "municipal-news",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-18-007",
+      "code": "Q2026CGCMCJCHATGPT007",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-18",
+      "group": "municipal-news",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-18-008",
+      "code": "Q2026CGCMCJCHATGPT008",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-18",
+      "group": "municipal-news",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-18-009",
+      "code": "Q2026CGCMCJCHATGPT009",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-18",
+      "group": "municipal-news",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-18-010",
+      "code": "Q2026CGCMCJCHATGPT010",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-18",
+      "group": "municipal-news",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-18-001",
+      "code": "Q2026CGCDJHISTCHATGPT001",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-18",
+      "group": "municipal-history-geography",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-18-002",
+      "code": "Q2026CGCDJHISTCHATGPT002",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-18",
+      "group": "municipal-history-geography",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-18-003",
+      "code": "Q2026CGCDJHISTCHATGPT003",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-18",
+      "group": "municipal-history-geography",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-18-004",
+      "code": "Q2026CGCDJHISTCHATGPT004",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-18",
+      "group": "municipal-history-geography",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-18-005",
+      "code": "Q2026CGCDJHISTCHATGPT005",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-18",
+      "group": "municipal-history-geography",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-18-006",
+      "code": "Q2026CGCDJGEOCHATGPT006",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-18",
+      "group": "municipal-history-geography",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-18-007",
+      "code": "Q2026CGCDJGEOCHATGPT007",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-18",
+      "group": "municipal-history-geography",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-18-008",
+      "code": "Q2026CGCDJGEOCHATGPT008",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-18",
+      "group": "municipal-history-geography",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-18-009",
+      "code": "Q2026CGCDJGEOCHATGPT009",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-18",
+      "group": "municipal-history-geography",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-18-010",
+      "code": "Q2026CGCDJGEOCHATGPT010",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-18",
+      "group": "municipal-history-geography",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-20-caderno2-011",
+      "code": "Q2026CGCDJHISTCHATGPT011",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-20-caderno2",
+      "group": "municipal-history-geography",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-20-caderno2-012",
+      "code": "Q2026CGCDJHISTCHATGPT012",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-20-caderno2",
+      "group": "municipal-history-geography",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-20-caderno2-013",
+      "code": "Q2026CGCDJHISTCHATGPT013",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-20-caderno2",
+      "group": "municipal-history-geography",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-20-caderno2-014",
+      "code": "Q2026CGCDJGEOCHATGPT014",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-20-caderno2",
+      "group": "municipal-history-geography",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-20-caderno2-015",
+      "code": "Q2026CGCDJGEOCHATGPT015",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-20-caderno2",
+      "group": "municipal-history-geography",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-20-caderno2-016",
+      "code": "Q2026CGCDJGEOCHATGPT016",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-20-caderno2",
+      "group": "municipal-history-geography",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-20-caderno2-017",
+      "code": "Q2026CGCDJGEOCHATGPT017",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-20-caderno2",
+      "group": "municipal-history-geography",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-20-caderno2-018",
+      "code": "Q2026CGCDJGEOCHATGPT018",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-20-caderno2",
+      "group": "municipal-history-geography",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-20-bateria2-011",
+      "code": "Q2026CGCMCJCHATGPT011",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-20-bateria2",
+      "group": "municipal-news",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-20-bateria2-012",
+      "code": "Q2026CGCMCJCHATGPT012",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-20-bateria2",
+      "group": "municipal-news",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-20-bateria2-013",
+      "code": "Q2026CGCMCJCHATGPT013",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-20-bateria2",
+      "group": "municipal-news",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-20-bateria2-014",
+      "code": "Q2026CGCMCJCHATGPT014",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-20-bateria2",
+      "group": "municipal-news",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-20-bateria2-015",
+      "code": "Q2026CGCMCJCHATGPT015",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-20-bateria2",
+      "group": "municipal-news",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-20-bateria2-016",
+      "code": "Q2026CGCMCJCHATGPT016",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-20-bateria2",
+      "group": "municipal-news",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-20-bateria2-017",
+      "code": "Q2026CGCMCJCHATGPT017",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-20-bateria2",
+      "group": "municipal-news",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-20-bateria2-018",
+      "code": "Q2026CGCMCJCHATGPT018",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-20-bateria2",
+      "group": "municipal-news",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-20-bateria2-019",
+      "code": "Q2026CGCMCJCHATGPT019",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-20-bateria2",
+      "group": "municipal-news",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-20-bateria2-020",
+      "code": "Q2026CGCMCJCHATGPT020",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-20-bateria2",
+      "group": "municipal-news",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-021",
+      "code": "Q2026CGCMCJCHATGPT021",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3",
+      "group": "municipal-news",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-022",
+      "code": "Q2026CGCMCJCHATGPT022",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3",
+      "group": "municipal-news",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-023",
+      "code": "Q2026CGCMCJCHATGPT023",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3",
+      "group": "municipal-news",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-024",
+      "code": "Q2026CGCMCJCHATGPT024",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3",
+      "group": "municipal-news",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-025",
+      "code": "Q2026CGCMCJCHATGPT025",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3",
+      "group": "municipal-news",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-026",
+      "code": "Q2026CGCMCJCHATGPT026",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3",
+      "group": "municipal-news",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-027",
+      "code": "Q2026CGCMCJCHATGPT027",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3",
+      "group": "municipal-news",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-028",
+      "code": "Q2026CGCMCJCHATGPT028",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3",
+      "group": "municipal-news",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-029",
+      "code": "Q2026CGCMCJCHATGPT029",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3",
+      "group": "municipal-news",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3-030",
+      "code": "Q2026CGCMCJCHATGPT030",
+      "examId": "sim-chatgpt-cmcj-noticias-2026-11-21-bateria3",
+      "group": "municipal-news",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-21-caderno3-021",
+      "code": "Q2026CGCDJGEOCHATGPT021",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-21-caderno3",
+      "group": "municipal-history-geography",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-21-caderno3-022",
+      "code": "Q2026CGCDJGEOCHATGPT022",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-21-caderno3",
+      "group": "municipal-history-geography",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-21-caderno3-023",
+      "code": "Q2026CGCDJHISTCHATGPT023",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-21-caderno3",
+      "group": "municipal-history-geography",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-21-caderno3-024",
+      "code": "Q2026CGCDJGEOCHATGPT024",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-21-caderno3",
+      "group": "municipal-history-geography",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-21-caderno3-025",
+      "code": "Q2026CGCDJHISTCHATGPT025",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-21-caderno3",
+      "group": "municipal-history-geography",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-21-caderno3-026",
+      "code": "Q2026CGCDJGEOCHATGPT026",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-21-caderno3",
+      "group": "municipal-history-geography",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-21-caderno3-028",
+      "code": "Q2026CGCDJGEOCHATGPT028",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-21-caderno3",
+      "group": "municipal-history-geography",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-21-caderno3-029",
+      "code": "Q2026CGCDJGEOCHATGPT029",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-21-caderno3",
+      "group": "municipal-history-geography",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-chatgpt-candeias-hg-2026-11-21-caderno3-030",
+      "code": "Q2026CGCDJGEOCHATGPT030",
+      "examId": "sim-chatgpt-candeias-hg-2026-11-21-caderno3",
+      "group": "municipal-history-geography",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-br364-2026-11-21-031",
+      "code": "Q2026CGCDJGEOAUTORAL031",
+      "examId": "sim-autoral-candeias-br364-2026-11-21",
+      "group": "specific-municipal-facts",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-br364-2026-11-21-038",
+      "code": "Q2026CGCDJGEOAUTORAL038",
+      "examId": "sim-autoral-candeias-br364-2026-11-21",
+      "group": "specific-municipal-facts",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-incra-2026-11-21-050",
+      "code": "Q2026CGCDJHISTAUTORAL050",
+      "examId": "sim-autoral-candeias-incra-2026-11-21",
+      "group": "specific-municipal-facts",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-seringais-2026-11-21-051",
+      "code": "Q2026CGCDJHISTAUTORAL051",
+      "examId": "sim-autoral-candeias-seringais-2026-11-21",
+      "group": "specific-municipal-facts",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-seringais-2026-11-21-060",
+      "code": "Q2026CGCDJHISTAUTORAL060",
+      "examId": "sim-autoral-candeias-seringais-2026-11-21",
+      "group": "specific-municipal-facts",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-res173-2026-11-21-001",
+      "code": "Q2026LECDJR173AUTORAL001",
+      "examId": "sim-autoral-candeias-res173-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-res173-2026-11-21-002",
+      "code": "Q2026LECDJR173AUTORAL002",
+      "examId": "sim-autoral-candeias-res173-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-res173-2026-11-21-003",
+      "code": "Q2026LECDJR173AUTORAL003",
+      "examId": "sim-autoral-candeias-res173-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-res173-2026-11-21-004",
+      "code": "Q2026LECDJR173AUTORAL004",
+      "examId": "sim-autoral-candeias-res173-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-res173-2026-11-21-005",
+      "code": "Q2026LECDJR173AUTORAL005",
+      "examId": "sim-autoral-candeias-res173-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-res173-2026-11-21-006",
+      "code": "Q2026LECDJR173AUTORAL006",
+      "examId": "sim-autoral-candeias-res173-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-res173-2026-11-21-007",
+      "code": "Q2026LECDJR173AUTORAL007",
+      "examId": "sim-autoral-candeias-res173-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-res173-2026-11-21-008",
+      "code": "Q2026LECDJR173AUTORAL008",
+      "examId": "sim-autoral-candeias-res173-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-res173-2026-11-21-009",
+      "code": "Q2026LECDJR173AUTORAL009",
+      "examId": "sim-autoral-candeias-res173-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-res173-2026-11-21-010",
+      "code": "Q2026LECDJR173AUTORAL010",
+      "examId": "sim-autoral-candeias-res173-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-lei-organica-2026-11-21-001",
+      "code": "Q2026LECDJLOMAUTORAL001",
+      "examId": "sim-autoral-candeias-lei-organica-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-lei-organica-2026-11-21-002",
+      "code": "Q2026LECDJLOMAUTORAL002",
+      "examId": "sim-autoral-candeias-lei-organica-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-lei-organica-2026-11-21-003",
+      "code": "Q2026LECDJLOMAUTORAL003",
+      "examId": "sim-autoral-candeias-lei-organica-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-lei-organica-2026-11-21-004",
+      "code": "Q2026LECDJLOMAUTORAL004",
+      "examId": "sim-autoral-candeias-lei-organica-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-lei-organica-2026-11-21-005",
+      "code": "Q2026LECDJLOMAUTORAL005",
+      "examId": "sim-autoral-candeias-lei-organica-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-lei-organica-2026-11-21-006",
+      "code": "Q2026LECDJLOMAUTORAL006",
+      "examId": "sim-autoral-candeias-lei-organica-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-lei-organica-2026-11-21-007",
+      "code": "Q2026LECDJLOMAUTORAL007",
+      "examId": "sim-autoral-candeias-lei-organica-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-lei-organica-2026-11-21-008",
+      "code": "Q2026LECDJLOMAUTORAL008",
+      "examId": "sim-autoral-candeias-lei-organica-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-lei-organica-2026-11-21-009",
+      "code": "Q2026LECDJLOMAUTORAL009",
+      "examId": "sim-autoral-candeias-lei-organica-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-lei-organica-2026-11-21-010",
+      "code": "Q2026LECDJLOMAUTORAL010",
+      "examId": "sim-autoral-candeias-lei-organica-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-regimento-interno-2026-11-21-001",
+      "code": "Q2026LECDJREGAUTORAL001",
+      "examId": "sim-autoral-candeias-regimento-interno-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-regimento-interno-2026-11-21-002",
+      "code": "Q2026LECDJREGAUTORAL002",
+      "examId": "sim-autoral-candeias-regimento-interno-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-regimento-interno-2026-11-21-003",
+      "code": "Q2026LECDJREGAUTORAL003",
+      "examId": "sim-autoral-candeias-regimento-interno-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-regimento-interno-2026-11-21-004",
+      "code": "Q2026LECDJREGAUTORAL004",
+      "examId": "sim-autoral-candeias-regimento-interno-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-regimento-interno-2026-11-21-005",
+      "code": "Q2026LECDJREGAUTORAL005",
+      "examId": "sim-autoral-candeias-regimento-interno-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-regimento-interno-2026-11-21-006",
+      "code": "Q2026LECDJREGAUTORAL006",
+      "examId": "sim-autoral-candeias-regimento-interno-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-regimento-interno-2026-11-21-007",
+      "code": "Q2026LECDJREGAUTORAL007",
+      "examId": "sim-autoral-candeias-regimento-interno-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-regimento-interno-2026-11-21-008",
+      "code": "Q2026LECDJREGAUTORAL008",
+      "examId": "sim-autoral-candeias-regimento-interno-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-regimento-interno-2026-11-21-009",
+      "code": "Q2026LECDJREGAUTORAL009",
+      "examId": "sim-autoral-candeias-regimento-interno-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-regimento-interno-2026-11-21-010",
+      "code": "Q2026LECDJREGAUTORAL010",
+      "examId": "sim-autoral-candeias-regimento-interno-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-legislacao-mista-2026-11-21-001",
+      "code": "Q2026LECDJMIXAUTORAL001",
+      "examId": "sim-autoral-candeias-legislacao-mista-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-legislacao-mista-2026-11-21-002",
+      "code": "Q2026LECDJMIXAUTORAL002",
+      "examId": "sim-autoral-candeias-legislacao-mista-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-legislacao-mista-2026-11-21-003",
+      "code": "Q2026LECDJMIXAUTORAL003",
+      "examId": "sim-autoral-candeias-legislacao-mista-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-legislacao-mista-2026-11-21-004",
+      "code": "Q2026LECDJMIXAUTORAL004",
+      "examId": "sim-autoral-candeias-legislacao-mista-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-legislacao-mista-2026-11-21-005",
+      "code": "Q2026LECDJMIXAUTORAL005",
+      "examId": "sim-autoral-candeias-legislacao-mista-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-legislacao-mista-2026-11-21-006",
+      "code": "Q2026LECDJMIXAUTORAL006",
+      "examId": "sim-autoral-candeias-legislacao-mista-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-legislacao-mista-2026-11-21-007",
+      "code": "Q2026LECDJMIXAUTORAL007",
+      "examId": "sim-autoral-candeias-legislacao-mista-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-legislacao-mista-2026-11-21-008",
+      "code": "Q2026LECDJMIXAUTORAL008",
+      "examId": "sim-autoral-candeias-legislacao-mista-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-legislacao-mista-2026-11-21-009",
+      "code": "Q2026LECDJMIXAUTORAL009",
+      "examId": "sim-autoral-candeias-legislacao-mista-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    },
+    {
+      "id": "sim-autoral-candeias-legislacao-mista-2026-11-21-010",
+      "code": "Q2026LECDJMIXAUTORAL010",
+      "examId": "sim-autoral-candeias-legislacao-mista-2026-11-21",
+      "group": "municipal-legislation",
+      "previousStatus": "active"
+    }
+  ]
+}

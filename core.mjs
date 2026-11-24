@@ -451,13 +451,14 @@ export function latestAnswer(state,profileId,questionId){
 export function outcome(state,profileId,q){
   if(q.status==='annulled')return'annulled';
   if(q.status==='outdated')return'outdated';
+  if(q.status==='archived')return'archived';
   const a=latestAnswer(state,profileId,q.id);
   if(!a)return'unanswered';
   if(!validAnswer(q.answer))return'no-key';
   return a.answer===q.answer?'correct':'wrong';
 }
 export function recordAttempt(state,profileId,qid,answer,simId=''){
-  if(!validAnswer(answer))return false;
+  if(!validAnswer(answer)||state.questions.some(q=>q.id===qid&&q.status==='archived'))return false;
   state.attempts.push({id:newId(),profileId,questionId:qid,answer,simulationId:simId,at:new Date().toISOString()});return true;
 }
 export function stats(state,profileId){
@@ -492,6 +493,8 @@ export function normalizeOutcomeSelection(filters={}){
 export function filtered(state,profileId,f={}){
   const selectedOutcomes=normalizeOutcomeSelection(f);
   let result=state.questions.filter(q=>{
+    // Arquivadas nunca participam do estudo, mesmo com o filtro 'Todas'.
+    if(q.status==='archived')return false;
     if(f.examId&&q.examId!==f.examId)return false;
     if(f.year&&q.year!==f.year)return false;
     if(f.banca&&q.banca!==f.banca)return false;
@@ -517,7 +520,7 @@ export function prioritize(state,profileId,qs){
 }
 export function createSimulation(state,profileId,questions,options={}){
   const now=new Date(),examId=options.examId||'';
-  const sim={id:newId(),profileId,examId,kind:options.kind||'random',createdAt:now.toISOString(),expiresAt:new Date(now.getTime()+30*86400000).toISOString(),status:'pending',questionIds:questions.map(q=>q.id),answers:{},finishedAt:null};
+  const sim={id:newId(),profileId,examId,kind:options.kind||'random',createdAt:now.toISOString(),expiresAt:new Date(now.getTime()+30*86400000).toISOString(),status:'pending',questionIds:questions.filter(q=>q.status!=='archived').map(q=>q.id),answers:{},finishedAt:null};
   state.simulations.push(sim);return sim;
 }
 export function finishSimulation(state,sim){
@@ -526,17 +529,18 @@ export function finishSimulation(state,sim){
   for(const qid of sim.questionIds)recordAttempt(state,sim.profileId,qid,sim.answers[qid],sim.id);
 }
 export function simulationResult(state,sim){
-  let correct=0,wrong=0,blank=0,annulled=0;
+  let correct=0,wrong=0,blank=0,annulled=0,archived=0;
   for(const id of sim.questionIds){
     const q=state.questions.find(q=>q.id===id);
     if(!q)continue;
+    if(q.status==='archived'){archived++;continue;}
     if(q.status==='annulled'||q.status==='outdated'){annulled++;continue}
     const answer=sim.answers[id];
     if(!validAnswer(answer)){blank++;continue}
     if(answer===q.answer)correct++;else wrong++;
   }
   const answered=correct+wrong;
-  return {correct,wrong,blank,annulled,answered,total:sim.questionIds.length,rate:answered?correct/answered*100:0};
+  return {correct,wrong,blank,annulled,archived,answered,total:sim.questionIds.length,rate:answered?correct/answered*100:0};
 }
 export function expire(state){
   const now=Date.now();

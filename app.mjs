@@ -38,6 +38,7 @@ const sync=createSyncClient({
  getState:()=>state,
  setState:remote=>{
   state=normalizeState(remote);expire(state);
+  currentPool=currentPool.map(q=>state.questions.find(item=>item.id===q.id)).filter(q=>q&&q.status!=='archived');
   try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state));}catch{}
   if(profileId&&!state.profiles.some(p=>p.id===profileId)){profileId=null;showProfilePicker();}
   else if(profileId&&view!=='import')refresh();
@@ -366,15 +367,15 @@ function homeScreen(){
   const s=stats(state,profileId),pending=state.simulations.filter(x=>x.profileId===profileId&&x.status==='pending');
   return `<div class="between"><div>${headline('Olá, '+profileName(),'Seu histórico e o banco de questões compartilhado.')}</div></div>
   <div class="grid four">
-  ${infoTile(n(state.questions.length),'Questões cadastradas')}
+  ${infoTile(n(state.questions.filter(q=>q.status==='active').length),'Questões disponíveis')}
   ${infoTile(n(s.correct),'Acertos atuais')}
   ${infoTile(n(s.wrong),'Erros atuais')}
   ${infoTile(pct(s.rate),'Aproveitamento respondido')}
   </div>
   <div class="grid two" style="margin-top:14px">
   <section class="card"><h2>Começar</h2><p>Escolha questões por assunto ou monte um simulado com a quantidade que desejar.</p><div class="actions">${btn('go-questions','Questões','primary')}${btn('go-sim','Criar simulado','secondary')}</div></section>
-  <section class="card"><h2>Suas atividades</h2><p>${pending.length} simulado(s) aguardando resposta; ${state.exams.length} prova(s) cadastrada(s).</p><div class="actions">${btn('show-pending','Simulados pendentes')}${btn('go-stats','Minhas estatísticas')}</div></section></div>
-  <section class="card"><h2>Sobre os resultados</h2><p>As estatísticas consideram a última resposta válida por questão. Questões em branco não são erros nem acertos e permanecem disponíveis para novos exercícios. Questões anuladas não entram no aproveitamento.</p></section>
+  <section class="card"><h2>Suas atividades</h2><p>${pending.length} simulado(s) aguardando resposta; ${state.questions.filter(q=>q.status==='archived').length} questão(ões) arquivada(s).</p><div class="actions">${btn('show-pending','Simulados pendentes')}${btn('go-stats','Minhas estatísticas')}</div></section></div>
+  <section class="card"><h2>Sobre os resultados</h2><p>As estatísticas consideram a última resposta válida por questão. Questões em branco não são erros nem acertos e permanecem disponíveis para novos exercícios. Questões anuladas ou arquivadas não entram no aproveitamento.</p></section>
   <div class="notice info">O site preserva seus registros neste aparelho e os sincroniza com o GitHub quando o serviço remoto está configurado. Verifique o indicador no topo.</div>`;
 }
 function importScreen(){
@@ -390,7 +391,7 @@ function importScreen(){
   ${latestImportMessage?`<div class="notice info">${h(latestImportMessage)}</div>`:''}`;
 }
 function availableFilters(){
-  const unique=(k)=>[...new Set(state.questions.map(q=>q[k]).filter(Boolean))].sort((a,b)=>String(a).localeCompare(String(b),'pt-BR'));
+  const unique=(k)=>[...new Set(state.questions.filter(q=>q.status!=='archived').map(q=>q[k]).filter(Boolean))].sort((a,b)=>String(a).localeCompare(String(b),'pt-BR'));
   return {disciplines:unique('discipline'),topics:unique('topic'),years:unique('year'),bancas:unique('banca'),orgaos:unique('orgao')};
 }
 function selectField(name,label,items,current='',placeholder='Todas'){
@@ -456,7 +457,7 @@ function updateTopicChoices(form,name){
  let target,items,label;
  if(mode===STUDY_ALL&&name==='generalDisciplines'){
   target='generalTopics';label='Assuntos integrados entre concursos';
-  items=integratedTopicOptions(state.questions,checkedMultiValues(form,name));
+  items=integratedTopicOptions(state.questions.filter(q=>q.status!=='archived'),checkedMultiValues(form,name));
  }else if(mode===STUDY_CANDEIAS&&name==='candeiasDisciplines'){
   target='candeiasTopics';label='Assuntos do edital de Candeias';
   const ds=checkedMultiValues(form,name);
@@ -486,7 +487,7 @@ function catalogPanelFilters(){
   return '<fieldset class="field span-all syllabus-panel"><legend>Banco geral de questões</legend>'+
    '<div class="form-grid">'+cargoOptions+
    multiChoiceField('generalDisciplines','Disciplinas',ALL_STUDY_DISCIPLINES.map(x=>({id:x.id,label:x.label})),ds)+
-   multiChoiceField('generalTopics','Assuntos integrados entre concursos',integratedTopicOptions(state.questions,ds),
+   multiChoiceField('generalTopics','Assuntos integrados entre concursos',integratedTopicOptions(state.questions.filter(q=>q.status!=='archived'),ds),
     currentFilter.generalTopics||currentFilter.generalTopic,true)+
    '</div><p class="hint">Marque várias disciplinas e assuntos. Sem marcações, todos são incluídos. Este banco reúne concursos de diversas localidades, sem adaptações municipais.</p></fieldset>';
  }
@@ -502,7 +503,7 @@ function catalogPanelFilters(){
  const ds=selectedValues(currentFilter.editalDisciplines||currentFilter.editalDisciplina);
  const topics=allTopics(id).filter(x=>!ds.length||ds.includes(x.discipline))
   .map(x=>({id:x.id,label:x.discipline+' — '+x.title}));
- const counts=subjectSummary(state.questions,exam,id).total;
+ const counts=subjectSummary(state.questions.filter(q=>q.status!=='archived'),exam,id).total;
  const scope=normalizeEditalScope(currentFilter.editalScope);
  return '<fieldset class="field span-all syllabus-panel"><legend>Edital de referência</legend>'+
   '<div class="form-grid">'+cargoOptions+
@@ -557,7 +558,7 @@ function filterForm(kind='questions'){
   historyOutcomeFilter()+
   '<div class="field"><label>Situação da questão</label><select name="status">'+
    '<option value="">Ativas (padrão)</option>'+
-   [['all','Todas, incluindo anuladas'],['annulled','Somente anuladas'],['outdated','Somente desatualizadas'],['needs-review','Necessitam revisão da extração']].map(([v,l])=>'<option value="'+v+'" '+(currentFilter.status===v?'selected':'')+'>'+h(l)+'</option>').join('')+
+   [['all','Todas, incluindo anuladas (exceto arquivadas)'],['annulled','Somente anuladas'],['outdated','Somente desatualizadas'],['needs-review','Necessitam revisão da extração']].map(([v,l])=>'<option value="'+v+'" '+(currentFilter.status===v?'selected':'')+'>'+h(l)+'</option>').join('')+
   '</select></div>'+
   (mode?'<div class="field"><label>Quantidade de questões</label><input type="number" name="count" min="1" max="1000" value="20" required></div>':
    '<div class="field"><label>Mostrar quantas questões?</label><input type="number" name="count" min="1" max="1000" value="'+limitAvulsas+'" required></div>'+
@@ -611,7 +612,7 @@ function syllabusBadge(q){
 function syllabusStatistics(cargoId=currentFilter.editalCargo){
  if(cargoId===STUDY_ALL||cargoId===STUDY_CANDEIAS)return '';
  const id=cargoId||'505',catalog=currentCatalog(id);
- const summary=subjectSummary(state.questions,exam,id);
+ const summary=subjectSummary(state.questions.filter(q=>q.status!=='archived'),exam,id);
  const map=new Map();
  for(const q of state.questions){
   if(q.status!=='active')continue;
@@ -642,6 +643,7 @@ function syllabusStatistics(cargoId=currentFilter.editalCargo){
 
 function feedback(q,answer){
   if(!validAnswer(answer))return '<span class="badge wait">Não respondida</span>';
+  if(q.status==='archived')return '<span class="badge wait">Questão arquivada</span>';
   if(q.status==='annulled')return '<span class="badge wait">Questão anulada</span>';
    if(q.status==='outdated')return '<span class="badge wait">Questão desatualizada</span>';
   if(!validAnswer(q.answer))return '<span class="badge wait">Sem gabarito confirmado</span>';
@@ -684,7 +686,7 @@ function questionsScreen(){
   return `${headline('Questões','Resolva quantas questões desejar, sem precisar montar um simulado.')}
   ${filterForm('questions')}
   <div class="between"><h2>${n(count)} questão(ões) selecionada(s)</h2>${count?btn('print-current','Imprimir seleção'):''}</div>
-  ${count?currentPool.map((q,i)=>cardQuestion(q,i,'single','',currentPool[i-1]||null)).join(''):empty(state.questions.length?'Use os filtros acima para consultar as questões.':'O banco de questões ainda está vazio. Importe a primeira prova.')}`;
+  ${count?currentPool.map((q,i)=>cardQuestion(q,i,'single','',currentPool[i-1]||null)).join(''):empty(state.questions.some(q=>q.status==='active')?'Use os filtros acima para consultar as questões.':'O banco de questões ainda está vazio. Importe a primeira prova.')}`;
 }
 function simScreen(){
   const pending=state.simulations.filter(s=>s.profileId===profileId&&s.status==='pending');
@@ -698,8 +700,15 @@ function simScreen(){
   ${finished.length?finished.map(s=>`<div class="stat-line"><div>${s.questionIds.length} questões · ${niceDate(s.finishedAt)}</div>${btn('see-result','Ver resultado','secondary',`data-id="${h(s.id)}"`)}</div>`).join(''):empty('Nenhum simulado concluído.')}</section>`;
 }
 function examScreen(){
-  return `${headline('Provas completas','Resolva a prova original, na ordem e com a numeração original, ou imprima.')}
-  <section class="card">${state.exams.length?state.exams.map(e=>`<div class="stat-line"><div><strong>${h(e.title)}</strong><div class="small-muted">${h(e.year)} · ${h(e.banca)} · ${h(e.orgao)} · ${e.questionIds.length} questões${state.questions.some(q=>q.examId===e.id&&q.extractionFallback)?' · '+state.questions.filter(q=>q.examId===e.id&&q.extractionFallback).length+' em imagem para revisão':''}${e.keyStatus==='preliminar'?' · Gabarito preliminar':''}</div></div><div class="row">${btn('start-exam','Resolver','primary',`data-id="${h(e.id)}"`)}${btn('print-exam','Imprimir','secondary',`data-id="${h(e.id)}"`)}${e.pdfPath?btn('open-original-pdf','Abrir PDF original','secondary',`data-id="${h(e.id)}"`):''}</div></div>`).join(''):empty('Nenhuma prova cadastrada.')}</section>`;
+  const sets=state.exams.map(e=>{
+    const all=e.questionIds.map(question).filter(Boolean);
+    return {e,available:all.filter(q=>q.status!=='archived'),archived:all.filter(q=>q.status==='archived')};
+  });
+  const available=sets.filter(x=>x.available.length),archived=sets.filter(x=>x.archived.length);
+  const archivedCount=archived.reduce((total,x)=>total+x.archived.length,0);
+  return `${headline('Provas completas','Questões arquivadas não entram nos estudos nem nas estatísticas.')}
+  <section class="card">${available.length?available.map(({e,available:qs})=>`<div class="stat-line"><div><strong>${h(e.title)}</strong><div class="small-muted">${h(e.year)} · ${h(e.banca)} · ${h(e.orgao)} · ${qs.length} questões disponíveis${qs.some(q=>q.extractionFallback)?' · '+qs.filter(q=>q.extractionFallback).length+' em imagem para revisão':''}${e.keyStatus==='preliminar'?' · Gabarito preliminar':''}</div></div><div class="row">${btn('start-exam','Resolver','primary',`data-id="${h(e.id)}"`)}${btn('print-exam','Imprimir','secondary',`data-id="${h(e.id)}"`)}${e.pdfPath?btn('open-original-pdf','Abrir PDF original','secondary',`data-id="${h(e.id)}"`):''}</div></div>`).join(''):empty('Nenhuma prova com questões disponíveis.')}</section>
+  ${archivedCount?`<details class="program-panel"><summary>Arquivo — ${archivedCount} questões em ${archived.length} provas</summary><p class="hint">Conteúdo preservado para consulta e impressão, sem novas respostas e sem participação nas estatísticas.</p>${archived.map(({e,archived:qs})=>`<div class="stat-line"><div><strong>${h(e.title)}</strong><div class="small-muted">${qs.length} questão(ões) arquivada(s)</div></div><div class="row">${btn('print-archived-exam','Imprimir arquivo','secondary',`data-id="${h(e.id)}"`)}</div></div>`).join('')}</details>`:''}`;
 }
 function statsScreen(){
   const s=stats(state,profileId);
@@ -709,7 +718,7 @@ function statsScreen(){
   ${renderDifficultyPie(state,profileId,chartCargo,chartArea,exam)}
   ${syllabusStatistics(chartCargo)}
   <div class="grid two" style="margin-top:14px">${block('Por disciplina original',s.byDiscipline)}${block('Por assunto original',s.byTopic)}</div>
-  <div class="notice info">Questões em branco não entram em acertos nem em erros; questões anuladas também não entram. Uma classificação secundária aprovada poderá integrar outra estatística de assunto sem duplicar a contagem geral.</div>`;
+  <div class="notice info">Questões em branco não entram em acertos nem em erros; questões anuladas e arquivadas não entram nas estatísticas. Uma classificação secundária aprovada poderá integrar outra estatística de assunto sem duplicar a contagem geral.</div>`;
 }
 function flagsScreen(){
   const own=state.flags.filter(x=>x.profileId===profileId).slice().reverse();
@@ -1100,12 +1109,16 @@ document.addEventListener('click',e=>{
     case 'finish-sim':finishCurrent();break;
     case 'start-exam':{
       const ex=exam(id);if(!ex)return;
-      const qs=ex.questionIds.map(question).filter(Boolean);
+      const qs=ex.questionIds.map(question).filter(q=>q&&q.status!=='archived');
+      if(!qs.length){toast('Esta prova não possui questões disponíveis.');break;}
       const s=createSimulation(state,profileId,qs,{kind:'exam',examId:ex.id});save();beginSim(s.id);break;
     }
     case 'open-original-pdf':{const ex=exam(id);if(ex?.pdfPath&&sync.getUrl())window.open(sync.getUrl()+'/api/file?examId='+encodeURIComponent(ex.id),'_blank','noopener');else toast('PDF original indisponível neste dispositivo.');break;}
      case 'print-exam':{
-      const ex=exam(id);if(ex)printQuestions(ex.questionIds.map(question).filter(Boolean),ex.title,{original:true});break;
+      const ex=exam(id);if(ex)printQuestions(ex.questionIds.map(question).filter(q=>q&&q.status!=='archived'),ex.title,{original:true});break;
+    }
+    case 'print-archived-exam':{
+      const ex=exam(id);if(ex)printQuestions(ex.questionIds.map(question).filter(q=>q&&q.status==='archived'),ex.title+' — arquivo',{original:true});break;
     }
     case 'print-current':printQuestions(currentPool,'Questões');break;
     case 'print-sim':{
