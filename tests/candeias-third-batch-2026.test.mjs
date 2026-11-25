@@ -47,8 +47,8 @@ test('História/Geografia municipal nos dois editais pertinentes, sem duplicaç�
    assert.equal(classification.status,'dentro');
    assert.equal(classification.topicId,'gerais:1');
   }
-  assert.equal(classifyForCargo(q,exam,'240').status,'fora');
-  assert.equal(classifyForCargo(q,exam,PROFESSOR_CARGO_ID).status,'fora');
+  assert.equal(classifyForCargo(q,exam,'240').status,q.status==='active'?'dentro':'fora');
+  assert.equal(classifyForCargo(q,exam,PROFESSOR_CARGO_ID).status,q.status==='active'?'dentro':'fora');
  }
  assert.ok(db.questions.length>=1004);
  assert.ok(db.exams.length>=47);

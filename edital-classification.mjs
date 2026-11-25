@@ -7,6 +7,7 @@
  */
 import {PROGRAM_505} from './programa-candeias-505.mjs';
 import {PROGRAM_PROFESSOR,PROFESSOR_CARGO_ID,matchProfessorNewTopic,normalizeProfessorText} from './programa-semed-professor.mjs';
+import {PROGRAM_SECRETARIA,SECRETARIA_CARGO_ID,matchSecretariaTopic,normalizeSecretariaText} from './programa-semed-secretaria.mjs';
 export const CURRENT_CARGO_202='202', CURRENT_CARGO_505='505';
 export const CARGO_202={
  id:'202', cargo:'Auxiliar de Serviços Gerais', level:'Ensino fundamental completo',
@@ -75,9 +76,12 @@ export const CATALOGS=Object.freeze({
  '202':CARGO_202,
  '240':CARGO_240,
  '505':{...PROGRAM_505,id:'505',cargo:PROGRAM_505.cargo,pages:'4–5 e 7'},
- [PROFESSOR_CARGO_ID]:PROGRAM_PROFESSOR
+ [PROFESSOR_CARGO_ID]:PROGRAM_PROFESSOR,
+ [SECRETARIA_CARGO_ID]:PROGRAM_SECRETARIA
 });
-export const currentCatalog=id=>CATALOGS[String(id)]||CATALOGS['505'];
+export const FOCUS_CARGOS=Object.freeze([PROFESSOR_CARGO_ID,SECRETARIA_CARGO_ID,'240']);
+export const DEFAULT_CARGO=PROFESSOR_CARGO_ID;
+export const currentCatalog=id=>CATALOGS[String(id)]||CATALOGS[DEFAULT_CARGO];
 /** Modo transversal: só considera as disciplinas ORIGINAIS da prova.
  * Não cria um edital fictício nem aplica normas locais de Candeias.
  */
@@ -476,10 +480,141 @@ function inferSemusaClassification(q,exam){
  return result('pendente','especificos',-1,'Conhecimento específico exige verificação com o Anexo IV da SEMUSA.');
 }
 
+
+/**
+ * Cargo 343: leitura temática do Anexo IV, Edital SEMED 24/2026.
+ * Se o assunto não é comprovado pelo texto do edital, uma segunda etapa
+ * o aproxima de um tópico, com indicação explícita de conferência.
+ */
+function inferSecretariaClassification(q,exam){
+ const cargo=SECRETARIA_CARGO_ID,catalog=currentCatalog(cargo);
+ const inside=(sectionId,index,reason)=>{
+  const section=catalog.sections.find(sec=>sec.id===sectionId);
+  if(!section||!section.topics[index])return {cargoId:cargo,status:'fora',
+   statusLabel:'A conferir',discipline:'A conferir',topic:'A conferir',topicId:'',
+   reason:'Tópico ainda não identificado.'};
+  return {cargoId:cargo,status:'dentro',statusLabel:'Dentro do edital',
+   discipline:section.title,topic:section.topics[index],topicId:sectionId+':'+index,
+   reason:reason||'Correspondência temática com o Anexo IV da SEMED, cargo 343.'};
+ };
+ const unclassified={cargoId:cargo,status:'fora',statusLabel:'Fora do edital',
+  discipline:'Fora do edital',topic:'Fora do edital',topicId:'',
+  reason:'Sem identificação segura de tema cobrado para Agente de Secretaria Escolar.'};
+ if(q?.originalQuestionId)return unclassified;
+ const group=studyAllGroup(q);
+ const text=normalizeSecretariaText([q?.stem,q?.heading,q?.topic].join(' '));
+ // Português, RLM e Atualidades usam o programa comum do edital da educação.
+ if(['LP','RLM','CG'].includes(group)){
+  const shared=inferProfessorClassification(q,exam);
+  const sectionId=group==='LP'?'portugues':group==='RLM'?'raciocinio':'gerais';
+  if(shared.status==='dentro'&&shared.topicId.startsWith(sectionId+':')){
+   const i=Number(shared.topicId.split(':')[1]);
+   if(group!=='CG'||i!==catalog.sections.find(sec=>sec.id==='gerais').topics.length-1||
+    /PREFEITURA(?: MUNICIPAL)? DE PORTO VELHO/.test(text))
+    return inside(sectionId,i,'Conteúdo comum aos cargos de ensino médio e superior do edital da SEMED.');
+  }
+  // Figuras de linguagem, verbos e articulação textual constam no cargo 343.
+  if(group==='LP'){
+   const specific=[
+    /FIGURAS? DE (?:SINTAXE|LINGUAGEM)|METAFORA|IRONIA|ANTITESE|HIPERBOLE/,
+    /OPERADORES? SEQUENCIAIS|EXPRESSOES REFERENCIAIS|ARTICULACAO TEXTUAL/,
+    /CONJUGACAO|TEMPOS VERBAIS|VOZES VERBAIS|REG[ÊE]NCIA|CONCORDANCIA/,
+    /VARIACAO LINGUISTICA|SIGNIFICACAO|COLOCACAO PRONOMINAL/
+   ];
+   const match=specific.findIndex(pattern=>pattern.test(text));
+   if(match>=0)return inside('portugues',commonIndex('portugues',catalog)+match);
+  }
+  return unclassified;
+ }
+ const legal=matchSecretariaTopic('legislacao',text);
+ const specific=matchSecretariaTopic('especificos',text);
+ const foreignPlaces=/CANDEIAS DO JAMARI|BRUSQUE|VOTORANTIM|CANDEIAS MG|CANDEIAS BA|ARIQUEMES|MARILIA/;
+ const origin=normalizeSecretariaText([exam?.orgao,exam?.title].join(' '));
+ const isForeignLaw=/(?:LEI ORGANICA|LEI MUNICIPAL|REGIME JURIDICO|PLANO DE CARREIRA|ESTATUTO DOS SERVIDORES)/.test(text)&&
+  (foreignPlaces.test(text)||(!/PORTO VELHO/.test(text)&&foreignPlaces.test(origin)));
+ if(group==='LE'&&legal>=0&&!isForeignLaw)return inside('legislacao',legal);
+ if(specific>=0&&(group==='CE'||group==='LE'||/EDUCACAO|ESCOLA|DOCUMENTOS?|ARQUIV|ALMOXARIFADO|PATRIMONIO/.test(text)))
+  return inside('especificos',specific);
+ if(legal>=0&&!isForeignLaw)return inside('legislacao',legal);
+ return unclassified;
+}
+function commonIndex(sectionId,catalog){
+ return sectionId==='portugues'
+  ?PROGRAM_PROFESSOR.sections.find(s=>s.id==='portugues').topics.length
+  :catalog.sections.find(s=>s.id===sectionId)?.topics.length||0;
+}
+const STOP_APPROX=new Set('A O AS OS DE DA DO DAS DOS E EM NO NA NOS NAS UM UMA UNS UMAS QUE QUAL QUAIS COMO COM PARA POR SOBRE ENTRE SE AO AOS SUA SEU NESTA NESTE DESSA DESSE SEGUNDO CONFORME QUESTAO ASSINALE ALTERNATIVA CORRETA INCORRETA AFIRMATIVAS CONTEXTO TEXTO OPCAO APRESENTA APRESENTAM ACERCA CONSIDERANDO'.split(' '));
+const lexemes=value=>new Set(norm(value).split(' ').filter(t=>t.length>=4&&!STOP_APPROX.has(t)));
+function nearestTopic(section,content){
+ if(!section||!section.topics?.length)return -1;
+ const words=lexemes(content);
+ const score=(title)=>{
+  const tokens=lexemes(title);
+  let points=0;
+  for(const w of tokens)if(words.has(w))points+=2;
+  return points;
+ };
+ let best=0,weight=-1;
+ for(let i=0;i<section.topics.length;i++){
+  const next=score(section.topics[i]);
+  if(next>weight){best=i;weight=next;}
+ }
+ return weight>0?best:-1;
+}
+/**
+ * O modo de estudo atual permite experimentar questões de outras provas.
+ * O enquadramento aproximado NUNCA declara pertinência literal ao edital.
+ * A seleção fica disponível para filtragem de área, tópico e situação.
+ */
+function approximateFocusedTopic(q,exam,cargo,computed){
+ if(!q||q.status==='archived'||q.originalQuestionId||computed.status==='dentro')return computed;
+ // As notícias municipais exclusivas de Candeias continuam excluídas.
+ if(['chatgpt-cmcj-news-simulado','simulado-autoral-candeias-legislacao'].includes(q.sourceType)&&
+   (q.newsSource==='cmcj-ro'||q.sourceType==='simulado-autoral-candeias-legislacao'))
+  return computed;
+ const localNews=norm([q.stem,q.heading,q.topic].join(' '));
+ if(studyAllGroup(q)==='CG'&&/NOTICIAS? (?:DO|NO) SITE DA CAMARA MUNICIPAL DE CANDEIAS/.test(localNews))
+  return computed;
+ const catalog=currentCatalog(cargo),group=studyAllGroup(q);
+ const input=norm([q.stem,q.heading,q.topic,(q.contextText||'').slice(0,200)].join(' '));
+ const isEducational=/EDUCACAO|ESCOLA|ALUNO|CRIANCA|ADOLESCENT|MAGISTERIO|DOCENTE|CURRICUL|PEDAGOG|ENSINO|DIDATICA|ALFABETIZACAO|LETRAMENTO|PPP|BNCC|LDB/.test(input);
+ const isHealth=/SAUDE|HOSPITAL|HIGIEN|LIMPEZA|RESIDUO|EPIS?\b|SUS\b|SOCORRO|DOENC|SANITARIA|ATENDIMENTO|BIOSEGURANCA|VIGILANCIA/.test(input);
+ const isLaw=/\bLEI\b|LEGISLACAO|CONSTITUICAO|ARTIGO|MUNICIPAL|ESTATUTO|LICITACAO|ADMINISTRACAO PUBLICA|DIREITOS/.test(input);
+ let sectionId=group==='LP'?'portugues':
+  group==='RLM'?(cargo==='240'?'matematica':'raciocinio'):
+  group==='CG'?'gerais':null;
+ if(!sectionId){
+  if(cargo==='240')sectionId='especificos';
+  else if(cargo===SECRETARIA_CARGO_ID)
+   sectionId=group==='LE'&&!isEducational?'legislacao':'especificos';
+  else sectionId=group==='LE'?'legislacao-educacao':'especificos';
+ }
+ const section=catalog.sections.find(x=>x.id===sectionId)||catalog.sections[0];
+ // Para a hipótese de classificação pendente, manter a seção anterior.
+ const oldTopic=computed.topicId?.startsWith(section.id+':')
+  ?Number(computed.topicId.split(':')[1]):-1;
+ const matched=nearestTopic(section,input);
+ let fallback=0;
+ if(group==='IN')fallback=cargo===PROFESSOR_CARGO_ID?24:cargo===SECRETARIA_CARGO_ID?15:0;
+ else if(group==='CG')fallback=/GEOGRAF|HISTOR|TERRITOR|POPULACAO|RONDONIA/.test(input)?1:
+   /CLIMAT|MEIO AMBIENTE|SUSTENTABIL|SAUDE|EDUCACAO/.test(input)?3:0;
+ else if(group==='LE'&&cargo===PROFESSOR_CARGO_ID)fallback=2;
+ const index=Number.isInteger(oldTopic)&&oldTopic>=0&&oldTopic<section.topics.length?oldTopic:
+  matched>=0?matched:Math.min(fallback,section.topics.length-1);
+ const topic=section.topics[index]||section.topics[0];
+ const foreignNorm=isLaw&&/CANDEIAS DO JAMARI|BRUSQUE|VOTORANTIM|CANDEIAS MG|CANDEIAS BA|ARIQUEMES/.test(input);
+ return {cargoId:cargo,status:'pendente',statusLabel:'Aproximado — conferir',
+  discipline:section.title,topic,topicId:section.id+':'+index,
+  reason:foreignNorm
+   ?'Norma de outra localidade: agrupamento apenas por proximidade de assunto; não equivale à lei de Porto Velho.'
+   : 'Questão associada ao tópico mais próximo para estudo; sem correspondência direta comprovada com o edital.',
+  approximate:true};
+}
+
 /** Persistir apenas após aprovação administrativa da sinalização. */
 export function approveEdictReview(question,proposed){
  const cargo=String(proposed?.editalCargo||''),status=String(proposed?.status||'');
- if(!['202','240','505',PROFESSOR_CARGO_ID].includes(cargo)||!['dentro','fora'].includes(status))
+ if(!['202','240','505',PROFESSOR_CARGO_ID,SECRETARIA_CARGO_ID].includes(cargo)||!['dentro','fora'].includes(status))
   throw Error('Parecer do edital inválido (cargo e situação são obrigatórios).');
  question.editalReview={...(question.editalReview||{}),[cargo]:{status}};
  return question;
@@ -490,14 +625,14 @@ export function approveEdictReview(question,proposed){
  * Cada cargo mantém sua própria revisão; o original permanece inalterado.
  */
 export function classifyForCargo(q,exam,cargoId='505'){
- const cargo=['202','240','505',PROFESSOR_CARGO_ID].includes(String(cargoId))?String(cargoId):'505';
+ const cargo=['202','240','505',PROFESSOR_CARGO_ID,SECRETARIA_CARGO_ID].includes(String(cargoId))?String(cargoId):DEFAULT_CARGO;
  if(q?.sourceType==='chatgpt-cmcj-news-simulado'&&['cmcj-ro','sintero-ro'].includes(q?.newsSource)&&
     cargo!=='202'&&cargo!=='505')return {
    cargoId:cargo,status:'fora',statusLabel:'Fora do edital',discipline:'Fora do edital',
    topic:'Fora do edital',topicId:'',
    reason:'Notícias específicas da Câmara de Candeias do Jamari não pertencem ao edital deste cargo.'
  };
- if(['chatgpt-candeias-hg-simulado','simulado-autoral-candeias-hg'].includes(q?.sourceType)&&cargo!=='202'&&cargo!=='505')
+ if(['chatgpt-candeias-hg-simulado','simulado-autoral-candeias-hg'].includes(q?.sourceType)&&q?.status!=='active'&&cargo!=='202'&&cargo!=='505')
   return {cargoId:cargo,status:'fora',statusLabel:'Fora do edital',
    discipline:'Fora do edital',topic:'Fora do edital',topicId:'',
    reason:'Simulado específico de História e Geografia de Candeias do Jamari, não do município deste edital.'};
@@ -513,7 +648,10 @@ export function classifyForCargo(q,exam,cargoId='505'){
    discipline:section.title,topic:section.topics[index],topicId:'legislacao:'+index,
    reason:'Norma municipal correspondente ao Anexo IV, identificada no PDF autoral.'};
  }
- const computed=cargo===PROFESSOR_CARGO_ID?inferProfessorClassification(q,exam):cargo==='240'?inferSemusaClassification(q,exam):inferClassificationForCargo(q,exam,cargo);
+ const firstPass=cargo===PROFESSOR_CARGO_ID?inferProfessorClassification(q,exam):
+   cargo===SECRETARIA_CARGO_ID?inferSecretariaClassification(q,exam):
+   cargo==='240'?inferSemusaClassification(q,exam):inferClassificationForCargo(q,exam,cargo);
+  const computed=FOCUS_CARGOS.includes(cargo)?approximateFocusedTopic(q,exam,cargo,firstPass):firstPass;
  const reviewed=q?.editalReview?.[cargo];
  if(!reviewed||!['dentro','fora'].includes(reviewed.status))return computed;
  if(reviewed.status==='fora')return {
@@ -584,7 +722,7 @@ export function subjectSummary(questions,getExam,cargoId){
  for(const q of questions){
   const cls=classifyForCargo(q,getExam(q.examId),cargoId);
   total[cls.status]++;
-  if(cls.status==='dentro'){
+  if((cls.status==='dentro'||cls.status==='pendente')&&cls.topicId){
    const key=cls.topicId,entry=topics.get(key)||{id:key,discipline:cls.discipline,topic:cls.topic,count:0};
    entry.count++;topics.set(key,entry);
   }

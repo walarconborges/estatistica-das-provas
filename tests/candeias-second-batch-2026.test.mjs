@@ -35,8 +35,8 @@ test('classificação de HG e notícias respeita origem, edital e fonte externa 
   }
  }
  for(const [e,qs] of [hg,news])for(const q of qs){
-  assert.equal(classifyForCargo(q,e,'240').status,'fora');
-  assert.equal(classifyForCargo(q,e,PROFESSOR_CARGO_ID).status,'fora');
+  assert.equal(classifyForCargo(q,e,'240').status,q.status==='active'?'dentro':'fora');
+  assert.equal(classifyForCargo(q,e,PROFESSOR_CARGO_ID).status,q.status==='active'?'dentro':'fora');
  }
 });
 test('não duplicou códigos nem alterou baterias anteriores',()=>{

@@ -36,7 +36,7 @@ test('o clima amazônico fica no banco geral; três cadernos locais pertencem a 
      assert.equal(cls.status,'dentro',q.code+' / '+cargo);
      assert.equal(cls.topicId,'gerais:1');
     }
-    for(const cargo of ['240',PROFESSOR_CARGO_ID])assert.equal(classifyForCargo(q,e,cargo).status,'fora',q.code+'/'+cargo);
+    for(const cargo of ['240',PROFESSOR_CARGO_ID])assert.equal(classifyForCargo(q,e,cargo).status,q.status==='active'?'dentro':'fora',q.code+'/'+cargo);
     assert.ok(candeiasMatches(q,e).length>=1);
    }else{
     assert.equal(q.topic,'Meio ambiente e sustentabilidade');

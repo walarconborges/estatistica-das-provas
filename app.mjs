@@ -3,7 +3,7 @@ import {readPdf} from './pdf-import.mjs';
 import {chosenAnswerSection,parseGridKey,questionIntegrity,declaredQuestionCount,declaredAlternativeCount,inferredAlternativeCount} from './pdf-layout.mjs';
 import {createSyncClient} from './sync-client.mjs';
 import {STUDY_CONTEXT,eligibleForList} from './study-context.mjs';
-import {CATALOGS,currentCatalog,allTopics,classifyForCargo,subjectSummary,EDITAL_SCOPE_OPTIONS,normalizeEditalScope,inEditalScope,STUDY_ALL,STUDY_CANDEIAS,ALL_STUDY_DISCIPLINES,studyAllGroup,filterStudyAllQuestions,selectedValues,integratedTopicOptions,candeiasDisciplineOptions,candeiasTopicOptions,candeiasMatches,filterCandeiasQuestions} from './edital-classification.mjs?v=0.6.37';
+import {CATALOGS,FOCUS_CARGOS,DEFAULT_CARGO,currentCatalog,allTopics,classifyForCargo,subjectSummary,EDITAL_SCOPE_OPTIONS,normalizeEditalScope,inEditalScope,STUDY_ALL,STUDY_CANDEIAS,ALL_STUDY_DISCIPLINES,studyAllGroup,filterStudyAllQuestions,selectedValues,integratedTopicOptions,candeiasDisciplineOptions,candeiasTopicOptions,candeiasMatches,filterCandeiasQuestions} from './edital-classification.mjs?v=0.6.37';
 import {splitAssertionItems} from './assertion-guide.mjs?v=0.6.37';
 import {createAnswerDisplayCache} from './answer-display-cache.mjs?v=0.6.37';
 import {renderDifficultyPie} from './difficulty-pie.mjs';
@@ -25,9 +25,10 @@ const niceDate=x=>x?new Date(x).toLocaleDateString('pt-BR'):'—';
 let state;
 try{state=normalizeState(JSON.parse(localStorage.getItem(STORAGE_KEY)||'null'))}catch{state=fresh()}
 expire(state);
-const initialCargo=[...Object.keys(CATALOGS),STUDY_ALL,STUDY_CANDEIAS].includes(localStorage.getItem('estatistica-edital-cargo'))?localStorage.getItem('estatistica-edital-cargo'):'505';
-let profileId=null,view='home',selectedSimId=null,currentFilter={studyArea:'candeias',editalCargo:initialCargo,editalScope:'dentro'},currentPool=[],limitAvulsas=10,questionSearch='';
-let chartCargo=initialCargo===STUDY_CANDEIAS?'505':initialCargo,chartArea='';
+const savedCargo=localStorage.getItem('estatistica-edital-cargo');
+const initialCargo=FOCUS_CARGOS.includes(savedCargo)||savedCargo===STUDY_ALL?savedCargo:DEFAULT_CARGO;
+let profileId=null,view='home',selectedSimId=null,currentFilter={studyArea:'candeias',editalCargo:initialCargo,editalScope:'dentro',matchLevel:'all'},currentPool=[],limitAvulsas=10,questionSearch='';
+let chartCargo=initialCargo===STUDY_CANDEIAS?DEFAULT_CARGO:initialCargo,chartArea='';
 let latestImportMessage='';
 let statusMessage='';
 const explanationsInView=new Map();
@@ -415,7 +416,7 @@ function historyOutcomeFilter(){
 }
 
 function targetProgramPanel(){
- const id=currentFilter.editalCargo||'505';
+ const id=currentFilter.editalCargo||DEFAULT_CARGO;
  if(id===STUDY_ALL)return '';
  const ids=id===STUDY_CANDEIAS?['505','202']:[id];
  return '<details class="program-panel"><summary>Consultar conteúdo programático — '+
@@ -476,12 +477,15 @@ function updateTopicChoices(form,name){
  currentFilter={...currentFilter,[target]:kept};
 }
 function catalogPanelFilters(){
- const id=currentFilter.editalCargo||'505';
+ const id=currentFilter.editalCargo||DEFAULT_CARGO;
  const cargoOptions='<div class="field"><label>Cargo / modo de estudo</label><select name="editalCargo">'+
-  '<option value="candeias" '+(id===STUDY_CANDEIAS?'selected':'')+'>Candeias do Jamari — cargos 202 e 505</option>'+
-  '<option value="all" '+(id===STUDY_ALL?'selected':'')+'>Todos — estudo geral, sem edital</option>'+
-  Object.values(CATALOGS).map(x=>'<option value="'+h(x.id)+'" '+(id===x.id?'selected':'')+'>'+h(x.id+' — '+x.cargo+(x.id==='202'?' — Câmara de Candeias do Jamari':x.id==='240'?' — SEMUSA Porto Velho':''))+'</option>').join('')+
-  '</select></div>';
+  '<optgroup label="Concursos em foco">'+
+  FOCUS_CARGOS.map(code=>{const x=CATALOGS[code];return '<option value="'+h(x.id)+'" '+(id===x.id?'selected':'')+'>'+h(x.id+' — '+x.cargo+(code==='240'?' — Saúde':' — SEMED'))+'</option>';}).join('')+
+  '</optgroup><optgroup label="Outras consultas">'+
+  '<option value="all" '+(id===STUDY_ALL?'selected':'')+'>Todos — banco geral sem edital</option>'+
+  '<option value="candeias" '+(id===STUDY_CANDEIAS?'selected':'')+'>Candeias do Jamari — histórico de conteúdos</option>'+
+  ['202','505'].map(code=>{const x=CATALOGS[code];return '<option value="'+h(code)+'" '+(id===code?'selected':'')+'>'+h(code+' — '+x.cargo+' (edital anterior)')+'</option>';}).join('')+
+  '</optgroup></select></div>';
  if(id===STUDY_ALL){
   const ds=selectedValues(currentFilter.generalDisciplines||currentFilter.generalDiscipline);
   return '<fieldset class="field span-all syllabus-panel"><legend>Banco geral de questões</legend>'+
@@ -510,12 +514,16 @@ function catalogPanelFilters(){
   '<div class="field"><label>Classificação pelo edital</label><select name="editalScope">'+
   EDITAL_SCOPE_OPTIONS.map(({value,label})=>'<option value="'+value+'" '+(scope===value?'selected':'')+'>'+h(label)+'</option>').join('')+
   '</select></div>'+
+  '<div class="field"><label>Tipo de correspondência</label><select name="matchLevel">'+
+  [['all','Diretas e aproximadas'],['dentro','Somente diretas'],['pendente','Somente aproximadas / a conferir']].map(([value,label])=>
+   '<option value="'+value+'" '+((currentFilter.matchLevel||'all')===value?'selected':'')+'>'+label+'</option>').join('')+
+  '</select></div>'+
   multiChoiceField('editalDisciplines','Disciplinas do edital',currentCatalog(id).sections.map(x=>({id:x.title,label:x.title})),ds)+
   multiChoiceField('editalTopics','Assuntos do edital',topics,currentFilter.editalTopics||currentFilter.editalTopic,true)+
-  '</div><p class="hint">Banco existente: '+counts.dentro+' dentro do edital, '+counts.fora+' fora, '+counts.pendente+' a conferir. É possível combinar várias disciplinas e assuntos.</p></fieldset>';
+  '</div><p class="hint">Banco existente: '+counts.dentro+' correspondência(s) direta(s), '+counts.pendente+' aproximada(s), '+counts.fora+' fora. Filtre por disciplina, assunto e tipo de correspondência.</p></fieldset>';
 }
 function syllabusFiltered(items,filters=currentFilter){
- const id=filters.editalCargo||'505';
+ const id=filters.editalCargo||DEFAULT_CARGO;
  if(id===STUDY_ALL)return filterStudyAllQuestions(items,filters.generalDisciplines||filters.generalDiscipline,filters.generalTopics||filters.generalTopic);
  if(id===STUDY_CANDEIAS)return filterCandeiasQuestions(items,exam,filters);
  const ds=selectedValues(filters.editalDisciplines||filters.editalDisciplina);
@@ -524,6 +532,8 @@ function syllabusFiltered(items,filters=currentFilter){
  return items.filter(q=>{
   const match=classifyForCargo(q,exam(q.examId),id);
   if(!inEditalScope(match,scope))return false;
+  if(filters.matchLevel==='dentro'&&match.status!=='dentro')return false;
+  if(filters.matchLevel==='pendente'&&match.status!=='pendente')return false;
   if(ds.length&&!ds.includes(match.discipline))return false;
   if(ts.length&&!ts.includes(match.topicId))return false;
   if(id!=='505'&&q.originalQuestionId)return false;
@@ -531,7 +541,7 @@ function syllabusFiltered(items,filters=currentFilter){
  });
 }
 function eligibleSyllabusQuestions(items,filters=currentFilter){
- const id=filters.editalCargo||'505';
+ const id=filters.editalCargo||DEFAULT_CARGO;
  if(id===STUDY_ALL)return syllabusFiltered(items,filters);
  if(id===STUDY_CANDEIAS)return syllabusFiltered(items,filters)
   .filter(q=>eligibleForList(q,exam(q.examId),'candeias'));
@@ -545,7 +555,7 @@ function eligibleSyllabusQuestions(items,filters=currentFilter){
  });
 }
 function filterForm(kind='questions'){
- const u=availableFilters(),mode=kind==='sim',id=currentFilter.editalCargo||'505';
+ const u=availableFilters(),mode=kind==='sim',id=currentFilter.editalCargo||DEFAULT_CARGO;
  return '<form id="'+(mode?'generate-form':'filter-form')+'" class="card">'+
   '<div class="form-grid">'+catalogPanelFilters()+
   selectField('banca','Banca',u.bancas,currentFilter.banca)+
@@ -603,21 +613,21 @@ function syllabusBadge(q){
   return '<div class="syllabus-classification"><span class="badge good">Candeias</span>'+
    '<span>Cargo(s) '+h(roles)+' · '+h(item.discipline)+' / '+h(item.topic)+'</span></div>';
  }
- const id=currentFilter.editalCargo||'505',match=classifyForCargo(q,exam(q.examId),id);
+ const id=currentFilter.editalCargo||DEFAULT_CARGO,match=classifyForCargo(q,exam(q.examId),id);
  const cls=match.status==='dentro'?'good':match.status==='fora'?'bad':'wait';
- const label=match.status==='dentro'?match.discipline+' / '+match.topic:match.statusLabel;
+ const label=match.status==='fora'?match.statusLabel:match.discipline+' / '+match.topic;
  return '<div class="syllabus-classification"><span class="badge '+cls+'">'+h(match.statusLabel)+'</span>'+
-  '<span>Cargo '+h(id)+' · '+h(label)+(q.editalReview?.[id]?' · Revisão aprovada':match.status==='pendente'?' · Confira o conteúdo e sinalize se necessário.':'')+'</span></div>';
+  '<span>Cargo '+h(id)+' · '+h(label)+(q.editalReview?.[id]?' · Revisão aprovada':match.status==='pendente'?' · '+h(match.reason||'Assunto aproximado para conferência'):'')+'</span></div>';
 }
 function syllabusStatistics(cargoId=currentFilter.editalCargo){
  if(cargoId===STUDY_ALL||cargoId===STUDY_CANDEIAS)return '';
- const id=cargoId||'505',catalog=currentCatalog(id);
+ const id=cargoId||DEFAULT_CARGO,catalog=currentCatalog(id);
  const summary=subjectSummary(state.questions.filter(q=>q.status!=='archived'),exam,id);
  const map=new Map();
  for(const q of state.questions){
   if(q.status!=='active')continue;
   const cls=classifyForCargo(q,exam(q.examId),id);
-  if(cls.status!=='dentro')continue;
+  if(cls.status!=='dentro'&&!(cls.status==='pendente'&&cls.topicId))continue;
   const o=outcome(state,profileId,q);
   const key=cls.topicId,entry=map.get(key)||{
    id:key,discipline:cls.discipline,topic:cls.topic,correct:0,wrong:0,total:0
@@ -631,7 +641,7 @@ function syllabusStatistics(cargoId=currentFilter.editalCargo){
   '<div class="grid three" style="margin-top:10px">'+
    infoTile(summary.total.dentro,'Dentro do edital')+
    infoTile(summary.total.fora,'Fora do edital')+
-   infoTile(summary.total.pendente,'A conferir')+
+   infoTile(summary.total.pendente,'Aproximadas / a conferir')+
   '</div>'+
   '<details class="program-panel"><summary>Acertos e erros por assunto do edital ('+rows.length+')</summary>'+
   (rows.length?rows.map(x=>'<div class="stat-line syllabus-stat"><div><strong>'+h(x.discipline+' / '+x.topic)+'</strong>'+
@@ -766,8 +776,8 @@ function updateQuestionFeedback(qid){
 }
 function formsFilter(form){
  const f=new FormData(form);
- const fields=Object.fromEntries(['discipline','topic','banca','year','orgao','status','code','studyArea','editalCargo','editalScope'].map(k=>[k,String(f.get(k)||'')]));
- const cargo=fields.editalCargo||currentFilter.editalCargo||'505';
+ const fields=Object.fromEntries(['discipline','topic','banca','year','orgao','status','code','studyArea','editalCargo','editalScope','matchLevel'].map(k=>[k,String(f.get(k)||'')]));
+ const cargo=fields.editalCargo||currentFilter.editalCargo||DEFAULT_CARGO;
  const multi=Object.fromEntries(['generalDisciplines','generalTopics','editalDisciplines','editalTopics','candeiasDisciplines','candeiasTopics']
   .map(name=>[name,f.getAll(name).map(String)]));
  return {...fields,...multi,editalCargo:cargo,editalScope:normalizeEditalScope(fields.editalScope),
@@ -996,6 +1006,7 @@ document.addEventListener('submit',async e=>{
   }
   if(form.id==='import-form'){await importData(form);return}
   currentFilter=formsFilter(form);
+  if(CATALOGS[currentFilter.editalCargo]){chartCargo=currentFilter.editalCargo;chartArea='';}
   localStorage.setItem('estatistica-edital-cargo',currentFilter.editalCargo);
   if(['505',STUDY_CANDEIAS].includes(currentFilter.editalCargo)&&currentFilter.editalScope==='dentro'&&currentFilter.studyArea!=='original'&&!automaticAdaptationChecked)
    await refreshAutomaticAdaptations();
@@ -1028,8 +1039,9 @@ document.addEventListener('change',e=>{
    chartArea=input.value;refresh();return;
   }
   if(input.matches('select[name="editalCargo"]')){
-    const next=[...Object.keys(CATALOGS),STUDY_ALL,STUDY_CANDEIAS].includes(input.value)?input.value:'505';
-    currentFilter={...currentFilter,editalCargo:next,studyArea:'candeias',
+    const next=[...Object.keys(CATALOGS),STUDY_ALL,STUDY_CANDEIAS].includes(input.value)?input.value:DEFAULT_CARGO;
+    currentFilter={...currentFilter,editalCargo:next,studyArea:'candeias',matchLevel:'all',
+     editalScope:'dentro',
      editalDisciplines:[],editalTopics:[],generalDisciplines:[],generalTopics:[],
      candeiasDisciplines:[],candeiasTopics:[],editalDisciplina:'',editalTopic:'',
      generalDiscipline:'',generalTopic:''};

@@ -1,11 +1,11 @@
 {
   "name": "estatistica-das-provas",
-  "version": "0.6.50",
+  "version": "0.6.51",
   "private": true,
   "type": "module",
   "scripts": {
     "test": "node --test tests/*.test.mjs",
-    "check": "node --check app.mjs && node --check difficulty-pie.mjs && node --check edital-classification.mjs && node --check study-context.mjs && node --check programa-candeias-505.mjs && node --check programa-semed-professor.mjs && node --check legal-adapt.mjs && node --check worker/explanations.mjs && node --check worker/legal-knowledge.mjs && node --check core.mjs && node --check topic-taxonomy.mjs && node --check pdf-import.mjs && node --check pdf-layout.mjs && node --check sync-client.mjs && node --check worker/index.mjs && node --check scripts/resolve-flag.mjs"
+    "check": "node --check app.mjs && node --check difficulty-pie.mjs && node --check edital-classification.mjs && node --check study-context.mjs && node --check programa-candeias-505.mjs && node --check programa-semed-professor.mjs && node --check programa-semed-secretaria.mjs && node --check legal-adapt.mjs && node --check worker/explanations.mjs && node --check worker/legal-knowledge.mjs && node --check core.mjs && node --check topic-taxonomy.mjs && node --check pdf-import.mjs && node --check pdf-layout.mjs && node --check sync-client.mjs && node --check worker/index.mjs && node --check scripts/resolve-flag.mjs"
   },
   "engines": {
     "node": ">=20"

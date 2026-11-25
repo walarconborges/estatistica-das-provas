@@ -1,5 +1,5 @@
 import {outcome} from './core.mjs';
-import {CATALOGS,currentCatalog,STUDY_ALL,studyAllGroup,ALL_STUDY_DISCIPLINES,classifyForCargo} from './edital-classification.mjs';
+import {CATALOGS,FOCUS_CARGOS,currentCatalog,STUDY_ALL,studyAllGroup,ALL_STUDY_DISCIPLINES,classifyForCargo} from './edital-classification.mjs';
 
 const escapeHtml=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const percent=x=>Number(x||0).toLocaleString('pt-BR',{maximumFractionDigits:1})+'%';
@@ -25,7 +25,7 @@ export function difficultySummary(state,profileId,cargo=STUDY_ALL,area='',getExa
    topicId=topic;
   }else{
    const cls=classifyForCargo(q,getExam(q.examId),cargo);
-   if(cls.status!=='dentro')continue;
+   if(cls.status!=='dentro'&&!(cls.status==='pendente'&&cls.topicId))continue;
    section=String(cls.discipline||'Não identificada');
    id=areaByName.get(section)||'extra:'+section;
    topic=String(cls.topic||'Assunto não identificado');
@@ -71,7 +71,7 @@ export function renderDifficultyPie(state,profileId,cargo,area,getExam){
  const results=difficultySummary(state,profileId,cargo,selectedArea,getExam);
  const option=(value,label,current)=>'<option value="'+escapeHtml(value)+'"'+(value===current?' selected':'')+'>'+escapeHtml(label)+'</option>';
  const cargos=option(STUDY_ALL,'Banco geral — todas as provas',cargo)+
-  Object.entries(CATALOGS).map(([id,c])=>option(id,id+' — '+c.cargo,cargo)).join('');
+  [...FOCUS_CARGOS,...Object.keys(CATALOGS).filter(id=>!FOCUS_CARGOS.includes(id))].map(id=>option(id,id+' — '+CATALOGS[id].cargo,cargo)).join('');
  const sections=option('','Todas as áreas',selectedArea)+options.map(x=>option(x.id,x.title,selectedArea)).join('');
  const caption=cargo===STUDY_ALL?'Banco geral (sem edital)':currentCatalog(cargo).cargo+' — cargo '+cargo;
  const palette=['#91b3c6','#b6cbd9','#89b3b4','#a4bdd2','#c9d7df','#7eaaac','#a5b9c8','#bed2d0'];

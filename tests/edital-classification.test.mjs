@@ -11,7 +11,7 @@ const question=(number,code,discipline,stem)=>({
 });
 
 test('Anexo IV tem os dois cargos e não atribui informática ou legislação ao cargo 202',()=>{
- assert.deepEqual(Object.keys(CATALOGS).sort(),['202','240','505','519-552']);
+ assert.deepEqual(Object.keys(CATALOGS).sort(),['202','240','343','505','519-552']);
  assert.equal(CARGO_202.cargo,'Auxiliar de Serviços Gerais');
  assert.deepEqual(CARGO_202.sections.map(x=>x.title),['Português','Matemática','Conhecimentos Gerais']);
  assert.ok(!CARGO_202.sections.some(x=>/Informática|Legislação/.test(x.title)));
@@ -193,7 +193,8 @@ test('itens comuns podem ser estudados nos dois cargos, mas SUS é específico d
  assert.equal(semusa.topicId,'especificos:11');
  assert.equal(classifyForCargo(sus,meta,'202').status,'fora');
  const ti=question(19,'IN','Informática','Configuração de switches e redes TCP/IP.');
- assert.equal(classifyForCargo(ti,meta,'240').status,'fora');
+ assert.equal(classifyForCargo(ti,meta,'240').status,'pendente');
+ assert.match(classifyForCargo(ti,meta,'240').reason,/proximidade/);
 });
 test('notícias municipais e revisões não se misturam entre Candeias e SEMUSA',()=>{
  const camara=question(20,'CG','Conhecimentos Gerais',

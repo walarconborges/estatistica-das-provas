@@ -65,12 +65,13 @@ test('legislação educacional e conhecimento pedagógico têm assuntos próprio
  }
 });
 
-test('não classifica tecnologia de outro cargo ou leis locais diferentes como conteúdo de Professor',()=>{
+test('assuntos distantes são aproximados sem afirmar previsão literal no edital de Professor',()=>{
  const other={title:'2026 — Analista de Tecnologia e Informática',orgao:'CMCJ'};
  const it=q('CE','Conhecimentos Específicos','A CPU executa instruções do computador.');
  const local=q('LE','Legislação','Lei Orgânica do Município de Candeias do Jamari.');
- assert.equal(classifyForCargo(it,other,PROFESSOR_CARGO_ID).status,'fora');
- assert.equal(classifyForCargo(local,other,PROFESSOR_CARGO_ID).status,'fora');
+ assert.equal(classifyForCargo(it,other,PROFESSOR_CARGO_ID).status,'pendente');
+ assert.equal(classifyForCargo(local,other,PROFESSOR_CARGO_ID).status,'pendente');
+ assert.match(classifyForCargo(local,other,PROFESSOR_CARGO_ID).reason,/outra localidade/);
  const adapted={...q('LE','Legislação','A Lei Orgânica de Candeias determina...'),originalQuestionId:'orig123'};
  assert.equal(classifyForCargo(adapted,exam,PROFESSOR_CARGO_ID).status,'fora');
 });
