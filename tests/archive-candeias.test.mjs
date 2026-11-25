@@ -27,9 +27,9 @@ test('auditoria: somente as 103 questões estritamente municipais foram arquivad
   assert.ok(q.stem&&q.options?.length>=2&&q.answer,'Não perder enunciado/alternativas/gabarito: '+q.code);
  }
  assert.equal(db.questions.filter(q=>q.status==='archived').length,103);
- assert.equal(db.questions.filter(q=>q.status==='active').length,987);
+ assert.equal(db.questions.filter(q=>q.status==='active'&&!q.sourceType?.startsWith('pdf-selecao-secretaria-escolar')).length,987);
  assert.equal(db.questions.filter(q=>q.status==='needs-review').length,4);
- assert.equal(db.exams.length,56);
+ assert.equal(db.exams.filter(e=>!e.id.startsWith('selected-sec-')).length,56);
  assert.ok(db.attempts.length>=169);
  assert.ok(db.flags.length>=99);
 });

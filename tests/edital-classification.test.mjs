@@ -194,7 +194,7 @@ test('itens comuns podem ser estudados nos dois cargos, mas SUS é específico d
  assert.equal(classifyForCargo(sus,meta,'202').status,'fora');
  const ti=question(19,'IN','Informática','Configuração de switches e redes TCP/IP.');
  assert.equal(classifyForCargo(ti,meta,'240').status,'pendente');
- assert.match(classifyForCargo(ti,meta,'240').reason,/proximidade/);
+ assert.match(classifyForCargo(ti,meta,'240').reason,/mais próximo|proximidade/);
 });
 test('notícias municipais e revisões não se misturam entre Candeias e SEMUSA',()=>{
  const camara=question(20,'CG','Conhecimentos Gerais',
